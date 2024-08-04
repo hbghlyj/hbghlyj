@@ -56,7 +56,7 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: yonderz/yonderz.github.io
+repository: hbghlyj/hbghlyj.github.io
 repository_tree: main
 
 
@@ -128,11 +128,11 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : a43fd15b4425a3611430 # GitHub Application Client ID
-    clientSecret: 2bc11b66598947e987971a3a41223087258d1ac5 # GitHub Application Client Secret
-    repository  : yonderz.github.io # GitHub repo
-    owner       : Yonderz # GitHub repo owner
-    admin: Yonderz
+    clientID    : Ov23li6029hXAg9m3mua # GitHub Application Client ID
+    clientSecret: fea751b552c3f033e4a0ac1017c33842b649f979 # GitHub Application Client Secret
+    repository  : hbghlyj.github.io # GitHub repo
+    owner       : hbghlyj # GitHub repo owner
+    admin: hbghlyj
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
