@@ -1,0 +1,203 @@
+---
+tags: euclidean-geometry
+---
+<p>
+  One of the many purposes of using homogeneous coordinates is to capture the
+  concept of infinity. In the Euclidean coordinate system, infinity is
+  something that does not exist. Mathematicians have discovered that
+  many geometric concepts and computations can be greatly simplified if
+  the concept of infinity is used. This will become very clear when we move
+  to curves and surfaces design. Without the use of homogeneous
+  coordinates system, it would be difficult to design certain classes of
+  very useful curves and surfaces in computer graphics and computer-aided
+  design.
+</p>
+<p>
+  Let us consider two real numbers, <i>a</i> and <i>w</i>, and compute the
+  value of <i>a/w</i>. Let us hold the value of <i>a</i> fixed and vary the
+  value of <i>w</i>. As <i>w</i> getting smaller, the value of <i>a/w</i> is
+  getting larger. If <i>w</i> approaches zero, <i>a/w</i> approaches to
+  infinity! Thus, to capture the concept of infinity, we use two numbers
+  <i>a</i> and <i>w</i> to represent a value <i>v</i>, <i>v=a/w</i>.
+  If <i>w</i> is not zero, the value is exactly <i>a/w</i>. Otherwise, we
+  identify the infinite value with (<i>a</i>,0). Therefore, the concept of
+  infinity can be represented with a number pair like (<i>a</i>, <i>w</i>) or as
+  a quotient <i>a/w</i>.
+</p>
+<p>
+  Let us apply this to the <i>xy</i>-coordinate plane. If we replace <i>x</i>
+  and <i>y</i> with <i>x/w</i> and <i>y/w</i>, a function
+  <i>f</i>(<i>x</i>,<i>y</i>)=0 becomes
+  <i>f</i>(<i>x/w</i>,<i>y/w</i>)=0. If function
+  <i>f</i>(<i>x</i>,<i>y</i>) = 0 is a polynomial, multiplying it with
+  <i>w<sup>n</sup></i> will clear all denominators, where <i>n</i> is the degree of
+  the polynomial.
+</p>
+<p>
+  For example, suppose we have a line <i>Ax + By + C</i> = 0. Replacing
+  <i>x</i> and <i>y</i> with <i>x/w</i> and <i>y/w</i> yields
+  <i>A(x/w) + B(y/w) + C</i> = 0. Multiplying by <i>w</i> changes it to
+</p>
+<p align="center">
+  <i>Ax + By + Cw </i> = 0.
+</p>
+<p>
+  Let the given equation be a second degree polynomial
+  <i>Ax</i><sup>2</sup> + 2<i>Bxy</i> + <i>Cy</i><sup>2</sup> + 2<i>Dx</i> + 2<i>Ey</i> + <i>F</i> = 0.
+  After replacing <i>x</i> and <i>y</i> with <i>x/w</i> and <i>y/w</i> and
+  multiplying the result with <i>w</i><sup>2</sup>, we have
+</p>
+<p align="center">
+  <i>Ax</i><sup>2</sup> + 2<i>Bxy</i> + <i>Cy</i><sup>2</sup> + 2<i>Dxw</i> + 2<i>Eyw</i> + <i>Fw</i><sup>2</sup> = 0
+</p>
+If you look at these two polynomials carefully, you will see that the degrees
+of all terms are equal. In the case of a line, terms <i>x</i>, <i>y</i>
+and <i>w</i> are of degree one, while in the second degree polynomial,
+all terms (<i>i.e.</i>, <i>x</i><sup>2</sup>, <i>xy</i>,
+<i>y</i><sup>2</sup>, <i>xw</i>, <i>yw</i> and <i>w</i><sup>2</sup>) are of
+degree two.
+<p>
+  Given a polynomial of degree <i>n</i>, after introducing <i>w</i>,
+  all terms are of degree <i>n</i>. Consequently, these polynomials are called
+  <i>homogeneous</i> polynomials and the coordinates (<i>x</i>,<i>y</i>,<i>w</i>)
+  the <i>homogeneous coordinates</i>.
+</p>
+<p>
+  Given a degree <i>n</i> polynomial in a homogeneous coordinate system,
+  dividing the polynomial with <i>w</i><sup><i>n</i></sup> and replacing <i>x/w</i>,
+  <i>y/w</i> with <i>x</i> and <i>y</i>, respectively, will convert the
+  polynomial back to a conventional one. For example, if the given degree 3
+  homogeneous polynomial is the following:
+</p>
+<p align="center">
+  <i>x</i><sup>3</sup> + 3<i>xy</i><sup>2</sup> − 5<i>y</i><sup>2</sup><i>w</i> + 10<i>w</i><sup>3</sup> = 0
+</p>
+the result is
+<p align="center">
+  <i>x</i><sup>3</sup> + 3<i>xy</i><sup>2</sup> − 5<i>y</i><sup>2</sup> + 10 = 0
+</p>
+<p>
+  This works for three-dimension as well. One can replace a point
+  (<i>x</i>, <i>y</i>, <i>z</i>) with (<i>x/w</i>, <i>y/w</i>, <i>z/w</i>)
+  and multiply the result by <i>w</i> raised to certain power. The resulting
+  polynomial is a homogeneous one. Converting a degree <i>n</i> homogeneous
+  polynomial in <i>x</i>, <i>y</i>, <i>z</i> and <i>w</i> back to the
+  conventional form is exactly identical to the two-variable case.
+</p>
+<hr>
+
+<h3> An Important Notes </h3>
+
+Given a point (<i>x</i>,<i>y</i>,<i>w</i>) in homogeneous coordinates, what is
+its corresponding point in the <i>xy</i>-plane? From what we discussed for
+converting a homogeneous polynomial back to its conventional form, you might
+easily guess that the answer must be (<i>x/w</i>,<i>y/w</i>). This is correct.
+Thus, a point (3,4,5) in homogeneous coordinates converts to point
+(3/5,4/5)=(0.6,0.8) in the <i>xy</i>-plane. Similarly, a point
+(<i>x</i>,<i>y</i>,<i>z</i>,<i>w</i>) in homogeneous coordinates converts
+to a point (<i>x/w</i>,<i>y/w</i>,<i>z/w</i>) in space.
+<p>
+  Conversely, what is the homogeneous coordinates of a point (<i>x</i>,<i>y</i>)
+  in the <i>xy</i>-plane? It is simply (<i>x</i>,<i>y</i>,1)!
+  That is, let the <i>w</i> component be 1. In fact, this is only part of the
+  story, because the answer is <i><b>not</b></i> unique. The homogeneous
+  coordinates of a point (<i>x</i>,<i>y</i>) in the <i>xy</i>-plane is
+  (<i>xw</i>, <i>yw</i>, <i>w</i>) for any non-zero <i>w</i>.
+  Why is this true? Because (<i>xw</i>, <i>yw</i>, <i>w</i>) is converted
+  back to (<i>x</i>,<i>y</i>). As a result, the following is important for you
+  to memorize:
+</p>
+<p align="center">
+  <font color="#FF0000">
+    <b>
+      Converting from a homogeneous coordinates to a conventional one is
+      <u>unique</u>; but, converting a conventional coordinates to a homogeneous
+      one is <u>not</u>.
+    </b>
+  </font>
+</p>
+For example, a point (4,2,3) in space is convert to
+(4<i>w</i>, 2<i>w</i>, 3<i>w</i>, <i>w</i>) for any non-zero <i>w</i>.
+
+<hr>
+
+<h3> The Dimensionality of Homogeneous Coordinates </h3>
+
+You perhaps have discovered that homogeneous coordinates need 3 and 4
+components to represent a point in the <i>xy</i>-plane and a point in space,
+respectively. Therefore, a point in space (<i>resp.</i>, the
+<i>xy</i>-plane) in homogeneous coordinates actually has <i><b>four</b></i>
+(<i>resp.</i>, <i><b>third</b></i>) components. Adding a fourth
+(<i>resp.</i>, third) component whose value is 1 to the coordinates of a point
+in space (<i>resp.</i>, the <i>xy</i>-plane) converts
+it to its corresponding homogeneous coordinates.
+
+<hr>
+
+<h3> Ideal Points or Points at Infinity </h3>
+
+As mentioned at the very beginning of this page, homogeneous coordinates
+can easily capture the concept of infinity. Let a point (<i>x</i>,<i>y</i>)
+be fixed and converted to a homogeneous coordinate by multiplying with
+1/<i>w</i>, (<i>x/w</i>,<i>y/w</i>,1/<i>w</i>). Let the value of <i>w</i>
+approach to zero, then (<i>x/w</i>,<i>y/w</i>) moves farther and farther away
+in the direction of (<i>x</i>,<i>y</i>). When <i>w</i> becomes zero,
+(<i>x/w</i>,<i>y/w</i>) moves to infinity. Therefore, we would say,
+the homogeneous coordinate (<i>x</i>,<i>y</i>,0) is the <i>ideal point</i>
+or <i>point at infinity</i> in the direction of (<i>x</i>,<i>y</i>).
+<p>
+  Let us take a look at an example. Let (3,5) be a point in the <i>xy</i>-plane.
+  Consider (3/<i>w</i>,5/<i>w</i>). If <i>w</i> is not zero, this point lies
+  on the line <i>y</i> = (5/3) <i>x</i>. Or, if you like the vector form,
+  (3/<i>w</i>,5/<i>w</i>) is a point on the line <b>O</b> + (1/<i>w</i>)<b>d</b>,
+  where the base point <b>O</b> is the coordinate origin and <b>d</b> is the
+  direction vector &lt;3,5&gt;. Therefore, as <i>w</i> approaches zero, the
+  point moves to infinity on the line. This is why we say (<i>x</i>,<i>y</i>,0)
+  is the ideal point or the point at infinity
+  <u><i>in the direction of (x,y)</i></u>.
+</p>
+<p>
+  The story is the same for points in space, where
+  (<i>x</i>,<i>y</i>,<i>z</i>,0) is the ideal point or point at infinity in the
+  direction of (<i>x</i>,<i>y</i>,<i>z</i>).
+</p>
+<p>
+  The concept of homogeneous coordinates and points at infinity in certain
+  direction will become very important when we discuss representations of
+  curves and surface.
+
+</p>
+<hr>
+
+<a name="geometric-interpretation">
+  <h3> A Simple Geometric Interpretation </h3>
+</a>
+
+Given a homogeneous coordinate (<i>x</i>,<i>y</i>,<i>w</i>) of a point
+in the <i>xy</i>-plane, let us consider (<i>x</i>,<i>y</i>,<i>w</i>) to be
+a point in space whose coordinate values are <i>x</i>, <i>y</i> and
+<i>w</i> for the <i>x</i>-, <i>y</i>- and <i>w</i>- axes, respectively.
+The line joining this point and the coordinate origin intersects the plane
+<i>w</i> = 1 at a point (<i>x/w</i>, <i>y/w</i>, 1).
+Please verify this fact yourself.
+The following figure illustrates this concept.
+<center>
+  <svg width="194.35mm" height="101.26mm" version="1.1" viewBox="0 0 194.35 101.26" font-family="Arial" font-size="8.4667px"><defs><marker id="ConcaveTriangle" overflow="visible" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1"><path transform="scale(.7)" d="m-2-4 11 4-11 4c2-2.33 2-5.66 0-8z" fill="context-stroke" fill-rule="evenodd"/></marker></defs><g transform="translate(-3.2367 -95.001)"><g fill="none" stroke="#000"><path d="m87.835 171.01h103.45" marker-end="url(#ConcaveTriangle)"/><path d="m87.392 171.65v-9.9452"/><path d="m87.835 171.01-21.132 20.83" marker-end="url(#ConcaveTriangle)"/></g><rect transform="matrix(1 0 -.70711 .70711 0 0)" x="165.38" y="180.95" width="150.7" height="47.283" ry="0" fill="#e6e6e6" stroke="#000" stroke-width=".8919"/><path d="m87.392 101.3v43.135" fill="none" marker-start="url(#ConcaveTriangle)" stroke="#000"/><g fill="#000000" font-size="8.4667px"><text x="188.48193" y="165.62526"><tspan x="188.48193" y="165.62526" fill="#000000">Y</tspan></text><text x="53.848709" y="195.68591"><tspan x="53.848709" y="195.68591" fill="#000000">X</tspan></text><text x="99.710716" y="153.69812"><tspan x="99.710716" y="153.69812" fill="#000000">(x/w,y/w,1)</tspan></text><text x="116.07912" y="117.10654"><tspan x="116.07912" y="117.10654" fill="#000000">(x,y,w)</tspan></text><text x="139.45197" y="136.33897"><tspan x="139.45197" y="136.33897" fill="#000000">plane w=1</tspan></text><text x="92.200897" y="103.16271"><tspan x="92.200897" y="103.16271" fill="#000000">W</tspan></text><text x="89.85498" y="180.42104"><tspan x="89.85498" y="180.42104" fill="#000000">Point at Infinity</tspan></text></g><g fill="#ff7f2a"><circle cx="87.421" cy="170.68" r="2.25"/><circle cx="96.177" cy="150.95" r="2.25"/><circle cx="112.04" cy="113.94" r="2.25"/></g><path d="m87.591 171.01 28.603-66.997" fill="none" marker-end="url(#ConcaveTriangle)" stroke="#ff7f2a"/><path d="m87.392 144.44v17.266" fill="none" stroke="#000" stroke-dasharray="2, 1" stroke-dashoffset="1"/></g></svg>
+</center>
+<p>
+  This transformation treats a two-dimensional homogeneous point as a point
+  in three-dimensional space and projects (from the coordinate origin) this
+  three-dimensional point to the plane <i>w</i>=1. Therefore, as a
+  homogeneous point moves on a curve defined by homogeneous polynomial
+  <i>f</i>(<i>x</i>,<i>y</i>,<i>w</i>)=0, its corresponding point moves in
+  three-dimensional space, which, in turn, is projected to the plane <i>w</i>=1.
+  Of course, (<i>x/w</i>,<i>y/w</i>) moves on a curve in plane <i>w</i>=1.
+</p>
+<p>
+  The above figure also shows clearly that while the conversion from the
+  conventional Euclidean coordinates to homogeneous coordinates is unique,
+  the opposite direction is not because all points on the line joining the
+  origin and (<i>x</i>,<i>y</i>,<i>w</i>) will be projected to
+  (<i>x/w</i>,<i>y/w</i>,1). This is also an important concept to be used
+  in later lectures.
+</p>
