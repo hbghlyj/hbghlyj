@@ -1,0 +1,573 @@
+---
+tags: real-analysis
+---
+<a href="https://sites.math.washington.edu/~morrow/335_12/Abel.pdf">Abel’s Test</a> | <a href="https://sites.math.washington.edu/~morrow/335_16/uniformabel.pdf">Abel’s Test, Uniform Version</a>
+<p>This note is an exposition of Abel’s test on convergence of series.</p>
+<blockquote class="statement">
+<p><strong>Theorem 1</strong>.  <i>Suppose <math>
+  <munderover>
+    <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+    <mn>1</mn>
+    <mrow>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </munderover>
+  <msub>
+    <mi>b</mi>
+    <mi>n</mi>
+  </msub>
+</math> converges and that {<i>a</i><sub><i>n</i></sub>} is a monotone bounded sequence. Then <math>
+  <munderover>
+    <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+    <mn>1</mn>
+    <mrow>
+      <mi mathvariant="normal">∞</mi>
+    </mrow>
+  </munderover>
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+  <msub>
+    <mi>b</mi>
+    <mi>n</mi>
+  </msub>
+</math> converges.</i></p>
+</blockquoute>
+<!--more-->
+<p><i>Proof.</i> Let <i>b</i><sub>0</sub> = 0, <math>
+  <msub>
+    <mi>B</mi>
+    <mi>N</mi>
+  </msub>
+  <mo>=</mo>
+  <munderover>
+    <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+    <mrow>
+      <mi>k</mi>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mrow>
+    <mi>N</mi>
+  </munderover>
+  <msub>
+    <mi>b</mi>
+    <mi>k</mi>
+  </msub>
+</math>. Then <i>b</i><sub><i>n</i></sub> = <i>B</i><sub><i>n</i></sub> − <i>B</i><sub><i>n</i> − 1</sub>, <i>n</i> ≥ 1, hence <math display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd style="text-align: -webkit-right;">
+        <munderover>
+          <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+          <mrow>
+            <mi>k</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mi>N</mi>
+        </munderover>
+        <msub>
+          <mi>a</mi>
+          <mi>k</mi>
+        </msub>
+        <msub>
+          <mi>b</mi>
+          <mi>k</mi>
+        </msub>
+      </mtd>
+      <mtd style="text-align: -webkit-left;">
+        <mi></mi>
+        <mo>=</mo>
+        <munderover>
+          <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+          <mrow>
+            <mi>k</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mi>N</mi>
+        </munderover>
+        <msub>
+          <mi>a</mi>
+          <mi>k</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>B</mi>
+          <mi>k</mi>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>B</mi>
+          <mrow>
+            <mi>k</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd style="text-align: -webkit-right;"></mtd>
+      <mtd style="text-align: -webkit-left;">
+        <mi></mi>
+        <mo>=</mo>
+        <msub>
+          <mi>B</mi>
+          <mn>1</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>a</mi>
+          <mn>1</mn>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>a</mi>
+          <mn>2</mn>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <msub>
+          <mi>B</mi>
+          <mn>2</mn>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>a</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>a</mi>
+          <mn>3</mn>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mo>…</mo>
+        <msub>
+          <mi>B</mi>
+          <mrow>
+            <mi>N</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>a</mi>
+          <mrow>
+            <mi>N</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>a</mi>
+          <mi>N</mi>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <msub>
+          <mi>a</mi>
+          <mi>N</mi>
+        </msub>
+        <msub>
+          <mi>B</mi>
+          <mi>N</mi>
+        </msub>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd style="text-align: -webkit-right;"></mtd>
+      <mtd style="text-align: -webkit-left;">
+        <mi></mi>
+        <mo>=</mo>
+        <munderover>
+          <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+          <mrow>
+            <mi>k</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow>
+            <mi>N</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>B</mi>
+          <mi>k</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>a</mi>
+          <mi>k</mi>
+        </msub>
+        <mo>−</mo>
+        <msub>
+          <mi>a</mi>
+          <mrow>
+            <mi>k</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <msub>
+          <mi>a</mi>
+          <mi>N</mi>
+        </msub>
+        <msub>
+          <mi>B</mi>
+          <mi>N</mi>
+        </msub>
+      </mtd>
+    </mtr>
+  </mtable>
+</math> Since {<i>a</i><sub><i>n</i></sub>} is monotone and bounded it converges; and {<i>B</i><sub><i>N</i></sub>} converges since ∑<i>b</i><sub><i>n</i></sub> converges. Hence <i>a</i><sub><i>N</i></sub><i>B</i><sub><i>N</i></sub> converges. We estimate ∑<i>B</i><sub><i>k</i></sub>(<i>a</i><sub><i>k</i></sub>−<i>a</i><sub><i>k</i>+1</sub>). Since ∑<i>b</i><sub><i>n</i></sub> converges, |∑<i>b</i><sub><i>n</i></sub>| ≤ <i>M</i> for some <i>M</i>. Using the fact that {<i>a</i><sub><i>n</i></sub>} is montone we get <math>
+  <munderover>
+    <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+    <mn>1</mn>
+    <mi>N</mi>
+  </munderover>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <msub>
+    <mi>B</mi>
+    <mi>k</mi>
+  </msub>
+  <mo stretchy="false">(</mo>
+  <msub>
+    <mi>a</mi>
+    <mi>k</mi>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>a</mi>
+    <mrow>
+      <mi>k</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mo stretchy="false">)</mo>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <mo>≤</mo>
+  <mi>M</mi>
+  <munderover>
+    <mo lspace="0.1em" movablelimits="false" rspace="0.1em">∑</mo>
+    <mn>1</mn>
+    <mi>N</mi>
+  </munderover>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mi>k</mi>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>a</mi>
+    <mrow>
+      <mi>k</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <mo>=</mo>
+  <mi>M</mi>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>−</mo>
+  <msub>
+    <mi>a</mi>
+    <mrow>
+      <mi>N</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msub>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <mo accent="false" stretchy="false">→</mo>
+  <mi>M</mi>
+  <mrow>
+    <mo>|</mo>
+  </mrow>
+  <msub>
+    <mi>a</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>−</mo>
+  <mi>a</mi>
+  <mo stretchy="false">|</mo>
+</math>, where <i>a</i><sub><i>k</i></sub> → <i>a</i>. Hence ∑<i>B</i><sub><i>k</i></sub>(<i>a</i><sub><i>k</i></sub> − <i>a</i><sub><i>k</i>+1</sub>) converges absolutely.</p>
+{% include qed.html %}
+<blockquote class="statement">
+<p><strong>Example 1</strong>.  <i>Suppose ∑<i>a</i><sub><i>n</i></sub> converges. Then ∑<i>n</i><sup>1/<i>n</i></sup><i>a</i><sub><i>n</i></sub> converges and ∑(1+1/<i>n</i>)<sup><i>n</i></sup><i>a</i><sub><i>n</i></sub> converges.</i></p>
+</blockquote>
+<p><i>Proof.</i> It’s easy to prove that <i>f</i>(<i>x</i>) = <i>x</i><sup>1/<i>x</i></sup> is decreasing for <i>x</i> &gt; <i>e</i>, by computing the derivative of (log(<i>x</i>))/<i>x</i>. Here is the proof that (1+1/<i>n</i>)<sup><i>n</i></sup> increases with <i>n</i>.</p>
+<math display="block">
+  <mtable displaystyle="true" columnalign="right left" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd style="text-align: -webkit-right;">
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mi>n</mi>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <mi>n</mi>
+        </msup>
+      </mtd>
+      <mtd style="text-align: -webkit-left;">
+        <mi></mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>+</mo>
+        <mrow>
+          <mrow>
+            <mo minsize="2.047em" maxsize="2.047em">(</mo>
+          </mrow>
+          <mfrac linethickness="0">
+            <mi>n</mi>
+            <mi>p</mi>
+          </mfrac>
+          <mrow>
+            <mo minsize="2.047em" maxsize="2.047em">)</mo>
+          </mrow>
+        </mrow>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>n</mi>
+            <mi>p</mi>
+          </msup>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>n</mi>
+            <mi>n</mi>
+          </msup>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd style="text-align: -webkit-right;"></mtd>
+      <mtd style="text-align: -webkit-left;">
+        <mi></mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>+</mo>
+        <mrow>
+          <mo>(</mo>
+          <mn>1</mn>
+          <mo>−</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mi>n</mi>
+          </mfrac>
+          <mo>)</mo>
+        </mrow>
+        <mo>…</mo>
+        <mrow>
+          <mo>(</mo>
+          <mn>1</mn>
+          <mo>−</mo>
+          <mfrac>
+            <mrow>
+              <mi>p</mi>
+              <mo>−</mo>
+              <mn>1</mn>
+            </mrow>
+            <mi>n</mi>
+          </mfrac>
+          <mo>)</mo>
+        </mrow>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mi>p</mi>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <msup>
+            <mi>n</mi>
+            <mi>n</mi>
+          </msup>
+        </mfrac>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd style="text-align: -webkit-right;">
+        <msup>
+          <mrow>
+            <mo>(</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mi>n</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <mrow>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+      </mtd>
+      <mtd style="text-align: -webkit-left;">
+        <mi></mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>+</mo>
+        <mrow>
+          <mo>(</mo>
+          <mn>1</mn>
+          <mo>−</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mi>n</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+          </mfrac>
+          <mo>)</mo>
+        </mrow>
+        <mo>…</mo>
+        <mrow>
+          <mo>(</mo>
+          <mn>1</mn>
+          <mo>−</mo>
+          <mfrac>
+            <mrow>
+              <mi>p</mi>
+              <mo>−</mo>
+              <mn>1</mn>
+            </mrow>
+            <mrow>
+              <mi>n</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+          </mfrac>
+          <mo>)</mo>
+        </mrow>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mi>p</mi>
+            <mo>!</mo>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mo>⋯</mo>
+        <mo>+</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <msup>
+              <mo stretchy="false">)</mo>
+              <mrow>
+                <mi>n</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math> The last sum has one more (positive) term than the preceding term and the <i>p</i>th term of the last sum is larger than the preceding <i>p</i>th term since each factor is larger (subtract <i>k</i>/(<i>n</i>+1) from 1 as opposed to subtracting <i>k</i>/<i>n</i>). Hence <math display="block">
+  <msup>
+    <mrow>
+      <mo>(</mo>
+      <mn>1</mn>
+      <mo>+</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mrow>
+          <mi>n</mi>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+      </mfrac>
+      <mo>)</mo>
+    </mrow>
+    <mrow>
+      <mi>n</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo>&gt;</mo>
+  <msup>
+    <mrow>
+      <mo>(</mo>
+      <mn>1</mn>
+      <mo>+</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mi>n</mi>
+      </mfrac>
+      <mo>)</mo>
+    </mrow>
+    <mi>n</mi>
+  </msup>
+  <mo>.</mo>
+</math> It’s easy check using L’Hopital’s rule that (1+1/<i>x</i>)<sup><i>x</i></sup> → <i>e</i> as <i>x</i> → ∞, so the sequence (1+1/<i>n</i>)<sup><i>n</i></sup> is monotone and bounded.
+{% include qed.html %}
