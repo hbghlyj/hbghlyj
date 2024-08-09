@@ -18,9 +18,9 @@
 ##############################
 text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : https://www.eurekz.com
+url     : https://github.com/hbghlyj/hbghlyj.github.io/
 baseurl : # does not include hostname
-title   : Eurekz
+title   : GitHub Pages
 tagline : The pleasure is mine.
 description: > # this means to ignore newlines until "Language & timezone"
 
