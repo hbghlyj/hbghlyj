@@ -50,9 +50,6 @@
     p {
       margin: map-get($spacers, 2) 0;
     }
-    & > :last-child {
-      margin-bottom: 0;
-    }
   }
   img:not(.emoji) {
     max-width: 100%;
