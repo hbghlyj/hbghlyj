@@ -128,11 +128,11 @@ comments:
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.
   gitalk:
-    clientID    : Ov23li6029hXAg9m3mua # GitHub Application Client ID
-    clientSecret: fea751b552c3f033e4a0ac1017c33842b649f979 # GitHub Application Client Secret
-    repository  : hbghlyj.github.io # GitHub repo
-    owner       : hbghlyj # GitHub repo owner
-    admin: hbghlyj
+    clientID    : # GitHub Application Client ID
+    clientSecret: # GitHub Application Client Secret
+    repository  : # GitHub repo
+    owner       : # GitHub repo owner
+    admin:
 
   ## Valine
   # please refer to https://valine.js.org/en/ for more info.
