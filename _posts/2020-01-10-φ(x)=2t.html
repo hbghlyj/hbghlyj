@@ -1,0 +1,580 @@
+---
+tags: number-theory
+---
+对于正整数<i>n</i>,设<i>φ</i>(<i>n</i>)是Euler函数.这是一类基本而又重要的数论函数,它的各种基本性质一直是数论中引人关注的课题<sup>[1]</sup>.1922年,Carmichael<sup>[2]</sup>曾经猜测:对于给定的偶数2<i>t</i>,如果方程<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(1)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>φ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mi>t</mi>
+        <mo>,</mo>
+        <mrow>
+          <mo> </mo>
+        </mrow>
+        <mi>x</mi>
+        <mo>∈</mo>
+        <mrow>
+          <mi mathvariant="double-struck">N</mi>
+        </mrow>
+      </mtd>
+    <mtd id="mjx-eqn:1" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(1)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>有解<i>x</i>,则它至少有2个解.这是一个迄今远未解决的难题.本文证实了Carmichael猜想在是奇数时是正确的,并且对此情况完整地解决了方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>的求解问题,即证明了:
+<blockquote class="statement"><strong>定理</strong>&nbsp;&nbsp;当<i>t</i>是奇数时,如果<i>t</i>=1,则方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有3个解<i>x</i>=3,4,6;如果<i>t</i>&gt;1,则方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有解的充要条件是存在奇素数<i>p</i>和正整数<i>a</i>,可使<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(2)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mn>2</mn>
+        <mi>t</mi>
+        <mo>=</mo>
+        <msup>
+          <mi>p</mi>
+          <mrow>
+            <mi>a</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>p</mi>
+        <mo>−</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+      </mtd>
+    <mtd id="mjx-eqn:2" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(2)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>当此条件成立时,如果2<i>t</i>+1不是素数,则方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有两个解:<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>p</mi>
+    <mi>a</mi>
+  </msup>
+  <mo>,</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>p</mi>
+    <mi>a</mi>
+  </msup>
+</math>;如果2<i>t</i>+1是素数,则方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有4个解:<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>p</mi>
+    <mi>a</mi>
+  </msup>
+  <mo>,</mo>
+  <mn>2</mn>
+  <msup>
+    <mi>p</mi>
+    <mi>a</mi>
+  </msup>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mi>t</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo>,</mo>
+  <mn>2</mn>
+  <mo stretchy="false">(</mo>
+  <mn>2</mn>
+  <mi>t</mi>
+  <mo>+</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math>.</blockquote>
+<!--more-->
+<strong>证</strong>&nbsp;&nbsp;当<i>t</i>=1时,定理显然成立,以下仅需考虑<i>t</i>&gt;1的情况.设<i>x</i>=<i>n</i>是方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>的解.设<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(3)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>n</mi>
+        <mo>=</mo>
+        <msup>
+          <mn>2</mn>
+          <mi>s</mi>
+        </msup>
+        <mi>m</mi>
+        <mo>,</mo>
+      </mtd>
+    <mtd id="mjx-eqn:3" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(3)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>其中<i>s</i>是非负整数,<i>m</i>是奇数.由于从文献[3]第6.4节可知 Euler 函数<i>φ</i>(<i>n</i>)是积性函数,所以,从式<math>
+  <mrow href="#mjx-eqn%3A3" class="MathJax_ref">
+    <mtext>(3)</mtext>
+  </mrow>
+</math>可知:当<i>s</i>=3时,从方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>可得<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(4)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>φ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>φ</mi>
+        <mrow>
+          <mo>(</mo>
+          <msup>
+            <mn>2</mn>
+            <mrow>
+              <mi>t</mi>
+            </mrow>
+          </msup>
+          <mo>)</mo>
+        </mrow>
+        <mi>φ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>m</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msup>
+          <mn>2</mn>
+          <mrow>
+            <mi>t</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mi>φ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>m</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mi>t</mi>
+      </mtd>
+    <mtd id="mjx-eqn:4" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(4)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>这一矛盾,故必有<i>s</i>≤2.同样,当<i>s</i>=2时,从式<math>
+  <mrow href="#mjx-eqn%3A4" class="MathJax_ref">
+    <mtext>(4)</mtext>
+  </mrow>
+</math>可知<i>m</i>=1且<i>t</i>=1.因此,当<i>t</i>&gt;1时,必有<i>s</i>=0或1.同时,因为<i>φ</i>(2)=1,所以,方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有解<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>m</mi>
+</math>的充要条件是它有解<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+</math>.<br>
+如果方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有解<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+</math>,则必有<i>m</i>&gt;1.设<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(5)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>m</mi>
+        <mo>=</mo>
+        <msubsup>
+          <mi>p</mi>
+          <mn>1</mn>
+          <mrow>
+            <msub>
+              <mi>a</mi>
+              <mn>1</mn>
+            </msub>
+          </mrow>
+        </msubsup>
+        <msubsup>
+          <mi>p</mi>
+          <mn>2</mn>
+          <mrow>
+            <msub>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msub>
+          </mrow>
+        </msubsup>
+        <mo>⋯</mo>
+        <msubsup>
+          <mi>p</mi>
+          <mi>r</mi>
+          <mrow>
+            <msub>
+              <mi>a</mi>
+              <mi>r</mi>
+            </msub>
+          </mrow>
+        </msubsup>
+      </mtd>
+    <mtd id="mjx-eqn:5" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(5)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>是<i>m</i>的标准分解式,其中<math>
+  <msub>
+    <mi>p</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>p</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <mo>⋯</mo>
+  <mo>,</mo>
+  <msub>
+    <mi>p</mi>
+    <mi>n</mi>
+  </msub>
+</math>,是适合<math>
+  <msub>
+    <mi>p</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>p</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>&lt;</mo>
+  <mo>…</mo>
+  <mo>&lt;</mo>
+  <msub>
+    <mi>p</mi>
+    <mi>n</mi>
+  </msub>
+</math>的奇素数,<math>
+  <msub>
+    <mi>a</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>a</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>,</mo>
+  <mo>⋯</mo>
+  <mo>,</mo>
+  <msub>
+    <mi>a</mi>
+    <mi>n</mi>
+  </msub>
+</math>是适当的正整数.由于当<i>r</i>&gt;1时,<math>
+  <mi>φ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>m</mi>
+  <mo stretchy="false">)</mo>
+</math>必为4的倍数,故不可能.因此必有<i>r</i>=1.设<math>
+  <mi>p</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>p</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <mi>a</mi>
+  <mo>=</mo>
+  <msub>
+    <mi>a</mi>
+    <mn>1</mn>
+  </msub>
+</math>.因为<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(6)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>φ</mi>
+        <mo stretchy="false">(</mo>
+        <mi>m</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msup>
+          <mi>p</mi>
+          <mrow>
+            <mi>a</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>p</mi>
+        <mo>−</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+      </mtd>
+    <mtd id="mjx-eqn:6" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(6)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>所以,方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>有解<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>m</mi>
+</math>的充要条件是适合式<math>
+  <mrow href="#mjx-eqn%3A2" class="MathJax_ref">
+    <mtext>(2)</mtext>
+  </mrow>
+</math>,而且当此条件满足时,方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>至少有2个解<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>p</mi>
+    <mi>a</mi>
+  </msup>
+</math>和<math>
+  <mn>2</mn>
+  <msup>
+    <mi>p</mi>
+    <mi>a</mi>
+  </msup>
+</math>.<br>
+如果方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>另有1个解<math>
+  <mi>x</mi>
+  <mo>=</mo>
+  <mi>k</mi>
+</math>,其中<i>k</i>是适合<i>k</i>≠<i>m</i>的奇数,则从上节的分析可知,<i>k</i>必为奇素数的方幂,故有<math>
+  <mi>k</mi>
+  <mo>=</mo>
+  <msup>
+    <mi>q</mi>
+    <mi>b</mi>
+  </msup>
+</math>,其中<i>q</i>是奇素数,<i>b</i>是正整数.由于<math>
+  <mi>φ</mi>
+  <mo stretchy="false">(</mo>
+  <mi>k</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>q</mi>
+    <mrow>
+      <mi>b</mi>
+      <mo>−</mo>
+      <mn>1</mn>
+    </mrow>
+  </msup>
+  <mo stretchy="false">(</mo>
+  <mi>q</mi>
+  <mo>−</mo>
+  <mn>1</mn>
+  <mo stretchy="false">)</mo>
+</math>,故从方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>和<math>
+  <mrow href="#mjx-eqn%3A2" class="MathJax_ref">
+    <mtext>(2)</mtext>
+  </mrow>
+</math>可得<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(7)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <msup>
+          <mi>q</mi>
+          <mrow>
+            <mi>b</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>q</mi>
+        <mo>−</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mn>2</mn>
+        <mi>t</mi>
+        <mo>=</mo>
+        <msup>
+          <mi>p</mi>
+          <mrow>
+            <mi>a</mi>
+            <mo>−</mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>p</mi>
+        <mo>−</mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+      </mtd>
+    <mtd id="mjx-eqn:7" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(7)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>因为<i>k</i>≠<i>m</i>,故从式<math>
+  <mrow href="#mjx-eqn%3A7" class="MathJax_ref">
+    <mtext>(7)</mtext>
+  </mrow>
+</math>可知<i>p</i>≠<i>q</i>.因此,从式<math>
+  <mrow href="#mjx-eqn%3A7" class="MathJax_ref">
+    <mtext>(7)</mtext>
+  </mrow>
+</math>可知<math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(8)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>p</mi>
+        <mo>≡</mo>
+        <mn>1</mn>
+        <mrow>
+          <mo>(</mo>
+          <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+          <msup>
+            <mi>q</mi>
+            <mrow>
+              <mi>b</mi>
+              <mo>−</mo>
+              <mn>1</mn>
+            </mrow>
+          </msup>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    <mtd id="mjx-eqn:8" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(8)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math><math display="block">
+  <mtable displaystyle="true" columnalign="left center right">
+    <mtr>
+      <mtd style="width: 50%; visibility: hidden; text-align: -webkit-left;">
+        <mtext>(9)</mtext>
+      </mtd>
+      <mtd style="text-align: -webkit-center;">
+        <mi>q</mi>
+        <mo>≡</mo>
+        <mn>1</mn>
+        <mrow>
+          <mo>(</mo>
+          <mo lspace="thickmathspace" rspace="thickmathspace">mod</mo>
+          <msup>
+            <mi>p</mi>
+            <mrow>
+              <mi>a</mi>
+              <mo>−</mo>
+              <mn>1</mn>
+            </mrow>
+          </msup>
+          <mo>)</mo>
+        </mrow>
+      </mtd>
+    <mtd id="mjx-eqn:9" style="width: 50%; text-align: -webkit-right;">
+        <mtext>(9)</mtext>
+      </mtd></mtr>
+  </mtable>
+</math>由于<i>p</i>≠<i>q</i>,故从式<math>
+  <mrow href="#mjx-eqn%3A7" class="MathJax_ref">
+    <mtext>(7)</mtext>
+  </mrow>
+</math>可知<i>a</i>和<i>b</i>不能都等于1,所以不妨假定<i>a</i>&gt;1.此时从式<math>
+  <mrow href="#mjx-eqn%3A9" class="MathJax_ref">
+    <mtext>(9)</mtext>
+  </mrow>
+</math>知<i>p</i>&lt;<i>q</i>,并且从式<math>
+  <mrow href="#mjx-eqn%3A8" class="MathJax_ref">
+    <mtext>(8)</mtext>
+  </mrow>
+</math>可得<i>b</i>=1.于是,从式<math>
+  <mrow href="#mjx-eqn%3A7" class="MathJax_ref">
+    <mtext>(7)</mtext>
+  </mrow>
+</math>可知2<i>t</i>+1=<i>q</i>是奇素数.因为当<i>t</i>给定时,2<i>t</i>+1是唯一的.因此,当2<i>t</i>+1不是奇素数时,方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>仅有2个解:<i>x</i>=<i>q</i><sup><i>a</i></sup>和2<i>p</i><sup><i>a</i></sup>;当2<i>t</i>+1是奇素数时,方程<math>
+  <mrow href="#mjx-eqn%3A1" class="MathJax_ref">
+    <mtext>(1)</mtext>
+  </mrow>
+</math>恰有4个解:<i>x</i>=<i>q</i><sup><i>a</i></sup>,2<i>p</i><sup><i>a</i></sup>,2<i>t</i>+1和2(2<i>t</i>+1).证毕.
+<hr>
+参考文献<br>
+[1] Guy RK.Unsolved problems in number theory [M].New York:Springer Verlag, 1981.<br>
+[2] Carmichael RD. Note on Euler’s function [J].Bull Amer Math Soc, 1922, 28:109-110.<br>
+[3] 华罗庚.数论导引[M].北京:科学出版社, 1979.
