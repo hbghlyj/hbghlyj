@@ -3,7 +3,7 @@ tags: real-analysis
 ---
 <font size="1">Analysis I Lecture Notes</font><br>
 <font size="5">10 Supremum, infimum and completeness</font><br>
-Some upper bounds are more interesting than others. The set <math xmlns="http://www.w3.org/1998/Math/MathML">
+Some upper bounds are more interesting than others. The set <math>
   <mo stretchy="false">[</mo>
   <mn>0</mn>
   <mo>,</mo>
@@ -11,87 +11,79 @@ Some upper bounds are more interesting than others. The set <math xmlns="http://
   <mo stretchy="false">]</mo>
 </math> has upper bounds including 15, 1, 1.7 and infinitely many more. Of these, 1 feels special. This is the focus of our next definition.
 <blockquote>
-  <strong>Definition</strong>. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Definition</strong>. Let <math>
     <mi>S</mi>
     <mo>⊆</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math>. We say that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math>. We say that <math>
     <mi>α</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> is the supremum of <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> is the supremum of <math>
     <mi>S</mi>
-  </math>, written <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>, written <math>
     <mi>sup</mi>
     <mo lspace="0.1667em">⁡</mo>
     <mi>S</mi>
   </math>, if<br>
-  (i) <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (i) <math>
     <mi>s</mi>
     <mo>⩽</mo>
     <mi>α</mi>
-  </math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> for all <math>
     <mi>s</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math>; (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>; (<math>
     <mi>α</mi>
-  </math> is an upper bound of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is an upper bound of <math>
     <mi>S</mi>
   </math>)<br>
-  (ii) if <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (ii) if <math>
     <mi>s</mi>
     <mo>⩽</mo>
     <mi>b</mi>
-  </math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> for all <math>
     <mi>s</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math> then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> then <math>
     <mi>α</mi>
     <mo>⩽</mo>
     <mi>b</mi>
-  </math> (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> (<math>
     <mi>α</mi>
-  </math> is the least upper bound of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is the least upper bound of <math>
     <mi>S</mi>
   </math>).
 </blockquote>
-<strong>Remark</strong>. If <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Remark.</i> If <math>
   <mi>S</mi>
-</math> has a supremum, then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> has a supremum, then <math>
   <mi>sup</mi>
   <mo lspace="0.1667em">⁡</mo>
   <mi>S</mi>
 </math> is unique. (Check you can show this!)<br>
-Now that we have defined the supremum, we can state our final key property of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
+Now that we have defined the supremum, we can state our final key property of <math>
+  <mi>ℝ</mi>
 </math> (in addition to the properties that make it an ordered field).
 <blockquote>
-  <strong>Completeness axiom for the real numbers</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Completeness axiom for the real numbers</strong> Let <math>
     <mi>S</mi>
-  </math> be a non-empty subset of <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> that is bounded above. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> be a non-empty subset of <math>
+    <mi>ℝ</mi>
+  </math> that is bounded above. Then <math>
     <mi>S</mi>
   </math> has a supremum.
 </blockquote>
-Remark. There are two conditions on <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Remark.</i> There are two conditions on <math>
   <mi>S</mi>
 </math> here: non-empty, and bounded above. They are both crucial!<br>
 It is easy to forget the non-empty condition, but it has to be there: the empty set does not have a supremum, because every real number is an upper bound for the empty set — there is no <i>least </i>upper bound.<br>
-The condition that <math xmlns="http://www.w3.org/1998/Math/MathML">
+The condition that <math>
   <mi>S</mi>
 </math> is bounded above is also necessary: a set with no upper bound certainly has no supremum.<br>
-<strong>Example</strong>. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+<strong>Example</strong>. Let <math>
   <mi>S</mi>
   <mo>=</mo>
   <mo stretchy="false">[</mo>
@@ -99,13 +91,13 @@ The condition that <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>,</mo>
   <mn>2</mn>
   <mo stretchy="false">)</mo>
-</math>. Then 2 is an upper bound, and is the least upper bound: if <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Then 2 is an upper bound, and is the least upper bound: if <math>
   <mi>b</mi>
   <mo>&lt;</mo>
   <mn>2</mn>
-</math> then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> then <math>
   <mi>b</mi>
-</math> is not an upper bound because <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is not an upper bound because <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">max</mo>
   <mrow>
     <mo>(</mo>
@@ -121,7 +113,7 @@ The condition that <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
   <mo>∈</mo>
   <mi>S</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> and <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">max</mo>
   <mrow>
     <mo>(</mo>
@@ -137,13 +129,13 @@ The condition that <math xmlns="http://www.w3.org/1998/Math/MathML">
   </mrow>
   <mo>&gt;</mo>
   <mi>b</mi>
-</math>. Note that in this case <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Note that in this case <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>∉</mo>
   <mi>S</mi>
 </math>.<br>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+Let <math>
   <mi>S</mi>
   <mo>=</mo>
   <mo stretchy="false">(</mo>
@@ -151,12 +143,12 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>,</mo>
   <mn>2</mn>
   <mo stretchy="false">]</mo>
-</math>. Then we again have <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Then we again have <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>=</mo>
   <mn>2</mn>
-</math>, and this time <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, and this time <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>∈</mo>
@@ -164,85 +156,77 @@ Let <math xmlns="http://www.w3.org/1998/Math/MathML">
 </math>.<br>
 The supremum is the least upper bound of a set. There’s an analogous definition for lower bounds.
 <blockquote>
-  <strong>Definition</strong>. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Definition</strong>. Let <math>
     <mi>S</mi>
     <mo>⊆</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math>. We say that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math>. We say that <math>
     <mi>α</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> is the infimum of <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> is the infimum of <math>
     <mi>S</mi>
-  </math>, written <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>, written <math>
     <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
     <mi>S</mi>
-  </math>, if<ul><li><math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>, if<ul><li><math>
     <mi>s</mi>
     <mo>⩾</mo>
     <mi>α</mi>
-  </math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> for all <math>
     <mi>s</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math>; (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>; (<math>
     <mi>α</mi>
-  </math> is a lower bound of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is a lower bound of <math>
     <mi>S</mi>
-  </math>)</li><li>if <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>)</li><li>if <math>
     <mi>s</mi>
     <mo>⩾</mo>
     <mi>b</mi>
-  </math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> for all <math>
     <mi>s</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math> then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> then <math>
     <mi>α</mi>
     <mo>⩾</mo>
     <mi>b</mi>
-  </math> (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> (<math>
     <mi>α</mi>
-  </math> is the greatest lower bound of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is the greatest lower bound of <math>
     <mi>S</mi>
   </math>).</li></ul>
 </blockquote>
 Let’s explore some useful properties of sup and inf.
 <blockquote>
-  <strong>Proposition 8.</strong> (i) Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Proposition 8.</strong> (i) Let <math>
     <mi>S</mi>
     <mo>,</mo>
     <mi>T</mi>
-  </math> be non-empty subsets of <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math>, with <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> be non-empty subsets of <math>
+    <mi>ℝ</mi>
+  </math>, with <math>
     <mi>S</mi>
     <mo>⊆</mo>
     <mi>T</mi>
-  </math> and with <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> and with <math>
     <mi>T</mi>
-  </math> bounded above. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> bounded above. Then <math>
     <mi>S</mi>
-  </math> is bounded above, and <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is bounded above, and <math>
     <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
     <mi>S</mi>
     <mo>⩽</mo>
     <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
     <mi>T</mi>
   </math>.<br>
-  (ii) Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (ii) Let <math>
     <mi>T</mi>
     <mo>⊆</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> be non-empty and bounded below. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> be non-empty and bounded below. Let <math>
     <mi>S</mi>
     <mo>=</mo>
     <mo fence="false" stretchy="false">{</mo>
@@ -253,12 +237,12 @@ Let’s explore some useful properties of sup and inf.
     <mo>∈</mo>
     <mi>T</mi>
     <mo fence="false" stretchy="false">}</mo>
-  </math>. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>. Then <math>
     <mi>S</mi>
-  </math> is non-empty and bounded above. Furthermore, <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is non-empty and bounded above. Furthermore, <math>
     <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
     <mi>T</mi>
-  </math> exists, and <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> exists, and <math>
     <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
     <mi>T</mi>
     <mo>=</mo>
@@ -267,153 +251,153 @@ Let’s explore some useful properties of sup and inf.
     <mi>S</mi>
   </math>.
 </blockquote>
-Remark. (ii) and a similar result with sup and inf swapped essentially tell us that we can pass between sups and infs. Any result we prove about sup will have an analogue for inf. Also, we could have phrased the Completeness Axiom in terms of inf instead of sup. Proposition 8(ii) tells us that we don’t need separate axioms for sup and inf.<br>
-Proof. (i) Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Remark.</i> (ii) and a similar result with sup and inf swapped essentially tell us that we can pass between sups and infs. Any result we prove about sup will have an analogue for inf. Also, we could have phrased the Completeness Axiom in terms of inf instead of sup. Proposition 8(ii) tells us that we don’t need separate axioms for sup and inf.<br>
+<i>Proof.</i> (i) Since <math>
   <mi>T</mi>
 </math> is bounded above, it has an upper bound, say b.<br>
-Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+Then <math>
   <mi>t</mi>
   <mo>⩽</mo>
   <mi>b</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>t</mi>
   <mo>∈</mo>
   <mi>T</mi>
-</math>, so certainly <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so certainly <math>
   <mi>t</mi>
   <mo>⩽</mo>
   <mi>b</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>t</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mi>b</mi>
-</math> is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is an upper bound for <math>
   <mi>S</mi>
 </math>.<br>
-Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+Now <math>
   <mi>S</mi>
   <mo>,</mo>
   <mi>T</mi>
 </math> are non-empty and bounded above, so by completeness each has a supremum.<br>
-Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
+Note that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>T</mi>
-</math> is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is an upper bound for <math>
   <mi>T</mi>
-</math> and hence also for S, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> and hence also for S, so <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>T</mi>
   <mo>⩾</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> (since <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> (since <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> is the least upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is the least upper bound for <math>
   <mi>S</mi>
 </math>).<br>
-(ii) Since <math xmlns="http://www.w3.org/1998/Math/MathML">
+(ii) Since <math>
   <mi>T</mi>
-</math> is non-empty, so is <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is non-empty, so is <math>
   <mi>S</mi>
-</math>. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Let <math>
   <mi>b</mi>
-</math> be a lower bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> be a lower bound for <math>
   <mi>T</mi>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mi>t</mi>
   <mo>⩾</mo>
   <mi>b</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>t</mi>
   <mo>∈</mo>
   <mi>T</mi>
 </math>.<br>
-Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+Then <math>
   <mo>−</mo>
   <mi>t</mi>
   <mo>⩽</mo>
   <mo form="prefix">−</mo>
   <mi>b</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>t</mi>
   <mo>∈</mo>
   <mi>T</mi>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mi>s</mi>
   <mo>⩽</mo>
   <mo form="prefix">−</mo>
   <mi>b</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>s</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mo>−</mo>
   <mi>b</mi>
-</math> is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is an upper bound for <math>
   <mi>S</mi>
-</math>. Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Now <math>
   <mi>S</mi>
 </math> is non-empty and bounded above, so by completeness it has a supremum.<br>
-Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+Then <math>
   <mi>s</mi>
   <mo>⩽</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>s</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mi>t</mi>
   <mo>⩾</mo>
   <mo form="prefix">−</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>t</mi>
   <mo>∈</mo>
   <mi>T</mi>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mo>−</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> is a lower bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is a lower bound for <math>
   <mi>T</mi>
 </math>.<br>
-Also, we saw before that if <math xmlns="http://www.w3.org/1998/Math/MathML">
+Also, we saw before that if <math>
   <mi>b</mi>
-</math> is a lower bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is a lower bound for <math>
   <mi>T</mi>
-</math> then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> then <math>
   <mo>−</mo>
   <mi>b</mi>
-</math> is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is an upper bound for <math>
   <mi>S</mi>
 </math>.<br>
-Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+Then <math>
   <mo>−</mo>
   <mi>b</mi>
   <mo>⩾</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> (since sup S is the least upper bound), so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> (since sup S is the least upper bound), so <math>
   <mi>b</mi>
   <mo>⩽</mo>
   <mo form="prefix">−</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math>. So <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. So <math>
   <mo>−</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> is the greatest lower bound. So <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is the greatest lower bound. So <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>T</mi>
-</math> exists and <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> exists and <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>T</mi>
   <mo>=</mo>
@@ -423,73 +407,67 @@ Then <math xmlns="http://www.w3.org/1998/Math/MathML">
 </math>.<br>
 You might be wondering how all this relates to familiar notions of maximum and minimum so let’s explore that.
 <blockquote>
-  <strong>Definition.</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Definition.</strong> Let <math>
     <mi>S</mi>
     <mo>⊆</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> be non-empty. Take <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> be non-empty. Take <math>
     <mi>M</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math>. We say that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math>. We say that <math>
     <mi>M</mi>
-  </math> is the maximum of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is the maximum of <math>
     <mi>S</mi>
   </math> if<br>
-  (i)<math xmlns="http://www.w3.org/1998/Math/MathML">
+  (i)<math>
     <mi>M</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math>;&nbsp; &nbsp; (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>;&nbsp; &nbsp; (<math>
     <mi>M</mi>
-  </math> is an element of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is an element of <math>
     <mi>S</mi>
   </math>)<br>
-  (ii)<math xmlns="http://www.w3.org/1998/Math/MathML">
+  (ii)<math>
     <mi>s</mi>
     <mo>≤</mo>
     <mi>M</mi>
-  </math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> for all <math>
     <mi>s</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math>&nbsp; &nbsp; (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>&nbsp; &nbsp; (<math>
     <mi>M</mi>
-  </math> is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is an upper bound for <math>
     <mi>S</mi>
   </math>).
 </blockquote>
-<i>Remark.</i> If <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Remark.</i> If <math>
   <mi>S</mi>
-</math> is empty or <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is empty or <math>
   <mi>S</mi>
-</math> is not bounded above then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is not bounded above then <math>
   <mi>S</mi>
 </math> does not have a maximum. (Check this!)<br>
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+Let <math>
   <mi>S</mi>
   <mo>⊆</mo>
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
-</math> be non-empty and bounded above, so (by completeness) <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℝ</mi>
+</math> be non-empty and bounded above, so (by completeness) <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
 </math> exists.<br>
-Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+Then <math>
   <mi>S</mi>
-</math> has a maximum if and only if <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> has a maximum if and only if <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math>. Also, if <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Also, if <math>
   <mi>S</mi>
-</math> has a maximum then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> has a maximum then <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">max</mo>
   <mi>S</mi>
   <mo>=</mo>
@@ -497,66 +475,60 @@ Then <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
 </math>. (Check this!)
 <blockquote>
-  <strong>Definition.</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Definition.</strong> Let <math>
     <mi>S</mi>
     <mo>⊆</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> be non-empty. Take <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> be non-empty. Take <math>
     <mi>m</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math>. We say that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math>. We say that <math>
     <mi>m</mi>
-  </math> is the minimum of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is the minimum of <math>
     <mi>S</mi>
   </math> if<br>
-  (i)<math xmlns="http://www.w3.org/1998/Math/MathML">
+  (i)<math>
     <mi>m</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math>; (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>; (<math>
     <mi>m</mi>
-  </math> is an element of <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is an element of <math>
     <mi>S</mi>
   </math>)<br>
-  (ii)<math xmlns="http://www.w3.org/1998/Math/MathML">
+  (ii)<math>
     <mi>s</mi>
     <mo>⩾</mo>
     <mi>m</mi>
-  </math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> for all <math>
     <mi>s</mi>
     <mo>∈</mo>
     <mi>S</mi>
-  </math> (<math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> (<math>
     <mi>m</mi>
-  </math> is a lower bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is a lower bound for <math>
     <mi>S</mi>
   </math>).
 </blockquote>
 Here is a key result about the supremum, which we’ll use a lot. It is a quick consequence of the definition, but it will be useful to have formulated it in this way.
 <blockquote>
-  <strong>Proposition 9</strong> (Approximation Property). Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Proposition 9</strong> (Approximation Property). Let <math>
     <mi>S</mi>
     <mo>⊆</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> be non-empty and bounded above. For any <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> be non-empty and bounded above. For any <math>
     <mi>ε</mi>
     <mo>&gt;</mo>
     <mn>0</mn>
-  </math>, there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>, there is <math>
     <msub>
       <mi>s</mi>
       <mi>ε</mi>
     </msub>
     <mo>∈</mo>
     <mi>S</mi>
-  </math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> such that <math>
     <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
     <mi>S</mi>
     <mo>−</mo>
@@ -571,39 +543,39 @@ Here is a key result about the supremum, which we’ll use a lot. It is a quick 
     <mi>S</mi>
   </math>.
 </blockquote>
-<i>Proof.</i> Take <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Proof.</i> Take <math>
   <mi>ε</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math>. Note that by definition of the supremum we have <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Note that by definition of the supremum we have <math>
   <mi>s</mi>
   <mo>⩽</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>s</mi>
   <mo>∈</mo>
   <mi>S</mi>
 </math>.<br>
-Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/MathML">
+Suppose, for a contradiction, that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>−</mo>
   <mi>ε</mi>
   <mo>⩾</mo>
   <mi>s</mi>
-</math> for all <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for all <math>
   <mi>s</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math>. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Then <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>−</mo>
   <mi>ε</mi>
-</math> is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is an upper bound for <math>
   <mi>S</mi>
-</math>, but <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, but <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>−</mo>
@@ -611,14 +583,14 @@ Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/Math
   <mo>&lt;</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math>. Contradiction. So there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Contradiction. So there is <math>
   <msub>
     <mi>s</mi>
     <mi>ε</mi>
   </msub>
   <mo>∈</mo>
   <mi>S</mi>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> with <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
   <mo>−</mo>
@@ -630,19 +602,15 @@ Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/Math
   </msub>
 </math>.<br>
 <font size="5">11 Existence of roots</font><br>
-Now that we have identified the completeness property of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
-</math>, we are ready to prove that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
+Now that we have identified the completeness property of <math>
+  <mi>ℝ</mi>
+</math>, we are ready to prove that <math>
+  <mi>ℝ</mi>
 </math> contains a square root of 2.
 <blockquote>
-  <strong>Theorem 10.</strong> There exists a unique positive real number <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Theorem 10.</strong> There exists a unique positive real number <math>
     <mi>α</mi>
-  </math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> such that <math>
     <msup>
       <mi>α</mi>
       <mn>2</mn>
@@ -651,15 +619,13 @@ Now that we have identified the completeness property of <math xmlns="http://www
     <mn>2</mn>
   </math>.
 </blockquote>
-<i>Proof.</i> <strong>Existence</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Proof.</i> <strong>Existence</strong> Let <math>
   <mi>S</mi>
   <mo>=</mo>
   <mo fence="false" stretchy="false">{</mo>
   <mi>s</mi>
   <mo>∈</mo>
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
+  <mi>ℝ</mi>
   <mo lspace="0">:</mo>
   <mi>s</mi>
   <mo>&gt;</mo>
@@ -673,74 +639,74 @@ Now that we have identified the completeness property of <math xmlns="http://www
   <mn>2</mn>
   <mo fence="false" stretchy="false">}</mo>
 </math>.<br>
-<font color="grey">Idea: argue that <math xmlns="http://www.w3.org/1998/Math/MathML">
+<font color="grey">Idea: argue that <math>
   <mi>S</mi>
-</math> has a supremum, and show that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> has a supremum, and show that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
   <mi>S</mi>
 </math> has the required properties.</font><br>
-Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
+Note that <math>
   <mi>S</mi>
-</math> is non-empty (eg <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is non-empty (eg <math>
   <mn>1</mn>
   <mo>∈</mo>
   <mi>S</mi>
-</math>) and <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>) and <math>
   <mi>S</mi>
-</math> is bounded above, because if <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is bounded above, because if <math>
   <mi>x</mi>
   <mo>&gt;</mo>
   <mn>2</mn>
-</math> then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> then <math>
   <msup>
     <mi>x</mi>
     <mn>2</mn>
   </msup>
   <mo>&gt;</mo>
   <mn>4</mn>
-</math> (properties of ordering) so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> (properties of ordering) so <math>
   <mi>x</mi>
   <mo>∉</mo>
   <mi>S</mi>
-</math>, so 2 is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so 2 is an upper bound for <math>
   <mi>S</mi>
 </math>.<br>
-So, by completeness, <math xmlns="http://www.w3.org/1998/Math/MathML">
+So, by completeness, <math>
   <mi>S</mi>
-</math> has a supremum. Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> has a supremum. Let <math>
   <mi>α</mi>
   <mo>=</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
 </math>.<br>
-Note that certainly <math xmlns="http://www.w3.org/1998/Math/MathML">
+Note that certainly <math>
   <mi>α</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math> (since <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> (since <math>
   <mn>1</mn>
   <mo>∈</mo>
   <mi>S</mi>
-</math> so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> so <math>
   <mi>α</mi>
   <mo>⩾</mo>
   <mn>1</mn>
 </math>).<br>
-By trichotomy, we have <math xmlns="http://www.w3.org/1998/Math/MathML">
+By trichotomy, we have <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
   </msup>
   <mo>&lt;</mo>
   <mn>2</mn>
-</math> or <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> or <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
   </msup>
   <mo>=</mo>
   <mn>2</mn>
-</math> or <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> or <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -748,14 +714,14 @@ By trichotomy, we have <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>&gt;</mo>
   <mn>2</mn>
 </math>.<br>
-Idea: show that if <math xmlns="http://www.w3.org/1998/Math/MathML">
+Idea: show that if <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
   </msup>
   <mo>&lt;</mo>
   <mn>2</mn>
-</math> or <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> or <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -763,14 +729,14 @@ Idea: show that if <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>&gt;</mo>
   <mn>2</mn>
 </math> then we get a contradiction.<br>
-<strong>Case 1</strong> Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/MathML">
+<strong>Case 1</strong> Suppose, for a contradiction, that <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
   </msup>
   <mo>&lt;</mo>
   <mn>2</mn>
-</math>. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Then <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -779,22 +745,22 @@ Idea: show that if <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>−</mo>
   <mi>ε</mi>
-</math> for some <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for some <math>
   <mi>ε</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
 </math>.<br>
-<font color="Gray">Idea: consider <math xmlns="http://www.w3.org/1998/Math/MathML">
+<font color="Gray">Idea: consider <math>
   <mi>α</mi>
   <mo>+</mo>
   <mi>h</mi>
-</math> for a small <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for a small <math>
   <mi>h</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math>. Later on, we’ll choose <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Later on, we’ll choose <math>
   <mi>h</mi>
-</math> small enough that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> small enough that <math>
   <mo stretchy="false">(</mo>
   <mi>α</mi>
   <mo>+</mo>
@@ -805,27 +771,27 @@ Idea: show that if <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msup>
   <mo>&lt;</mo>
   <mn>2</mn>
-</math>, and that will be a contradiction because <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, and that will be a contradiction because <math>
   <mi>α</mi>
   <mo>+</mo>
   <mi>h</mi>
   <mo>∈</mo>
   <mi>S</mi>
 </math>.</font><br>
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
+and <math>
   <mi>α</mi>
   <mo>+</mo>
   <mi>h</mi>
   <mo>&gt;</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math>. Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Note that <math>
   <mi>α</mi>
   <mo>⩽</mo>
   <mn>2</mn>
-</math> (we said earlier that 2 is an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> (we said earlier that 2 is an upper bound for <math>
   <mi>S</mi>
-</math>). For <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>). For <math>
   <mi>h</mi>
   <mo>∈</mo>
   <mo stretchy="false">(</mo>
@@ -834,7 +800,7 @@ and <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>1</mn>
   <mo stretchy="false">)</mo>
 </math> we have<br>
-<math xmlns="http://www.w3.org/1998/Math/MathML">
+<math>
   <mo stretchy="false">(</mo>
   <mi>α</mi>
   <mo>+</mo>
@@ -895,7 +861,7 @@ and <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>5</mn>
   <mi>h</mi>
 </math><br>
-so let <math xmlns="http://www.w3.org/1998/Math/MathML">
+so let <math>
   <mi>h</mi>
   <mo>=</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">min</mo>
@@ -912,7 +878,7 @@ so let <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mfrac>
     <mo>)</mo>
   </mrow>
-</math> and then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> and then <math>
   <mo stretchy="false">(</mo>
   <mi>α</mi>
   <mo>+</mo>
@@ -926,20 +892,20 @@ so let <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>&lt;</mo>
   <mn>2</mn>
 </math>.<br>
-Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+Now <math>
   <mi>α</mi>
   <mo>+</mo>
   <mi>h</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> and <math>
   <mi>α</mi>
   <mo>+</mo>
   <mi>h</mi>
   <mo>&gt;</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math>. This is a contradiction. So it is not the case that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. This is a contradiction. So it is not the case that <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -947,14 +913,14 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>&lt;</mo>
   <mn>2</mn>
 </math>.<br>
-<strong>Case 2</strong> Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/MathML">
+<strong>Case 2</strong> Suppose, for a contradiction, that <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
   </msup>
   <mo>&gt;</mo>
   <mn>2</mn>
-</math>. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Then <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -963,22 +929,22 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>2</mn>
   <mo>+</mo>
   <mi>ε</mi>
-</math> for some <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for some <math>
   <mi>ε</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
 </math>.<br>
-<font color="Gray">Idea: consider <math xmlns="http://www.w3.org/1998/Math/MathML">
+<font color="Gray">Idea: consider <math>
   <mi>α</mi>
   <mo>−</mo>
   <mi>h</mi>
-</math> for a small <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> for a small <math>
   <mi>h</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math>. Later on, we’ll choose <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Later on, we’ll choose <math>
   <mi>h</mi>
-</math> small enough that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> small enough that <math>
   <mo stretchy="false">(</mo>
   <mi>α</mi>
   <mo>−</mo>
@@ -989,7 +955,7 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msup>
   <mo>&gt;</mo>
   <mn>2</mn>
-</math>, and that will lead to a contradiction because <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, and that will lead to a contradiction because <math>
   <mi>α</mi>
   <mo>−</mo>
   <mi>h</mi>
@@ -997,7 +963,7 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
 </math>.</font><br>
-For <math xmlns="http://www.w3.org/1998/Math/MathML">
+For <math>
   <mi>h</mi>
   <mo>∈</mo>
   <mo stretchy="false">(</mo>
@@ -1005,7 +971,7 @@ For <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>,</mo>
   <mn>1</mn>
   <mo stretchy="false">)</mo>
-</math> we have <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> we have <math>
   <mo stretchy="false">(</mo>
   <mi>α</mi>
   <mo>−</mo>
@@ -1057,7 +1023,7 @@ For <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mn>4</mn>
   <mi>h</mi>
 </math><br>
-so choose <math xmlns="http://www.w3.org/1998/Math/MathML">
+so choose <math>
   <mi>h</mi>
   <mo>=</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">min</mo>
@@ -1079,7 +1045,7 @@ so choose <math xmlns="http://www.w3.org/1998/Math/MathML">
     </mfrac>
     <mo>)</mo>
   </mrow>
-</math> and then <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> and then <math>
   <mo stretchy="false">(</mo>
   <mi>α</mi>
   <mo>−</mo>
@@ -1092,32 +1058,32 @@ so choose <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msup>
   <mo>&gt;</mo>
   <mn>2</mn>
-</math> (and also <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> (and also <math>
   <mi>α</mi>
   <mo>−</mo>
   <mi>h</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
 </math>)<br>
-Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+Now <math>
   <mi>α</mi>
   <mo>−</mo>
   <mi>h</mi>
   <mo>&lt;</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
   <mi>S</mi>
-</math>, so by the Approximation property there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so by the Approximation property there is <math>
   <mi>s</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> with <math>
   <mi>α</mi>
   <mo>−</mo>
   <mi>h</mi>
   <mo>&lt;</mo>
   <mi>s</mi>
 </math>.<br>
-But then <math xmlns="http://www.w3.org/1998/Math/MathML">
+But then <math>
   <mn>2</mn>
   <mo>&lt;</mo>
   <mo stretchy="false">(</mo>
@@ -1136,7 +1102,7 @@ But then <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>&lt;</mo>
   <mn>2</mn>
 </math>, which is a contradiction.<br>
-So it is not the case that <math xmlns="http://www.w3.org/1998/Math/MathML">
+So it is not the case that <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -1144,7 +1110,7 @@ So it is not the case that <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>&gt;</mo>
   <mn>2</mn>
 </math>.<br>
-Hence, by trichotomy, <math xmlns="http://www.w3.org/1998/Math/MathML">
+Hence, by trichotomy, <math>
   <msup>
     <mi>α</mi>
     <mn>2</mn>
@@ -1152,9 +1118,9 @@ Hence, by trichotomy, <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>=</mo>
   <mn>2</mn>
 </math>.<br>
-Uniqueness Suppose that <math xmlns="http://www.w3.org/1998/Math/MathML">
+Uniqueness Suppose that <math>
   <mi>β</mi>
-</math> is also a positive real number such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is also a positive real number such that <math>
   <msup>
     <mi>β</mi>
     <mn>2</mn>
@@ -1162,12 +1128,12 @@ Uniqueness Suppose that <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>=</mo>
   <mn>2</mn>
 </math>.<br>
-<font color="Gray">Aim: <math xmlns="http://www.w3.org/1998/Math/MathML">
+<font color="Gray">Aim: <math>
   <mi>α</mi>
   <mo>=</mo>
   <mi>β</mi>
 </math>.</font><br>
-Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+Then <math>
   <mn>0</mn>
   <mo>=</mo>
   <msup>
@@ -1190,75 +1156,57 @@ Then <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mo>+</mo>
   <mi>β</mi>
   <mo stretchy="false">)</mo>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> and <math>
   <mi>α</mi>
   <mo>+</mo>
   <mi>β</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math>, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, so <math>
   <mi>α</mi>
   <mo>=</mo>
   <mi>β</mi>
 </math>.
 <blockquote>
-  <strong>Proposition 11.</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">Q</mi>
-    </mrow>
-  </math> is not complete (with the ordering inherited from <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
+  <strong>Proposition 11.</strong> <math>
+    <mi>ℚ</mi>
+  </math> is not complete (with the ordering inherited from <math>
+    <mi>ℝ</mi>
   </math>).
 </blockquote>
-<i>Proof.</i> If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">Q</mi>
-  </mrow>
-</math> were complete, then the proof of Theorem 10 would work just as well in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">Q</mi>
-  </mrow>
-</math>. But we know that there is not an element of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">Q</mi>
-  </mrow>
-</math> that squares to 2. So <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">Q</mi>
-  </mrow>
+<i>Proof.</i> If <math>
+  <mi>ℚ</mi>
+</math> were complete, then the proof of Theorem 10 would work just as well in <math>
+  <mi>ℚ</mi>
+</math>. But we know that there is not an element of <math>
+  <mi>ℚ</mi>
+</math> that squares to 2. So <math>
+  <mi>ℚ</mi>
 </math> is not complete.
 <blockquote>
-  <strong>Theorem 12.</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Theorem 12.</strong> Let <math>
     <mi>n</mi>
-  </math> be an integer with <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> be an integer with <math>
     <mi>n</mi>
     <mo>⩾</mo>
     <mn>2</mn>
-  </math>, and take a positive real number <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>, and take a positive real number <math>
     <mi>r</mi>
-  </math>. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math>. Then <math>
     <mi>r</mi>
-  </math> has a real <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> has a real <math>
     <mi>n</mi>
   </math>th root.
 </blockquote>
 <i>Proof.</i> Exercise. (See Sheet 2 for the case of the cube root of 2.)<br>
 <font size="5">12 More consequences of completeness</font><br>
-In this course, we write <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math> for the set of positive integers, so <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
+In this course, we write <math>
+  <mi>ℕ</mi>
+</math> for the set of positive integers, so <math>
+  <mi>ℕ</mi>
   <mo>=</mo>
   <msup>
-    <mrow>
-      <mi mathvariant="double-struck">Z</mi>
-    </mrow>
+    <mi>ℤ</mi>
     <mrow>
       <mo>&gt;</mo>
       <mn>0</mn>
@@ -1266,52 +1214,36 @@ In this course, we write <math xmlns="http://www.w3.org/1998/Math/MathML">
   </msup>
 </math>.
 <blockquote>
-  <strong>Theorem 13</strong> (Archimedean property of <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">N</mi>
-    </mrow>
-  </math>). <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">N</mi>
-    </mrow>
+  <strong>Theorem 13</strong> (Archimedean property of <math>
+    <mi>ℕ</mi>
+  </math>). <math>
+    <mi>ℕ</mi>
   </math> <i>is not bounded above</i>.
 </blockquote>
 <i>Proof.</i> <font color="Gray">Idea: if there’s an upper bound then we can find a natural number just less than it, and add 1.</font><br>
-Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math> is bounded above. Then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math> is non-empty and bounded above, so by completeness (of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
-</math>) <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
+Suppose, for a contradiction, that <math>
+  <mi>ℕ</mi>
+</math> is bounded above. Then <math>
+  <mi>ℕ</mi>
+</math> is non-empty and bounded above, so by completeness (of <math>
+  <mi>ℝ</mi>
+</math>) <math>
+  <mi>ℕ</mi>
 </math> has a supremum.<br>
-By the Approximation property with <math xmlns="http://www.w3.org/1998/Math/MathML">
+By the Approximation property with <math>
   <mi>ε</mi>
   <mo>=</mo>
   <mfrac>
     <mn>1</mn>
     <mn>2</mn>
   </mfrac>
-</math>, there is a natural number <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, there is a natural number <math>
   <mi>n</mi>
   <mo>∈</mo>
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℕ</mi>
+</math> such that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">sup</mo>
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
+  <mi>ℕ</mi>
   <mo>−</mo>
   <mfrac>
     <mn>1</mn>
@@ -1321,38 +1253,30 @@ By the Approximation property with <math xmlns="http://www.w3.org/1998/Math/Math
   <mi>n</mi>
   <mo>⩽</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math>. Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℕ</mi>
+</math>. Now <math>
   <mi>n</mi>
   <mo>+</mo>
   <mn>1</mn>
   <mo>∈</mo>
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℕ</mi>
+</math> and <math>
   <mi>n</mi>
   <mo>+</mo>
   <mn>1</mn>
   <mo>&gt;</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">sup</mo>
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
+  <mi>ℕ</mi>
 </math>. This is a contradiction.<br>
-<strong>Corollary 14.</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+<strong>Corollary 14.</strong> Let <math>
   <mi>ε</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math>. Then there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Then there is <math>
   <mi>n</mi>
   <mo>∈</mo>
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
-</math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>ℕ</mi>
+</math> such that <math>
   <mn>0</mn>
   <mo>&lt;</mo>
   <mfrac>
@@ -1362,38 +1286,34 @@ By the Approximation property with <math xmlns="http://www.w3.org/1998/Math/Math
   <mo>&lt;</mo>
   <mi>ε</mi>
 </math>.<br>
-<i>Proof.</i> If not, then <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Proof.</i> If not, then <math>
   <mfrac>
     <mn>1</mn>
     <mi>ε</mi>
   </mfrac>
-</math> would be an upper bound for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">N</mi>
-  </mrow>
+</math> would be an upper bound for <math>
+  <mi>ℕ</mi>
 </math>. This would contradict Theorem 13.
 <blockquote>
-  <strong>Theorem 15.</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Theorem 15.</strong> Let <math>
     <mi>S</mi>
-  </math> be a non-empty subset of <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow>
-      <mi mathvariant="double-struck">Z</mi>
-    </mrow>
+  </math> be a non-empty subset of <math>
+    <mi>ℤ</mi>
   </math>.<br>
-  (i) If <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (i) If <math>
     <mi>S</mi>
-  </math> is bounded below, then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is bounded below, then <math>
     <mi>S</mi>
   </math> has a minimum.<br>
-  (ii) If <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (ii) If <math>
     <mi>S</mi>
-  </math> is bounded above, then <math xmlns="http://www.w3.org/1998/Math/MathML">
+  </math> is bounded above, then <math>
     <mi>S</mi>
   </math> has a maximum.
 </blockquote>
-<i>Proof.</i> (i) Assume that <math xmlns="http://www.w3.org/1998/Math/MathML">
+<i>Proof.</i> (i) Assume that <math>
   <mi>S</mi>
-</math> is bounded below. Then, by completeness (applied to <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is bounded below. Then, by completeness (applied to <math>
   <mo fence="false" stretchy="false">{</mo>
   <mo form="prefix">−</mo>
   <mi>s</mi>
@@ -1402,24 +1322,24 @@ By the Approximation property with <math xmlns="http://www.w3.org/1998/Math/Math
   <mo>∈</mo>
   <mi>S</mi>
   <mo fence="false" stretchy="false">}</mo>
-</math>), <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>), <math>
   <mi>S</mi>
 </math> has an infimum.<br>
-<font color="Gray">Secret aim: <math xmlns="http://www.w3.org/1998/Math/MathML">
+<font color="Gray">Secret aim: <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>∈</mo>
   <mi>S</mi>
 </math>.</font><br>
-By the Approximation property (with <math xmlns="http://www.w3.org/1998/Math/MathML">
+By the Approximation property (with <math>
   <mi>ε</mi>
   <mo>=</mo>
   <mn>1</mn>
-</math>), there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>), there is <math>
   <mi>n</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> such that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>⩽</mo>
@@ -1429,40 +1349,40 @@ By the Approximation property (with <math xmlns="http://www.w3.org/1998/Math/Mat
   <mi>S</mi>
   <mo>+</mo>
   <mn>1</mn>
-</math>. <font color="Gray">Aim: <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. <font color="Gray">Aim: <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>=</mo>
   <mi>n</mi>
 </math>.</font><br>
-Suppose, for a contradiction, that <math xmlns="http://www.w3.org/1998/Math/MathML">
+Suppose, for a contradiction, that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>&lt;</mo>
   <mi>n</mi>
-</math>. Write <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Write <math>
   <mi>n</mi>
   <mo>=</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>+</mo>
   <mi>δ</mi>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>, where <math>
   <mn>0</mn>
   <mo>&lt;</mo>
   <mi>δ</mi>
   <mo>&lt;</mo>
   <mn>1</mn>
 </math>.<br>
-By the Approximation property (with <math xmlns="http://www.w3.org/1998/Math/MathML">
+By the Approximation property (with <math>
   <mi>ε</mi>
   <mo>=</mo>
   <mi>δ</mi>
-</math>), there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>), there is <math>
   <mi>m</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> such that <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>⩽</mo>
@@ -1475,27 +1395,27 @@ By the Approximation property (with <math xmlns="http://www.w3.org/1998/Math/Mat
   <mo>=</mo>
   <mi>n</mi>
 </math>.<br>
-Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+Now <math>
   <mi>m</mi>
   <mo>&lt;</mo>
   <mi>n</mi>
-</math> so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> so <math>
   <mi>n</mi>
   <mo>−</mo>
   <mi>m</mi>
   <mo>&gt;</mo>
   <mn>0</mn>
-</math> but <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> but <math>
   <mi>n</mi>
   <mo>−</mo>
   <mi>m</mi>
-</math> is an integer, so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> is an integer, so <math>
   <mi>n</mi>
   <mo>−</mo>
   <mi>m</mi>
   <mo>⩾</mo>
   <mn>1</mn>
-</math>. Now <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. Now <math>
   <mi>n</mi>
   <mo>⩾</mo>
   <mi>m</mi>
@@ -1506,14 +1426,14 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mi>S</mi>
   <mo>+</mo>
   <mn>1</mn>
-</math>. This is a contradiction. So <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math>. This is a contradiction. So <math>
   <mi>n</mi>
   <mo>=</mo>
   <mo movablelimits="false" lspace="0" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>∈</mo>
   <mi>S</mi>
-</math> so <math xmlns="http://www.w3.org/1998/Math/MathML">
+</math> so <math>
   <mo movablelimits="false" lspace="0.1em" rspace="0.1em">inf</mo>
   <mi>S</mi>
   <mo>=</mo>
@@ -1522,43 +1442,35 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
 </math>.<br>
 (ii) Similar.
 <blockquote>
-  <strong>Proposition 16.</strong> Take <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <strong>Proposition 16.</strong> Take <math>
     <mi>a</mi>
     <mo>,</mo>
     <mi>b</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
-  </math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℝ</mi>
+  </math> with <math>
     <mi>a</mi>
     <mo>&lt;</mo>
     <mi>b</mi>
   </math>. Then<br>
-  (i) there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (i) there is <math>
     <mi>x</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">Q</mi>
-    </mrow>
-  </math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℚ</mi>
+  </math> such that <math>
     <mi>a</mi>
     <mo>&lt;</mo>
     <mi>x</mi>
     <mo>&lt;</mo>
     <mi>b</mi>
   </math> (the rationals are dense in the reals); and<br>
-  (ii) there is <math xmlns="http://www.w3.org/1998/Math/MathML">
+  (ii) there is <math>
     <mi>y</mi>
     <mo>∈</mo>
-    <mrow>
-      <mi mathvariant="double-struck">R</mi>
-    </mrow>
+    <mi>ℝ</mi>
     <mo>∖</mo>
-    <mrow>
-      <mi mathvariant="double-struck">Q</mi>
-    </mrow>
-  </math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>ℚ</mi>
+  </math> such that <math>
     <mi>a</mi>
     <mo>&lt;</mo>
     <mi>y</mi>
@@ -1568,12 +1480,8 @@ Now <math xmlns="http://www.w3.org/1998/Math/MathML">
 </blockquote>
 <i>Proof.</i> Exercise (see Sheet 2)<br>
 <br>
-<font size="5">Summary of our work so far</font><blockquote><math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
-</math> is a complete ordered field.</blockquote>This sums up the key properties we have identified as our assumptions about <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mi mathvariant="double-struck">R</mi>
-  </mrow>
+<font size="5">Summary of our work so far</font><blockquote><math>
+  <mi>ℝ</mi>
+</math> is a complete ordered field.</blockquote>This sums up the key properties we have identified as our assumptions about <math>
+  <mi>ℝ</mi>
 </math>. From this, we shall develop the theory of real analysis.
