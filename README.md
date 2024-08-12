@@ -5,5 +5,5 @@ Don't hesitate to:
 - [Open an issue](https://github.com/hbghlyj/hbghlyj.github.io/issues)
 - [Open a PR](https://github.com/hbghlyj/hbghlyj.github.io/pulls)
 
-# 📁 The Posts Folder
+# 📁 The `_posts` folder
 The [_posts](https://github.com/hbghlyj/hbghlyj.github.io/tree/main/_posts) folder is where my blog posts live. I write posts in HTML. The file name format is `YYYY-MM-DD-title.html`. If you prefer to write in Markdown, you can use [Pandoc](https://pandoc.org/try/) to convert it to HTML. Equations can either be written in LaTeX or MathML. The benefit of using MathML is that it can be parsed by Math-aware search engines like [Approach0](https://approach0.xyz/search/).
