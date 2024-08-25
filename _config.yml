@@ -220,6 +220,7 @@ defaults:
 ## => Plugins
 ##############################
 plugins:
+  - jekyll-quicklatex
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
