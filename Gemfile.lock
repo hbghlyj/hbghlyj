@@ -144,6 +144,7 @@ GEM
     jekyll-optional-front-matter (0.3.2)
       jekyll (>= 3.0, < 5.0)
     jekyll-paginate (1.1.0)
+    jekyll-quicklatex (0.1.2)
     jekyll-readme-index (0.3.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-redirect-from (0.16.0)
@@ -275,6 +276,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-quicklatex
 
 BUNDLED WITH
    2.5.17
