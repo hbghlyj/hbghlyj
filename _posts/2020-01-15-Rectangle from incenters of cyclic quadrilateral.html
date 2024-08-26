@@ -1,0 +1,319 @@
+<style>
+blockquote {
+    border-left: 3px solid #ccc;
+    margin-left: 0;
+    padding-left: 1em;
+    color: #999;
+}
+cite {
+    font-family: 楷体;
+    font-style: normal;
+}
+</style>
+<blockquote>命题1：若ABCD为圆内接四边形, 则△ABC, △BCD, △CDA, △DAB的内心所构成的四边形为矩形.</blockquote>
+<ul>
+<li><cite>中国数学奥林匹克集训题 1986</cite>, 证明见 <cite>中等数学 1992</cite></li>
+<li><cite>几何学辞典</cite>, 世部贞市郎, 命题587</li>
+<li><cite>走向国际数学奥林匹克的平面几何试题诠释：历届全国高中数学联赛平面几何试题一题多解(上)</cite>, 沈文选, 第 14 章 1992~1993 年度试题的诠释, 第 2 节 圆内接四边形的两个充要条件</li>
+</ul>
+<table>
+<tr><td>
+<tex>\documentclass[tikz]{standalone}
+\usetikzlibrary{intersections}
+
+\begin{document}
+\def\A{135}
+\def\B{200}
+\def\C{-40}
+\def\D{55}
+\def\R{4}
+
+\begin{tikzpicture}
+    \draw (0,0) circle (\R);
+    \coordinate[label=\A:$A$] (A) at (\A:\R);
+    \coordinate[label=\B:$B$] (B) at (\B:\R);
+    \coordinate[label=\C:$C$] (C) at (\C:\R);
+    \coordinate[label=\D:$D$] (D) at (\D:\R);
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw(A) -- (C) (B) -- (D);
+    \coordinate (E) at (\A/2 + \B/2:\R);
+    \coordinate (F) at (\B/2 + 180 + \C/2:\R);
+    \coordinate (G) at (\C/2 + \D/2:\R);
+    \coordinate (H) at (\D/2 + \A/2:\R);
+    
+    % Define the intersections
+    \path[name path=DE] (D) -- (E);
+    \path[name path=BH] (B) -- (H);
+    \path[name path=CE] (C) -- (E);
+    \path[name path=AF] (A) -- (F);
+    \path[name path=BG] (B) -- (G);
+    \path[name path=DF] (D) -- (F);
+    \path[name path=AG] (A) -- (G);
+    \path[name path=CH] (C) -- (H);
+    
+    \coordinate[name intersections={of=DE and BH, by=I_A}];
+    \coordinate[name intersections={of=CE and AF, by=I_B}];
+    \coordinate[name intersections={of=BG and DF, by=I_C}];
+    \coordinate[name intersections={of=AG and CH, by=I_D}];
+    
+    % Draw the segments connecting the incenters
+    \draw[thick] (I_A) node[left] {$I_A$} -- (I_B) node[left] {$I_B$} -- (I_C) node[right] {$I_C$} -- (I_D) node[right] {$I_D$} -- cycle;
+    \draw[dashed] (I_A) -- (I_C) (I_B) -- (I_D)(I_A) --(E)-- (I_B) (I_C) --(G)-- (I_D);
+    
+    % Draw the midpoints
+    \draw[dashed](E)node[left]{$E$}--(G)node[right]{$G$}(F)node[below]{$F$}--(H)node[above]{$H$};
+\end{tikzpicture}
+\end{document}
+</tex></td><td>【<font face="kaiti">证明</font>】令△DAB, △ABC, △BCD, △CDA的内心为$I_A,I_B,I_C,I_D$,<br>
+并设E, F, G, H分别为AB弧, BC弧, CD弧, 和DA弧的中点.<br>
+那么$I_A$在DE上, $I_B$在CE上且E$I_A=EA=EB$, $EI_B=EA=EB$, 故$EI_A=EI_B$.<br>
+又EG为∠DEC的平分线, 故$I_AI_B⊥EG$.<br>
+同理$I_CI_D⊥EG$, $I_BI_C⊥FH$, $I_AI_D⊥FH$.<br>
+于是$I_AI_B∥I_CI_D$且$I_AI_D∥I_BI_C$.<br>
+而EG⊥FH, 这告诉我们$I_AI_B⊥I_AI_D$, 故$I_AI_BI_CI_D$为矩形.</td></tr></table>
+下面用命题1证明:
+<blockquote>定理1：△ABC, △BCD, △CDA, △DAB的内切圆半径为$r_A,r_B,r_C,r_D$.<br>
+若$ABCD$为圆内接四边形, 则$r_A+r_C=r_B+r_D$.
+</blockquote>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Japanese_theorem_for_cyclic_quadrilaterals">Japanese theorem for cyclic quadrilaterals - Wikipedia</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/圓內接四邊形的日本定理">圓內接四邊形的日本定理 - 维基百科</a></li>
+<li>Wilfred Reyes: <a href="http://forumgeom.fau.edu/FG2002volume2/FG200223.pdf"><i>An Application of Thebault's Theorem</i></a>. Forum Geometricorum, Volume 2, 2002, pp. 183–185</li>
+</ul>
+<table>
+<tr><td>
+<tex>\documentclass[tikz]{standalone}
+\usetikzlibrary{intersections,calc}
+
+\begin{document}
+\def\A{135}
+\def\B{200}
+\def\C{-40}
+\def\D{55}
+\def\R{4}
+
+\begin{tikzpicture}[incircle/.style n args={3}{insert path={let \p1=($(#1)!(#3)!(#2)$), \p2=($(#3)-(\p1)$), \n1={veclen(\p2)} in (#3) circle (\n1)}}]
+    \coordinate[label=\A:$A$] (A) at (\A:\R);
+    \coordinate[label=\B:$B$] (B) at (\B:\R);
+    \coordinate[label=\C:$C$] (C) at (\C:\R);
+    \coordinate[label=\D:$D$] (D) at (\D:\R);
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw(A) -- (C) (B) -- (D);
+    \coordinate (E) at (\A/2 + \B/2:\R);
+    \coordinate (F) at (\B/2 + 180 + \C/2:\R);
+    \coordinate (G) at (\C/2 + \D/2:\R);
+    \coordinate (H) at (\D/2 + \A/2:\R);
+    
+    % Define the intersections
+    \path[name path=DE] (D) -- (E);
+    \path[name path=BH] (B) -- (H);
+    \path[name path=CE] (C) -- (E);
+    \path[name path=AF] (A) -- (F);
+    \path[name path=BG] (B) -- (G);
+    \path[name path=DF] (D) -- (F);
+    \path[name path=AG] (A) -- (G);
+    \path[name path=CH] (C) -- (H);
+    
+    \coordinate[name intersections={of=DE and BH, by=I_A}];
+    \coordinate[name intersections={of=CE and AF, by=I_B}];
+    \coordinate[name intersections={of=BG and DF, by=I_C}];
+    \coordinate[name intersections={of=AG and CH, by=I_D}];
+    \draw[incircle={A}{B}{I_A}];
+    \draw[incircle={B}{C}{I_B}];
+    \draw[incircle={C}{D}{I_C}];
+    \draw[incircle={D}{A}{I_D}];
+\end{tikzpicture}
+\end{document}</tex></td><td>【<font face="kaiti">证明</font>】用命题1得，$I_AI_C=I_BI_D$<br>
+$r_A+r_C$会等于$I_AI_C$乘上$I_AI_C$与BD夹角正弦值, $r_B+r_D$会等于$I_BI_D$乘上$I_BI_D$与AC夹角正弦值.<br>
+因为所以只要证明那两个夹角相等就可以.<br>$I_AI_C$与$I_BI_D$和EG的夹角相等, AC和EG的夹角是(AE弧+CG弧)/2, BD和EG的夹角是(BE弧+DG弧)/2, 所以AC与BD和EG的夹角也相等.<br>
+故$I_AI_C$与$BD$的夹角和$I_BI_D$与$AC$的夹角相等, 就得到$r_A+r_C=r_B+r_D$了.</td></tr></table>
+下面证明定理1的逆命题。首先证明:
+<blockquote>命题2：△ABC, △BCD, △CDA, △DAB的内切圆半径为$r_A,r_B,r_C,r_D$.<br>若$r_A+r_C=r_B+r_D$, 则$I_AI_BI_CI_D$为矩形.</blockquote>
+<table>
+<tr><td>
+<tex>\documentclass[tikz]{standalone}
+\usetikzlibrary{intersections,calc}
+
+\begin{document}
+\def\A{135}
+\def\B{200}
+\def\C{-40}
+\def\D{55}
+\def\R{4}
+
+\begin{tikzpicture}
+    \coordinate[label=\A:$A$] (A) at (\A:\R);
+    \coordinate[label=\B:$B$] (B) at (\B:\R);
+    \coordinate[label=\C:$C$] (C) at (\C:\R);
+    \coordinate[label=\D:$D$] (D) at (\D:\R);
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw(A) -- (C) (B) -- (D);
+    \coordinate (E) at (\A/2 + \B/2:\R);
+    \coordinate (F) at (\B/2 + 180 + \C/2:\R);
+    \coordinate (G) at (\C/2 + \D/2:\R);
+    \coordinate (H) at (\D/2 + \A/2:\R);
+    
+    % Define the intersections
+    \path[name path=DE] (D) -- (E);
+    \path[name path=BH] (B) -- (H);
+    \path[name path=CE] (C) -- (E);
+    \path[name path=AF] (A) -- (F);
+    \path[name path=BG] (B) -- (G);
+    \path[name path=DF] (D) -- (F);
+    \path[name path=AG] (A) -- (G);
+    \path[name path=CH] (C) -- (H);
+    
+    \coordinate[name intersections={of=DE and BH, by=I_A}];
+    \coordinate[name intersections={of=CE and AF, by=I_B}];
+    \coordinate[name intersections={of=BG and DF, by=I_C}];
+    \coordinate[name intersections={of=AG and CH, by=I_D}];
+    
+    % Draw the segments connecting the incenters
+    \draw[thick] (I_A) node[left] {$I_A$} -- (I_B) node[left] {$I_B$} -- (I_C) node[right] {$I_C$} -- (I_D) node[right] {$I_D$} -- cycle;
+
+    \coordinate[label=left:$K$] (K) at ($(A)!(I_A)!(B)$);
+    \coordinate[label=left:$L$] (L) at ($(A)!(I_B)!(B)$);
+    \coordinate[label=right:$M$] (M) at ($(C)!(I_C)!(D)$);
+    \coordinate[label=right:$N$] (N) at ($(C)!(I_D)!(D)$);
+    \draw[dashed](K)--(I_A)(L)--(I_B)(M)--(I_C)(N)--(I_D);
+\end{tikzpicture}
+\end{document}</tex></td><td>【<font face="kaiti">先证明两双对边分别相等</font>】<br>分别过$I_A$和$I_B$作$AB$的垂线，令垂足为$K$、$L$.<br>
+那么$I_AK=r_A$，$I_BL=r_B$.<br>
+$I_AI_B^2=(I_AK-I_BL)^2+KL^2=(r_A-r_B)^2+KL^2$.<br>
+$KL=AL-AK=(AB+AC-BC)/2-(AB+AD-BD)/2=(AC+BD-AD-BC)/2$.<br>
+再分别过$I_C$和$I_D$作$CD$的垂线，令垂足为$M$、$N$.<br>
+那么$I_CM=r_C$，$I_DN=r_D$.<br>
+$I_CI_D^2=(I_CM-I_DN)^2+MN^2=(r_C-r_D)^2+MN^2$.<br>
+$MN=CN-CM=(CD+AC-AD)/2-(CD+BC-BD)/2=(AC+BD-AD-BC)/2$.<br>
+因为$r_A+r_C=r_B+r_D$，可知$r_A-r_B=r_C-r_D$.<br>
+故$I_AI_B=I_CI_D$.<br>
+同理$I_AI_D=I_BI_C$.<br>
+故$I_AI_BI_CI_D$为平行四边形.</td></tr>
+<tr><td><tex>\documentclass[tikz]{standalone}
+\usetikzlibrary{intersections,calc}
+
+\begin{document}
+\def\A{135}
+\def\B{190}
+\def\C{-45}
+\def\D{55}
+\def\R{4}
+
+\begin{tikzpicture}
+    \coordinate[label=\A:$A$] (A) at (\A:\R);
+    \coordinate[label=\B:$B$] (B) at (\B:\R);
+    \coordinate[label=\C:$C$] (C) at (\C:\R);
+    \coordinate[label=\D:$D$] (D) at (\D:\R);
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw(A) -- (C) (B) -- (D);
+    \coordinate (E) at (\A/2 + \B/2:\R);
+    \coordinate (F) at (\B/2 + 180 + \C/2:\R);
+    \coordinate (G) at (\C/2 + \D/2:\R);
+    \coordinate (H) at (\D/2 + \A/2:\R);
+    
+    % Define the intersections
+    \path[name path=DE] (D) -- (E);
+    \path[name path=BH] (B) -- (H);
+    \path[name path=CE] (C) -- (E);
+    \path[name path=AF] (A) -- (F);
+    \path[name path=BG] (B) -- (G);
+    \path[name path=DF] (D) -- (F);
+    \path[name path=AG] (A) -- (G);
+    \path[name path=CH] (C) -- (H);
+    
+    \coordinate[name intersections={of=DE and BH, by=I_A}];
+    \coordinate[name intersections={of=CE and AF, by=I_B}];
+    \coordinate[name intersections={of=BG and DF, by=I_C}];
+    \coordinate[name intersections={of=AG and CH, by=I_D}];
+    
+    % Draw the segments connecting the incenters
+    \draw[thick] (I_A) node[left] {$I_A$} -- (I_B) node[left] {$I_B$} -- (I_C) node[right] {$I_C$} -- (I_D) node[right] {$I_D$} -- cycle;
+
+    \coordinate[label=below:$P$] (P) at ($(D)!(I_A)!(B)$);
+    \coordinate[label={[label distance=-1mm]70:$S$}] (S) at ($(A)!(I_B)!(C)$);
+    \coordinate[label=above:$Q$] (Q) at ($(B)!(I_C)!(D)$);
+    \coordinate[label=left:$T$] (T) at ($(A)!(I_D)!(C)$);
+    \draw[dashed](P)--(I_A)(S)--(I_B)(Q)--(I_C)(T)--(I_D);
+\end{tikzpicture}
+\end{document}</tex></td><td>【<font face="kaiti">再证明对角线等长</font>】<br>
+分别过$I_A$和$I_C$作$BD$的垂线，令垂足为$P$、$Q$.<br>
+那么$I_AP=r_A$，$I_CQ=r_C$.<br>
+$I_AI_C^2=(I_AP+I_CQ)^2+PQ^2=(r_A+r_C)^2+PQ^2$.<br>
+$PQ=|BQ-BP|=|(AB+CD-AD-BC)/2|$.<br>
+再分别过$I_B$和$I_D$作$AC$的垂线，令垂足为$S$、$T$.<br>
+那么$I_BS=r_B$，$I_DT=r_D$.<br>
+$I_BI_D^2=(I_BS+I_DT)^2+ST^2=(r_B+r_D)^2+ST^2$.<br>
+$ST=|AS-AT|=|(AB+CD-AD-BC)/2|$.<br>
+故$I_AI_C=I_BI_D$.<br>
+对角线等长的平行四边形为矩形，故$I_AI_BI_CI_D$为矩形。
+</td></tr></table>
+最后，就可以证明之前想要的逆命题：
+<blockquote>定理1的逆：△ABC, △BCD, △CDA, △DAB的内切圆半径为$r_A,r_B,r_C,r_D$.<br>若$r_A+r_C=r_B+r_D$, 那么$ABCD$为圆内接四边形.</blockquote>
+<table><tr><td><tex>\documentclass[tikz]{standalone}
+\usetikzlibrary{intersections,calc}
+
+\begin{document}
+\def\A{135}
+\def\B{260}
+\def\C{-45}
+\def\D{55}
+\def\R{4}
+\newcommand{\bisect}[3]{%
+let
+    \p1 = ($(#2)!5cm!(#1)$),
+    \p2 = ($(#2)!5cm!(#3)$),
+    \p3 = ($(\p1) + (\p2) - (#2)$)
+in
+    (#2) -- (\p3) ;
+}
+\begin{tikzpicture}
+    \draw(0,0)circle(\R);
+    \coordinate[label=\A:$A$] (A) at (\A:\R);
+    \coordinate[label=\B:$B$] (B) at (\B:\R);
+    \coordinate[label=\C:$C$] (C) at (\C:\R);
+    \coordinate[label=\D:$E$] (D1) at (\D:\R);
+    \coordinate[label=\D:$D$] (D) at ($(D1)!-.4!(B)$);
+    \draw (A) -- (B) -- (C) -- (D) -- cycle;
+    \draw(A) -- (C) (B) -- (D);
+    \draw[dashed](A)--(D1)--(C);
+    \coordinate (E) at (\A/2 + \B/2:\R);
+    \coordinate (F) at (\B/2 + 180 + \C/2:\R);
+    \coordinate (G) at (\C/2 + \D/2:\R);
+    \coordinate (H) at (\D/2 + \A/2:\R);
+    
+    % Define the intersections
+    \path[name path=DE] (D1) -- (E);
+    \path[name path=BH] (B) -- (H);
+    \path[name path=CE] (C) -- (E);
+    \path[name path=AF] (A) -- (F);
+    \path[name path=BG] (B) -- (G);
+    \path[name path=DF] (D1) -- (F);
+    \path[name path=AG] (A) -- (G);
+    \path[name path=CH] (C) -- (H);
+    
+    \coordinate[name intersections={of=DE and BH, by=J_A}];
+    \coordinate[name intersections={of=CE and AF, by=I_B}];
+    \coordinate[name intersections={of=BG and DF, by=J_C}];
+    \coordinate[name intersections={of=AG and CH, by=J_D}];
+    
+    % Draw the segments connecting the incenters
+    \draw[dashed] (J_A) node[left] {$J_A$} -- (I_B) node[left] {$I_B$} -- (J_C) node[below] {$J_C$} -- (J_D) node[right] {$J_D$} -- cycle;
+
+    % Draw angle bisectors
+    \path[name path=AI_A]\bisect{B}{A}{D};
+    \path[name path=DI_A]\bisect{A}{D}{B};
+    \coordinate[name intersections={of=AI_A and DI_A, by=I_A}];
+    \path[name path=CI_C]\bisect{B}{C}{D};
+    \path[name path=DI_C]\bisect{C}{D}{B};
+    \coordinate[name intersections={of=CI_C and DI_C, by=I_C}];
+    \path[name path=AI_D]\bisect{C}{A}{D};
+    \path[name path=CI_D]\bisect{A}{C}{D};
+    \coordinate[name intersections={of=CI_D and AI_D, by=I_D}];
+
+    \draw (I_A) node[left] {$I_A$} -- (I_B) -- (I_C) node[right] {$I_C$} -- (I_D) node[right] {$I_D$} -- cycle;
+\end{tikzpicture}
+\end{document}</tex></td><td>【<font face="kaiti">证明</font>】用命题2, $I_AI_BI_CI_D$是矩形.
+<ol>
+<li>若$D$在圆外, 那么$BD$会和圆有个交点, 设为$E$, 对圆内接四边形$ABCE$作四内心$J_A$, $I_B$, $J_C$, $J_D$（注意$I_B=J_B$都是△ABC的内心）.<br>用命题1, $J_AI_BJ_CJ_D$是矩形, 但是$J_A$会在$B$和$I_A$之间, 且$J_C$会在$B$和$I_C$之间, $∠I_AI_BI_C&lt;∠J_AI_BJ_C=90°$, 于是$I_AI_BI_CI_D$不是矩形, 矛盾.</li>
+<li>若$D$在圆内, 同理得 $∠I_AI_BI_C>∠J_AI_BJ_C=90°$, 于是$I_AI_BI_CI_D$不是矩形, 矛盾.</li>
+</ol>D不在圆外也不在圆内，这样ABCD就共圆了。</td></tr></table>
