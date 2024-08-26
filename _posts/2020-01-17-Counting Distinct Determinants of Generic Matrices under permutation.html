@@ -1,0 +1,13 @@
+---
+tags: linear-algebra
+mathjax: true
+---
+<a href="https://oeis.org/A088021" target="_blank">OEIS:A088021</a><br>
+$a(n) = \frac{(n^2)!}{(n!)^2}$ gives the number of distinct determinants of the generic $n×n$ matrix whose entries are $n^2$ different indeterminates under all $(n^2)!$ permutations of the entries.<br>
+For example, when $n=2$, for indeterminates $a,b,c,d$, we have $ab-cd,ac-bd,ad-bc,bc-ad,bd-ac,cd-ab$. So $\frac{(2^2)!}{(2!)^2}=6$.<br>
+<br>
+<i>Proof.</i>&nbsp;&nbsp;There are a total of $(n^2)!$ permutations of $n^2$ letters. When you rearrange the rows and columns, half of cases fix the determinant(even permutations); in the other half cases(odd permutations), it changes only its sign. There are $\frac12(n!)^2$ of such permutations in the first case. We must also allow for the symmetry impose by $\det A=\det A^{\top}$. So the number is $a(n) = \frac{(n^2)!}{\frac12(n!)^2\cdot2}=\frac{(n^2)!}{(n!)^2}$.<br>
+<br>
+<i>Remark.</i>&nbsp;&nbsp;Using J. T. Schwarz' Sparse Zeros Lemma this implies that for any positive integer n there is an n X n matrix A with positive integer entries such that the set of determinant values obtained from A by permuting the elements of A is $\frac{(n^2)!}{(n!)^2}$.<br>
+<br>
+Moreover, for any entries, no larger number of determinants can be obtained. In fact, by the Sparse Zeros Lemma one can select the entries of A from any sufficiently large subset of real numbers.
