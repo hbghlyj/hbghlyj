@@ -1,0 +1,28 @@
+---
+tags: set-theory
+mathjax: true
+---
+The axiom of choice was formulated in 1904 by Ernst Zermelo in order to formalize his proof of the well-ordering theorem.<br>
+Well-ordering theorem: Every set is well-orderable.<br>
+<i>Proof.</i><br>
+Let $S$ be a set.<br>
+Let $\mathcal P(S)$ be the power set of $S$.<br>
+By the Axiom of Choice, there is a choice function $c$ defined on $\mathcal P(S \setminus\set\emptyset)$.<br>
+We will use $c$ and the <font color="Red">Principle of Transfinite Induction</font> to define a bijection between $S$ and some ordinal.<br>
+Intuitively, we start by pairing $c(S)$ with $0$, and then keep extending the bijection by pairing $c(S\setminus X)$ with $\alpha$, where $X$ is the set of elements already dealt with.<br>
+<font size="4">Basis for the Induction</font><br>
+$\alpha = 0$<br>
+Let $s_0 =c(S)$.<br>
+<font size="4">Inductive Step</font><br>
+Suppose $s_\beta$ has been defined for all $\beta &lt; \alpha$.<br>
+If $S \setminus \{s_\beta: \beta &lt; \alpha\}$ is empty, we stop.<br>
+Otherwise, define:$$s_\alpha :=c (S \setminus\{s_\beta: \beta &lt; \alpha\} )$$The process eventually stops, else we have defined bijections between subsets of $S$ and arbitrarily large ordinals.<br>
+Now, we can impose a well-ordering on $S$ by embedding it via $s_\alpha \to \alpha$ into the ordinal $\beta = \displaystyle {\bigcup_{s_\alpha \mathop \in S} \alpha}$ and using the well-ordering of $\beta$.<hr class="l" />The Well-Ordering Theorem holds <i>iff</i> the Axiom of Choice holds.<br>
+<i>Proof.</i><br>
+Assume the Well-Ordering Theorem holds.<br>
+Let $\mathcal F$ be an arbitrary collection of sets.<br>
+By assumption all sets can be well-ordered.<br>
+Hence the set $\bigcup \mathcal F$ of all elements of sets contained in $\mathcal F$ is well-ordered by some ordering $&lt;$.<br>
+By definition, in a well-ordered set, every subset has a unique least element.<br>
+Also, note that each set in $\mathcal F$ is a subset of $\bigcup \mathcal F$.<br>
+Thus, we may define the choice function $c$:$$\forall X \in \mathcal F: c: \mathcal F \to \bigcup \mathcal F$$by letting $c(X)$ be the least element of $X$ under $&lt;$.
