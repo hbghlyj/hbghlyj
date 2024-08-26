@@ -1,0 +1,23 @@
+---
+tags: polynomial
+mathjax:true
+---
+<a href="https://digitalworks.union.edu/cgi/viewcontent.cgi?article=1784&amp;context=theses" target="_blank">pdf</a><br>
+<strong><font size="4">1 Introduction</font></strong><br>
+It is well known that polynomials commute under addition and multiplication. However, polynomials do not necessarily commute under composition, though some polynomials do.<br>
+Let $\bf C$ denote the field of complex numbers. Recall that $f(x)$ is a polynomial if and only if it is of the form$$f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\ldots+a_{2} x^{2}+a_{1} x+a_{0}$$where, for this paper, the coefficients, $a_1,\ldots, a_n ∈\bf C$. That is, all polynomials discussed in this paper are in ${\bf C}[x]$, the set of polynomials with complex coefficients. Before we begin, we will first recall the following definitions.<br>
+<strong>Definition 1.1</strong> <i>Let$$f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\ldots+a_{2} x^{2}+a_{1} x+a_{0}$$be a polynomial. If $a_{n} \neq 0$, then we say that the degree of $f(x)$ is $n$. In other words, the degree is the highest exponent of any $x$ with a corresponding, non-zero coefficient.</i><br>
+Now recall that, for any $f(x), g(x) \in \mathbf{C}[x]$, there exists $q(x)$, the composition of $f(x)$ with $g(x)$, written$$q(x)=(f \circ g)(x)$$The resulting polynomial $q(x)$ is simply $q(x) = f (g(x))$.<br>
+In other words, the composition of $f$ and $g$ is just the result of plugging $g(x) $into $f(x)$.<br>
+<strong>Definition 1.2</strong> <i>Assume f(x) and g(x) are polynomials. We say $f(x)$ and $g(x)$ commute under composition if and only if $(f ◦ g)(x) = (g ◦ f )(x)$.</i><br>
+This paper is about commuting polynomials. We will examine these polynomials and their properties. In addition, we will characterize certain sequences of polynomials. From here on out, “commute” will be taken to mean “commute under composition.”<br>
+<br>
+<strong><font size="4">2 Commuting Polynomials and Similarity</font></strong><br>
+We begin with examples of polynomials that commute under composition.<br>
+Consider the polynomials $f (x) = x$ and $g(x) = x^2 + 1$.<br>
+We can show that $(f ◦ g)(x) = (g ◦ f )(x)$ as $f (g(x)) = (x^2 + 1) = (x)^2 + 1 = g(f (x))$.<br>
+This is a basic example that illustrates a dramatic result: $f (x) = x$ commutes with every polynomial.<br>
+<strong>Proposition 2.1</strong> The polynomial $f (x) = x$ commutes with any polynomial $g(x) ∈{\bf C}[x]$.<br>
+<strong>Proof.</strong> Take any polynomial $g(x) ∈{\bf C}[x]$ and let $f (x) = x$. Now, $(f ◦ g)(x)$ is given by $f (g(x)) = g(x) = g(f (x))$. Thus, $(f ◦ g)(x) = (g ◦ f )(x)$, as desired. $\Box$<br>
+In addition to simple examples, there are also more complicated examples of commuting polynomials.<br>
+<strong>Definition 2.2</strong> <i>The Chebyshev polynomials of the first kind, $T_{n}(x)$ with $n \geq1$, are given by</i>$$T_{n}(x)=\cos n\left(\cos ^{-1}(x)\right)$$(Chebyshev is spelled Tchebychef by Barbeau [1], from whom we get the above notation). The second Chebyshev polynomial, $T_{2}(x)=\cos 2\left(\cos ^{-1}(x)\right)$, can be expressed using the polynomial structure mentioned at the beginning of this paper by recalling the well known trigonometry identity, $\cos (2 u)=2 \cos ^{2}(u)-1$.\begin{aligned}T_{2}(x) &amp;=\cos 2\left(\cos ^{-1}(x)\right) \\&amp;=\cos (2 u), \text { where } u=\cos ^{-1}(x) \\&amp;=2 \cos ^{2}(u)-1 \\&amp;=2 \cos ^{2}\left(\cos ^{-1}(x)\right)-1 \\&amp;=2 x^{2}-1\end{aligned}Similar evaluations can be performed on the other Chebyshev polynomials, which shows that\begin{aligned}T_{1}(x)&amp;=x \\ T_{2}(x)&amp;=2 x^{2}-1 \\ T_{3}(x)&amp;=4 x^{3}-3 x\\&amp;\vdots\end{aligned}It turns out that that higher degree Chebyshev polynomials can be related to lower degree Chebyshev polynomials. In fact, we can express a given Chebyshev polynomial in terms of Chebyshev polynomials of a lower degree, again using trigonometry. First, note that
