@@ -1,0 +1,97 @@
+---
+tags: euclidean-geometry
+---
+<font size="5">直线上的重心坐标</font><br>
+给定两点<i>A</i>与<i>B</i>,可以定义由直线<i>AB</i>到$\{(b_1,b_2)\in\mathbb{R}^2\mid b_1+b_2=1\}$的双射$b_1=\dfrac{x_P-x_B}{x_A-x_B},b_2=\dfrac{x_A-x_P}{x_A-x_B}$,称为重心坐标,则有$x_P=b_1x_A+b_2x_B$.特别地,<i>A</i>的坐标是(1,0),<i>B</i>的坐标是(0,1).它的物理意义是:在<i>A</i>处放置质量为$b_1$的质点,在<i>B</i>处放置质量为$b_2$的质点,力矩平衡点为<i>P</i>.<br>
+<script type="text/tikz">
+\begin{tikzpicture}
+\draw [fill] (0.1972093023255728,0.) circle (1pt);
+\draw (0.1874995735802786,0.21744016366258662) node {$A$};
+\draw [fill] (0.8418604651162734,0.) circle (1pt);
+\draw (0.8405378072102142,0.22690448588910744) node {$P$};
+\draw [fill] (1.8932558139534876,0.) circle (1pt);
+\draw (1.8721489299009821,0.22690448588910744) node {$B$};
+\draw [->] (-0.5,0)--(2.5,0);
+\end{tikzpicture}
+</script><br>
+<br>
+<font size="5">三角形重心坐标</font><br>
+对于$\triangle ABC$,可以定义由平面<i>ABC</i>到$\{(b_1,b_2,b_3)\in\mathbb{R}^3\mid b_1+b_2+b_3=1\}$的双射.<br>
+设$v=\overrightarrow{OP},v_1=\overrightarrow{OA},v_2=\overrightarrow{OB},v_3=\overrightarrow{OC},$由$b_1v_1+b_2v_2+b_3v_3=v$解得$b_i = \dfrac{w_i}{\sum_{j=1}^n w_j},w_i =\begin{vmatrix}x&y&1\\x_{i-1}&y_{i-1}&1\\x_{i+1}&y_{i+1}&1\end{vmatrix},i=1,2,3$<br>
+即$b_1=\dfrac{S_{\triangle PBC}}{S_{\triangle ABC}},b_2=\dfrac{S_{\triangle PCA}}{S_{\triangle ABC}},b_3=\dfrac{S_{\triangle PAB}}{S_{\triangle ABC}}$.<br>
+事实上,满足$f(A)=(1,0,0),f(B)=(0,1,0),f(C)=(0,0,1)$的线性函数$f:$平面$ABC\to\mathbb{R}^3$只有重心坐标.<br>
+<br>
+<font size="5">第一种推广</font><br>
+<strong>Wachspress坐标</strong>(瓦赫斯普雷斯坐标)对任何<i>凸n边形</i>有定义.它保持了三角形重心坐标除了正定性以外的所有性质.
+<div align="center"><object type="image/svg+xml" data="https://doc.cgal.org/latest/Barycentric_coordinates_2/wp_notations.svg"></object></div>
+$b_i = \dfrac{w_i}{\sum_{j=1}^n w_j},w_i = \dfrac{C_i}{A_{i-1}A_i}=\dfrac{\cot{\angle vv_iv_{i+1}}+\cot{\angle vv_iv_{i-1}}}{|vv_i|^2}$,i=1…n<br>
+对于接近<i>n</i>边形的边界的点,分母变得接近0,导致公式不稳定,为此,将$w_i$改成$\bar{w}_i ,\bar{w}_i = C_i\prod\limits_{j\not=i-1,i} A_j$<br>
+实际上,修改后时间复杂度由$o(n)$变为$o(n^2)$.但在数学上这种修改并不改变坐标.<br>
+使分母${\sum_{j=1}^n w_j}=0$的点的集合是一条经过边的延长线的交点的曲线,这种点共有$\dfrac12n(n-3)$个.
+<div align="center"><object type="image/svg+xml" data="https://doc.cgal.org/latest/Barycentric_coordinates_2/wp_zero_set.svg"></object></div>
+<font size="5">第二种推广</font><br>
+<strong>离散调和坐标</strong>也是对任何<i>凸n边形</i>有定义.它保持了三角形重心坐标除了正定性以外的所有性质,事实上,$w_i>0\iff\alpha+\beta<\pi$.一个有趣的特性是,对于圆内接多边形,它与 Wachspress坐标相等.
+<div align="center"><object type="image/svg+xml" data="https://doc.cgal.org/latest/Barycentric_coordinates_2/dh_notations.svg"></object></div>
+$b_i = \dfrac{w_i}{\sum_{j=1}^n w_j},w_i = \dfrac{r_{i+1}^2A_{i-1}-r_i^2B_i+r_{i-1}^2A_i}{A_{i-1}A_i}$,<i>i</i>=1…<i>n</i>.<br>
+对于接近n边形的边界的点,公式变得不稳定,为此,与上一小节类似,将$w_i$改成$\bar{w}_i ,\bar{w}_i = (r_{i+1}^2A_{i-1}-r_i^2B_i+r_{i-1}^2A_i)\prod\limits_{j\not=i-1,i} A_j$<br>
+实际上,修改后时间复杂度由$o(n)$变为$o(n^2)$.但在数学上这种修改并不改变坐标.<br>
+<br>
+<font size="5">第三种推广</font><br>
+与前述两种推广不同,<strong>中值坐标</strong>对任何<i>简单n边形</i>有定义.它保持了三角形重心坐标除了正定性以外的所有性质,事实上,它对于多边形的核之外的点可能取负值(多边形的核为图中红色区域.定义见<a href="http:///forum.php?mod=viewthread&tid=49" target="_blank">星形域</a>).<br>
+
+
+<img src="../data/attachment/forum/202109/26/183600tb22ijj6v2kqovss.png" width="399" />
+
+<br>
+
+
+<img src="../data/attachment/forum/202109/26/184053rbnvenbuzanmebjb.png" width="268" />
+
+<br>
+对于这些坐标,我们还有两个算法: 一个是精确的,一个是快速的.<br>
+精确方法对平面的任何点有效但它的计算步骤包含开平方运算.这个算法是基于下面的权重公式$b_i = \dfrac{w_i}{\sum_{j=1}^n w_j},w_i = \sigma_i\bar{w}_i,|\bar{w}_i |= (r_{i-1}r_{i+1}-d_{i-1}d_{i+1})^{1/2}\prod\limits_{j\not= i-1,i}(r_jr_{j+1} + d_jd_{j+1})^{1/2}, r_i = \|d_i\|.$<br>
+其中$\bar w_i$在褐色折线的左边总是取正值,在它的右边总是取负值,以逆时针方向移动.<br>
+
+
+<img src="../data/attachment/forum/202109/26/183909ewd2m9r4rd1lpez9.png" width="333" />
+
+
+
+<img src="../data/attachment/forum/202109/26/183909qhs0xe4pnn0ppq0e.png" width="369" />
+
+<br>
+快速方法不包含开平方运算但是当接近多边形的边时变得不稳定.<br>
+$w_i = \dfrac{t_{i-1} + t_i}{r_i},t_i = \dfrac{\text{det}(d_i, d_{i+1})}{r_ir_{i+1} + d_id_{i+1}}$<br>
+<hr class="l" />
+三角形内部的点的重心坐标是3个介于0与1之间的数,将它们乘以255作为RGB值,这样一来,重心坐标可以给三角形着色,称为Gouraud shading.<br>
+
+
+<img src="../data/attachment/forum/202109/26/183600lrnr4gqwnrsswhzq.png" width="1000" />
+
+<br>
+若只绘制一个坐标,得到是线性着色:<br>
+
+
+<img src="../data/attachment/forum/202109/26/183559bjoaaee8oon8jany.png" width="431" />
+
+<br>
+对于多边形,只绘制一个坐标,得到等值线如下:<br>
+<table cellspacing="0" class="t_table" style="width:50%"><tr><td>Wachspress 坐标</td><td>离散调和坐标</td><td>中值坐标</td></tr><tr><td>
+
+<img src="../data/attachment/forum/202109/26/183558u2o0rmh0rszgqgxo.png" width="414" />
+
+</td><td>
+
+<img src="../data/attachment/forum/202109/26/183558upmwmlog0ozwcch1.png" width="412" />
+
+</td><td>
+
+<img src="../data/attachment/forum/202109/26/183558w5km3o77oob6oncm.png" width="433" />
+
+</td></tr></table>
+有趣的事实:这三种坐标系都属于同一个广义重心坐标系,称为<a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.93.2415&rep=rep1&type=pdf" target="_blank">三点坐标系</a>
+<br><br>
+<hr class="l" />
+参考资料<br>
+<ol><li><a href="https://doc.cgal.org/latest/Barycentric_coordinates_2/index.html#gbc_deg_wachspress_coordinates" target="_blank">https://doc.cgal.org/latest/Bary ... hspress_coordinates</a><li><a href="http://www.diva-portal.org/smash/get/diva2:400706/FULLTEXT01" target="_blank">http://www.diva-portal.org/smash/get/diva2:400706/FULLTEXT01</a>
+</ul>
