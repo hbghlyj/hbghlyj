@@ -19,5 +19,5 @@ The benefit of MathML is that it can be parsed by Math-aware search engines like
 The diagrams are generated in two ways: QuickLaTeX or MathJax SVG.
 For QuickLaTeX, it converts TeX file to inline SVG using https://github.com/hbghlyj/jekyll-quicklatex
   It makes the output file size bigger but is authentic LaTeX. The diagram will be produced in TeX format, e.g. by TikZ.
-For MathJax SVG, it embeds formula into SVG using a custom MathJax config (output SVG directly, instead of wrapping in mathjax typesetroot element).
+For MathJax SVG, it embeds formula into SVG using a custom MathJax config https://github.com/hbghlyj/hbghlyj/blob/main/_includes/markdown-enhancements/mathjax.html (the point is to output SVG directly, instead of wrapping in mathjax typesetroot element).
   The diagram will be produced in SVG format, e.g. by Inkscape.
