@@ -18,10 +18,10 @@ cite {
 </ul>
 <table>
 <tr><td>
-<tex>\documentclass[tikz]{standalone}
+{% latex %}
+\usepackage{tikz}
 \usetikzlibrary{intersections}
 
-\begin{document}
 \def\A{135}
 \def\B{200}
 \def\C{-40}
@@ -63,8 +63,8 @@ cite {
     % Draw the midpoints
     \draw[dashed](E)node[left]{$E$}--(G)node[right]{$G$}(F)node[below]{$F$}--(H)node[above]{$H$};
 \end{tikzpicture}
-\end{document}
-</tex></td><td>【<font face="kaiti">证明</font>】令△DAB, △ABC, △BCD, △CDA的内心为$I_A,I_B,I_C,I_D$,<br>
+{% endlatex %}
+</td><td>【<font face="kaiti">证明</font>】令△DAB, △ABC, △BCD, △CDA的内心为$I_A,I_B,I_C,I_D$,<br>
 并设E, F, G, H分别为AB弧, BC弧, CD弧, 和DA弧的中点.<br>
 那么$I_A$在DE上, $I_B$在CE上且E$I_A=EA=EB$, $EI_B=EA=EB$, 故$EI_A=EI_B$.<br>
 又EG为∠DEC的平分线, 故$I_AI_B⊥EG$.<br>
@@ -82,7 +82,8 @@ cite {
 </ul>
 <table>
 <tr><td>
-<tex>\documentclass[tikz]{standalone}
+{% latex %}
+\usepackage{tikz}
 \usetikzlibrary{intersections,calc}
 
 \begin{document}
@@ -123,7 +124,7 @@ cite {
     \draw[incircle={C}{D}{I_C}];
     \draw[incircle={D}{A}{I_D}];
 \end{tikzpicture}
-\end{document}</tex></td><td>【<font face="kaiti">证明</font>】用命题1得，$I_AI_C=I_BI_D$<br>
+{% endlatex %}</td><td>【<font face="kaiti">证明</font>】用命题1得，$I_AI_C=I_BI_D$<br>
 $r_A+r_C$会等于$I_AI_C$乘上$I_AI_C$与BD夹角正弦值, $r_B+r_D$会等于$I_BI_D$乘上$I_BI_D$与AC夹角正弦值.<br>
 因为所以只要证明那两个夹角相等就可以.<br>$I_AI_C$与$I_BI_D$和EG的夹角相等, AC和EG的夹角是(AE弧+CG弧)/2, BD和EG的夹角是(BE弧+DG弧)/2, 所以AC与BD和EG的夹角也相等.<br>
 故$I_AI_C$与$BD$的夹角和$I_BI_D$与$AC$的夹角相等, 就得到$r_A+r_C=r_B+r_D$了.</td></tr></table>
@@ -131,7 +132,8 @@ $r_A+r_C$会等于$I_AI_C$乘上$I_AI_C$与BD夹角正弦值, $r_B+r_D$会等于
 <blockquote>命题2：△ABC, △BCD, △CDA, △DAB的内切圆半径为$r_A,r_B,r_C,r_D$.<br>若$r_A+r_C=r_B+r_D$, 则$I_AI_BI_CI_D$为矩形.</blockquote>
 <table>
 <tr><td>
-<tex>\documentclass[tikz]{standalone}
+{% latex %}
+\usepackage{tikz}
 \usetikzlibrary{intersections,calc}
 
 \begin{document}
@@ -177,7 +179,7 @@ $r_A+r_C$会等于$I_AI_C$乘上$I_AI_C$与BD夹角正弦值, $r_B+r_D$会等于
     \coordinate[label=right:$N$] (N) at ($(C)!(I_D)!(D)$);
     \draw[dashed](K)--(I_A)(L)--(I_B)(M)--(I_C)(N)--(I_D);
 \end{tikzpicture}
-\end{document}</tex></td><td>【<font face="kaiti">先证明两双对边分别相等</font>】<br>分别过$I_A$和$I_B$作$AB$的垂线，令垂足为$K$、$L$.<br>
+{% endlatex %}</td><td>【<font face="kaiti">先证明两双对边分别相等</font>】<br>分别过$I_A$和$I_B$作$AB$的垂线，令垂足为$K$、$L$.<br>
 那么$I_AK=r_A$，$I_BL=r_B$.<br>
 $I_AI_B^2=(I_AK-I_BL)^2+KL^2=(r_A-r_B)^2+KL^2$.<br>
 $KL=AL-AK=(AB+AC-BC)/2-(AB+AD-BD)/2=(AC+BD-AD-BC)/2$.<br>
@@ -189,7 +191,8 @@ $MN=CN-CM=(CD+AC-AD)/2-(CD+BC-BD)/2=(AC+BD-AD-BC)/2$.<br>
 故$I_AI_B=I_CI_D$.<br>
 同理$I_AI_D=I_BI_C$.<br>
 故$I_AI_BI_CI_D$为平行四边形.</td></tr>
-<tr><td><tex>\documentclass[tikz]{standalone}
+<tr><td>{% latex %}
+\usepackage{tikz}
 \usetikzlibrary{intersections,calc}
 
 \begin{document}
@@ -235,7 +238,7 @@ $MN=CN-CM=(CD+AC-AD)/2-(CD+BC-BD)/2=(AC+BD-AD-BC)/2$.<br>
     \coordinate[label=left:$T$] (T) at ($(A)!(I_D)!(C)$);
     \draw[dashed](P)--(I_A)(S)--(I_B)(Q)--(I_C)(T)--(I_D);
 \end{tikzpicture}
-\end{document}</tex></td><td>【<font face="kaiti">再证明对角线等长</font>】<br>
+{% endlatex %}</td><td>【<font face="kaiti">再证明对角线等长</font>】<br>
 分别过$I_A$和$I_C$作$BD$的垂线，令垂足为$P$、$Q$.<br>
 那么$I_AP=r_A$，$I_CQ=r_C$.<br>
 $I_AI_C^2=(I_AP+I_CQ)^2+PQ^2=(r_A+r_C)^2+PQ^2$.<br>
@@ -249,7 +252,8 @@ $ST=|AS-AT|=|(AB+CD-AD-BC)/2|$.<br>
 </td></tr></table>
 最后，就可以证明之前想要的逆命题：
 <blockquote>定理1的逆：△ABC, △BCD, △CDA, △DAB的内切圆半径为$r_A,r_B,r_C,r_D$.<br>若$r_A+r_C=r_B+r_D$, 那么$ABCD$为圆内接四边形.</blockquote>
-<table><tr><td><tex>\documentclass[tikz]{standalone}
+<table><tr><td>{% latex %}
+\usepackage{tikz}
 \usetikzlibrary{intersections,calc}
 
 \begin{document}
@@ -312,7 +316,7 @@ in
 
     \draw (I_A) node[left] {$I_A$} -- (I_B) -- (I_C) node[right] {$I_C$} -- (I_D) node[right] {$I_D$} -- cycle;
 \end{tikzpicture}
-\end{document}</tex></td><td>【<font face="kaiti">证明</font>】用命题2, $I_AI_BI_CI_D$是矩形.
+{% endlatex %}</td><td>【<font face="kaiti">证明</font>】用命题2, $I_AI_BI_CI_D$是矩形.
 <ol>
 <li>若$D$在圆外, 那么$BD$会和圆有个交点, 设为$E$, 对圆内接四边形$ABCE$作四内心$J_A$, $I_B$, $J_C$, $J_D$（注意$I_B=J_B$都是△ABC的内心）.<br>用命题1, $J_AI_BJ_CJ_D$是矩形, 但是$J_A$会在$B$和$I_A$之间, 且$J_C$会在$B$和$I_C$之间, $∠I_AI_BI_C&lt;∠J_AI_BJ_C=90°$, 于是$I_AI_BI_CI_D$不是矩形, 矛盾.</li>
 <li>若$D$在圆内, 同理得 $∠I_AI_BI_C>∠J_AI_BJ_C=90°$, 于是$I_AI_BI_CI_D$不是矩形, 矛盾.</li>
