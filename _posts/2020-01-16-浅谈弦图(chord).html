@@ -5,9 +5,7 @@ tags: graph-theory
 这里我们要介绍另一种特殊的图，它不像大名鼎鼎的欧拉图、汉密尔顿图那样众所周知，而且其实际应用尚不多见，但却在基础理论研究中占有一席之地，它就是弦图。<br>
 我们将经过有限多个点且不相交的闭路称为环，将连接环中不相邻的两个点的边称为弦。如果无向图中任意长度大于3的环中都至少有一条弦，那么该图就称为弦图。由于弦会将环分割成为若干个三角形，所以弦图也称为三角图。<br>
 <div align="center">
-
-<img src="../data/attachment/forum/202111/22/235422em9tn9sgzqgzsbj2.png" width="575" />
-
+<img src="http://image.sciencenet.cn/home/201805/02/100020pmotcekke447yco9.png" width="575" />
 <br>
 <strong>图2 环（蓝色的闭路）、弦（红色的边）和琵琶（右）</strong></div><br>
 图2给出了一个最简单的弦图，图中红色的边就是一条弦。弦图形象而又富有艺术感，会让人联想到琴弦。是否有人还会由此想到《琵琶行》中的诗句“转轴拨弦三两声，未成曲调先有情”呢？<br>
@@ -21,9 +19,7 @@ tags: graph-theory
 <br>
 我们用下述例子演示由MCS算法计算弦图G的完美消除序列过程。<br>
 <div align="center">
-
-<img src="../data/attachment/forum/202111/22/235943kr0ed0y5z14zxe6m.png" width="681" />
-
+<img src="http://image.sciencenet.cn/home/201805/02/100030d83qrsq6c2l8er2m.png" width="681" />
 <br>
 <strong>图4&nbsp;&nbsp;(1) 初始状态 (2) 第一步编号 (3) 第二步编号 (4) 终止状态</strong></div><br>
 在图4中，[]内的数字表示顶点的label。在初始状态，全部6个顶点的label为0，如图4(1)。开始处理时，先任意选取一个顶点从n=6开始标号，这里选取图左上角的顶点标号为6（如图4(2)）；接着，与6号顶点相连的其它顶点的label相应改变；然后，再选取label最大的顶点按照顺序继续编号。在有多个最大的label时，可以任取其中之一进行编号，编号结果如图4(3)所示。如此类推，直至所有顶点均有编号，如图4(4)。这时顶点1,2,3,4,5,6就是弦图G的一个完美消除序列。<br>
@@ -43,7 +39,7 @@ T<sub>2 </sub>=[ x<sub>1</sub>+1,x<sub>2</sub>+1,x<sub>3</sub>-1,x<sub>4</sub>+x
 T<sub>3</sub>=[x<sub>1</sub>,x<sub>2</sub>+2,(x<sub>2</sub>-1)x<sub>3</sub>+x<sub>2</sub><sup>2</sup>+1,(x<sub>3</sub>+x<sub>2</sub>)x<sub>4</sub>+x<sub>3</sub>-1],</div><br>
 它们对应的关联图分别如图7中(a)、(b)、(c)所示。由图可知，输出三角列的关联图均为原弦图的子图。<br>
 <div align="center">{%latex%}\usepackage{tikz}
-\begin{tikzpicture} \draw[color=blue] (1,0)--(0,1)--(0,-1)--(1,0)--(-1,0)--(0,-1); \filldraw[yellow] (0,1) circle (6pt); \filldraw[yellow] (0,-1) circle (6pt); \filldraw[yellow] (1,0) circle (6pt); \filldraw[yellow] (-1,0) circle (6pt); \node at (0,1) {$x_1$}; \node at (1,0) {$x_2$}; \node at (0,-1) {$x_3$}; \node at (-1,0) {$x_4$}; \end{tikzpicture}{%endlatex%}<strong>图6 多项式组F的关联图</strong></div>
+\begin{tikzpicture} \draw[color=blue] (1,0)--(0,1)--(0,-1)--(1,0)--(-1,0)--(0,-1); \filldraw[yellow] (0,1) circle (6pt); \filldraw[yellow] (0,-1) circle (6pt); \filldraw[yellow] (1,0) circle (6pt); \filldraw[yellow] (-1,0) circle (6pt); \node at (0,1) {$x_1$}; \node at (1,0) {$x_2$}; \node at (0,-1) {$x_3$}; \node at (-1,0) {$x_4$}; \end{tikzpicture}{%endlatex%}<br><strong>图6 多项式组F的关联图</strong></div>
 <div align="center">{%latex%}\usepackage{tikz}
 \begin{tikzpicture} \draw[color=blue] (1,0)--(0,1)--(0,-1)--(1,0)--(-1,0)--(0,-1); \filldraw[yellow] (0,1) circle (6pt); \filldraw[yellow] (0,-1) circle (6pt); \filldraw[yellow] (1,0) circle (6pt); \filldraw[yellow] (-1,0) circle (6pt); \node at (0,1) {$x_1$}; \node at (1,0) {$x_2$}; \node at (0,-1) {$x_3$}; \node at (0,-1.5) {(a)}; \node at (4,-1.5) {(b)}; \node at (8,-1.5) {(c)}; \node at (-1,0) {$x_4$}; \draw[color=blue ] (3,0)--(5,0); \filldraw[yellow] (4,1) circle (6pt); \filldraw[yellow] (4,-1) circle (6pt); \filldraw[yellow] (5,0) circle (6pt); \filldraw[yellow] (3,0) circle (6pt); \node at (4,1) {$x_1$}; \node at (5,0) {$x_2$}; \node at (4,-1) {$x_3$}; \node at (3,0) {$x_4$}; \draw[color=blue] (8,-1)--(9,0)--(7,0)--(8,-1); \filldraw[yellow] (8,1) circle (6pt); \filldraw[yellow] (8,-1) circle (6pt); \filldraw[yellow] (9,0) circle (6pt); \filldraw[yellow] (7,0) circle (6pt); \node at (8,1) {$x_1$}; \node at (9,0) {$x_2$}; \node at (8,-1) {$x_3$}; \node at (7,0) {$x_4$}; \end{tikzpicture}{%endlatex%}<br><strong>图7 三角列T<sub>1</sub>，T<sub>2</sub>，T<sub>3</sub>的关联图</strong></div>
 在此基础上，牟晨琪与笔者提出了基于弦图的完美消除序列对稀疏多项式组进行三角分解的快速算法。该算法在调用自上而下形式的三角分解算法对稀疏多项式组进行分解时，其效率显著提升。
