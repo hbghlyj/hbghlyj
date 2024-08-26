@@ -3,7 +3,8 @@ tags: euclidean-geometry
 ---
 <font size="5">直线上的重心坐标</font><br>
 给定两点<i>A</i>与<i>B</i>,可以定义由直线<i>AB</i>到$\{(b_1,b_2)\in\mathbb{R}^2\mid b_1+b_2=1\}$的双射$b_1=\dfrac{x_P-x_B}{x_A-x_B},b_2=\dfrac{x_A-x_P}{x_A-x_B}$,称为重心坐标,则有$x_P=b_1x_A+b_2x_B$.特别地,<i>A</i>的坐标是(1,0),<i>B</i>的坐标是(0,1).它的物理意义是:在<i>A</i>处放置质量为$b_1$的质点,在<i>B</i>处放置质量为$b_2$的质点,力矩平衡点为<i>P</i>.<br>
-<script type="text/tikz">
+{% latex %}
+\usepackage{tikz}
 \begin{tikzpicture}
 \draw [fill] (0.1972093023255728,0.) circle (1pt);
 \draw (0.1874995735802786,0.21744016366258662) node {$A$};
@@ -13,7 +14,7 @@ tags: euclidean-geometry
 \draw (1.8721489299009821,0.22690448588910744) node {$B$};
 \draw [->] (-0.5,0)--(2.5,0);
 \end{tikzpicture}
-</script><br>
+{% endlatex %}
 <br>
 <font size="5">三角形重心坐标</font><br>
 对于$\triangle ABC$,可以定义由平面<i>ABC</i>到$\{(b_1,b_2,b_3)\in\mathbb{R}^3\mid b_1+b_2+b_3=1\}$的双射.<br>
