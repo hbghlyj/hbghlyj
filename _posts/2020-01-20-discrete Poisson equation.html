@@ -1,0 +1,87 @@
+The discrete Poisson equation is the <a href="https://en.wikipedia.org/wiki/Finite_difference" target="_blank">finite difference</a> analog of the <a href="https://en.wikipedia.org/wiki/Poisson_equation" target="_blank">Poisson equation</a>. In it, the <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator" target="_blank">discrete Laplace operator</a> takes the place of the <a href="https://en.wikipedia.org/wiki/Laplace_operator" target="_blank">Laplace operator</a>. The discrete Poisson equation is frequently used in numerical analysis as a stand-in for the continuous Poisson equation, although it is also studied in its own right as a topic in discrete mathematics.<br>
+<font size="5">On a two-dimensional rectangular grid</font><br>
+Using the finite difference numerical method to discretize the 2-dimensional Poisson equation (assuming a uniform spatial discretization, $\Delta x=\Delta y$) on an $m \times n$ grid gives the following formula:$$( {\nabla}^2 u )_{ij} = \frac{1}{\Delta x^2} (u_{i+1,j} + u_{i-1,j} + u_{i,j+1} + u_{i,j-1} - 4 u_{ij}) = g_{ij}$$where $ 2 \le i \le m-1 $ and $ 2 \le j \le n-1 $.  The preferred arrangement of the solution vector is to use natural ordering which, prior to removing boundary elements, would look like:<br>
+$$<br>
+\vec{u} =<br>
+\begin{bmatrix} u_{11} , u_{21} , \ldots , u_{m1} , u_{12} , u_{22} , \ldots , u_{m2} , \ldots , u_{mn}<br>
+\end{bmatrix}^{\top}<br>
+$$This will result in an $mn\times mn$ linear system:$$ A\vec{u} = \vec{b} $$where$$A =\begin{bmatrix}<br>
+        ~D & -I & ~0 & ~0 & ~0 & \ldots & ~0 \\
+        -I & ~D & -I & ~0 & ~0 & \ldots & ~0 \\
+        ~0 & -I & ~D & -I & ~0 & \ldots & ~0 \\
+        \vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+        ~0 & \ldots & ~0 & -I & ~D & -I & ~0 \\
+        ~0 & \ldots & \ldots & ~0 & -I & ~D & -I \\
+        ~0 & \ldots & \ldots & \ldots & ~0 & -I & ~D<br>
+\end{bmatrix},$$$ I $ is the $m\times m$ identity matrix, and $ D $, also $m\times m$, is given by:$$D =<br>
+\begin{bmatrix}<br>
+        ~4 & -1 & ~0 & ~0 & ~0 & \ldots & ~0 \\
+        -1 & ~4 & -1 & ~0 & ~0 & \ldots & ~0 \\
+        ~0 & -1 & ~4 & -1 & ~0 & \ldots & ~0 \\
+        \vdots & \ddots & \ddots & \ddots & \ddots & \ddots & \vdots \\
+        ~0 & \ldots & ~0 & -1 & ~4 & -1 & ~0 \\
+        ~0 & \ldots & \ldots & ~0 & -1 & ~4 & -1 \\
+        ~0 & \ldots & \ldots & \ldots & ~0 & -1 & ~4<br>
+\end{bmatrix},$$and $\vec{b}$ is defined by$$<br>
+\vec{b} =<br>
+-\Delta x^2\begin{bmatrix} g_{11} , g_{21} , \ldots , g_{m1} , g_{12} , g_{22} , \ldots , g_{m2} , \ldots , g_{mn}<br>
+\end{bmatrix}^{\top}.$$For each $ u_{ij} $ equation, the columns of $ D $ correspond to a block of $ m $ components in $ u $:$$\begin{bmatrix}<br>
+        u_{1j} , & u_{2j} , & \ldots, & u_{i-1,j}  , & u_{ij} , & u_{i+1,j} , & \ldots , & u_{mj}<br>
+\end{bmatrix}^{\top}$$while the columns of $ I $ to the left and right of $ D $ each correspond to other blocks of $ m $ components within $ u $:$$<br>
+\begin{bmatrix}<br>
+        u_{1,j-1} , & u_{2,j-1} , & \ldots, & u_{i-1,j-1}  , & u_{i,j-1} , & u_{i+1,j-1} , & \ldots , & u_{m,j-1}<br>
+\end{bmatrix}^{\top}$$and$$\begin{bmatrix}<br>
+        u_{1,j+1} , & u_{2,j+1} , & \ldots, & u_{i-1,j+1}  , & u_{i,j+1} , & u_{i+1,j+1} , & \ldots , & u_{m,j+1}<br>
+\end{bmatrix}^{\top}$$respectively.<br>
+From the above, it can be inferred that there are $n$ block columns of $ m $ in $ A $.  It is important to note that prescribed values of $ u $ (usually lying on the boundary) would have their corresponding elements removed from $ I $ and $ D $.  For the common case that all the nodes on the boundary are set, we have $ 2 \le i \le m - 1 $ and $ 2 \le j \le n - 1 $, and the system would have the dimensions $(m-2)(n-2)\times(m-2)(n-2)$, where $ D $ and $ I $ would have dimensions $(m-2)\times(m-2)$.<br>
+<br>
+<br>
+<font size="5">Example</font><br>
+For a 5×5 ( $ m = 5  $ and $ n = 5 $ ) grid with all the boundary nodes prescribed, the system would look like:$$<br>
+\begin{bmatrix} U \end{bmatrix} =<br>
+\begin{bmatrix} u_{22}, u_{32}, u_{42}, u_{23}, u_{33}, u_{43}, u_{24}, u_{34}, u_{44}<br>
+\end{bmatrix}^{\top}<br>
+$$with$$<br>
+A =<br>
+\left[\begin{array}{ccc|ccc|ccc}<br>
+       ~4 & -1 & ~0 & -1 & ~0 & ~0 & ~0 & ~0 & ~0 \\
+       -1 & ~4 & -1 & ~0 & -1 & ~0 & ~0 & ~0 & ~0 \\
+       ~0 & -1 & ~4 & ~0 & ~0 & -1 & ~0 & ~0 & ~0 \\
+       \hline<br>
+       -1 & ~0 & ~0 & ~4 & -1 & ~0 & -1 & ~0 & ~0 \\
+       ~0 & -1 & ~0 & -1 & ~4 & -1 & ~0 & -1 & ~0 \\
+       ~0 & ~0 & -1 & ~0 & -1 & ~4 & ~0 & ~0 & -1 \\
+       \hline<br>
+       ~0 & ~0 & ~0 & -1 & ~0 & ~0 & ~4 & -1 & ~0 \\
+       ~0 & ~0 & ~0 & ~0 & -1 & ~0 & -1 & ~4 & -1 \\
+       ~0 & ~0 & ~0 & ~0 & ~0 & -1 & ~0 & -1 & ~4<br>
+\end{array}\right]<br>
+$$and$$<br>
+\vec{b} =<br>
+\left[\begin{array}{l}<br>
+        -\Delta x^2 g_{22} + u_{12} + u_{21} \\
+        -\Delta x^2 g_{32} + u_{31} ~~~~~~~~ \\
+        -\Delta x^2 g_{42} + u_{52} + u_{41} \\
+        -\Delta x^2 g_{23} + u_{13} ~~~~~~~~ \\
+        -\Delta x^2 g_{33}  ~~~~~~~~~~~~~~~~ \\
+        -\Delta x^2 g_{43} + u_{53} ~~~~~~~~ \\
+        -\Delta x^2 g_{24} + u_{14} + u_{25} \\
+        -\Delta x^2 g_{34} + u_{35} ~~~~~~~~ \\
+        -\Delta x^2 g_{44} + u_{54} + u_{45}<br>
+\end{array}\right].<br>
+$$As can be seen, the boundary $ u $'s are brought to the right-hand-side<br>
+of the equation.  The entire system is 9×9 while $ D $ and $ I $ are 3×3 and given by:$$<br>
+D =<br>
+\begin{bmatrix}<br>
+       ~4 & -1 & ~0 \\
+       -1 & ~4 & -1 \\
+       ~0 & -1 & ~4 \\
+\end{bmatrix}<br>
+$$and$$<br>
+-I =<br>
+\begin{bmatrix}<br>
+       -1 & ~0 & ~0 \\
+       ~0 & -1 & ~0 \\
+       ~0 & ~0 & -1<br>
+\end{bmatrix}.<br>
+$$
