@@ -1,0 +1,257 @@
+---
+tags: real-analysis
+mathjax: true
+---
+<a href="https://kconrad.math.uconn.edu/blurbs/analysis/diffunderint.pdf">Keith Conrad</a>
+<h1>1. Introduction</h1>
+The method of differentiation under the integral sign, due to Leibniz in 1697 [4], concerns integrals depending on a parameter, such as $\int_{0}^{1} x^2 e^{-t x} \mathrm{~d} x$. Here $t$ is the extra parameter. (Since $x$ is the variable of integration, $x$ is not a parameter.) In general, we might write such an integral as
+\[\tag{1.1}
+\int_{a}^{b} f(x, t) \mathrm{d} x,
+\]
+where $f(x, t)$ is a function of two variables like $f(x, t)=x^2 e^{-t x}$.<br>
+<b>Example 1.1.</b> Let $f(x, t)=\left(2 x+t^{3}\right)^2$. Then $\int_{0}^{1} f(x, t) \mathrm{d} x=\int_{0}^{1}\left(2 x+t^{3}\right)^2 \mathrm{~d} x$. An anti-derivative of $\left(2 x+t^{3}\right)^2$ with respect to $x$ is $\frac{1}{6}\left(2 x+t^{3}\right)^{3}$, so
+\[
+\int_{0}^{1}\left(2 x+t^{3}\right)^2 \mathrm{~d} x=\left.\frac{\left(2 x+t^{3}\right)^{3}}{6}\right|_{x=0} ^{x=1}=\frac{\left(2+t^{3}\right)^{3}-t^{9}}{6}=\frac{4}{3}+2 t^{3}+t^{6} .
+\]
+This answer is a function of $t$, which makes sense since the integrand depends on $t$. We integrate over $x$ and are left with something that depends only on $t$, not $x$.<br>
+<br>
+An integral like $\int_{a}^{b} f(x, t) \mathrm{d} x$ is a function of $t$, so we can ask about its $t$-derivative, assuming that $f(x, t)$ is nicely behaved. The rule, called <i>differentiation under the integral sign</i>, is that the $t$-derivative of the integral of $f(x, t)$ is the integral of the $t$-derivative of $f(x, t)$ :
+\[\tag{1.2}
+\frac{\mathrm{d}}{\mathrm{d} t} \int_{a}^{b} f(x, t) \mathrm{d} x=\int_{a}^{b} \frac{\partial}{\partial t} f(x, t) \mathrm{d} x .
+\]
+If you are used to thinking mostly about functions with one variable, not two, keep in mind that (1.2) involves integrals and derivatives with respect to separate variables: integration with respect to $x$ and differentiation with respect to $t$.<br>
+<br>
+<b>Example 1.2.</b> We saw in Example $1.1$ that $\int_{0}^{1}\left(2 x+t^{3}\right)^2 \mathrm{~d} x=4 / 3+2 t^{3}+t^{6}$, whose $t$-derivative is $6 t^2+6 t^{5}$. According to (1.2), we can also compute the $t$-derivative of the integral like this:
+\[
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d} t} \int_{0}^{1}\left(2 x+t^{3}\right)^2 \mathrm{~d} x &=\int_{0}^{1} \frac{\partial}{\partial t}\left(2 x+t^{3}\right)^2 \mathrm{~d} x \\
+&=\int_{0}^{1} 2\left(2 x+t^{3}\right)\left(3 t^2\right) \mathrm{d} x \\
+&=\int_{0}^{1}\left(12 t^2 x+6 t^{5}\right) \mathrm{d} x \\
+&=6 t^2 x^2+\left.6 t^{5} x\right|_{x=0} ^{x=1} \\
+&=6 t^2+6 t^{5}
+\end{aligned}
+\]
+The answer agrees with our first, more direct, calculation.
+We will apply (1.2) to many examples of integrals, in Section 12 we will discuss the justification of this method in our examples, and then we'll give some more examples.
+<h1>2. Euler’s factorial integral in a new light</h1>
+For integers $n \geq 0$, Euler's integral formula for $n!$ is
+\[\tag{2.1}
+\int_{0}^{\infty} x^{n} e^{-x} \mathrm{~d} x=n !,
+\]
+which can be obtained by repeated integration by parts starting from the formula
+\[\tag{2.2}
+\int_{0}^{\infty} e^{-x} \mathrm{~d} x=1
+\]
+when $n=0$. Now we are going to derive Euler's formula in another way, by repeated differentiation after introducing a parameter $t$ into (2.2).<br>
+For $t>0$, let $x=t u$. Then $\mathrm{d} x=t \mathrm{~d} u$ and (2.2) becomes
+\[
+\int_{0}^{\infty} t e^{-t u} \mathrm{~d} u=1 .
+\]
+Dividing by $t$ and writing $u$ as $x$ (why is this not a problem?), we get
+\[\tag{2.3}
+\int_{0}^{\infty} e^{-t x} \mathrm{~d} x=\frac{1}{t} .
+\]
+This is a parametric form of (2.2), where both sides are now functions of $t$. We need $t>0$ in order that $e^{-t x}$ is integrable over the region $x \geq 0$.<br>
+<br>
+Now we bring in differentiation under the integral sign. Differentiate both sides of (2.3) with respect to $t$, using (1.2) to treat the left side. We obtain
+\[
+\int_{0}^{\infty}-x e^{-t x} \mathrm{~d} x=-\frac{1}{t^2}
+\]
+so
+$$\tag{2.4}\int_{0}^{\infty} x e^{-t x} \mathrm{~d} x=\frac{1}{t^2}$$
+Differentiate both sides of $(2.4)$ with respect to $t$, again using (1.2) to handle the left side. We get
+\[
+\int_{0}^{\infty}-x^2 e^{-t x} \mathrm{~d} x=-\frac{2}{t^{3}} .
+\]
+Taking out the sign on both sides,
+\[
+\int_{0}^{\infty} x^2 e^{-t x} \mathrm{~d} x=\frac{2}{t^{3}} .
+\]
+If we continue to differentiate each new equation with respect to $t$ a few more times, we obtain
+\begin{aligned}
+&\int_{0}^{\infty} x^{3} e^{-t x} \mathrm{~d} x=\frac{6}{t^{4}}, \\
+&\int_{0}^{\infty} x^{4} e^{-t x} \mathrm{~d} x=\frac{24}{t^{5}},
+\end{aligned}
+and
+\[
+\int_{0}^{\infty} x^{5} e^{-t x} \mathrm{~d} x=\frac{120}{t^{6}}
+\]
+Do you see the pattern? It is
+\[
+\int_{0}^{\infty} x^{n} e^{-t x} \mathrm{~d} x=\frac{n !}{t^{n+1}} .
+\]
+We have used the presence of the extra variable $t$ to get these equations by repeatedly applying $\mathrm{d} / \mathrm{d} t$. Now specialize $t$ to 1 in (2.6). We obtain
+\[
+\int_{0}^{\infty} x^{n} e^{-x} \mathrm{~d} x=n !
+\]
+which is our old friend (2.1). Voilà!<br>
+The idea that made this work is introducing a parameter $t$, using calculus on $t$, and then setting $t$ to a particular value so it disappears from the final formula. In other words, sometimes <i>to solve a problem it is useful to solve a more general problem</i>. Compare (2.1) to (2.6).
+<h1>3. A Damped Sine Integral</h1>
+We are going to use differentiation under the integral sign to prove
+\[
+\int_{0}^{\infty} e^{-t x} \frac{\sin x}{x}\mathrm{~d} x=\frac{\pi}{2}-\arctan t
+\]
+for $t>0$.
+Call this integral $F(t)$ and set $f(x, t)=e^{-t x}(\sin x) / x$, so $(\partial / \partial t) f(x, t)=-e^{-t x} \sin x$. Then
+\[
+F'(t)=-\int_{0}^{\infty} e^{-t x}(\sin x) \mathrm{~d} x
+\]
+The integrand $e^{-t x} \sin x$, as a function of $x$, can be integrated by parts:
+\[
+\int e^{a x} \sin x \mathrm{~d} x=\frac{(a \sin x-\cos x)}{1+a^2} e^{a x}
+\]
+Applying this with $a=-t$ and turning the indefinite integral into a definite integral,
+\[
+F'(t)=-\int_{0}^{\infty} e^{-t x}(\sin x) \mathrm{~d} x=\left.\frac{(t \sin x+\cos x)}{1+t^2} e^{-t x}\right|_{x=0} ^{x=\infty}
+\]
+As $x \rightarrow \infty, t \sin x+\cos x$ oscillates a lot, but in a bounded way (since $\sin x$ and $\cos x$ are bounded functions), while the term $e^{-t x}$ decays exponentially to 0 since $t>0$. So the value at $x=\infty$ is 0 . Therefore
+\[
+F'(t)=-\int_{0}^{\infty} e^{-t x}(\sin x) \mathrm{~d} x=-\frac{1}{1+t^2} .
+\]
+We know an explicit antiderivative of $1 /\left(1+t^2\right)$, namely $\arctan t$. Since $F(t)$ has the same $t$-derivative as $-\arctan t$, they differ by a constant: for some number $C$,
+\[\tag{3.1}
+\int_{0}^{\infty} e^{-t x} \frac{\sin x}{x} \mathrm{~d} x=-\arctan t+C\quad \text { for } t>0
+\]
+We've computed the integral, up to an additive constant, without finding an antiderivative of $e^{-t x}(\sin x) / x$<br>
+<br>
+To compute $C$ in (3.1), let $t \rightarrow \infty$ on both sides. Since $|(\sin x) / x| \leq 1$, the absolute value of the integral on the left is bounded from above by $\int_{0}^{\infty} e^{-t x} \mathrm{~d} x=1 / t$, so the integral on the left in (3.1) tends to 0 as $t \rightarrow \infty$. Since arctan $t \rightarrow \pi / 2$ as $t \rightarrow \infty$, equation (3.1) as $t \rightarrow \infty$ becomes $0=-\frac{\pi}{2}+C$, so $C=\pi / 2$. Feeding this back into (3.1)
+\[\tag{3.2}
+\int_{0}^{\infty} e^{-t x} \frac{\sin x}{x} \mathrm{~d} x=\frac{\pi}{2}-\arctan t \quad \text { for } t>0
+\]
+If we let $t \rightarrow 0^+$ in (3.2), this equation suggests that
+\[\tag{3.3}
+\int_{0}^{\infty} \frac{\sin x}{x} \mathrm{~d} x=\frac{\pi}{2}
+\]
+which is true and it is important in signal processing and Fourier analysis. It is a delicate matter to derive (3.3) from (3.2) since the integral in (3.3) is not absolutely convergent. Details are provided in an appendix.
+<h1>4. The Gaussian integral</h1>
+The improper integral formula
+\[\tag{4.1}
+\int_{-\infty}^{\infty} e^{-x^2 / 2} \mathrm{~d} x=\sqrt{2 \pi}
+\]
+is fundamental to probability theory and Fourier analysis. The function $\frac{1}{\sqrt{2 \pi}} e^{-x^2 / 2}$ is called a Gaussian, and (4.1) says the integral of the Gaussian over the whole real line is 1.<br>
+<br>
+The physicist Lord Kelvin (after whom the Kelvin temperature scale is named) once wrote (4.1) on the board in a class and said "A mathematician is one to whom that [pointing at the formula] is as obvious as twice two makes four is to you." We will prove (4.1) using differentiation under the integral sign. The method will not make (4.1) as obvious as $2 \cdot 2=4$. If you take further courses you may learn more natural derivations of (4.1) so that the result really does become obvious. For now, just try to follow the argument here step-by-step.<br>
+We are going to aim not at (4.1), but at an equivalent formula over the range $x \geq 0$ :
+\[\tag{4.2}
+\int_{0}^{\infty} e^{-x^2 / 2} \mathrm{~d} x=\frac{\sqrt{2 \pi}}{2}=\sqrt{\frac{\pi}{2}} .
+\]
+Call the integral on the left $I$.
+For $t \in \mathbf{R}$, set
+\[
+F(t)=\int_{0}^{\infty} \frac{e^{-t^2\left(1+x^2\right) / 2}}{1+x^2} \mathrm{~d} x .
+\]
+Then $F(0)=\int_{0}^{\infty}\mathrm{{}d}x /\left(1+x^2\right)=\pi / 2$ and $F(\infty)=0$. Differentiating under the integral sign,
+\[
+F'(t)=\int_{0}^{\infty}-t e^{-t^2\left(1+x^2\right) / 2} \mathrm{~d} x=-t e^{-t^2 / 2} \int_{0}^{\infty} e^{-(t x)^2 / 2} \mathrm{~d} x .
+\]
+Make the substitution $y=t x$, with $\mathrm{{}d} y=t \mathrm{~d} x$, so
+\[
+F'(t)=-e^{-t^2 / 2} \int_{0}^{\infty} e^{-y^2 / 2} \mathrm{~d} y=-I e^{-t^2 / 2} .
+\]
+For $b>0$, integrate both sides from 0 to $b$ and use the Fundamental Theorem of Calculus:
+\[
+\int_{0}^{b} F'(t) \mathrm{~d} t=-I \int_{0}^{b} e^{-t^2 / 2} \mathrm{~d} t \Longrightarrow F(b)-F(0)=-I \int_{0}^{b} e^{-t^2 / 2} \mathrm{~d} t
+\]
+Letting $b \rightarrow \infty$,
+\[
+0-\frac{\pi}{2}=-I^2 \Longrightarrow I^2=\frac{\pi}{2} \Longrightarrow I=\sqrt{\frac{\pi}{2}} .
+\]
+I learned this from Michael Rozman [12], who modified an idea on a Math Stackexchange question [3], and in a slightly less elegant form it appeared much earlier in [15].
+<h1>5. Higher moments of the Gaussian</h1>
+For every integer $n \geq 0$ we want to compute a formula for
+\[\tag{5.1}
+\int_{-\infty}^{\infty} x^{n} e^{-x^2 / 2} \mathrm{~d} x
+\]
+(Integrals of the type $\int x^{n} f(x) \mathrm{d} x$ for $n=0,1,2, \ldots$ are called the moments of $f(x)$, so (5.1) is the $n$-th moment of the Gaussian.) When $n$ is odd, (5.1) vanishes since $x^{n} e^{-x^2 / 2}$ is an odd function. What if $n=0,2,4, \ldots$ is even?
+The first case, $n=0$, is the Gaussian integral (4.1):
+\[\tag{5.2}
+\int_{-\infty}^{\infty} e^{-x^2 / 2} \mathrm{~d} x=\sqrt{2 \pi} .
+\]
+To get formulas for (5.1) when $n \neq 0$, we follow the same strategy as our treatment of the factorial integral in Section 2: stick a $t$ into the exponent of $e^{-x^2/ 2}$ and then differentiate repeatedly with respect to $t$.
+For $t>0$, replacing $x$ with $\sqrt{t} x$ in (5.2) gives
+\[\tag{5.3}
+\int_{-\infty}^{\infty} e^{-t x^2 / 2} \mathrm{~d} x=\frac{\sqrt{2 \pi}}{\sqrt{t}} .
+\]
+Differentiate both sides of (5.3) with respect to $t$, using differentiation under the integral sign on the left:
+\[
+\int_{-\infty}^{\infty}-\frac{x^2}{2} e^{-t x^2 / 2} \mathrm{~d} x=-\frac{\sqrt{2 \pi}}{2 t^{3 / 2}},
+\]
+so
+\[\tag{5.4}
+\int_{-\infty}^{\infty} x^2 e^{-t x^2 / 2} \mathrm{~d} x=\frac{\sqrt{2 \pi}}{t^{3 / 2}}
+\]
+Differentiate both sides of (5.4) with respect to $t$. After removing a common factor of $-1 / 2$ on both sides, we get
+\[\tag{5.5}
+\int_{-\infty}^{\infty} x^{4} e^{-t x^2 / 2} \mathrm{~d} x=\frac{3 \sqrt{2 \pi}}{t^{5 / 2}}
+\]
+Differentiating both sides of (5.5) with respect to $t$ a few more times, we get
+\[
+\begin{gathered}
+\int_{-\infty}^{\infty} x^{6} e^{-t x^2 / 2} \mathrm{~d} x=\frac{3 \cdot 5 \sqrt{2 \pi}}{t^{7 / 2}} \\
+\int_{-\infty}^{\infty} x^{8} e^{-t x^2 / 2} \mathrm{~d} x=\frac{3 \cdot 5 \cdot 7 \sqrt{2 \pi}}{t^{9 / 2}}
+\end{gathered}
+\]
+and
+\[
+\int_{-\infty}^{\infty} x^{10} e^{-t x^2 / 2} \mathrm{~d} x=\frac{3 \cdot 5 \cdot 7 \cdot 9 \sqrt{2 \pi}}{t^{11 / 2}} .
+\]
+Quite generally, when $n$ is even
+\[
+\int_{-\infty}^{\infty} x^{n} e^{-t x^2 / 2} \mathrm{~d} x=\frac{1 \cdot 3 \cdot 5 \cdots(n-1)}{t^{(n+1) / 2}} \sqrt{2 \pi}
+\]
+where the numerator is the product of the positive odd integers from 1 to $n-1$ (understood to be the empty product 1 when $n=0)$.
+In particular, taking $t=1$ we have computed (5.1):
+\[
+\int_{-\infty}^{\infty} x^{n} e^{-x^2 / 2} \mathrm{~d} x=1 \cdot 3 \cdot 5 \cdots(n-1) \sqrt{2 \pi}
+\]
+As an application of (5.4), we now compute $\left(\frac{1}{2}\right) !:=\int_{0}^{\infty} x^{1 / 2} e^{-x} \mathrm{~d} x$, where the notation $\left(\frac{1}{2}\right) !$ and its definition are inspired by Euler's integral formula (2.1) for $n!$ when $n$ is a nonnegative integer. Using the substitution $u=x^{1 / 2}$ in $\int_{0}^{\infty} x^{1 / 2} e^{-x} \mathrm{~d} x$, we have
+\[
+\begin{aligned}
+\left(\frac{1}{2}\right) ! &=\int_{0}^{\infty} x^{1 / 2} e^{-x} \mathrm{~d} x \\
+&=\int_{0}^{\infty} u e^{-u^2}(2 u) \mathrm{~d} u \\
+&=2 \int_{0}^{\infty} u^2 e^{-u^2} \mathrm{~d} u \\
+&=\int_{-\infty}^{\infty} u^2 e^{-u^2} \mathrm{~d} u \\
+&=\frac{\sqrt{2 \pi}}{2^{3 / 2}} \text { by }(5.4) \text { at } t=2 \\
+&=\frac{\sqrt{\pi}}{2}
+\end{aligned}
+\]
+<h1>6. A Cosine Transform of the Gaussian</h1>
+We are going to compute
+\[
+F(t)=\int_{0}^{\infty} \cos (t x) e^{-x^2/2} \mathrm{~d} x
+\]
+by looking at its $t$-derivative:
+\[\tag{6.1}
+F'(t)=\int_{0}^{\infty}-x \sin (t x) e^{-x^2 / 2} \mathrm{~d} x .
+\]
+This is <i>good</i> from the viewpoint of integration by parts since $-x e^{-x^2 / 2}$ is the derivative of $e^{-x^2 / 2}$. So we apply integration by parts to (6.1):
+\[
+u=\sin (t x), \quad \mathrm{d} v=-x e^{-x^2} \mathrm{~d} x
+\]
+and
+\[
+\mathrm{d} u=t \cos (t x) \mathrm{d} x, \quad v=e^{-x^2 / 2}
+\]
+Then
+\begin{aligned}
+F'(t) &=\int_{0}^{\infty} u \mathrm{~d} v \\
+&=\left.u v\right|_{0} ^{\infty}-\int_{0}^{\infty} v \mathrm{~d} u \\
+&=\left.\frac{\sin (t x)}{e^{x^2 / 2}}\right|_{x=0} ^{x=\infty}-t \int_{0}^{\infty} \cos (t x) e^{-x^2 / 2} \mathrm{~d} x \\
+&=\left.\frac{\sin (t x)}{e^{x^2 / 2}}\right|_{x=0} ^{x=\infty}-t F(t)
+\end{aligned}
+As $x \rightarrow \infty, e^{x^2 / 2}$ blows up while $\sin (t x)$ stays bounded, so $\sin (t x) / e^{x^2 / 2}$ goes to 0 . Therefore $F'(t)=-t F(t)$
+We know the solutions to this differential equation: constant multiples of $e^{-t^2 / 2}$. So
+\[
+\int_{0}^{\infty} \cos (t x) e^{-x^2 / 2} \mathrm{~d} x=C e^{-t^2 / 2}
+\]
+for some constant $C$. To find $C$, set $t=0$. The left side is $\int_{0}^{\infty} e^{-x^2 / 2} \mathrm{~d} x$, which is $\sqrt{\pi / 2}$ by (4.2). The right side is $C$. Thus $C=\sqrt{\pi / 2}$, so we are done: for all real $t$,
+\[
+\int_{0}^{\infty} \cos (t x) e^{-x^2 / 2} \mathrm{~d} x=\sqrt{\frac{\pi}{2}} e^{-t^2 / 2} .
+\]
+<b>Remark 6.1.</b> If we want to compute $G(t)=\int_{0}^{\infty} \sin (t x) e^{-x^2 / 2} \mathrm{~d} x$, with $\sin (t x)$ in place of $\cos (t x)$, then in place of $F'(t)=-t F(t)$ we have $G'(t)=1-t G(t)$, and $G(0)=0$. From the differential equation, $\left(e^{t^2 / 2} G(t)\right)'=e^{t^2 / 2}$, so $G(t)=e^{-t^2 / 2} \int_{0}^{t} e^{x^2 / 2} \mathrm{~d} x$. So while $\int_{0}^{\infty} \cos (t x) e^{-x^2 / 2} \mathrm{~d} x=\sqrt{\frac{\pi}{2}} e^{-t^2 / 2}$, the integral $\int_{0}^{\infty} \sin (t x) e^{-x^2 / 2} \mathrm{~d} x$ is impossible to express in terms of elementary functions.
+<h1>7. The Gaussian times a logarithm</h1>
+We will compute
+\[
+\int_{0}^{\infty}(\log x) e^{-x^2} \mathrm{~d} x .
+\]
+Integrability at $\infty$ follows from rapid decay of $e^{-x^2}$ at $\infty$, and integrability near $x=0$ follows from the integrand there being nearly $\log x$, which is integrable on $[0,1]$, so the integral makes sense. (This example was brought to my attention by Harald Helfgott.)
