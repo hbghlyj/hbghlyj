@@ -12,19 +12,6 @@ MathJax = {
   //
   loader: {load: ['input/tex', 'output/svg']},
   //
-  //  When page is ready, render the math in the document
-  //
-  //
-  //  When page is ready:
-  //    disable the assistive-mathml menu item
-  //    render the document, handling require and autoload calls
-  //
-  startup: {
-    pageReady() {
-      MathJax._.mathjax.mathjax.handleRetriesFor(() => MathJax.startup.document.render());
-    }
-  },
-  //
   //  Override the usual typeset render action with one that generates MathML output
   //
   options: {
