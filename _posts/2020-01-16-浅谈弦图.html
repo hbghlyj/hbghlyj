@@ -32,7 +32,7 @@ tags: polynomial, computer-algebra
 点着色问题是指，用最少的颜色为无向图的顶点着色，使得所有顶点均着有颜色且相邻顶点的颜色不同。回溯算法、分支定界法、Welsh Powell法、布尔代数法、模拟退火算法等等都可以用来解决点着色问题。对一般图进行点着色，上述算法的时间复杂度都很高，其中回溯算法的时间复杂度为指数阶的。然而，若对弦图进行点着色，则有非常有效的着色方法：先计算出弦图的完美消除序列，再按照完美消除序列从后往前依次给顶点着色，着色时尽可能使用已经用过的颜色。利用这种方法对弦图进行点着色，其时间复杂度关于点数n是线性的。<br>
 <br>
 例如图3中的六边形，我们可以通过图中给出的完美消除序列对其进行点着色：首先对顶点6着色，然后将顶点5着成与6不同的颜色，接下来再将顶点4着成与5,6都不同的颜色，由此继续很容易完成点着色的过程。所得结果如图5所示，由此可见用三种颜色就可以完成该图的点着色。利用完美消除序列对弦图进行点着色，不仅着色方法会得到简化，而且着色的时间复杂度也会降低。
-<div align="center">{%latex%}\usepackage{tikz,amsmath,amsfonts}
+<div align="center">{%latex%}\usepackage{tikz}
 \begin{tikzpicture}[every label/.style={color=red}] \coordinate[label=right:1] (1) at (1,0); \coordinate[label=below:2] (2) at (1/2,-0.866); \coordinate[label=below:4] (4) at (-1/2,-0.866); \coordinate[label=above:3] (3) at (1/2,0.866); \coordinate[label=left:5] (5) at (-1,0); \coordinate[label=above:6] (6) at (-1/2,0.866); \draw[color={rgb:red,31;green,73;blue,125},line width=1.5pt] (1)--(2)--(4)--(5)--(6)--(3)--(1) (2)--(3)--(4)--(6); \filldraw[black!30!green] (1) circle (3pt) (4) circle (3pt); \filldraw[red] (3) circle (3pt) (5) circle (3pt); \draw[fill={rgb:red,31;green,73;blue,125},draw=none] (2) circle (3pt) (6) circle (3pt); \end{tikzpicture}{:%endlatex%:}<br>
 <strong>图5 弦图的着色结果</strong></div>
 弦图还可用于预测高斯消去法中矩阵的非零元结构。John R. Gilbert在他1986年的文章中指出，当输入矩阵具有弦图结构时，对该矩阵进行高斯消去法后得到的矩阵的关联图将是原弦图的子图。进一步地，Diego Cifuentes和Pablo A. Parrilo首次指出了多项式组的弦图结构与三角列之间的内外联系，并指出王东明所提出的若干三角分解算法对处理具有弦图结构的多项式组效率更高。受此启发，牟晨琪和笔者证明了将自上而下形式的三角分解算法用于具有弦图结构的多项式组时，计算所得的三角列的关联图都是该弦图的子图。<br>
@@ -41,8 +41,8 @@ tags: polynomial, computer-algebra
 T<sub>2 </sub>=[ x<sub>1</sub>+1,x<sub>2</sub>+1,x<sub>3</sub>-1,x<sub>4</sub>+x<sub>2</sub> ],<br>
 T<sub>3</sub>=[x<sub>1</sub>,x<sub>2</sub>+2,(x<sub>2</sub>-1)x<sub>3</sub>+x<sub>2</sub><sup>2</sup>+1,(x<sub>3</sub>+x<sub>2</sub>)x<sub>4</sub>+x<sub>3</sub>-1],</div><br>
 它们对应的关联图分别如图7中(a)、(b)、(c)所示。由图可知，输出三角列的关联图均为原弦图的子图。<br>
-<div align="center">{%latex%}\usepackage{tikz,amsmath,amsfonts}
+<div align="center">{%latex%}\usepackage{tikz}
 \begin{tikzpicture} \draw[color=blue] (1,0)--(0,1)--(0,-1)--(1,0)--(-1,0)--(0,-1); \filldraw[yellow] (0,1) circle (6pt); \filldraw[yellow] (0,-1) circle (6pt); \filldraw[yellow] (1,0) circle (6pt); \filldraw[yellow] (-1,0) circle (6pt); \node at (0,1) {$x_1$}; \node at (1,0) {$x_2$}; \node at (0,-1) {$x_3$}; \node at (-1,0) {$x_4$}; \end{tikzpicture}{:endlatex:}<strong>图6 多项式组F的关联图</strong></div>
-<div align="center">{%latex%}\documentclass{standalone}\usepackage{tikz,amsmath,amsfonts}
+<div align="center">{%latex%}\usepackage{tikz}
 \begin{tikzpicture} \draw[color=blue] (1,0)--(0,1)--(0,-1)--(1,0)--(-1,0)--(0,-1); \filldraw[yellow] (0,1) circle (6pt); \filldraw[yellow] (0,-1) circle (6pt); \filldraw[yellow] (1,0) circle (6pt); \filldraw[yellow] (-1,0) circle (6pt); \node at (0,1) {$x_1$}; \node at (1,0) {$x_2$}; \node at (0,-1) {$x_3$}; \node at (0,-1.5) {(a)}; \node at (4,-1.5) {(b)}; \node at (8,-1.5) {(c)}; \node at (-1,0) {$x_4$}; \draw[color=blue ] (3,0)--(5,0); \filldraw[yellow] (4,1) circle (6pt); \filldraw[yellow] (4,-1) circle (6pt); \filldraw[yellow] (5,0) circle (6pt); \filldraw[yellow] (3,0) circle (6pt); \node at (4,1) {$x_1$}; \node at (5,0) {$x_2$}; \node at (4,-1) {$x_3$}; \node at (3,0) {$x_4$}; \draw[color=blue ] (8,-1)--(9,0)--(7,0)--(8,-1); \filldraw[yellow] (8,1) circle (6pt); \filldraw[yellow] (8,-1) circle (6pt); \filldraw[yellow] (9,0) circle (6pt); \filldraw[yellow] (7,0) circle (6pt); \node at (8,1) {$x_1$}; \node at (9,0) {$x_2$}; \node at (8,-1) {$x_3$}; \node at (7,0) {$x_4$}; \end{tikzpicture}{:endlatex:}<br><strong>图7 三角列T<sub>1</sub>，T<sub>2</sub>，T<sub>3</sub>的关联图</strong></div>
 在此基础上，牟晨琪与笔者提出了基于弦图的完美消除序列对稀疏多项式组进行三角分解的快速算法。该算法在调用自上而下形式的三角分解算法对稀疏多项式组进行分解时，其效率显著提升。
