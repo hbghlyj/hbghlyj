@@ -21,7 +21,6 @@ MathJax = {
   //
   startup: {
     pageReady() {
-      MathJax.startup.document.menu.menu.findID('Accessibility', 'AssistiveMml').disable();
       MathJax._.mathjax.mathjax.handleRetriesFor(() => MathJax.startup.document.render());
     }
   },
