@@ -10,3 +10,12 @@ tags: logic
 <li><a href="https://dl.acm.org/doi/pdf/10.1145/274497.274524">Reading and Writing Mathematics: The MAVIS Project</a>
 <li><a href="http://www.gprolog.org/manual/gprolog.html">GNU prolog manual</a>
 </ul>
+<pre>parent(victoria,albert).
+parent(X,Y):-father(X,Y).
+parent(X,Y):-mother(X,Y).
+father(john,henry).
+mother(jane,henry).
+son(X,Y):-father(Y,X).
+go:-parent(john,B),
+write('john has a child named '),
+write(B),nl.</pre>
