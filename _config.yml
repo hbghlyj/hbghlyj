@@ -179,9 +179,7 @@ analytics:
 
 ## => Build
 ##############################
-markdown    : GFM
-highlighter : rouge
-permalink   : /post/:year/:title
+permalink   : /post/:year/:title:output_ext
 
 exclude:
   - CHANGELOG.md
