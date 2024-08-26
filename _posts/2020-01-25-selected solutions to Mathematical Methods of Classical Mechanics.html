@@ -1,0 +1,311 @@
+<a href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/a4mmcm/mmcm_20070211.pdf" target="_blank">PDF</a><style>body { counter-reset: section chapter exec; }h3{counter-reset: exec;}h3:before {  counter-increment: section; content:counter(chapter)"." counter(section) ". ";}td.t_f h1{counter-reset: section;}td.t_f h1:before { counter-increment: chapter; content: "Chapter " counter(chapter) ". ";}
+    .Exec>p::before{counter-increment: exec;content:'Exercise 'counter(chapter)'.'counter(exec)' ';font-weight:bold}</style>
+    $\def\ae#1#2{\text{a.e.} {#1} \in {#2}}
+    \def\brn{\mathbb{R}^N}
+    \def\bR{\mathbb{R}}
+    \def\bN{\mathbb{N}}
+    \def\bC{\mathbb{C}}
+    \def\bQ{\mathbb{Q}}
+    \def\bZ{\mathbb{Z}}
+    \def\bbf{\mathbb{F}}
+    \def\ch{\mathcal{H}}
+    \def\cb{\mathscr{B}}
+    \def\cw{\mathcal{W}}
+    \def\cd{\mathcal{D}}
+    \def\cc{\mathcal{C}}
+    \def\ck{\mathcal{K}}
+    \def\cl{\mathcal{L}}
+    \def\cs{\mathcal{S}}
+    \def\cm{\mathcal{M}}
+    \def\scl{\mathscr{L}}
+    \def\lpr{L^2_{\br}[0,\pi]}
+    \def\lpc{L^2_{\bc}[0,\pi]}
+    \def\lppr{L^2_{\br}[-\pi,\pi]}
+    \def\lppc{L^2_{\bc}[-\pi,\pi]}
+    \def\lpf{L^2_{\bbf}[-\pi,\pi]}
+    \def\cpr{C_{\br}[0,\pi]}
+    \def\brk{\mathbb{R}^k}
+    \def\brm{\mathbb{R}^m}
+    \def\bpk{\mathbb{P}^{k-1}}
+    \def\ixy{\langle x,y\rangle}
+    \def\ixa{\langle x,a\rangle}
+    \def\ixx{\langle x,x\rangle}
+    \def\iyx{\langle y,x\rangle}
+    \def\ixz{\langle x,z\rangle}
+    \def\iyz{\langle y,z\rangle}
+    \def\cat{\text{\rm cat}}
+    \def\ve{\varepsilon}
+    \def\bve{\overline{\ve}}
+    \def\ox{\overline{X}}
+    \def\tf{\tilde{f}}
+    \def\tg{\tilde{g}}
+    \def\th{\tilde{h}}
+    \def\tx{\tilde{X}}
+    \def\ta{\tilde{A}}
+    \def\vp{\varphi}
+    \def\tvp{\tilde{\vp}}
+    \def\wc{\rightharpoonup}
+    \def\hd{\hat{\delta}}
+    \def\hve{\hat{\ve}}
+    \def\unk{u_{n_k}}
+    \def\bu{{\boldsymbol{u}}}
+    \def\be{{\boldsymbol{e}}}
+    \def\ba{{\boldsymbol{a}}}
+    \def\bq{{\boldsymbol{q}}}
+    \def\bv{{\boldsymbol{v}}}
+    \def\bw{{\boldsymbol{w}}}
+    \def\bx{{\boldsymbol{x}}}
+    \def\bxd{{\boldsymbol{\dot{x}}}}
+    \def\bxdd{{\boldsymbol{\ddot{x}}}}
+    \def\ker{{\text{Ker}\,}}
+    \def\tr{{\text{tr}\,}}
+    \def\Re{\mathfrak{Re}}
+    \def\Im{\mathfrak{Im}}
+    \def\esssup{\text{ess}\,\sup}
+    \def\sspan{{\text{\rm span}}}
+    \newcommand{\vat}{\bigg\arrowvert}
+    \def\arcsinh{\text{arc}\sinh}$
+    <h1>Experimental facts</h1>
+    <h3 id="the-principles-of-relativity-and-determinacy">The principles of relativity and determinacy</h3>
+    <h3 id="the-galilean-group-and-newtons-equations">The galilean group and Newton’s equations</h3>
+    <div class="Exec">
+    <p>证明空间<span class="math inline">$\bR\times\bR^3$</span>的每个伽利略变换都可唯一得表示为一个旋转, 一个平移, 一个匀速运动的组合 (<span class="math inline"><i>g</i> = <i>g</i><sub>1</sub> ∘ <i>g</i><sub>2</sub> ∘ <i>g</i><sub>3</sub></span> )(所以, 伽利略变换群的维数是<span class="math inline">3 + 4 + 3 = 10</span>)</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 对任意伽利略变换<span class="math inline"><i>g</i></span>, 先考虑<span class="math inline">$g(t,\boldsymbol{0})$</span>由<span class="math inline"><i>g</i></span>是线性的, 可知, 有<span class="math inline">$\bv$</span>, <span class="math inline">$\ba$</span>,<span class="math inline"><i>s</i></span>, 使得<span class="math inline">$g(t,\boldsymbol{0}) = (t-s, \ba + t\bv) \in \bR\times\bR^3$</span>. 下面考虑<span class="math inline">$\bR^3$</span>中的标准正交基<span class="math inline">$\be_1,\be_2,\be_3$</span>. 令<span class="math inline">$g(t,\be_i) - g(t,\boldsymbol{0})=  (t-s,\bu_i)$</span>. 由于同时事件空间的差是一个3维线性空间(定义).</p>
+    <p>所以<span class="math inline">$g(t,(a,b,c)) - g(t,\boldsymbol{0})= (t-s, G(a,b,c)^T)$</span>, 其中<span class="math inline">$G = (\bu_1,\bu_2,\bu_3)$</span>. 令<span class="math inline">$g_3(t,\bx)  = (t,G \bx)$</span>, <span class="math inline">$g_2(t,\bx) = (t,t \bv +\bx)$</span>, <span class="math inline">$g_1(t,\bx) = (t-s,\ba+\bx)$</span>. 则<span class="math inline"><i>g</i> = <i>g</i><sub>1</sub> ∘ <i>g</i><sub>2</sub> ∘ <i>g</i><sub>3</sub></span>, 即为所求.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>证明一切伽利略空间均互相同构, 而特别是同构于坐标空间<span class="math inline">$\bR\times\bR^3$</span>.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 由于<span class="math inline">$t:\bR^4\rightarrow \bR$</span>, 是一个 Hilbert 空间上的线性范函, 有如下分解:<span class="math inline">$\bR^4 = \ker{t}\oplus\ker{t}^\perp$</span>, 且<span class="math inline">ker <i>t</i></span>的维数是3. 设<span class="math inline"><i>P</i>, <i>Q</i></span>为对应的投影映射, 使<span class="math inline">$\bx = P\bx+Q\bx$</span>, 其中<span class="math inline">$P\bx \in\ker{t}$</span>, <span class="math inline">$Q\bx \in\ker{t}^\perp$</span>. 又令<span class="math inline"><i>R</i></span>为<span class="math inline">ker <i>t</i></span>到<span class="math inline">$\bR^3$</span>的一个等距同构.</p>
+    <p>任取<span class="math inline"><i>A</i><sup>4</sup></span>中一点<span class="math inline">$\bx_0$</span>. 可作<span class="math inline">$F: A^4 \rightarrow \bR\times\bR^3$</span>, 其中<span class="math inline">$F(\bx) = (t(\bx-\bx_0),R\,P\bx)$</span>. 即为所求同构.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>平面上一个可微运动的轨迹是否有图<span class="math inline">3</span>形状? 其加速度矢量是否有图上所示的值?</p>
+    </div>
+    <div class="solution">
+    <p>可能, 如<span class="math inline">$\bx(t) = (t^3,t^2)$</span>; 不可能 <span class="math inline">$\bxdd$</span> 指向曲线凹处.</p>
+    </div>
+    <div class="Exec">
+    <p>若一力学系只由一点组成, 证明它在惯性参考系中的加速度为零.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 由例1,例2,加速度不依赖于<span class="math inline">$\bx,\bxd$</span>和<span class="math inline"><i>t</i></span>, 所以<span class="math inline">$F(\bx,\bxd,t)=\bv$</span>, 又由旋转不变性对任意<span class="math inline"><i>G</i></span>, <span class="math inline">$\bv=F(G\bx,G\bxd,t)=GF(\bx,\bxd,t)=G\bv$</span> 所以只能有<span class="math inline">$\bv=0$</span>. 即加速度为零.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>设一个力学系由两点组成, 在初始时刻其速度均为零, 证明他们将停留在初始时刻联结他们的直线上.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 只要证明<span class="math inline">$\bxdd_i$</span>平行于<span class="math inline">$\bx_1-\bx_2$</span>. 显然<span class="math inline">$\bx_1-\bx_2$</span>非零, 可令<span class="math inline">$\bu=(\bx_1-\bx_2)/\left\|\bx_1-\bx_2\right\|$</span>, 对任意与<span class="math inline">$\bu$</span>垂直的单位向量<span class="math inline">$\bv$</span>,令<span class="math inline">$\bw = \bu\times\bv$</span> 令<span class="math inline">$G = (\bu, \bv,\bw)^T$</span>, 为一个旋转变换. 由例3的相同方法,可知<span class="math inline">$F=\bxdd = (\bxdd_1,\bxdd_2)$</span> 只依赖于<span class="math inline">$\bx_1-\bx_2$</span>和<span class="math inline">$\bxd_1-\bxd_2$</span>. 则<span class="math inline">$G\bxdd = G\,F(\bx_1-\bx_2,\bxd_1-\bxd_2,t) 
+      = F(G\bu,G\boldsymbol{0},t) \equiv F((\|\bu\|,0,0)^T,\boldsymbol{0},t)$</span>. 由<span class="math inline">$\bv$</span>的任意性, <span class="math inline">$\bxdd_i$</span>垂直于<span class="math inline">$\bv$</span>. 又考虑到<span class="math inline">$\bx_1 = \bx_2 = 0$</span> 所以<span class="math inline">$\bx_i(t)$</span>始终在他们的连线上.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>设一个力学系由三点组成, 在初始时刻其速度均为零, 证明它们总位于初始时刻包含它们的平面上.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 类似前一题, 构造正交变换<span class="math inline"><i>G</i></span>. 令<span class="math inline">$\bu$</span>是垂直于<span class="math inline">$\bx_1-\bx_2,\bx_1-\bx_3$</span>的向量. <span class="math inline">$\bv$</span>平行于<span class="math inline">$\bx_1-\bx_2$</span>, <span class="math inline">$\bw=\bu\times\bv$</span>, <span class="math inline">$G = (\bu,\bv,\bw)$</span>,<span class="math inline">$G' = (-\bu,\bv,\bw)$</span>,<span class="math inline">$\bx = (\bxdd_1,\bxdd_2,\bxdd_3)$</span>. 由书中例, <span class="math inline"><i>F</i></span>只与<span class="math inline">$\bx_1-\bx_2,\bx_1-\bx_3$</span>有关. 则(<span class="math inline">⋆</span>中部分不必考虑具体形式) <span class="math display">$$G\bxdd=F(G(\bx_1-\bx_2,\bx_1-\bx_3),G(\bxd_1,\bxd_2,\bxd_3),t)
+      = F((0,0,0;\star),\boldsymbol{0},t) = G' \bxdd$$</span>, 得<span class="math inline">$\bu\bxdd = \boldsymbol{0}$</span>, 同上题得证.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>设一个力学系由两点组成, 证明, 对任意初始条件都存在一个惯性参考系, 使得其中这两个点总位于一个固定平面上.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 设两点初始时刻位置和速度分别为<span class="math inline">$\bx_1,\bx_2$</span>和<span class="math inline">$\bxd_1,\bxd_2$</span>, 考虑一个以<span class="math inline">$\bxd_1$</span>运动的参考系, 在其中<span class="math inline">$\bxd_1=\boldsymbol{0}$</span>. 考虑单位向量<span class="math inline">$\bu$</span>同时垂直于<span class="math inline">$\bx_1-\bx_2$</span>和<span class="math inline">$\bxd_2$</span>. 另作单位向量<span class="math inline">$\bv,\bw$</span>, 使它们成为两两正向量. 令<span class="math inline">$G = (\bu, \bv,\bw)$</span>, <span class="math inline">$G' = (-\bu,\bv,\bw)$</span>. <span class="math inline">$\bxdd = (\bxdd_1,\bxdd_2)$</span>. 同时, <span class="math inline"><i>F</i></span> 只与<span class="math inline">$\bx_1-\bx_2$</span>, <span class="math inline">$\bxd_1$</span>,<span class="math inline">$\bxd_2$</span>有关. 于是 <span class="math display">$$G\bxdd = F(G(\bx_1-\bx_2),G\bxd_1,G\bxd_2)
+      = F((0,\star)^T, \boldsymbol{0},(0,\star))
+      = F(G'(\bx_1-\bx_2),G'\bxd_1,G'\bxd_2) = G'\bxdd$$</span> 于是<span class="math inline">$\bxdd$</span>和<span class="math inline">$\bu$</span>垂直, 结合<span class="math inline">$\bxd_1,\bxd_2$</span>和<span class="math inline">$\bu$</span>垂直即得, 运动始终在和<span class="math inline">$\bu$</span>垂直的平面内.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>证明镜子里的力学和我们的力学是一样的</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 令 <span class="math display">$$G = \left(
+        \begin{array}{ccc}
+          -1 &amp; 0 &amp; 0 \\
+          0 &amp; 1 &amp; 0 \\
+          0 &amp; 0 &amp; 1 \\
+        \end{array}
+      \right)$$</span> 即得.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>惯性参考系类是否唯一</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 将惯性参考系类理解为, 若两个参考系为同一类, 则它们之间有一个伽利略变换. 那么改变时间间隔或者时间方向的两个惯性参考系之间是没有伽利略变换的. 若有, 则这个变换不保持时间间隔数<span class="math inline"><i>t</i></span>, 所以不是伽利略变换.&nbsp;◻</p>
+    </div>
+    <h3 id="examples-of-mechanical-systems">Examples of mechanical systems</h3>
+    <h1>Investigation of the equations of motion</h1>
+    <h3 id="systems-with-one-degree-of-freedom">Systems with one degree of freedom</h3>
+    <div class="Exec">
+    <p>Draw the phase curves for the “equation of a pendulum one a rotating axis”: <span class="math inline">$\bxdd = -\sin \bx + M$</span></p>
+    </div>
+    <div class="Exec">
+    <p>Find the tangent lines to the branches of the critical level corresponding to maximal potential energy <span class="math inline"><i>E</i> = <i>U</i>(<i>ξ</i>)</span></p>
+    </div>
+    <div class="solution">
+    <p>由于<span class="math inline"><i>d</i><i>x</i>/<i>d</i><i>t</i> = <i>y</i></span>, <span class="math inline">$dy/dt = -\sin \bx + M$</span>. <span class="math inline">$dy/dx = (-\sin\bx+M)/y$</span>. 解常微分方程得. <span class="math inline">$y^2/2 = E + \cos\bx + M\bx$</span>. 所以相图如下(M = 0.15).</p>
+    
+    
+    <img src="../data/attachment/forum/202202/04/153207tirpkxs660vxirse.jpg" width="640" />
+    
+    </div>
+    <div class="solution">
+    <p>By <span class="math inline"><i>U</i>(<i>x</i>) + <i>y</i><sup>2</sup>/2 = <i>E</i></span>, <span class="math inline"><i>d</i><i>y</i>/<i>d</i><i>x</i> =  − <i>U</i>′(<i>x</i>)/<i>y</i></span> (Since <span class="math inline"><i>E</i> = <i>U</i>(<i>ξ</i>) &gt; <i>U</i>(<i>x</i>)</span>,<span class="math inline"><i>y</i> ≠ 0</span>). By L’Hospital’s Rule <span class="math display">lim<sub><i>x</i> → <i>ξ</i></sub><i>d</i><i>y</i>/<i>d</i><i>x</i> =  − <i>U</i>″(<i>x</i>)/<i>y</i>′</span>. So <span class="math inline">$y'(\xi) = \pm \sqrt{-U''(\xi)}$</span>. Then tangent lines are <span class="math inline">$y = \pm \sqrt{-U''(\xi)}(x-\xi)$</span>. ps我的做法是对<span class="math inline"><i>U</i>(<i>x</i>) + <i>y</i><sup>2</sup>/2 = <i>E</i></span>求两次导数。</p>
+    </div>
+    <div class="Exec">
+    <p>Let <span class="math inline"><i>S</i>(<i>E</i>)</span> be the area enclosed by the closed phase curve coresponding to the energy level <span class="math inline"><i>E</i></span>. Show that the period of mothion along this curve is equal to <span class="math display">$$T = \frac{dS}{dE}$$</span>.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> 由唯一性定理, 首先知道这样的相曲线与<span class="math inline"><i>x</i></span>轴只能有两个交点设为<span class="math inline"><i>x</i><sub>1</sub> &lt; <i>x</i><sub>2</sub></span> (否则如果有一个中间点, 那么相曲线必然在那边断开了,建议画草图看一下). 另外可知对每个半平面(上下), <span class="math inline"><i>x</i></span>到<span class="math inline"><i>y</i></span>是一一对应的 (否则, 有一个转折点,于是就有<span class="math inline">$\bxd=0$</span>,这于<span class="math inline">$y=\bxd\neq0$</span>即在上, 下半平面内矛盾). 它们与能级<span class="math inline"><i>E</i></span>有关. 考虑相曲线围成的面积 <span class="math display"><i>S</i> = ∫<sub><i>x</i><sub>1</sub></sub><sup><i>x</i><sub>2</sub></sup><i>y</i><i>d</i><i>x</i> + ∫<sub><i>x</i><sub>2</sub></sub><sup><i>x</i><sub>1</sub></sup><i>y</i><i>d</i><i>x</i>.</span> (注意后面一项的积分方向). 结合<span class="math inline">$y = \pm \sqrt{2(E-U)}$</span>. 所以 <span class="math display">$$dS/dE = \int_{x_1}^{x_2} \frac{dx}{\sqrt{2(E-U)}}
+      + \int_{x_1}^{x_2} \frac{dx}{\sqrt{2(E-U)}}
+      + y dx/dE \vat_{x_1}^{x_2} + y dx/dE \vat_{x_2}^{x_1}$$</span> 注意到<span class="math inline"><i>y</i></span>在<span class="math inline"><i>x</i><sub>1</sub>, <i>x</i><sub>2</sub></span>处取零, 上式第一项就是运动从<span class="math inline"><i>x</i><sub>1</sub></span>到<span class="math inline"><i>x</i><sub>2</sub></span>的时间, 后一项是<span class="math inline"><i>x</i><sub>2</sub></span>到<span class="math inline"><i>x</i><sub>1</sub></span>的时间, 和即为一个周期的运动时间. 所以<span class="math inline"><i>T</i> = <i>d</i><i>S</i>/<i>d</i><i>E</i></span>.</p>
+    <p>ps由公式<span class="math inline"><i>U</i>(<i>x</i>) + <i>y</i><sup>2</sup>/2 = <i>E</i></span>可以看到相曲线是关于<span class="math inline"><i>x</i></span>轴对称的，&nbsp;所以<span class="math inline">$T/2=\int_{x_1}^{x_2} \frac{dx}{\sqrt{2(E-U)}}$</span>由Green公式， <span class="math inline"><i>S</i>/2 = ∫<sub><i>x</i><sub>1</sub></sub><sup><i>x</i><sub>2</sub></sup><i>y</i><i>d</i><i>x</i></span>求导即得结论。&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>Let <span class="math inline"><i>E</i><sub>0</sub></span> be the value of the potential function at a minimum point <span class="math inline"><i>ξ</i></span>. Find the period <span class="math inline"><i>T</i><sub>0</sub> = lim<sub><i>E</i> → <i>E</i><sub>0</sub></sub><i>T</i>(<i>E</i>)</span> of small oscillations in a neighborhood of the point <span class="math inline"><i>ξ</i></span>.</p>
+    </div>
+    <div class="Exec">
+    <p>Consider a periodic motion along the closed phase curve corresponding to the energy level <span class="math inline"><i>E</i></span>. Is it stable in the sense of Liapunov?</p>
+    </div>
+    <div class="solution">
+    <p>The Definition of Liapunove stability: (By Nonlinear Ordinary Differential Equations: nonlin Ordinary Diff Equat 3e P286)</p>
+    <p>Let <span class="math inline">$\bx^\ast(t)$</span> be a given real or complex solution vector of the <span class="math inline"><i>n</i></span>-dimentional system <span class="math inline">$\bxd = X(\bx,t)$</span>. Then <span class="math inline">$\bx^\ast$</span> is Liapunov stable for <span class="math inline"><i>t</i> ≥ <i>t</i><sub>0</sub></span> if and only if, to each value of <span class="math inline"><i>ε</i> &gt; 0</span>, however small, there corresponds a value of <span class="math inline"><i>δ</i> &gt; 0</span> (where <span class="math inline"><i>δ</i></span> may depend only on <span class="math inline"><i>ε</i></span> and <span class="math inline"><i>t</i><sub>0</sub></span>) such that <span class="math display">$$\|\bx(t_0) - \bx^\ast(t_0)\|&lt;\delta 
+      \Rightarrow \|\bx(t) - \bx^\ast(t)\|&lt;\varepsilon$$</span> for all <span class="math inline"><i>t</i> &gt; <i>t</i><sub>0</sub></span>, where <span class="math inline">$\bx(t)$</span> represents any other neighbouring solution.</p>
+    <p>Example:</p>
+    </div>
+    <div class="Exec">
+    <p>Draw the image of the circle <span class="math inline">$x^2+(y-1)^2&lt;\frac{1}{4}$</span> under the action of a transformation of the phase flow for the equations (a) of the “inverse pendulum”, <span class="math inline">$\ddot{x} = x$</span> and (b) of the “nonlinear pendulum”, <span class="math inline">$\ddot{x} = -\sin x$</span>.</p>
+    </div>
+    <div class="solution">
+    <p>做首次积分, 由<span class="math inline">$\ddot{x} = x$</span> 得<span class="math inline"><i>d</i><i>y</i>/<i>d</i><i>x</i> = <i>x</i>/<i>y</i></span>, 所以<span class="math inline"><i>y</i><sup>2</sup> − <i>x</i><sup>2</sup> = <i>E</i></span>. 考虑一支<span class="math inline">$\dot{x} = y = \sqrt{E+x^2}$</span>. 解得<span class="math inline">$x = \sqrt{E} \sinh{(t+C)}$</span>, 于是<span class="math inline">$y=\dot{x} = \sqrt{E} \cosh{(t+C)}$</span>. 其中<span class="math inline"><i>E</i> = <i>y</i><sup>2</sup> − <i>x</i><sup>2</sup></span>, <span class="math inline">$C = \arcsinh{(x/\sqrt{E})}$</span>. 于是得到相流<span class="math inline">$g^t(x,y) = (\sqrt{E} \sinh{(t+C)},\sqrt{E}\cosh{(t+C)})$</span>. 如图:</p>
+    
+    
+    <img src="../data/attachment/forum/202202/04/153207gdd0h1yhsh9dsteo.jpg" width="640" />
+    
+    <p>(b) 同样先首次积分, 用数值解法, 算出了图如下:</p>
+    
+    
+    <img src="../data/attachment/forum/202202/04/153207o3cfjn3zec9vcjz4.jpg" width="640" />
+    
+    
+    </div>
+    <h3 id="systems-with-two-degrees-of-freedom">Systems with two degrees of freedom</h3>
+    <h1>Variational principles</h1>
+    <h3>Legendre transformations</h3>
+    <div class="Exec">
+    <p>Legendre transformation takes convex functions to convex functions.</p>
+    </div>
+    <b>Proof:</b> 由 $d(p x-f(x)) / d x=0$ 得, $p=f^{\prime}(x)$, 所以 $d g / d p=x+p d x / d p-f^{\prime}(x) d x=x$. 于 是 $d^{2} g / d p^{2}=d x / d p$. 另一方面由 $d p / d x=f^{\prime \prime}(x), d x / d p=1 / f^{\prime \prime}(x)>0$ 所以 $g$ 也是凸的.
+    <div class="Exec"><p>The Legendre transformation is involutive.</p></div>
+    <b>Proof:</b> 考虑 $g(p)$ 的Legendre变换. 作函数 $G(x, p)=p x-g(p)$. 那么只要证明 $\max _{p} G(x, p)=$ $f(x)$. 首先, 若取 $x=x(p)$ (原Legendre变换,即 $f \rightarrow g$, 中的最大值点), 则利用原变换中的等式, 可 知 $\max _{p} G(x, p) \geq p x(p)-g(p)=f(x)$. 另一方面, 原Legendre变换中有对任意 $p, p x-f(x) \leq g(p)$, 于是有, $\max _{p} G(x, p)=\max _{p} p x-g(p) \leq f(x)$. 结合以上, 得结论.
+    <div class="Exec"><p>Prove Liouville's formula $W=W_{0} e^{\int \operatorname{tr} A d t}$ for the Wronskian determinant of the linear system $\dot{\boldsymbol{x}}=A(t) \boldsymbol{x}$.</p></div>
+    <b>Proof:</b>
+    <div class="Exec"><p>Show that in a hamiltonian system it is impossible to have asymptotically stable equilibrum positions and asymptotically stable limit cycles in the phase space.</p></div>
+    <b>Proof:</b> 若有, 对于某区域 $D$ 其体积将趋于 0 , 这与Liouville定理矛盾.
+    <div class="Exec"><p>Consider the first digits of the numbers $2^{n}: 1,2,4,8,1,3,6,1,2,5,1,2,4, \ldots$
+    Does the digit 7 appears in this sequence? Which digit appears more often, 7 or $8 ?$ How many times more often?</p></div>
+    <h1>Lagrangian mechanics on manifolds</h1>
+    <h3 id="holonomic-constraints">Holonomic constraints</h3>
+    <h3 id="differentiable-manifolds">Differentiable manifolds</h3>
+    <div class="Exec">
+    <p>Show that <span class="math inline">SO(3)</span> is homeomorphic to three-dimensional real projective space.</p>
+    </div>
+    <h3 id="e.-noethers-theorem">E. Noether’s theorem</h3>
+    <div class="Exec">
+    <p>Suppose that a particle moves in the field of the uniform helical line <span class="math inline"><i>x</i> = cos <i>ϕ</i></span>, <span class="math inline"><i>y</i> = sin <i>ϕ</i></span>, <span class="math inline"><i>z</i> = <i>c</i><i>ϕ</i></span>. Find the law of conservation corresponding to this helical symmetry.</p>
+    </div>
+    <div class="solution">
+    <p>任一质点若容许在螺线上运动, 且<span class="math inline"><i>L</i></span>在其上不变于是有容许映射<span class="math inline"><i>h</i></span>, 设<span class="math inline">$\bx = (\cos \phi,\sin\phi, c\phi)$</span>. 则<span class="math inline">$h^s \bx = (\cos(\phi+s),\sin(\phi+s), c(\phi+s))$</span>. 于是 <span class="math display">$$dh^s\bx/ds \vat_{s = 0} = (-\sin\phi,\cos\phi,c) = (-y,x,c)$$</span>. 又<span class="math inline">$M_3 = ([\bx,m\bxd],\be_3)= (m\bx,[\bx,\be_3])
+       = (m(\dot{x},\dot{y},\dot{z}),[(x,y,z),(0,0,1)]) 
+       = -m\dot{x}y + m\dot{y}x$</span> 于是<span class="math inline"><i>I</i> = <i>m</i><i>ż</i><i>c</i> + <i>m</i><i>ẋ</i>(−<i>y</i>) + <i>m</i><i>ẏ</i><i>x</i> = <i>c</i><i>P</i><sub>3</sub> + <i>M</i><sub>3</sub></span>守恒.</p>
+    </div>
+    <div class="Exec">
+    <p>Suppose that a rigid body is moving under its own inertia. Show that its center of mass moves linearly and uniformly. If the center of mass is at rest, then the angular momentum with repect to its is conserved</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b>&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>What quantity is conserved under the motion of a heavy rigid body if it is fixed at some point <span class="math inline"><i>O</i></span>? What if, in addition, the body is symmetric with respect to an axis passing through <span class="math inline"><i>O</i></span>?</p>
+    </div>
+    <div class="Exec">
+    <p>Extend Noether’s theorem to non-autonomous lagrangian systems.</p>
+    </div>
+    <div class="solution">
+    <p>令<span class="math inline">$M_1 = M\times \bR$</span>为拓广的构形空间. 定义函数<span class="math inline">$L_1:TM_1\rightarrow \bR$</span>为<span class="math inline">$L\frac{dt}{d\tau}$</span>. 局部坐标下: <span class="math display">$$L_1\left(\bq,t,\frac{d\bq}{d\tau},\frac{dt}{d\tau}\right)
+      = L\left(\bq,\frac{d\bq/d\tau}{dt/d\tau},t)dt\right)$$</span>,</p>
+    </div>
+    <h1>Differential forms</h1>
+    <h3 id="exterior-multiplication">Exterior multiplication</h3>
+    <div class="Exec">
+    <p>Find the exterior <span class="math inline"><i>k</i></span>-th power of <span class="math inline"><i>ω</i><sup>2</sup></span>.</p>
+    </div>
+    <div class="solution">
+    <p><span class="math inline">$(\omega^2)^k =(\sum_{i=1}^{n}  p_i\wedge q_i)^k
+      =\sum_{i_1\cdots i_k} p_{i_1}\wedge q_{i_i}\wedge 
+      \cdots \wedge p_{i_k}\wedge q_{i_k}$</span>.</p>
+    <p>考虑其中的项 <span class="math inline"><i>p</i><sub><i>i</i><sub>1</sub></sub> ∧ <i>q</i><sub><i>i</i><sub><i>i</i></sub></sub> ∧ ⋯ ∧ <i>p</i><sub><i>i</i><sub><i>k</i></sub></sub> ∧ <i>q</i><sub><i>i</i><sub><i>k</i></sub></sub></span>, 若<span class="math inline"><i>i</i><sub>1</sub>⋯<i>i</i><sub><i>k</i></sub></span> 中有重复, 则为零. 若不充分, 将其变为形式: <span class="math inline"><i>p</i><sub><i>i</i><sub>1</sub></sub> ∧ ⋯ ∧ <i>p</i><sub><i>i</i><sub><i>k</i></sub></sub> ∧ <i>q</i><sub><i>i</i><sub>1</sub></sub> ∧ ⋯ ∧ <i>q</i><sub><i>i</i><sub><i>k</i></sub></sub></span>. 这需要经过<span class="math inline">1 + 2 + ⋯ + (<i>k</i>−1)</span>次对换, 所以其符号为<span class="math inline">(−1)<sup><i>k</i>(<i>k</i>−1)/2</sup></span> 再将<span class="math inline">{<i>i</i><sub><i>k</i></sub>}</span>按大小顺序排列, 此时由于<span class="math inline"><i>p</i></span>, <span class="math inline"><i>q</i></span>都做同样的置换, 所以这种置换必是偶的. 固定<span class="math inline">{<i>i</i><sub><i>k</i></sub>}</span>考虑共有多少这样的项?这是从<span class="math inline"><i>k</i></span>个<span class="math inline"><i>ω</i><sup>2</sup></span>中取出<span class="math inline"><i>i</i><sub><i>k</i></sub></span>组成排列的个数, 一共有<span class="math inline"><i>k</i>!</span>个. 综合以上, 得 <span class="math display">(<i>ω</i><sup>2</sup>)<sup><i>k</i></sup> = (−1)<sup><i>k</i>(<i>k</i>−1)/2</sup>∑<sub><i>i</i><sub>1</sub> &lt; ⋯ &lt; <i>i</i><sub><i>k</i></sub></sub><i>p</i><sub><i>i</i><sub>1</sub></sub> ∧ ⋯ ∧ <i>p</i><sub><i>i</i><sub><i>k</i></sub></sub> ∧ <i>q</i><sub><i>i</i><sub>1</sub></sub> ∧ ⋯ ∧ <i>q</i><sub><i>i</i><sub><i>k</i></sub></sub></span> .</p>
+    </div>
+    <div class="Exec">
+    <p>Show that every differential <span class="math inline">1</span>-form on the line is the differential of some function.</p>
+    </div>
+    <div class="proof">
+    <p><b>Proof:</b> <span class="math inline">$\bR$</span>上的<span class="math inline">1</span>-微分形式<span class="math inline">$\omega:T\bR \rightarrow \bR$</span>, 在每一点<span class="math inline"><i>x</i></span>处, 可定义函数 <span class="math inline"><i>f</i>(<i>x</i>) = <i>d</i><i>f</i>(<i>x</i>,1)</span>. 显然<span class="math inline"><i>f</i></span>是连续的, 令<span class="math inline"><i>F</i>(<i>x</i>) = ∫<sub>0</sub><sup><i>x</i></sup><i>f</i>(<i>t</i>)<i>d</i><i>t</i></span>. 则<span class="math inline"><i>F</i></span>的<span class="math inline">1</span>-微分形式为<span class="math inline"><i>d</i><i>f</i> = <i>f</i> <i>d</i><i>x</i></span>, 与<span class="math inline"><i>ω</i></span>相同.&nbsp;◻</p>
+    </div>
+    <div class="Exec">
+    <p>Find differential <span class="math inline">1</span>-forms on the circle and the plane which are not the differential of any function.</p>
+    </div>
+    <b>Solution:</b> 定义 1 微分形式 $\omega: T S \rightarrow \mathbb{R},$ 其中 $\omega(\boldsymbol{x}, t \boldsymbol{w})=t$ 其中 $\boldsymbol{w}$ 为切空间中与圆周相切, 成逆时针方向的单位切矢量.此不可能为某函数的微分, 因为圆周上连续函数必有最大值点, 在此点函数导数为零, 其1-形式也必须为零.
+    <div class="Exec"><p>Show that every closed form on a vector space in an exterior derivative.</p></div>
+    <b>Proof:</b> 证明按提示, 需要证明 $(k-1)$-形式 $p \omega^{k}$ 存在唯一, 其值为
+    $$
+    (p \omega)_{x}\left(\xi_{1}, \cdots, \xi_{k-1}\right)=\int_{0}^{1} \omega_{t_{x}}\left(x, t \xi_{1}, \cdots, t \xi_{k-1}\right) d t
+    $$
+    只对单形证明即可, 设单形 $c_{k-1}=\left\{\sum_{i=1}^{k-1} s_{i} \xi_{i}: 0 \leq s_{i} \leq 1, \forall i\right\}$, 则
+    $$
+    p c_{k-1, \boldsymbol{x}}=\left\{t\left(\boldsymbol{x}+\sum_{i=1}^{k-1} s_{i} \xi_{i}\right): 0 \leq s_{i} \leq 1, \forall i, 0 \leq t \leq 1\right\}
+    $$
+    由于\begin{array}{c}
+    \int_{c_{k-1}} p \omega^{k}=\int_{c_{k-1}} p \omega^{k}\left(\xi_{1}, \cdots, \xi_{k-1}\right) d s_{1} \cdots, d s_{k-1} \\
+    \int_{p c_{k-1}} \omega^{k}=\int_{p c_{k-1}} \omega^{k}\left(\boldsymbol{x}+\sum_{i=1}^{k-1} s_{i} \xi_{i}, t \xi_{1}, \cdots, t \xi_{k-1}\right) d t d s_{1} \cdots d s_{k-1}
+    \end{array}在 $s_{i}=0$ 处求导, 于是由定义即得上式.
+    事实上可直接定义上式为所求 $k-1$-形式.
+    还需证明 $d \circ p+p \circ d=1$. 在 $\mathbb{R}^{m}$ 上考虑 $k$ 形式.
+    只需考虑 $\omega^{k}=\phi(x) d x_{1} \wedge \cdots \wedge d x_{n}$. 计算 $p \omega^{k}$ 中项 $d x_{i_{1}} \wedge d x_{i_{k-1}}$ 的系数.
+    下面 $i$ 表示去掉指标 $i$.
+    将 $\boldsymbol{e}_{i}$ 的各组合代入得,
+    $$
+    p \omega^{k}=\sum_{i}\left((-1)^{i+1} \int_{0}^{1} t^{k-1} \phi(t \boldsymbol{x}) x_{i} d t\right) d x_{1} \wedge \cdots \wedge \hat{d x}_{i} \wedge d x_{k}
+    $$
+    下面计算 $d p \omega$. 按运算规则. 项 $d x_{s} \wedge d x_{1} \wedge \cdots \wedge d \hat{x}_{i} \cdots \wedge d_{k}$ 前的系数为. 若 $s \neq 1, \cdots, k$.
+    $$
+    a_{(s, 1, \cdot \hat{,}, \cdots, k)}=(-1)^{i+1} \int_{0}^{1} t^{k} \frac{\partial \phi}{\partial x_{s}}(t \boldsymbol{x}) x_{i} d t
+    $$
+    若 $s$ 在 $1, \cdots, k$ 中, 设为 $i$, 则会产生项
+    $$
+    \left((-1)^{i+1} \int_{0}^{1} t^{k} \frac{\partial \phi}{\partial x_{i}}(t \boldsymbol{x}) x_{i} d t+(-1)^{i+1} \int_{0}^{1} t^{k-1} \phi(t \boldsymbol{x}) d t\right) d x_{i} \wedge d x_{1} \wedge \cdots \wedge d \hat{x}_{i} \wedge \cdots \wedge d x_{k}
+    $$再计算 $d \omega^{k}$. 显然
+    $$
+    d \omega^{k}=\sum_{s \neq 1, \cdots, k} \frac{\partial \phi}{\partial x_{s}}(\boldsymbol{x}) d x_{s} \wedge d x_{1} \wedge \cdots \wedge d_{k}
+    $$
+    考虑 $p d \omega$ 中项 $\left.d x_{s} \wedge d x_{1} \wedge \cdots \wedge d \hat{x}_{i} \wedge \cdots \wedge d_{k}\right)$ 的系数若 $s \neq 1, \cdots, k$. 则系数为
+    $$
+    (-1)^{i+2} \int_{0}^{1} t^{k} \frac{\partial \phi}{\partial x_{s}}(t \boldsymbol{x}) x_{i} d t
+    $$
+    而 $d x_{1} \wedge \cdots \wedge d_{k}$ 的系数为
+    $$
+    \sum_{s \neq 1, \cdots, k} \int_{0}^{1} t^{k} \frac{\partial \phi}{\partial x_{s}}(t \boldsymbol{x}) x_{s} d t
+    $$
+    合之得
+    $$
+    \begin{aligned}
+    d p \omega^{k}+p d \omega^{k} &=\left(\int_{0}^{1} k t^{k-1} \phi(t \boldsymbol{x}) d t+\sum_{s=1, \cdots, m} \int_{0}^{1} t^{k} \phi(t \boldsymbol{x}) x_{s} d t\right) d x_{1} \wedge \cdots \wedge d x_{k} \\
+    &=\left(\int_{0}^{1} k t^{k-1} \phi(t \boldsymbol{x}) d t+\int_{0}^{1} t^{k} d \phi(t \boldsymbol{x})\right) d x_{1} \wedge \cdots \wedge d x_{k} \\
+    &=\left(\int_{0}^{1} k t^{k-1} \phi(t \boldsymbol{x}) d t+\left.t^{k} \phi(t \boldsymbol{x})\right|_{0} ^{1}-\int_{0}^{1} k t^{k-1} \phi(t \boldsymbol{x}) d t\right) d x_{1} \wedge \cdots \wedge d x_{k} \\
+    &=\phi(\boldsymbol{x}) d x_{1} \wedge \cdots \wedge d x_{k}
+    \end{aligned}
+    $$得证.
+    <div class="Exec"><p>Prove the homotopy formula $i_{X} d+d i_{X}=L_{x}$.</p></div><b>Proof:</b>
+    <br><br><br>第十章51节某习题<a href="https://www.zhihu.com/question/28869798/answer/58255106" target="_blank">知乎</a>
+    可能和问的问题不一样，无视掉物理背景，我来计算 $\lim_{t\to\infty}\frac{1}{t}\mathrm{arg}\left(\sum_ia_ie^{i\omega_it}\right)$ 这是可以靠arnold这一章的空间平均=时间平均定理解决的，过程如下： 首先 $\frac{1}{t}\mathrm{arg}\left(\sum_ia_ie^{i\omega_it}\right)=\frac{1}{t}\arctan\left(\frac{\sum_ia_i\sin(\omega_it)}{\sum_ia_i\cos(\omega_it)}\right)$ 求个导数写成积分的样子 $\frac{1}{t}\arctan\left(\frac{\sum_ia_i\sin(\omega_it)}{\sum_ia_i\cos(\omega_it)}\right)=\frac{1}{t}\left(C+\int_{0}^t\mathrm{d}\tau\,\frac{\sum_{i,j}a_ia_j\omega_i\cos((\omega_i-\omega_j)\tau)}{\sum_{i,j}a_ia_j\cos((\omega_i-\omega_j)\tau)}\right)$ 常数C在极限过程中并没有什么用，下面不妨看做0。 如果我们直接对这个式子应用化时间平均的极限为空间平均，我们需要找一条轨道$\phi(t)=\phi(0)+\omega t$，一条显然的轨道就是$\phi(t)=0+\omega t$，这个时候我们被积函数的形式为$f(\omega)$，然后积分对n个$\omega$积分之后就变成了一个无关于$\omega$的一个数。显然，这样的转化对问题没什么帮助，所以，我们需要去寻找另一组有理无关的频率。为了可解性等一大堆理由，我们相信，这样的频率应当取做$\omega$的某种线性组合，且从$\omega$的有理无关，可以推出他们相互有理无关。 记$\omega_{ij}=\omega_{i}-\omega_j$，可以注意到恒等式： $\omega_{ij}-\omega_{ik}+\omega_{jk}=0$ 所以如果我们选$\Omega_{i}=\omega_{i}-\omega_1$这n-1个变量（当i=1的时候为零）作为我们的频率（显然是有理无关的），此时对于其他的i和j不等于1，我们有 $\omega_{ij}=\Omega_{i}-\Omega_{j}$ 那么上面积分中的被积式就是如下形式： $\sum_ia_i\omega_i f(\Omega_2 \tau,\cdots,\Omega_i \tau,\cdots,\Omega_n \tau)$ 直接化作对空间的积分就得到了 $\lim_{t\to\infty}\frac{1}{t}\mathrm{arg}\left(\sum_ia_ie^{i\omega_it}\right)=\sum_i\frac{a_i\omega_i}{(2\pi)^{n-1}} \int_{T^{n-1}}\mathrm{d}\Omega\,f(\Omega_2,\cdots,\Omega_i,\cdots,\Omega_n)$ 后面就是爆算积分一波带走，但是，不做计算也可以直接看到，极限是$\omega_i$的线性组合。 特殊函数没怎么学过，不知道有没有公式简化这个积分。 ------- 1. 三角的情况： $\sum_i\frac{a_i\omega_i}{(2\pi)^{2}}\int_0^{2\pi}\mathrm{d}\Omega_2\int_0^{2\pi}\mathrm{d}\Omega_3\,\frac{\sum_{j}a_j\cos(\Omega_i-\Omega_j)}{\sum_{i,j}a_ia_j\cos(\Omega_i-\Omega_j)}$ 即使是二重积分，计算量也特别感人。数值计算了一下，大概是对的（验证了直角三角形和等边三角形）。 2. 不知在哪个年份的夏日的下午的教室里，我写过4根杆的Lagrange函数，但年代久远，物理早已忘光了。 3. 有理无关是为了空间平均=时间平均。我觉得三角的情况可能和三角形稳定性没什么关系。
