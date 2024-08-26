@@ -6,15 +6,16 @@ Don't hesitate to:
 - or -
   Open a PR: https://github.com/hbghlyj/hbghlyj/pulls
 
+
 📁 The `_posts` folder
-I write posts in HTML. 
 
-The source code live in https://github.com/hbghlyj/hbghlyj/tree/main/_posts
-
+I write posts in HTML. The source code live in https://github.com/hbghlyj/hbghlyj/tree/main/_posts
 The file name format is `YYYY-MM-DD-title.html`.
 
 Equations are in LaTeX or MathML format. One can be converted to the other by https://pandoc.org/try/
-
 The benefit of LaTeX is that it can be easier edited by hand.
-
 The benefit of MathML is that it can be parsed by Math-aware search engines like https://approach0.xyz/search/.
+
+The diagrams are generated in two ways: QuickLaTeX or MathJax SVG.
+For QuickLaTeX, it converts TeX file to inline SVG. It makes the output file size bigger but is authentic LaTeX. The diagram will be produced in TeX format, e.g. by TikZ.
+For MathJax SVG, it embeds formula into SVG using a custom MathJax config (output SVG directly, instead of wrapping in mathjax typesetroot element). The diagram will be produced in SVG format, e.g. by Inkscape.
