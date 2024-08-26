@@ -32,7 +32,7 @@ MathJax = {
     renderActions: {
       assistiveMml: [],  // disable assistive mathml
       typeset: [150,
-        (doc) => {for (math of doc.math) {MathJax.config.rendeSVG(math, doc)}},
+        (doc) => {for (math of doc.math) {MathJax.config.renderSVG(math, doc)}},
         (math, doc) => MathJax.config.renderSVG(math, doc)
       ]
     },
