@@ -6,7 +6,16 @@
 {%- assign _mathjax_autoNumber = __return -%} -->
 
 <script>MathJax = {
-    loader: {load: ['input/tex', 'output/svg']},
+    loader: {load: ['input/tex-base','[tex]/ams', 'output/svg']},
+  tex: {
+      inlineMath: [
+          ["$", "$"],
+          ["\\(", "\\)"],
+      ],
+      processEnvironments: true,
+      tags: "ams",
+      packages: ['base',"ams"],
+  },
     startup: {
       ready() {
         MathJax.startup.defaultReady();
