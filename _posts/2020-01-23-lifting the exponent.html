@@ -1,0 +1,30 @@
+---
+tags: number-theory
+mathjax: true
+---
+<div style="text-align: center;margin-bottom: 1ex;">
+    <b style="font-size: 150%;line-height: 150%;">A nice and tricky lemma (lifting the exponent)</b><br>
+    <b>Santiago Cuellar, Jose Alejandro Samper </b>
+</div>
+<b>Lemma:</b> Let $p$ be an odd prime, $p∤a,p∤b$, $p^α∥a-b,α>0$, $p^β∥n$. Then $p^{α+β}∥a^n-b^n$.</p><b>Proof:</b> Let us prove that if $a≡b\pmod p$ and $p^β∥n$ then $p^β∥\frac{a^n-b^n}{a-b}$. It is clear that the lifting lemma will follow, because with the condition $p^α∥a-b$ we have $p^{α+β}∥a^n-b^n$. Assume $n=p^βk$. We fix $k$ and proceed by mathematical induction on $β$. The base case is $β=0$. It follows that $p∤n$ and we have
+\begin{aligned} a^k & ≡b^k\pmod p\\ a^k b^{n-k-1} & ≡b^{n-1}\pmod p\\ \sum_{k=0}^{n-1} a^k b^{n-k-1} & ≡\sum_{k=0}^{n-1} b^{n-1}\pmod p\\ & ≡n b^{n-1}\pmod p\\ &≢0\pmod p\end{aligned}Because $\frac{a^n-b^n}{a-b}=\sum_{k=0}^{n-1} a^k b^{n-k-1}$ we get $\frac{a^n-b^n}{a-b}$ is not multiple of $p$.<br>Assume that $p^β∥\frac{a^n-b^n}{a-b}$. We want to prove that $p∥\frac{a^{n p}-b^{n p}}{a^n-b^n}$. As $p \mid a-b$, we have $a=b+x p$ and $a^k ≡b^k+k b^{k-1} x p\pmod{p^2}$
+\begin{aligned}
+\frac{a^{n p}-b^{n p}}{a^n-b^n} &=\sum_{i=0}^{p-1} a^{ni} b^{n(p-i-1)} \\& ≡\sum_{i=0}^{p-1}\left(b^{ni}+nib^{ni-1}xp\right) b^{n(p-i-1)}\pmod{p^2}
+\\&=pb^{n(p-1)}+n\frac{p-1}2b^{np-n-1}xp^2
+\\&≡pb^{n(p-1)}\pmod{p^2}
+\end{aligned}
+From it is clear that $p \| \frac{a^{n p}-b^{n p}}{a^n-b^n}$. Therefore
+\[
+p^β \cdot p\left\|\frac{a^n-b^n}{a-b} \cdot \frac{a^{n p}-b^{n p}}{a^n-b^n} ⇔ p^{β+1}\right\| \frac{a^{n p}-b^{n p}}{a-b} .
+\]
+The lemma is proven.
+<p><b>$p=2$ case of the lemma</b>:
+$2^α \| \frac{a^2-b^2}2$ and $2^β \| n,β>0$. Then $2^{α+β} \| a^n-b^n$.</p>
+<b>Proof:</b> Again it is enough to prove that if $2 \mid \frac{a^2-b^2}{2}$ and $2^β \| n, β \geq 1$, then $2^{β-1} \| \frac{a^n-b^n}{a^2-b^2}$.<br>
+Assume $n=2^β m$, where $m$ is odd. We fix $m$ and proceed by mathematical induction on $β$. The base case is $β=1$ or $n=2 m$. From $2 \mid \frac{a^2-b^2}{2}$ we get $2 \mid a-b$. Therefore
+\begin{aligned}
+a & \equiv b\pmod2 \\
+\sum_{i=0}^{2 m-2 i-2} b^{2 i} & \equiv b^{2 m-2}\pmod2 \\
+a^{2 m-2 i-2} b^{2 i} & \equiv m b^{2 m-2}\pmod2 \\
+& \equiv 1\pmod2
+\end{aligned}
