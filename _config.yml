@@ -21,7 +21,7 @@ highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-nig
 url     : https://github.com/hbghlyj/hbghlyj.github.io/
 baseurl : # does not include hostname
 title   : Home
-tagline : The pleasure is mine.
+tagline : 
 description: > # this means to ignore newlines until "Language & timezone"
 
 
