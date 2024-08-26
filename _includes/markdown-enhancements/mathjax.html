@@ -5,36 +5,28 @@
   source0=site.mathjax_autoNumber source1=page.mathjax_autoNumber -%}
 {%- assign _mathjax_autoNumber = __return -%} -->
 
-<script>
-MathJax = {
-  //
-  //  Load only TeX input and the contextual menu
-  //
-  loader: {load: ['input/tex', 'output/svg']},
-  //
-  //  Override the usual typeset render action with one that generates MathML output
-  //
-  options: {
-    renderActions: {
-      assistiveMml: [],  // disable assistive mathml
-      typeset: [150,
-        (doc) => {for (math of doc.math) {MathJax.config.renderSVG(math, doc)}},
-        (math, doc) => MathJax.config.renderSVG(math, doc)
-      ]
+<script>MathJax = {
+    loader: {load: ['input/tex', 'output/svg']},
+    startup: {
+      ready() {
+        MathJax.startup.defaultReady();
+        MathJax._.output.common.OutputJax.CommonOutputJax.prototype.typeset=function (t, e) {
+          this.setDocument(e);
+          var r = this.createNode();
+          return this.toDOM(t, r, e),
+          r.firstChild
+        }
+      }
     },
-    menuOptions: {
-      settings: {
-        assistiveMml: false
+    options: {
+      renderActions: {
+        assistiveMml: []
+      },
+      menuOptions: {
+        settings: {
+          assistiveMml: false
+        }
       }
     }
-  },
-  //
-  // The action to use for rendering MathML
-  //
-  renderSVG(math, doc) {
-    math.typesetRoot = MathJax.tex2svg(math.root);
-    math.display && math.typesetRoot.setAttribute('display', 'block');
-  }
-};
-</script>
+  };</script>
 <script async src="{{ _sources.mathjax }}"></script>
