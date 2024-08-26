@@ -19,29 +19,29 @@ tags: euclidean-geometry
 <p>本文中我们就将解决这个问题．</p>
 <h3>2 预备知识</h3>
 <p>先介绍文献[2]中的相关知识．</p>
-<p>定义1<sup>[2]</sup>$a,e\in\N^+$，如果$a^2\mid e$，则$a$叫做$e$的平方因子(显然1是任何正整数的平方因子)．如果除1外$e$没有其它的平方因子，我们就说$e$是无平方因子数，或者说$e$无平方因子．比如1,2,3,5,6⋯就是无平方因子数．</p>
+<p>定义1<sup>[2]</sup>$a,e\inℕ^+$，如果$a^2\mid e$，则$a$叫做$e$的平方因子(显然1是任何正整数的平方因子)．如果除1外$e$没有其它的平方因子，我们就说$e$是无平方因子数，或者说$e$无平方因子．比如1,2,3,5,6⋯就是无平方因子数．</p>
 <p>注：按此处定义，1也算无平方因子数．这样的定义便于统一表述．</p>
-<p>定义2<sup>[2]</sup>对给定的无平方因子数e，定义$F(e)=\{k\sqrt{e}\mid k\in\Q\}$</p>
+<p>定义2<sup>[2]</sup>对给定的无平方因子数e，定义$F(e)=\{k\sqrt{e}\mid k\inℚ\}$</p>
 <p>对给定的无平方因子数$e$，下面给出文献[2]中的几个与数集$F(e)$有关的结论．</p>
-<p>引理1<sup>[2]</sup>若$a=k\sqrt{e}$，其中$k\in\Q$，$e$是无平方因子数，则$a\in\Q$的充要条件是：$e=1$或$k=0$.</p>
-<p>引理2<sup>[2]</sup>若$a,b\in F(e),m,n\in\Q$，则$ma+nb\in F(e),ab\in\Q,\frac ab\in\Q(b\ne0)$．特别地$a\sqrt e\in\Q,a^2\in\Q$.</p>
-<p>引理3<sup>[2]</sup>$e$是无平方因子数．若$\theta\ne k\pi(k\in\Z)$，则$\sin\theta\in F(e)$且$\cos\theta\in\Q$的充要条件是$\tan \frac\theta2\in F(e)$</p>
-<p>证明(i)当$\sin\theta\in F(e),\cos\theta\in\Q$时，$$\tan\frac\theta2=\frac{1-\cos\theta}{\sin\theta}=\frac{1-\cos\theta}{\sqrt{e}\sin\theta} \sqrt{e}$$由引理2及定义2知$\tan \frac\theta2\in F(e)$</p>
-<p>(ii)当$\tan \frac\theta2\in F(e)$时，由万能公式$$\cos \theta=\frac{1-\tan ^{2} \frac{\theta}{2}}{1+\tan ^{2} \frac{\theta}{2}}, \sin \theta=\frac{2 \tan \frac{\theta}{2}}{1+\tan ^{2} \frac{\theta}{2}}$$结合引理2及定义2即知：$\sin\theta\in F(e),\cos\theta\in\Q$.证毕．</p>
+<p>引理1<sup>[2]</sup>若$a=k\sqrt{e}$，其中$k\inℚ$，$e$是无平方因子数，则$a\inℚ$的充要条件是：$e=1$或$k=0$.</p>
+<p>引理2<sup>[2]</sup>若$a,b\in F(e),m,n\inℚ$，则$ma+nb\in F(e),ab\inℚ,\frac ab\inℚ(b\ne0)$．特别地$a\sqrt e\inℚ,a^2\inℚ$.</p>
+<p>引理3<sup>[2]</sup>$e$是无平方因子数．若$\theta\ne k\pi(k\inℤ)$，则$\sin\theta\in F(e)$且$\cos\theta\inℚ$的充要条件是$\tan \frac\theta2\in F(e)$</p>
+<p>证明(i)当$\sin\theta\in F(e),\cos\theta\inℚ$时，$$\tan\frac\theta2=\frac{1-\cos\theta}{\sin\theta}=\frac{1-\cos\theta}{\sqrt{e}\sin\theta} \sqrt{e}$$由引理2及定义2知$\tan \frac\theta2\in F(e)$</p>
+<p>(ii)当$\tan \frac\theta2\in F(e)$时，由万能公式$$\cos \theta=\frac{1-\tan ^{2} \frac{\theta}{2}}{1+\tan ^{2} \frac{\theta}{2}}, \sin \theta=\frac{2 \tan \frac{\theta}{2}}{1+\tan ^{2} \frac{\theta}{2}}$$结合引理2及定义2即知：$\sin\theta\in F(e),\cos\theta\inℚ$.证毕．</p>
 <p>我们的思路是将文献<sup>[2]</sup>中的上述结果与文献<sup>[1]</sup>的方法结合起来，用构造法将定理1推广为：</p>
-<p><b>定理2</b> $e$是给定的无平方因子数，则$\forall n\in\N(n\ge3)$，在圆$x^2+y^2=e$上存在这样的$n$个点：其中任两点之间的距离均为有理数，而以其中任三点为顶点的三角形的面积$\in F(e)$.</p>
+<p><b>定理2</b> $e$是给定的无平方因子数，则$\forall n\inℕ(n\ge3)$，在圆$x^2+y^2=e$上存在这样的$n$个点：其中任两点之间的距离均为有理数，而以其中任三点为顶点的三角形的面积$\in F(e)$.</p>
 <p>注：由定义2，当$e=1$时，$F(e)=Q$．因此，定理1是定理2在$e=1$时的特例．</p>
 <p>证明：对给定的无平方因子数$e$，可在$\left[0,\frac\pi2\right)$内取$n$个互异的角$\beta_1,\beta_2,\beta_3,\cdots,\beta_n$，使得$\tan\beta_i\in F(e)(i=1,2,3,\cdots,n)$.</p>
 <p>此时有$4\beta_i\in[0,2\pi)$，则可以在圆$x^2+y^2=e$上找到相应的诸点$M_i(e\cos4\beta_i,e\sin4\beta_i)(i=1,2,3,\cdots,n)$.</p>
-<p>因为$\tan\beta_i\in F(e)$，由引理3知：$$\sin 2 \beta_{i} \in F(e), \cos 2 \beta_{i} \in\Q(i=1,2,3,\cdots, n)$$而$\sin4\beta_i=2\sin2\beta_i\cos2\beta_i,\cos4\beta_i=\cos^22\beta_i-\sin^22\beta_i(i=1,2,3,\cdots,n)$.</p>
-<p>结合引理2和定义2知：$\sin4\beta_i\in F(e),\cos4\beta_i\in\Q(i=1,2,3,\cdots,n)$.</p>
+<p>因为$\tan\beta_i\in F(e)$，由引理3知：$$\sin 2 \beta_{i} \in F(e), \cos 2 \beta_{i} \inℚ(i=1,2,3,\cdots, n)$$而$\sin4\beta_i=2\sin2\beta_i\cos2\beta_i,\cos4\beta_i=\cos^22\beta_i-\sin^22\beta_i(i=1,2,3,\cdots,n)$.</p>
+<p>结合引理2和定义2知：$\sin4\beta_i\in F(e),\cos4\beta_i\inℚ(i=1,2,3,\cdots,n)$.</p>
 <p>又，对任意$j,k,l\in\{1,2,3,\cdots,n\}$($j,k,l$两两不等)，由解析几何知识知：$\triangle M_jM_kM_l$的面积\begin{align}S&=\frac12\begin{vmatrix}\sqrt{e} \cos 4 \beta_{j} & \sqrt{e} \sin 4 \beta_{j} & 1 \\ \sqrt{e} \cos 4 \beta_{k} & \sqrt{e} \sin 4 \beta_{k} & 1 \\ \sqrt{e} \cos 4 \beta_{l} & \sqrt{e} \sin 4 \beta_{l} & 1\end{vmatrix}\\ &=\frac12\begin{vmatrix}\cos 4 \beta_{j} & \sqrt{e} \sin 4 \beta_{j} & 1 \\ \cos 4 \beta_{k} & \sqrt{e} \sin 4 \beta_{k} & 1 \\ \cos 4 \beta_{l} & \sqrt{e} \sin 4 \beta_{l} & 1\end{vmatrix}\sqrt{e}\end{align}
 结合引理2知：上面行列式中的所有9个元素均为有理数，则将它展开后其值必为有理数．再结合定义2可知$S\in F(e)$.</p>
 <p>下面证明其中任两点间的距离为有理数．</p>
 <p>对任意$k,l\in\{1,2,3,\cdots,n\}$且$k\ne l$，由两点间距离公式有</p>
-<p>其中$\sin2(\beta_k-\beta_l)=\sin2\beta_k\cos2\beta_l-\cos2\beta_k\sin2\beta_l$，而前面已证：$\sin2\beta_i\in F(e),\cos2\beta_i\in \Q(i=1,2,3,\cdots,n)$.</p>
+<p>其中$\sin2(\beta_k-\beta_l)=\sin2\beta_k\cos2\beta_l-\cos2\beta_k\sin2\beta_l$，而前面已证：$\sin2\beta_i\in F(e),\cos2\beta_i\in ℚ(i=1,2,3,\cdots,n)$.</p>
 <p>结合定义2和引理2即知：$\sin2(\beta_k-\beta_l)\in F(e)$．</p>
-<p>由此并结合引理2即知：$\left|M_{k} M_{l}\right|=2 \sqrt{e} \cdot\left|\sin 2\left(\beta_{k}-\beta_{l}\right)\right| \in \Q$．证毕．</p>
+<p>由此并结合引理2即知：$\left|M_{k} M_{l}\right|=2 \sqrt{e} \cdot\left|\sin 2\left(\beta_{k}-\beta_{l}\right)\right| \in ℚ$．证毕．</p>
 <p>上面已证：$\triangle M_jM_kM_l$的面积$S\in F(e)$．又，显然$S\ne0$，则当$e\ne1$时，由引理1知：$S$必为无理数．</p>
 <p>这表明：当$e\ne1$时，定理2证明中构造出的诸点$M_i\left(\sqrt{e} \cos 4 \beta_{i}, \sqrt{e} \sin 4 \beta_{i}\right)(i=1,2,3,\cdots, n)$即满足问题4的要求．</p>
 <p>这样我们就全部解决了本文开头提到的4个问题．而对于问题的空间推广问题，无疑是一个有趣而又十分困难的问题.</p>
