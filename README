@@ -1,10 +1,10 @@
-This is a blog that I created using Jekyll. It is hosted on GitHub Pages.
+https://blog.cjhb.site/ is a blog that I created using Jekyll. It is hosted on CloudFlare Pages.
 
 🤔 If you find an error or have suggestions:
 Don't hesitate to:
-  Open an issue: https://github.com/hbghlyj/hbghlyj.github.io/issues
+  Open an issue: https://github.com/hbghlyj/hbghlyj/issues
 - or -
-  Open a PR: https://github.com/hbghlyj/hbghlyj.github.io/pulls
+  Open a PR: https://github.com/hbghlyj/hbghlyj/pulls
 
 📁 The `_posts` folder
 My blog posts live in https://github.com/hbghlyj/hbghlyj.github.io/tree/main/_posts
