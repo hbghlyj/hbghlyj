@@ -1,0 +1,296 @@
+---
+tag: combinatorics
+mathjax: true
+---
+<a href="https://home.cc.umanitoba.ca/~borgerse/Presentations/GS-05R-1.pdf">Equivalence of seven major theorems in combinatorics, Robert D. Borgersen, November 26, 2004</a>
+<h1>Abstract</h1>
+<p>
+    The seven following theorems, while
+    seemingly unrelated, are equivalent (i.e., any one of them may be
+    proved by assuming any other is true).  These theorems relate to
+    graph theory, set theory, flow theory, and even marriage: Menger's
+    theorem (1929), Kőnig's theorem for matrices (1931), the
+    Kőnig-Egeváry theorem (1931), Hall's marriage theorem (1935),
+    the Birkhoff-Von Neumann theorem (1946), Dilworth's theorem (1950)
+    and the Max Flow-Min Cut theorem (1962). I will attempt to explain
+    each theorem, and give some indications why all are equivalent.
+</p>
+
+
+<h1>Graph Theory</h1>
+
+<p>
+    A <i>graph</i> can be defined as a set of points, called
+    <i>vertices</i> or <i>nodes</i>, and a set of 2-element sets of
+    points, called <i>edges</i>.
+</p>
+
+<p>
+    We say a graph is <i>bipartite</i> if it's vertices can be
+    partitioned into two disjoint sets such that all edges in the
+    graph go from one set to the other.  A <i>covering</i> of the
+    edges in a graph is a set C of vertices such that each edge of the
+    graph contains at least one vertex of C.
+</p>
+
+<h2>Kőnig's Theorem</h2>
+<p>
+    Let $G$ be a bipartite graph.  The
+    size of a maximum matching of $G$ is equal to the size of a minimum
+    covering of $G$.
+</p>
+
+
+
+<h1>Menger's Theorem</h1>
+
+<p>
+    Let $G$ be a graph, $v$ and $w$ vertices in $G$, and $S$ be a subset of
+    vertices. $S$ is a <i>$vw$-separating set</i> if there is no path from
+    $v$ to $w$ in $G∖S$. Two paths from $v$ to $w$ are
+    <i>vertex-disjoint</i> if they only have $v$ and $w$ in common.
+</p>
+
+<h2>Menger's Theorem (1929)</h2>
+<p>The maximum number of vertex-disjoint paths connecting two distinct non-adjacent vertices $v$ and $w$ is equal to the minimum number of vertices in a $vw$-separating set.</p>
+
+
+
+<h1>Flow Theory</h1>
+
+<p>
+    A <i>directed graph</i> is a graph in which each edge has
+    associated with it a direction.  A <i>network</i> is a directed
+    graph with two distinct vertices singled out as the <i>source</i>
+    s and the <i>target</i> t, and with each edge assigned an integer
+    called it's <i>capacity</i>.
+</p>
+
+<p>
+    Let S be a set of vertices, and S' it's complement.  We define an
+    <i>edge cut</i> [S, S'] as all the edges directed from S to S'. A
+    <i>minimum edge cut</i> is one such that the sum of the capacities
+    of the edges in [S, S'] is a minimum.
+</p>
+
+<p>
+    The easiest example to see would be a system of pipes, with water
+    flowing from one source to one target where the capacities are the
+    diameter of the pipes.  You can also look at any kind of product
+    distribution line as an example of a network.
+</p>
+
+<p>
+    The <i>flow</i> on an edge uv is f(u,v), a positive integer such
+    that f(u,v) $\leq$ the capacity of uv, and $f^+(v) = f^-(v)$ (the
+    out flow from v equals the inflow to v).  We will say a
+    <i>flow</i> in the network N is a valid assignment of flows on all
+    the edges. The value of a flow in N is $f^+(s) - f^-(s)$. A
+    <i>maximum flow</i> is one whose value is maximum.
+</p>
+
+<h2>The Max-Flow Min-Cut theorem</h2>
+<p>A value of a maximum flow in a network N is equal to the value of a minimum cut of N.</p>
+
+
+
+<h1>(0,1)-Matrices and the Kőnig-Egeváry theorem</h1>
+
+<p>
+    The <i>Term Rank</i> of a (0,1)-matrix is the largest number of 1s
+    that can be chosen from the matrix such that no 2 selected 1s lie
+    on the same line.  A set S of rows and columns is a <i>cover</i>
+    of a (0,1)-matrix if the matrix becomes a zero matrix after all
+    the lines in S have been deleted.
+</p>
+
+<h2>Kőnig-Egeváry theorem (1931)</h2>
+<p>The term rank of a (0,1)-matrix is the cardinality of its smallest cover.</p>
+
+
+
+<h1>The Birkhoff-Von Neumann Theorem</h1>
+
+<p>
+    A matrix D = ($d_{ij}$) with real non-negative entries is
+    <i>Doubly Stochastic</i> if the sum of the entries in any row and
+    any column equals 1.  A <i>Permutation Matrix</i> is a doubly
+    stochastic matrix with entries 0 and 1, that is, a matrix with
+    exactly one 1 in each row and in each column.  A matrix A is a
+    <i>convex combination</i> of matrices $A_1, ..., A_s$ if there
+    exist non-negative reals $\lambda_1, ..., \lambda_s$ such that $A
+    = \sum^s_{i=1} \lambda_i A_i$ and $\sum^s_{i=1} \lambda_i = 1$.
+</p>
+
+<h2>Birkhoff-Von Neumann Theorem (1946)</h2>
+<p>Any doubly stochastic matrix can be written as a convex combination permutation matrices.</p>
+
+
+<h1>Hall's Theorem</h1>
+
+<p>
+    Let $X$ be a set of elements.  Let $S=\{S_1, ..., S_n\}$ be a
+    family of subsets of $X$.  Then, a <i>Sequence of Distinct
+    Representatives</i> (SDR) for $S$ is a sequence $\{x_1, ..., x_n\}$ of
+    pairwise distinct elements of X such that $x_i∈S_i, 1 \leq i
+    \leq n$
+</p>
+
+<h2>Hall's Theorem</h2>
+<p>$S$ has an SDR if and only if the union of any $k$ members of $S$ contains at least $k$ elements.</p>
+
+<center>
+Example: <br>
+$X = \{1, 2, 3, 4, 5\}$ <br>
+$S_1 = \{1, 2, 3\}, S_2 = \{1, 4, 5\}, S_3 = \{3, 5\}$<br>
+SDR: $\{1, 4, 5\}$
+</center>
+
+
+
+<h1>The Marriage Theorem</h1>
+
+<p>This was the original motivation for Hall's Theorem:</p>
+
+<p>
+    Given a set of $n$ men and a set of $n$ women, let each man make a
+    list of the women he is willing to marry.  Then each man can be
+    married to a woman on his list if, and only if, for every value of
+    $k\ (1≤k≤n)$, the union of any $k$ of the lists contain
+    at least $k$ names.
+</p>
+
+<p>Similarly, we can apply this theorem to the Assignment Problem:</p>
+
+<p>
+    Given a set of $n$ employees, fill out a list of the jobs each of
+    them would be able to preform.  Then, we can give each person a
+    job suited to their abilities if, and only if, for every value of
+    $k\ (1≤k≤n)$, the union of any $k$ of the lists contains
+    at least $k$ jobs.
+</p>
+
+
+
+<h1>Partially Ordered Sets and Dilworth's Theorem</h1>
+
+<p>
+    We define a <i>Partially Ordered Set</i>, or a <i>Poset</i>, as a
+    set P with a partial ordering $\leq$ defined on it's elements.
+    I.e, for any two elements x and y of P, either x $\leq$ y, y
+    $\leq$ x (x and y are comparable), or x $||$ y (x and y are
+    incomparable). A <i>Chain</i> is any pairwise comparable subset of
+    P, and an <i>Antichain</i> is any pairwise incomparable subset of
+    P.
+</p>
+
+<h2>Dilworth's Theorem</h2>
+<p>Suppose that the largest antichain in the poset $P$ has size $r$. Then $P$ can be partitioned into $r$ disjoint chains.</p>
+
+<h1>The Kőnig-Egeváry theorem ⇔ Kőnig's Theorem</h1>
+<p>
+    Let the bipartite graph $G$ have bipartitions $X = \{x_1, x_2, ...,
+    x_m\}$ and $Y = \{y_1, y_2, ..., y_m\}$.  Construct the m*n
+    adjacency matrix $A$ with $A_{ij}=1$ if, and only if, there is an
+    edge joining $x_i$ to $y_j$. Now, the term rank of A is the
+    cardinality of a maximum matching in $G$, and the size of a smallest
+    cover of A is the size of a smallest covering of the edges of G.
+</p>
+<p>
+    So, we have that the Kőnig-Egeváry Theorem ⇒
+    Kőnig's Theorem. Conversely, since any (0,1)-matrix can be
+    interpreted as the adjacency matrix of some bipartite graph,
+    Kőnig's Theorem ⇒ the Kőnig-Egeváry Theorem.
+</p>
+
+<h1>Hall's Theorem ⇒ The Kőnig-Egeváry Theorem</h1>
+
+<p>Sketch: Let B be an m*n (0,1)-matrix, p = term rank of B, q = cardinality of smallest cover.</p>
+
+<p>
+    Claim: $p ≤ q$.  Removing r rows and s columns (r + s = q)
+    removes all the ones from the matrix.  Thus, there are at most r +
+    s ones in different rows and columns.  Thus p ≤ q.
+</p>
+
+<p>
+    Claim: $p ≥ q$.  Permute the rows and columns of B (as figure).
+    Let $A_i = \{j : j > s\text{ and }B_{ij}= 1\}$.  Note $|A_i| > 0$
+    for all $i$. Also, the union of any $k$ of the $A_i$'s has at least $k$
+    elements. If not, we would be able to replace $k$ rows of the
+    smallest cover with less than $k$ columns.  Thus, by Hall's theorem,
+    we have r ones in the top right, each in it's own row and column.
+</p>
+
+<p>Similarly, we get s ones in the bottom left, each in it's own row and column.  So, p ≥ r + s = q.  So, p = q.</p>
+
+<h1>Dilworth's Theorem ⇒ Hall's Theorem</h1>
+
+<p>Sketch: Let $S_1, S_2, ..., S_n$ be the subsets of $\{x_1, ..., x_m\}$</p>
+
+<p>
+    Assume that the union of any k sets has at least k elements.  Let
+    $X = \{S_1, S_2, ..., S_n, x_1, x_2, ..., x_m\}$ and define a
+    partial order on X such that $x_i < S_j$ iff $x_i∈A_j$, and
+    there are no other comparable elements.
+</p>
+
+<p>
+    The $x_i$'s form an antichain of length m, and it can be shown this
+    is the largest antichain.  So, by Dilworth's theorem, we can
+    partition X into m chains, n of which have 2 elements, and the
+    rest have 1.  The 2 element chains define an SDR.
+</p>
+
+
+<h1>Konig's Theorem ⇒ Hall's Theorem</h1>
+
+<p>
+    Sketch: Let $S = \{S_1, S_2, ..., S_n\}$ be a set of subsets of $X
+    = \{x_1, x_2, ..., x_m\}$ such that the union of any $k$ members of
+    $S$ contains at least $k$ elements.  Construct a bipartite graph $G$
+    with bipartitions $X$ and $Y=\{1, ..., n\}$ in which $\{x_i, j\}$
+    is an edge if, and only if, $x_i∈S_j$.
+</p>
+
+<p>
+    Let $K \subseteq Y$.  Define N(K) to be the set of vertices in X
+    such that each vertex in N(K) is joined to at least 1 vertex in K.
+    Equivalently, $N(K) = \bigcup_{i∈K} S_i$.  By assumption,
+    $|N(K)| \geq |K|$ (1).  Now, we need to show that there is a
+    matching of Y into X.
+</p>
+
+<p>
+    By Kőnig's Theorem, a complete matching from Y into X exists if
+    and only if the cardinality of every covering of the edges in this
+    graph is at least $n$.
+</p>
+
+<p>
+    Let C be a covering of G.  Let $C_y = C \bigcap Y$.  Then, $N(X
+   ∖C_y)$ is a subset of $C∖C_y$ (2).  Thus,
+</p>
+
+<center>
+$|C| = |C_y| + |C∖C_y|$<br>
+$\geq |C_y| + |N(X∖C_y)|$ (by (2)) <br>
+$\geq |C_y| + |X∖C_y|$ (by (1)) = m
+</center>
+
+
+
+<h1>References</h1>
+<ul>
+</li>Balakrishnan, V. (1995): <i>Schaum's Outline of Theory
+and Problems of Combinatorics</i>.  McGraw-Hill.</li>
+</li>Bollobas, B. (1979): <i>Graph Theory: An Introductory
+Course</i>. Springer-Verlag.</li>
+</li>Diestel, R. (1997): <i>Graph Theory</i>.  Springer.</li>
+</li>Gould, R. (1988): <i>Graph Theory</i>. Benjamin/Cummings.</li>
+</li>Harary F. (1969): <i>Graph Theory</i>. Addison-Wesley.</li>
+</li>Jukna, S. (2001): <i>Extremal Combinatorics with
+Applications in Computer Science</i>.  Springer.</li>
+</li>Tutte, W. (1984): <i>Graph Theory: Encyclopedia of
+Mathematics and its Applications</i>.  Addison-Wesley.</li>
+</ul>
