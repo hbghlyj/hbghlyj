@@ -3,9 +3,9 @@ tags: interpolation
 mathjax: true
 ---
 <small><a href="https://episte.math.ntu.edu.tw/articles/sm/sm_07_02_1">谈补间法-王九逵</a></small><br>
-假定$t(x)$是一个不超过$n$次的多项式函数,再假定我们已经知道$t(x)$在$n+1$个不同的点$x_0,x_1,\ldots,x_n$的值为$y_0,y_1,\ldots,y_n$,我们计算它在另一点 $\bar{x}$ 的值 $ t( \bar{x} )$,这个问题叫作补间 (Interpolation) 问题.<br>
+假定$t(x)$是一个不超过$n$次的多项式函数,再假定我们已经知道$t(x)$在$n+1$个不同的点$x_0,x_1,\ldots,x_n$的值为$y_0,y_1,\ldots,y_n$,我们计算它在另一点 $\bar{x}$ 的值 $ t( \bar{x} )$,这个问题叫作补间 (Interpolation) 问题.
 <!--more-->
-<style>div.article__content>h1{background-color:#CEDBFF;padding:5px;font-size:16px;}</style>
+<style>div.article__content>h1{background-color:#CEDBFF;padding:5px;font-size:16px;}</style><br>
 让我们再用解析几何的语言把问题重新叙述一下;如果我们把$(x_i,y_i)$看成平面上一点$P_i$的坐标,问题便可改述成下形式:给了平面上的$n+1$个点$P_0, P_1,\cdots,P_n$,其横坐标两两相异,我们想找一条代表$n$次多项式的曲线通过这些点.<br>
 <br>
 大凡我们碰到一个数学问题时,我们首先想知道这问题有没有解,如果有解,其次我们便想知道解是不是唯一的,如果确只有唯一解,我们还想用把这解用某种办法找出来,最后,如果我们能用某种方式解这问题,我们还想找到一个便捷的方法.<br>
@@ -17,7 +17,6 @@ mathjax: true
 &a_0 x^n_n + a_1 x^{n-1}_n + \cdots + a_n = y_n
 \end{align}这可以看成$n+1$个未知数 $a_0,a_1,\cdots,a_n$ 的一次联立方程组.其系数的行列式为$$\left|\begin{array}{ccccc}x_{0}^{n} & x_{0}^{n-1} & \cdots & x_{0} & 1 \\ x_{1}^{n} & x_{1}^{n-1} & \cdots & x_{1} & 1 \\ \cdots & \ldots & \cdots & \ldots & \ldots \\ x_{n}^{n} & x_{n}^{n-1} & \cdots & x_{n} & 1\end{array}\right|=\left(x_{0}-x_{1}\right)\left(x_{0}-x_{2}\right) \cdots\left(x_{n-1}-x_{n}\right) \neq 0$$所以联立方程式有唯一的解,我们可以用消元法求出唯一的一组系数 $a_0, a_1,\cdots,a_n$. 有了这些系数后,对任意 ${\bar{x}}$ 我们都能把 $ t( \bar{x} )$ 计算出来.<br>
 所以补间问题不但确定唯一的解,而且在理论上我们总可以解它.但事实上如果未知数一多,解联立方程式的消元法就变得非常棘手.因此我们希望找出一些比消元法更简捷的方法来解补间问题.
-<!--more-->
 <h1>牛顿的差商补间公式</h1>
 和补间问题很有关系的一个观念是差商(difference quotient 或 divided difference), 设$ x_0,x_1,\cdots,x_n $是两两不同的一串实数,再设$ f(x) $是对一切$ x $值都有意义的函数.令$$f_i(x) = \frac{ f(x) -f(x_i) }{x-x_i} , i=0,1,2,\cdots$$则$ f_i(x) $叫$ f(x) $关于$ x_i $的一阶差商,从解析几何的观点来看,$f_i(x)$表示连接$ (x_i,f(x_i)) $和$ (x,f(x)) $两点的直线的斜率,对一切 $\neq x_i$ 的$ x $值,$f_i(x) $都是有意义的.<br>
 我们可以作$ f_i $的一阶差商$$f_{i,j} (x) = \frac{f_i(x)-f_i(x_j)}{x-x_j} , \qquad j \neq i$$这叫作$ f(x) $的二阶差商,除了$x_i,x_j$两点以外,$f_{i,j}(x) $都有意义.仿此我们可以作$ f(x) $的逐次高阶差商 $f_{i,j,\cdots,k}(x)$.<br>
