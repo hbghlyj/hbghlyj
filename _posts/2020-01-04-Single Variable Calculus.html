@@ -1,0 +1,357 @@
+---
+tag: real-analysis
+mathjax: true
+---
+<a href="https://www.math.arizona.edu/files/grad/workshops/integration/single_variable_calculus_notes.tex" target="_blank">tex</a><section class="abstract" role="doc-abstract"> 
+<h3 class="abstracttitle">
+<span class="cmbx-9">Abstract</span>
+</h3>
+     <p class="noindent"><span class="cmr-9">Lecture notes from the Integration Workshop at the University of Arizona. The workshop aims
+     </span><span class="cmr-9">to revisit a few select topics of undergraduate mathematics from a graduate perspective. The
+     </span><span class="cmr-9">notes draw from the text “An introduction to real analysis” by John K. Hunter, and we refer
+     </span><span class="cmr-9">the interested reader to section 8.6, 10.1-3 and 12.4 for further details. These notes contain more
+     </span><span class="cmr-9">material than I intend to cover in the lecture. I urge you to go through all of it, even the parts
+     </span><span class="cmr-9">that I don’t get to in the lecture.</span>
+</p>
+</section>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a id="x1-10001"></a>Taylor’s Theorem, Taylor Series &amp; Analytic Functions</h3>
+<p class="noindent">Objectives: </p>
+     <ul class="itemize1">
+     <li class="itemize">
+     <p class="noindent">Apply Taylor’s theorem to estimate the accuracy of a Taylor polynomial approximation,
+     </p></li>
+     <li class="itemize">
+     <p class="noindent">Determine whether a power series converges,
+     </p></li>
+     <li class="itemize">
+     <p class="noindent">Determine whether a function is analytic.</p></li></ul>
+                                                                                   
+                                                                                   
+<p class="noindent">
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.1   </span> <a id="x1-20001.1"></a>Approximating Polynomials &amp; Taylor’s Theorem</h4>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-2001r1"></a>
+<span class="cmbx-10">Definition 1 </span>(Taylor Polynomial)<span class="cmbx-10">.</span>  </span>Let \(f:(a,b) \to \mathbb {R}\) and suppose that \(f\) has \(n\) derivatives on \((a,b)\). The <span class="cmti-10">Taylor polynomial of
+</span><span class="cmti-10">degree </span>\(n\) <span class="cmti-10">of </span>\(f\) <span class="cmti-10">at </span>\(a &lt; c &lt; b\) is defined as \begin {equation} P_n(x) = \sum _{k = 0}^n a_k (x-c)^k, \quad \text {where} \quad a_k = \frac {1}{k!} f^{(k)}(c) \end {equation}
+</p>
+   </div>
+<p class="indent">
+The difference between \(f\) and \(P_n\) is often called the remainder, or \(R_n(x) := f(x) - P_n(x)\). There are several variations of Taylor’s
+Theorem, one of which is as follows:
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-2002r2"></a>
+<span class="cmbx-10">Theorem 2 </span>(Taylor’s Theorem)<span class="cmbx-10">.</span>  </span><span class="cmti-10">Suppose that </span>\(f:(a,b) \to \mathbb {R}\) <span class="cmti-10">has </span>\(n+1\) <span class="cmti-10">derivatives on </span>\((a,b)\) <span class="cmti-10">and let </span>\(a &lt; c &lt; b\)<span class="cmti-10">. For every </span>\(a &lt; x &lt; b\)<span class="cmti-10">, there exists </span>\(\xi \)
+<span class="cmti-10">between </span>\(c\) <span class="cmti-10">and </span>\(x\) <span class="cmti-10">such that </span>\begin {equation} f(x) = \sum _{k = 0}^n \frac {1}{k!}f^{(k)}(c)\, (x-c)^k + R_n(x) \end {equation}
+<span class="cmti-10">where </span>\begin {equation} R_n(x) = \frac {1}{(n+1)!} f^{(n+1)} (\xi ) (x-c)^{n+1} \end {equation}
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-2003r3"></a>
+<span class="cmbx-10">Example 3.</span>  </span>Use Taylor’s theorem to prove that \begin {equation} \lim _{x \to 0} \left ( \frac {1- \cos x}{x^2}\right ) = \frac {1}{2} \end {equation}
+and determine the rate of convergence
+</p>
+   </div>
+<p class="indent">
+</p><p class="noindent">
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.2   </span> <a id="x1-30001.2"></a>Representation of a Function by its Taylor Series</h4>
+                                                                                   
+                                                                                   
+<p class="noindent">One has to wonder if there is a meaningful way to interpret Taylor’s Theorem in the limit \(n \to \infty \). It is one thing
+to approximate a function by a polynomial (necessarily of finite degree), and quite another to truly
+represent the function by a power series. The potential challenges I would like to discuss are (i) the
+smoothness of the function, (ii) the convergence of the power series, and (iii) whether the power series does
+actually converge to the value of the function.
+</p><p class="noindent">
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.2.1   </span> <a id="x1-40001.2.1"></a>Infinitely Differentiable Functions</h5>
+<p class="noindent">First, and most obviously, it is impossible to compute the terms in the power series \begin {equation} \label {eq:power-series} \sum _{k = 0}^\infty \frac {f^{(k)}(c)}{k!} \,(x-c)^k, \end {equation}
+if \(f\) is not infinitely differentiable. A function <span class="cmti-10">must </span>be infinitely differentiable on some domain to be
+represented by a Taylor Series.
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-4001r4"></a>
+<span class="cmbx-10">Example 4.</span>  </span> Consider the polynomial \(f(x) = 1 + 2x + 10x^2\). We immediately see that \(f(x)\) can be differentiated infinitely
+many times (its derivatives are \(f'(x) = 2 + 20x\), \(f''(x) = 20\) and \(f^{(k)}(x) = 0\) for \(k = 3,4,\dots \)), and that evaluating \(f\) and each of its derivatives for any
+\(c \in \mathbb {R}\) gives a finite number. Therefore, for any \(x \in \mathbb {R}\), we can be confident that each term in the power series
+does actually exist.
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-4002r5"></a>
+<span class="cmbx-10">Example 5.</span>  </span>Determine whether each function is infinitely differentiable on the stated intervals.
+   </p><dl class="enumerate"><dt class="enumerate">
+(a) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = \frac {1}{1-x}\) on (i) \(-1 &lt; x &lt; 1\), and (ii) \(x \in \mathbb {R}\).
+   </p></dd><dt class="enumerate">
+(b) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = x\, |x| \) on (i) \(1&lt; x &lt; \infty \), and (ii) \(x \in \mathbb {R}\).
+   </p></dd><dt class="enumerate">
+(c) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = x^{4/3}\) on (i) \(1&lt; x &lt; \infty \), and (ii) \(x \in \mathbb {R}\).</p></dd></dl>
+   </div>
+<p class="indent">
+                                                                                   
+                                                                                   
+</p><p class="noindent">
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.2.2   </span> <a id="x1-50001.2.2"></a>Convergence of a Power Series</h5>
+<p class="noindent">Second, we will require that the power series must converge. In example <a href="#x1-4001r4">4</a>, we were able to sum the Taylor
+series for each value of \(x\) and obtain a finite value. The summability of the Taylor Series of any polynomial is
+straightforward because only a finite number of terms are non-zero. Let’s consider a more interesting
+example.
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-5001r6"></a>
+<span class="cmbx-10">Example 6.</span>  </span>The \(n\)<sup class="textsuperscript"><span class="cmr-9">th</span></sup> degree Taylor polynomial for \(f(x) = 1/(1-x)\) centered at \(x = 0\) on the interval \(a &lt; x &lt; b\), with \(a\) and \(b\) to be
+determined, is given by \begin {equation} P_n(x) = \sum _{k = 0}^n \frac {f^{(k)}(0)}{k!} (x-0)^k = 1 + x + x^2 + \cdots + x^n. \end {equation}
+Taylor’s Theorem states that there exists \(\xi \) between \(0\) and \(x\) such that the remainder, \(:= f(x) - P_n(x)\) is \begin {equation} R_n(x) := \frac {f^{(n+1)}(\xi )}{(n+1)!} x^{n+1} = \left(\frac {x}{1-\xi }\right)^{n+1} \end {equation}
+If \(|x|&lt; 1\), we can guarantee that \(|\frac {x}{1-\xi }|&lt; 1\) so that \(R_n(x) \to 0\) as \(n \to \infty \). However, if \(|x|&gt; 1\), no such guarantee exists.
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-5002r7"></a>
+<span class="cmbx-10">Definition 7.</span>  </span>The <span class="cmti-10">radius of convergence </span>of a power series is the value \(R\) such that the power series
+converges for \(0 \leq |x-c| &lt; R\) and diverges for \(|x-c| &gt; R\). The radius of convergence satisfies \(0 \leq R \leq \infty \).
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-5003r8"></a>
+<span class="cmbx-10">Theorem 8.</span>  </span><span class="cmti-10">Convergent power series can be differentiated or integrated term by term.</span>
+</p>
+   </div>
+<p class="indent">
+                                                                                   
+                                                                                   
+</p><p class="noindent">
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">1.2.3   </span> <a id="x1-60001.2.3"></a>Convergence to </h5>
+<p class="noindent">Given that the power series converges for a particular value of \(x\), we must still establish what value it
+converges to, and in particular, whether it converges to \(f(x)\). <span class="cmti-10">Yes, I know, this is something of an overly trivial
+</span><span class="cmti-10">example, but there are more interesting ones ahead. </span>To verify that the power series truly is an alternative
+representation of the original function within the radius of convergence, we must investigate the limit
+\begin {equation} \lim _{n \to \infty }\left |f(x) - \sum _{k = 0}^n \frac {f^{(k)}(c)}{k!} (x-c)^k \right | \end {equation}
+In example <a href="#x1-4001r4">4</a>, we could say that the power series was an alternate representation of the original function
+because for each value of \(x\), the power series returns \(f(x)\).
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-6001r9"></a>
+<span class="cmbx-10">Example 9.</span>  </span>Consider the function \begin {equation} f(x) = \begin {cases} e^{-1/x} &amp; x &gt; 0\\ 0 &amp;x \leq 0 \end {cases} \end {equation}
+Determine whether it is (i) infinitely differentiable, (ii) the radius of convergence of it’s Taylor series
+centered at 0, and (iii) the interval on which it’s Taylor series converges to \(f\).
+</p>
+   </div>
+<p class="indent">
+</p><p class="noindent">
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">1.3   </span> <a id="x1-70001.3"></a>Analytic Functions</h4>
+<p class="noindent">There are a number of theorems in mathematics that have been proven for <span class="cmti-10">analytic </span>functions
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-7001r10"></a>
+<span class="cmbx-10">Definition 10.</span>  </span>A function \(f(x)\) is said to be <span class="cmti-10">(real) analytic </span>at a point \(x_0\) if </p>
+     <ul class="itemize1">
+     <li class="itemize">
+     <p class="noindent">\(f(x)\) is infinitely differentiable at \(x_0\) (See §<a href="#x1-40001.2.1">1.2.1</a>).
+     </p></li>
+     <li class="itemize">
+     <p class="noindent">the radius of convergence of the Taylor series centered at \(x = 0\) is non-zero (See §<a href="#x1-50001.2.2">1.2.2</a>).
+     </p></li>
+     <li class="itemize">
+     <p class="noindent">the Taylor series converges to the function in a neighborhood of \(x_0\) (See §<a href="#x1-60001.2.3">1.2.3</a>).</p></li></ul>
+<p class="noindent">A function is said to be <span class="cmti-10">real analytic on a domain </span>\(\mathcal {A}\) if it is (real) analytic at at each \(x_0 \in \mathcal {A}\), and is said to be <span class="cmti-10">entire </span>if
+it is (real) analytic for each \(x_0 \in \mathbb {R}\)
+                                                                                   
+                                                                                   
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-7002r11"></a>
+<span class="cmbx-10">Example 11.</span>  </span>Identify the domains on which the following functions are (real) analytic.
+   </p><dl class="enumerate"><dt class="enumerate">
+(a) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = 1 - 3x + 4x^3\)
+   </p></dd><dt class="enumerate">
+(b) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = e^x\)
+   </p></dd><dt class="enumerate">
+(c) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = 1/ (1-x) \)
+   </p></dd><dt class="enumerate">
+(d) </dt><dd class="enumerate">
+   <p class="noindent">\(f(x) = |x|\)</p></dd></dl>
+   </div>
+<p class="indent">
+</p><p class="noindent">
+</p>
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a id="x1-80002"></a>Improper Integrals </h3>
+<p class="noindent">Objectives
+     </p><dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd class="enumerate">
+     <p class="noindent">Understand convergent integrals as the result of a limit process,
+     </p></dd><dt class="enumerate">
+  2. </dt><dd class="enumerate">
+     <p class="noindent">Investigate the “boundary” between convergent and divergent integrals,
+     </p></dd><dt class="enumerate">
+  3. </dt><dd class="enumerate">
+     <p class="noindent">Apply the comparison test to determine whether an integral converges.</p></dd></dl>
+                                                                                   
+                                                                                   
+<p class="noindent">
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.1   </span> <a id="x1-90002.1"></a>Improper Integrals</h4>
+<p class="noindent">The first time you learned about integration, you may have been asked to find the distance travelled by a
+particle travelling with velocity \(v(t)\) on the interval \([0,T]\). I’ll wager that \(|v(t)|&lt; \infty \) and that \(T&lt; \infty \)); in other words, you were asked
+to integrate a bounded function on a bounded interval. It can be of both theoretical and of practical
+interest to extend the definition of integration, when appropriate, to unbounded functions and to
+unbounded intervals.
+</p><p class="noindent">
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">2.1.1   </span> <a id="x1-100002.1.1"></a>Integrals of Unbounded Functions</h5>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-10001r12"></a>
+<span class="cmbx-10">Definition 12.</span>  </span>An <span class="cmti-10">improper integral </span>of the form \begin {equation} \int _a^b f(x) \, dx = \lim _{\epsilon \to 0^+} \int _{a + \epsilon }^b f(x) \, dx \end {equation}
+is said to <span class="cmti-10">converge </span>if the limit exists. Similarly, an <span class="cmti-10">improper integral </span>of the form \begin {equation} \int _a^b f(x) \, dx = \lim _{\epsilon \to 0^-} \int _{a}^{b-\epsilon } f(x) \, dx \end {equation}
+is said to <span class="cmti-10">converge </span>if the limit exists.
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-10002r13"></a>
+<span class="cmbx-10">Example 13.</span>  </span>Show that \(\int _0^1 \log (x) \, dx \) convgerges. \begin {equation} \int _0^1 \log (x) \, dx = \lim _{\epsilon \to 0^+}\int _\epsilon ^1 \log (x) \, dx = \lim _{\epsilon \to 0^+}\Big [ x\, \log (x)\Big ]_\epsilon ^1 - \lim _{\epsilon \to 0^+}\int _\epsilon ^1 1\, dx = 0 - 0 + 1 = 1 \end {equation}
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-10003r14"></a>
+<span class="cmbx-10">Example 14.</span>  </span>Show that \(\int _0^1 \frac {1}{x} \, dx \) diverges. \begin {equation} \int _0^1 \frac {1}{x} \, dx = \lim _{\epsilon \to 0^+}\int _\epsilon ^1 \frac {1}{x} \, dx = \lim _{\epsilon \to 0^+}\Big [ \log (x)\Big ]_\epsilon ^1 = \lim _{\epsilon \to 0^+}\log (\epsilon ^{-1}) \to \infty  \end {equation}
+</p>
+   </div>
+<p class="indent">
+                                                                                   
+                                                                                   
+</p><p class="noindent">
+</p>
+   <h5 class="subsubsectionHead"><span class="titlemark">2.1.2   </span> <a id="x1-110002.1.2"></a>Integrals on Unbounded Domains</h5>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-11001r15"></a>
+<span class="cmbx-10">Definition 15.</span>  </span>An <span class="cmti-10">improper integral </span>of the form \begin {equation} \int _a^\infty f(x) \, dx = \lim _{M \to \infty } \int _a^M f(x) \, dx \end {equation}
+is said to <span class="cmti-10">converge </span>if the limit exists. Similarly, an <span class="cmti-10">improper integral </span>of the form \begin {equation} \int _{-\infty }^b f(x) \, dx = \lim _{M \to \infty } \int _{-M}^b f(x) \, dx \end {equation}
+is said to <span class="cmti-10">converge </span>if the limit exists.
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-11002r16"></a>
+<span class="cmbx-10">Example 16.</span>  </span>Show that \(\int _0^\infty e^{-kx}\, dx\) converges. \begin {equation} \int _0^\infty e^{-kx}\, dx = \lim _{M \to \infty } \int _0^M e^{-kx}\, dx = \lim _{M \to \infty } \Big [-\frac {1}{k} e^{-kx} \Big ]_0^M = \lim _{M \to \infty } -\frac {1}{k} e^{-kM} + \frac {1}{k} = \frac {1}{k} \end {equation}
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-11003r17"></a>
+<span class="cmbx-10">Example 17.</span>  </span>Determine whether \( \int _0^\infty \frac {1}{1+x^2}\, dx\) converges.
+</p>
+   </div>
+<p class="indent">
+</p><p class="noindent">
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.2   </span> <a id="x1-120002.2"></a>“Boundary” between Convergent and Divergent Integrals</h4>
+<p class="noindent">We can look for the “boundary” between convergent and divergent integrals:
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-12001r18"></a>
+                                                                                   
+                                                                                   
+<span class="cmbx-10">Example 18.</span>  </span> Determine for what values of \(p\) does \( \int _0^1 \frac {1}{x^p}\, dx\) converge. \begin {equation} \int _0^1 \frac {1}{x^p}\, dx = \lim _{\epsilon \to 0^+} \int _\epsilon ^1 \frac {1}{x^p}\, dx = \lim _{M \to \infty } \Big [ \frac {x^{1-p}}{1-p} \Big ]_\epsilon ^1 = \frac {1}{1-p} -\lim _{\epsilon \to 0^+} \frac {\epsilon ^{1-p}}{1-p} \end {equation}
+The integral converges to \(\frac {1}{1-p}\) for \(p&lt;1\) and diverges otherwise.
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-12002r19"></a>
+<span class="cmbx-10">Example 19.</span>  </span> Determine for what values of \(p\) does \(\int _1^\infty \frac {1}{x^p}\, dx\) converge. \begin {equation} \int _1^\infty \frac {1}{x^p}\, dx = \lim _{M \to \infty } \int _1^M \frac {1}{x^p}\, dx = \lim _{M \to \infty } \Big [ \frac {x^{1-p}}{1-p} \Big ]_1^M = \lim _{M \to \infty } \frac {M^{1-p}}{1-p} - \frac {1}{1-p} \end {equation}
+The integral converges to \(\frac {1}{p-1}\) for \(p&gt;1\) and diverges otherwise.
+</p>
+   </div>
+<p class="indent">
+</p><p class="indent">   Examples <a href="#x1-12001r18">18</a> and <a href="#x1-12002r19">19</a> illustrate that there is a ‘boundary’ between convergent and divergent integrals.
+One asks whether this boundary can be further refined.
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-12003r20"></a>
+<span class="cmbx-10">Example 20.</span>  </span>Determine whether \(\displaystyle \int _1^\infty \frac {1}{x\, [\ln (x)]^\alpha }\, dx\) converges for various values of \(\alpha \).
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-12004r21"></a>
+<span class="cmbx-10">Example 21.</span>  </span>Suggest how this boundary can be further refined.
+</p>
+   </div>
+<p class="indent">
+                                                                                   
+                                                                                   
+</p><p class="noindent">
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.3   </span> <a id="x1-130002.3"></a>Comparison Test</h4>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-13001r22"></a>
+<span class="cmbx-10">Theorem 22.</span>  </span><span class="cmti-10">If </span>\(f(x) \leq g(x)\) <span class="cmti-10">on </span>\(\mathcal {A} \subseteq \mathbb {R}\) <span class="cmti-10">and </span>\(\int _\mathcal {A} g(x) \, dx\) <span class="cmti-10">converges, then </span>\(\int _\mathcal {A} f(x) \, dx\) <span class="cmti-10">converges.</span>
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-13002r23"></a>
+<span class="cmbx-10">Theorem 23.</span>  </span><span class="cmti-10">If </span>\(f(x) \geq g(x)\) <span class="cmti-10">on </span>\(\mathcal {A} \subseteq \mathbb {R}\) <span class="cmti-10">and </span>\(\int _\mathcal {A} g(x) \, dx\) <span class="cmti-10">diverges, then </span>\(\int _\mathcal {A} f(x) \, dx\) <span class="cmti-10">diverges.</span>
+</p>
+   </div>
+<p class="indent">
+</p>
+   <div class="newtheorem">
+<p class="noindent"><span class="head">
+<a id="x1-13003r24"></a>
+<span class="cmbx-10">Example 24.</span>  </span>\(\displaystyle \int _0^\infty x^n e^{-kx}\, dx\)
+</p>
+   </div><style>.cmr-17{font-size:170%;} .cmr-12{font-size:120%;} .cmr-9{font-size:90%;} .cmbx-9{font-size:90%; font-weight: bold;} .cmbx-9{ font-weight: bold;} .cmbx-10{ font-weight: bold;} .cmbx-10{ font-weight: bold;} .cmti-10{ font-style: italic;} p{margin-top:0;margin-bottom:0} p.indent{text-indent:0;} p + p{margin-top:1em;} p + div, p + pre {margin-top:1em;} div + p, pre + p {margin-top:1em;} a { overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto; } @media print {div.crosslinks {visibility:hidden;}} a img { border-top: 0; border-left: 0; border-right: 0; } center { margin-top:1em; margin-bottom:1em; } td center { margin-top:0em; margin-bottom:0em; } .Canvas { position:relative; } img.math{vertical-align:middle;} div.par-math-display, div.math-display{text-align:center;} li p.indent { text-indent: 0em } li p:first-child{ margin-top:0em; } li p:last-child, li div:last-child { margin-bottom:0.5em; } li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; } .enumerate1 {list-style-type:decimal;} .enumerate2 {list-style-type:lower-alpha;} .enumerate3 {list-style-type:lower-roman;} .enumerate4 {list-style-type:upper-alpha;} div.newtheorem { margin-bottom: 2em; margin-top: 2em;} .obeylines-h,.obeylines-v {white-space: nowrap; } div.obeylines-v p { margin-top:0; margin-bottom:0; } .overline{ text-decoration:overline; } .overline img{ border-top: 1px solid black; } td.displaylines {text-align:center; white-space:nowrap;} .centerline {text-align:center;} .rightline {text-align:right;} pre.verbatim {font-family: monospace,monospace; text-align:left; clear:both; } .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; } div.fbox {display:table} div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; } div.minipage{width:100%;} div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;} div.center div {text-align: left;} div.flushright, div.flushright div.flushright {text-align: right;} div.flushright div {text-align: left;} div.flushleft {text-align: left;} .underline{ text-decoration:underline; } .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; } .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; } .framebox-c {text-align:center;} .framebox-l {text-align:left;} .framebox-r {text-align:right;} span.thank-mark{ vertical-align: super } span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; } div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; } table.tabular td p{margin-top:0em;} table.tabular {margin-left: auto; margin-right: auto;} td p:first-child{ margin-top:0em; } td p:last-child{ margin-bottom:0em; } div.td00{ margin-left:0pt; margin-right:0pt; } div.td01{ margin-left:0pt; margin-right:5pt; } div.td10{ margin-left:5pt; margin-right:0pt; } div.td11{ margin-left:5pt; margin-right:5pt; } table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; } td.td00{ padding-left:0pt; padding-right:0pt; } td.td01{ padding-left:0pt; padding-right:5pt; } td.td10{ padding-left:5pt; padding-right:0pt; } td.td11{ padding-left:5pt; padding-right:5pt; } table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; } .hline hr, .cline hr{ height : 0px; margin:0px; } .hline td, .cline td{ padding: 0; } .hline hr, .cline hr{border:none;border-top:1px solid black;} .tabbing-right {text-align:right;} div.float, div.figure {margin-left: auto; margin-right: auto;} div.float img {text-align:center;} div.figure img {text-align:center;} .marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;} .marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;} .reversemarginpar{float:left;} table.equation {width:100%;} .equation td{text-align:center; } td.equation { margin-top:1em; margin-bottom:1em; } td.equation-label { width:5%; text-align:center; } td.eqnarray4 { width:5%; white-space: normal; } td.eqnarray2 { width:5%; } table.eqnarray-star, table.eqnarray {width:100%;} div.eqnarray{text-align:center;} div.array {text-align:center;} div.pmatrix {text-align:center;} table.pmatrix {width:100%;} span.pmatrix img{vertical-align:middle;} div.pmatrix {text-align:center;} table.pmatrix {width:100%;} span.bar-css {text-decoration:overline;} table.tabular{border-collapse: collapse; border-spacing: 0;} img.cdots{vertical-align:middle;} .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;} .chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;} .index-item, .index-subitem, .index-subsubitem {display:block} div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;} div.caption span.id{font-weight: bold; white-space: nowrap; } h1.partHead{text-align: center} p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; } p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; } .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;} .subparagraphHead, .likesubparagraphHead { font-weight: bold;} .verse{white-space:nowrap; margin-left:2em} div.maketitle {text-align:center;} h2.titleHead{text-align:center;} div.maketitle{ margin-bottom: 2em; } div.author, div.date {text-align:center;} div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; } div.author{white-space: nowrap;} div.abstract p {margin-left:5%; margin-right:5%;} div.abstract {width:100%;} .abstracttitle{text-align:center;margin-bottom:1em;} figure.float, div.figure {margin-left: auto; margin-right: auto;} figure.float img, figure.figure img {display: block; margin-left: auto; margin-right: auto;} figure.figure {text-align:center;} figcaption.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:center;} figcaption.caption span.id{font-weight: bold; white-space: nowrap; } .abstract{margin:1em;} .equation td{text-align:center; } .equation-star td{text-align:center; } table.equation-star { width:100%; } table.equation { width:100%; } table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:95%; margin-left:5%; white-space: nowrap;} table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;} td.align-label { width:5%; text-align:center; } td.align-odd { text-align:right; padding-right:0.3em;} td.align-even { text-align:left; padding-right:0.6em;} table.multline, table.multline-star {width:100%;} td.gather {text-align:center; } table.gather {width:100%;} div.gather-star {text-align:center;} dd.enumerate {margin-left: 2em;} dt.enumerate {float:left; clear:left; margin-right:0.5em; margin-left:0.5em; text-align:right; } .rotatebox{display: inline-block;} .lstlisting .label{margin-right:0.5em; } div.lstlisting{font-family: monospace,monospace; white-space: nowrap; margin-top:0.5em; margin-bottom:0.5em; } div.lstinputlisting{ font-family: monospace,monospace; white-space: nowrap; } .lstinputlisting .label{margin-right:0.5em;} div.verbatiminput {font-family: monospace,monospace; white-space: nowrap; }</style>
