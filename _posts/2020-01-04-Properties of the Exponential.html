@@ -1,0 +1,17 @@
+---
+tag: real-analysis
+mathjax: true
+---
+<small><a href="https://www.maths.ox.ac.uk/system/files/attachments/complex%20%281%29.pdf" target="_blank">complex (1).pdf</a></small><br>
+For any complex number $z$, $1+z+\frac{z^{2}}{2 !}+\frac{z^{3}}{3 !}+\cdots+\frac{z^{n}}{n !}+\cdots$ converges to a complex value which we shall denote as $e^z$. The function $e^z$ has the following properties<br>
+(i) $\frac{\mathrm{d}}{\mathrm{d} z} e^{z}=e^{z}, \quad e^{0}=1$<br>
+(ii) $e^{z+w}=e^{z} e^{w} \quad\text { for any complex } z, w$<br>
+(iii) $e^{z} \neq 0 \quad\text { for any complex } z$<br>
+For the moment we shall leave aside any convergence issues.<br>
+To prove property (i) we assume that we can differentiate a power series term by term. Then we have\begin{align*}\frac{\mathrm{d}}{\mathrm{d} z} e^{z}&=\frac{\mathrm{d}}{\mathrm{d} z}\left(1+z+\frac{z^{2}}{2 !}+\frac{z^{3}}{3 !}+\cdots+\frac{z^{n}}{n !}+\cdots\right)\\<br>
+&=0+1+\frac{2 z}{2 !}+\frac{3 z^{2}}{3 !}+\cdots \frac{n z^{n-1}}{n !}+\cdots\\<br>
+&=1+z+\frac{z^{2}}{2 !}+\cdots \frac{z^{n-1}}{(n-1) !}+\cdots\\<br>
+&=e^{z}\end{align*}We give two proofs of property (ii)<br>
+PROOF ONE: Let $x$ be a complex variable and let $y$ be a constant (but arbitrary) complex number.<br>
+Consider the function$$F(x)=e^{y+x} e^{y-x}$$If we differentiate $F$ by the product and chain rules, and knowing that $e^x$ differentiates to itself we have$$F^{\prime}(x)=e^{y+x} e^{y-x}+e^{y+x}\left(-e^{y-x}\right)=0$$and so $F$ is a constant function. But note that $F (y) = e^{2y}e^0 = e^{2y}$. Hence we have$$e^{y+x} e^{y-x}=e^{2 y}$$Now set $x = \frac{z − w}2$ and $y =\frac{z + w}2$ and we arrive at required identity: $e^{z} e^{w}=e^{z+w}$.<br>
+PROOF TWO: If we multiply two (convergent) power series$$\sum_{n=0}^{\infty} a_{n} t^{n} \text { and } \sum_{n=0}^{\infty} b_{n} t^{n}$$we get another (convergent) power series$$\sum_{n=0}^{\infty} c_{n} t^{n} \text { where } c_{n}=\sum_{k=0}^{n} a_{k} b_{n-k}$$Consider$$e^{z t}=\sum_{n=0}^{\infty} \frac{z^{n}}{n !} t^{n} \text { so that } a_{n}=\frac{z^{n}}{n !}$$$$e^{w t}=\sum_{n=0}^{\infty} \frac{w^{n}}{n !} t^{n} \text { so that } b_{n}=\frac{w^{n}}{n !}$$Then\begin{align*} c_{n} &=\sum_{k=0}^{n} \frac{z^{k}}{k !} \frac{w^{n-k}}{(n-k) !} \\ &=\frac{1}{n !} \sum_{k=0}^{n} \frac{n !}{k !(n-k) !} z^{k} w^{n-k} \\ &=\frac{1}{n !}(z+w)^{n} \end{align*}by the binomial theorem. So$$e^{z t} e^{w t}=\sum_{n=0}^{\infty} \frac{z^{n}}{n !} t^{n} \sum_{n=0}^{\infty} \frac{w^{n}}{n !} t^{n}=\sum_{n=0}^{\infty} \frac{(w+z)^{n}}{n !} t^{n}=e^{(w+z) t}$$
