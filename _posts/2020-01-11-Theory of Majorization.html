@@ -26,7 +26,7 @@ Muirhead 不等式 (<a href="https://web.math.sinica.edu.tw/mathmedia/HTMLarticl
 圖1
 </div><p>
 $(a,b)$ 區間之三點 $A(x),B(y)$ 及 $C(z)$，設 $x&lt;z&lt;y$，
-則 $g(z)$ 之值必位於連結 $D(x,g(x))$，$F(y,g(y))$ 兩點之直線下方。
+則 $g(z)$ 之值必位於連結 $D(x,g(x)),F(y,g(y))$ 兩點之直線下方。
 這個證明很簡單。由 $A,B,C$ 作垂線分別交 $\overline{DF}$ 於 $D,F,E$，又由 $D$ 作平行於 $x$ 軸之直線交 $\overline{EC},\overline{FB}$ 於 $G$ 及 $H$。若令
 \[\mu =\frac{z-x}{y-x},\quad \lambda=\frac{y-z}{y-x}\]
 則 $\mu \geq 0$，
@@ -63,7 +63,7 @@ $\forall x,y\in(a,b)$，
 這個證明涉及極限，連續等概念，讀者姑且信之，以後我們會用此條件，來檢驗某些函數是否為凸函數。
 </p><p>
 由於我們以後的討論，不僅限於一個變數，一般會在 $n(n\geq 2)$ 度的實向量空間 $R^n$ 或 
-$R^{n+}$ 中。下面首先證明(1)式可以推廣到 $n&gt;2$ 的一般情形。
+$R^{n+}$ 中。下面首先證明(1)式可以推廣到 $n>2$ 的一般情形。
 </p><dl>
 <dt><strong>定理1:</strong></dt>
 <dd>設 $g$ 為 $(a,b)$ 上的一凸函數，
@@ -84,12 +84,12 @@ $\lambda_i\geq 0,(i=1,2,…,n),\sum^n_{i=1}\lambda_i = 1$,
 $\lambda_1x_1+\lambda_2x_2=\lambda y,\lambda=\lambda_1+\lambda_2$
 則由歸納假設得知
 \begin{eqnarray*}
-&&g(\lambda_1x_1+\lambda_2x_2+\cdots+λ_kx_k)\\
-&=&g(\lambda y+\lambda_3 x_3+\cdots \cdots+\lambda_k x_k)
+&&g(\lambda_1x_1+\lambda_2x_2+\dots+λ_kx_k)\\
+&=&g(\lambda y+\lambda_3 x_3+\dots+\lambda_k x_k)
 &\leq&\lambda g(y)+\sum^n_{i=3}\lambda_ig(x_i)
 \end{eqnarray*}
 因為 
-$\lambda +\lambda_3 +\lambda_4+\cdots +\lambda_k=1$ 共 $k-1$ 項，又
+$\lambda +\lambda_3 +\lambda_4+\dots +\lambda_k=1$ 共 $k-1$ 項，又
 \begin{eqnarray*}
 \lambda g(y)&=&\lambda g(\frac{\lambda_1}{λ}x_1+\frac{\lambda_2}{λ}x_2)\\
 &\leq&\lambda\{\frac{\lambda_1}{\lambda} g(x_1)+\frac{\lambda_2}{\lambda} g(x_2)\}
@@ -102,29 +102,29 @@ $\lambda +\lambda_3 +\lambda_4+\cdots +\lambda_k=1$ 共 $k-1$ 項，又
 <p>
 我們現在舉些有關凸函數的應用。</p><dl>
 <dt><strong>定理2：(Arithmetic-Geometric Mean Inequality)</strong></dt>
-<dd>設 $a_i\in R^+$，$i=1,2,…,n$，則
-\[\frac{a_1+a_2+\cdots+a_n}{n}\geq\sqrt[n]{a_1a_2\cdots\cdots a_n}\]
+<dd>設 $a_i\in R^+,i=1,2,…,n$，則
+\[\frac{a_1+a_2+\dots+a_n}{n}\geq\sqrt[n]{a_1a_2\dots a_n}\]
 
 </dd>
 <dt><strong>註：</strong></dt>
 <dd>這就是所謂的算術平均大於幾何平均。
 </dd>
 <dt><strong>證：</strong></dt>
-<dd>很明顯若 $a_i$ 中有一為 0 則不等式自然成立，故可設 $a_i&gt;0$
+<dd>很明顯若 $a_i$ 中有一為 0 則不等式自然成立，故可設 $a_i>0$
 令 
-$g(x)=-\log x,x&gt;0$ 則依據圖形或考慮 
+$g(x)=-\log x,x>0$ 則依據圖形或考慮 
 $g''(x)=\frac{1}{x^2}$ 得知 $g$ 在 $(0,\infty)$ 上為一凸函數。於是
-\[g(\frac{a_1}{n}+\frac{a_2}{n}+\cdots +\frac{a_n}{n})<\sum\frac{1}{n}g(a_i)\tag{3}\]
+\[g(\frac{a_1}{n}+\frac{a_2}{n}+\dots +\frac{a_n}{n})<\sum\frac{1}{n}g(a_i)\tag{3}\]
 而
-\[g(\frac{a_1}{n}+\frac{a_2}{n}+\cdots +\frac{a_n}{n})=-\log(\frac{a_1+a_2+\cdots+a_n}{n})\]
+\[g(\frac{a_1}{n}+\frac{a_2}{n}+\dots +\frac{a_n}{n})=-\log(\frac{a_1+a_2+\dots+a_n}{n})\]
 \[\sum_{i=1}^n\frac{g(a_i)}{n}=\frac{-1}{n}\sum_{i=1}^n\log a_1\]
 於是
 \[
-\log (\frac{a_1+a_2+\cdots+a_n}{n}) > \log \sqrt[n]{a_1a_2 \cdots a_n}
+\log (\frac{a_1+a_2+\dots+a_n}{n}) > \log \sqrt[n]{a_1a_2 \dots a_n}
 \]
 現 $\log$ 為正實數的遞增函數，所以由上式得
 \[
-\frac{a_1+a_2+\cdots+a_n}{n} \geq \sqrt[n]{a_1a_2 \cdots a_n}
+\frac{a_1+a_2+\dots+a_n}{n} \geq \sqrt[n]{a_1a_2 \dots a_n}
 \]
 </dd>
 </dl>
@@ -139,7 +139,7 @@ $g''(x)=\frac{1}{x^2}$ 得知 $g$ 在 $(0,\infty)$ 上為一凸函數。於是
 <dd>設 $g(x)=x^2$，則易知 $g$ 為一凸函數。令 
 $x_i=\frac{a_i}{b_i}$ 及 $t_i=b_i^2$，
 $t=\sum_{i=1}^nt_i$，
-$\lambda_i=\frac{t_i}{t}$，$i=1,2,…,n$
+$\lambda_i=\frac{t_i}{t},i=1,2,…,n$
 則由定理1可得
 \[(\sum_{i=1}^n\lambda_ix_i)^2\leq\sum_{i=1}^n\lambda_ix_i^2\]
 即
@@ -153,13 +153,13 @@ $\lambda_i=\frac{t_i}{t}$，$i=1,2,…,n$
 </dd></dl>
 <p>
 現在我們討論具有下列形式的不等式:
-\[\phi (\overbrace{\overline{x},\overline{x},\cdots,\overline{x}}^\text{$n$個})\leq\phi(x_1,x_2,\cdots,x_n)\tag{4}\]
+\[\phi (\overbrace{\overline{x},\overline{x},\dots,\overline{x}}^\text{$n$個})\leq\phi(x_1,x_2,\dots,x_n)\tag{4}\]
 其中 
-$\overline{x}=\frac{x_1+x_2+\cdots+x_n}{n},x_1,x_2,…,x_n$ 為實數。如果我們令
-\[\phi(y_1,y_2,\cdots,y_n)=\sum_{i=1}^n g(y_i)\]
+$\overline{x}=\frac{x_1+x_2+\dots+x_n}{n},x_1,x_2,…,x_n$ 為實數。如果我們令
+\[\phi(y_1,y_2,\dots,y_n)=\sum_{i=1}^n g(y_i)\]
 則前面的(3)式就可表成(4)的形式。由於(4)的特殊形式，
 使得我們不妨考慮下面更廣泛的形式：
-\[\phi(y_1,y_2,\cdots,y_n)\leq\phi(x_1,x_2,\cdots,x_n)\tag{5}\]
+\[\phi(y_1,y_2,\dots,y_n)\leq\phi(x_1,x_2,\dots,x_n)\tag{5}\]
 此時 $y_1,y_2,…,y_n$ 不一定要相等，但它們在某些意義上
 （這是我們將要進一步討論的地方）比 $x_1,x_2,…,x_n$ 要來得緊湊些，
 即沒有 $x_1,x_2,…,x_n$ 來得分散。我們主要問的就是 
@@ -186,36 +186,36 @@ $g(1)+g(2)\leq g(100)+g(200)$ 就沒有太多的價值了。從凸函數的性�
 圖2</div><p>
 但要把圖形2的「緊湊」觀念推到 $n$ 度空間，即具 $n$ 個分量的向量$(x_1,x_2,…,x_n)$ 及 $(y_1,y_2,…,y_n)$ 就不太容易了。但有的情形很顯然，譬如說
 \[
-y_i=\overline{x}=\frac{x_1+x_2+\cdots+x_n}{n} \; , \quad
-i=1,2,\cdots,n
+y_i=\overline{x}=\frac{x_1+x_2+\dots+x_n}{n} \; , \quad
+i=1,2,\dots,n
 \]則 $(\overline{x},\overline{x},…,\overline{x})$ 顯然比 $(y_1,y_2,…,y_n)$ 要緊湊。
 因而我們有第(4)式，即
-\[n\phi(x)\leq\sum_{i=1}^n\phi(x_i)\]
-蕭爾想到了這樣一個比較兩向量 $X=(x_1,x_2,…,x_n)$，$Y=(y_1,y_2,…,y_n)$ 緊湊性的方法。
+\[n\phi(\overline{x})\leq\sum_{i=1}^n\phi(x_i)\]
+蕭爾想到了這樣一個比較兩向量 $X=(x_1,x_2,…,x_n),Y=(y_1,y_2,…,y_n)$ 緊湊性的方法。
 <dl>
 <dt><strong>定義:</strong></dt>
-<dd>令 $X = (x_1,x_2,…,x_n)$，$Y = (y_1,y_2,…,y_n)$ 為兩漸減序列，即
-\[\begin{array}{l}
-x_1\geq x_2\geq x_3\geq \cdots\cdots\geq x_n\\
-y_1\geq y_2\geq y_3\geq \cdots\cdots\geq y_n
-\end{array}\]
+<dd>令 $X = (x_1,x_2,…,x_n),Y = (y_1,y_2,…,y_n)$ 為兩漸減序列，即
+\begin{array}{l}
+x_1\geq x_2\geq x_3\geq \dots\geq x_n\\
+y_1\geq y_2\geq y_3\geq \dots\geq y_n
+\end{array}
 且
-\[x_1+x_2+\cdots\cdots+x_n=y_1+y_2+\cdots\cdots+y_n\]
+\[x_1+x_2+\dots+x_n=y_1+y_2+\dots+y_n\]
 我們說$X$可以「蓋得住」$Y$，或$Y$比$X$更緊湊，如果
 \begin{eqnarray*}
 y_1&\leq&x_1\\
 y_1+y_2&\leq&x_1+x_2\\
-y_1+y_2+y_3 \leq x_1+x_2+x_3\\
-⋯\\
-y_1+y_2+\cdots+y_{n-1}&\leq&x_1+x_2+\cdots+x_{n-1}\\
+y_1+y_2+y_3&\leq&x_1+x_2+x_3\\
+&⋯\\
+y_1+y_2+\dots+y_{n-1}&\leq&x_1+x_2+\dots+x_{n-1}\\
 \end{eqnarray*}
 一般我們用 $Y&lt;X$ 表示之。
 </dd>
 </dl>
 
 <p>
-我們所採的定義雖只適用於兩個漸減的序列，但在一般情形下的不等式，幾乎都與序列 $x_1,x_2,…,x_n,y_1,y_2,…,y_n$ 的排列無關；所以我們所採的定義並不失其一般性。舉個例子，$X=(3, 2, 1),Y=(2.5, 2.3, 1.2)$，則</p>
-\[3+2+1=2.5+2.3+2.1\]
+我們所採的定義雖只適用於兩個漸減的序列，但在一般情形下的不等式，幾乎都與序列 $x_1,x_2,…,x_n,y_1,y_2,…,y_n$ 的排列無關；所以我們所採的定義並不失其一般性。舉個例子，$X=(3,2,1),Y=(2.5,2.3,1.2)$，則
+\[3+2+1=2.5+2.3+1.2\]
 且
 \[\begin{array}{rcl}
 3&\geq&2.5\\
@@ -223,16 +223,14 @@ y_1+y_2+\cdots+y_{n-1}&\leq&x_1+x_2+\cdots+x_{n-1}\\
 \end{array}\]
 故 $Y&lt;X$。
 又很顯然的 
-$Y=(\overline{x},\overline{x},\cdots,\overline{x})$
-
-$< X = (x_1, x_2, \cdots, x_n)$。讀者不妨試試證明此一事實。（以後許多地方要用到此一事實）
-
+\[Y=(\overline{x},\overline{x},\dots,\overline{x})< X = (x_1, x_2, \dots, x_n)\]
+讀者不妨試試證明此一事實。（以後許多地方要用到此一事實）
 <dl>
 <dt><strong>註:</strong></dt>
 <dd>我們在文中有時把 $(x_1,x_2,…,x_n)$ 以序列看之。
 有時也視 
-$(x_1,x_2,\cdots,x_n) \in R^n$，當向量看之。在當序列看時，
-$x_1,x_2$,… 等可稱為元素，在當向量看時，$x_1,x_2$,… 等以分量稱之。
+$(x_1,x_2,\dots,x_n) \in R^n$，當向量看之。在當序列看時，
+$x_1,x_2,…$ 等可稱為元素，在當向量看時，$x_1,x_2,…$ 等以分量稱之。
 我們稱 $X$ 及 $Y$ 的兩個元素或分量相同時，是除了數值本身外，且具有相同的秩序或位置。例如 (3,2,1,5,3) 及 (3,1,2,5,3) 兩向量有 3 對元素相同。
 </dd>
 </dl>
@@ -241,43 +239,36 @@ $x_1,x_2$,… 等可稱為元素，在當向量看時，$x_1,x_2$,… 等以分�
 下面的定理把蓋的觀念與凸函數的關係做了一個引線。
 </p><dl>
 <dt><strong>定理4</strong></dt>
-<dd>令$X$$=$$(x_1,x_2,…,x_n)$,$Y$$=$$(y_1,y_2,…,y_n)$為兩實數列，且$X$與$Y$只有兩個元素不相同，設其位置在$i$及$j$上(即$x_k=y_k$除非$k=i$及$k=j)$，則下列條件(i)與(ii)互為充要條件。
-
-<dl>
-<dt></dt>
-<dd>(i)$Y&lt;X$
-</dd>
-<dt></dt>
-<dd>(ii)有一個實數α;$0<\alpha< 1$ 且 
+<dd>令$X=(x_1,x_2,…,x_n),Y=(y_1,y_2,…,y_n)$為兩實數列，且$X$與$Y$只有兩個元素不相同，設其位置在$i$及$j$上(即$x_k=y_k$除非$k=i$及$k=j)$，則下列條件(i)與(ii)互為充要條件。
+<ol style="list-style-type:lower-roman;">
+<li>$Y&lt;X$
+<li>有一個實數$α;0<\alpha< 1$ 且 
 $y_i=\alpha x_i+(1-\alpha)x_j,y_j=(1-\alpha )x_i+\alpha x_j$
-</dd>
-</dl>
-
-</dd>
+</ol></dd>
 <dt><strong>證:</strong></dt>
 <dd>因$i$與$j$可為任何位置。因此我們不妨假設
 \[
-x_1\geq x_2\geq\cdots\geq x_i\geq\cdots\geq x_j\geq\cdots\geq x_n
+x_1\geq x_2\geq\dots\geq x_i\geq\dots\geq x_j\geq\dots\geq x_n
 \]
 我們先由(i)推導出(ii)。因除了在 $i,j$ 位置上的元素皆相同，又 $Y&lt;X$，
 則必須有
-\[\begin{array}{rcl}
+\begin{eqnarray*}
 x_i&>&y_i\\
-x_i+y_j&=&y_i+y_j\\
-\end{array}\]
+x_i+x_j&=&y_i+y_j\\
+\end{eqnarray*}
 亦即 
 $x_i>y_i\geq y_j>x_j$。若令
 \[\alpha=\frac{y_i-x_j}{x_i-x_j}\]
-則 $0<\alpha< 1$ 並很容易由代入 α 之值而證得(ii)。
+則 $0<\alpha< 1$ 並很容易由代入 $α$ 之值而證得(ii)。
 <p>
 現若(ii)成立。則由於在$i$之前的$x,y$皆相等，故對$k&lt;i$而言
-\[x_1+x_2+\cdots +x_k=y_1+y_2+\cdots +y_k\]
+\[x_1+x_2+\dots +x_k=y_1+y_2+\dots +y_k\]
 又在 $k=i$ 時
 \begin{eqnarray*}
-&&y_1+y_2+\cdots\cdots +y_i\\
-&=&x_1+x_2+\cdots+x_{i-1}+\alpha x_i+(1-\alpha) x_j \\
-&\leq&x_1+x_2+\cdots+x_{i-1}+\alpha x_i+(1-\alpha) x_i\\
-&=&x_1+x_2+\cdots +x_i
+&&y_1+y_2+\dots+y_i\\
+&=&x_1+x_2+\dots+x_{i-1}+\alpha x_i+(1-\alpha) x_j \\
+&\leq&x_1+x_2+\dots+x_{i-1}+\alpha x_i+(1-\alpha) x_i\\
+&=&x_1+x_2+\dots +x_i
 \end{eqnarray*}
 這種不等的情形一直到 $k\geq j$ 時又恢復了等式（因為 
 $y_i+y_j=x_i+x_j$），故本定理得證。
@@ -287,43 +278,33 @@ $y_i+y_j=x_i+x_j$），故本定理得證。
 <dl>
 <dt><strong>定理5</strong></dt>
 <dd>設實數列 
-$X=(x_1,x_2,\cdots ,x_n)$，
-$Y=(y_1,y_2,\cdots ,y_n)$中，$X$ 與 $Y$ 不全相同並且 $Y&lt;X$，
+$X=(x_1,x_2,\dots ,x_n)$，
+$Y=(y_1,y_2,\dots ,y_n)$中，$X$ 與 $Y$ 不全相同並且 $Y&lt;X$，
 則我們可找到一個數列 $Z=(z_1,z_2,…,z_n)$ 具備下列三個性質:
-<dl>
-<dt></dt>
-<dd>(1) $Y&lt;Z&lt;X$(即$Y&lt;Z,Z&lt;X)$
-</dd>
-<dt></dt>
-<dd>(2) $Z$與$Y$比$X$與$Y$至少多一個相同的元素
-</dd>
-<dt></dt>
-<dd>(3) $Z$與$X$至多只有兩個元素不同。
-</dd>
-</dl>
-
-</dd>
+<ol>
+<li>$Y&lt;Z&lt;X$(即$Y&lt;Z,Z&lt;X$)
+<li>$Z$與$Y$比$X$與$Y$至少多一個相同的元素
+<li>$Z$與$X$至多只有兩個元素不同。
+</ol></dd>
 <dt><strong>證:</strong></dt>
 <dd>因本定理的證明與 $X,Y$ 之元素的排列無關，不妨假定 $X,Y$ 已成漸減排列，
 即
 \begin{eqnarray*}
-&X:&x_1\geq x_2\geq x_3\geq\cdots\cdots \geq x_n\\
-&Y:&y_1\geq y_2\geq y_3\geq\cdots\cdots \geq y_n
+&X:&x_1\geq x_2\geq x_3\geq\dots\geq x_n\\
+&Y:&y_1\geq y_2\geq y_3\geq\dots\geq y_n
 \end{eqnarray*}
-<br clear="ALL">
 因 $Y&lt;X$，故 
 $\sum_{i=1}^n x_i=\sum_{i=1}^n y_i$，又因 $x_i$ 與 $y_i$ 不全相同，
-必有一個 $k$ 使得 $x_k&gt;y_k$ 及一個 $l$ 使得 $x_l&lt;y_l$，取 $i$ 為最大的 $k$ 有 $x_k&gt;y_k$ 的性質者，
-$j$ 為最小的 $l&gt;i$ 並滿足 $x_l&lt;y_l$ 者，則 $X,Y$，與 $i,j$ 的關係如下：
+必有一個 $k$ 使得 $x_k>y_k$ 及一個 $l$ 使得 $x_l&lt;y_l$，取 $i$ 為最大的 $k$ 有 $x_k>y_k$ 的性質者，
+$j$ 為最小的 $l>i$ 並滿足 $x_l&lt;y_l$ 者，則 $X,Y$，與 $i,j$ 的關係如下：
 \begin{aligned}
-X: & x_1 \geq x_2 \geq x_3 \geq \cdots \geq x_{i-1} \geq x_i \\
-& \geq \underbrace{x_{i+1} \geq \cdots \cdots \cdots x_{j-1}}_{\text{各個相等}} \geq x_j \geq x_{j+1} \geq \cdots \cdots x_n \\
-Y: &\quad y_1 \geq y_2 \geq y_3 \geq \cdots \geq y_{i-1} \geq y_i \\
-& \geq \underbrace{y_{i+1} \geq \cdots \cdots y_{j-1}}_{\text{各個相等}} \geq y_j \geq y_{j+1} \geq \cdots \cdots y_n
+X: x_1 &\geq x_2 \geq x_3 \geq \dots \geq x_{i-1} \geq x_i \\
+& \geq \underbrace{x_{i+1} \geq \dots x_{j-1}}_\text{各個相等} \geq x_j \geq x_{j+1} \geq \dots x_n \\
+Y: y_1 &\geq y_2 \geq y_3 \geq \dots \geq y_{i-1} \geq y_i \\
+& \geq \underbrace{y_{i+1} \geq \dots y_{j-1}}_\text{各個相等} \geq y_j \geq y_{j+1} \geq \dots y_n
 \end{aligned}
-<br clear="ALL">
 即當 $k=i+1,i+2,…,j-1$ 時 $y_k=x_k$(否則 $i$ 可向右移或 $j$ 向左移與所取的 $i$ 及 $j$ 性質不符)，
-又 $x_t&gt;y_t,\forall t\leq　i$及$y_s&gt;x_s,\forall s\geq　j$。令
+又 $x_t≥y_t,\forall t\leq i$及$y_s≥x_s,\forall s\geq j$。令
 \[\delta=\min(x_i-y_i,y_j-x_j)\]
 \[\alpha=\frac{\delta}{x_i-x_j}\]
 由於 
@@ -337,30 +318,27 @@ z_j&=&x_j+\delta=\alpha x_i+(1-\alpha)x_j\\
 \end{eqnarray*}
 由定理3得知 $Z&lt;X$，因 $Z$ 與 $X$ 除了 $i,j$ 位置上的元素外，皆相同，故很容易求出
 \[
-\sum_{t=l}^kz_t\geq \sum_{t=l}^ky_t \qquad t=1,2,\cdots,n-1
+\sum_{t=1}^kz_t\geq \sum_{t=1}^ky_t \qquad t=1,2,\dots,n-1
 \]
 及
-\[\sum_{t=l}^nz_t= \sum_{t=l}^ny_t\]
-故 $Y&lt;Z$，即(1)得證。根據 δ 之定義，若
+\[\sum_{t=1}^nz_t= \sum_{t=1}^ny_t\]
+故 $Y&lt;Z$，即(1)得證。根據 $δ$ 之定義，若
 
 $\delta =x_i-y_i$則$z_i=y_i$，若
 $\delta =y_j-x_j$
-則$z_j=y_j$，故(2)成立。因$X$與$Z$除$i$，$j$
+則$z_j=y_j$，故(2)成立。因$X$與$Z$除$i,j$
 位置外均相同，(3)亦因此證得。
 </dd>
 </dl>
 
 <dl>
 <dt><strong>系理:</strong></dt>
-<dd>依上面定理，我們可以找到 $z_s(s\leq n)$ 個數列，使得
-<p>
-(1)
-$Y=z_0< z_1< z_2 <\cdots < z_s< z_{s+1}=X$
-</p><p>
-(2)所有$z_i$與$z_{i+1}$之間(
-$i=0,1,2,\cdots\cdots,s)$至多有兩個不同的元素。</p></dd>
+<dd>依上面定理，我們可以找到 $s\leq n$ 個數列 $Z_1, Z_2, \cdots,Z_s$，使得
+<ol>
+<li>$Y=Z_0< Z_1< Z_2<\dots< Z_s< Z_{s+1}=X$
+<li>所有$Z_i$與$Z_{i+1}$之間($i=0,1,2,\dots,s$)至多有兩個不同的元素。</ol></dd>
 <dt><strong>證:</strong></dt>
-<dd>因 $s\leq n$。
+<dd>因 $X$ 與 $Y$ 至多有 $n$ 個不同的元素, 由上定理 (2) 知 $s\leq n$。
 </dd>
 </dl>
 
@@ -372,7 +350,7 @@ $i=0,1,2,\cdots\cdots,s)$至多有兩個不同的元素。</p></dd>
 \[\sum_{k=1}^n f(y_n)\leq \sum_{k=1}^n f(x_n)\tag{9}\]
 </dd>
 <dt><strong>證:</strong></dt>
-<dd>由定理5的系理，我們只需證明 $Y$ 與 $X$ 只有兩個元素不相同的情形就行了。（否則我們可由 $z_1,z_2,…,z_s$ 一直推下去）
+<dd>由定理5的系理，我們只需證明 $Y$ 與 $X$ 只有兩個元素不相同的情形就行了。（否則我們可由 $Z_1,Z_2,…,Z_s$ 一直推下去）
 令 $x_i,x_j$ 與 $y_i,y_j$ 各不相同而其餘的 $x,y$ 皆相同，則(9)變成了
 \[f(y_i)+f(y_j)\leq f(x_i)+f(x_j)\tag{10}\]
 因 $0<\alpha< 1$且
@@ -393,28 +371,28 @@ f(y_i)+f(y_j)&=&f(\alpha x_i+(1-\alpha)x_j)+f((1-\alpha)x_i+\alpha x_j)\\
 </p><dl>
 <dt><strong>例1：</strong></dt>
 <dd>令 $g(x)=-\log x,0< x< \infty$ 為一凸函數，又由事實
-\[(\bar{x}, \bar{x}, \cdots, \bar{x})<(x_1, x_2, \cdots, x_n)\]
-(其中 $\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}, x_i>0$)<br>
+\[(\bar{x}, \bar{x}, \dots, \bar{x})<(x_1, x_2, \dots, x_n)\]
+(其中 $\bar{x}=\frac{x_1+x_2+\dots+x_n}{n}, x_i>0$)<br>
 故由定理6可得
 \[
 \sum_{i=1}^n(-\log\overline{x})\leq\sum_{i=1}^n(-\log x_i)
 \]
 即
-\[\overline{x}\geq (x_1x_2\cdots x_n)^{\frac{1}{n}}\]
+\[\overline{x}\geq (x_1x_2\dots x_n)^{\frac{1}{n}}\]
 這就是算術平均大於幾何平均的證明。
 </dd>
 <dt><strong>例2：</strong></dt>
 <dd>$x_1,x_2,…,x_n$ 為 $n$ 個正數，
-$\overline{x}=\frac{x_1+x_2+\cdots+x_n}{n}$，則因
+$\overline{x}=\frac{x_1+x_2+\dots+x_n}{n}$，則因
 $f(x)=\frac{1}{x}$為$(0,\infty)$上的一凸函數，故由
-$(\overline{x},\overline{x},\cdots,\overline{x})< (x_1,x_2,\cdots,x_n)$及定理6可得
+$(\overline{x},\overline{x},\dots,\overline{x})< (x_1,x_2,\dots,x_n)$及定理6可得
 \[\sum_{i=1}^n\frac{1}{\overline{x}}\leq \sum_{i=1}^n\frac{1}{x_i}\]
 即
-\[\sum \frac{1}{x_i}\geq\frac{n}{\overline{x}}=\frac{n^2}{x_1+x_2+\cdots\cdots +x_n}\]
+\[\sum \frac{1}{x_i}\geq\frac{n}{\overline{x}}=\frac{n^2}{x_1+x_2+\dots+x_n}\]
 </dd>
 <dt><strong>例3：</strong></dt>
 <dd>設 $x_1,x_2,…,x_n$ 為滿足 $0&lt;x_i&lt;1$; 
-$i=1,2,\cdots,n$ 之 $n$ 個數，且
+$i=1,2,\dots,n$ 之 $n$ 個數，且
 
 $\sum_{i=1}^nx_i=1$，則
 $\sum_{i=1}^n\frac{x_i}{1-x_i}\geq\frac{n}{n-1}$
@@ -426,14 +404,14 @@ $f(x)=\frac{x}{1-x}$ 在 (0,1) 間為凸函數，我們只需驗證
 $\forall x_1,x_2 \in (0,1)$
 \[f(\frac{x_1+x_2}{2})\leq \frac{1}{2}f(x_1)+\frac{1}{2}f(x_2)\]
 此相等於
-\[\frac{\frac{x_1+x_2}{2}}{1-\frac{(x_1+x_2)}{2}}\leq\frac{1}{2}(\frac{x_1}{1-x_1}+\frac{x_2}{1-x_2})\]
+\[\frac{\frac{x_1+x_2}{2}}{1-\frac{x_1+x_2}{2}}\leq\frac{1}{2}(\frac{x_1}{1-x_1}+\frac{x_2}{1-x_2})\]
 化簡得
 \[(x_1+x_2)^2-4x_1x_2\geq 0\]
 此式恒成立，故 $f$ 為一凸函數。
 <p>
 又因 
 $\frac{1}{n}=\overline{x}$ 及
-$(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}) < (x_1,x_2<\cdots,x_n)$
+$(\frac{1}{n},\frac{1}{n},\dots,\frac{1}{n}) < (x_1,x_2,\dots,x_n)$
 由定理6可得
 \[n\frac{\frac{1}{n}}{1-\frac{1}{n}}\leq\sum_{i=1}^n\frac{x_i}{1-x_i}\]
 即
@@ -443,18 +421,18 @@ $(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}) < (x_1,x_2<\cdots,x_n)$
 </dd>
 <dt><strong>例4：</strong></dt>
 <dd>設 $x_i$,
-$i=1,2,\cdots,n$ 為 $n$ 個實數，$a$ 為一定數。令
+$i=1,2,\dots,n$ 為 $n$ 個實數，$a$ 為一定數。令
 $\overline{x}=\frac{\sum_{i=1}^nx_i}{n}$ 試證
-\[\sum_{i=1}^n\vert x_i-a\vert\geq n\vert\overline{x}-1\vert\]
+\[\sum_{i=1}^n|x_i-a|\geq n|\overline{x}-a|\]
 </dd>
 <dt><strong>證:</strong></dt>
 <dd>顯然由圖形可知$f(x)=|x-a|$為一凸函數及
-$(\overline{x},\overline{x},\cdots,\overline{x})< (x_1,x_2,\cdots,x_n)$
+$(\overline{x},\overline{x},\dots,\overline{x})< (x_1,x_2,\dots,x_n)$
 ，依據定理6原式立即得證。
 </dd>
 <dt><strong>例5：</strong></dt>
-<dd>因 $-\sin x$ 在區間 (0,π) 之間為凸函數，又在一三角形中，若以 $A,B,C$ 表三頂角，則很容易得知
-\[(\frac{3}{\pi},\frac{3}{\pi},\frac{3}{\pi})<(A,B,C)<(\pi,0,0)\]
+<dd>因 $-\sin x$ 在區間 $(0,π)$ 之間為凸函數，又在一三角形中，若以 $A,B,C$ 表三頂角，則很容易得知
+\[(\fracπ3,\fracπ3,\fracπ3)<(A,B,C)<(π,0,0)\]
 故由定理6可得
 \[-3\sin \frac{\pi}{3}\leq -(\sin A+\sin B+\sin C)\leq 0\]
 即
