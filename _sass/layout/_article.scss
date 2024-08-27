@@ -7,6 +7,7 @@
   word-wrap: break-word;
   @include split-line(top, 4px);
   & > .previous, & > .next {
+    box-sizing: border-box;
     width: 50%;
     & > span {
       font-weight: map-get($base, font-weight-bold);
