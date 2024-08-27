@@ -9,37 +9,26 @@ Muirhead 不等式 (<a href="https://web.math.sinica.edu.tw/mathmedia/HTMLarticl
 <h1>導言</h1>
 不等式的理論很早就被大數學家 Gauss, Cauchy 等人所著重研究。較近的有 Hardy, Littlewood 及 Polya 等名數學家。我們可以說數學分析，不論是純理論或應用方面，都需要不等式的運算。 如一般條件不等式、絕對不等式、三角不等式、幾何不等式、積分或微分不等式，等等種類五花八門。 因而解決它們的技巧也就多彩多姿，不勝枚舉了。同時也就沒有一些什麼萬靈的理論來對付不等式。 但在1923年蕭爾 (Schur) 把某類常見及有用的初等或高深的不等式歸類起來， 演繹出一套較完備的理論來處理具某些特性的不等式。這也就是我們在此要介紹的「蓋理論」(Majorization Theory)， 到目前為止有關此方面最佳的研究著作為 Hardy, Littlewood 及 Polya 合著的書 <a href="#foot28">1</a> 及最近 Marshall 及 Olkin 合著的書 <a href="#foot29">2</a>。 這個理論涉及到凸函數 (convex function) 的性質，所以我們將先介紹一下什麼樣的函數稱為凸函數（或上凹函數），與此相對的是凹函數 (concave function) 或下凹函數。
 <h1>凸函數的定義及其性質</h1>
-<a name="02_SECTION0002"></a><br>
 <p>
 為方便計我們以 $R$ 代表所有實數的集合，$R^+$ 表所有正實數及 0 的集合。以下所討論的函數，都是實函數，若不特別聲明其定義域 (domain of definition) 則自然指 $R$。</p><dl>
 <dt><strong>定義:</strong></dt>
 <dd>設 $g(x)$ 為一定義在區間 $(a,b)$ 上的函數，
-若過於任何在 $(a,b)$ 中的兩點 $x,y$，
+若對於任何在 $(a,b)$ 中的兩點 $x,y$，
 下面不等式：
-\[g(\lambda x+\mu y)\leq \lambda g(x)+\mu g(y)\quad \mu \geq 0,\quad \lambda \geq 0,\quad \mu +\lambda=1\eqno{(1)}\]
+\[g(\lambda x+\mu y)\leq \lambda g(x)+\mu g(y)\quad \mu \geq 0,\quad \lambda \geq 0,\quad \mu +\lambda=1\tag{1}\]
 恆成立。如此的 $g$ 稱為在 $(a,b)$ 上的一凸函數。
 </dd>
 </dl>
 
 <p>
-我們要特別對此種函數的圖形作一觀察，也好使讀者明瞭為何稱滿足不等式(1)式者的函數為凸函數或上凹函數。如圖(1)，我們將證明任何在</p><p>
-
- <!-- %# begin M
-%\includegraphics{mm_06_4_02_01.gif}
-%\caption{圖1}
-%# end -->
-<br><table width="250" border="0" cellpadding="0" cellspacing="0" align="center">
-<tbody><tr><td align="center"><img border="0" src="mm_06_4_02_01.gif">
-<hr size="1" noshade=""><font size="-1" class="side">
+我們要特別對此種函數的圖形作一觀察，也好使讀者明瞭為何稱滿足不等式(1)式者的函數為凸函數或上凹函數。如圖(1)，我們將證明任何在</p><div align="center">
+<svg width="400" height="440"><line x1="0" x2="400.08" y1="400.21" y2="400.21" stroke="#000"/><path d="m0 267.92c154.59-26.134 292.55-38.382 400-267.71" fill="none" stroke="#00f"/><line x1="104.08" x2="299.85" y1="249.32" y2="249.32" stroke="#008000"/><line x1="100.33" x2="300.78" y1="249.23" y2="149.23" stroke="#008000"/><line x1="100.08" x2="100.08" y1="400.21" y2="250.21" stroke="#f00"/><line x1="300.08" x2="300.08" y1="400.21" y2="150.21" stroke="#f00"/><g fill="#f00"><circle cx="100.08" cy="250.21" r="5"/><circle cx="176.08" cy="210.21" r="5"/><circle cx="300.08" cy="150.21" r="5"/></g><g transform="translate(90,419)">$A(x)$</g><g transform="translate(290,419)">$B(y)$</g><g transform="translate(167,419)">$C(z)$</g><g transform="translate(179.35368,264.21951)">$G$</g><g transform="translate(304.40952,262.09494)">$H$</g><g transform="translate(311.72672,151.78569)">$(y, g(y))$</g><g transform="translate(94,227)">$D$</g><g transform="translate(171,187)">$E$</g><g transform="translate(295,125)">$F$</g><line x1="176.08" x2="176.08" y1="400.21" y2="210.2" stroke="#f00"/></svg><br>
 圖1
-
-</font></td></tr>
-</tbody></table>
-</p><p>
+</div><p>
 $(a,b)$ 區間之三點 $A(x),B(y)$ 及 $C(z)$，設 $x&lt;z&lt;y$，
 則 $g(z)$ 之值必位於連結 $D(x,g(x))$，$F(y,g(y))$ 兩點之直線下方。
-這個證明很簡單。由 $\overline{DF}$ 於 $\overline{EC}$，$\overline{EB}$ 於 $G$ 及 $H$。若令
-</p>\[\mu =\frac{z-x}{y-x},\quad \lambda=\frac{y-z}{y-x}\]
+這個證明很簡單。由 $A,B,C$ 作垂線分別交 $\overline{DF}$ 於 $D,F,E$，又由 $D$ 作平行於 $x$ 軸之直線交 $\overline{EC},\overline{FB}$ 於 $G$ 及 $H$。若令
+\[\mu =\frac{z-x}{y-x},\quad \lambda=\frac{y-z}{y-x}\]
 則 $\mu \geq 0$，
 $\lambda \geq 0$ 且 
 $\mu +\lambda =1$。又由此例知
@@ -53,74 +42,66 @@ EC&=&EG+GC=\mu FH+GC\\
 由(1)及 
 $z=\mu y+\lambda x$ 知
 \[g(z)=g(\mu y+\lambda x)\leq\mu g(y)+\lambda g(x)=EC\]
-故直線 $\overline{DF}$ 上的點高於點 $(z,g(z))$;$x&lt;z&lt;y$。這個限制，使得 $g$ 的圖形，自然非得向內凹陷，也就是所謂的凸（或上凹）函數名稱的由來。
+故直線 $\overline{DF}$ 上的點高於點 $(z,g(z));x&lt;z&lt;y$。這個限制，使得 $g$ 的圖形，自然非得向內凹陷，也就是所謂的凸（或上凹）函數名稱的由來。
 <p>
 知道滿足條件(1)的函數為凸函數。但問題是有時我們無法利用它來判定某些函數是否為凸函數。
 因(1)本身涉及的是任何兩個介於 $(a,b)$ 中的點，我們也不可能逐一地檢驗。好在由於上面凸函數的幾何性質，
-我們有時可以利用求一個函數的第二階導函數，來判定一個函數是否為凸函數?
+我們有時可以利用求一個函數的第二階導函數，來判定一個函數是否為凸函數。 
 假定 $g(x)$ 在 $(a,b)$ 上有定義且其第二階導函數 $g''(x)$ 在 $(a,b)$ 上到處存在
 （注意：不見得每個函數的第二階導函數存在，但在一般所見到的函數，只要不是精工巧構的，總有第二階或更高階的導函數），
-若 $g''(x)\geq 0$, 
-$\forall x\in (a,b)$，則 $g(x)$ 為 $(a,b)$ 上的一凸函數，例如 
-$g(x)=\log x(0< x<\infty)$ 則
-</p>\[g'(x)=-\frac{1}{x},\quad g''(x)=\frac{1}{x^2}>0,\quad\forall x\in(0,\infty).\]
+若 $g''(x)\geq 0,\forall x\in (a,b)$，則 $g(x)$ 為 $(a,b)$ 上的一凸函數，例如 
+$g(x)=-\log x(0< x<\infty)$ 則
+\[g'(x)=-\frac{1}{x},\quad g''(x)=\frac{1}{x^2}>0,\quad\forall x\in(0,\infty).\]
 讀者不妨試描繪 $g(x)$ 的圖形大要。
 <p>
 對於無微分觀念的讀者，我們提供下面一個凸函數的試驗法：設 $g(x)$ 為定義在區間 $(a,b)$ 上的一函數，且滿足 
-$\vert g(x)\vert\leq M<\infty$, 
-$\forall x\in (a,b)$，（即 $g$ 為有界的）若 $g$ 在 $(a,b)$ 上滿足：
+$\vert g(x)\vert\leq M<\infty,\forall x\in (a,b)$，（即 $g$ 為有界的）若 $g$ 在 $(a,b)$ 上滿足：
 $\forall x,y\in(a,b)$，
-</p>\[g(\frac{x+y}{2})\leq \frac{1}{2}g(x)+\frac{1}{2}g(y)\]
+\[g(\frac{x+y}{2})\leq \frac{1}{2}g(x)+\frac{1}{2}g(y)\]
 則 $g$ 為 $(a,b)$ 上的一凸函數。
 <p>
 這個證明涉及極限，連續等概念，讀者姑且信之，以後我們會用此條件，來檢驗某些函數是否為凸函數。
 </p><p>
-由於我們以後的討論，不僅限於一個變數，一般會在 $n\geq 2)$ 度的實向量空間 $R^n$ 或 
-$R^{\textstyle n^+}$ 中。下面首先證明(1)式可以推廣到 $n&gt;2$ 的一般情形。
+由於我們以後的討論，不僅限於一個變數，一般會在 $n(n\geq 2)$ 度的實向量空間 $R^n$ 或 
+$R^{n+}$ 中。下面首先證明(1)式可以推廣到 $n&gt;2$ 的一般情形。
 </p><dl>
-<dd>
-</dd>
 <dt><strong>定理1:</strong></dt>
 <dd>設 $g$ 為 $(a,b)$ 上的一凸函數，
 則 
-$\forall x_i \in(a,b)$, $(i=1,2,…,n)$;
-
-$\lambda_i\geq 0$, $(i=1,2,…,n)$, 
-$\sum^n_{i=1}\lambda_i = 1$,
+$\forall x_i \in(a,b),(i=1,2,…,n)$;
+$\lambda_i\geq 0,(i=1,2,…,n),\sum^n_{i=1}\lambda_i = 1$,
 \[\begin{array}{rcl}
-&&g(\lambda_1x_1+\lambda_2x_2+\cdots\cdots...
-...ng(x_n)\\
-&=&\sum^n_{i=1}\lambda_ig(x_i)
-\end{array}\eqno{(2)}\]
+&&g(\lambda_1 x_1+\lambda_2 x_2+⋯+\lambda_n x_n) \\
+&\leq&\lambda_1 g(x_1)+\lambda_2 g(x_2)+⋯+\lambda_n g(x_n) \\
+&=&\sum_{i=1}^n \lambda_i g(x_i)
+\end{array}
+\tag{2}\]
 </dd>
 <dt><strong>證:</strong></dt>
 <dd>用數學歸納法。很顯然(2)式對 $n=1,2$ 時皆成立。
 假設(2)式對 $n=k-1$ 時成立，我們將證對 $n=k$ 時(2)式亦成立。
 令 
-$\lambda_1x_1+\lambda_2x_2=\lambda y$, 
-$\lambda=\lambda_1+\lambda_2$
-則由歸納法假設得知
-\[\begin{array}{rcl}
-&&g(\lambda_1x_1+\lambda_2x_2+\cdots\cdots...
-...
-&\leq&\lambda g(y)+\sum^n_{i=1}\lambda_ig(x_i)\\
-\end{array}\]
+$\lambda_1x_1+\lambda_2x_2=\lambda y,\lambda=\lambda_1+\lambda_2$
+則由歸納假設得知
+\begin{eqnarray*}
+&&g(\lambda_1x_1+\lambda_2x_2+\cdots+λ_kx_k)\\
+&=&g(\lambda y+\lambda_3 x_3+\cdots \cdots+\lambda_k x_k)
+&\leq&\lambda g(y)+\sum^n_{i=3}\lambda_ig(x_i)
+\end{eqnarray*}
 因為 
 $\lambda +\lambda_3 +\lambda_4+\cdots +\lambda_k=1$ 共 $k-1$ 項，又
-\[\begin{array}{rcl}
-\lambda g(y)&=&\lambda g(\frac{\lambda_1}{...
-...mbda}g(x_2)\}\\
+\begin{eqnarray*}
+\lambda g(y)&=&\lambda g(\frac{\lambda_1}{λ}x_1+\frac{\lambda_2}{λ}x_2)\\
+&\leq&\lambda\{\frac{\lambda_1}{\lambda} g(x_1)+\frac{\lambda_2}{\lambda} g(x_2)\}
 &=&\lambda_1g(x_1)+\lambda_2g(x_2)
-\end{array}\]
+\end{eqnarray*}
 此式及上式得知(2)式對 $n=k$ 亦成立。故由歸納法原理知(2)式恆成立。
 </dd>
 </dl>
 
 <p>
 我們現在舉些有關凸函數的應用。</p><dl>
-<dd>
-</dd>
-<dt><strong>定理2：(Arithematic-Geometric Mean Inequality)</strong></dt>
+<dt><strong>定理2：(Arithmetic-Geometric Mean Inequality)</strong></dt>
 <dd>設 $a_i\in R^+$，$i=1,2,…,n$，則
 \[\frac{a_1+a_2+\cdots+a_n}{n}\geq\sqrt[n]{a_1a_2\cdots\cdots a_n}\]
 
@@ -131,9 +112,9 @@ $\lambda +\lambda_3 +\lambda_4+\cdots +\lambda_k=1$ 共 $k-1$ 項，又
 <dt><strong>證：</strong></dt>
 <dd>很明顯若 $a_i$ 中有一為 0 則不等式自然成立，故可設 $a_i&gt;0$
 令 
-$y=g(x)=-\log x$, $x&gt;0$ 則依據圖形或考慮 
-$g''(x)=\frac{1}{x^2}$ 得知 $(0,\infty)$ 上為一凸函數。於是
-\[g(\frac{a_1}{n}+\frac{a_2}{n}+\cdots +\frac{a_n}{n})<\sum\frac{1}{n}g(a_i)\eqno(3)\]
+$g(x)=-\log x,x&gt;0$ 則依據圖形或考慮 
+$g''(x)=\frac{1}{x^2}$ 得知 $g$ 在 $(0,\infty)$ 上為一凸函數。於是
+\[g(\frac{a_1}{n}+\frac{a_2}{n}+\cdots +\frac{a_n}{n})<\sum\frac{1}{n}g(a_i)\tag{3}\]
 而
 \[g(\frac{a_1}{n}+\frac{a_2}{n}+\cdots +\frac{a_n}{n})=-\log(\frac{a_1+a_2+\cdots+a_n}{n})\]
 \[\sum_{i=1}^n\frac{g(a_i)}{n}=\frac{-1}{n}\sum_{i=1}^n\log a_1\]
@@ -149,99 +130,69 @@ $g''(x)=\frac{1}{x^2}$ 得知 $(0,\infty)$ 上為一凸函數。於是
 </dl>
 
 <dl>
-<dd>
-</dd>
 <dt><strong>定理3 (Cauchy 不等式)</strong></dt>
 <dd>設 $a_i$ $(i=1,2,…,n)$ 及 $b_i$ $(i=1,2,…,n)$ 為兩組正實數，
 則
 \[(\sum_{i=1}^n a_ib_i)^2\leq (\sum_{i=1}^n a_i^2)(\sum_{i=1}^n b_i^2)\]
 </dd>
 <dt><strong>證:</strong></dt>
-<dd>設 $y=g(x)=x^2$，則易知 $g$ 為一凸函數。令 
+<dd>設 $g(x)=x^2$，則易知 $g$ 為一凸函數。令 
 $x_i=\frac{a_i}{b_i}$ 及 $t_i=b_i^2$，
 $t=\sum_{i=1}^nt_i$，
 $\lambda_i=\frac{t_i}{t}$，$i=1,2,…,n$
 則由定理1可得
 \[(\sum_{i=1}^n\lambda_ix_i)^2\leq\sum_{i=1}^n\lambda_ix_i^2\]
 即
-\[\begin{array}{rcl}
-(\sum_{i=1}^nt_ix_i)^2&\leq&t^2\sum_{i=1}^...
-...i^2)\\
+\begin{eqnarray*}
+(\sum_{i=1}^nt_ix_i)^2&\leq&t^2 \sum_{i=1}^n \frac{t_i}{t} x_i^2\\
+&=&t \sum_{i=1}^n t_i x_i^2\\
+&=&(\sum_{i=1}^n t_i)(\sum_{i=1}^n a_i^2)\\
 &=&(\sum_{i=1}^n b_i^2)(\sum_{i=1}^n a_i^2)
-\end{array}\]
+\end{eqnarray*}
 原式得證。
-</dd>
-<dt><strong>註:</strong></dt>
-<dd>原命題對所有的實數皆成立，在此為簡明計，假設所有的$\varepsilon_i$(充分小的參數)將結果取極限，仍可得原式。
+</dd></dl>
 <p>
 現在我們討論具有下列形式的不等式:
-</p>\[\phi (\overbrace{\overline{x},\overline{x},\cdots,\overline{x...
-...}\selectfont \char 95}}})\leq\phi(x_1,x_2,\cdots,x_n)\eqno{(4)}\]
+\[\phi (\overbrace{\overline{x},\overline{x},\cdots,\overline{x}}^\text{$n$個})\leq\phi(x_1,x_2,\cdots,x_n)\tag{4}\]
 其中 
-$\overline{x}=\frac{x_1+x_2+\cdots+x_n}{n}$, $x_1,x_2,…,x_n$ 為實數。如果我們令
+$\overline{x}=\frac{x_1+x_2+\cdots+x_n}{n},x_1,x_2,…,x_n$ 為實數。如果我們令
 \[\phi(y_1,y_2,\cdots,y_n)=\sum_{i=1}^n g(y_i)\]
 則前面的(3)式就可表成(4)的形式。由於(4)的特殊形式，
 使得我們不妨考慮下面更廣泛的形式：
-\[\phi(y_1,y_2,\cdots,y_n)\leq\phi(x_1,x_2,\cdots,x_n)\eqno(5)\]
+\[\phi(y_1,y_2,\cdots,y_n)\leq\phi(x_1,x_2,\cdots,x_n)\tag{5}\]
 此時 $y_1,y_2,…,y_n$ 不一定要相等，但它們在某些意義上
 （這是我們將要進一步討論的地方）比 $x_1,x_2,…,x_n$ 要來得緊湊些，
 即沒有 $x_1,x_2,…,x_n$ 來得分散。我們主要問的就是 
-${x_i}_{i=1}^n$ 及 
+$\{x_i\}_{i=1}^n$ 及 $\{y_i\}_{i=1}^n$ 在何種條件下，對何種函數
 $\phi$，(5)式總成立？
 </dd>
 </dl>
-<td width="580" bgcolor="#FFFFFF">
-
-<!-- section head *** text_length=3914 *** -->
-<!-- section head lev 1 -->
-<a name="03_SECTION0003"></a><br>
-<table border="0" cellpadding="5" cellspacing="0" width="480">
- <tbody><tr><td width="480" bgcolor="#CEDBFF" height="40">
- <font face="標楷體" size="5" class="seclev1">蓋理論及其應用</font></td></tr>
-</tbody></table>
+<h1>蓋理論及其應用</h1>
 
 
 <!-- section text -->
 <p>
 我們首先討論在什麼情形下
-</p>\[g(y_1)+g(y_2)\leq g(x_1)+g(x_2)\eqno{(6)}\]
+\[g(y_1)+g(y_2)\leq g(x_1)+g(x_2)\tag{6}\]
 為了使不等式「公平」起見，我們希望
-\[x_1+x_2=y_1+y_2\eqno{(7)}\]
+\[x_1+x_2=y_1+y_2\tag{7}\]
 否則 
 $g(1)+g(2)\leq g(100)+g(200)$ 就沒有太多的價值了。從凸函數的性質，若我們可以找到一個 $0<\lambda< 1$，且
-\[y_1=\lambda x_1+(1-\lambda)x_2\quad,\quad y_2=(1-\lambda)x_1+\lambda x_2 \eqno{(8)}\]
+\[y_1=\lambda x_1+(1-\lambda)x_2\quad,\quad y_2=(1-\lambda)x_1+\lambda x_2 \tag{8}\]
 則(6)與(7)都顯然成立，從圖2知，(8)式表示 $y_1,y_2$ 比 $x_1$ 與 $x_2$ 要緊湊些。
 <p>
-<div align="center"><svg version="1.1" viewBox="0 0 300.56 318.92" xmlns="http://www.w3.org/2000/svg"><line x1=".15811" x2="300.16" y1="300.3" y2="300.3" stroke="#000"/><path d="m0.15811 150.3q150 50 300-150" fill="none" stroke="#00f"/><g stroke="#f00"><line x1="47.633" x2="47.633" y1="300.3" y2="159.02"/><line x1="104.95" x2="104.95" y1="306.97" y2="293.3"/><line x1="223.4" x2="223.4" y1="300.3" y2="87.624"/></g><g transform="translate(40.105377,318.92499)">$x_1$</g><g transform="translate(216.34952,318.92499)">$x_2$</g><g transform="translate(99.12394,318.92499)">$y_1$</g><g transform="translate(157.34854,318.92499)">$y_2$</g><line x1="164.95" x2="164.95" y1="306.97" y2="293.3" stroke="#f00"/></svg>
+<div align="center"><svg height="331" width="300"><line x1="0" x2="300.16" y1="300.3" y2="300.3" stroke="#000"/><path d="m0 150.3q150 50 300-150" fill="none" stroke="#00f"/><g stroke="#f00"><line x1="47.633" x2="47.633" y1="300.3" y2="159.02"/><line x1="104.95" x2="104.95" y1="306.97" y2="293.3"/><line x1="223.4" x2="223.4" y1="300.3" y2="87.624"/></g><g transform="translate(40.105377,318.92499)">$x_1$</g><g transform="translate(216.34952,318.92499)">$x_2$</g><g transform="translate(99.12394,318.92499)">$y_1$</g><g transform="translate(157.34854,318.92499)">$y_2$</g><line x1="164.95" x2="164.95" y1="306.97" y2="293.3" stroke="#f00"/></svg>
 <br>
 圖2</div><p>
 但要把圖形2的「緊湊」觀念推到 $n$ 度空間，即具 $n$ 個分量的向量$(x_1,x_2,…,x_n)$ 及 $(y_1,y_2,…,y_n)$ 就不太容易了。但有的情形很顯然，譬如說
-</p>\[
+\[
 y_i=\overline{x}=\frac{x_1+x_2+\cdots+x_n}{n} \; , \quad
 i=1,2,\cdots,n
-\]
-
-<p>
-
- <!-- %# begin M
-%\includegraphics{mm_06_4_02_03.gif}
-%\caption{圖1}
-%# end -->
-<br><table width="250" border="0" cellpadding="0" cellspacing="0" align="center">
-<tbody><tr><td align="center"><img border="0" src="mm_06_4_02_03.gif">
-<hr size="1" noshade=""><font size="-1" class="side">
-圖1
-
-</font></td></tr>
-</tbody></table>
-</p><p>
-則由圖3看出 $(\overline{x},\overline{x},…,\overline{x})$ 顯然比 $(y_1,y_2,…,y_n)$ 要緊湊。
+\]則 $(\overline{x},\overline{x},…,\overline{x})$ 顯然比 $(y_1,y_2,…,y_n)$ 要緊湊。
 因而我們有第(4)式，即
-</p>\[n\phi(x)\leq\sum_{i=1}^n\phi(x_i)\]
+\[n\phi(x)\leq\sum_{i=1}^n\phi(x_i)\]
 蕭爾想到了這樣一個比較兩向量 $X=(x_1,x_2,…,x_n)$，$Y=(y_1,y_2,…,y_n)$ 緊湊性的方法。
 <dl>
-<dd>
-</dd>
 <dt><strong>定義:</strong></dt>
 <dd>令 $X = (x_1,x_2,…,x_n)$，$Y = (y_1,y_2,…,y_n)$ 為兩漸減序列，即
 \[\begin{array}{l}
@@ -251,19 +202,19 @@ y_1\geq y_2\geq y_3\geq \cdots\cdots\geq y_n
 且
 \[x_1+x_2+\cdots\cdots+x_n=y_1+y_2+\cdots\cdots+y_n\]
 我們說$X$可以「蓋得住」$Y$，或$Y$比$X$更緊湊，如果
-\[\begin{array}{rcl}
+\begin{eqnarray*}
 y_1&\leq&x_1\\
 y_1+y_2&\leq&x_1+x_2\\
-y_...
-...1+y_2+\cdots+y_{n-1}&\leq&x_1+x_2+\cdots+x_{n-1}\\
-\end{array}\]
+y_1+y_2+y_3 \leq x_1+x_2+x_3\\
+⋯\\
+y_1+y_2+\cdots+y_{n-1}&\leq&x_1+x_2+\cdots+x_{n-1}\\
+\end{eqnarray*}
 一般我們用 $Y&lt;X$ 表示之。
 </dd>
 </dl>
 
 <p>
-我們所採的定義雖只適用於兩個漸減的序列，但在一般情形下的不等式，幾乎都與序列 $x_1,x_2,…,x_n$, $y_1,y_2,…,y_n$ 的排列無關；所以我們所採的定義並不失其一般性。舉個例子，$X=(3, 2, 1)$, 
-$Y=(2.5, 2.3, 1.2)$，則</p>
+我們所採的定義雖只適用於兩個漸減的序列，但在一般情形下的不等式，幾乎都與序列 $x_1,x_2,…,x_n,y_1,y_2,…,y_n$ 的排列無關；所以我們所採的定義並不失其一般性。舉個例子，$X=(3, 2, 1),Y=(2.5, 2.3, 1.2)$，則</p>
 \[3+2+1=2.5+2.3+2.1\]
 且
 \[\begin{array}{rcl}
@@ -289,8 +240,6 @@ $x_1,x_2$,… 等可稱為元素，在當向量看時，$x_1,x_2$,… 等以分�
 <p>
 下面的定理把蓋的觀念與凸函數的關係做了一個引線。
 </p><dl>
-<dd>
-</dd>
 <dt><strong>定理4</strong></dt>
 <dd>令$X$$=$$(x_1,x_2,…,x_n)$,$Y$$=$$(y_1,y_2,…,y_n)$為兩實數列，且$X$與$Y$只有兩個元素不相同，設其位置在$i$及$j$上(即$x_k=y_k$除非$k=i$及$k=j)$，則下列條件(i)與(ii)互為充要條件。
 
@@ -300,8 +249,7 @@ $x_1,x_2$,… 等可稱為元素，在當向量看時，$x_1,x_2$,… 等以分�
 </dd>
 <dt></dt>
 <dd>(ii)有一個實數α;$0<\alpha< 1$ 且 
-$y_i=\alpha x_i+(1-\alpha)x_j$, 
-$y_j=(1-\alpha )x_i+\alpha x_j$
+$y_i=\alpha x_i+(1-\alpha)x_j,y_j=(1-\alpha )x_i+\alpha x_j$
 </dd>
 </dl>
 
@@ -323,22 +271,20 @@ $x_i>y_i\geq y_j>x_j$。若令
 則 $0<\alpha< 1$ 並很容易由代入 α 之值而證得(ii)。
 <p>
 現若(ii)成立。則由於在$i$之前的$x,y$皆相等，故對$k&lt;i$而言
-</p>\[x_1+x_2+\cdots +x_k=y_1+y_2+\cdots +y_k\]
+\[x_1+x_2+\cdots +x_k=y_1+y_2+\cdots +y_k\]
 又在 $k=i$ 時
-\[\begin{array}{rcl}
+\begin{eqnarray*}
 &&y_1+y_2+\cdots\cdots +y_i\\
-&=&x_1+x_2+...
-...+\alpha x_i+(1-\alpha)x_i\\
+&=&x_1+x_2+\cdots+x_{i-1}+\alpha x_i+(1-\alpha) x_j \\
+&\leq&x_1+x_2+\cdots+x_{i-1}+\alpha x_i+(1-\alpha) x_i\\
 &=&x_1+x_2+\cdots +x_i
-\end{array}\]
+\end{eqnarray*}
 這種不等的情形一直到 $k\geq j$ 時又恢復了等式（因為 
 $y_i+y_j=x_i+x_j$），故本定理得證。
 </dd>
 </dl>
 
 <dl>
-<dd>
-</dd>
 <dt><strong>定理5</strong></dt>
 <dd>設實數列 
 $X=(x_1,x_2,\cdots ,x_n)$，
@@ -369,29 +315,26 @@ $Y=(y_1,y_2,\cdots ,y_n)$中，$X$ 與 $Y$ 不全相同並且 $Y&lt;X$，
 $\sum_{i=1}^n x_i=\sum_{i=1}^n y_i$，又因 $x_i$ 與 $y_i$ 不全相同，
 必有一個 $k$ 使得 $x_k&gt;y_k$ 及一個 $l$ 使得 $x_l&lt;y_l$，取 $i$ 為最大的 $k$ 有 $x_k&gt;y_k$ 的性質者，
 $j$ 為最小的 $l&gt;i$ 並滿足 $x_l&lt;y_l$ 者，則 $X,Y$，與 $i,j$ 的關係如下：
-\begin{eqnarray*}
-X:&&x_1\geq x_2\geq x_3\geq\cdots\geq x_{i-1}\geq x_i\\
-&&\ge...
-...}\selectfont \char 16}}}\geq y_j\geq y_{j+1}\geq\cdots\cdots y_n
-\end{eqnarray*}
+\begin{aligned}
+X: & x_1 \geq x_2 \geq x_3 \geq \cdots \geq x_{i-1} \geq x_i \\
+& \geq \underbrace{x_{i+1} \geq \cdots \cdots \cdots x_{j-1}}_{\text{各個相等}} \geq x_j \geq x_{j+1} \geq \cdots \cdots x_n \\
+Y: &\quad y_1 \geq y_2 \geq y_3 \geq \cdots \geq y_{i-1} \geq y_i \\
+& \geq \underbrace{y_{i+1} \geq \cdots \cdots y_{j-1}}_{\text{各個相等}} \geq y_j \geq y_{j+1} \geq \cdots \cdots y_n
+\end{aligned}
 <br clear="ALL">
 即當 $k=i+1,i+2,…,j-1$ 時 $y_k=x_k$(否則 $i$ 可向右移或 $j$ 向左移與所取的 $i$ 及 $j$ 性質不符)，
-又 $x_t&gt;y_t$, 
-$\forall t\leq　i$及$y_s&gt;x_s$, 
-$\forall s\geq　j$。令
+又 $x_t&gt;y_t,\forall t\leq　i$及$y_s&gt;x_s,\forall s\geq　j$。令
 \[\delta=\min(x_i-y_i,y_j-x_j)\]
 \[\alpha=\frac{\delta}{x_i-x_j}\]
 由於 
 $x_i>y_i\geq y_j>x_j$，可知 $\alpha >0$，但 $\alpha< 1$。
 令 $z_k$ 與 $x_k$ 除 $k=i,j$ 時皆相同，又 
-$z_i=x_i-\delta$, 
-$z_j=x_j+\delta$。由 α 之定義，可得
-\[\begin{array}{lcl}
+$z_i=x_i-\delta,z_j=x_j+\delta$。由 $\alpha$ 之定義，可得
+\begin{eqnarray*}
 z_i&=&x_i-\delta =x_i-\alpha (x_i-x_j)\\
-...
-...x_j\\
+&=&(1-\alpha) x_i+\alpha x_j\\
 z_j&=&x_j+\delta=\alpha x_i+(1-\alpha)x_j\\
-\end{array}\]
+\end{eqnarray*}
 由定理3得知 $Z&lt;X$，因 $Z$ 與 $X$ 除了 $i,j$ 位置上的元素外，皆相同，故很容易求出
 \[
 \sum_{t=l}^kz_t\geq \sum_{t=l}^ky_t \qquad t=1,2,\cdots,n-1
@@ -408,8 +351,6 @@ $\delta =y_j-x_j$
 </dl>
 
 <dl>
-<dd>
-</dd>
 <dt><strong>系理:</strong></dt>
 <dd>依上面定理，我們可以找到 $z_s(s\leq n)$ 個數列，使得
 <p>
@@ -425,26 +366,24 @@ $i=0,1,2,\cdots\cdots,s)$至多有兩個不同的元素。</p></dd>
 
 <p>
 現在我們可以敘述及證明本篇最主要的結果了。</p><dl>
-<dd>
-</dd>
 <dt><strong>定理6(蕭爾定理Schur's Theorem)</strong></dt>
-<dd>設 $f(x)$ 為區間 [$a,b$] 上的一凸函數，又 $X=(x_1,x_2,…,x_n)$, $Y=(y_1,y_2,…,y_n)$ 為兩數列，
+<dd>設 $f(x)$ 為區間 [$a,b$] 上的一凸函數，又 $X=(x_1,x_2,…,x_n),Y=(y_1,y_2,…,y_n)$ 為兩數列，
 其元素皆在 [$a,b$] 中，若 $Y&lt;X$ 則
-\[\sum_{k=1}^n f(y_n)\leq \sum_{k=1}^n f(x_n)\eqno{(9)}\]
+\[\sum_{k=1}^n f(y_n)\leq \sum_{k=1}^n f(x_n)\tag{9}\]
 </dd>
 <dt><strong>證:</strong></dt>
 <dd>由定理5的系理，我們只需證明 $Y$ 與 $X$ 只有兩個元素不相同的情形就行了。（否則我們可由 $z_1,z_2,…,z_s$ 一直推下去）
 令 $x_i,x_j$ 與 $y_i,y_j$ 各不相同而其餘的 $x,y$ 皆相同，則(9)變成了
-\[f(y_i)+f(y_j)\leq f(x_i)+f(x_j)\eqno(10)\]
+\[f(y_i)+f(y_j)\leq f(x_i)+f(x_j)\tag{10}\]
 因 $0<\alpha< 1$且
-\[y_i=\alpha x_i+(1-\alpha )x_j\]
-\[y_j=(1-\alpha )x_i+\alpha x_j\]
+\[y_i=\alpha x_i+(1-\alpha)x_j\]
+\[y_j=(1-\alpha)x_i+\alpha x_j\]
 由 $f$ 的凸性質，我們有
-\[\begin{array}{rcl}
-f(y_i)+f(y_j)&=&f(\alpha x_i+(1-\alpha )x_...
-...\alpha )f(x_i)+\alpha f(x_j)\\
+\begin{eqnarray*}
+f(y_i)+f(y_j)&=&f(\alpha x_i+(1-\alpha)x_j)+f((1-\alpha)x_i+\alpha x_j)\\
+&\leq&\alpha f(x_i)+(1-\alpha) f(x_j)+(1-\alpha) f(x_i)+\alpha f(x_j)\\
 &=&f(x_i)+f(x_j)\\
-\end{array}\]
+\end{eqnarray*}
 故(10)式成立。定理6因此得證。
 </dd>
 </dl>
@@ -452,15 +391,10 @@ f(y_i)+f(y_j)&=&f(\alpha x_i+(1-\alpha )x_...
 <p>
 現在我們看看定理6的一些用途。
 </p><dl>
-<dd>
-</dd>
 <dt><strong>例1：</strong></dt>
-<dd>令 $g(x)=-\log x$, $0< x< \infty$ 為一凸函數，又由事實
-\[
-\begin{eqalign}
-& (\overline{x},\overline{x},\cdots,\overlin...
-...\overline{x}=\frac{x_1+x_2+\cdots +x_n}{n},x_i>0)
-\end{eqalign}\]
+<dd>令 $g(x)=-\log x,0< x< \infty$ 為一凸函數，又由事實
+\[(\bar{x}, \bar{x}, \cdots, \bar{x})<(x_1, x_2, \cdots, x_n)\]
+(其中 $\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}, x_i>0$)<br>
 故由定理6可得
 \[
 \sum_{i=1}^n(-\log\overline{x})\leq\sum_{i=1}^n(-\log x_i)
@@ -501,7 +435,7 @@ $\forall x_1,x_2 \in (0,1)$
 $\frac{1}{n}=\overline{x}$ 及
 $(\frac{1}{n},\frac{1}{n},\cdots,\frac{1}{n}) < (x_1,x_2<\cdots,x_n)$
 由定理6可得
-</p>\[n\frac{\frac{1}{n}}{1-\frac{1}{n}}\leq\sum_{i=1}^n\frac{x_i}{1-x_i}\]
+\[n\frac{\frac{1}{n}}{1-\frac{1}{n}}\leq\sum_{i=1}^n\frac{x_i}{1-x_i}\]
 即
 \[
 \sum_{i=1}^n\frac{x_i}{1-x_i}\geq\frac{n}{n-1}
@@ -530,12 +464,11 @@ $(\overline{x},\overline{x},\cdots,\overline{x})< (x_1,x_2,\cdots,x_n)$
 </dd>
 <dt><strong>例6：</strong></dt>
 <dd>令 
-$f(x)=-\log \sin x$, $0< x< \pi$ 則 $f(x)$ 為凸函數的結論可由
+$f(x)=-\log \sin x,0< x< \pi$ 則 $f(x)$ 為凸函數的結論可由
 \[\sin x_1\sin x_2\leq \sin^2\frac{x_1+x_2}{2},\quad x_1,x_2\in(0,\pi)\]
 即事實
 \[
-\cos (x_1-x_2)\leq 1 \mbox{ {\fontfamily{cwM0}\fontseries{m}...
-...\char 41}{\fontfamily{cwM0}\fontseries{m}\selectfont \char 1}}
+\cos (x_1-x_2)\leq 1 \mbox{可得。}
 \]
 又由於
 $(\frac{\pi}{3},\frac{\pi}{3},\frac{\pi}{3})<(A,B,C)$依定理6可得
@@ -548,10 +481,8 @@ $(\frac{\pi}{3},\frac{\pi}{3},\frac{\pi}{3})<(A,B,C)$依定理6可得
 <p>
 蕭爾定理的應用可以推廣到很多超出本篇程度的不等式，有許多是在統計、矩陣等方面的應用。我們不在此多作介紹。希望讀者能從本篇得到開啟蓋理論寶庫的鑰匙，進而能對不等式理論作更深入的瀏覽及貢獻。</p>
 <h1>註釋</h1>
-<dl>
-<dt><sup name="foot28">1</sup>
-</dt><dd>G. H. Hardy, J. E. Littlewood,
+<ol>
+<li id="foot28">G. H. Hardy, J. E. Littlewood,
 and G. Polya, 《Inequalities》, Cambridge University Press,1934.
-</dd><dt><sup name="foot29">2</sup>
-</dt><dd>A. Marshall and I. Olkin, 《Inequalities: Theory if Majorization and its Applications》, Academic Press, 1979.
-</dd></dl>
+<li id="foot29">A. Marshall and I. Olkin, 《Inequalities: Theory if Majorization and its Applications》, Academic Press, 1979.
+</ol>

@@ -23,7 +23,7 @@
           this.setDocument(e);
           var r = this.createNode();
           return this.toDOM(t, r, e),
-          r.firstChild
+          this.math.display?r:r.firstChild
         }
       }
     },
