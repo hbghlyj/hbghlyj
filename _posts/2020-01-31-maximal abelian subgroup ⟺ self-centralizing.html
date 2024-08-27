@@ -1,0 +1,22 @@
+---
+tag: group-theory
+mathjax: true
+---
+<blockquote class="statement">
+The following are equivalent for a subgroup $H$ of a group $G$:
+<ol><li>$H = C_G(H)$.
+<li>$H$ is an abelian subgroup of $G$ and $C_G(H) \le H$ (i.e., $H$ is a self-centralizing subgroup of $G$).
+<li>$H$ is an abelian subgroup of $G$ and it is not contained in any bigger abelian subgroup of $G$.</ol></blockquote>
+<h1>Proof</h1>
+<h2>Equivalence of (1) and (2)</h2>
+(1) says that $H = C_G(H)$. This is equivalent to saying that $H \le C_G(H)$ (i.e., $H$ is abelian) along with $C_G(H) \le H$ (i.e., $H$ is self-centralizing).
+
+<h2>(1) implies (3)</h2>
+Suppose $K$ is an abelian subgroup of $G$ containing $H$. Then, $K$ centralizes $H$, so $K \le C_G(H)$. But $H = C_G(H)$, so $K \le H$.
+
+<h2>(3) implies (1)</h2>
+Consider the group $C_G(H)$. Since $H$ is abelian, $H \le C_G(H)$.
+
+Suppose $H$ is properly contained in $C_G(H)$. Then, there exists $x \in C_G(H) \setminus H$. Consider the group $K = \langle H, x \rangle$. Since $x$ centralizes $H$, and $H$ is abelian, $K$ is abelian. Thus, $K$ is an abelian subgroup of $G$ properly containing $H$. This contradicts the assumption that $H$ is maximal among abelian subgroups.
+
+Thus, $H = C_G(H)$.
