@@ -3,6 +3,7 @@ tags: linear-algebra
 mathjax: true
 ---
 The discrete Poisson equation is the <a href="https://en.wikipedia.org/wiki/Finite_difference" target="_blank">finite difference</a> analog of the <a href="https://en.wikipedia.org/wiki/Poisson_equation" target="_blank">Poisson equation</a>. In it, the <a href="https://en.wikipedia.org/wiki/Discrete_Laplace_operator" target="_blank">discrete Laplace operator</a> takes the place of the <a href="https://en.wikipedia.org/wiki/Laplace_operator" target="_blank">Laplace operator</a>. The discrete Poisson equation is frequently used in numerical analysis as a stand-in for the continuous Poisson equation, although it is also studied in its own right as a topic in discrete mathematics.<br>
+<!--more-->
 <font size="5">On a two-dimensional rectangular grid</font><br>
 Using the finite difference numerical method to discretize the 2-dimensional Poisson equation (assuming a uniform spatial discretization, $\Delta x=\Delta y$) on an $m \times n$ grid gives the following formula:$$( {\nabla}^2 u )_{ij} = \frac{1}{\Delta x^2} (u_{i+1,j} + u_{i-1,j} + u_{i,j+1} + u_{i,j-1} - 4 u_{ij}) = g_{ij}$$where $ 2 \le i \le m-1 $ and $ 2 \le j \le n-1 $.  The preferred arrangement of the solution vector is to use natural ordering which, prior to removing boundary elements, would look like:<br>
 $$<br>
