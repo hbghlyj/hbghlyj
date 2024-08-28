@@ -77,19 +77,12 @@ $\tau(2)=3$, $\tau(3)=1$。
 </p>
 <p>接著說明對於兩向量 $\alpha$, $\beta\in{\mathbb{R}}^n$ 中, $\alpha\in H(\beta)$ 與 $\alpha\prec\beta$ 間的關係, 以進一步瞭解蓋的觀念。
 </p>
-<p>
-<!--%定理  凸包與蓋的關係-->
-
-<b>定理 5</b>: <!--%    \label{thm:convexhull-majorization}-->
-設向量 $\alpha$,
+<p><b>定理 5</b>(凸包與蓋的關係): 設向量 $\alpha$,
     $\beta\in{\mathbb{R}}^n$, 且 $\alpha\in H(\beta)$, 則
     $\alpha\prec\beta$。
 
 </p>
-<p>
-<!--%定理  凸包與蓋的關係 證明-->
-
-<b>證明</b>:
+<p><b>證明</b>:
     對於 $\alpha\in H(\beta)$, $\alpha$ 可表達為
     $$(\alpha_1, \alpha_2, \ldots, \alpha_n)
     =\sum_{\tau\in\mathcal{S}_n} p_{\tau}
@@ -166,10 +159,10 @@ $\tau(2)=3$, $\tau(3)=1$。
 <p>
 很直覺的, 可聯想到是否 $\alpha\prec\beta$ 也可逆推回 $\alpha=D\beta$
 使得乙國人民的收入分佈能藉由雙重隨機矩陣的轉換慢慢的與甲國類似。
-也有人將這樣的觀念聯想到羅賓漢--劫富濟貧的故事。
+也有人將這樣的觀念聯想到羅賓漢–劫富濟貧的故事。
 </p>
 <p>
-<b>定理 6</b>(蓋與雙重隨機矩陣):設向量 $\alpha,\beta\in{\mathbb{R}}^n$, 且 $\alpha\prec\beta$ 則存在一雙重隨機矩陣 $D$ 使得 $\alpha=D\beta$。
+<b>定理 6</b>(蓋與雙重隨機矩陣): 設向量 $\alpha,\beta\in{\mathbb{R}}^n$, 且 $\alpha\prec\beta$ 則存在一雙重隨機矩陣 $D$ 使得 $\alpha=D\beta$。
 </p>
 <p><b>證明</b>:
 首先, 考慮最簡單的情況, 當 $n=2$ 時, 令 $\alpha =
@@ -210,8 +203,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
     考慮類似 $n=2$ 的情況, 取 $\rho=\left(\beta_j+\beta_k\right)/2$,
     $\tau=\beta_j-\rho$, 故 $\beta_j=\rho+\tau$,
     $\beta_k=\rho-\tau$, 接著取 $\sigma=\max\{|\alpha_k-\rho|,
-    |\alpha_j-\rho|\}$, 如圖 1<!--% \ref{fig:muirhead-3}-->
-    。然後令 $T$
+    |\alpha_j-\rho|\}$, 如圖 1。然後令 $T$
     為能將 $\beta=(\beta_1, \beta_2, \ldots, \beta_n)$ 送到
     $\beta'=(\beta'_1, \beta'_2, \ldots, \beta'_n)$ 的 $n\times n$
     的雙重隨機矩陣, 其中 $\beta'$ 滿足
@@ -249,7 +241,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 <p></p>
 <p>
 
-<b>定理 7</b> (結婚問題):<!-- %    [結婚問題] \label{thm:marriage problem}-->
+<b>定理 7</b> (結婚問題marriage problem):
 設 $S_1$, $S_2$, $\ldots$, $S_n\subset S$, 則對一集合
     $R=\{x_1, x_2, \ldots, x_n\}\subset S$, 若其中元素皆不相同且 $x_k\in
     S_k$, $k=1$, $2$, $\ldots$, $n$, 則稱 $R$ 為一相異代表系(system of
@@ -321,15 +313,12 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 <p>
 
 <b>證明</b>:
-    此處, 利用定理 7 <!--%\ref{thm:marriage problem}-->
-    結婚問題的結果推導伯克霍夫定理。給定雙重隨機矩陣 $D$, 考慮
+    此處, 利用定理 7 結婚問題的結果推導伯克霍夫定理。給定雙重隨機矩陣 $D$, 考慮
     $1\le j\le n$, 令 $S_j$ 為能使得 $d_{jk}\gt 0$ 的所有 $k$
     所成的集合, 則對任意集合 $A\subset \{1, 2, \ldots, n\}$ 必有
     $$|A|=\sum_{j\in A}\sum_{k\in S_j}d_{jk}\le\sum_{k\in\cup_{j\in
     A}S_j}\sum_{1\le j\le n}d_{jk}=\bigg|\bigcup_{j\in A}S_j\bigg|$$
-    根據定理 7, <!--% \ref{thm:marriage problem},-->
-    必存在 $\{S_1, S_2, \ldots, S_n\}$ 
-	的 SDR, 所以我們可以定義排列 $\sigma$ 藉由設定 $\sigma(j)$
+    根據定理 7, 必存在 $\{S_1, S_2, \ldots, S_n\}$ 的 SDR, 所以我們可以定義排列 $\sigma$ 藉由設定 $\sigma(j)$
     為 $S_j$ 中的代表值(representative), 以Weyl
     的例子說明則相當於將向量中的第 $j$ 個分量取為第 $j$
     個女生所配對到的男生。接下來, 令 $P_{\sigma}$ 為 $\sigma$
@@ -342,9 +331,6 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 
 </p>
 <p>
-
-<!--%定理 蓋的稠密性-->
-
 <b>定理 9</b> (蓋的稠密性):
 設向量
     $\alpha$, $\beta\in{\mathbb{R}}^n$, $\alpha\prec\beta$, 且
@@ -370,8 +356,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
     考慮類似定理 6 的證明方式, 取
     $\rho=\left(\beta_j+\beta_k\right)/2$, $\tau=\beta_j-\rho$, 故
     $\beta_j=\rho+\tau$, $\beta_k=\rho-\tau$, 接著取
-    $\sigma=\max\{|\alpha_k-\rho|, |\alpha_j-\rho|\}$, 如圖 1 <!--\ref{fig:muirhead-3}-->
-    。接著取 $\gamma$ 滿足
+    $\sigma=\max\{|\alpha_k-\rho|, |\alpha_j-\rho|\}$, 如圖 1。接著取 $\gamma$ 滿足
     $$\gamma_k=\beta_k+c(\tau-\sigma),\quad\gamma_j=\beta_j-c(\tau-\sigma),
     \quad \gamma_t=\beta_t,\quad t\neq j,\quad t\neq k$$ 其中
     $c\in(0,1)$, 故 $\gamma\neq\alpha$,
@@ -390,18 +375,10 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 
  <a name="300"><h3>3. 舒爾凸函數</h3></a>
 
-<p>
-<!--%\section{舒爾凸函數\label{subsec:schur-convex}}-->
-
- 要清楚的了解 Karamata 不等式, 除了熟悉蓋的觀念外, 由於 Karamata
+<p>要清楚的了解 Karamata 不等式, 除了熟悉蓋的觀念外, 由於 Karamata
 不等式為舒爾凸函數的一個重要特例,  因此, 底下從較為廣義的舒爾凸函數談起。
 </p>
-<p>
-<!--%定義  舒爾凸函數的定義 definition of Schur convex-->
-
-
-<b>定義 10</b>: <!--%    \label{dfn:majorization-schur-convex}-->
- 設 $f:{\cal D}\to{\mathbb{R}}$,
+<p><b>定義 10</b>(舒爾凸函數): 設 $f:{\cal D}\to{\mathbb{R}}$,
     ${\cal D}\subseteq{\mathbb{R}}^n$, $\alpha$, $\beta\in {\cal D}$, 且
     $\alpha\prec\beta$, 若函數 $f$ 滿足
 </p><ul type="none">
@@ -419,10 +396,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 
 </p>
 <p>
-<!--% majorization-ex-1-->
-
-
-<b>例 1</b> (Steele The Cauchy-Schwarz Master Class p.192):
+<b>例 1</b> (<a href="#Steele2004">[8]</a> p.192):
     設 $a,b,c$ 為正實數, $x=b+c-a$, $y=a+c-b$, $z=a+b-c$, 且
     $x$, $y$, $z\ge 0$, 試證
     $$\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\le\frac{1}{x}+\frac{1}{y}+\frac{1}{z}$$
@@ -435,13 +409,12 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
     $a\le b+c-a=x$, $a+b\le 2c=x+y$, 且 $a+b+c=x+y+z$, 所以可以得到
     $(a, b, c)\prec(x,y,z)$。接著, 若可以得到
     $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$
-    為一舒爾凸函數, 則欲求的不等式便可利用定義 10 <!--%\ref{dfn:majorization-schur-convex}-->
-    輕鬆得到。
+    為一舒爾凸函數, 則欲求的不等式便可利用定義 10 輕鬆得到。
     但問題是, 要如何說明一給定函數為舒爾凸函數呢？ $\Box$
 
 </p>
 <p>
-以下介紹判斷一函數是否為舒爾凸函數最常用的一個方法--舒爾準則。這個方法是由 <a href="#Schur1923">[7]</a> 提出, 但直至今日, 它依舊是判斷舒爾凸函數最常用的工具。
+以下介紹判斷一函數是否為舒爾凸函數最常用的一個方法–舒爾準則。這個方法是由 <a href="#Schur1923">[7]</a> 提出, 但直至今日, 它依舊是判斷舒爾凸函數最常用的工具。
 </p>
 <p>
 <b>定理 11</b> (舒爾準則 (Schur Criterion)): 給定一對稱且連續可微的函數 $f:(a,b)^n\to{\mathbb{R}}$, 此函數 $f$
@@ -455,12 +428,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 
 在證明舒爾準則之前, 先介紹一個符號, 以簡化證明的過程。
 </p>
-<p>
-<!--% 定義 遞減排列向量-->
-
-<b>
-定義 12</b>:<!-- %    \label{dfn:decrease-vector}-->
-設 $\mathbf{w}=(w_1, w_2, \ldots,
+<p><b>定義 12</b>(遞減排列向量): 設 $\mathbf{w}=(w_1, w_2, \ldots,
     w_n)$ 為 $n$ 維向量, 且 $w_1\ge w_2\ge\cdots \ge w_n$, 定義
     $$\tilde{w}_j=w_1+w_2+\cdots+w_j,\quad j=1,2,\ldots, n$$ 並定義
     $$\tilde{\mathbf{w}}=(\tilde{w}_1,\tilde{w}_2,\ldots, \tilde{w}_n)$$
@@ -528,8 +496,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 </p>
 <p>
 
-有了舒爾準則, 再回頭討論例 1,<!-- % \ref{ex:walker},-->
-取函數 $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$。
+有了舒爾準則, 再回頭討論例 1, 取函數 $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$。
 對此函數, 考慮舒爾準則, 可得對 $1\le j\lt k\le n$
 \begin{align*}
     (t_j-t_k)\left(\frac{\partial f(\mathbf{t})}{\partial t_j}-
@@ -537,16 +504,10 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
     =(t_j-t_k)\left(-t_j^{-2}+t_k^{-2}\right)\ge0
 \end{align*}
 所以 $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$
-為一舒爾凸函數, 故例 1 <!--
-ef{ex:walker}-->
-得證。$\Box$
+為一舒爾凸函數, 故例 1 得證。$\Box$
 </p>
 <p>
-<!--% majorization-ex-2-->
-
-<b>
-例 2</b>: <!--% Steele The Cauchy-Schwarz Master Class p.204 ex 13.1    \label{ex:majorization-2}-->
- 設 $x$, $y$, $z$ 為正實數, 試證
+<b>例 2</b> (<a href="#Steele2004">[8]</a> p.204 ex 13.1): 設 $x$, $y$, $z$ 為正實數, 試證
     $$xyz\le\left(\frac{x}{2}+\frac{y}{3}+\frac{z}{6}\right)\left(\frac{x}{3}+\frac{2y}{3}\right)
     \left(\frac{x}{6}+\frac{5z}{6}\right)$$
 </p>
@@ -559,8 +520,7 @@ ef{ex:walker}-->
     觀察欲證之不等式, 首先令 $(a, b, c)$ 滿足下述等式
     $$\begin{bmatrix}~a~\\~b~\\~c~\end{bmatrix}=\begin{bmatrix}~\frac{1}{2}~&amp;~\frac{1}{3}~&amp;~\frac{1}{6}~\\
     \frac{1}{3}&amp;\frac{2}{3}&amp;0\\
-        \frac{1}{6}&amp;0&amp;\frac{5}{6}\end{bmatrix}\begin{bmatrix}~x~\\~y~\\~z~\end{bmatrix}$$ 根據定理 5 <!--%   \ref{thm:convexhull-majorization}-->
-        可知 $(a,b,c)\prec(x,y,z)$。取函數 $f(t_1,t_2,t_3)=t_1t_2t_3$,
+        \frac{1}{6}&amp;0&amp;\frac{5}{6}\end{bmatrix}\begin{bmatrix}~x~\\~y~\\~z~\end{bmatrix}$$ 根據定理 5 可知 $(a,b,c)\prec(x,y,z)$。取函數 $f(t_1,t_2,t_3)=t_1t_2t_3$,
         $t_1$, $t_2$, $ t_3\gt 0$, 考慮舒爾準則, 可得對 $1\le j\lt k\le 3$
     \begin{align*}
         (t_j-t_k)\left(\frac{\partial f(\mathbf{t})}{\partial t_j}-
@@ -581,26 +541,16 @@ ef{ex:walker}-->
     \left(\frac{x}{6}+\frac{5z}{6}\right)\end{align*}
     故得證。$\Box$
 </p>
-<p>
-
-<!--% majorization-ex-19-->
-
-<b>
-例 3</b>: <!--%% Steele The Cauchy-Schwarz Master Class p.204 ex 13.1    \label{ex:majorization-19}-->
- 設 $x$, $y$, $z$ 為正實數, 試證
+<p><b>例 3</b>(<a href="#Steele2004">[8]</a> p.204 ex 13.1): 設 $x$, $y$, $z$ 為正實數, 試證
     $$\left(\frac{2}{y+z}\right)^5+\left(\frac{6}{3x+y+2z}\right)^5+\left(\frac{6}{3x+2y+z}\right)^5\le\frac{1}{x^5}+\frac{1}{y^5}+\frac{1}{z^5}$$
 
 </p>
-<p>
-
-<b>
-證明</b>:
+<p><b>證明</b>:
     觀察欲證之不等式, 首先令 $(a, b, c)$ 滿足下述等式
     $$\begin{bmatrix}~a~\\~b~\\~c~\end{bmatrix}=\begin{bmatrix}~0~&amp;~\frac{1}{2}~&amp;~\frac{1}{2}~\\
         \frac{1}{2}&amp;\frac{1}{6}&amp;\frac{1}{3}\\
         \frac{1}{2}&amp;\frac{1}{3}&amp;\frac{1}{6}\end{bmatrix}\begin{bmatrix}~x~\\~y~\\~z~\end{bmatrix}$$
-        根據定理 5 <!--%   \ref{thm:convexhull-majorization}-->
-        可知
+        根據定理 5 可知
         $(a,b,c)\prec(x,y,z)$。取函數
         $f(t_1,t_2,t_3)=\dfrac{1}{t_1^5}+\dfrac{1}{t_2^5}
         +\dfrac{1}{t_3^5}$,
@@ -620,11 +570,7 @@ ef{ex:walker}-->
 
 在介紹下一個例子前, 需要先定義一個新的函數。
 </p>
-<p>
-<!--%定義 基本對稱函數 elementary symmetric functions-->
-
-<b>
-定義 13</b>:<!-- %    \label{dfn:elementary symmetric functions}-->
+<p><b>定義 13</b>(基本對稱函數 elementary symmetric functions):
 對任意實數 $x_1$,
     $x_2$, $\ldots$, $x_n$, 考慮多項式
     $$P(t)\!=\!(t\!-\!x_1)(t\!-\!x_2)\cdots(t\!-\!x_n)\!=\!t^n-e_1(\mathbf{x})t^{n-1}\!+\!\cdots\!+\!(-1)^ke_k(\mathbf{x})t^{n-k}
@@ -645,12 +591,7 @@ ef{ex:walker}-->
     e_4(x_1,x_2,x_3,x_4) &amp;= x_1x_2x_3x_4
     \end{align*}
 </p>
-<p>
-<!--% majorization-ex-20-->
-
-<b>
-例 4</b>: <!--%% Steele The Cauchy-Schwarz Master Class p.205 ex 13.4     \label{ex:majorization-20}-->
-證明 $e_k(\mathbf{x})$ 對
+<p><b>例 4</b> (<a href="#Steele2004">[8]</a> p.205 ex 13.4): 證明 $e_k(\mathbf{x})$ 對
     $\mathbf{x}\in[0,\infty)^n$
     為一舒爾凹函數。
 </p>
@@ -677,12 +618,7 @@ ef{ex:walker}-->
 	可發現 $e_k(\mathbf{x})$ 在 $\mathbf{x}\in[0,\infty)^n$
     為舒爾凹函數。 $\Box$
 </p>
-<p>
-
-<!--% majorization-ex-21-->
-
-<b>
-例 5</b>: <!--%% Steele The Cauchy-Schwarz Master Class p.206 ex 13.5  \label{ex:majorization-21}-->
+<p><b>例 5</b> (<a href="#Steele2004">[8]</a> p.206 ex 13.5):
     用來測量資料離散程度的方式有很多, 舉例來說, 在統計上通常使用樣本變異數
     $$s(\mathbf{x})=\frac{1}{n-1}\sum_{j=1}^n(x_j-\bar{x})^2$$ 此處
     $\bar{x}=(x_1+x_2+\cdots+x_n)/n$, $\mathbf{x}\in{\mathbb{R}}^n$, $n \ge
@@ -716,18 +652,9 @@ ef{ex:walker}-->
 
 
  <a name="400"><h3>4. Karamata 不等式</h3></a>
+<p>舒爾凸函數在不等式的題目裡, 有相當廣泛的應用, 但其中最有名的一個特例, 即為  Karamata 不等式。</p>
 <p>
-
-<!--%\section{Karamata 不等式\label{subsec:majorization-inequality}}\qquad-->
-
-舒爾凸函數在不等式的題目裡, 有相當廣泛的應用, 但其中最有名的一個特例, 即為  Karamata 不等式。
-
-<!--%定理 Karamata 不等式 theorem of Majorization Inequality-->
-</p>
-<p>
-<b>
-定理 14</b>: (Karamata 不等式 (Karamata Inequality)) <!--%    [\indexb{Karamata 不等式}{Karamata Inequality}]    \label{thm:karamata inequality}-->
-對函數
+<b>定理 14</b> (Karamata 不等式 (Karamata Inequality)): 對函數
 </p>
 <p>
     $\phi:(a,b)\to{\mathbb{R}}$, 定義函數 $f:(a,b)^n\to{\mathbb{R}}$ 為
@@ -766,9 +693,7 @@ ef{ex:walker}-->
              $\alpha_{\downarrow}=\beta_{\downarrow}$。 $\Box$
     </li><li>情形二:
     $\phi$ 不為可微函數<br>
-        由於 $\alpha\prec\beta$, 故根據定理 6 <!--
-ef{thm:muirhead-double D}-->
-        可知存在一雙重隨機矩陣 $D=\{d_{jk}\}$, 使得
+        由於 $\alpha\prec\beta$, 故根據定理 6 可知存在一雙重隨機矩陣 $D=\{d_{jk}\}$, 使得
         $\alpha=D\beta$, 或寫成
         $$\alpha_j=\sum_{k=1}^nd_{jk}\beta_k$$
         接著應用延森不等式在凸函數 $\phi$ 上, 得
@@ -818,11 +743,7 @@ x_n)$, 其中 $\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}$, 則因為 $(\bar{x},\bar{x
 $$n\phi(\bar{x})\le\sum_{i=1}^n\phi(x_i)$$
 即為延森不等式。
 </p>
-<p>
-<!--% majorization-ex-3-->
-
-<b>
-例 6</b>: <!--%% 2000 Li Majorization Inequality p.2 ex 1    \label{ex:majorization-3}-->
+<p><b>例 6</b> (2000 Li Majorization Inequality p.2 ex 1):
 對銳角三角形 $ABC$, 試證
     $$1\lt \cos A+\cos B+\cos C\le\frac{3}{2}$$ 等號何時成立？
 </p>
@@ -848,11 +769,7 @@ $$n\phi(\bar{x})\le\sum_{i=1}^n\phi(x_i)$$
     等號成立若且唯若此三角形為正三角形。$\Box$
 
 </p>
-<p>
-<!--% majorization-ex-5-->
-
-<b>
-例 7</b>: <!--%% Steele The Cauchy-Schwarz Master Class problem 13.5     \label{ex:majorization-5}-->
+<p><b>例 7</b> (<a href="#Steele2004">[8]</a> problem 13.5):
 設 $x$, $y$, $z\in(0,1)$ 且
     $\max(x,y,z)\le\frac{x+y+z}{2}\le 1$, 試證
     $$\left(\frac{1+x}{1-x}\right)\left(\frac{1+y}{1-y}\right)\left(\frac{1+z}{1-z}\right)
@@ -880,12 +797,7 @@ $$n\phi(\bar{x})\le\sum_{i=1}^n\phi(x_i)$$
     \end{align*}
     故得證。$\Box$
 </p>
-<p>
-
-<!--% majorization-ex-22-->
-
-<b>
-例 8</b> (生日問題): <!--%% Steele The Cauchy-Schwarz Master Class p.206 ex 13.7     [生日問題] \label{ex:majorization-22}-->
+<p><b>例 8</b> (<a href="#Steele2004">[8]</a> p.206 ex 13.7, 生日問題):
  隨機給定 $n$
     個人, 且其生日視為在集合 $\{1, 2,
     \ldots, 365\}$ 上獨立的均勻分佈, 試證明若 $n\ge
@@ -909,9 +821,7 @@ $$n\phi(\bar{x})\le\sum_{i=1}^n\phi(x_i)$$
     $p_1+p_2+\cdots+p_{365}=1$。考慮機率 $1 - e_{23}(p_1, p_2,
     \ldots, p_{365})$, 又
     $\left(\frac{1}{365},\frac{1}{365},\ldots,\frac{1}{365}\right)\prec(p_1,
-    p_2, \ldots, p_{365})$, 根據例 4 <!--
-ef{ex:majorization-20}-->
-    基本對稱函數為一舒爾凹函數, 故有
+    p_2, \ldots, p_{365})$, 根據例 4 基本對稱函數為一舒爾凹函數, 故有
     \begin{eqnarray*}
         e_{23}(p_1, p_2, \ldots, p_{365})&amp;\le&amp;
     e_{23}\left(\frac{1}{365},\frac{1}{365},\ldots,\frac{1}{365}\right)\\
@@ -924,12 +834,7 @@ ef{ex:majorization-20}-->
 </p>
 
 <a name="500"><h3>參考文獻</h3></a>
-<div id="referdiv">
-<!--%
-%\addcontentsline{toc}{section}{參考文獻}
-%\begin{thebibliography}{99}-->
-
-<reff id="Arnold2007"><a name="Arnold2007"></a>
+<div id="referdiv"><reff id="Arnold2007"><a name="Arnold2007"></a>
     Arnold, B.C. (2007). 
     Majorization: Here, there and everywhere.
     <i>Statistical Science</i> <b>22</b> (3): 407. 
