@@ -3,7 +3,7 @@ tag: real-analysis
 mathjax: true
 excerpt: 伯克霍夫定理、凸包、雙重隨機矩陣、羅倫斯曲線、蓋、舒爾凸函數、舒爾準則、Karamata 不等式、相異代表系。
 ---
-<style>figure{text-align:center;}</style>
+<style>figure{text-align:center}#referdiv{margin-left:2em}reff::before{content:"[" counter(section,decimal) "]";color:#dfaa42}reff{counter-increment:section;display:block;padding-top:12px;text-indent:-2em}</style>
 簡介蓋、 舒爾凸函數與 Karamata 不等式 (<a href="https://www.math.sinica.edu.tw/mathmedia/journals/4306" target="_blank">HTML</a> | <a href="https://www.math.sinica.edu.tw/media/pdf/d372/37206.pdf" target="_blank">PDF</a>)
 <h3>1. 前言</h3>
 <p>本文介紹的 Karamata 不等式是延森不等式 (Jensen's Inequality)
@@ -13,13 +13,13 @@ excerpt: 伯克霍夫定理、凸包、雙重隨機矩陣、羅倫斯曲線、�
 不等式則能在某些情況下, 同時給出兩個極值。 如同延森不等式, Karamata
 不等式涵蓋的層面很廣,
 尤其在不等式及極值問題的領域上更是運用廣泛的技巧。</p>
-<p>早期, 在不同的領域裡,蓋理論常被以不同的名稱重複的介紹, 例如, 在經濟學上稱之為 羅倫斯優勢 (Lorenz dominance)。這不僅使得研究者在研究相關議題時難以確認蓋理論既存的結果, 也使得很多的研究學者並未發現蓋理論在各領域中被廣泛運用的程度。直到 <reflin data-rlink="MarshallOlkin1979"><a class="MarshallOlkin1979"></a></reflin> 將 Karamata 不等式做了系統化的整理, 才正式的慢慢將蓋理論推展開來。有興趣的讀者, 也可參考 <reflin data-rlink="Steele2004"><a class="Steele2004"></a></reflin>, 書中對於 Karamata 不等式有著詳盡的介紹。另外在 <reflin data-rlink="Arnold2007"><a class="Arnold2007"></a></reflin> 中也提到了在 <reflin data-rlink="MarshallOlkin1979"><a class="MarshallOlkin1979"></a></reflin> 的書出版後將近三十年間, 此書及 Karamata 不等式對學術界的影響,  除此之外也介紹了很多 Karamata
-不等式在各個領域的應用, 最新版的書是 <reflin data-rlink="MarshallOlkinArnold2009"><a class="MarshallOlkinArnold2009"></a></reflin>。</p>
+<p>早期, 在不同的領域裡,蓋理論常被以不同的名稱重複的介紹, 例如, 在經濟學上稱之為 羅倫斯優勢 (Lorenz dominance)。這不僅使得研究者在研究相關議題時難以確認蓋理論既存的結果, 也使得很多的研究學者並未發現蓋理論在各領域中被廣泛運用的程度。直到 <a href="#MarshallOlkin1979">[5]</a> 將 Karamata 不等式做了系統化的整理, 才正式的慢慢將蓋理論推展開來。有興趣的讀者, 也可參考 <a href="#Steele2004">[8]</a>, 書中對於 Karamata 不等式有著詳盡的介紹。另外在 <a href="#Arnold2007">[1]</a> 中也提到了在 <a href="#MarshallOlkin1979">[5]</a> 的書出版後將近三十年間, 此書及 Karamata 不等式對學術界的影響,  除此之外也介紹了很多 Karamata
+不等式在各個領域的應用, 最新版的書是 <a href="#MarshallOlkinArnold2009">[6]</a>。</p>
 <p>本文的安排如下：第 2 節說明蓋、雙重隨機矩陣及凸包之間的等價關係, 第 3 節討論舒爾凸函數及舒爾準則, 並考慮在基本對稱函數、樣本變異數、熵上的應用。第 4 節介紹 Karamata
 不等式, 並以生日問題為例子作說明。最後, 習題中也提供有關三角形的不等式及其他代數不等式的應用。</p>
 <h3>2. 蓋</h3>
 <p>蓋的起源來自於人們從以前就很好奇有關於兩個向量間,有沒有所謂其中某一個向量較為分散, 或是較為平均的現象。如果有的話, 該如何做比較呢？這樣子的議題, 在各個領域中被研究著。</p>
-<p>在二十世紀初, 經濟學家開始對衡量收入或財富的不等式感興趣,為了要去衡量這件事情, 希望能夠說明在收入或財富的分佈上, 何謂一個收入(財富)的分佈較另一個平均。最早針對此議題所發展出的理論為 <reflin data-rlink="Lorenz1905"><a class="Lorenz1905"></a></reflin> 所提出的羅倫斯曲線 (Lorenz curve), 其他還有許多不同解釋的角度, 最著名的便是蓋的觀念了。</p>
+<p>在二十世紀初, 經濟學家開始對衡量收入或財富的不等式感興趣,為了要去衡量這件事情, 希望能夠說明在收入或財富的分佈上, 何謂一個收入(財富)的分佈較另一個平均。最早針對此議題所發展出的理論為 <a href="#Lorenz1905">[4]</a> 所提出的羅倫斯曲線 (Lorenz curve), 其他還有許多不同解釋的角度, 最著名的便是蓋的觀念了。</p>
 <p>首先, 定義一個新的符號：</p>
 <p><b>定義 1</b>:
 給定 $n$ 維向量 $a=(a_1, a_2,\ldots, a_n)$, 定義 $a_{[j]}$, $1\le j\le n$ 為此 $n$ 維向量中對各分量由大至小做排序後的第 $j$ 項, 亦即 $a_{[1]}\ge a_{[2]}\ge\cdots\ge a_{[n]}$, 並定義 $a_{\downarrow}=(a_{[1]},a_{[2]},\ldots,a_{[n]})$。
@@ -246,7 +246,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 </figure>
 觀察圖 2,其中 (1) 與  (2) 已經在定理 5 說明, 而 (3) 跟 (4) 的證明則可由定理 6 得到, 若能證明最後一件事情, 即 $\alpha=D\beta\Rightarrow \alpha\in H(\beta)$, 則可瞭解 $\alpha\prec\beta$
 與 $\alpha\in H(\beta)$ 兩件事為等價的。要證明 (5), 需要證明伯克霍夫定理, 這個定理又被稱為是雙重隨機矩陣的基本定理。
-此處採用一個較有趣的證明方式, 更詳細的介紹可參考 <reflin data-rlink="Steele2004"><a class="Steele2004"></a></reflin>。
+此處採用一個較有趣的證明方式, 更詳細的介紹可參考 <a href="#Steele2004">[8]</a>。
 <p></p>
 <p>
 
@@ -264,7 +264,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 </p>
 <p>
 
-    這個問題來自 <reflin data-rlink="Weyl1949"><a class="Weyl1949"></a></reflin> 的文章。原本的題目為考慮一群男孩及一群女孩, 若每個女孩只能嫁給自己認識的男孩,
+    這個問題來自 <a href="#Weyl1949">[9]</a> 的文章。原本的題目為考慮一群男孩及一群女孩, 若每個女孩只能嫁給自己認識的男孩,
     則順利將所有女孩嫁出若且唯若可得任意 $k$ 個女孩至少認識 $k$ 個男孩。
 
 </p>
@@ -442,7 +442,7 @@ $\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
 
 </p>
 <p>
-以下介紹判斷一函數是否為舒爾凸函數最常用的一個方法--舒爾準則。這個方法是由 <reflin data-rlink="Schur1923"><a class="Schur1923"></a></reflin> 提出, 但直至今日, 它依舊是判斷舒爾凸函數最常用的工具。
+以下介紹判斷一函數是否為舒爾凸函數最常用的一個方法--舒爾準則。這個方法是由 <a href="#Schur1923">[7]</a> 提出, 但直至今日, 它依舊是判斷舒爾凸函數最常用的工具。
 </p>
 <p>
 <!--%舒爾準則 Schur Criterion-->
@@ -922,8 +922,8 @@ ef{ex:majorization-20}-->
     {\hbox{所以}} 1-e_{23}(p_1, p_2, \ldots, p_{365})&amp;\ge&amp;
     1-e_{23}\left(\frac{1}{365},\frac{1}{365},\ldots,\frac{1}{365}\right)
     \end{eqnarray*}
-    故得證。 關於此問題, 詳細的討論可參考 <reflin data-rlink="Clevenson1991"><a class="Clevenson1991"></a></reflin> 和
-    <reflin data-rlink="Proschan1992"><a class="Proschan1992"></a></reflin>。 $\Box$
+    故得證。 關於此問題, 詳細的討論可參考 <a href="#Clevenson1991">[2]</a> 和
+    <a href="#Proschan1992">[3]</a>。 $\Box$
 
 </p>
 
