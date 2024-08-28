@@ -1,0 +1,1038 @@
+---
+tag: real-analysis
+mathjax: true
+excerpt: 伯克霍夫定理、凸包、雙重隨機矩陣、羅倫斯曲線、蓋、舒爾凸函數、舒爾準則、Karamata 不等式、相異代表系。
+---
+簡介蓋、 舒爾凸函數與 Karamata 不等式 (<a href="https://www.math.sinica.edu.tw/mathmedia/journals/4306" target="_blank">HTML</a> | <a href="https://www.math.sinica.edu.tw/media/pdf/d372/37206.pdf" target="_blank">PDF</a>)
+<h3>1. 前言</h3>
+<p>本文介紹的 Karamata 不等式是延森不等式 (Jensen's Inequality)
+的一種推廣, 又稱做蓋不等式或 Hardy-Littlewood
+不等式。延森不等式通常只能提供凸函數或凹函數的
+其中一個極值(極大值或極小值), 而 Karamata
+不等式則能在某些情況下, 同時給出兩個極值。 如同延森不等式, Karamata
+不等式涵蓋的層面很廣,
+尤其在不等式及極值問題的領域上更是運用廣泛的技巧。</p>
+<p>早期, 在不同的領域裡,蓋理論常被以不同的名稱重複的介紹, 例如, 在經濟學上稱之為 羅倫斯優勢 (Lorenz dominance)。這不僅使得研究者在研究相關議題時難以確認蓋理論既存的結果, 也使得很多的研究學者並未發現蓋理論在各領域中被廣泛運用的程度。直到 <reflin data-rlink="MarshallOlkin1979"><a class="MarshallOlkin1979"></a></reflin> 將 Karamata 不等式做了系統化的整理, 才正式的慢慢將蓋理論推展開來。有興趣的讀者, 也可參考 <reflin data-rlink="Steele2004"><a class="Steele2004"></a></reflin>, 書中對於 Karamata 不等式有著詳盡的介紹。另外在 <reflin data-rlink="Arnold2007"><a class="Arnold2007"></a></reflin> 中也提到了在 <reflin data-rlink="MarshallOlkin1979"><a class="MarshallOlkin1979"></a></reflin> 的書出版後將近三十年間, 此書及 Karamata 不等式對學術界的影響,  除此之外也介紹了很多 Karamata
+不等式在各個領域的應用, 最新版的書是 <reflin data-rlink="MarshallOlkinArnold2009"><a class="MarshallOlkinArnold2009"></a></reflin>。</p>
+<p>本文的安排如下：第 2 節說明蓋、雙重隨機矩陣及凸包之間的等價關係, 第 3 節討論舒爾凸函數及舒爾準則, 並考慮在基本對稱函數、樣本變異數、熵上的應用。第 4 節介紹 Karamata
+不等式, 並以生日問題為例子作說明。最後, 習題中也提供有關三角形的不等式及其他代數不等式的應用。</p>
+<h3>2. 蓋</h3>
+<p>蓋的起源來自於人們從以前就很好奇有關於兩個向量間,有沒有所謂其中某一個向量較為分散, 或是較為平均的現象。如果有的話, 該如何做比較呢？這樣子的議題, 在各個領域中被研究著。</p>
+<p>在二十世紀初, 經濟學家開始對衡量收入或財富的不等式感興趣,為了要去衡量這件事情, 希望能夠說明在收入或財富的分佈上, 何謂一個收入(財富)的分佈較另一個平均。最早針對此議題所發展出的理論為 <reflin data-rlink="Lorenz1905"><a class="Lorenz1905"></a></reflin> 所提出的羅倫斯曲線 (Lorenz curve), 其他還有許多不同解釋的角度, 最著名的便是蓋的觀念了。</p>
+<p>首先, 定義一個新的符號：</p>
+<p><b>定義 1</b>:
+給定 $n$ 維向量 $a=(a_1, a_2,\ldots, a_n)$, 定義 $a_{[j]}$, $1\le j\le n$ 為此 $n$ 維向量中對各分量由大至小做排序後的第 $j$ 項, 亦即 $a_{[1]}\ge a_{[2]}\ge\cdots\ge a_{[n]}$, 並定義 $a_{\downarrow}=(a_{[1]},a_{[2]},\ldots,a_{[n]})$。
+</p>
+<p><b>定義 2</b>(蓋 (majorization)):
+給定兩組向量 $\alpha=(\alpha_1, \alpha_2, \ldots,\alpha_n)$, $\beta=(\beta_1, \beta_2, \ldots,\beta_n)\in{\mathbb{R}}^n$, 若滿足條件
+</p><ul style="list-style-tyle:lower-roman">
+<li>$\alpha_{[1]}+\alpha_{[2]}+\cdots+\alpha_{[j]}\le\beta_{[1]}+\beta_{[2]}+\cdots+\beta_{[j]}$,  $1\le j\lt n$
+<li>$\alpha_{[1]}+\alpha_{[2]}+\cdots+\alpha_{[n]}=\beta_{[1]}+\beta_{[2]}+\cdots+\beta_{[n]}$</ul>
+則稱 $\alpha$ 被 $\beta$ 蓋住, 記做 $\alpha\prec\beta$ 或 $\beta\succ\alpha$。
+<p></p>
+<p>
+為了更瞭解關於"蓋"的定義, 以下舉一個簡單的例子：
+\begin{equation}\label{equ:muirhead-4}
+(1, 1, 1, 1)\prec(2, 1, 1, 0)\prec(3, 1, 0, 0)\prec(4, 0, 0, 0)
+\end{equation}
+式 \eqref{equ:muirhead-4} 可經由簡單的計算得到。又因為  $\alpha\prec\beta$
+的關係只與 $\alpha$ 與 $\beta$ 排序後的向量有關, 故 \eqref{equ:muirhead-4}
+也可寫成
+$$(1, 1, 1, 1)\prec(0, 1, 1, 2)\prec(0, 1, 3, 0)\prec(0, 4, 0, 0)$$
+</p>
+<p>
+<b>定理 3</b>(蓋的遞移性): 設 $\alpha,\beta,\gamma\in{\mathbb{R}}^n$, 若有 $\alpha\prec\beta,\beta\prec\gamma$, 則有 $\alpha\prec\gamma$。</p>
+<p><b>證明</b>:因為</p><ul type="none">
+        <li>(i)
+        $\alpha_{[1]}+\alpha_{[2]}+\cdots+\alpha_{[j]}\le
+        \beta_{[1]}+\beta_{[2]}+\cdots+\beta_{[j]}\le
+        \gamma_{[1]}+\gamma_{[2]}+\cdots+\gamma_{[j]}$, $1\le j\lt n$
+        </li><li>(ii)
+        $\alpha_{[1]}+\alpha_{[2]}+\cdots+\alpha_{[n]}=
+        \beta_{[1]}+\beta_{[2]}+\cdots+\beta_{[n]}=
+        \gamma_{[1]}+\gamma_{[2]}+\cdots+\gamma_{[n]}$
+</li></ul>
+    故得證。$\Box$
+<p></p>
+<p>
+
+
+了解蓋的定義後, 底下介紹一個在蓋觀念中十分重要的等價關係。
+首先, 介紹凸包的先備知識。
+</p>
+<p><b>定義 4</b>(凸包): 在一個實數向量空間 $V$ 中, 對於給定集合 $X$, 所有包含 $X$ 的凸集合的交集$$S:=\bigcap_{X\subseteqq K\subseteqq V}K,\quad K\text{是凸集合}$$被稱為 $X$ 的凸包(convex hull)。
+</p>
+<p>例如在二維空間中, 任意三點所形成的凸包, 即為連接此三點所成的三角形, 任意 $n$ 點所形成的凸包, 則為能包含此 $n$ 點的最小 $k$ 多邊形 $(k\le n)$。
+</p>
+<p>
+給定任意 $n$ 維向量 $\alpha=(\alpha_1, \alpha_2, \ldots, \alpha_n)$ 及 $\beta=(\beta_1, \beta_2, \ldots, \beta_n)$, 考慮 $\alpha$ 落在由 
+$\left\{\left(\beta_{\tau(1)}, \beta_{\tau(2)}, \ldots, \beta_{\tau(n)}\right)\mid
+\tau\in{\cal S}_n\right\}$ 所組成的凸包 $H(\beta)$ 中, 記作 $\alpha\in
+H(\beta)$, 其中 ${\cal S}_n$ 代表集合 $\{1, 2, \ldots, n\}$ 中元素的 $n!$
+種排列所成的集合, $\tau(i)$, $i=1$, $2$, $\ldots$, $n$ 表示集合 ${\cal S}_n$
+之中元素的第 $i$ 個分量。例如在 $n=3$ 的情況下, $${\cal
+S}_3=\{(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)\}$$
+即為集合 $\{1,2,3\}$ 的所有可能排序, 考慮其中元素 $(2, 3, 1)$,  其 $\tau(1)\!=\!2$,
+$\tau(2)=3$, $\tau(3)=1$。
+</p>
+<p>接著說明對於兩向量 $\alpha$, $\beta\in{\mathbb{R}}^n$ 中, $\alpha\in H(\beta)$ 與 $\alpha\prec\beta$ 間的關係, 以進一步瞭解蓋的觀念。
+</p>
+<p>
+<!--%定理  凸包與蓋的關係-->
+
+<b>定理 5</b>: <!--%    \label{thm:convexhull-majorization}-->
+設向量 $\alpha$,
+    $\beta\in{\mathbb{R}}^n$, 且 $\alpha\in H(\beta)$, 則
+    $\alpha\prec\beta$。
+
+</p>
+<p>
+<!--%定理  凸包與蓋的關係 證明-->
+
+<b>證明</b>:
+    對於 $\alpha\in H(\beta)$, $\alpha$ 可表達為
+    $$(\alpha_1, \alpha_2, \ldots, \alpha_n)
+    =\sum_{\tau\in\mathcal{S}_n} p_{\tau}
+    \left(\beta_{\tau(1)}, \beta_{\tau(2)}, \ldots, \beta_{\tau(n)}\right)$$
+    其中 $\sum_{\tau\in\mathcal{S}_n} p_{\tau} =1$, $p_{\tau}\ge 0$。若只考慮第 $j$ 個分量, 則有以下等式
+        \begin{equation}\label{equ:muirhead-5}
+            \alpha_j=\sum_{\tau\in\mathcal{S}_n}p_{\tau}\beta_{\tau(j)}
+        =\sum_{k=1}^n\bigg\{\sum_{\tau:\tau(j)=k}p_{\tau}\bigg\}\beta_k=\sum_{k=1}^nd_{jk}\beta_k
+        \end{equation}
+    式 \eqref{equ:muirhead-5} 中, 為了簡化式子, 令
+        \begin{equation*}
+            d_{jk}=\sum_{\tau:\tau(j)=k}p_{\tau}
+        \end{equation*}
+    此處, 可發現 $d_{jk}\ge 0$, 且因為對 $d_{jk}$
+    的任意下標求和皆相當於 ${\cal S}_n$ 中所有 $p_{\tau}$
+    的總和, 故有
+        \begin{equation}\label{equ:muirhead-6}
+            \sum_{j=1}^nd_{jk}=1,\qquad\sum_{k=1}^nd_{jk}=1
+        \end{equation}
+    對一個非負實係數的矩陣 $D=\{d_{jk}\}$ 若能滿足
+    \eqref{equ:muirhead-6}, 則稱此矩陣為雙重隨機矩陣(doubly
+    stochastic matrix)。因此, 若將 $\alpha$, $\beta$
+    視為行向量, 則由  \eqref{equ:muirhead-5} 有
+        \begin{equation*}
+            \alpha\in H(\beta) \Rightarrow \alpha=D\beta
+        \end{equation*}
+    因此, 接下來只需證明 $\alpha=D\beta\Rightarrow
+    \alpha\prec\beta$。
+
+</p>
+<p>
+
+
+    因為 $\alpha\in H(\beta)$ 及 $\alpha\prec\beta$ 皆不受
+    $\alpha$, $\beta$ 向量內排序的影響, 因此不失一般性可假設
+    $\alpha_1\ge\alpha_2\ge\cdots\ge\alpha_n$ 且 
+    $\beta_1\ge\beta_2\ge\cdots\ge\beta_n$。接著, 將
+    \eqref{equ:muirhead-5} 對 $j$ 做加總, 可得
+        \begin{equation}\label{equ:muirhead-7}
+        \sum_{j=1}^k\alpha_j=\sum_{j=1}^k\sum_{t=1}^nd_{jt}\beta_t=\sum_{t=1}^nc_t\beta_t
+        \quad\text{其中}\; c_t\stackrel{\text{定義}}{=}\sum_{j=1}^kd_{jt}
+        \end{equation}
+    因為 $c_t$ 為 $D$ 中第 $t$ 行的前 $k$ 個元素的加總, 且 $D$
+    為雙重隨機矩陣, 所以
+        \begin{equation*}
+            0\le c_t\le 1,\ 1\le t\le n\quad\text{且}\quad
+            c_1+c_2+\cdots+c_n=k
+        \end{equation*}
+    最後, 根據蓋的定義, 觀察以下等式
+        \begin{align*}
+        \Delta_k&amp;=\sum_{j=1}^k\alpha_j-\sum_{j=1}^k\beta_j
+        =\sum_{j=1}^nc_j\beta_j-\sum_{j=1}^k\beta_j+\beta_k\bigg({k-\sum_{j=1}^nc_j}\bigg)\\
+        &amp;=\sum_{j=1}^k\left(\beta_k-\beta_j\right)\left(1-c_j\right)
+        +\sum_{j=k+1}^nc_j\left(\beta_j-\beta_k\right)
+        \end{align*}
+    因為當 $1\le j\le k$ 時, $\beta_j\ge\beta_k$, 而當 $k\lt j\le n$
+    時, $\beta_j\le\beta_k$, 所以有 $\Delta_k\le 0$, $\ 1\le k\lt 
+    n$, 且由 \eqref{equ:muirhead-7} 可知
+    $\Delta_n=0$, 滿足蓋的定義, 故 $\alpha\prec\beta$
+    得證。$\Box$
+</p>
+<p>
+
+
+如同之前提到蓋的起源與經濟學上的關係, 一個有趣的例子是
+假設觀察甲與乙兩個國家的人民收入狀況, 設定 $\alpha_1$ 為甲國前 $10\%$
+收入者的收入占甲國全國總收入的比例, $\alpha_2$ 則為接下來 $10\%$
+收入者的收入占甲國全國總收入的比例, 依此類推, $\alpha_{10}$ 為甲國最後
+ $10\%$ 收入者的收入占甲國全國總收入的比例。接著以
+  $\beta_1$, $\ldots$, $\beta_{10}$
+對乙國做相同的定義。則 $\alpha\prec\beta$
+在經濟學上可被視為乙國的人民收入分佈比甲國來得不平均。
+</p>
+<p>
+很直覺的, 可聯想到是否 $\alpha\prec\beta$ 也可逆推回 $\alpha=D\beta$
+使得乙國人民的收入分佈能藉由雙重隨機矩陣的轉換慢慢的與甲國類似。
+也有人將這樣的觀念聯想到羅賓漢--劫富濟貧的故事。
+</p>
+<p>
+<b>定理 6</b>(蓋與雙重隨機矩陣):設向量 $\alpha,\beta\in{\mathbb{R}}^n$, 且 $\alpha\prec\beta$ 則存在一雙重隨機矩陣 $D$ 使得 $\alpha=D\beta$。
+</p>
+<p><b>證明</b>:
+首先, 考慮最簡單的情況, 當 $n=2$ 時, 令 $\alpha =
+(\alpha_1, \alpha_2) = (\rho + \sigma, \rho - \sigma)$ 且
+$\beta = (\beta_1, \beta_2) = (\rho + \tau, \rho - \tau
+)$。不失一般性, 可假設 $\alpha_1\ge\alpha_2$,
+$\beta_1\ge\beta_2$, 且
+$\alpha_1+\alpha_2=\beta_1+\beta_2$。因此, 若
+$\sigma\le\tau$, 則相當於說明
+$\alpha\prec\beta$, 因此, 剩下的工作只需找出一雙重隨機矩陣 $D$
+使得 $\alpha=D\beta$, 利用分點公式求 $D$ 可得
+    \begin{equation}\label{equ:muirhead-8}
+    D\beta=\begin{bmatrix}~\frac{\tau+\sigma}{2\tau}~&amp;~\frac{\tau-\sigma}{2\tau}~\\
+    \frac{\tau-\sigma}{2\tau}&amp;\frac{\tau+\sigma}{2\tau}\end{bmatrix}\begin{bmatrix}\rho+\tau\\
+    \rho-\tau\end{bmatrix}=\begin{bmatrix}\rho+\sigma\\
+    \rho-\sigma\end{bmatrix}=\alpha
+    \end{equation}
+故此定理在 $n=2$ 的情況成立。
+</p>
+<p>雖然上述的情況很簡單, 但可以利用上述的結果, 推廣到 $n$ 維的情況, 並且說明 $n\times n$ 的雙重隨機矩陣 $D$ 為由有限個每次改變兩個分量的轉換累積相乘而得。
+</p>
+<p>考慮向量 $\alpha$, $\beta$ 有 $\alpha\prec\beta$, 且
+    $\alpha_1\ge\alpha_2\ge\cdots\ge\alpha_n$,
+    $\beta_1\ge\beta_2\ge\cdots\ge\beta_n$, 已知其中有 $N$
+    個分量不相等。考慮 $N\ge 2$, 則根據蓋的定義可知, 必定存在整數
+    $1\le j\lt k\le n$, 使得
+        \begin{equation}\label{equ:muirhead-9}
+            \beta_j\gt \alpha_j,\quad \beta_k\lt \alpha_k,\quad\text{且}\quad
+        \beta_s=\alpha_s,\quad \forall j\lt s\lt k
+        \end{equation}
+</p>
+<p>
+<!--%\begin{figure}[!h]
+%\centering {\includegraphics[width=.65\linewidth]{double-D.eps}}
+%\caption{將 $\beta$ 做一次轉換為 $\beta'$} 
+%\end{figure}-->
+
+<!--\centerline{\epsfig{file=d:/cmath/C37N2/D3730/double-D.eps, width=11cm}}\par
+\centerline{{\sz12\fontsize{12}{18pt}\selectfont \ctxfk
+圖1}: 做一次轉換為 $\beta'$}-->
+
+</p><figure>
+<img src="img/d372/37206double-D.png">
+<figcaption>圖1: 做一次轉換為 $\beta'$</figcaption>
+</figure>
+
+
+    考慮類似 $n=2$ 的情況, 取 $\rho=\left(\beta_j+\beta_k\right)/2$,
+    $\tau=\beta_j-\rho$, 故 $\beta_j=\rho+\tau$,
+    $\beta_k=\rho-\tau$, 接著取 $\sigma=\max\{|\alpha_k-\rho|,
+    |\alpha_j-\rho|\}$, 如圖 1<!--% \ref{fig:muirhead-3}-->
+    。然後令 $T$
+    為能將 $\beta=(\beta_1, \beta_2, \ldots, \beta_n)$ 送到
+    $\beta'=(\beta'_1, \beta'_2, \ldots, \beta'_n)$ 的 $n\times n$
+    的雙重隨機矩陣, 其中 $\beta'$ 滿足
+    $$\beta'_k=\beta_k+\tau-\sigma,\quad\beta'_j=\beta_j-\tau+\sigma,\quad
+    \beta'_t=\beta_t,\quad \forall t\neq j, t\neq k$$
+    $T$ 的表示式可將 $n=2$
+    時所推導出的雙重隨機矩陣的係數分別對應放置於矩陣 $T$ 的
+    $(j,j)$, $(j,k)$, $(k,j)$, $(k,k)$
+    四個點上, 接著將對角線上的空位補滿 $1$, 其他空位則補滿 $0$, 如
+    \eqref{equ:muirhead-10}。值得注意的是, 轉換後的 $\beta'$ 滿足 
+    $\beta'\prec\beta$。
+    \begin{eqnarray}\label{equ:muirhead-10}
+    \begin{bmatrix}~1~&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;\\&amp;\ddots&amp;&amp;&amp;&amp;&amp;&amp;&amp;\\&amp;&amp;~1~&amp;&amp;&amp;&amp;&amp;&amp;\\&amp;&amp;&amp;~\frac{\tau+\sigma}{2\tau}~&amp;~\cdots~&amp;~\frac{\tau-\sigma}{2\tau}~&amp;&amp;&amp;\\
+    &amp;&amp;&amp;\vdots&amp;&amp;\vdots&amp;&amp;&amp;\\&amp;&amp;&amp;\frac{\tau-\sigma}{2\tau}&amp;\cdots&amp;\frac{\tau+\sigma}{2\tau}&amp;&amp;&amp;\\
+    &amp;&amp;&amp;&amp;&amp;&amp;~1~&amp;&amp;\\&amp;&amp;&amp;&amp;&amp;&amp;&amp;~\ddots~&amp;\\&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;~1~\end{bmatrix}
+    \end{eqnarray}
+<p></p>
+<p>
+    利用簡單的觀察及計算可以檢查
+    $\alpha\prec\beta'$, 因此, 藉由矩陣 $T$ 將 $\beta$ 轉換成
+    $\beta'$, 可將 $\alpha$ 與 $\beta'$ 間不相等的分量縮小為至多
+    $N-1$ 個。最後, 利用歸納法, 假設存在雙重隨機矩陣 $D'$ 使得
+    $\alpha=D'\beta'$, 因為 $\beta'=T\beta$, 故有
+    $\alpha=D'(T\beta)=(D'T)\beta$, 且知兩個雙重隨機矩陣的乘積依然為雙重隨機矩陣,
+    故得證。$\Box$
+    
+</p>
+<figure>
+<svg width="305" height="145" xmlns="http://www.w3.org/2000/svg"><defs><marker id="Triangle" overflow="visible" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1"><path transform="scale(.5)" d="m5.8 0-8.6 5v-10z" fill="context-stroke" fill-rule="evenodd" stroke="context-stroke" stroke-width="1pt"/></marker></defs><line x1="53" x2="133" y1="6.9" y2="6.9" marker-end="url(#Triangle)" stroke="#000" stroke-width="2"/><text x="-0.6328125" y="9.1171875">α ∈ H(β)</text><text x="58.367188" y="64.117188">伯克霍夫定理</text><line x1="185" x2="265" y1="6.9" y2="6.9" marker-end="url(#Triangle)" stroke="#000" stroke-width="2"/><text x="273.073" y="10.924913">α ≺ β</text><path d="m145 20q-50 60-100 0" fill="none" marker-end="url(#Triangle)" stroke="#000" stroke-width="2"/><line x1="159" x2="159" y1="24" y2="124" marker-start="url(#Triangle)" stroke="#000" stroke-width="2"/><text x="142.00893" y="11.364511">α = Dβ</text><text x="110.29571" y="142.47792">α = T₁T₂ ... Tₙβ</text><line x1="282" x2="173" y1="18" y2="118" marker-end="url(#Triangle)" stroke="#000" stroke-width="2"/><text x="84.367188" y="42.117188">(5)</text><text x="84.367188" y="20.117188">(1)</text><text x="216.36719" y="20.117188">(2)</text><text x="216.36719" y="58.117188">(3)</text><text x="162.36719" y="68.117188">(4)</text></svg><figcaption>圖2: 蓋與凸包的關係</figcaption>
+</figure>
+觀察圖 2,其中 (1) 與  (2) 已經在定理 5 說明, 而 (3) 跟 (4) 的證明則可由定理 6 得到, 若能證明最後一件事情, 即 $\alpha=D\beta\Rightarrow \alpha\in H(\beta)$, 則可瞭解 $\alpha\prec\beta$
+與 $\alpha\in H(\beta)$ 兩件事為等價的。要證明 (5), 需要證明伯克霍夫定理, 這個定理又被稱為是雙重隨機矩陣的基本定理。
+此處採用一個較有趣的證明方式, 更詳細的介紹可參考 <reflin data-rlink="Steele2004"><a class="Steele2004"></a></reflin>。
+<p></p>
+<p>
+
+<b>定理 7</b> (結婚問題):<!-- %    [結婚問題] \label{thm:marriage problem}-->
+設 $S_1$, $S_2$, $\ldots$, $S_n\subset S$, 則對一集合
+    $R=\{x_1, x_2, \ldots, x_n\}\subset S$, 若其中元素皆不相同且 $x_k\in
+    S_k$, $k=1$, $2$, $\ldots$, $n$, 則稱 $R$ 為一相異代表系(system of
+    distinct representatives)(又稱 SDR)。證明 SDR
+    存在若且唯若滿足以下條件
+    \begin{align}\label{equ:marriage}
+        |A|\le\bigg|\bigcup_{j\in A}S_j\bigg|\quad\text{其中}\;A\subset\{1, 2, \ldots, n\}
+    \end{align}
+    此處符號 $|C|$
+    代表集合 $C$ 中的元素個數。
+</p>
+<p>
+
+    這個問題來自 <reflin data-rlink="Weyl1949"><a class="Weyl1949"></a></reflin> 的文章。原本的題目為考慮一群男孩及一群女孩, 若每個女孩只能嫁給自己認識的男孩,
+    則順利將所有女孩嫁出若且唯若可得任意 $k$ 個女孩至少認識 $k$ 個男孩。
+
+</p>
+<p>
+
+<b>證明</b>:
+    明顯可知, 若 SDR 存在, 則條件必定滿足。考慮另一個方向的證明, 利用
+    Weyl 的題意, 即第 $j$ 個女孩認識的男孩為集合
+    $S_j$, 所以給定女孩的集合 $A$, 則集合 $\bigcup_{j\in A}S_j$
+    中的男孩必定有某個 $A$ 中的女孩認識。考慮下列兩種狀況：
+</p><ul style="list-style-type:none">
+    <li>情形一： 假設 \eqref{equ:marriage}
+    中的不等號為嚴格小於（即無等號成立的情況發生）, 且已知 $|A| \lt 
+    n$。將第 $n$ 個女孩配對給她所認識的任一個男孩 $b$。因為條件 \eqref{equ:marriage}
+    依然在集合 $A\subset\{1, 2, \ldots, n - 1\}$ 及每個 $S_j$, $1\le j\le
+    n-1$ 皆被替換成 $S_j \backslash \{b\}$
+    的情況下成立（須再重新判斷其為情況一或情況二）,
+    因此其餘的女孩可依相同的方法配對給其餘的男孩們。
+
+    </li><li>情形二： 假設對某個集合 $A_0$ 考慮條件
+    \eqref{equ:marriage}, 發現等號成立, 且已知 $|A_0| \lt  n$。令
+    $$B=\bigcup_{j\in A_0}S_j\quad\text{且}\quad S'_j=S_j\backslash B\quad\text{對所有}
+    \;j\in A_0^c$$ 則根據歸納法, $A_0$ 中的女孩必可配對給 $B$
+    中的男孩, 因此只需證明在 $A_0^c$ 中的女孩也可適當的配對給
+    $B^c$ 中的男孩。取任意的 $A\subset A_0^c$ 可發現
+    $$\bigg|\bigcup_{j\in A_0\cup A}S_j\bigg|\ge |A_0\cup
+    A|=|A|+|A_0|$$
+    且下列等式恆成立 $$\bigg|\bigcup_{j\in A_0\cup A}S_j\bigg|=
+    \bigg|\bigg\{\bigcup_{j\in A_0}S_j\bigg\}\bigcup\bigg\{\bigcup_{j\in
+    A}S'_j\bigg\}\bigg| =|A_0|+\bigg|\bigcup_{j\in A}S'_j\bigg|$$
+    因此, 可發現對所有 $A\subset A^c_0$ 皆可導出
+    $$\bigg|\bigcup_{j\in A}S'_j\bigg|\ge |A|$$
+    即對任意 $A_0^c$ 中取 $k$ 個女孩的集合皆至少認識 $k$
+    個 $B^c$ 中的男孩。根據數學歸納法, 可知 $A_0^c$
+    中的女孩必可適當的配對給 $B^c$ 中的男孩。 $\Box$
+</li></ul>
+
+<p></p>
+<p>
+
+<b>定理 8</b> (伯克霍夫定理 (Birkhoff Theorem)):
+給定排列 $\sigma\in{\cal S}_n$,
+    對應 $\sigma$ 的置換矩陣為一
+    $n\times n$ 的矩陣  $P_{\sigma}=\left(P_{\sigma}(j,k)\right)$,
+    $1\le j$, $k\le n$ 其中元素為
+    $$P_{\sigma}(j,k)=\begin{cases}1 &amp;
+    \text{若}\;\sigma(j)=k\\ 0 &amp; \text{其他}\end{cases}$$
+    證明若 $D$ 為一 $n\times n$ 的雙重隨機矩陣,
+    則存在非負權重 $\{w_{\sigma}
+    : \sigma\in \mathcal{S}_n\}$ 使得
+    $$\sum_{\sigma\in\mathcal{S}_n}w_{\sigma}=1\quad\text{且}
+    \quad\sum_{\sigma\in\mathcal{S}_n}w_{\sigma}P_{\sigma}=D$$
+    即所有的雙重隨機矩陣皆可表示為置換矩陣的加權平均。
+</p>
+<p>
+
+<b>證明</b>:
+    此處, 利用定理 7 <!--%\ref{thm:marriage problem}-->
+    結婚問題的結果推導伯克霍夫定理。給定雙重隨機矩陣 $D$, 考慮
+    $1\le j\le n$, 令 $S_j$ 為能使得 $d_{jk}\gt 0$ 的所有 $k$
+    所成的集合, 則對任意集合 $A\subset \{1, 2, \ldots, n\}$ 必有
+    $$|A|=\sum_{j\in A}\sum_{k\in S_j}d_{jk}\le\sum_{k\in\cup_{j\in
+    A}S_j}\sum_{1\le j\le n}d_{jk}=\bigg|\bigcup_{j\in A}S_j\bigg|$$
+    根據定理 7, <!--% \ref{thm:marriage problem},-->
+    必存在 $\{S_1, S_2, \ldots, S_n\}$ 
+	的 SDR, 所以我們可以定義排列 $\sigma$ 藉由設定 $\sigma(j)$
+    為 $S_j$ 中的代表值(representative), 以Weyl
+    的例子說明則相當於將向量中的第 $j$ 個分量取為第 $j$
+    個女生所配對到的男生。接下來, 令 $P_{\sigma}$ 為 $\sigma$
+    的置換矩陣並令 $\alpha = \min d_{j\sigma(j)} \gt  0$。可知, 若
+    $\alpha=1$ 則 $D$ 為一置換矩陣, 故得證。但若
+    $\alpha\lt 1$, 則考慮定義一個新的矩陣 $D' = (1 - \alpha)^{-1}(D -
+    \alpha P_{\sigma})$, 可改寫為 $$D = \alpha P_{\sigma} + (1 -
+    \alpha)D'$$ 觀察可知 $D'$ 依然為一雙重隨機矩陣, 且矩陣中含有比 $D$
+    中更多的 $0$。最後, 可利用數學歸納法完成此定理的證明。 $\Box$
+
+</p>
+<p>
+
+<!--%定理 蓋的稠密性-->
+
+<b>定理 9</b> (蓋的稠密性):
+設向量
+    $\alpha$, $\beta\in{\mathbb{R}}^n$, $\alpha\prec\beta$, 且
+    $\alpha_{\downarrow}\neq\beta_{\downarrow}$, 則必定存在
+    $\gamma\in{\mathbb{R}}^n$, 使得 $\alpha\prec\gamma\prec\beta$。
+</p>
+<p>
+
+<b>證明</b>:
+    不失一般性考慮向量 $\alpha$, $\beta$ 有
+    $\alpha\prec\beta$, 且
+    $\alpha_1\ge\alpha_2\ge\cdots\ge\alpha_n$,
+    $\beta_1\ge\beta_2\ge\cdots\ge\beta_n$, 假設其中有 $N$
+    個分量不相等。考慮 $N\ge 2$, 則根據蓋的定義可知, 必定存在整數
+    $1\le j\lt k\le n$, 使得
+    \begin{equation}\label{equ:muirhead-11}
+        \beta_j\gt \alpha_j,\quad
+        \beta_k\lt \alpha_k,\quad\text{且}\quad \beta_s=\alpha_s,\quad
+        \forall j\lt s\lt k
+    \end{equation}
+</p>
+<p>
+    考慮類似定理 6 的證明方式, 取
+    $\rho=\left(\beta_j+\beta_k\right)/2$, $\tau=\beta_j-\rho$, 故
+    $\beta_j=\rho+\tau$, $\beta_k=\rho-\tau$, 接著取
+    $\sigma=\max\{|\alpha_k-\rho|, |\alpha_j-\rho|\}$, 如圖 1 <!--\ref{fig:muirhead-3}-->
+    。接著取 $\gamma$ 滿足
+    $$\gamma_k=\beta_k+c(\tau-\sigma),\quad\gamma_j=\beta_j-c(\tau-\sigma),
+    \quad \gamma_t=\beta_t,\quad t\neq j,\quad t\neq k$$ 其中
+    $c\in(0,1)$, 故 $\gamma\neq\alpha$,
+    $\gamma\neq\beta$。接著驗證此 $\gamma$ 是否符合我們的需求
+    \begin{align*}
+        &amp;\sum_{i=1}^t\alpha_i\le \sum_{i=1}^t\gamma_i=\sum_{i=1}^t\beta_i,\quad 1\le t\lt j \\
+        &amp;\sum_{i=1}^t\alpha_i\le \sum_{i=1}^t\gamma_i\le\sum_{i=1}^t\beta_i,\quad j\le t\lt k \\
+        &amp;\sum_{i=1}^t\alpha_i\le \sum_{i=1}^t\gamma_i=\sum_{i=1}^t\beta_i,\quad k\le t\lt  n \\
+        &amp;\sum_{i=1}^n\alpha_i=   \sum_{i=1}^n\gamma_i=\sum_{i=1}^n\beta_i
+    \end{align*}
+    故有 $\alpha\prec\gamma\prec\beta$, 得證。 $\Box$
+
+</p>
+
+
+
+ <a name="300"><h3>3. 舒爾凸函數</h3></a>
+
+<p>
+<!--%\section{舒爾凸函數\label{subsec:schur-convex}}-->
+
+ 要清楚的了解 Karamata 不等式, 除了熟悉蓋的觀念外, 由於 Karamata
+不等式為舒爾凸函數的一個重要特例,  因此, 底下從較為廣義的舒爾凸函數談起。
+</p>
+<p>
+<!--%定義  舒爾凸函數的定義 definition of Schur convex-->
+
+
+<b>定義 10</b>: <!--%    \label{dfn:majorization-schur-convex}-->
+ 設 $f:{\cal D}\to{\mathbb{R}}$,
+    ${\cal D}\subseteq{\mathbb{R}}^n$, $\alpha$, $\beta\in {\cal D}$, 且
+    $\alpha\prec\beta$, 若函數 $f$ 滿足
+</p><ul type="none">
+      <li>(i)
+      $f(\alpha)\le f(\beta)$, 稱 $f$ 為在 ${\cal D}$ 上的舒爾凸函數 Schur convex function。
+      </li><li>(ii)
+      $f(\alpha)\ge f(\beta)$, 稱 $f$ 為在 ${\cal D}$ 上的舒爾凹函數 Schur concave function。
+  </li></ul>
+
+<p></p>
+<p>
+首先介紹一個可用舒爾凸函數得到的不等式。
+
+
+
+</p>
+<p>
+<!--% majorization-ex-1-->
+
+
+<b>例 1</b> ($1971$ American Mathematical Monthly problem E2284): <!--% % Steele The Cauchy-Schwarz Master Class p.192  [$1971$ American Mathematical Monthly problem E2284 ] \label{ex:walker}-->
+    設 $a$, $b$, $c$ 為正實數, $x=b+c-a$, $y=a+c-b$, $z=a+b-c$, 且
+    $x$, $y$, $z\ge 0$, 試證
+    $$\frac{1}{a}+\frac{1}{b}+\frac{1}{c}\le\frac{1}{x}+\frac{1}{y}+\frac{1}{z}$$
+</p>
+<p>
+
+
+<b>證明</b>:
+    因為對稱性, 故不失一般性, 假設 $a\le b\le c$, 則可觀察到有
+    $a\le b+c-a=x$, $a+b\le 2c=x+y$, 且 $a+b+c=x+y+z$, 所以可以得到
+    $(a, b, c)\prec(x,y,z)$。接著, 若可以得到
+    $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$
+    為一舒爾凸函數, 則欲求的不等式便可利用定義 10 <!--%\ref{dfn:majorization-schur-convex}-->
+    輕鬆得到。
+    但問題是, 要如何說明一給定函數為舒爾凸函數呢？ $\Box$
+
+</p>
+<p>
+以下介紹判斷一函數是否為舒爾凸函數最常用的一個方法--舒爾準則。這個方法是由 <reflin data-rlink="Schur1923"><a class="Schur1923"></a></reflin> 提出, 但直至今日, 它依舊是判斷舒爾凸函數最常用的工具。
+</p>
+<p>
+<!--%舒爾準則 Schur Criterion-->
+
+<b>定理 11</b> (舒爾準則 ({Schur Criterion})): <!--%    [\indexb{舒爾準則}{Schur Criterion}] \label{thm:schur-criterion}-->
+    給定一對稱且連續可微的函數 $f:(a,b)^n\to{\mathbb{R}}$, 此函數 $f$
+    為舒爾凸函數若且唯若對於 $1\le j\lt k\le n$ 及
+    $\mathbf{x}\in(a,b)^n$ 滿足
+    $$0\le(x_j-x_k)\left(\frac{\partial f(\mathbf{x})}{\partial x_j}
+    -\frac{\partial f(\mathbf{x})}{\partial x_k}\right)$$
+    若滿足的不等式為此不等式的變號, 則稱函數 $f$ 為舒爾凹函數。
+</p>
+<p>
+
+在證明舒爾準則之前, 先介紹一個符號, 以簡化證明的過程。
+</p>
+<p>
+<!--% 定義 遞減排列向量-->
+
+<b>
+定義 12</b>:<!-- %    \label{dfn:decrease-vector}-->
+設 $\mathbf{w}=(w_1, w_2, \ldots,
+    w_n)$ 為 $n$ 維向量, 且 $w_1\ge w_2\ge\cdots \ge w_n$, 定義
+    $$\tilde{w}_j=w_1+w_2+\cdots+w_j,\quad j=1,2,\ldots, n$$ 並定義
+    $$\tilde{\mathbf{w}}=(\tilde{w}_1,\tilde{w}_2,\ldots, \tilde{w}_n)$$
+
+</p>
+<p>
+從上述的定義可觀察到, 對任意兩組 $n$ 維向量 $\mathbf{x}\prec \mathbf{y}$
+成立, 若且唯若 $\tilde{x}_j\le\tilde{y}_j$, $1\le j\lt n$,  且 $\tilde{x}_n=\tilde{y}_n$。
+</p>
+<p>
+<b>
+證明</b>:
+    根據假設 $f$ 為對稱函數, 可知 $f$ 在 $(a,b)^n$
+    上為舒爾凸函數若且唯若其在 ${\mathcal{B}}=(a,b)^n\cap{\cal D}$
+    也為舒爾凸函數, 其中 ${\cal D}=\{(x_1, x_2, \ldots, x_n)\mid
+    x_1\ge x_2\ge\cdots \ge x_n\}$。設集合 $\tilde{\mathcal{B}} =
+    \{\tilde{\mathbf{x}} :
+    \mathbf{x}\in\mathcal{B}\}$, 則可定義新的函數 $\tilde{f} :
+    \tilde{\mathcal{B}}\to{\mathbb{R}}$, 其中對於所有的
+    $\tilde{\mathbf{x}}\in\tilde{\mathcal{B}}$ 有
+    $\tilde{f}(\tilde{\mathbf{x}}) = f(\mathbf{x})$。
+</p>
+<p>
+    注意對
+    $\mathbf{x}$, $\mathbf{y}\in\mathcal{B}$, 當 $\mathbf{x}\prec
+    \mathbf{y}$ 時, $f(\mathbf{x}) \le f(\mathbf{y})$
+    成立若且唯若對 $\tilde{\mathbf{x}}$,
+    $\tilde{\mathbf{y}}\in\tilde{\mathcal{B}}$ 有
+    $\tilde{f}(\tilde{\mathbf{x}}) \le
+    \tilde{f}(\tilde{\mathbf{y}})$。換句話說, $f$ 在
+    $\mathcal{B}$ 上為舒爾凸函數若且唯若 $\tilde{f}$ 的前 $n-1$
+    個分量在 $\tilde{\mathcal{B}}$ 上為一非遞減函數。 又因為 $f$
+    為連續可微函數, 所以 $f$ 為舒爾凸函數若且唯若在
+    $\tilde{\mathcal{B}}$ 內的每一個 $\tilde{\mathbf{x}}$ 皆有
+    \begin{equation}\label{equ:majorization-1}
+        0\le\frac{\partial \tilde{f}(\tilde{\mathbf{x}})}{\partial
+        \tilde{x}_j},\quad 1\le j\lt n
+    \end{equation}
+</p>
+<p>
+    更明確的說, 因為 $\tilde{f}(\tilde{\mathbf{x}}) =
+    f(\tilde{x}_1, \tilde{x}_2 - \tilde{x}_1, \ldots, \tilde{x}_n -
+    \tilde{x}_{n-1})$, 可根據 鏈鎖律(chain rule) 將
+    \eqref{equ:majorization-1} 改寫為
+    \begin{equation}\label{equ:majorization-2}
+        0\le\frac{\partial \tilde{f}(\tilde{\mathbf{x}})}{\partial
+        \tilde{x}_j}=\frac{\partial f(\mathbf{x})}{\partial
+        x_j}-\frac{\partial f(\mathbf{x})}{\partial x_{j+1}},\quad 1\le
+        j\lt n
+    \end{equation}
+    所以, 若將 \eqref{equ:majorization-2} 中的下標 $j$ 由 $1\le
+    j\lt k\le n$ 做加總, 則可得到
+    \begin{equation}\label{equ:majorization-3}
+        0\le\frac{\partial f(\mathbf{x})}{\partial
+        x_j}-\frac{\partial f(\mathbf{x})}{\partial
+        x_{k}},\quad\mathbf{x}\in \mathcal{B}
+    \end{equation}
+    最後, 根據 $f$ 在 $(a,b)^n$ 上的對稱性, \eqref{equ:majorization-3} 的條件等價於
+    \begin{equation}\label{equ:majorization-4}
+        0\le(x_j-x_k)\left(\frac{\partial f(\mathbf{x})}{\partial
+            x_j}-\frac{\partial f(\mathbf{x})}{\partial
+        x_{k}}\right),\quad\mathbf{x}\in (a, b)^n
+    \end{equation}
+    故得證。 $\Box$
+</p>
+<p>
+
+有了舒爾準則, 再回頭討論例 1,<!-- % \ref{ex:walker},-->
+取函數 $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$。
+對此函數, 考慮舒爾準則, 可得對 $1\le j\lt k\le n$
+\begin{align*}
+    (t_j-t_k)\left(\frac{\partial f(\mathbf{t})}{\partial t_j}-
+    \frac{\partial f(\mathbf{t})}{\partial t_k}\right)
+    =(t_j-t_k)\left(-t_j^{-2}+t_k^{-2}\right)\ge0
+\end{align*}
+所以 $f(t_1,t_2,t_3)=\frac{1}{t_1}+\frac{1}{t_2}+\frac{1}{t_3}$
+為一舒爾凸函數, 故例 1 <!--
+ef{ex:walker}-->
+得證。$\Box$
+</p>
+<p>
+<!--% majorization-ex-2-->
+
+<b>
+例 2</b>: <!--% Steele The Cauchy-Schwarz Master Class p.204 ex 13.1    \label{ex:majorization-2}-->
+ 設 $x$, $y$, $z$ 為正實數, 試證
+    $$xyz\le\left(\frac{x}{2}+\frac{y}{3}+\frac{z}{6}\right)\left(\frac{x}{3}+\frac{2y}{3}\right)
+    \left(\frac{x}{6}+\frac{5z}{6}\right)$$
+</p>
+<p>
+
+
+
+<b>
+證明</b>:
+    觀察欲證之不等式, 首先令 $(a, b, c)$ 滿足下述等式
+    $$\begin{bmatrix}~a~\\~b~\\~c~\end{bmatrix}=\begin{bmatrix}~\frac{1}{2}~&amp;~\frac{1}{3}~&amp;~\frac{1}{6}~\\
+    \frac{1}{3}&amp;\frac{2}{3}&amp;0\\
+        \frac{1}{6}&amp;0&amp;\frac{5}{6}\end{bmatrix}\begin{bmatrix}~x~\\~y~\\~z~\end{bmatrix}$$ 根據定理 5 <!--%   \ref{thm:convexhull-majorization}-->
+        可知 $(a,b,c)\prec(x,y,z)$。取函數 $f(t_1,t_2,t_3)=t_1t_2t_3$,
+        $t_1$, $t_2$, $ t_3\gt 0$, 考慮舒爾準則, 可得對 $1\le j\lt k\le 3$
+    \begin{align*}
+        (t_j-t_k)\left(\frac{\partial f(\mathbf{t})}{\partial t_j}-
+        \frac{\partial f(\mathbf{t})}{\partial t_k}\right)
+        &amp;=(t_j-t_k)\left(\prod_{i=1,2,3;i\neq j}t_i-\prod_{i=1,2,3;i\neq
+        k}t_i\right)\\
+        &amp;=(t_j-t_k)\left(\frac{t_1t_2t_3}{t_j}-\frac{t_1t_2t_3}{t_k}\right) \le 0
+    \end{align*} 
+    所以當 $t_1$, $t_2$,
+        $t_3\gt 0$ 時, $f(t_1,t_2,t_3)=t_1t_2t_3$
+    為一舒爾凹函數, 最後將 $(a,b,c)$, $(x,y,z)$ 代回函數 $f$
+\begin{align*}
+        f(x,y,z) &amp; \le f(a,b,c)\\
+		
+		
+    \Rightarrow
+    xyz &amp; \le \left(\frac{x}{2}+\frac{y}{3}+\frac{z}{6}\right)\left(\frac{x}{3}+\frac{2y}{3}\right)
+    \left(\frac{x}{6}+\frac{5z}{6}\right)\end{align*}
+    故得證。$\Box$
+</p>
+<p>
+
+<!--% majorization-ex-19-->
+
+<b>
+例 3</b>: <!--%% Steele The Cauchy-Schwarz Master Class p.204 ex 13.1    \label{ex:majorization-19}-->
+ 設 $x$, $y$, $z$ 為正實數, 試證
+    $$\left(\frac{2}{y+z}\right)^5+\left(\frac{6}{3x+y+2z}\right)^5+\left(\frac{6}{3x+2y+z}\right)^5\le\frac{1}{x^5}+\frac{1}{y^5}+\frac{1}{z^5}$$
+
+</p>
+<p>
+
+<b>
+證明</b>:
+    觀察欲證之不等式, 首先令 $(a, b, c)$ 滿足下述等式
+    $$\begin{bmatrix}~a~\\~b~\\~c~\end{bmatrix}=\begin{bmatrix}~0~&amp;~\frac{1}{2}~&amp;~\frac{1}{2}~\\
+        \frac{1}{2}&amp;\frac{1}{6}&amp;\frac{1}{3}\\
+        \frac{1}{2}&amp;\frac{1}{3}&amp;\frac{1}{6}\end{bmatrix}\begin{bmatrix}~x~\\~y~\\~z~\end{bmatrix}$$
+        根據定理 5 <!--%   \ref{thm:convexhull-majorization}-->
+        可知
+        $(a,b,c)\prec(x,y,z)$。取函數
+        $f(t_1,t_2,t_3)=\dfrac{1}{t_1^5}+\dfrac{1}{t_2^5}
+        +\dfrac{1}{t_3^5}$,
+        $t_1$, $t_2$, $t_3\gt 0$, 考慮舒爾準則, 可得對 $1\le j\lt k\le 3$
+    \begin{align*}
+        (t_j-t_k)\left(\frac{\partial f(\mathbf{t})}{\partial t_j}-
+        \frac{\partial f(\mathbf{t})}{\partial t_k}\right)
+        =(t_j-t_k)\left(5t_k^{-6}-5t_j^{-6}\right)\ge0
+    \end{align*}
+    所以當 $t_1$, $t_2$, $t_3\gt 0$ 時,
+    $f(t_1,t_2,t_3)=\frac{1}{t_1^5}+\frac{1}{t_2^5}+\frac{1}{t_3^5}$
+    為一舒爾凸函數, 最後將 $(a,b,c)$, $(x,y,z)$ 代回函數 $f$
+    即可得證。 $\Box$
+    
+</p>
+<p>
+
+在介紹下一個例子前, 需要先定義一個新的函數。
+</p>
+<p>
+<!--%定義 基本對稱函數 elementary symmetric functions-->
+
+<b>
+定義 13</b>:<!-- %    \label{dfn:elementary symmetric functions}-->
+對任意實數 $x_1$,
+    $x_2$, $\ldots$, $x_n$, 考慮多項式
+    $$P(t)\!=\!(t\!-\!x_1)(t\!-\!x_2)\cdots(t\!-\!x_n)\!=\!t^n-e_1(\mathbf{x})t^{n-1}\!+\!\cdots\!+\!(-1)^ke_k(\mathbf{x})t^{n-k}
+    \!+\!\cdots\!+\!(-1)^ne_n(\mathbf{x})$$
+    稱 $e_i$, $i=1$, $2$, $\ldots$, $n$
+    為 $n$ 變數 $x_1$, $x_2$, $\ldots$, $x_n$ 的 $i$
+    階基本對稱函數(elementary symmetric functions), 其中
+    $$e_k(\mathbf{x})=e_k(x_1, x_2, \ldots, x_n)=\sum_{1\le i_1\lt i_2\lt \cdots\lt i_k\le n}
+    x_{i_1}x_{i_2}\cdots x_{i_k}$$
+</p>
+<p>
+
+例如：
+    \begin{align*}
+    e_1(x_1,x_2,x_3,x_4) &amp;= x_1 + x_2 + x_3 + x_4\\
+    e_2(x_1,x_2,x_3,x_4) &amp;= x_1x_2 + x_1x_3 + x_1x_4 + x_2x_3 + x_2x_4 + x_3x_4\\
+    e_3(x_1,x_2,x_3,x_4) &amp;= x_1x_2x_3 + x_1x_2x_4 + x_1x_3x_4 + x_2x_3x_4\\
+    e_4(x_1,x_2,x_3,x_4) &amp;= x_1x_2x_3x_4
+    \end{align*}
+</p>
+<p>
+<!--% majorization-ex-20-->
+
+<b>
+例 4</b>: <!--%% Steele The Cauchy-Schwarz Master Class p.205 ex 13.4     \label{ex:majorization-20}-->
+證明 $e_k(\mathbf{x})$ 對
+    $\mathbf{x}\in[0,\infty)^n$
+    為一舒爾凹函數。
+</p>
+<p>
+
+
+<b>
+證明</b>:
+    觀察基本對稱函數, 已知其微分可寫成
+    \begin{equation}\label{equ:majorization-8}
+        \frac{\partial e_k(\mathbf{x})}{\partial x_s}=e_{k-1}(x_1,
+        x_2, \ldots, x_{s-1}, x_{s+1}, \ldots, x_n)
+    \end{equation}
+    接著觀察舒爾準則
+    \begin{eqnarray*}
+        &amp;&amp;\hskip -25pt (x_s-x_t)\left(\frac{\partial e_k(\mathbf{x})}{\partial
+        x_s}-\frac{\partial e_k(\mathbf{x})}{\partial x_t}\right)\\
+    &amp;=&amp;(x_s-x_t)\left(e_{k-1}(x_1, \ldots, x_{s-1}, x_{s+1},
+    \ldots,
+    x_n)-e_{k-1}(x_1, \ldots, x_{t-1}, x_{t+1}, \ldots, x_n)\right)\\
+    &amp;=&amp;-(x_s-x_t)^2e_{k-2}(x_1, \ldots, x_{s-1}, x_{s+1},\ldots,
+    x_{t-1}, x_{t+1},\ldots, x_n) \le 0
+    \end{eqnarray*}  
+	可發現 $e_k(\mathbf{x})$ 在 $\mathbf{x}\in[0,\infty)^n$
+    為舒爾凹函數。 $\Box$
+</p>
+<p>
+
+<!--% majorization-ex-21-->
+
+<b>
+例 5</b>: <!--%% Steele The Cauchy-Schwarz Master Class p.206 ex 13.5  \label{ex:majorization-21}-->
+    用來測量資料離散程度的方式有很多, 舉例來說, 在統計上通常使用樣本變異數
+    $$s(\mathbf{x})=\frac{1}{n-1}\sum_{j=1}^n(x_j-\bar{x})^2$$ 此處
+    $\bar{x}=(x_1+x_2+\cdots+x_n)/n$, $\mathbf{x}\in{\mathbb{R}}^n$, $n \ge
+    2$。 而在資訊理論中, 使用熵(entropy)
+    $$h(\mathbf{p})=-\sum_{k=1}^np_k\log{p_k}$$
+    來測量機率分佈 $(p_1, p_2, \ldots, p_n)$ 的離散程度, 此處
+    $p_k\ge0$ 且 $p_1 + p_2 + \cdots+ p_n = 1$。試證樣本變異數
+    $s(\mathbf{x})$ 為舒爾凸函數而熵 $h(\mathbf{p})$ 為舒爾凹函數。
+
+</p>
+<p>
+
+<b>
+證明</b>:
+    對樣本變異數 $s(\mathbf{x})$ 觀察舒爾準則
+    \begin{align*}
+    (x_j-x_k)\left(\frac{\partial s(\mathbf{x})}{\partial
+    x_j}-\frac{\partial s(\mathbf{x})}{\partial x_k}\right)
+    =2(x_j-x_k)^2/(n-1)\ge0
+    \end{align*}
+    可知樣本變異數 $s(\mathbf{x})$ 為舒爾凸函數。接著對函數熵
+    $h(\mathbf{p})$ 觀察舒爾準則, 有
+    $$
+        (p_j-p_k)\left(h_{p_j}(\mathbf{p})-h_{p_k}(\mathbf{p})\right)
+        =(p_j-p_k)\left(\log{p_k}-\log{p_j}\right) \le 0
+    $$ 
+    故知熵 $h(\mathbf{p})$ 為舒爾凹函數, 故得證。 $\Box$
+
+
+</p>
+
+
+ <a name="400"><h3>4. Karamata 不等式</h3></a>
+<p>
+
+<!--%\section{Karamata 不等式\label{subsec:majorization-inequality}}\qquad-->
+
+舒爾凸函數在不等式的題目裡, 有相當廣泛的應用, 但其中最有名的一個特例, 即為  Karamata 不等式。
+
+<!--%定理 Karamata 不等式 theorem of Majorization Inequality-->
+</p>
+<p>
+<b>
+定理 14</b>: (Karamata 不等式 (Karamata Inequality)) <!--%    [\indexb{Karamata 不等式}{Karamata Inequality}]    \label{thm:karamata inequality}-->
+對函數
+</p>
+<p>
+    $\phi:(a,b)\to{\mathbb{R}}$, 定義函數 $f:(a,b)^n\to{\mathbb{R}}$ 為
+    $$f(x_1, x_2, \ldots, x_n)=\sum_{k=1}^n\phi(x_k)$$
+    則對任意 $\alpha$, $\beta\in(a, b)^n$ 且 $\alpha\prec\beta$ 有
+    \begin{align*}
+        &amp;\sum_{k=1}^n\phi(\alpha_k)\le\sum_{k=1}^n\phi(\beta_k),\quad
+        \text{當}\ \phi:(a,b)\to{\mathbb{R}}\ \text{為凸函數}\\
+        &amp;\sum_{k=1}^n\phi(\alpha_k)\ge\sum_{k=1}^n\phi(\beta_k),\quad
+        \text{當}\ \phi:(a,b)\to{\mathbb{R}}\ \text{為凹函數}
+    \end{align*}
+    若 $\phi$ 為嚴格凸（凹）函數, 則等號成立若且唯若
+     $\alpha_{\downarrow}=\beta_{\downarrow}$。
+
+</p>
+<p>
+
+<b>
+證明</b>:
+    此處證明當 $\phi$
+    為凸函數的情況, 凹函數同理可證。首先考慮函數 $\phi$ 的可微性。
+
+</p><ul type="none">
+    <li>情形一:
+    $\phi$ 為可微函數<br>
+        觀察函數 $f(\mathbf{x})$, 利用舒爾準則可得到
+            $$\left(x_j\!-\!x_k\right)\left(\frac{\partial
+                f(\mathbf{x})}{\partial
+                x_j}\!-\!\frac{\partial f(\mathbf{x})}{\partial x_k}\right)
+                \!=\!(x_j\!-\!x_k)\left(\phi'(x_j)\!-\!\phi'(x_k)\right)\!\ge\! 0 \
+            (\text{因為}\ \phi\ \text{為凸函數})$$
+            故 $f(\mathbf{x})$ 為一舒爾凸函數, 又
+            $\alpha\prec\beta$, 所以有
+            $$\sum_{k=1}^n\phi(\alpha_k)=f(\alpha)\le f(\beta)=\sum_{k=1}^n\phi(\beta_k)$$
+            若 $\phi$ 為嚴格凸函數, 則等號成立若且唯若
+             $\alpha_{\downarrow}=\beta_{\downarrow}$。 $\Box$
+    </li><li>情形二:
+    $\phi$ 不為可微函數<br>
+        由於 $\alpha\prec\beta$, 故根據定理 6 <!--
+ef{thm:muirhead-double D}-->
+        可知存在一雙重隨機矩陣 $D=\{d_{jk}\}$, 使得
+        $\alpha=D\beta$, 或寫成
+        $$\alpha_j=\sum_{k=1}^nd_{jk}\beta_k$$
+        接著應用延森不等式在凸函數 $\phi$ 上, 得
+        \begin{equation}\label{equ:majorization-5}
+            \phi(\alpha_j)\le\sum_{k=1}^nd_{jk}\phi(\beta_k)
+        \end{equation}
+        最後, 對 \eqref{equ:majorization-5} 中的下標 $j$ 做加總, 發現
+        $$\sum_{j=1}^n\phi(\alpha_j)\le\sum_{j=1}^n\sum_{k=1}^nd_{jk}\phi(\beta_k)
+        =\sum_{k=1}^n \left\{\phi(\beta_k)\sum_{j=1}^nd_{jk}\right\}=\sum_{k=1}^n\phi(\beta_k)$$
+    </li></ul>
+        即為 Karamata 不等式的結果。若 $\phi$ 為嚴格凸函數, 則等號成立若且唯若 $\alpha_{\downarrow}=\beta_{\downarrow}$。 $\Box$
+<p></p>
+<p>
+
+
+之前提到過, 延森不等式通常只能提供關於凸函數或凹函數的
+其中一個極值(極大值或極小值), 而 Karamata
+不等式則能在某些情況下, 同時給出兩個極值。 觀察 Karamata
+不等式的定理, 可發現 Karamata 不等式的大小關係與給定的兩向量 $\alpha$,
+$\beta$ 彼此之間的蓋 "$\prec$" 有十分密切的關係。
+
+</p>
+<p>
+
+觀察下面的式子, 雖然利用蓋的定義可以輕易得到, 但卻是在 Karamata
+不等式中十分重要的結果。
+\begin{eqnarray*}
+    \left(\frac{1}{n},\frac{1}{n}, \ldots,\frac{1}{n}\right)&amp;\prec&amp;
+\left(\frac{1}{n-1},\ldots,\frac{1}{n-1},0\right)\prec\cdots\\
+&amp;\prec&amp;\left(\frac{1}{2},\frac{1}{2},0,\ldots,0\right)\prec(1,0,\ldots,0)
+\end{eqnarray*}
+或者, 更廣義的來說, 給定一組 $n$ 維向量 $\alpha=(\alpha_1, \alpha_2,
+\ldots, \alpha_n)$, 若 $\alpha_1+\alpha_2+\cdots+\alpha_n=s$, $\alpha_i\gt 0$,
+$i=1$, $2$, $\ldots$, $n$,  則必有
+$$
+\left(\frac{s}{n},\frac{s}{n},\ldots,\frac{s}{n}\right)\prec(\alpha_1,
+\alpha_2, \ldots, \alpha_n)\prec\left(s,0,\ldots,0\right)
+$$
+因此在總量固定, 且各分量皆不為負數的情況下,
+所能造出最集中的向量即為將總量集中在某一分量上的向量, 而最分散的向量,
+為將各分量取平均的向量。 套用在 Karamata 不等式上, 即為 Karamata
+不等式中所能求得的最大值及最小值。
+</p>
+<p>
+最後要介紹延森不等式, 延森不等式為 Karamata 不等式的一個特例。若取  $\alpha=(\bar{x}$, $\bar{x},\ldots, \bar{x})$, $\beta=(x_1, x_2, \ldots,
+x_n)$, 其中 $\bar{x}=\frac{x_1+x_2+\cdots+x_n}{n}$, 則因為 $(\bar{x},\bar{x},\ldots, \bar{x})\prec(x_1, x_2, \ldots$, $x_n)$, 故此時的 Karamata 不等式可寫成
+$$n\phi(\bar{x})\le\sum_{i=1}^n\phi(x_i)$$
+即為延森不等式。
+</p>
+<p>
+<!--% majorization-ex-3-->
+
+<b>
+例 6</b>: <!--%% 2000 Li Majorization Inequality p.2 ex 1    \label{ex:majorization-3}-->
+對銳角三角形 $ABC$, 試證
+    $$1\lt \cos A+\cos B+\cos C\le\frac{3}{2}$$ 等號何時成立？
+</p>
+<p>
+
+
+<b>
+證明</b>:
+    不失一般性, 假設 $A\ge B\ge C$, 則有 $A\ge\frac{\pi}{3}$ 且
+    $C\le\frac{\pi}{3}$。因為 $\frac{\pi}{2}\ge A\ge \frac{\pi}{3}$
+    且 $\pi\ge A+B=\pi-C\ge \frac{2\pi}{3}$, 所以
+    $\left(\frac{\pi}{2}, \frac{\pi}{2},
+    0\right)\succ(A,B,C)\succ\left(\frac{\pi}{3}, \frac{\pi}{3},
+    \frac{\pi}{3}\right)$。取函數 $f(x)=\cos x$, 因為 $f"(x)=-\cos x\le
+    0$, $x\in[0,\frac{\pi}{2}]$, 故在區間 $\left[0, \frac{\pi}{2}\right]$
+    中 $f(x)=\cos x$ 為凹函數, 故根據 Karamata 不等式, 有
+    \begin{eqnarray*}
+    1=\cos{\frac{\pi}{2}}+\cos{\frac{\pi}{2}}+\cos{0}&amp;\le&amp;\cos A+\cos
+    B+\cos C\\&amp;\le&amp;\cos{\frac{\pi}{3}}
+    +\cos{\frac{\pi}{3}}+\cos{\frac{\pi}{3}}=\frac{3}{2}
+    \end{eqnarray*}
+    考慮第一個不等式, 等號不會成立, 因為三角形中, 不會同時出現兩個直角。第二個不等式中,
+    等號成立若且唯若此三角形為正三角形。$\Box$
+
+</p>
+<p>
+<!--% majorization-ex-5-->
+
+<b>
+例 7</b>: <!--%% Steele The Cauchy-Schwarz Master Class problem 13.5     \label{ex:majorization-5}-->
+設 $x$, $y$, $z\in(0,1)$ 且
+    $\max(x,y,z)\le\frac{x+y+z}{2}\le 1$, 試證
+    $$\left(\frac{1+x}{1-x}\right)\left(\frac{1+y}{1-y}\right)\left(\frac{1+z}{1-z}\right)
+    \le\left(\frac{1+\frac{1}{2}(x+y+z)}{1-\frac{1}{2}(x+y+z)}\right)^2$$
+
+
+</p>
+<p>
+<b>
+證明</b>:
+    令 $s=\frac{x+y+z}{2}$, 則根據題意有
+    $(x,y,z)\prec(s,s,0)$。接著取
+    $$\phi(t)=\log\left(\frac{1+t}{1-t}\right)$$ 且因
+    $\phi"(t)=\frac{4t}{(t^2-1)^2}\gt 0$, $0\lt  t\lt  1$, 故知 $\phi(t)$ 在
+    $(0,1)$ 區間中為凸函數。 最後, 利用 Karamata 不等式
+    \begin{align*}
+        \log\left(\frac{1+x}{1-x}\right)+\log\left(\frac{1+y}{1-y}\right)
+        +\log\left(\frac{1+z}{1-z}\right)&amp;\le\log\left(\frac{1+s}{1-s}\right)+
+        \log\left(\frac{1+s}{1-s}\right)\\
+        \log\left(\frac{1+x}{1-x}\cdot\frac{1+y}{1-y}\cdot\frac{1+z}{1-z}\right)
+        &amp;\le\log\left(\frac{1+s}{1-s}\cdot\frac{1+s}{1-s}\right)\\
+        \left(\frac{1+x}{1-x}\right)\left(\frac{1+y}{1-y}\right)\left(\frac{1+z}{1-z}\right)
+        &amp;\le\left(\frac{1+s}{1-s}\right)^2
+        =\left(\frac{1+\frac{x+y+z}{2}}{1-\frac{x+y+z}{2}}\right)^2
+    \end{align*}
+    故得證。$\Box$
+</p>
+<p>
+
+<!--% majorization-ex-22-->
+
+<b>
+例 8</b> (生日問題): <!--%% Steele The Cauchy-Schwarz Master Class p.206 ex 13.7     [生日問題] \label{ex:majorization-22}-->
+ 隨機給定 $n$
+    個人, 且其生日視為在集合 $\{1, 2,
+    \ldots, 365\}$ 上獨立的均勻分佈, 試證明若 $n\ge
+    23$, 則其中有兩個或兩個以上的人生日相同的機率至少為
+    $1/2$。
+
+    考慮更廣義的情況, 若在沒有均勻假設的條件下, 試證明若 $n\ge 23$, 則其中有兩個或兩個以上的人生日相同的機率依舊至少為
+    $1/2$。
+
+</p>
+<p>
+
+<b>
+證明</b>:
+    首先, 假設此問題中考慮的一年皆為 $365$
+    天, 不考慮閏年。在均勻分配的假設下, 給定任意 $23$ 人,
+    則有兩個或兩個以上的人生日相同的機率為
+    $1-(1-1/365)\cdot(1-2/365)\cdots(1-22/365)\approx
+    0.5079$。考慮更一般的情況, 若沒有均勻分佈的假設, 令
+    $p_k$ 為一隨機抽取的人生日落在第 $k$ 天的機率, 且
+    $p_1+p_2+\cdots+p_{365}=1$。考慮機率 $1 - e_{23}(p_1, p_2,
+    \ldots, p_{365})$, 又
+    $\left(\frac{1}{365},\frac{1}{365},\ldots,\frac{1}{365}\right)\prec(p_1,
+    p_2, \ldots, p_{365})$, 根據例 4 <!--
+ef{ex:majorization-20}-->
+    基本對稱函數為一舒爾凹函數, 故有
+    \begin{eqnarray*}
+        e_{23}(p_1, p_2, \ldots, p_{365})&amp;\le&amp;
+    e_{23}\left(\frac{1}{365},\frac{1}{365},\ldots,\frac{1}{365}\right)\\
+    {\hbox{所以}} 1-e_{23}(p_1, p_2, \ldots, p_{365})&amp;\ge&amp;
+    1-e_{23}\left(\frac{1}{365},\frac{1}{365},\ldots,\frac{1}{365}\right)
+    \end{eqnarray*}
+    故得證。 關於此問題, 詳細的討論可參考 <reflin data-rlink="Clevenson1991"><a class="Clevenson1991"></a></reflin> 和
+    <reflin data-rlink="Proschan1992"><a class="Proschan1992"></a></reflin>。 $\Box$
+
+</p>
+
+<a name="500"><h3>參考文獻</h3></a>
+<div id="referdiv">
+<!--%
+%\addcontentsline{toc}{section}{參考文獻}
+%\begin{thebibliography}{99}-->
+
+<reff id="Arnold2007"><a name="Arnold2007"></a>
+    Arnold, B.C. (2007). 
+    Majorization: Here, there and everywhere.
+    <i>Statistical Science</i> <b>22</b> (3): 407. 
+
+    </reff>
+<reff id="Clevenson1991"><a name="Clevenson1991"></a>
+    Clevenson, M.L. and
+    Watkins, W. (1991). 
+    Majorization and the birthday inequality.<i>Mathematics Magazine</i> <b>64</b> (3): 183-188. 
+
+<!--%    \bibitem[Co\c{s}ni\c{t}\u{a} and F\u{a}nic\u{a} (1966)]{Cosnita1966}%
+%    Co\c{s}ni\c{t}\u{a}, C. and F\u{a}nic\u{a}, T. (1966). %
+%    \textit{Culegere de probleme de matematici pentru examenele de
+%    maturitate \c{s}i admitere i\^{n} i\^{n}va\u{t}a\u{m}i\^{n}tul superior}. %
+%    Bucure\c{s}ti: Editura Tehnic\u{a}.
+
+%    \bibitem[Daykin (1969)]{Daykin1969}%
+%    Daykin, D.E. (1969). %
+%    Problem 5685. \textit{Amer. Math Monthly} \textbf{76}, 835; see also
+%    \textit{Amer. Math.
+%    Monthly} \textbf{77} (1970), 782. %-->
+
+    </reff>
+<reff id="Proschan1992"><a name="Proschan1992"></a>
+    Joag-Dev, K. and Proschan, F. (1992). 
+    Birthday problem with
+    unlike probabilities. <i>Amer. Math.
+    Monthly</i> <b>99</b> (1): 10-12. 
+<!--
+%    \bibitem[Klamkin (1970)]{Klamkin1970}%
+%    Klamkin, M.S. (1970). %
+%    A physical application of a rearrangement
+%    inequality. \textit{Amer. Math.
+%    Monthly} \textbf{77} (1): 68-69. %
+
+%    \bibitem[Klamkin (1975)]{Klamkin1975}%
+%    Klamkin, M.S. (1975). %
+%    Extensions of the weierstrass product inequalities. II.
+%    \textit{Amer. Math.
+%    Monthly} \textbf{82}, 741-742. %-->
+
+    </reff>
+<reff id="Lorenz1905"><a name="Lorenz1905"></a>
+    Lorenz, M.O. (1905). 
+    Methods of measuring the concentration of
+    wealth. 
+    <i>Publications of the American Statistical Association</i>
+    <b>9</b> (70): 209-219.
+
+    </reff>
+<reff id="MarshallOlkin1979"><a name="MarshallOlkin1979"></a>
+    Marshall, A.W. and Olkin, I. (1979).
+   <i>Inequalities: Theory of Majorization and Its
+    Applications.</i> 
+    New York: Academic Press.
+
+    </reff>
+<reff id="MarshallOlkinArnold2009"><a name="MarshallOlkinArnold2009"></a>
+    Marshall, A.W., Olkin, I. and Arnold, B. (2009). 
+    <i>Inequalities: Theory of Majorization and Its Applications</i>, 2nd edition. 
+    Springer, New York. 
+
+<!--%    \bibitem[Nasser (1966)]{Nasser1966}%
+%    Nasser, J.I. (1966). %
+%    Problem E847. \textit{Amer. Math.
+%    Monthly} \textbf{73}, 82; see also \textit{Amer. Math.
+%    Monthly} \textbf{77} (1970) 524. %-->
+
+    </reff>
+<reff id="Schur1923"><a name="Schur1923"></a>
+    Schur, I. (1923). 
+    Über eine Klasse von Mittelbildungen mit Anwendungen
+    die Determinanten-Theorie Sitzungsber. Berlin. Math.
+    Gesellschaft 22, 9-20.
+    Issai Schur Collected Works (A. Brauer and H. Rohrbach, eds.)
+    Vol. II. pp. 416-427}. 
+    Berlin: Springer-Verlag, 1973.
+
+    </reff>
+<reff id="Steele2004"><a name="Steele2004"></a>
+    Steele, J.M. (2004). 
+  <i>The Cauchy-Schwarz Master Class: An Introduction to the
+    Art of Mathematical Inequalities</i>. 
+    Cambridge: Cambridge University Press.
+
+    </reff>
+<reff id="Weyl1949"><a name="Weyl1949"></a>
+    Weyl, H. (1949). 
+    Almost periodic invariant vector sets in a metric vector space. 
+    <i>Amer. J. Math.</i><b>71</b>, 178-205.
+
+    </reff>
+
+</div>
