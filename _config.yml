@@ -20,7 +20,7 @@ text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate"
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://github.com/hbghlyj/hbghlyj.github.io/
 baseurl : # does not include hostname
-title   : ✏️
+title   : 🏠
 tagline : 
 description: > # this means to ignore newlines until "Language & timezone"
 
