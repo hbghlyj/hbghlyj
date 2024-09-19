@@ -1,4 +1,5 @@
 ---
+mathjax: true
 tags: computer-algebra, euclidean-geometry
 ---
 <p>几何定理的机器证明, 自1945年出现了第一台电子计算机之后更是激起人们的关注.1948年, 波兰人Tarski解决实闭域初等几何定理可以机械化的证明 (见A.塔尔斯基, J.C.C.麦克铿, 初等代数和几何的判定法.北京:科学出版社, 1959, 陆钟万译) 用的是数理逻辑法, 虽然也给出实现这些证明的建议, 但离实现非常遥远, 并非切实可行.</p>
@@ -16,13 +17,13 @@ tags: computer-algebra, euclidean-geometry
 </p>
 第二步是消元.通过代表假设的多项式关系把代表结论多项式中的坐标逐个消去, 如果消元的结果为零, 即表明定理正确, 否则再作进一步检查.这一步完全是代数的, 即用多项式的消元法来验证.这一步完全可以通过计算机来完成.
 <p align="center" >
-  <svg width="400" height="200">
-    <path d="M0,173 h200 l100,-173 h-200 z" fill="none" stroke="black" stroke-width="2" />
-    <g transform="translate(0,173)">$A(0,0)$</g>
-    <g transform="translate(200,173)">$B(u_1,0)$</g>
-    <g transform="translate(300,0)">$C(u_2,x_1)$</g>
-    <g transform="translate(100,0)">$D(x_2,x_1)$</g>
-  </svg>
+<svg width="400" height="200" style="overflow:visible">
+<path d="M0,173 h200 l100,-173 h-200 z" fill="none" stroke="black" stroke-width="2" />
+<text dominant-baseline="hanging" text-anchor="end" x="0" y="173">A(0,0)</text>
+<text dominant-baseline="hanging" x="200" y="173">B(u<tspan baseline-shift="sub">1</tspan>,0)</text>
+<text x="300" y="0">C(u<tspan baseline-shift="sub">2</tspan>,x<tspan baseline-shift="sub">1</tspan>)</text>
+<text text-anchor="end" x="100" y="0">D(x<tspan baseline-shift="sub">2</tspan>,x<tspan baseline-shift="sub">1</tspan>)</text>
+</svg>
 </p>
 <b>例1</b> 求证:菱形对角线互相垂直
 <p>如图1, 将<i>A</i>放在原点, 则<i>B</i>的坐标为 (<i>u</i><sub>1</sub>, 0) , 表明<i>B</i>是任意给定的 (<i>u</i><sub>1</sub>为参数) , 由菱形定义, <i>AB</i>=<i>BC</i>, 故<i>C</i>仅有一个任意参数<i>u</i><sub>2</sub>, 而<i>D</i>点, 两个坐标都是未知的, 即<i>D</i> (<i>x</i><sub>2</sub>, <i>x</i><sub>1</sub>) , 由<i>AD</i>//<i>BC</i>, 类似 (1) 的方法得$x_1(u_2-u_1)-x_2x_1=0$, 又由 (3) 的方法<i>AB</i>=<i>AD</i>得$u_1^2-(x_2^2+x_1^2)=0$,<br>将这两个方程整理并三角型化 (即第一方程仅有一个未知量<i>x</i><sub>2</sub>, 第二方程有两个未知量<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>)<br>用Mathematica软件的语句, 将已知条件方程左边的多项式记为:</p>
