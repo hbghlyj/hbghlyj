@@ -1,0 +1,106 @@
+---
+mathjax: true
+tag: real-analysis
+---
+<p>We consider integrals of the form
+    \[
+    I_f(a, b)=∫_0^∞ \frac{f(a x)-f(b x)}{x} d x,
+    \]
+    where $f$ is a continuous function (real or complex) on $(0,∞)$ and $a,b>0$. If $f(x)$ tends to a non-zero limit at 0 , then the separate integrals of $f(ax)/x$ and $f(bx) / x$ diverge at 0, and a similar comment applies at infinity. The point is that under suitable conditions, the integral of the <i>difference</i> converges.
+</p>
+<!--more-->
+<p>The basic theorem is as follows. I do not know many books or articles where proofs are given: two references (for which I am grateful to Nick Lord) are [Fer, p. 134-135] and [Tr]</p>
+<p>
+    FRU1 THEOREM. Consider the following conditions:<br>
+    (C1) $f(x)→c_0$ as $x→0^+$;<br>
+    (C2) $f(x)→c_∞$ as $x→∞$;<br>
+    (C3) there exists $K$ such that $|F(x)|≤K$ for all $x>0$, where $F(x)=∫_0^x f(t)\mathrm{\ d}t$.<br>
+    Under conditions (C1) and (C2), we have
+    \[\tag1
+    I_f(a, b)=\left(c_0-c_∞\right)(\log b-\log a)
+    \]
+    Under conditions (C1) and (C3), we have
+    \[\tag2
+    I_f(a, b)=c_0(\log b-\log a)
+    \]
+</p>
+<i>Proof.</i> We may assume that $b>a$ : interchanging $a$ and $b$ then gives the case $b< a$. Let $0<δ< X$. The substitution $a x=y$ gives
+\[
+∫_δ^X \frac{f(ax)}{x} d x=∫_{a δ}^{a X} \frac{f(y)}{y} d y .
+\]
+So
+\begin{aligned}
+∫_δ^X \frac{f(a x)-f(b x)}{x} d x &=∫_{a δ}^{a X} \frac{f(y)}{y} d y-∫_{b δ}^{b X} \frac{f(y)}{y} d y \\
+&=∫_{a δ}^{b δ} \frac{f(y)}{y} d y-∫_{a X}^{b X} \frac{f(y)}{y} d y \\
+&=I(δ)-I(X)
+\end{aligned}
+where we write
+\[
+I(r)=∫_{a r}^{b r} \frac{f(y)}{y} d y
+\]
+for any $r>0$. Let $ε>0$ be given. Under condition (C1), there exists $δ_0>0$ such that if $0< y ≤ b δ_0$, then $\left|f(y)-c_0\right| ≤ ε$. Then for $δ ≤ δ_0$, we have $I(δ)=c_0(\log b-\log a)+r_1(δ)$, where
+\[
+r_1(δ)=∫_{a δ}^{b δ} \frac{f(y)-c_0}{y} d y,
+\]
+hence
+\[
+\left|r_1(δ)\right| ≤ ∫_{a δ}^{b δ} \frac{ε}{y} d y=ε(\log b-\log a) .
+\]
+So $I(δ)→c_0(\log b-\log a)$ as $δ→0^+$.
+<p>In exactly the same way, condition (C2) implies that $I(X)→c_{∞}(\log b-\log a)$ as $X→∞$</p>
+<p>
+    Under condition (C3), integration by parts gives
+    \[
+    I(X)=\left[\frac{F(y)}{y}\right]_{a X}^{b X}+∫_{a X}^{b X} \frac{F(y)}{y^2} d y,
+    \]
+    hence
+    \[
+    |I(X)| ≤ \frac{2 K}{a X}+K ∫_{a X}^{b X} \frac{1}{y^2} d y<\frac{3 K}{a X},
+    \]
+    so $I(X)→0$ as $X→∞$. (Of course, this also shows that $∫_1^{∞} \frac{f(x)}{x} d x$ converges; this statement could be taken as the hypothesis instead of (C3).
+    <span style="position:absolute;right:1em">□</span>
+</p>
+<p>In particular, $I_f(1, b)$ equals $\left(c_0-c_{∞}\right) \log b$ in case (1), and $c_0 \log b$ in case (2).</p>
+<p>
+    We record a number of particular examples which are transparently cases of (1) or (2), without repeatedly writing out the integral expressions:
+    \begin{array}cf(x) & I_f(a, b) \\ e^{-x} & \log b-\log a \\ 1 /\left(1+x^2\right) & \log b-\log a \\ \cos x & \log b-\log a \\ e^{-x} \cos x & \log b-\log a \\ \sin x / x & \log b-\log a \\ \tan ^{-1} x & \frac{π}{2}(\log a-\log b) \\ \tanh x & \log a-\log b\end{array}
+    Among these examples, $\cos x$ is the only one satisfying (C3), but not (C2). A simple alternative proof for this case is given in [Jam, p. 280].<br>Many further examples of Frullani integrals are given in [AABM].
+</p>
+<p>We now state a simple extension of the Theorem.</p>
+<p>
+    FRU2. Let $G(x)=\sum_{j=1}^n m_j f\left(a_j x\right)$, where $a_j>0$ for $1 ≤ j ≤ n$ and $\sum_{j=1}^n m_j=0$. If $f$ satisfies (C1) and (C2), then
+    \[
+    ∫_0^{∞} \frac{G(x)}{x} d x=\left(c_{∞}-c_0\right) \sum_{j=1}^n m_j \log a_j .
+    \]
+    If $f$ satisifes (C1) and (C3), the same applies with $c_{∞}$ replaced by 0.
+</p>
+Proof. Write $M_j=m_1+⋯+m_j$. By Abel summation, since $M_n=0$,
+\[
+G(x)=\sum_{j=1}^{n-1} M_j\left[f\left(a_j x\right)-f\left(a_{j+1} x\right)\right] .
+\]
+By $(1)$
+\[
+∫_0^{∞} \frac{G(x)}{x} d x=\left(c_{∞}-c_0\right) \sum_{j=1}^{n-1} M_j\left(\log a_j-\log a_{j+1}\right)=\left(c_{∞}-c_0\right) \sum_{j=1}^n m_j \log a_j
+\]
+Double integral method for (1).
+For monotonic $f$, the following is an alternative method for (1) (but not (2)). The method has been in circulation for a long time, at least for the special case $f(x)=e^{-x}$. For example, it can be seen in [Cou, p. 240].
+Note that for $x, y>0$
+\[
+\frac{1}{y} \frac{d}{d x} f(x y)=\frac{1}{x} \frac{d}{d y} f(x y)=f'(x y) .
+\]
+Hence
+\[
+∫_a^b f'(x y) d y=\left[\frac{1}{x} f(x y)\right]_{y=a}^b=\frac{f(b x)-f(a x)}{x}
+\]
+Since $f'(x)$ is of constant sign, reversal of the following double integral is justfied:
+\[
+-I_f(a, b)=∫_0^{∞} ∫_a^b f'(x y) d y d x=∫_a^b ∫_0^{∞} f'(x y) d x d y
+\]
+But
+So
+\[
+∫_0^{∞} f'(x y) d x=\left[\frac{1}{y} f(x y)\right]_{x=0}^{∞}=\frac{1}{y}\left(c_{∞}-c_0\right)
+\]
+\[
+-I_f(a, b)=\left(c_{∞}-c_0\right) ∫_a^b \frac{1}{y} d y=\left(c_{∞}-c_0\right)(\log b-\log a)
+\]
