@@ -1,5 +1,4 @@
 (function() {
-  var SOURCES = window.TEXT_VARIABLES.sources;
   function queryString() {
     // This function is anonymous, is executed immediately and
     // the return value is assigned to QueryString!
@@ -33,7 +32,7 @@
     };
   })();
 
-  window.Lazyload.js(SOURCES.jquery, function() {
+  window.Lazyload.js('https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js', function() {
     var $tags = $('.js-tags');
     var $articleTags = $tags.find('button');
     var $tagShowAll = $tags.find('.tag-button--all');
