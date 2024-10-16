@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: Integration
+excerpt: <a href="https://www.math.lsu.edu/~rich/NonMeasurableSets.pdf">NonMeasurableSets.pdf</a>
+---
+<p id="ex"><b>Exercise 0.0.1.</b> Prove the following theorem of Steinhaus. Suppose $A ⊂ ℝ$ is Lebesgue measurable and suppose its Lebesgue measure $l(A)>0$. Denote $A-A=\{x-y ∣ x ∈ A, y ∈ A\}$. Prove that $A-A$ contains an open interval around 0. (Hint: Let $f(x)=l((x+A) ∩ A)$. Show that $f$ is a continuous function of $x$, and find $f(0)$.)</p>
+With the help of Exercise <a href="#ex">0.0.1</a> we can prove a generalization of Example ??. We will show that every subset $P ⊆ ℝ$ of strictly positive measure must contain a non-measurable set.
+<p><b>Theorem 0.0.1.</b> If $P ∈ ℒ(ℝ)$ and if $l(P)>0$, then there exists a nonmeasurable subset of $P$.</p>
+<i>Proof.</i> Let $ℚ$ denote the set of all rational numbers, as usual. We will define again an equivalence relation on $ℝ$ by
+$$
+x ∼ y ⇔ x-y ∈ ℚ .
+$$
+By the Axiom of Choice, we can find a cross-section<sup style="border:solid thin red"><a href="#fn" style="text-decoration: none;">1</a></sup> Γ of the quotient space $ℝ / ∼$. Thus we can express the real line as the following disjoint union:
+$$
+ℝ=⋃_{q ∈ ℚ}(Γ+q)
+$$
+since if $γ+q=γ'+q'$ then $γ-γ' ∈ ℚ$. This would make $γ ∼ γ'$ and thus $γ=γ'$ since Γ is a cross-section of $ℝ / ∼$.<br>
+If $P ∩(Γ+q)$ were not Lebesgue measurable for some $q ∈ ℚ$, then we would be finished because $P$ would have a non-measurable subset. However, if $P ∩(Γ+q)=P_q ∈ ℒ(ℝ)$ for each $q ∈ ℚ$ then we observe that
+$$
+P_q-P_q ⊆(Γ+q)-(Γ+q)=Γ-Γ
+$$
+where $Γ-Γ$ is disjoint from the dense set $ℚ∖\{0\}$ for the reasons explained just above. Thus the difference $P_q-P_q$ of a supposedly Lebesgue measurable set with itself fails to include any open interval around 0. By Steinhaus's theorem (Exercise <a href="#ex">0.0.1</a>) $P_q$ must have measure zero. Hence $P$ itself is the union of countably many disjoint null sets, which contradicts the hypothesis that $l(P)>0$.
+<p style="border-top: solid thin;"><sup id="fn">1</sup>That is, Γ contains exactly one element of each equivalence class in ℝ.</p>
