@@ -1,0 +1,216 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: sheet 3 — MT 2022
+---
+<style>ol[type="a"]{padding-left: 20px;}ol.chapt3>li{counter-increment: li;}ol.chapt3>li::marker{content:"3."counter(li)" "}ol[type="a"]>li{counter-increment: a;}ol[type="a"]>li::marker{content:counter(a,lower-alpha)") "}</style>
+<ol class="chapt3">
+    <h3>further examples of plane autonomous systems</h3>
+<li>
+    Write the second-order ODE
+    \[
+    \ddot{x}-\dot{x}^2+x^2-x=0
+    \]
+    as a plane autonomous system. Find and classify the critical points of this system. Analyse each critical point in detail and hence sketch the phase plane including the arrows for the trajectories.<br>
+    Show that there are periodic orbits of the original ODE.<br>
+    [Hint: Either make the transformation $u=x+y, v=x-y$ and solve the resulting equation for $d u / d v$ to write the characteristics as level sets of a function and then argue graphically that these level sets are closed curves.<br>
+    Or exploit the symmetry of the phase plane about the $x$ axis to prove the claim.]<br>
+    <b>Solution.</b>
+    \begin{cases}
+    \dot x=y\\
+    \dot y=y^2-x^2+x
+    \end{cases}
+    Nullclines: $y=0$ and $y^2-x^2+x=0$<br>
+    Critical points: $(0,0)(1,0)$.
+    \[M=\pmatrix{0&1\\1-2x&2y}\]
+    At (0,0) eigenvalues ±1 ⇒ saddle. Eigenvectors $(±1,1)$. Two solutions $x=e^t,y=e^t;x=e^{-t},y=-e^{-t}⇒y=±x$ are trajectories.<br>
+    At (1,0) eigenvalues ±i ⇒ center. $\frac{∂X}{∂y}=1>0⇒$clockwise.<br>
+    Let $u=x+y, v=x-y,$
+    \begin{cases}
+    \dot u=u(1-v)\\
+    \dot v=(u-1)v
+    \end{cases}
+    Dividing, $\frac{du}{dv}=\frac{u(1-v)}{(u-1)v}⇒\frac{u-1}u\,du=\frac{1-v}v\,dv$.<br>
+    Integrating, $u+v-\ln uv$ is constant ⇒ $2x-\ln(x^2-y^2)$ is constant ⇒ $e^{-2x}(x^2-y^2)$ is constant.<br>For $0< c< e^{-2}$, the equation $e^{-2x}x^2=c$ have 2 solutions, so the trajectory intersects x-axis twice.<center>{% latex %}
+\usepackage{pgfplots}\pgfplotsset{compat=newest}
+\begin{tikzpicture}
+\begin{axis}[samples=50,axis lines=center,y tick label style={/pgf/number format/.cd,fixed,fixed zerofill,precision=2}]
+\addplot[domain=0:5]{x^2*exp(-2*x)};
+\addlegendentry{$x^2e^{-2x}$}
+\end{axis}
+\end{tikzpicture} 
+{% endlatex %}</center>
+    <a href="https://math.stackexchange.com/questions/666213">Periodic solutions to ODEs</a><br>
+    Time reversal symmetry: with $y↦-y,t↦-t$ we get exactly the same equations! The backward trajectory is precisely the vertical reflection of the forward trajectory, and they start and end at the same points.<br>
+    phase plane:
+    <center>{% latex %}
+\usetikzlibrary{decorations.markings}\usepackage{tikz}
+\begin{tikzpicture}
+\fill(1,0)circle(1pt)node[above]{1};
+\draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}}},scale=.5]plot[domain=-2:2]({sinh(\x)},{.5+cosh(\x)});
+\draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}}},scale=.5]plot[domain=-2:2]({-sinh(\x)},{-.5-cosh(\x)});
+\draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}}},scale=.5]plot[domain=-2:2]({-.5-cosh(\x)},{-sinh(\x)});
+\draw[postaction=decorate,decoration={markings,mark=at position .2 with {\arrowreversed{stealth}},mark=at position .3 with {\arrow{stealth}},mark=at position .7 with {\arrow{stealth}},mark=at position .8 with {\arrowreversed{stealth}}}](-2,-2)--(2,2)(-2,2)--(2,-2);
+\draw[gray,scale=.5]plot[domain=-2:2]({1+cosh(\x)},{sinh(\x)});
+\draw[gray,-stealth](-2.7,0)--(2.7,0)node[right]{$x$};
+\draw[gray,-stealth](0,-2.7)--(0,2.7)node[above]{$y$};
+\draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}},mark=at position .62 with {\arrowreversed{stealth}}}]plot[smooth]coordinates{(1.16071,-0.857787)(0.975089,-0.725572)(0.714286,-0.509184)(0.580357,-0.380784)(0.435128,-0.214286)(0.347596,0.0152746)(0.494052,0.285714)(0.740298,0.529809)(0.982143,0.73122)(1.22624,0.895155)(1.50467,1.0211)(1.78571,1.02554)(2.0249,0.811274)(2.15124,0.441985)(2.19117,0)(2.15124,-0.441985)(2.0249,-0.811274)(1.79971,-1.02239)(1.51786,-1.02564)(1.25,-0.911382)}--cycle plot[smooth]coordinates{(1.6777,-1.17282)(1.96429,-1.14735)(2.18006,-0.916666)(2.32143,-0.441898)(2.35357,-0.0514334)(2.32378,0.428571)(2.2184,0.835161)(2.00893,1.12054)(1.75991,1.18414)(1.50187,1.11727)(1.25,0.974894)(1.01544,0.803867)(0.781527,0.606699)(0.535714,0.368846)(0.347288,0.142857)(0.313925,-0.0691478)(0.423717,-0.250625)(0.567343,-0.40775)(0.714286,-0.54813)(0.892857,-0.705573)(1.13693,-0.895206)(1.39092,-1.06024)(1.6777,-1.17282)};
+\end{tikzpicture}
+{% endlatex %}</center>
+</li>
+<li>
+    Show that the system
+    \[
+    \frac{d x}{d t}=-y-x\left(x^2+y^2\right), \quad \frac{d y}{d t}=x-y\left(x^2+y^2\right)
+    \]
+    has no closed trajectories. Show that in polar coordinates the system becomes
+    \[
+    \frac{d r}{d t}=-r^3, \quad \frac{d θ}{d t}=1,
+    \]
+    and sketch the trajectories (you can solve this system explicitly).<br>
+    Show that the only critical point is the origin. Consider a linear approximation to the $(x, y)$ system in a neighbourhood of the origin and determine its type. Comment on any differences between the approximation and the exact behaviour.<br>
+    <b>Solution.</b>
+    \[\frac{∂X}{∂x}+\frac{∂Y}{∂y}=-4(x^2+y^2)< 0 ∀(x,y)≠(0,0)\]By Bendixson–Dulac Theorem, the system has no closed trajectories.
+    \begin{array}l
+    r^2=x^2+y^2⇒r\dot r=x\dot x+y\dot y=-(x^2+y^2)^2=-r^4⇒\dot r=-r^3\\
+    y=r\sinθ⇒\dot y=\dot r\sinθ+r\dotθ\cosθ⇒x-yr^2=-r^3\sinθ+r\dotθ\cosθ⇒\dotθ=1
+    \end{array}
+    Solving this system explicitly,
+    \begin{cases}
+    r=\left(2t+c_1\right)^{-1/2}\\
+    θ=t+c_2
+    \end{cases}
+    ∴ the trajectory has polar equation $r=\left(2θ+c\right)^{-1/2}$
+<center>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=3,samples=100]
+\foreach\t in{.6,.8,1}{\draw[domain=0:1080]plot(\x:{(2*rad(\x)+(\t)^(-2))^(-1/2)});\node at(\t,0)[below]{\t};}
+\draw[-stealth](-.5,0)--(1.3,0);
+\end{tikzpicture}
+{% endlatex %}</center>
+    Consider a linear approximation
+\[M=\begin{pmatrix}
+X_x&X_y\\
+Y_x&Y_y
+\end{pmatrix}=\begin{pmatrix}
+ -3 x^2-y^2 & -2 x y-1 \\
+ 1-2 x y & -x^2-3 y^2
+\end{pmatrix}\]
+At $(0,0)$,\[M=\begin{pmatrix}
+0&-1 \\
+1&0
+\end{pmatrix}\]∴ the origin is a center ∴ the linear system has closed trajectories, unlike the exact behaviour.
+</li>
+<h3>method of characteristics for first order PDEs</h3>
+<li>
+    Find $z(x, y)$ explicitly if
+    \[
+    -y z_x+x z_y=\frac{x z}{\sqrt{x^2+y^2}}
+    \]
+    and
+    \[
+    z(x, 0)=1 \quad \text { for } \quad x \geq 1 .
+    \]
+    Describe the projections of the characteristic curves upon the $(x, y)$-plane. In what region of the plane is $z(x, y)$ determined uniquely?<br>
+<b>Solution.</b><br>
+We introduce a parameter $s$ for the data, say $γ(s)=(s,0,1)$, for $s≥1$, and
+then solve the characteristic equations with this as data at $t=0$.
+\begin{align*}
+\frac{dx}{dt}&=-y&x&=-A\sin t+B\cos t&x(0, s)&=B=s \\
+\frac{dy}{dt}&=x&y&=A\cos t+B\sin t&y(0, s)&=A=0 \\
+\frac{dz}{dt}&=\frac{xz}{\sqrt{x^2+y^2}}&z&=C\exp\left(\frac{A\cos t+B\sin t}{\sqrt{A^2+B^2}}\right)&z(0, s)&=C\exp\left(A\over\sqrt{A^2+B^2}\right)=1
+\end{align*}
+So, $A=0,B=s,C=1$ and the parametric form of the solution is
+\begin{cases}x=s\cos t\\y=s\sin t\\z=\exp\left(\sin t\right)\end{cases}
+The characteristic projections are the circle with center $(0,0)$ and radius $s$. Given $s≥1$, the characteristic projections sweep out the exterior of unit circle.<br>$z(x,y)$ is 2π periodic, so $z(x,y)$ is determined uniquely on $\{(x,y)∈ℝ^2:x^2+y^2≥1\}$.
+$$z(x, y)=\exp\left(\frac{y}{\sqrt{x^2+y^2}}\right)$$
+</li>
+<li>
+    Find in parametric form the characteristics of the differential equation
+    \[
+    x z_x+y z_y=2 z,
+    \]
+    and describe the characteristic projections into the $(x, y)$-plane.<br>
+    Find in explicit form the solution satisfying $z=x^3$ on $x+y=1$.<br>
+    In what region of the plane is the solution uniquely determined by the data?<br>
+    <b>Solution.</b><br>
+    We introduce a parameter $s$ for the data, say $γ(s)=(s,1-s,s^3)$, and
+    then solve the characteristic equations with this as data at $t=0$.
+    \begin{align*}
+    \frac{dx}{dt}&=x&x&=A\exp t&x(0,s)&=A=s\\
+    \frac{dy}{dt}&=y&y&=B\exp t&y(0,s)&=B=1-s\\
+    \frac{dz}{dt}&=2z&z&=C\exp(2t)&z(0,s)&=C=s^3
+    \end{align*}
+    The characteristic projections are halflines starting at $(0,0)$. The solution is uniquely determined by the data if $x+y>0$.
+    $$z=\frac{A^3}{A+B}\exp(2t)=\frac{x^3}{x+y}$$
+    {% latex %}\usepackage{tikz}\begin{tikzpicture}
+\draw[-latex](-2,0)--(2.5,0)node[above]{$x$};
+\draw[-latex](0,-2)--(0,2.5)node[right]{$y$};
+\draw[dashed](-1.5,1.5)--(1.5,-1.5);
+\draw(-1,2)--(2,-1);
+\foreach\i in{-20,-10,10,20,30,40,50,60,70,80,100,110}\draw[blue](0,0)--(\i:{1.5*sec(45-\i)});
+\end{tikzpicture}
+{% endlatex %}
+</li>
+<li>
+    Consider the differential equation
+    \[
+    z_x-y z_y=-z
+    \]
+    with data $z(0, y)=\min(1, y)$ for $-∞< y< ∞$.<br>
+    (Here $\min (1, y)$ means the lesser of 1 and $y$, so the data is not smooth; draw its graph.)<br>
+    Show that the solution of this problem is the following:
+    \begin{aligned}
+    z &=\mathrm{e}^{-x} &\text{ for }y≥\mathrm{e}^{-x}\\
+    &=y &\text{ for } y<\mathrm{e}^{-x}
+    \end{aligned}
+    Try to sketch the solution surface.<br>
+    <b>Solution.</b><br>
+    We introduce a parameter $s$ for the data, say $γ(s)=(0,s,\min(1,s))$, and
+    then solve the characteristic equations with this as data at $t=0$.
+    \begin{align*}
+    \frac{dx}{dt}&=1&x&=t+A&x(0,s)&=A=0\\
+    \frac{dy}{dt}&=-y&y&=B\exp(-t)&y(0,s)&=B=s\\
+    \frac{dz}{dt}&=-z&z&=C\exp(-t)&z(0,s)&=C=\min(1,s)
+    \end{align*}
+    The characteristic projections are the curves $y=s\exp(-x)$.<table>
+<tr><td>For $y≥\mathrm{e}^{-x},s≥1$, we have $z=\exp(-t)=\exp(-x)$.<br>For $y<\mathrm{e}^{-x},s< 1$, we have $z=s\exp(-t)=y$.</td>
+<td>{% latex %}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.9}
+\begin{tikzpicture}
+\begin{axis}[colormap/cool,xlabel=\(x\),ylabel=\(y\),zlabel=\(z\)]
+\addplot3[
+mesh,
+domain=-5:5,
+]
+{min(exp(-x),y)};
+\end{axis}
+\end{tikzpicture}
+{% endlatex %}</td></tr></table>
+</li>
+<li>
+    Consider the differential equation
+    \[
+    x z_x+y z_y=(x+y) z
+    \]
+    with $z=1$ on $y=x^2+1 / 4$ for $x ≥ 0$. Parametrise the initial curve as $\left(s, s^2+1 / 4,1\right), s≥0$, and find the characteristics of the differential equation, $x=x(s, t), y=y(s, t), z=z(s, t)$.<br>
+    Identify the two separate segments of the data curve where the data is Cauchy. Find the domain of definition for each segment. On a sketch show the initial curve with these domains. For each segment solve the first two equations for $s$, and find $z$ explicitly for each segment. Comment on why we need to consider the segments separately.<br>
+    <b>Solution.</b>
+    \begin{align*}
+    \frac{dx}{dt}&=x&x&=A\exp t&x(0,s)&=A=s\\
+    \frac{dy}{dt}&=y&y&=B\exp t&y(0,s)&=B=s^2+1/4\\
+    \frac{dz}{dt}&=(x+y)z&z&=C\exp((A+B)\exp t)&z(0,s)&=C=\exp\left(-\left(s+\frac12\right)^2\right)
+    \end{align*}
+    The data is Cauchy when $0≠P(x, y)y_s-Q(x, y)x_s=s⋅2s-(s^2+1/4)⋅1=s^2-1/4⇒s≠1/2$.<br>
+    The two separate segments of the data curve are $0≤s< 1/2$ and $1/2< s≤1$. The domains of definition of both segments are $\{(x,y):y≥x≥0\}$
+    \[z=\exp\left(x+y-\left(s+\frac12\right)^2\right)=\exp\left(x+y-\left(\frac{x+y±\sqrt{y^2-x^2}}{2x}\right)^2\right)\]
+    We get different solutions for the 2 segments.<br>
+    {% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=2]
+\fill[gray!30](0,0)--(1.3,1.3)--(1.3,1.69)--(0,1.69)--cycle;
+\draw[blue,domain=0:1.2]plot(\x,{\x^2+1/4});
+\draw[dashed](0.5,0)node[below]{$\frac12$}--+(0,0.5);
+\draw[stealth-stealth](0,1.5)node[above]{$y$}--(0,0)--(1.3,0)node[right]{$x$};
+\end{tikzpicture}
+{% endlatex %}
+</li>
