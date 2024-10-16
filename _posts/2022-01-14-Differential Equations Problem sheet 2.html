@@ -3,7 +3,7 @@ mathjax: true
 tag: Differential Equations 2
 excerpt: sheet 2 — HT 2023
 ---
-<style>.c3{margin-left:20pt;text-indent:-16pt;text-align:justify;}.c2{padding-top:7pt;text-indent:-13pt;}p,ul{margin:0;}.b{background-color: beige;text-indent:0;white-space:pre-wrap}</style>
+<style>.c3{margin-left:20pt;text-indent:-16pt;text-align:justify;}.c2{padding-top:7pt;text-indent:-13pt;}.b{background-color: beige;text-indent:0;white-space:pre-wrap}</style>
 $\def\d{\mathrm{~d}}$
 <p class="c2">1. <b>Computing Green's functions.</b> Obtain the Green's function for the following operators using the delta-function construction: </p><p class="c3">(a) $ℒy=-y'', 0&lt;x&lt;1, y(0)-y'(1)=0, y(0)+y(1)=0$</p><p class="c3">(b) $ℒy=y''-y, 0&lt;x&lt;2π, y(0)-y(2π)=0, y'(0)-y'(2π)=0$</p><p class="c3">In (b), what goes wrong if we change the operator to $ℒy=y''+y$ (for the same boundary conditions)?</p><div class="b"><ol type="a"><li>The Green's function satisfies \(-g_{xx}=δ(x-ξ )\) with $g(0)-g'(1)=0,g(0)+g(1)=0$.
 So $g(x,ξ)=\begin{cases}Ax+B&0&lt;x&lt;ξ&lt;1\\Bx-2B&0&lt;ξ&lt;x&lt;1\end{cases}$
