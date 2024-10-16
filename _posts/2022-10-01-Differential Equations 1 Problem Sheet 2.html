@@ -1,0 +1,268 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: sheet 2 — MT 2022
+---
+<style>ol[type="a"]{padding-left: 20px;}ol.chapt2>li{counter-increment: li;}ol.chapt2>li::marker{content:"2."counter(li)" "}ol[type="a"]>li{counter-increment: a;}ol[type="a"]>li::marker{content:counter(a,lower-alpha)") "}</style>
+<ol class="chapt2">
+    <h2>Systems of non-linear ODEs.</h2>
+<li>
+    <ol type="a">
+    <li>
+        Let $\underline{g}:[a-h, a+h]→ℝ^2$ be any continuous function. Show that
+        \[
+        \left\|\int_a^x \underline{g}(t) d t\right\|_1≤\left|\int_a^x\left\|\underline{g}(t)\right\|_1 d t\right|
+        \]
+        where we define the integral component-wise and where $‖⋅‖_1$ is the 1-norm of vectors in $ℝ^2$, i.e. $\left\|\left(y_1, y_2\right)\right\|_1=\left|y_1\right|+\left|y_2\right|$.<br>
+        [<i>You may use that if $h:[a-h, a+h]→ℝ$ is continuous then $\left|\int_a^x h(t) d t\right|≤\left|\int_a^x{|h(t)|}d t\right|$.</i>]
+    </li>
+    <li>
+        Show that the functions
+        <table style="width: 600px;text-align:center">
+            <tr>
+                <td>i) $\underline{f}(x, \underline{y})=\left(\begin{array}{c}x \sin \left(y_2\right)+y_1 \\ y_2^2\end{array}\right)$</td>
+                <td>ii) $\underline{f}(x, \underline{y}):=\left(\begin{array}{c}y_2 \\ -\frac{y_1^2}{y_2}\end{array}\right)$</td>
+            </tr>
+        </table>
+        satisfy the Lipschitz condition
+        \[
+        \left\|\underline{f}(x, \underline{y})-\underline{f}(x, \underline{\tilde{y}})\right\|_1≤L\left\|\underline{y}-\underline{\tilde{y}}\right\|_1, \text { for all } x∈[-h, h], \quad \underline{y}, \underline{\tilde{y}}∈B_k\left(\left(1\atop1\right)\right)
+        \]
+        for suitable $L, h, k>0$ where $B_k(\underline{b}):=\left\{\underline{y}∈ℝ^2:\left\|\underline{y}-\underline{b}\right\|_1≤k\right\}$.
+    </li>
+    </ol>
+    <b>Proof.</b>
+    <ol type="a">
+    <li>
+        Let $\underline g(t)=\big(g_1(t),g_2(t)\big)$, then\begin{align*}
+        \left\|\int_a^x \underline{g}(t) d t\right\|_1&=\left|\int_a^x g_1(t) d t\right|+\left|\int_a^x g_2(t) d t\right|\\&≤\left|\int_a^x\left|g_1(t)\right|d t\right|+\left|\int_a^x\left|g_2(t)\right|d t\right|\\\small\text{non-negative}&=\left|\int_a^x\left|g_1(t)\right|+\left|g_2(t)\right| d t\right|\\&=\left|\int_a^x\left\|\underline{g}(t)\right\|_1 d t\right|
+        \end{align*}
+    </li>
+    <li>
+        Suppose there exists $L_1,L_2$ such that for $x∈[a-h,a+h]$ and $\underline u,\underline v∈B_k\left(\left(1\atop1\right)\right)$,
+        \begin{aligned}\left|f_1\left(x, u_1, u_2\right)-f_1\left(x, v_1, v_2\right)\right| &≤L_1\left(\left|u_1-v_1\right|+\left|u_2-v_2\right|\right)\quad\text{and} \\\left|f_2\left(x, u_1, u_2\right)-f_2\left(x, v_1, v_2\right)\right| &≤ L_2\left(\left|u_1-v_1\right|+\left|u_2-v_2\right|\right) \end{aligned}Then
+        \begin{aligned}\left\|\underline{f}(x, \underline{y})-\underline{f}(x, \underline{\tilde{y}})\right\|_1&=\left|f_1\left(x,y_1,y_2\right)-f_1\left(x,\tilde y_1,\tilde y_2\right)\right|+\left|f_2\left(x,y_1,y_2\right)-f_2\left(x,\tilde y_1,\tilde y_2\right)\right|\\&≤(L_1+L_2)\left(\left|y_1-\tilde y_1\right|+\left|y_2-\tilde y_2\right|\right)\\&=(L_1+L_2)\left\|\underline y-\underline{\tilde y}\right\|_1\end{aligned}
+        Hence it suffices to prove that the components $f_1$ and $f_2$ of $\underline{f}=\left(\begin{array}{l}f_1 \\ f_2\end{array}\right)$ satisfy a Lipschitz condition.<br>
+        i) By mean value theorem $\left|\sin u_2-\sin v_2\right|≤\left|u_2-v_2\right|$. For $L_1=\max\{1,h\},L_2=2(1+k)$,\begin{aligned}\left|f_1\left(x, u_1, u_2\right)-f_1\left(x, v_1, v_2\right)\right|&=\left|x\sin u_2+u_1-x\sin v_2-v_1\right|\\&≤\left|x\right|\left|\sin u_2-\sin v_2\right|+\left|u_1-v_1\right|\\&≤h\left|u_2-v_2\right|+\left|u_1-v_1\right|\\\left|f_2\left(x, u_1, u_2\right)-f_2\left(x, v_1, v_2\right)\right|&=\left|u_2^2-v_2^2\right|\\&=\left|u_2+v_2\right|\left|u_2-v_2\right|\\&≤2(1+k)\left|u_2-v_2\right|\\&≤2(1+k)(\left|u_1-v_1\right|+\left|u_2-v_2\right|)\end{aligned}
+        ii) $L_1=1$, $L_2=\max\left\{\frac{2(1+k)}{1-k},\frac{(1+k)^2}{(1-k)^2}\right\}$,\begin{aligned}\left|f_1\left(x, u_1, u_2\right)-f_1\left(x, v_1, v_2\right)\right|&=\left|u_2-v_2\right|\\\left|f_2\left(x, u_1, u_2\right)-f_2\left(x, v_1, v_2\right)\right|&≤\left|f_2\left(x, u_1, u_2\right)-f_2\left(x, v_1, u_2\right)\right|+\left|f_2\left(x, v_1, u_2\right)-f_2\left(x, v_1, v_2\right)\right|\\&=\left|\frac{u_1^2}{u_2}-\frac{v_1^2}{u_2}\right|+\left|\frac{v_1^2}{u_2}-\frac{v_1^2}{v_2}\right|\\&=\frac{\left|u_1+v_1\right|}{u_2}\left|u_1-v_1\right|+\frac{v_1^2}{u_2v_2}\left|u_2-v_2\right|\\&≤\frac{2(1+k)}{1-k}\left|u_1-v_1\right|+\frac{(1+k)^2}{(1-k)^2}\left|u_2-v_2\right|\end{aligned}
+    </li>
+    </ol>
+</li>
+<li>The aim of this question is to fill in the details of the proof of Theorem 1.6 in the lecture on Picard's theorem for a system of two first order ODEs via the CMT.<br>
+Let $\underline{f}=\left(f_1, f_2\right): S:=[a-h, a+h]×B_k(\underline{b})→ℝ^2$ be a continuous function which satisfies the Lipschitz-condition
+\[\tag1
+\left\|\underline{f}(x, \underline{y})-\underline{f}(x, \underline{\tilde{y}})\right\|_1≤L\left\|\underline{y}-\underline{\tilde{y}}\right\|_1 \text { for all } x∈[a-h, a+h], \underline{y}, \underline{\tilde{y}}∈B_k(\underline{b})
+\]
+for some $L>0$ and set $M:=\max _{(x, y)\in S}\left\|\underline f(x, \underline{y})\right\|_1$.<br>
+Given $0< η≤h$ we let $𝒞_η=C\left([a-η, a+η] ; B_k(\underline{b})\right)$ be the set of continuous functions $y:[a-η, a+η]→B_k(\underline{b}) \subset ℝ^2$, and equip this space with the sup norm defined by
+\[
+{‖\underline{y}‖}_\text{sup}:=\sup _{x∈[a-η, a+η]}{‖\underline{y}(x)‖}_1, \text { for } \underline{y}∈𝒞_η .
+\]
+You can use that $\left(𝒞_η,{‖⋅‖}_\text{sup}\right)$ is a complete metric space.
+<ol type="a">
+<li>
+    Show that if $Mη≤k$, then the map $T$ which assigns to each function $\underline{y}∈𝒞_η$ the function
+    \[
+    (T \underline{y})(x)=\underline{b}+\int_a^x \underline{f}(s, \underline{y}(s)) d s
+    \]
+    has the property that $T \underline{y}∈𝒞_η$ for every $\underline{y}∈𝒞_η$. Show furthermore that if $ηL< 1$ then this map is a contraction on $\left(C_η,{‖⋅‖}_\text{sup}\right)$.
+</li>
+<li>
+    Reformulate the initial value problem
+    \[\tag2\begin{aligned}
+    &y_1'(x)=f_1\left(x, y_1(x), y_2(x)\right) \\
+    &y_2'(x)=f_2\left(x, y_1(x), y_2(x)\right) \\
+    &y_1(a)=b_1, \quad y_2(a)=b_2 .
+    \end{aligned}\]
+    as an integral equation for $\underline{y}(x):=\left(\begin{array}{l}y_1(x) \\ y_2(x)\end{array}\right)$. Explain why the CMT and (a) imply that this initial value problem has a unique solution on $[a-η, a+η]$ for suitable $η>0$.
+</li>
+<li>Define what it means for the solution of (2) to depend continuously on the initial data and show that this holds true.</li>
+<li>Explain why, if the Lipschitz condition (1) holds for all $x∈[a-h, a+h]$ and $\underline{y}, \underline{\tilde{y}}∈ℝ^2$ (instead of only $\underline{y}, \underline{\tilde{y}}∈B_k(\underline{b})$ ), then there is a unique solution on the whole interval $[a-h, a+h]$</li>
+</ol>
+<b>Proof.</b>
+<ol type="a">
+<li>For every $\underline{y}∈𝒞_η$,\[\left\|T\underline{y}-b\right\|_1\overset{\text{Q1}}≤\left|\int_a^x\left\|f(s,\underline{y}(s))\right\|_1ds\right|≤Mη≤k\]Taking sup over $x∈[a-η,a+η]$, we get $T\underline{y}∈B_k(\underline{b})$. By fundamental theorem of calculus, $T\underline{y}$ is continuous, so $T\underline{y}∈𝒞_η$.<br>
+By Lipschitz condition,\[\left\|T\underline{y}-T\underline{\tilde y}\right\|_1\overset{\text{Q1}}≤\left|\int_a^x\left\|\underline{f}(s, \underline{y}(s))-\underline{f}(s, \underline{\tilde{y}}(s))\right\|_1ds\right|≤\left|\int_a^xL\left\|\underline{y}-\underline{\tilde{y}}\right\|_1ds\right|≤ηL\left\|\underline{y}-\underline{\tilde{y}}\right\|_1\]Taking sup over $x∈[a-η,a+η]$, we get $\left\|T\underline{y}-T\underline{\tilde y}\right\|_\text{sup}≤ηL\left\|\underline{y}-\underline{\tilde y}\right\|_\text{sup}$ for every $\underline{y},\underline{\tilde y}∈𝒞_η$. If $ηL< 1$, $T$ is a contraction on $\left(C_η,{‖⋅‖}_\text{sup}\right)$.</li>
+<li>The IVP can be reformulate as\[\underline y(x)=\underline b+\int_a^x\underline f(x,\underline y(s))ds\]that is, $T\underline y=\underline y$. By (a) and completeness of $\left(𝒞_η,{‖⋅‖}_\text{sup}\right)$ and CMT, $T$ has a unique fixed point, so there is a unique solution for $\underline y$.</li>
+<li>The solution depends continuously on the initial data if $∀ϵ>0$, for solutions $\underline y,\underline{\tilde y}$ with initial data $\underline b,\underline{\tilde b}$ respectively, $\left\|\underline b-\underline{\tilde b}\right\|_1< δ$ implies $\left\|\underline y-\underline {\tilde y}\right\|_\text{sup}< ϵ$.<br>Proof 1: Take $δ=ϵ(1-Lη)$,
+\begin{align*}\left\|\underline y-\underline{\tilde y}\right\|_\text{sup}&=\left\|T\underline y-T\underline{\tilde y}\right\|_\text{sup}\\
+\small\text{triangle inequality} &≤\left\|\underline b-\underline{\tilde b}\right\|_1+\left\|\int_a^x\underline f(x,\underline y(s))-\underline f(x,\underline{\tilde y}(s))ds\right\|_\text{sup}\\
+\small\text{from 2.1.a} &≤δ+Lη\left\|\underline y-\underline{\tilde y}\right\|_\text{sup}\\\\
+⇒(1-Lη)\left\|\underline y-\underline{\tilde y}\right\|_\text{sup}&≤δ\\
+⇒\left\|\underline y-\underline{\tilde y}\right\|_\text{sup}&≤\fracδ{1-Lη}=ϵ
+\end{align*}
+Proof 2: As Q1.4b, Gronwall's inequality gives a sharper bound:
+\begin{align*}\left\|\underline y^{(1)}(x)-\underline y^{(2)}(x)\right\|_1&≤\left\|\underline b^{(1)}-\underline b^{(2)}\right\|_1+\left|\int_a^x\left\|f(s,\underline y^{(1)}(s))-f(s,\underline y^{(2)}(s))\right\|_1ds\right|\\
+&≤\left\|\underline b^{(1)}-\underline b^{(2)}\right\|_1+\left|\int_a^xL\left\|\underline y^{(1)}(s)-\underline y^{(2)}(s)\right\|_1ds\right|
+\end{align*}
+By Gronwall's inequality,
+\[\left\|\underline y^{(1)}(s)-\underline y^{(2)}(s)\right\|_1≤\left\|\underline b^{(1)}-\underline b^{(2)}\right\|_1e^{L{|x-a|}}\]
+Taking $\sup_{s∈[a-η,a+η]}$,
+\[\left\|\underline y^{(1)}-\underline y^{(2)}\right\|_\text{sup}≤\left\|\underline b^{(1)}-\underline b^{(2)}\right\|_\text{sup}e^{Lη}\]
+</li>
+<li>[Corollary 1.5.]<br>
+    Proof: We look at $x≥a$ first. If $h< 1 / L$ we are done. (Take $η=h$.)
+    Otherwise we choose $η_1< 1 / L$. Then, from Theorem 1.4, there exists a unique solution, $y_0$ say, on $\left[a, a+η_1\right]$.<br>
+    Now choose $η_2=\min \left\{2 η_1, h\right\}$, and look for a solution, $y_1$ say, on $\left[a+η_1, a+η_2\right]$, of the ODE with initial data $y_1\left(a+η_1\right)=y_0\left(a+η_1\right)$.<br>
+    Now define
+    \begin{aligned}
+    &y(x)=y_0(x), x \in\left[a, a+η_1\right] \\
+    &y(x)=y_1(x), x \in\left[a+η_1, a+η_2\right]
+    \end{aligned}
+    To construct $y_1$: As in Theorem 1.4, but we now work in the space $X_1:=𝒞\left(\left[a+η_1, a+η_2\right] ;[b-k, b+k]\right)$, and take (for $a+η_1≤x≤a+η_2$)
+    \begin{align}
+    \left(T_1 y\right)(x) &=y_0\left(a+η_1\right)+\int_{a+η_1}^x f(s, y(s)) d s\nonumber \\
+    &=b+\int_a^{a+η_1} f\left(s, y_0(s)\right) d s+\int_{a+η_1}^x f(s, y(s)) d s .\label1
+    \end{align}
+    So $T_1: X_1 → X_1$ because from \eqref{1}
+    \begin{aligned}
+    \left\|T_1 y-b\right\|_\text{sup}&≤M η_1+M\left(x-\left(a+η_1\right)\right)=M(x-a)≤M η_2 \\
+   &≤Mh≤k .
+    \end{aligned}
+    Also $T_1$ is a contraction as the proof of claim 2 only requires that the length of the interval we work on, which for $T_1$ is $η_2-η_1$, is less than $1 / L$. Thus we obtain the existence of a unique solution on $\left[a, a+η_2\right]$. Repeating this argument, both in positive and negative direction, we continue to be able to extend the solution and after finitely many steps have reached the endpoint $a+h$ of the original interval, since we can carry out each step except the very last one (where we will be able to choose $η_j=h$ since we'll have $h-η_{j-1}<\frac{1}{L}$ ) with the same 'stepsize' $η_k-η_{k-1}=η_1$.
+    </li>
+</ol>
+<li><ol type="a">
+<li>Consider the second order differential equation
+\[\tag3
+y''(x)=F\left(x, y(x), y'(x)\right), \text { with initial data } y(a)=c_1, y'(a)=c_2,
+\]
+where $F: S:=[a-h, a+h]×B_k(\underline{c})→ℝ$ is a continuous function. Suppose that $F$ satisfies a Lipschitz-condition, i.e. there exists $L$ such that
+\[
+\left|F(x, \underline{y})-F(x, \underline{\tilde{y}})\right|≤L\left\|\underline{y}-\underline{\tilde{y}}\right\|\text { for all }(x, \underline{y}),(x, \underline{y})∈S .
+\]
+By writing (3) as a system of first order differential equations, and demonstrating that the conditions of Theorem 1.6 (see question 2.2 above) are satisfied, show that there exists $0< η≤h$ such that (3) has a unique solution on $[a-η, a+η]$.
+</li>
+<li>Now consider the second order linear differential equation for $y(x)$
+\[\tag4p(x) y''+q(x) y'+r(x) y=s(x), \quad x∈[a, b]\]
+for continuous functions $p, q, r, s:[a, b]→ℝ$. Suppose that $p(x)≠0$ on all of $[a, b]$ and fix any $y_0, y_1∈ℝ$ and $x_0∈[a, b]$.
+Show that (4) with initial conditions $y\left(x_0\right)=y_0, y'\left(x_0\right)=y_1$ has a unique solution $y$ on $[a, b]$.
+<li>
+(Taken from Collins) Consider the problem
+\[
+y y''=-\left(y'\right)^2, \quad y(0)=y'(0)=1 .
+\]
+(i) Show that the problem has a unique solution on an interval containing 0.<br>
+(ii) Find the solution and state where it exists.
+</li>
+</ol>
+<b>Proof.</b>
+<ol type="a">
+<li>Let $z=y'$. Write (3) as
+    \begin{cases}
+    y'(x)=z\\
+    z'(x)=F\left(x, y(x), z(x)\right)
+    \end{cases}
+    Define $\underline f$ by $f_1(x,y,z)=z,f_2(x,y,z)=F(x,y,z)$. Then $\underline f$ is Lipschitz for $1+L$. For $η=\min\left(h,\frac k{\sup F}\right)$, (3) has a unique solution on $[a-η, a+η]$.
+</li>
+<li>Write the problem as $\underline y'=\underline f(x,\underline y)$ where
+    $$
+    \underline y=\left(y(x)\atop y'(x)\right), \underline f(x,u,v)=\pmatrix{v\\\frac{s(x)-q(x)v-r(x)u}{p(x)}}.
+    $$
+   Since $p(x)≠0$, $\underline f$ is continuous on $S$.$$\left|\frac{s(x)-q(x)v_1-r(x)u_1}{p(x)}-\frac{s(x)-q(x)v_2-r(x)u_2}{p(x)}\right|=\left|\frac{q(x)}{p(x)}\right|{|v_1-v_2|}+\left|\frac{r(x)}{p(x)}\right|{|u_1-u_2|}$$$\underline f$ satisfies Lipschitz condition on $S$, so $\underline y(x)$ has a unique solution.</li>
+<li>(i) Let $S=\left[-\frac13,\frac13\right]×\left[\frac13,\frac53\right]$. Write the problem as $\underline y'=\underline f(x,\underline y)$ where
+    $$
+    \underline y=\left(y(x)\atop y'(x)\right), \underline f(x,u,v)=\pmatrix{v\\-\frac{v^2}u}.
+    $$By 2.1.b(ii), $\underline f$ satisfies Lipschitz condition on $S$, so $\underline y(x)$ has a unique solution on $\left[-\frac13,\frac13\right]$.<br>
+    (ii) $(y^2)''=0⇒y^2$ is a linear function of $x$. Using $y(0)=y'(0)=1$, we have $y^2(0)=1,(y^2)'(0)=2$, so $y^2=2x+1⇒y=\sqrt{2x+1}$
+</li>
+</ol>
+</li>
+<h2>Autonomous systems of ODEs and the phase plane</h2>
+<li>Consider the plane autonomous system
+\[
+\frac{d x}{d t}=x(1-2 x-y), \quad \frac{d y}{d t}=y(1-x-2 y) .
+\]
+<ol type="a">
+<li>By showing that the axes of the phase plane and the line $x=y$ are solution trajectories explain why a solution starting in the octant $x>0,x< y$ must remain in this region for all time.</li>
+<li>Find all the critical points and analyse them to determine their local behaviour including the local direction of the trajectories and whether the points are stable.</li>
+<li>
+    Sketch the phase plane.<br>
+    In an application, when suitably scaled, $x$ and $y$ represent species populations which are in competition for resources. Use the phase plane to interpret what happens to the populations in the long term.
+</li>
+</ol>
+<b>Solution.</b>
+<ol type="a">
+<li>Substituting $x=0$, we get $\frac{d y}{d t}=y(1-2y)⇒t-\log C=\log{|y|}-\log{|1-2y|}⇒y=\frac{e^t}{C+2e^t}∈(0,\frac12)∪(\frac12,+∞)$. So the line $x=0$ is the union of two trajectories.<br>
+    Substituting $y=x$, we get $\frac{d x}{d t}=x(1-3x)⇒t-\log C=\log{|x|}-\log{|1-3x|}⇒x=\frac{e^t}{C+3e^t}∈(0,\frac13)∪(\frac13,+∞)$. So the line $y=x$ is the union of two trajectories.<br>
+    Since different trajectories never intersect, a solution starting in the octant $x>0, x< y$ must remain in this region for all time.</li>
+<li>To find all the critical points, we solve $x(1-2 x-y)=0,y(1-x-2 y)=0$. From the first equation, $x=0$ or $y=1-2x$.<br>
+    If $x=0$, the second equation is $y(1-2y)=0$, so $y=0$ or $y=1/2$.<br>
+    If $y=1-2x$, the second equation is $(1-2x)(-1+3x)=0$, so $x=1/2$ or $x=1/3$.<br>
+    So all the critical points are $(0,0)(0,1/2)(1/2,0)(1/3,1/3)$.
+    \begin{array}l
+    M=\begin{pmatrix}X_x&X_y\\Y_x&Y_y\end{pmatrix}=\begin{pmatrix}1-4x-y&-x\\-y&1-x-4y\end{pmatrix}\\
+    λ_1λ_2=\det M=4x^2+16xy+4y^2-5x-5y+1\\
+    λ_1+λ_2=\operatorname{tr}M=-5x-5y+2\\
+    (λ_1-λ_2)^2=(λ_1+λ_2)^2-4λ_1λ_2=9 x^2 - 14 x y + 9 y^2
+    \end{array}
+    At $(0,0)$, $λ_1=λ_2=1>0,M=I⇒$unstable star<br>
+    At $(0,1/2)$ and $(1/2,0)$, $λ_1λ_2=-1/2< 0⇒$saddle<br>
+    At $(1/3,1/3)$, $λ_1λ_2=1/3>0,λ_1+λ_2=-4/3< 0,(λ_1-λ_2)^2=4/9>0⇒λ_1< λ_2< 0⇒$stable node
+</li>
+<li>
+    <tex>
+        \documentclass[tikz,border=2pt]{standalone}
+        \usetikzlibrary{decorations.markings}
+        \begin{document}
+        \begin{tikzpicture}[x=5cm,y=5cm]
+        \newcommand\aaa{
+        \draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}},mark=at position .7 with {\arrow{stealth}}}]plot[smooth]coordinates{(1.,0.1)(0.627,0.103)(0.493,0.133)(0.435,0.187)(0.35,0.315)(0.333,0.333)};
+        \draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}},mark=at position .7 with {\arrow{stealth}}}]plot[smooth]coordinates{(1.,0.2)(0.613,0.183)(0.481,0.198)(0.457,0.208)(0.417,0.235)(0.343,0.323)};
+        \draw[postaction=decorate,decoration={markings,mark=at position .5 with {\arrow{stealth}}}]plot[smooth]coordinates{(0,0)(0.2,0.1)(0.307,0.178)(0.351,0.233)(0.361,0.256)(0.36,0.293)(0.339,0.328)};
+        \draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}},mark=at position .7 with {\arrowreversed{stealth}}}]plot[smooth]coordinates{(0,0)(0.5,0)(1,0)};
+        }
+        \draw[postaction=decorate,decoration={markings,mark=at position .25 with {\arrow{stealth}},mark=at position .75 with {\arrowreversed{stealth}}}](0,0)--(2/3,2/3);
+        \draw[gray](0,1/2)--(1,0)(0,1)--(1/2,0);
+        \aaa\begin{scope}[cm={0,1,1,0,(0,0)}]\aaa\end{scope}
+        \end{tikzpicture}
+        \end{document}
+    </tex>
+    <pre>VectorPlot[{x(1-2x-y), y(1-x-2y)}, {x, -0.5, 1}, {y, -0.5, 1}]</pre>
+    (1/3,1/3) is the only stable node, so two populations are equal in the long term.
+    <a href="https://en.wikipedia.org/wiki/Competitive_Lotka%E2%80%93Volterra_equations">Competitive Lotka–Volterra equations</a>
+</li>
+</ol>
+</li><li>
+<ol type="a">
+<li>
+    Find and classify the types of all critical points of the system
+    \[
+    \frac{d x}{d t}=\left(a-x^2\right) y, \quad \frac{d y}{d t}=x-y,
+    \]
+    in each of the cases<br>
+    (i) $a<-\frac14$<br>
+    (ii) $-\frac14< a< 0$<br>
+    (iii) $a>0$.
+</li>
+<li>
+    Consider the case $a=-1/4$ and analyse in detail the behaviour at all the critical points. Hence sketch the phase plane in this case.<br>
+    Can you say anything about the trajectories in this case for $|x|$ large?
+</li>
+<li>Consider the case $a=1/2$ and analyse in detail the behaviour at all the critical points. Hence sketch the phase plane in this case.</li></ol></li>
+<b>Solution.</b>
+<ol type="a">
+<li>If $a< 0$ and $(a-x^2)y=x-y=0$, then $a-x^2< 0$, so $y=0$, so $(0,0)$ is the only critical point; If $a>0$, the critical points are $(0,0)(\sqrt a,\sqrt a)(-\sqrt a,-\sqrt a)$.
+    \begin{array}l
+    M=\begin{pmatrix}X_x&X_y\\Y_x&Y_y\end{pmatrix}=\begin{pmatrix}-2xy&a-x^2\\1&-1\end{pmatrix}\\
+    λ_1λ_2=\det M=x^2+2xy-a\\
+    λ_1+λ_2=\operatorname{tr}M=-2xy-1\\
+    (λ_1-λ_2)^2=(λ_1+λ_2)^2-4λ_1λ_2=4 x^2 y^2-4xy-4x^2+4a+1
+    \end{array}
+    (i) At $(0,0)$, $λ_1λ_2=-a>0,λ_1+λ_2=-1< 0,(λ_1-λ_2)^2=4a+1< 0⇒$conjugate pair, $μ< 0⇒$stable spiral<br>
+    (ii) At $(0,0)$, $λ_1λ_2=-a>0,λ_1+λ_2=-1< 0,(λ_1-λ_2)^2=4a+1>0⇒0>λ_1>λ_2⇒$stable node<br>
+    (iii) At $(0,0)$, $λ_1λ_2=-a< 0⇒λ_1< 0< λ_2⇒$saddle<br>
+    At $(\sqrt a,\sqrt a)$ and $(-\sqrt a,-\sqrt a)$, $λ_1λ_2=2a>0,λ_1+λ_2=-2a-1< 0,(λ_1-λ_2)^2=(2a-1)^2≥0$.<br>
+    If $a≠1/2$, we have $0>λ_1>λ_2⇒$stable node; if $a=1/2$, we have $0>λ_1=λ_2$, but $Y_x=1$, so $M≠λI$, there is a stable inflected node.
+</li>
+<li>At (0,0), $λ_1=λ_2=-1/2,M=\pmatrix{0 & -\frac14 \\1 & -1}$, so $M≠λI$, there is a stable inflected node. 
+eigenvector: $v=\pmatrix{1\\2}$. When $|x|$ large, $\pmatrix{x\\y}∼c_1te^{-t/2}\pmatrix{1\\2}$.<br>
+phase plane: <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=10078">See the figure produced by Matlab</a>
+</li>
+<li>At (0,0), $M=\pmatrix{0&\frac12\\1&-1},λ_1=\frac{-1-\sqrt3}2,λ_2=\frac{-1+\sqrt3}2⇒$saddle. eigenvectors: $v_1=\pmatrix{\frac{1-\sqrt3}2\\1},v_2=\pmatrix{\frac{1+\sqrt3}2\\1}$.<br>
+    At $\left(\frac1{\sqrt2},\frac1{\sqrt2}\right)$ and $\left(-\frac1{\sqrt2},-\frac1{\sqrt2}\right)$, $λ_1=λ_2=-1,M=\pmatrix{-1 & 0 \\1 & -1}$, so $M≠λI$, there is a stable inflected node. 
+    eigenvector: $\pmatrix{0\\1}$.<br>
+    phase plane: <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=10077">See the figure produced by Matlab</a>
+</li>
+</ol>
+</ol>
