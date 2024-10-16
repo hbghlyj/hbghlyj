@@ -102,7 +102,8 @@ and define the rectangle $R=\{(x, y):|x-a| \leqslant h$ and $|y-b| \leqslant k\}
 <li><ol type="i">
 <li>For $y≠1$, $f(x,y)>0⇒y$ is an increasing function of $x$.</li>
 <li>We need $y$ bounded away from 1, so $k&lt;1$, then $f(x,y)$ is continuous on $R$ and $M=\sup_R\left|x(1-y(x)^2)\right|^{1/2}≤h^{1/2}$. We need $Mh≤k⇐h^{3/2}≤k$. So P(i) holds for $h≤k^{2/3}$.<br>Also, by MVT there exists ξ between $y$ and $z$ such that $|f(x,y)-f(x,z)|=|f_y(x,ξ)||y-z|=|x|^{1/2}\left|\frac12(1-ξ^2)^{-1/2}⋅-2ξ\right||y-z|=\frac{|x|^{1/2}}{(1-ξ^2)^{1/2}}|ξ||y-z|≤\frac{h^{1/2}k}{(1-k^2)^{1/2}}|y-z|$<br>So P(ii) holds with $L=\frac{h^{1/2}k}{(1-k^2)^{1/2}}$. Thus there is a unique solution in $R$ for $h≤k^{2/3}$.<br>$\frac{dy}{dx}=x^{1/2}(1-y(x)^2)^{1/2}⇒\int\frac1{\sqrt{1-y^2}}dy=\int x^{1/2}dx⇒y=\sin\left(\frac23x^{3/2}+C\right)$<br>$y(0)=0⇒C=0⇒y(x)=\sin\left(\frac23x^{3/2}\right)$</li>
-<li>Clearly $y(x)=1$ is a solution. $y$ increasing, so $\frac{dy}{dx}=\sqrt{x(y^2-1)}⇒\int\frac1{\sqrt{y^2-1}}dy=\int x^{1/2}dx⇒y=\cosh^{-1}\left(\frac23x^{3/2}+\text{const}\right)$<br>Suppose $y=1$ at $x=a$, then $y=\cosh^{-1}\left(\frac23(x^{3/2}-a^{3/2})+\cosh1\right)$<br>{% latex %}\usepackage{tikz}\begin{tikzpicture}[declare function={
+<li>Clearly $y(x)=1$ is a solution. $y$ increasing, so $\frac{dy}{dx}=\sqrt{x(y^2-1)}⇒\int\frac1{\sqrt{y^2-1}}dy=\int x^{1/2}dx⇒y=\cosh^{-1}\left(\frac23x^{3/2}+\text{const}\right)$<br>Suppose $y=1$ at $x=a$, then $y=\cosh^{-1}\left(\frac23(x^{3/2}-a^{3/2})+\cosh1\right)$<br>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[declare function={
 arcosh(\t)=ln(\t+sqrt(\t^2-1));
 }]
 \draw[latex-latex](3,0)node[right]{$x$}--(0,0)--(0,2)node[above]{$y$};
