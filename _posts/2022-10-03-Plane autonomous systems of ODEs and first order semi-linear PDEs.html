@@ -43,8 +43,8 @@ excerpt: sheet 3 — MT 2022
     <a href="https://math.stackexchange.com/questions/666213">Periodic solutions to ODEs</a><br>
     Time reversal symmetry: with $y↦-y,t↦-t$ we get exactly the same equations! The backward trajectory is precisely the vertical reflection of the forward trajectory, and they start and end at the same points.<br>
     phase plane:
-    <center>{% latex %}
-\usetikzlibrary{decorations.markings}\usepackage{tikz}
+    <center>{% latex %}\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
 \begin{tikzpicture}
 \fill(1,0)circle(1pt)node[above]{1};
 \draw[postaction=decorate,decoration={markings,mark=at position .3 with {\arrow{stealth}}},scale=.5]plot[domain=-2:2]({sinh(\x)},{.5+cosh(\x)});
