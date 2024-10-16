@@ -1,0 +1,143 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: A1 paper 2016
+---
+<style>.img{display: flex;justify-content: space-around;}</style>
+<ol>
+<li>The displacement $x(t)$ of a particle at time $t$ satisfies
+\begin{equation}\label1
+\ddot{x}=F(x, \dot{x}) \quad \text { where } \quad F(x, \dot{x})= \begin{cases}-x & |x|>α, \\ -x-\dot{x} & |x| \leqslant α,|\dot{x}|&lt;α, \\ 0 & \text { otherwise }\end{cases}
+\end{equation}
+for positive real constant $α$.
+<ul class="litype_4">
+    <li>Write \eqref{1} as a plane autonomous system of two first-order differential equations. Explain what is meant by autonomous.</li>
+    <li>Show that there is only one critical point of this system, and classify it.</li>
+    <li>Find and sketch the nullclines for (i) $|x|>α$ and (ii) $|x|&lt;α,|\dot{x}|&lt;α$. Indicate the direction of the trajectories across the nullclines.</li>
+    <li>Sketch a trajectory in $|x|&lt;α,|\dot{x}|&lt;α$. Sketch $x(t)$ as a function of $t$ for a trajectory that starts at rest from $|x|&lt;α$.</li>
+    <li>Find the trajectories in $|x|>α$ and $|x|&lt;α,|\dot{x}|>α$ and hence sketch on the phase plane the closed trajectory that starts at rest from $x=\gamma$ where $\gamma>\sqrt{2} α$. For this trajectory, sketch $x(t)$ as a function of $t$.</li>
+</ul>
+<b>Solution.</b>
+<ul class="litype_4">
+    <li>\begin{cases}\dot x=y\\\dot y=F(x,y)\end{cases}autonomous – time $t$ does not appear explicitly in the governing equations</li>
+    <li>critical point $\dot x=\dot y=0$.<br>$\dot x=0⇒y=0$<br>$F(x,0)=0⇒x=0$<br>critical point at (0,0)<br>
+    eigenvalues of $\pmatrix{0&1\\-1&-1}$ are $\frac{-1\pm\sqrt3i}2⇒$critical point is a stable spiral.</li>
+<li>{% latex %}\usepackage{tikz}\begin{tikzpicture}
+\draw[red](-3,0)--(3,0)(-1,1)--(1,-1);
+\def\a{\draw[dashed](1,-2)--(1,2)(-3,1)--(3,1);
+\foreach\i in{.2,.4,.6,.8}\draw[<-](\i-.15,-\i)--+(.2,0);
+\foreach\i in{.4,.8,...,2.8}\draw[->](\i,.1)--(\i,-.15);}
+\a\tikzset{scale=-1}\a
+\node at (1,2)[below] {$x=-\alpha$};
+\node at (-1,2)[below] {$x=\alpha$};
+\node at (-3,-1)[right] {$y=\alpha$};
+\node at (-3,1)[right] {$y=-\alpha$};
+\end{tikzpicture}{% endlatex %}</li>
+<li>starts at rest$⇔x'(0)=0$<div class="img">{% latex %}\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\begin{tikzpicture}
+\pgftransformscale{2}
+\draw[thick,cyan,postaction=decorate,decoration={markings,mark=at position .3 with \arrow{stealth},mark=at position .5 with \arrow{stealth},mark=at position .75 with \arrow{stealth}},domain=0:3*pi,samples=100]plot({exp(-\x/2)*(cos(sqrt(3)*\x/2 r)+sin(sqrt(3)*\x/2 r)/sqrt(3))},{-2*exp(-\x/2)*sin(sqrt(3)*\x/2 r)/sqrt(3)});
+\pgftransformscale{.3}
+\draw(-4,-4)rectangle(4,4)(0,-5)--(0,5)(0,4)node[above right]{$\alpha$}(0,-4)node[below right]{$-\alpha$}(4,0)node[above right]{$\alpha$}(-4,0)node[above left]{$-\alpha$};
+\draw[red](-5,0)--(5,0)(-4,4)--(4,-4);\node[right]at(5,0){$x$};\node[above]at(0,5){$\dot x$};
+\end{tikzpicture}{% endlatex %}
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[xscale=.5]
+\draw[thick,cyan,domain=0:3*pi,samples=50]plot(\x,{exp(-\x/2)*(cos(sqrt(3)*\x/2 r)+sin(sqrt(3)*\x/2 r)/sqrt(3))});
+\draw[->](0,0)--(10,0)node[right]{$t$};
+\draw[->](0,-1)--(0,1.5)node[above]{$x$};
+\end{tikzpicture}{% endlatex %}</div>
+</li>
+<li>For $|x|>α$ we have $\cases{\dot x=y\\\dot y=-x}⇒x^2+y^2=\text{const}⇒$trajectories are circular arcs<br>
+For $|x|&lt;α,|\dot{x}|>α$ we have $\cases{\dot x=y\\\dot y=0}⇒y=\text{const}⇒$trajectories are straight horizontal lines
+<div class="img">
+{% latex %}\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\begin{tikzpicture}
+\draw(-3,0)--(3,0);
+\def\r{1.8}\pgfmathsetmacro{\s}{acos(1/\r)}
+\def\a{\draw[dashed](1,-2)--(1,2)(-3,1)--(3,1);
+\draw[thick,cyan,postaction=decorate,decoration={markings,mark=at position .45 with \arrow{stealth},mark=at position .86 with \arrow{stealth}}](1,{sqrt(\r^2-1)})arc(\s:-\s:\r)--+(-2,0);
+}
+\a\tikzset{scale=-1}\a
+\node at (1,2)[below] {$x=-\alpha$};
+\node at (-1,2)[below] {$x=\alpha$};
+\node at (-3,-1)[right] {$y=\alpha$};
+\node at (-3,1)[right] {$y=-\alpha$};
+\end{tikzpicture}{% endlatex %}</tex>
+<div>the closed trajectory that starts at rest from $x=\gamma$ where $\gamma>\sqrt{2} α$<br>
+    {% latex %}\usepackage{tikz}
+    \begin{tikzpicture}[xscale=.5]
+    \draw[thick,cyan]plot[domain=0:pi/3](\x,{cos(\x r)})--plot[domain=2*pi/3:4/3*pi](\x,{cos(\x r)})--plot[domain=5*pi/3:2*pi](\x,{cos(\x r)});
+    \node[left]at(0,1){$\gamma$};\node[left]at(0,-1){$-\gamma$};
+    \draw[dashed](0,.5)node[left]{$\alpha$}--+(2*pi,0)(0,-.5)node[left]{$-\alpha$}--+(2*pi,0);
+    \draw[->](0,0)--(7,0)node[right]{$t$};
+    \draw[->](0,-1.5)--(0,1.5)node[above]{$x$};
+    \end{tikzpicture}{% endlatex %}
+</div></div>
+</li>
+</ul>
+</li>
+<li>Consider the initial value problem
+\begin{equation}\label2
+y'(x)=f(x, y(x)), y(a)=b,
+\end{equation}
+and define the rectangle $R=\{(x, y):|x-a| \leqslant h$ and $|y-b| \leqslant k\}$.
+<ul class="litype_4">
+<li>State the conditions that must hold for \eqref{2} to have a unique solution in $R$.</li>
+<li>Show that solutions to \eqref{2} in $R$ depend continuously on initial data. [<i>Gronwall's inequality may be stated without proof.</i>]</li>
+<li>Now consider the case where $f(x, y)=\sqrt{\left|x\left(1-y(x)^2\right)\right|}$, and restrict attention to $x≥0$.
+<ul class="litype_5">
+    <li>Show that $y$ is an increasing function of $x$ for $y≠1$.</li>
+    <li>Suppose $y(0)=0$. Show that the conditions of (a) hold for suitable choices of $h$ and $k$. Find the solution in this case.</li>
+    <li>Now suppose that $y(0)=1$. Show that there are infinitely many solutions of \eqref{2} subject to $y(0)=1$. Explain why this does not contradict the uniqueness result in part (a).</li>
+</ul></li>
+</ul>
+<b>Solution.</b>
+<ul class="litype_4">
+<li><ul class="litype_5"><li>$f$ is continuous in $R$, with bound $M$ and $Mh≤k$.</li><li>$f$ satisfies Lipschitz condition in $R$: $∃L>0$ such that $|f(x,u)-f(x,v)|≤L|u-v|$ for $(x,u)∈R,(x,v)∈R$.</li></ul></li>
+<li>Gronwall's inequality: Suppose $A≥0$ and $b≥0$ are constants and $v$ is a non-negative continuous function satisfying $v(x)≤b+A\left|\int_a^xv(s)ds\right|$. Then $v(x)≤be^{A|x-a|}$.<br>Suppose now that $y$ and $z$ are solutions of $y'(x)=f(x,y(x))$ with $y(a)=b$ and $z(a)=c$, where $f$ satisfies P(i) and P(ii). Then $y(x)-z(x)=b-c+\int_a^xf(s,y(s))-f(s,z(s))ds$ so that $|y(s)-z(s)|≤|b-c|+\left|\int_a^x|f(s,y(s))-f(s,z(s))|ds\right|≤|b-c|+\left|\int_a^xL|y(s)-z(s)|ds\right|$. By Gronwall's inequality, $|y(x)-z(x)|≤|b-c|e^{L|x-a|}≤|b-c|e^{Lh}$<br>Solution is continuously dependent on the initial data if we can make $|y(x)-z(x)|$ as small as we like by taking $|b-c|$ small enough.<br>i.e. $∀x∈[a-h,a+h]∀ε>0∃δ>0$ s.t. $|b-c|&lt;δ⇒|y(x)-z(x)|≤ε$<br>Take $δ=e^{-Lh}ε$ the result follows.</li>
+<li><ul class="litype_5">
+<li>For $y≠1$, $f(x,y)>0⇒y$ is an increasing function of $x$.</li>
+<li>We need $y$ bounded away from 1, so $k&lt;1$, then $f(x,y)$ is continuous on $R$ and $M=\sup_R\left|x(1-y(x)^2)\right|^{1/2}≤h^{1/2}$. We need $Mh≤k⇐h^{3/2}≤k$. So P(i) holds for $h≤k^{2/3}$.<br>Also, by MVT there exists ξ between $y$ and $z$ such that $|f(x,y)-f(x,z)|=|f_y(x,ξ)||y-z|=|x|^{1/2}\left|\frac12(1-ξ^2)^{-1/2}⋅-2ξ\right||y-z|=\frac{|x|^{1/2}}{(1-ξ^2)^{1/2}}|ξ||y-z|≤\frac{h^{1/2}k}{(1-k^2)^{1/2}}|y-z|$<br>So P(ii) holds with $L=\frac{h^{1/2}k}{(1-k^2)^{1/2}}$. Thus there is a unique solution in $R$ for $h≤k^{2/3}$.<br>$\frac{dy}{dx}=x^{1/2}(1-y(x)^2)^{1/2}⇒\int\frac1{\sqrt{1-y^2}}dy=\int x^{1/2}dx⇒y=\sin\left(\frac23x^{3/2}+C\right)$<br>$y(0)=0⇒C=0⇒y(x)=\sin\left(\frac23x^{3/2}\right)$</li>
+<li>Clearly $y(x)=1$ is a solution. $y$ increasing, so $\frac{dy}{dx}=\sqrt{x(y^2-1)}⇒\int\frac1{\sqrt{y^2-1}}dy=\int x^{1/2}dx⇒y=\cosh^{-1}\left(\frac23x^{3/2}+\text{const}\right)$<br>Suppose $y=1$ at $x=a$, then $y=\cosh^{-1}\left(\frac23(x^{3/2}-a^{3/2})+\cosh1\right)$<br>{% latex %}\usepackage{tikz}\begin{tikzpicture}[declare function={
+arcosh(\t)=ln(\t+sqrt(\t^2-1));
+}]
+\draw[latex-latex](3,0)node[right]{$x$}--(0,0)--(0,2)node[above]{$y$};
+\draw(0,1)node[left]{1}--(2.5,1);\foreach\a in{1,1.5,2}{\draw[dashed](\a,0)node[below]{$a$}--+(0,1);\draw plot[domain=\a:\a+1](\x,{arcosh(2/3*(\x^(3/2)-\a^(3/2))+cosh(1))});}
+\end{tikzpicture}{% endlatex %}<br>Infinitely many solutions as $f(x,y)$ not Lipschitz at $y=1$. Hence does not contradict uniqueness result.</li>
+</ul></li>
+</ul>
+</li>
+<li>Consider the differential equation
+\begin{equation}\label3
+-y z_x+x z_y=2 x y z,
+\end{equation}
+with $z=x^2 \exp \left(-x^2\right)$ on $y=1-x^2$ for $1/2≤x≤1$.
+<ul class="litype_4">
+    <li>Explain what is meant by a characteristic curve and a characteristic projection. Write down the characteristic equations for \eqref{3}.</li>
+    <li>Describe the characteristic projections in the $(x, y)$-plane. By differentiating along the characteristic curve, show that $z \exp \left(x^2\right)$ is constant on each characteristic curve.</li>
+    <li>Identify the two separate segments of the data curve where the data is Cauchy. Comment on why it is necessary to consider the two segments separately.</li>
+    <li>For each segment, find the explicit solution for $z(x, y)$, and identify the domain on which the solution is defined and uniquely determined by the given initial conditions.</li>
+</ul>
+<b>Solution.</b>
+<ul class="litype_4">
+<li>Suppose $Γ=(x(t),y(t),z(t))$ in terms of a parameter $t$. The characteristic equations are\[\frac{dx}{dt}=-y; \frac{dy}{dt}=x; \frac{dz}{dt}=2xyz\]The curve Γ is a characteristic curve. The curve $(x(t),y(t),0)$ which lies below the characteristic curve in the xy-plane is called a characteristic projection.</li>
+<li>$\cases{x\frac{dx}{dt}=-xy\\y\frac{dy}{dt}=xy}⇒x^2+y^2=\text{const}$ are characteristic projections. These are circles with centre the origin in the xy-plane.<br>
+Consider $\frac{d}{dt}(ze^{x^2})=e^{x^2}\frac{dz}{dt}+2xze^{x^2}\frac{dx}{dt}=e^{x^2}2xyz+2xze^{x^2}⋅-y=0⇒ze^{x^2}$ is constant on each characteristic curve.</li>
+<li>Consider the initial data, and parametrise by $s$: $(s,1-s^2,s^2e^{-s^2})$.<br>So characteristic projections are $x^2+y^2=s^2+(1-s^2)^2,\frac12≤s≤1$<br>$\cases{x(t)=\sqrt{s^2+(1-s^2)^2}\cos t\\y(t)=\sqrt{s^2+(1-s^2)^2}\sin t}$<br>$J=\begin{vmatrix}x_s&x_t\\y_s&y_t\end{vmatrix}=s-2s(1-s^2)$<br>$J=0$ when $s=0$ or $s=±\frac1{\sqrt2}$<br>So data is Cauchy for $\frac12≤s&lt;\frac1{\sqrt2}$ and $\frac1{\sqrt2}&lt;s≤1$<br>At $s=\frac1{\sqrt2}$, characteristic projections and data curves touch.</li>
+<li>$ze^{x^2}=s^2$ constant on characteristics.<br>For $\frac12≤s&lt;\frac1{\sqrt2}$, characteristics are circles of radius between $\sqrt{\frac12+\left(1-\frac12\right)^2}=\sqrt{3\over4}$ and $\sqrt{\frac14+\left(1-\frac14\right)^2}=\sqrt{13\over16}$<br>For $\frac1{\sqrt2}&lt;s≤1$ circles of radius between $\sqrt{3\over4}$ and 1.<br>$x^2+y^2=s^2+(1-s^2)^2⇒s^2=\frac{1±\sqrt{4(x^2+y^2)-3}}2$⋯(*)<br>$x^2+y^2≥\frac{13}{16}⇒4(x^2+y^2)-3≥\frac{13}4-3>0$ So (*) has real roots.<br>$x^2+y^2≤1⇒4(x^2+y^2)-3≤1$ so both $s^2$ positive. So $s^2=\frac{1±\sqrt{4(x^2+y^2)-3}}2$ (Two positive roots)<br>So $z=\frac{1-\sqrt{4(x^2+y^2)-3}}2⋅e^{-x^2}$ for $\frac34&lt;x^2+y^2≤\frac{13}{16}$ and $\frac{1+\sqrt{4(x^2+y^2)-3}}2⋅e^{-x^2}$ for $\frac34&lt;x^2+y^2≤1$<center>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[domain=0.5:1,scale=3,declare function={f(\x)=(\x)^2 + ( 1 - (\x)^2 )^2;}]
+\draw[->] (0,0)--(1.2,0) node[right] {$s$};
+\draw[->] (0,0)--(0,1.2) node[above] {$s^2+(1-s^2)^2$};
+\draw[blue] plot (\x,{f(\x)});
+\draw[dashed,font=\scriptsize](.5,0)node[below]{$\frac12$}|-(0,{f(.5)})node[left]{13/16}
+({sqrt(.5)},0)node[below]{$\frac1{\sqrt2}$}|-(0,{f(sqrt(.5))})node[left]{3/4}
+(1,0)node[below]{1}|-(0,{f(1)})node[left]{1};
+\end{tikzpicture}
+{% endlatex %}</center>
+So $\frac{13}{16}&lt;x^2+y^2≤1$ is the domain on which the solution is unique.</li>
+</ul>
+</li>
+</ul>
