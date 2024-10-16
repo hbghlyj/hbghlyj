@@ -143,38 +143,38 @@ $$
 \end{aligned}
 by the boundary conditions. So eigenfunctions corresponding to distinct eigenvalues satisfy the orthogonality condition
 $$
-\left⟨y_n, y_m\right⟩:=∫_a^b y_n(x) y_m(x) \mathrm{d} x=0
+\left\langle y_n, y_m\right\rangle:=∫_a^b y_n(x) y_m(x) \mathrm{d} x=0
 $$</li></ol>
 </li>
 <li>
 <ol type="i"><li>First need to incorporate inhomogeneous boundary conditions into inner product. Note that
 $$
-\left⟨y_k,(𝔏-λ) y\right⟩=\left⟨y_k, f\right⟩,  \left⟨(𝔏-λ) y_k, y\right⟩=\left(λ_k-λ\right)\left⟨y_k, y\right⟩
+\left\langle y_k,(𝔏-λ) y\right\rangle=\left\langle y_k, f\right\rangle,  \left\langle(𝔏-λ) y_k, y\right\rangle=\left(λ_k-λ\right)\left\langle y_k, y\right\rangle
 $$
 and
 $$
-\left⟨y_k,(𝔏-λ) y\right⟩-\left⟨(𝔏-λ) y_k, y\right⟩=\left[p y_k' y-p y_k y'\right]_a^b=β p(b) y_k'(b)-α p(a) y_k'(a),
+\left\langle y_k,(𝔏-λ) y\right\rangle-\left\langle(𝔏-λ) y_k, y\right\rangle=\left[p y_k' y-p y_k y'\right]_a^b=β p(b) y_k'(b)-α p(a) y_k'(a),
 $$
 when we apply the boundary conditions. Altogether, we therefore have
 $$
-\left⟨y_k, f\right⟩-\left(λ_k-λ\right)\left⟨y_k, y\right⟩=β p(b) y_k'(b)-α p(a) y_k'(a) 
+\left\langle y_k, f\right\rangle-\left(λ_k-λ\right)\left\langle y_k, y\right\rangle=β p(b) y_k'(b)-α p(a) y_k'(a) 
 $$
 Now write solution of the inhomogeneous problem as an eigenfunction expansion, namely
 \begin{equation}
 	y(x)=\sum_k c_k y_k(x)
-\end{equation}where the coefficients $c_k$ are to be determined. By orthogonality, we have $\left⟨y_k, y\right⟩=c_k\left⟨y_k, y_k\right⟩$ so we get
+\end{equation}where the coefficients $c_k$ are to be determined. By orthogonality, we have $\left\langle y_k, y\right\rangle=c_k\left\langle y_k, y_k\right\rangle$ so we get
 \begin{equation}
-	\left(λ_k-λ\right)\left⟨y_k, y_k\right⟩ c_k=\left⟨y_k, f\right⟩+α p(a) y_k'(a)-β p(b) y_k'(b)
+	\left(λ_k-λ\right)\left\langle y_k, y_k\right\rangle c_k=\left\langle y_k, f\right\rangle+α p(a) y_k'(a)-β p(b) y_k'(b)
 \end{equation}provided $λ ≠ λ_n$ for any $n$, the coefficients are all determined by
 \begin{equation}
-	c_k=\frac{\left⟨y_k, f\right⟩+α p(a) y_k'(a)-β p(b) y_k'(b)}{\left(λ_k-λ\right)\left⟨y_k, y_k\right⟩}
+	c_k=\frac{\left\langle y_k, f\right\rangle+α p(a) y_k'(a)-β p(b) y_k'(b)}{\left(λ_k-λ\right)\left\langle y_k, y_k\right\rangle}
 \end{equation}
 </li>
 <li>The inhomogeneous problem does not have unique solution<br>⇔ the corresponding homogeneous problem has a nontrivial solution<br>$⇔λ=λ_n$ for some $n$.
 </li>
 <li>Now suppose that $λ=λ_n$ for some $n$. Then from (2) we read off the solvability condition
 $$
-\left⟨y_n, f\right⟩=∫_a^b y_n(x) f(x) \mathrm{d} x=β p(b) y_n'(b)-α p(a) y_n'(a)
+\left\langle y_n, f\right\rangle=∫_a^b y_n(x) f(x) \mathrm{d} x=β p(b) y_n'(b)-α p(a) y_n'(a)
 $$
 If this condition is satisfied, then the solution is given by (1), where $c_k$ is defined by $(3)$ for $k ≠ n$ and $c_n$ is arbitrary.</li></ol></li></ol>
 </li>
