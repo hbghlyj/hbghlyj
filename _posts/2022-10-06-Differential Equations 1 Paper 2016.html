@@ -10,15 +10,15 @@ excerpt: A1 paper 2016
 \ddot{x}=F(x, \dot{x}) \quad \text { where } \quad F(x, \dot{x})= \begin{cases}-x & |x|>α, \\ -x-\dot{x} & |x| \leqslant α,|\dot{x}|&lt;α, \\ 0 & \text { otherwise }\end{cases}
 \end{equation}
 for positive real constant $α$.
-<ul class="litype_4">
+<ol type="a">
     <li>Write \eqref{1} as a plane autonomous system of two first-order differential equations. Explain what is meant by autonomous.</li>
     <li>Show that there is only one critical point of this system, and classify it.</li>
     <li>Find and sketch the nullclines for (i) $|x|>α$ and (ii) $|x|&lt;α,|\dot{x}|&lt;α$. Indicate the direction of the trajectories across the nullclines.</li>
     <li>Sketch a trajectory in $|x|&lt;α,|\dot{x}|&lt;α$. Sketch $x(t)$ as a function of $t$ for a trajectory that starts at rest from $|x|&lt;α$.</li>
     <li>Find the trajectories in $|x|>α$ and $|x|&lt;α,|\dot{x}|>α$ and hence sketch on the phase plane the closed trajectory that starts at rest from $x=\gamma$ where $\gamma>\sqrt{2} α$. For this trajectory, sketch $x(t)$ as a function of $t$.</li>
-</ul>
+</ol>
 <b>Solution.</b>
-<ul class="litype_4">
+<ol type="a">
     <li>\begin{cases}\dot x=y\\\dot y=F(x,y)\end{cases}autonomous – time $t$ does not appear explicitly in the governing equations</li>
     <li>critical point $\dot x=\dot y=0$.<br>$\dot x=0⇒y=0$<br>$F(x,0)=0⇒x=0$<br>critical point at (0,0)<br>
     eigenvalues of $\pmatrix{0&1\\-1&-1}$ are $\frac{-1\pm\sqrt3i}2⇒$critical point is a stable spiral.</li>
@@ -77,28 +77,28 @@ For $|x|&lt;α,|\dot{x}|>α$ we have $\cases{\dot x=y\\\dot y=0}⇒y=\text{const
     \end{tikzpicture}{% endlatex %}
 </div></div>
 </li>
-</ul>
+</ol>
 </li>
 <li>Consider the initial value problem
 \begin{equation}\label2
 y'(x)=f(x, y(x)), y(a)=b,
 \end{equation}
 and define the rectangle $R=\{(x, y):|x-a| \leqslant h$ and $|y-b| \leqslant k\}$.
-<ul class="litype_4">
+<ol type="a">
 <li>State the conditions that must hold for \eqref{2} to have a unique solution in $R$.</li>
 <li>Show that solutions to \eqref{2} in $R$ depend continuously on initial data. [<i>Gronwall's inequality may be stated without proof.</i>]</li>
 <li>Now consider the case where $f(x, y)=\sqrt{\left|x\left(1-y(x)^2\right)\right|}$, and restrict attention to $x≥0$.
-<ul class="litype_5">
+<ol type="i">
     <li>Show that $y$ is an increasing function of $x$ for $y≠1$.</li>
     <li>Suppose $y(0)=0$. Show that the conditions of (a) hold for suitable choices of $h$ and $k$. Find the solution in this case.</li>
     <li>Now suppose that $y(0)=1$. Show that there are infinitely many solutions of \eqref{2} subject to $y(0)=1$. Explain why this does not contradict the uniqueness result in part (a).</li>
-</ul></li>
-</ul>
+</ol></li>
+</ol>
 <b>Solution.</b>
-<ul class="litype_4">
-<li><ul class="litype_5"><li>$f$ is continuous in $R$, with bound $M$ and $Mh≤k$.</li><li>$f$ satisfies Lipschitz condition in $R$: $∃L>0$ such that $|f(x,u)-f(x,v)|≤L|u-v|$ for $(x,u)∈R,(x,v)∈R$.</li></ul></li>
+<ol type="a">
+<li><ol type="i"><li>$f$ is continuous in $R$, with bound $M$ and $Mh≤k$.</li><li>$f$ satisfies Lipschitz condition in $R$: $∃L>0$ such that $|f(x,u)-f(x,v)|≤L|u-v|$ for $(x,u)∈R,(x,v)∈R$.</li></ol></li>
 <li>Gronwall's inequality: Suppose $A≥0$ and $b≥0$ are constants and $v$ is a non-negative continuous function satisfying $v(x)≤b+A\left|\int_a^xv(s)ds\right|$. Then $v(x)≤be^{A|x-a|}$.<br>Suppose now that $y$ and $z$ are solutions of $y'(x)=f(x,y(x))$ with $y(a)=b$ and $z(a)=c$, where $f$ satisfies P(i) and P(ii). Then $y(x)-z(x)=b-c+\int_a^xf(s,y(s))-f(s,z(s))ds$ so that $|y(s)-z(s)|≤|b-c|+\left|\int_a^x|f(s,y(s))-f(s,z(s))|ds\right|≤|b-c|+\left|\int_a^xL|y(s)-z(s)|ds\right|$. By Gronwall's inequality, $|y(x)-z(x)|≤|b-c|e^{L|x-a|}≤|b-c|e^{Lh}$<br>Solution is continuously dependent on the initial data if we can make $|y(x)-z(x)|$ as small as we like by taking $|b-c|$ small enough.<br>i.e. $∀x∈[a-h,a+h]∀ε>0∃δ>0$ s.t. $|b-c|&lt;δ⇒|y(x)-z(x)|≤ε$<br>Take $δ=e^{-Lh}ε$ the result follows.</li>
-<li><ul class="litype_5">
+<li><ol type="i">
 <li>For $y≠1$, $f(x,y)>0⇒y$ is an increasing function of $x$.</li>
 <li>We need $y$ bounded away from 1, so $k&lt;1$, then $f(x,y)$ is continuous on $R$ and $M=\sup_R\left|x(1-y(x)^2)\right|^{1/2}≤h^{1/2}$. We need $Mh≤k⇐h^{3/2}≤k$. So P(i) holds for $h≤k^{2/3}$.<br>Also, by MVT there exists ξ between $y$ and $z$ such that $|f(x,y)-f(x,z)|=|f_y(x,ξ)||y-z|=|x|^{1/2}\left|\frac12(1-ξ^2)^{-1/2}⋅-2ξ\right||y-z|=\frac{|x|^{1/2}}{(1-ξ^2)^{1/2}}|ξ||y-z|≤\frac{h^{1/2}k}{(1-k^2)^{1/2}}|y-z|$<br>So P(ii) holds with $L=\frac{h^{1/2}k}{(1-k^2)^{1/2}}$. Thus there is a unique solution in $R$ for $h≤k^{2/3}$.<br>$\frac{dy}{dx}=x^{1/2}(1-y(x)^2)^{1/2}⇒\int\frac1{\sqrt{1-y^2}}dy=\int x^{1/2}dx⇒y=\sin\left(\frac23x^{3/2}+C\right)$<br>$y(0)=0⇒C=0⇒y(x)=\sin\left(\frac23x^{3/2}\right)$</li>
 <li>Clearly $y(x)=1$ is a solution. $y$ increasing, so $\frac{dy}{dx}=\sqrt{x(y^2-1)}⇒\int\frac1{\sqrt{y^2-1}}dy=\int x^{1/2}dx⇒y=\cosh^{-1}\left(\frac23x^{3/2}+\text{const}\right)$<br>Suppose $y=1$ at $x=a$, then $y=\cosh^{-1}\left(\frac23(x^{3/2}-a^{3/2})+\cosh1\right)$<br>{% latex %}\usepackage{tikz}\begin{tikzpicture}[declare function={
@@ -107,22 +107,22 @@ arcosh(\t)=ln(\t+sqrt(\t^2-1));
 \draw[latex-latex](3,0)node[right]{$x$}--(0,0)--(0,2)node[above]{$y$};
 \draw(0,1)node[left]{1}--(2.5,1);\foreach\a in{1,1.5,2}{\draw[dashed](\a,0)node[below]{$a$}--+(0,1);\draw plot[domain=\a:\a+1](\x,{arcosh(2/3*(\x^(3/2)-\a^(3/2))+cosh(1))});}
 \end{tikzpicture}{% endlatex %}<br>Infinitely many solutions as $f(x,y)$ not Lipschitz at $y=1$. Hence does not contradict uniqueness result.</li>
-</ul></li>
-</ul>
+</ol></li>
+</ol>
 </li>
 <li>Consider the differential equation
 \begin{equation}\label3
 -y z_x+x z_y=2 x y z,
 \end{equation}
 with $z=x^2 \exp \left(-x^2\right)$ on $y=1-x^2$ for $1/2≤x≤1$.
-<ul class="litype_4">
+<ol type="a">
     <li>Explain what is meant by a characteristic curve and a characteristic projection. Write down the characteristic equations for \eqref{3}.</li>
     <li>Describe the characteristic projections in the $(x, y)$-plane. By differentiating along the characteristic curve, show that $z \exp \left(x^2\right)$ is constant on each characteristic curve.</li>
     <li>Identify the two separate segments of the data curve where the data is Cauchy. Comment on why it is necessary to consider the two segments separately.</li>
     <li>For each segment, find the explicit solution for $z(x, y)$, and identify the domain on which the solution is defined and uniquely determined by the given initial conditions.</li>
-</ul>
+</ol>
 <b>Solution.</b>
-<ul class="litype_4">
+<ol type="a">
 <li>Suppose $Γ=(x(t),y(t),z(t))$ in terms of a parameter $t$. The characteristic equations are\[\frac{dx}{dt}=-y; \frac{dy}{dt}=x; \frac{dz}{dt}=2xyz\]The curve Γ is a characteristic curve. The curve $(x(t),y(t),0)$ which lies below the characteristic curve in the xy-plane is called a characteristic projection.</li>
 <li>$\cases{x\frac{dx}{dt}=-xy\\y\frac{dy}{dt}=xy}⇒x^2+y^2=\text{const}$ are characteristic projections. These are circles with centre the origin in the xy-plane.<br>
 Consider $\frac{d}{dt}(ze^{x^2})=e^{x^2}\frac{dz}{dt}+2xze^{x^2}\frac{dx}{dt}=e^{x^2}2xyz+2xze^{x^2}⋅-y=0⇒ze^{x^2}$ is constant on each characteristic curve.</li>
@@ -138,6 +138,6 @@ Consider $\frac{d}{dt}(ze^{x^2})=e^{x^2}\frac{dz}{dt}+2xze^{x^2}\frac{dx}{dt}=e^
 \end{tikzpicture}
 {% endlatex %}</center>
 So $\frac{13}{16}&lt;x^2+y^2≤1$ is the domain on which the solution is unique.</li>
-</ul>
+</ol>
 </li>
-</ul>
+</ol>
