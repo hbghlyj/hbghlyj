@@ -1,0 +1,275 @@
+---
+mathjax: true
+tag: Integration
+excerpt: A4 paper 2015
+---
+<ol type="a"><li>What does it mean that $(Ω, ℱ)$ is a measurable space, and what does it mean that $μ$ is a measure on $(Ω, ℱ)$ ? Let $μ$ be a measure on a measurable space $(Ω, ℱ)$ (so that $(Ω, ℱ, μ)$ is a measure space).<br>
+Let $E ∈ ℱ$. Define $ℱ_E=\{A: A ⊆ E$ and $A ∈ ℱ\}$ and define $ν(A)=μ(A)$ for every $A ∈ ℱ_E$. Show that $ℱ_E$ is a $σ$-algebra and $ν$ is a measure on $\left(E, ℱ_E\right)$.
+</li>
+<li>Let $(Ω, ℱ, μ)$ be a measure space. Suppose $A_n, B_n ∈ ℱ$, where $A_n ⊆ A_{n+1}$ and $B_n ⊇ B_{n+1}$ for $n=1,2, ⋯$, and suppose $μ\left(B_1\right)&lt;∞$. Show that
+$$
+μ\left(⋃_{n=1}^∞ A_n\right)=\lim _{n→∞} μ\left(A_n\right)
+$$
+and that
+$$
+μ\left(⋂_{n=1}^∞ B_n\right)=\lim _{n→∞} μ\left(B_n\right) .
+$$
+</li>
+<li>Let $\left(ℝ, ℳ_{\text{Leb }}, m\right)$ be the Lebesgue measure space, and let $E ∈ ℳ_{\text{Leb }}$ be such that $0&lt;m(E)&lt;∞$. Show that the function defined so that $h(x)=m(E ∩(-∞, x])$ for $x ∈ ℝ$ is uniformly continuous on ℝ, and show that for every $c ∈(0, m(E))$ there is a Lebesgue measurable subset $A ⊆ E$ such that $m(A)=c$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>Let
+$$
+f(x)=\frac{\sin x}{x^q}
+$$
+for $x&gt;0$, where $q&gt;0$ is a constant. Show that $f$ is Lebesgue integrable on $(0,1]$ if $q&lt;2$, and $f$ is not Lebesgue integrable on $[1, ∞)$ for $0&lt;q ⩽ 1$.
+</li>
+<li>Let $y ∈ ℝ$, and let
+$$
+h_y(x)=e^{-x} \frac{\sin (x y)}{x \sqrt{x}}
+$$
+for $x&gt;0$. Show that $h_y$ is Lebesgue integrable on $(0, ∞)$ for every $y ⩾ 0$.<br>
+Let
+$$
+F(y)=∫_0^∞ h_y(x) \mathrm{d} x
+$$
+for $y ⩾ 0$. Show that $F$ is continuous on $[0, ∞)$, differentiable on $(0, ∞)$, and
+$$
+F'(y)=∫_0^∞ e^{-x} \frac{\cos (x y)}{\sqrt{x}} \mathrm{~d} x
+$$
+for $y&gt;0$.
+</li>
+<li>For $x&gt;0$, let
+$$
+f_n(x)=\frac{\ln(x+n)}n \frac{\sin x}{x^q}
+$$
+where $q$ is a constant such that $1&lt;q&lt;2$. Show that
+$$
+\lim _{n→∞} ∫_0^∞ f_n(x) \mathrm{d} x=0
+$$
+[You may use any convergence theorems covered in the lectures, as long as you state them clearly.]
+</li></ol>
+</li>
+<li>
+<ol type="a"><li>Consider the function
+$$
+f(x, y)=\frac{x y}{\left(x^2+y^2\right)^3}
+$$
+for $(x, y) ≠(0,0)$ and $f(0,0)=0$. Show that
+$$
+∫_{-1}^1\left(∫_{-1}^1 f(x, y) \mathrm{d} x\right) \mathrm{d} y=∫_{-1}^1\left(∫_{-1}^1 f(x, y) \mathrm{d} y\right) \mathrm{d} x=0
+$$
+and show that $f$ is not Lebesgue integrable on $[-1,1] ×[-1,1]$.
+</li>
+<li>Consider the two variable function $f(x, y)$ defined so that
+$$
+f(x, y)=\frac{\sin (x-y)}{|x-y|^{3 / 2}} g(y)
+$$
+for $x ≠ y$, and $f(x, x)=0$, where $g$ is Lebesgue integrable in $ℝ$. Show that $f$ is Lebesgue integrable on $ℝ^2$, and
+$$
+\left|∫_{ℝ^2} f(x, y) \mathrm{d} x \mathrm{~d} y\right| ⩽ 8 ∫_{-∞}^∞|g(y)| \mathrm{d} y
+$$
+[You may use Fubini's theorem and Tonelli's theorem without proof, as long as you state them clearly.]</li></ol>
+</li></ol>
+<ol id="right"><li>
+<ol type="a"><li>$(Ω, ℱ)$ is called a measurable space if $ℱ$ is a $σ$-algebra of some subsets of $Ω$, here $ℱ$ is a $σ$-algebra on $Ω$ if $Ω$ and empty set $∅$ belong to $ℱ$, if $A ∈ ℱ$ then so does $A^c$, and if $A_n ∈ ℱ$ (where $n=1,2, ⋯$) then the countable union $⋃_{n=1}^∞ A_n ∈ ℱ$.<br>A mapping $μ: ℱ →[0, ∞]$ is a measure on a measurable space $(Ω, ℱ)$ if $μ(∅)=0, μ(A) ≤ μ(B)$ whenever $A, B ∈ ℱ$ and $A ⊂ B$, and $μ$ is countably additive: if $A_n ∈ ℱ$ are disjoint for $n=1,2, ⋯$, then $μ\left(⋃_{n=1}^∞ A_n\right)=\sum_{n=1}^∞ μ\left(A_n\right)$<br>
+Suppose $E ∈ ℱ$, then $E ∈ ℱ_E$ and $∅ ∈ ℱ_E$. If $A ∈ ℱ_E$, then $A ∈ ℱ$ and $A ⊂ E$, then $E∖A=E ∩ A^c ∈ ℱ$ as $A^c=Ω∖A ∈ ℱ$, thus $E∖A ∈ ℱ_E$. Suppose now $A_n ⊂ E$ and $A_n ∈ ℱ$, then $⋃_{n=1}^∞ A_n ∈ ℱ$ and $⋃_{n=1}^∞ A_n ⊂ E$, hence $⋃_{n=1}^∞ A_n ∈ ℱ_E$. By definition, $ℱ_E$ is a $σ$-algebra on $E$.<br>
+We now prove that $ν$ is a measure on $\left(E, ℱ_E\right)$. Clearly $v(∅)=μ(∅)=0$, and if $A ⊂ B ⊂ E$ and $A, B ∈ ℱ$ then $ν(A)=μ(A) ≤ μ(B)=ν(B)$. Suppose $\left\{A_n\right\}$ is a disjoint sequence of elements in $ℱ_E$, then since $ℱ_E ⊂ ℱ$, and $⋃_{n=1}^∞ A_n ∈ ℱ_E$ we have by the countable additivity of $μ$
+$$
+ν\left(⋃_{n=1}^∞ A_n\right)=μ\left(⋃_{n=1}^∞ A_n\right)=\sum_{n=1}^∞ μ\left(A_n\right)=\sum_{n=1}^∞ ν\left(A_n\right)
+$$
+which shows that $ν$ is a measure on $\left(E, ℱ_E\right)$.
+</li>
+<li>Let $E_1=A_1$ and $E_n=A_n∖A_{n-1}$ for $n ≥ 2, E_n ∈ ℱ$ are disjoint (for $\left.n=1,2, ⋯\right)$. More over $⋃_{k=1}^n E_k=⋃_{k=1}^n A_k=A_n$ for $n=1,2, ⋯$, and $⋃_{k=1}^∞ E_k=⋃_{k=1}^∞ A_k$, thus, by countable additivity of $μ$
+\begin{aligned}
+μ\left(⋃_{k=1}^∞ A_k\right)&=μ\left(⋃_{k=1}^∞ E_k\right)=\sum_{k=1}^∞ μ\left(E_k\right)=\lim _{n→∞} \sum_{k=1}^n μ\left(E_k\right) \\
+&=\lim _{n→∞} μ\left(⋃_{k=1}^n E_k\right)=\lim _{n→∞} μ\left(A_n\right)
+\end{aligned}
+Apply what we proved to the increasing sequence $B_1∖B_n$ and use the fact that
+$$
+⋃_{k=1}^∞\left(B_1∖B_k\right)=B_1∖⋂_{k=1}^∞ B_k
+$$
+we obtain
+$$
+μ\left(B_1∖⋂_{k=1}^∞ B_k\right)=\lim _{n→∞} μ\left(B_1∖B_n\right)
+$$
+Since $μ\left(B_1\right)&lt;∞$ so that
+$$
+μ\left(B_1∖⋂_{k=1}^∞ B_k\right)=μ\left(B_1\right)-μ\left(⋂_{k=1}^∞ B_k\right)
+$$
+and
+$$
+μ\left(B_1∖B_n\right)=μ\left(B_1\right)-μ\left(B_n\right)
+$$
+as $B_n ⊂ B_1$ and $⋂_{k=1}^∞ B_k ⊂ B_1$, which yields that $μ\left(⋂_{k=1}^∞ B_k\right)=\lim _{n→∞} μ\left(B_n\right)$.
+</li>
+<li>Since $h(x) ≥ m(∅) ≥ 0$, and $h(x) ≤ m(E)&lt;∞$, so $h$ is a real valued, clearly increasing function on $ℝ$. Suppose $x ≤ y$, then
+$$
+E ∩(-∞, y]=(E ∩(-∞, x]) ∪(E ∩(x, y])
+$$
+and
+$$
+(E ∩(-∞, x]) ∩(E ∩(x, y])=∅
+$$
+so by the additivity of the Lebesgue measure $m$ we have
+$$
+m(E ∩(-∞, y])=m(E ∩(-∞, x])+m(E ∩(x, y])
+$$
+that is
+$$
+h(y)=h(x)+m(E ∩(x, y])
+$$
+so that, for $y ≥ x$
+$$
+0 ≤ h(y)-h(x)=m(E ∩(x, y]) ≤ m((x, y])=y-x
+$$
+it follows that $|h(y)-h(x)| ≤|y-x|$ for any $x, y$, thus $h$ is uniformly continuous: for every $ε&gt;0$ choose $δ=ε$, then $|h(y)-h(x)|&lt;ε$ as long as $|y-x|&lt;δ$.
+Now
+$$
+h(n)=m(E ∩(-∞, n]) ↑ m(E) \text{ as } n ↑ ∞
+$$
+and
+$$
+h(-n)=m(E ∩(-∞,-n]) ↓ m(∅)=0 \text{ as } n ↑ ∞
+$$
+by 2). Thus, for any $c ∈(0, m(E))$ there is $n_1$ and $n_{2}$ such that $h\left(-n_1\right)&lt;\frac{c}{2}$ and $h\left(n_{2}\right)&gt;c+\frac{m(E)-c}{2}$.
+Apply IVT to the continuous function $h$ on $\left[-n_1, n_{2}\right]$, there is $ξ ∈\left[-n_1, n_{2}\right]$ such that $c=h(ξ)=m(E ∩(-∞, ξ])$, so that $A=E ∩(-∞, ξ]$ which is Lebesgue measurable will do.
+</li></ol>
+</li>
+<li>
+<ol type="a"><li>$f$ is continuous on $(0, ∞)$ so is measurable, on $(0,1]$ we have $|f(x)| ≤ \frac{x}{x^q}=\frac1{x^{q-1}}$.<br>If $q-1&lt;1$ i.e. $q&lt;2, \frac1{x^{q-1}}$ is integrable on $(0,1]$.<br>Now consider $f$ on $[1, ∞)$. In this case, $|f| ≥ 1_{[π, n π]} \frac{|\sin x|}{x^q}$ for every $n=1,2, ⋯$, so that
+\begin{aligned}
+∫_1^∞|f(x)| d x&≥ ∫_{π}^{n π} \frac{|\sin x|}{x^q} d x=\sum_{k=1}^{n-1} ∫_{k π}^{(k+1) π} \frac{|\sin x|}{x^q} d x \\
+&=\sum_{k=1}^{n-1} ∫_0^{π} \frac{\sin x}{(k π+x)^q} d x ≥ \frac{∫_0^{π} \sin x d x}{π^q} \sum_{k=1}^{n-1} \frac1{(k+1)^q}
+\end{aligned}
+Since $\sum_{k=1}^∞ \frac1{k^q}=∞$ (divergent), so that, by letting $n→∞$ we obtain $∫_1^∞|f(x)| d x=∞$, so that $|f|$ is not Lebesgue integrable, hence $f$ is not Lebesgue integrable either.
+</li>
+<li>$(x, y)→h_y(x)$ is continuous in $(0, ∞) ×[0, ∞)$ so that it is measurable (and $h_y$ is measurable for every $y ≥ 0$ fixed).<br>For any fixed $y ≥ 0,\left|h_y(x)\right| ≤ \frac y{\sqrt{x}}$ on $(0,1]$, so by comparison to the integrable function $\frac1{\sqrt{x}}$ on $(0,1]$ we may conclude that $x→h_y(x)$ is integrable on $(0,1]$. While $\left|h_y(x)\right| ≤ \frac y{x \sqrt{x}}$ on $(1, ∞)$, again by comparison (to the integrable function $\frac1{x^{\frac{3}{2}}}$ on $(1, ∞)$ ), $h_y$ is integrable. Putting together, we deduce that $h_y$ is integrable on $(0, ∞)$.
+For every $A&gt;0$
+$$
+\left|h_y(x)\right| ≤ \frac{A}{\sqrt{x}} 1_{(0,1]}(x)+\frac{A}{x \sqrt{x}} 1_{(1, ∞)}(x) ≡ g(x)
+$$
+and for any $y_0 ∈[0, A)$ we have $h_y(x)→h_{y_0}(x)$ for all $x$, thus by the theorem of taking limit under integration, we have
+$$
+\lim _{y→y_0} F(y)=∫_0^∞ h_{y_0}(x) d x=F\left(y_0\right)
+$$
+which implies that $F$ is continuous on $[0, A)$ for any $A&gt;0$. Hence $F$ is continuous on $[0, ∞)$.
+We next show $F$ is differentiable on $(0, ∞)$. We have
+$$
+\frac{∂}{∂ y} h_y(x)=e^{-x} \frac{\cos (x y)}{\sqrt{x}}
+$$
+for all $x&gt;0$ and $y&gt;0$, moreover we have the following simple estimate:
+$$
+\left|\frac{∂}{∂ y} h_y(x)\right| ≤ \frac{e^{-x}}{\sqrt{x}}
+$$
+for all $y&gt;0$ and $x&gt;0$. $x→\frac{e^{-x}}{\sqrt{x}}$ is integrable by comparison: for $x&gt;0$
+$$
+\frac{e^{-x}}{\sqrt{x}} ≤ \frac1{\sqrt{x}} 1_{(0,1]}(x)+e^{-x} 1_{(1, ∞)}(x)
+$$
+thus, by the theorem of differentiating functions under integration, $F'(y)$ exists for all $y&gt;0$ and
+$$
+F'(y)=∫_0^∞ \frac{∂}{∂ y} h_y(x) d x=∫_0^∞ e^{-x} \frac{\cos (x y)}{\sqrt{x}} d x
+$$
+<b>Theorem 1.</b> Let $E$ be measurable, and $J ⊂ ℝ$ be an interval. For $t ∈ J, f_{t}: E →[-∞, ∞]$ is measurable. Suppose for any $t_0 ∈ J, f_{t}→f_{t_0}$ ae on $E$, and there is $g ∈ L^1(E)$ such that $\left|f_{t}(x)\right| ≤ g(x)$ ae on $E$ for all $t ∈ J$. Then $f_{t} ∈ L^1(E)$ and $F(t)=∫_E f_{t}$ is continuous on $J$.<br>
+<b>Theorem 2.</b> Let $E$ be a measurable set, and $J ⊂ ℝ$ be an interval. For each $t ∈ J, f_{t}: E→ℝ$ is measurable, and the following conditions are satisfied: for every $t ∈ J, f_{t} ∈ L^1(E)$, and define $F(t)=∫_E f_{t}$ for $t ∈ J$, for every $x ∈ E$, the partial derivative
+$$
+\frac{∂}{∂ t} f_{t}(x)=\lim _{h→0} \frac{f_{t+h}(x)-f_{t}(x)}{h}
+$$
+exists for every $t ∈ J$ (here the limit runs over $h→0$ such that $t+h ∈ J$), and there is a control function $g ∈ L^1(E)$ such that
+$$
+\left|\frac{∂}{∂ t} f_{t}(x)\right| ≤ g(x)
+$$
+ae on $E$ for all $t ∈ J$. Then $F$ is differentiable on $J$ and
+$$
+F'(t)=∫_E \frac{∂}{∂ t} f_{t}
+$$
+</li>
+<li>$f_n$ are measurable as $f_n$ are continuous on $(0, ∞)$. We can show for example by L'Hopital rule that $f_n(x)→0$ as $n→∞$ for every $x&gt;0$. In order to apply DCT to conclude the limit, we need to find a control function. If $x ∈(0,1]$, then
+$$
+0 ≤ f_n(x) ≤ \frac{\ln(1+n)}n \frac{\sin x}{x^q}
+$$
+Since $\sin x ≤ x$ and $\frac{\ln(1+n)}n→0$, thus the sequence $\left\{\frac{\ln(1+n)}n: n=1,2,…\right\}$ is bounded, hence there is a constant $C_1&gt;0$ such that $\frac{\ln(1+n)}n ≤ C_1$ for all $x$. Thus
+$$
+0 ≤ f_n(x) ≤ C_1 \frac1{x^{q-1}}
+$$
+Since $q-1&lt;1$ so $C_1 \frac1{x^{q-1}}$ is integrable on $(0,1]$. Now we consider $x&gt;1$. Then
+\begin{aligned}
+\frac{\ln(x+n)}n&=\frac{\ln n+\ln \left(\frac{x}n+1\right)}n\\&≤ \frac{\ln n+\ln(x+1)}n \\
+&≤ C_1+\ln(x+1)
+\end{aligned}
+thus
+$$
+\left|f_n(x)\right| ≤ \frac{C_1}{x^q}+\frac{\ln(x+1)}{x^q}
+$$
+for all $x ≥ 1$. $\frac{C_1}{x^q}$ is integrable on $(1, ∞)$ as $q&gt;1$, we show $\frac{\ln(x+1)}{x^q}$ is integrable on $(1, ∞)$ as well. In fact $q&gt;1$ so we may choose $q&gt;p&gt;1$ and write
+$$
+\frac{\ln(x+1)}{x^q}=\frac{\ln(x+1)}{x^{q-p}} \frac1{x^{p}}
+$$
+for $x ≥ 1$. Let $u(x)=\frac{\ln(x+1)}{x^{q-p}}$. Then $u$ is continuous and non-negative, $u(1)=\ln 2, u(x)→0$ as $x→∞$, thus $u$ must be bounded on $[1, ∞)$. Thus there is $C_{2}&gt;0$ such that $\frac{\ln(x+1)}{x^{q-p}} ≤ C_{2}$ for all $x ≥ 1$. Thus
+$$
+\left|f_n(x)\right| ≤ \frac{C_1}{x^q}+\frac{C_{2}}{x^{p}}
+$$
+for $x ≥ 1$. Since both $\frac{C_1}{x^q}$ and $\frac{C_{2}}{x^{p}}$ are Lebesgue integrable on $[1, ∞)$. Hence, by DCT we have
+$$
+\lim _{n→∞} ∫_0^∞ f_n(x) d x=∫_0^∞ \lim _{n→∞} f_n(x) d x=0
+$$
+DCT: Let $E$ be a measurable set, $f_n: E →[-∞, ∞]$ be measurable, and $f=\lim _{n→∞} f_n$ almost everywhere on $E$. Suppose that there is $g ∈ L^1(E)$ such that $\left|f_n(x)\right| ≤ g(x)$ for almost all $x ∈ E$. Then $f$ and $f_n$ are integrable, and $∫_E f=\lim _{n→∞} ∫_E f_n$.
+</li></ol>
+</li>
+<li>
+<ol type="a"><li>$f$ is continuous at $(x, y) ≠(0,0)$ so it is measurable. For $y ≠ 0, x→f(x, y)$ is continuous on $[-1,1]$, so it is Riemann integrable, thus must be Lebesgue integrable. The function is odd, so that
+$$
+∫_{-1}^1 f(x, y) d x=0
+$$
+for all $y ≠ 0$. Hence
+$$
+∫_{-1}^1\left(∫_{-1}^1 f(x, y) d x\right) d y=0
+$$
+By symmetry, we also have
+$$
+∫_{-1}^1\left(∫_{-1}^1 f(x, y) d y\right) d x=0
+$$
+The function is not integrable, as it is not integrable on $(0,1) ×(0,1)$ on which $f$ is non-negative. In fact
+$$
+∫_0^1 \frac{x y}{\left(x^{2}+y^{2}\right)^{3}} d x=\left.\frac y{2} \frac1{1-3} \frac1{\left(x^{2}+y^{2}\right)^{2}}\right|_0 ^1=\frac1{4} \frac1{y^{3}}-\frac1{4} \frac y{\left(1+y^{2}\right)^{2}}
+$$
+which is not integrable on $(0,1)$. According to Tonelli's theorem, $f$ can not be integrable on $(0,1) ×(0,1)$, so neither on $[-1,1] ×[-1,1]$.
+</li>
+<li>$f$ is measurable. Let us show $f$ is integrable on $ℝ^{2}$ by using Tonelli's theorem. To this end, consider the iterated integral
+$$
+∫_{-∞}^∞\left(∫_{-∞}^∞|f(x, y)| d x\right) d y=∫_{-∞}^∞\left(∫_{-∞}^∞ \frac{|\sin (x-y)|}{|x-y|^{3 / 2}}|g(y)| d x\right) d y
+$$
+Since
+$$
+∫_{-∞}^∞ \frac{|\sin (x-y)|}{|x-y|^{3 / 2}}|g(y)| d x=|g(y)| ∫_{-∞}^∞ \frac{|\sin (x-y)|}{|x-y|^{3 / 2}} d x
+$$
+By making change of variable $t=x-y$, we have
+\begin{aligned}
+∫_{-∞}^∞ \frac{|\sin (x-y)|}{|x-y|^{3 / 2}} d x&=∫_{-∞}^∞ \frac{|\sin t|}{|t|^{3 / 2}} d t=2 ∫_0^∞ \frac{|\sin t|}{t^{3 / 2}} d t \\
+&=2 ∫_0^1 \frac{|\sin t|}{t^{3 / 2}} d t+2 ∫_1^∞ \frac{|\sin t|}{t^{3 / 2}} d t \\
+&≤ 2 ∫_0^1 \frac1{\sqrt{t}} d t+2 ∫_1^∞ \frac1{t^{3 / 2}} d t \\
+&=4+4=8
+\end{aligned}
+so that
+$$
+∫_{-∞}^∞|f(x, y)| d x ≤ 8|g(y)|
+$$
+for all $y$. Since $g$ is integrable, so is $|g|$, hence
+$$
+∫_{-∞}^∞\left(∫_{-∞}^∞|f(x, y)| d x\right) d y ≤ 8 ∫_{-∞}^∞|g(y)| d y&lt;∞
+$$
+Thus, according to Tonelli's theorem, $f$ is integrable on $ℝ^{2}$, and Fubini's theorem applies (to both $f$ and $|f|)$. It follows that
+\begin{aligned}
+\left|∫_{ℝ^{2}} f\right|&≤ ∫_{ℝ^{2}}|f|=∫_{-∞}^∞\left(∫_{-∞}^∞|f(x, y)| d x\right) d y \\
+&≤ 8 ∫_{-∞}^∞|g(y)| d y .
+\end{aligned}
+Fubini's theorem. Let $A, B ∈ ℳ_{\text{Leb }}\left[\text{so}A × B ∈ ℳ_{\text{Leb }}\left(ℝ^{2}\right)\right]$ and $f ∈ L^{2}(A × B)$. Then for almost all $y ∈ B, f_y ∈ L^1(B)$, where $f_y(x)=f(y, x)$ for $x ∈ A$, so $F(y)=∫_{A} f_y$ is well defined for almost all $y ∈ B$, and $F$ is integrable on $B$ (so in particular, $F$ is Lebesgue measurable), and $∫_{B} F=∫_{A × B} f$. Therefore
+$$
+∫_{B}\left(∫_{A} f(x, y) \mathrm{d} x\right) \mathrm{d} y=∫_{A}\left(∫_{B} f(x, y) \mathrm{d} y\right) \mathrm{d} x=∫_{A × B} f(x, y) \mathrm{d} x \mathrm{~d} y .
+$$
+Tonelli's theorem. Suppose that $f: ℝ^{2}→ℝ$ is measurable, and suppose either of the repeated integrals exists and is finite:
+$$
+∫_{ℝ}\left(∫_{ℝ}|f(x, y)| \mathrm{d} x\right) \mathrm{d} y,   ∫_{ℝ}\left(∫_{ℝ}|f(x, y)| \mathrm{d} y\right) \mathrm{d} x .
+$$
+Then $f ∈ L^1\left(ℝ^{2}\right)$, so that Fubini's theorem is applicable to both $f$ and $|f|$.</li></ol>
+</li></ol>
