@@ -1,0 +1,70 @@
+---
+mathjax: true
+tag: Differential Equations 2
+excerpt: sheet 1 — HT 2023
+---
+<style>p{margin:0;margin-left:42pt;margin-top:5pt;text-indent:-16pt;}
+.o{margin-left:26pt;text-indent:-10.8pt;position:relative}o:not(:first-child){padding-top:12pt;}
+.b{background-color: beige;text-indent:0;white-space:pre;}
+.o+.b{margin-left:26pt;}
+</style>
+$\def\d{\mathrm{~d}}$<p class="o">1. <b>Reduction of order and Variation of Parameters.</b> Define the operator</span></p><center>ℒ<i>y</i>(<i>x</i>) <i>≡ x</i><sup>2</sup><i>y</i>″(<i>x</i>) <i>− x</i>(<i>x </i>+ 2)<i>y</i>′(<i>x</i>) + (<i>x </i>+ 2)<i>y</i>(<i>x</i>), 1 <i>&lt; x &lt; </i>2</center><p>(a) Check that <i>y</i>(<i>x</i>) = <i>x </i>is a solution of ℒ<i>y </i>= 0. Use reduction of order to find the general solution.</p>
+<p class="b">For $y(x)=x$, we have $ℒy(x)=x^2⋅0-x(x+2)⋅1+(x+2)⋅x=0$, so it is a solution.
+Let $y(x)=x⋅v(x)$, then $y'(x)=x⋅v'(x)+v(x),y''(x)=x⋅v''(x)+2v'(x)$\begin{align*}ℒy(x)&=x^3v''(x)+2x^2v'(x)-x^2(x+2)v'(x)-x(x+2)v(x)+x(x+2)v(x)\\&=x^3v''(x)-x^3v'(x)\end{align*}$⇒v''(x)=v'(x)⇒v(x)=C_1e^x+C_2⇒y(x)=C_1xe^x+C_2x$ is the general solution.</p>
+<p>(b) Solve the following problem by variation of parameters:</p><center>ℒ<i>y</i>(<i>x</i>) = <i>x</i><sup>3</sup>, <i>y</i>(1) = 0, <i>y</i>(2) = 0</center>
+<p class="b">$\left.\array{ℒ(y)=0\\y(1)=0}\right\}⇒y_1(x)=x(e^x-e)$
+$\left.\array{ℒ(y)=0\\y(2)=0}\right\}⇒y_2(x)=x(e^x-e^2)$\begin{align*}W(ξ)&=y_1(ξ)y'_2(ξ)-y_2(ξ)y'_1(ξ)=(e-1)e^{ξ+1}ξ^2\\
+c_1(x)&=\int_x^2\frac{f(ξ)y_2(ξ)}{P_2(ξ)W(ξ)}\mathrm{~d} ξ=-\frac{x+e^{2-x}-3}{(e-1) e}\\
+c_2(x)&=\int_1^x\frac{f(ξ)y_1(ξ)}{P_2(ξ)W(ξ)}\mathrm{~d} ξ=\frac{x+e^{1-x}-2}{(e-1) e}\\
+⇒y(x)&=c_1(x)y_1(x)+c_2(x)y_2(x)=\frac{\left(e (x-2)+e^x-e^2 (x-1)\right) x}{(e-1) e}\end{align*}</p>
+<p class="o">2. <b>Green’s function via variation of parameters.</b></p><p>(a) Use variation of parameters to solve the problem
+\[y''(x)-2y'(x)+2 y(x)=f(x), y(0)=0, y\left(\fracπ2\right)=0\tag∗\]
+where <i>f</i> is a given continuous function. Show that the solution can be written in the form
+\[y(x)=\int_0^{π/2} g(x,ξ) f(ξ) \mathrm{~d}ξ\]
+for a function <i>g</i> (the <i>Green’s function</i>) which you should determine. </p>
+<p class="b">$\left.\array{ℒ(y)=0\\y(0)=0}\right\}⇒y_1(x)=e^x\sin x$
+$\left.\array{ℒ(y)=0\\y\left(\fracπ2\right)=0}\right\}⇒y_2(x)=e^x\cos x$\begin{align*}W(ξ)&=y_1(ξ)y'_2(ξ)-y_2(ξ)y'_1(ξ)=-e^{2ξ}\\
+c_1(x)&=\int_x^{π/2}\frac{f(ξ)y_2(ξ)}{P_2(ξ)W(ξ)}\mathrm{~d} ξ=-\int_x^{π/2}f(ξ)e^{-ξ}\cosξ\mathrm{~d}ξ\\
+c_2(x)&=\int_0^x\frac{f(ξ)y_1(ξ)}{P_2(ξ)W(ξ)}\mathrm{~d} ξ=-\int_0^xf(ξ)e^{-ξ}\sinξ\mathrm{~d}ξ\\y(x)&=c_1(x)y_1(x)+c_2(x)y_2(x)\\
+⇒g(x,ξ)&=\begin{cases}-e^{x-ξ}\sinξ\cos x&0&lt;ξ&lt;x\\-e^{x-ξ}\cosξ\sin x&x&lt;ξ&lt;π/2\end{cases}
+\end{align*}</p>
+<p>(b) Evaluate the integral when <i>f</i>(<i>x</i>) = e<sup><i>x</i></sup> and check that the resulting expression for <i>y</i> does indeed satisfy (∗). </p>
+<p class="b">\begin{align*}
+c_1(x)&=\int_x^{π/2}{-\cosξ}\mathrm{~d}ξ=\sin x-1\\
+c_2(x)&=\int_0^x{-\sinξ}\mathrm{~d}ξ=\cos x-1\\⇒y(x)&=c_1(x)y_1(x)+c_2(x)y_2(x)=e^x(1-\sin x-\cos x)\text{ does satisfy (∗)}
+\end{align*}</p>
+<p class="o">3. <b>Variation of parameters for an Initial Value Problem.</b> Consider the inhomogeneous ODE<br><span style="margin-left: 20%;">ℒ<i>y</i>(<i>x</i>) <i>≡ P</i><sub>2</sub>(<i>x</i>) <i>y</i>″(<i>x</i>) + <i>P</i><sub>1</sub>(<i>x</i>) <i>y</i>′(<i>x</i>) + <i>P</i><sub>0</sub>(<i>x</i>) <i>y</i>(<i>x</i>) = <i>f</i>(<i>x</i>)<span style="position: absolute;right: 0;">(∗)</span><br>for <i>x</i> > 0, with initial conditions <i>y</i>(0) = <i>y</i>′(0) = 0. Suppose that the homogeneous ODE ℒ<i>y </i>= 0 has linearly independent solutions <i>y</i><sub>1 </sub>and <i>y</i><sub>2 </sub>satisfying <i>y</i><sub>1</sub>(0) = 0 and <i>y</i>′<sub>2</sub>(0) = 0. Use variation of parameters to construct the solution to (∗), and determine the Green’s function <i>g</i> such that$$y(x)=\int_0^∞ g(x,ξ) f(ξ) \mathrm{~d}ξ$$</p><p class="b">$y=c_1y_1+c_2y_2,c_1'y_1+c_2'y_2=0⇒y'=c_1y_1'+c_2y_2'$
+$y'(0)=y_2'(0)=0≠y_1'(0)⇒c_1(0)=0$
+$y(0)=y_1(0)=0≠y_2(0)⇒c_2(0)=0$
+\begin{align*}
+c_1(x)&=-\int_0^x\frac{f(ξ)y_2(ξ)}{P_2(ξ)W(ξ)}\mathrm{~d} ξ\\
+c_2(x)&=\int_0^x\frac{f(ξ)y_1(ξ)}{P_2(ξ)W(ξ)}\mathrm{~d} ξ\\
+y(x)&=c_1(x)y_1(x)+c_2(x)y_2(x)\\
+⇒g(x,ξ)&=\begin{cases}\frac{-y_2(ξ)y_1(x)+y_1(ξ)y_2(x)}{P_2(ξ)W(ξ)}&0≤ξ≤x\\0&ξ ≥x\end{cases}
+\end{align*}</p><p class="o">4. <b>Adjoint problems.</b> For each of the problems below, use the adjoint relation ⟨ℒ<i>y, w</i>⟩ ≡ ⟨<i>y</i>, ℒ*<i>w</i>⟩ to determine the differential operator and boundary conditions for the adjoint problem. In each case state whether the operator and/or the full system is self-adjoint.</p><p>(a) ℒ<i>y </i>= <i>y</i>″, 2<i>y</i>(0) + <i>y</i>′(0) = 0,<i> y</i>(1) + <i>y</i>′(1) = 0.</p>
+<p class="b">Integrating by parts\begin{aligned}⟨ℒy,w⟩=\int_0^1 y''(x) w(x) \d x & =-\int_0^1 y'(x) w'(x) \d x+\left[y'(x) w(x)\right]_0^1 \\ & =\int_0^1 y(x) w''(x) \d x+\left[y'(x) w(x)-y(x) w'(x)\right]_0^1≡\left&lt;y, ℒ^* w\right>\end{aligned}To ensure that the boundary terms vanish\[\tag{23}y'(1)w(1)-y'(0)w(0)-y(1)w'(1)+y(0)w'(0)=0\]Substitute $y'(0)=-2y(0),y'(1)=-y(1)$ in (23)\[-y(1)[w(1)+w'(1)]+y(0)[2w(0)+w'(0)]=0\]The adjoint problem is\[ℒ^*w=w'',2w(0)+w'(0)=0,w(1)+w'(1)=0\]So the full system is self-adjoint.</p><p>(b) ℒ<i>y </i>= <i>y</i>″, <i></i>2<i>y</i>(0) + <i>y</i>′(1) = 0, <i>y</i>(1) + <i>y</i>′(0) = 0.</p><p class="b">Substitute $y'(1)=-2y(0),y'(0)=-y(1)$ in (23)\[y(0)[w'(0)-2w(1)]+y(1)[w(0)-w'(1)]=0\]The adjoint problem is\[ℒ^*w=w'',w'(0)-2w(1)=0,w(0)-w'(1)=0\]So the operator is self-adjoint but not the boundary condition.</p><p>(c) ℒ<i>y </i>= <i>y</i>⁗<i>− y</i>′, <i>y</i>′(0) <i>− y</i>″(0) = 0, <i>y</i>‴(0) = 0, <i>y</i>(1) = 0, <i>y</i>′(1) <i>− y</i>‴(1) = 0<i>.</i></p>
+<p class="b">Integrating by parts\begin{aligned}⟨ℒy,w⟩&=\int_0^1 [y''''(x)-y'(x)] w(x) \d x\\&=\int_0^1 y(x) w''''(x) \d x+\left[y'''(x) w(x)-y''(x) w'(x)+y'(x) w''(x)-y(x) w'''(x)\right]_0^1\\& +\int_0^1 y(x) w'(x) \d x-\left[y(x) w(x)\right]_0^1≡\left&lt;y, ℒ^* w\right>\end{aligned}To ensure that the boundary terms vanish\begin{multline*}y'''(1) w(1)-y''(1) w'(1)+y'(1) w''(1)-y(1) w'''(1)-y(1) w(1)\\=y'''(0) w(0)-y''(0) w'(0)+y'(0) w''(0)-y(0) w'''(0)-y(0) w(0)\end{multline*}Substitute $y''(0)=y'(0),y'''(0)=0,y(1)=0,y'''(1)=y'(1)$\[y'(1)[w(1)+w''(1)]-y''(1) w'(1)=y'(0)[-w'(0)+w''(0)]-y(0)[w'''(0)+w(0)]\]The adjoint problem is\[ℒ^*w=w''''+w',w(1)+w''(1)=0,w'(1)=0,w'(0)-w''(0)=0,w'''(0)+w(0)=0\]So neither the operator nor the boundary condition is self-adjoint.</p>
+<p class="o">5. <b>Sturm–Liouville form.</b> Consider the general second order eigenvalue problem<br><span style="margin-left: 20%;">ℒ<i>y</i>(<i>x</i>) <i>≡ A</i>(<i>x</i>)<i>y</i>″(<i>x</i>) + <i>B</i>(<i>x</i>)<i>y</i>′(<i>x</i>) + <i>C</i>(<i>x</i>)<i>y</i>(<i>x</i>) = <i>λy</i>(<i>x</i>), <i>a &lt; x &lt; b </i></span><span style="position: absolute;right: 0;">(∗)</span><br>where <i>A</i>(<i>x</i>), <i>B</i>(<i>x</i>), <i>C</i>(<i>x</i>) are given functions with <i>A</i>(<i>x</i>) ≠ 0 for <i>x</i> ∈ [<i>a</i>, <i>b</i>]. </p><p>(a) Use an integrating factor to show that (∗) can always be put into <i>Sturm–Liouville </i>form,$$\hatℒy(x)≡-\left(p(x)y'(x)\right)'+q(x)y(x)=λr(x)y(x),$$where <i>p</i>(<i>x</i>), <i>q</i>(<i>x</i>), <i>r</i>(<i>x</i>) should be determined in terms of <i>A</i>(<i>x</i>), <i>B</i>(<i>x</i>), <i>C</i>(<i>x</i>). </p>
+<p class="b">Multiply by $-\frac pA$:\[-py''-\frac BApy'-\frac CApy=-λ\frac pAy\]The first two terms can now be combined into an exact derivative −(<i>py</i>′)′ if <i>p</i> satisfies$$p'(x)=\frac{B(x)}{A(x)}p(x)⇒p(x)=e^{∫\frac{B(x)}{A(x)}dx}$$\begin{aligned}q(x) & =-\frac CAp\\ r(x) & =-\frac pA\end{aligned}</p>
+<p>(b) Show that the operator $\hatℒ$ is self-adjoint. </p>
+<p class="b">\begin{align*}⟨u,\hatℒv⟩&=\int_a^bu(x)\hatℒv(x)\d x\\&=\int_a^b{-\left(p(x)v'(x)\right)'u(x)}+q(x)u(x)v(x)\d x\\&=\left.-p(x)u(x)v'(x)\right|_a^b+\int_a^bp(x)u'(x)v'(x)+q(x)u(x)v(x)\d x\\⟨\hatℒu,v⟩&=\int_a^bv(x)\hatℒu(x)\d x\\
+&=\int_a^b{-\left(p(x)u'(x)\right)'v(x)}+q(x)u(x)v(x)\d x\\
+&=\left.-p(x)u'(x)v(x)\right|_a^b+\int_a^bp(x)u'(x)v'(x)+q(x)u(x)v(x)\d x\end{align*}</p>
+<p>(c) If $ℒy(x)=f(x)$ for some function <i>f</i>, what is the equivalent Sturm-Liouville problem?</p>
+<p class="b">\begin{aligned}p(x)&=e^{∫\frac{B(x)}{A(x)}dx}\\q(x) &=-\frac{C(x)}{A(x)}p(x)\\ r(x) & =-\frac{p(x)}{A(x)}f(x)\end{aligned}</p>
+<p class="o">6. <b>FAT and existence.</b> Determine the parameter values (<i>A</i>, <i>B</i>) that yield existence of a solution for each of the following inhomogeneous BVPs. </p><p>(a) For 0 ≤ <i>x</i> ≤ 2π:</p><center><i>y</i>″(<i>x</i>) + <i>y</i>(<i>x</i>) = <i>A </i>sin <i>x</i> + <i>B </i>cos <i>x</i> + 2 sin (<i>x </i> +<sup> π</sup>⁄3) + sin<sup>3 </sup><i>x, y</i>(0) = <i>y</i>(2<i>π</i>), <i>y</i>′(0) = <i>y</i>′(2<i>π</i>).</center>
+<p class="b">Integrating by parts\begin{aligned}⟨ℒy,w⟩&=\int_0^{2π}[y''(x)+y(x)] w(x) \d x\\&=\int_0^{2π}y(x)[w''(x)+w(x)]\d x+\left[y'(x)w(x)-y(x)w'(x)\right]_0^{2π}≡\left&lt;y, ℒ^* w\right>\end{aligned}To ensure that the boundary terms vanish\[y'(2π)w(2π)-y(2π)w'(2π)=y'(0)w(0)-y(0)w'(0)\]Using <i>y</i>(0) = <i>y</i>(2<i>π</i>), <i>y</i>′(0) = <i>y</i>′(2<i>π</i>)\[y'(0)[w(2π)-w(0)]-y(0)[w'(2π)-w'(0)]=0\]The adjoint problem\[ℒ^*w=w''+w,w(2π)-w(0)=0,w'(2π)-w'(0)=0\]has solutions <i>w</i>(<i>x</i>) = sin <i>x</i>, cos <i>x</i>.\begin{gather*}
+\int_0^{2π}\left(A\sin x+B\cos x+2\sin(x+\fracπ3)+\sin^3x\right)\sin x\d x=πA+0+π+\frac{3π}4=0⇒A=-\frac74\\
+\int_0^{2π}\left(A\sin x+B\cos x+2\sin(x+\fracπ3)+\sin^3x\right)\cos x\d x=0+πB+\sqrt3π+0=0⇒B=-\sqrt3
+\end{gather*}</p>
+<p>(b) For 0 ≤ <i>x</i> ≤ 1:</p><center><i>y</i>″(<i>x</i>) + 2<i>y</i>′(<i>x</i>) + <i>y</i>(<i>x</i>) = 1, <i>y</i>′(0) + <i>y</i>(0) = <i>A, y</i>′(1) + <i>y</i>(1) = 3.</center>
+<p class="b">Integrating by parts\begin{aligned}⟨ℒy,w⟩&=\int_0^1[y''(x)+2y'(x)+y(x)]w(x) \d x\\&=\int_0^1y(x)[w''(x)-2w'(x)+w(x)]\d x\\& +\left[y'(x)w(x)-y(x)w'(x)+2y(x)w(x)\right]_0^1≡\left&lt;y, ℒ^* w\right>\end{aligned}Put the boundary terms into the form $(K^*_1 w)(B_1y) + (K^*_2 w)(B_2y) + (K_1y)(B^*_1w) + (K_2y)(B^*_2w)$
+\begin{align*}
+&[y'(1)w(1)-y(1)w'(1)+2y(1)w(1)]-[y'(0)w(0)-y(0)w'(0)+2y(0)w(0)]\\
+&=-w(0)[y'(0)+y(0)]+w(1)[y'(1)+y(1)]\\
+&+y(0)[w'(0)-w(0)]+y(1)[w(1)-w'(1)]
+\end{align*}The adjoint problem\[ℒ^*w=w''-2w'+w,w'(0)-w(0)=0,w(1)-w'(1)=0\]has a non-trivial solution <i>w</i>(<i>x</i>) = e<sup><i>x</i></sup>. So\[⟨ℒy,w⟩=\int_0^1e^x\d x=e-1\]By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29937/mod_resource/content/4/Differential%20Equations%20II.pdf#equation.2.4.34">2.34</a>\[e-1=-w(0)[y'(0)+y(0)]+w(1)[y'(1)+y(1)]=-A+3e⇒A=2e+1\]</p>Just
+make sure you understand the process of dealing with Q6—we're trying to find solvability conditions, and so ultimately we have a
+degree of freedom to deal with any issues.<br>
+<br>
+The usefulness of this process is that we can deal with the homogeneous case to lead to the homogeneous adjoint problem and <i>then</i> deal with the inhomogeneous boundary conditions.
