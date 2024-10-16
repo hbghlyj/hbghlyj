@@ -1,0 +1,124 @@
+---
+mathjax: true
+tag: Integration
+excerpt: A4 paper 2022
+---
+<ol><li>Let $m$ denote the Lebesgue measure on $ℝ$.
+<ol type="a"><li><ol type="i"><li>
+Define the Lebesgue outer measure $m^*$ and what it means for $E ⊆ ℝ$ to be Lebesgue measurable.</li><li>Show that for any subsets $E_1, E_2, …$ of $ℝ$,
+$$
+m^*\left(\bigcup_{n=1}^∞ E_n\right) ⩽ \sum_{n=1}^∞ m^*\left(E_n\right)
+$$</li><li>Let $F_1 ⊇ F_2 ⊇ ⋯$ be Lebesgue measurable sets with $m\left(F_1\right)&lt;∞$. Use countable additivity to show that
+$$
+m\left(\bigcap_{n=1}^∞ F_n\right)=\lim_{n →∞} m\left(F_n\right) .
+$$</li><li>Let $\left(E_n\right)_{n=1}^∞$ be a sequence of Lebesgue measurable sets with $\sum_{n=1}^∞ m\left(E_n\right)&lt;∞$ and set $E=\bigcap_{n=1}^∞ \bigcup_{r ⩾ n} E_r$. Show that $m(E)=0$.</li></ol></li><li>Let $\left(f_n\right)_{n=1}^∞$ be a sequence of measurable functions from $[0,1]$ to $ℝ$.
+<ol type="i"><li>Show that for each $n ∈ ℕ$, there exists $a_n ∈ ℝ$ with
+$$
+m\left(\left\{x ∈[0,1]:\left|f_n(x)\right|&gt;a_n / n\right\}\right)&lt;2^{-n}
+$$</li><li>Deduce that for almost all $x ∈[0,1]$,
+$$
+\frac{f_n(x)}{a_n} → 0   \text { as } n →∞
+$$</li></ol>
+</li></ol>
+</li>
+<li><ol type="a"><li>State <i>Fubini’s</i> and <i>Tonelli’s</i> theorems for a measurable function $f:ℝ^2→ℝ$</li>
+<li>Let $a&gt;1$.<ol type="i"><li>Show that the function $f(x, y)=e^{-x y}$ is integrable on $[0,∞)×[1, a]$.</li><li>Show that <a href="https://en.wikipedia.org/wiki/Frullani_integral">Frullani integral</a>
+$$
+∫_0^∞ \frac{e^{-x}-e^{-a x}}{x} \mathrm{~d} x=\log a
+$$</li><li>Is the function $g(x, y)=e^{-x y}-a e^{-a x y}$ integrable over $[0,1]×[1,∞)$ ? Justify your answer.</li></ol></li><li>Let $f:[0,1] → ℝ$ be measurable. Suppose that the function
+$$
+g(x, y)=f(x)-f(y)
+$$
+is integrable on $[0,1]×[0,1]$. Must $f$ be integrable on $[0,1]$ ? Justify your answer.</li>
+</ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Define a simple function $ϕ:ℝ→[0,∞]$, and state an expression for the Lebesgue integral of $ϕ$.</li><li>Let $f:ℝ→[0,∞]$ be measurable. Explain how to define its Lebesgue integral $∫_ℝf$.</li><li>Let $f:ℝ→[-∞,∞]$ be measurable. What does it mean for $f$ to be <i>Lebesgue integrable</i>, and in that case define $∫_ℝf$.</li><li>Suppose that $f,g:ℝ→[-∞,∞]$ are Lebesgue integrable with $f(x)⩽g(x)$ for all $x$. Show that $∫_ℝf⩽∫_ℝg$.</li></ol>
+</li><li>Determine whether the following measurable functions are Lebesgue integrable over the specified set. Justify your answers.
+<ol type="i"><li>$f(x)=\frac{\cos x}{x}$ over $(1,∞)$.</li><li>$g(x)=\frac{\cos(1/x)}{x}$ over $(0,1)$.</li><li>$h(x)=\frac{\sin x}{e^x-1}$ over $(0,∞)$.</li></ol></li>
+<li>Write $ℒ^1(ℝ)=\{f:ℝ→ℝ:f\text{ is integrable}\}$ and define ${‖f‖}_1=∫_ℝ{|f|}$ for $f∈ℒ^1(ℝ)$
+<ol type="i"><li>Let $\left(f_n\right)_{n=1}^∞$ and $\left(g_n\right)_{n=1}^∞$ be sequences in $ℒ^1(ℝ)$, and suppose that $f,g:ℝ→ℝ$ are such that $f_n→f$ and $g_n→g$ almost everywhere, and that $g∈ℒ^1(ℝ)$. Suppose that $\left|f_n\right|⩽g_n$ for all $n∈ℕ$ and $\left‖g_n\right‖_1→{‖g‖}_1$. Show $f∈ℒ^1(ℝ)$ and $∫_ℝf_n→∫_ℝf$.</li><li>Show that $\left‖f_n-f\right‖_1→0$.<br><a href="https://proofwiki.org/wiki/Scheff%C3%A9%27s_Lemma">Scheffé's Lemma</a></li></ol>
+</li></ol></li></ol>
+<h1>Solution</h1>
+<ol><li><ol type="a"><li><ol type="i">
+<li>For any interval $I$ with endpoints $a$ and $b$, define ${|I|}=b-a$.<br>
+For $A ⊂ ℝ$, we define the Lebesgue outer measure
+$$
+m^*(A)=\inf \left\{\sum_{n=1}^∞ \left|I_n\right|: I_n \text { are intervals}, A ⊆ \bigcup_{n=1}^∞ I_n\right\},
+$$For $E⊂ℝ$, we say $E∈ℳ_\text{Leb}$ if for all $A ⊂ ℝ$$$m^*(A)=m^*(A ∩ E)+m^*(A ∖ E)$$
+</li><li>If $m^*(E_n)=∞$ for some $n$, the inequality clearly holds. Assume $m^*(E_n)<∞\ ∀n$.<br>
+For any $ε>0$, let $I_{1, n}, I_{2, n}, …$ be a sequence of intervals cover $E_n$ such that
+\[
+\sum_{j=1}^∞ m\left(I_{j, n}\right)≤\fracε{2^n}+m^*(E_n)
+\]
+Summing over $n$
+\[
+\sum_{n=1}^∞ \sum_{j=1}^∞m\left(I_{j, n}\right) ≤ ε+\sum_{n=1}^∞m^*(E_n)
+\]
+Since $\left\{I_{j, n}: j, n∈ℤ^+\right\}$ cover $\bigcup_{n=1}^∞ E_n$ we have $m^*\left(\bigcup_{n=1}^∞ E_n\right)≤ε+\sum_{n=1}^∞m^*(E_n)$.<br>Let $ϵ→0$ we get $m^*\left(\bigcup_{n=1}^∞ E_n\right)≤\sum_{n=1}^∞m^*(E_n)$.</li><li>Set $E_n=F_1 ∖ F_n$, then $E_1 ⊆ E_2 ⊆ …$<br>
+Set $A_1=E_1;∀n>1,A_n=E_n∖E_{n-1}$. Then $A_1,…$ are disjoint. By countable additivity
+$$m\left(\bigcup_{n=1}^∞ E_n\right)=m\left(\bigcup_{n=1}^∞ A_n\right)=\lim_{n →∞}\sum_{k=1}^nm\left(A_k\right)=\lim_{n →∞}m\left(E_n\right)$$
+By additivity $m\left(E_n\right)=m(F_1)-m\left(F_n\right),m\left(\bigcap_{n=1}^∞ F_n\right)=m(F_1)-m\left(\bigcup_{n=1}^∞ E_n\right),$<br>we get $
+m\left(\bigcap_{n=1}^∞ F_n\right)=\lim_{n →∞} m\left(F_n\right) .$
+</li><li>By (ii) $m\left(\bigcup_{r ⩾ n} E_r\right)⩽\sum_{r ⩾ n} m\left(E_r\right)$. Since $\sum_{n=1}^∞ m\left(E_n\right)&lt;∞$$$\lim_{n→∞} m\left(\bigcup_{r ⩾ n} E_r\right)⩽\lim_{n→∞} \sum_{r ⩾ n} m\left(E_r\right)=0$$Apply (iii) to the decreasing sequence $F_n=\bigcup_{r⩾n}E_r$
+$$
+m(E)=\lim_{n→∞} m\left(\bigcup_{r ⩾ n} E_r\right)=0
+$$</li></ol></li><li><ol type="i">
+<li>Apply a(iii) to $F_r=\left\{x∈[0,1]:\left|f_n(x)\right|&gt;r / n\right\}$, since $F_1 ⊃ F_2 ⊃…$ and $m(F_1)⩽1$,
+\[m\left(\bigcap_{r=1}^∞ F_r\right)=\lim_{r→∞}m(F_r)\]
+But $\bigcap_{r=1}^∞ F_r=∅$, so $\lim_{r→∞}m(F_r)=0$, so ∃$a_n:m\left(F_{a_n}\right)&lt;2^{-n}$</li><li>Fix $x$, if $\frac{f_n(x)}{a_n} ↛ 0$, $∀n∃m⩾n:\left|f_m(x)\over a_m\right| > \frac1n$, so $\left|f_m(x)\right| > \frac{a_m}{m}$, so $x∈E=\bigcap_{n=1}^∞ \bigcup_{m ⩾ n} E_m$.<br>Apply a(iv) to $E_n=\left\{x ∈[0,1]:\left|f_n(x)\right|&gt;a_n / n\right\}$, since $\sum_{n=1}^∞ m\left(E_n\right)&lt;\sum_{n=1}^∞2^{-n}&lt;∞$<br>we have $m(E)=0$, so $\frac{f_n(x)}{a_n} → 0$ for almost every $x∈[0,1]$</li></ol>
+</li></ol>
+</li>
+<li><ol type="a">
+<li>[Fubini’s Theorem] Let $f:ℝ^2→ℝ$ be integrable. Then, for almost all $y$, the function $x↦f(x,y)$ is integrable. Define $F(y)=∫_ℝf(x,y)dx$, then $F$ is integrable, and$$\int_{ℝ^2} f(x, y) d(x, y)=\int_ℝF(y) d y$$[Tonelli’s Theorem] Let $f:ℝ^2→ℝ$ be measurable. Suppose that either of$$\int_ℝ\left(\int_ℝ{|f(x, y)|} d x\right) d y, \quad \int_ℝ\left(\int_ℝ{|f(x, y)|} d y\right) d x$$ is finite, then $f$ is integrable.</li><li><ol type="i">
+<li>$e^{-x y}>0$. For $y∈[1,a]$, by MCT, $∫_0^∞ e^{-x y} d x=\lim_{n →∞}\frac{1-e^{-n y}}{y}=\frac{1}{y}$$$∫_1^a∫_0^∞ e^{-x y} d xdy=\log a&lt;∞$$By Tonelli's theorem, $e^{-x y}$ is integrable on $[0,∞)×[1, a]$.</li><li>By Fubini's theorem
+$$
+∫_0^∞ \frac{e^{-x}-e^{-a x}}{x} d x=∫_0^∞ ∫_1^a e^{-x y} d y d x=\log a
+$$</li><li>[<a href="https://courses.maths.ox.ac.uk/pluginfile.php/86428/mod_assign/introattachment/0/BonusSheet%20Solutions.pdf">Sheet 5</a> Q3a] $g(x, y) = f(xy)-af(axy)$. By linearity of the integral
+$$
+\int_0^1 g(x, y) d x=\int_0^1 f(x y) d x-a \int_0^1 f(a x y) d x
+$$
+Since $f$ is integrable, by changes of variable $y↦x y$ and $y↦ay$\[\frac{1}{x} ∫_0^∞ f(y) d y=∫_0^∞ f(x y) d y=a ∫_0^∞ f(a x y) d y\]Since $f>0$, Baby MCT ensures that
+$$
+\lim _{n → ∞} ∫_0^n g(x, y) d y=\lim _{n → ∞}\left(∫_0^n f(x y) d y-a ∫_0^n f(a x y) d y\right)=0 .
+$$
+$|g|$ is dominated in $y$ by the integrable function $f(x y)+a f(a x y)$, by DCT
+$$
+∫_0^∞ g(x, y) d y=0
+$$For $y>0$ we have
+$$
+∫_0^1g(x,y)d x=\left[e^{-axy}-e^{-xy}\over y\right]_0^1=\frac{e^{-a y}-e^{-y}}{y}&lt;0
+$$and $g(x, y)=g(y, x)$, so $∫_0^1 g(x, y) d y&lt;0$. Thus $∫_1^∞ g(x, y) d y>0$, whenever $x>0$.<br>
+If $g$ is integrable over $(0,1) ×(1, ∞)$, then Fubini's theorem would imply that
+$$
+0<∫_0^1 ∫_1^∞ g(x, y) d y d x=∫_1^∞ ∫_0^1 g(x, y) d x d y&lt;0 .
+$$</li></ol></li>
+<li>By Fubini $∃x_0∈[0,1]$ such that $\int_0^1{|f(x_0)-f(y)|}dy<∞$. Then$$\int_0^1{|f(y)|}dy≤\int_0^1{|f(y)-f(x_0)|}dy+\int_0^1{|f(x_0)|}dx<∞$$Therefore $f$ is integrable on $[0,1]$</li></ol>
+</li>
+<li>
+<ol type="a"><li><ol type="i"><li>A simple function $ϕ:ℝ→[0,∞]$ has the form $ϕ=\sum^n_{i=1}α_iχ_{B_i}$ with $α_i&gt;0,B_i∈ℳ_\text{Leb}$. Then $∫_ℝ ϕ=\sum^n_{i=1}α_im(B_i)$.
+</li><li>$∫_ℝf=\sup\{∫_ℝϕ:0⩽ϕ⩽f,ϕ\text{ simple}\}$
+</li><li>$f^+=\max(f,0)$, $f^-=\max(-f,0).$<br>$f$ is integrable iff $∫_ℝf^+$ and $∫_ℝf^-$ are both finite, define $∫_ℝf=∫_ℝf^+-∫_ℝf^-$.
+</li><li>Assume $0⩽f$ then $\{∫_ℝϕ:0⩽ϕ⩽f,ϕ\text{ simple}\}⊂\{∫_ℝϕ:0⩽ϕ⩽g,ϕ\text{ simple}\}$,<br>so $∫_ℝf=\sup\{∫_ℝϕ:0⩽ϕ⩽f,ϕ\text{ simple}\}⩽\sup\{∫_ℝϕ:0⩽ϕ⩽g,ϕ\text{ simple}\}=∫_ℝg$<br>
+In general, $\left.\begin{array}l0⩽f^+⩽g^+⇒∫_ℝf^+⩽∫_ℝg^+\\0⩽g^-⩽f^-⇒∫_ℝg^-⩽∫_ℝf^-\end{array}\right\}$Subtracting, $∫_ℝf⩽∫_ℝg$.</li></ol>
+</li><li><ol type="i"><li>For $x∈[nπ,(n+1)π]$, $\left|\frac{\cos x}{x}\right|⩾{|\cos x|\over(n+1)π}$ we have
+$$
+∫_{n π}^{(n+1)π}\left|f(x)\right|⩾\frac{∫_{n π}^{(n+1)π}{|\cos x|}}{(n+1)π}=\frac2{(n+1)π}
+$$
+Since harmonic series diverges, $f$ is not integrable over $(1,∞)$.
+<li>Substitute $u=x^{-1}$
+$$\int_0^1g=∫_∞^1\frac{\cos(1/x^{-1})}{x^{-1}}(-x^{-2})dx=∫_1^∞f=∞$$</li>
+<li>$\lim_{x→0}h(x)=\lim_{x→0}\frac{x+O(x^2)}{x+O(x^2)}=1$, so $h$ is bounded on $[0,1]$, so $h$ is integrable on $[0,1]$.<br>
+For $x⩾1$, we have $\left|\frac{\sin x}{e^x-1}\right|⩽\frac1{e^x-1}$. Substitute $u=e^x$,
+$$\int_1^∞\frac1{e^x-1}dx=\int_e^∞\frac1{u(u-1)}du=\log\left(u-1\over u\right)|_e^∞=1-\log(e-1)$$
+By comparison $h$ is integrable on $[1,∞)$. So $h$ is integrable on $[0,∞)$.
+</li></ol></li>
+<li><ol type="i">
+<li>A sequence of measurable functions $f_n→f$ a.e. so $f$ is measurable.<br>$∀n∈ℕ:\left|f_n\right|⩽g_n$, $f_n→f,g_n→g$ a.e. So ${|f|}⩽g$ a.e. But $g∈ℒ^1(ℝ)$, so $f∈ℒ^1(ℝ)$.<br>
+Let $B_n=\{x∈ℝ:g_n(x)>g(x)\}$. Then $\left|f_n\right|χ_{ℝ∖B_n}⩽g_nχ_{ℝ∖B_n}⩽g$.<br>By DCT $\lim_{n→∞}∫_{ℝ∖B_n}f_n=∫_ℝf$. Again by DCT $\lim_{n→∞}∫_{ℝ∖B_n}g_n=∫_ℝg$.<br>
+$\left.\begin{array}r\lim_{n→∞}∫_{ℝ∖B_n}g_n=∫_ℝg\\\lim_{n→∞}∫_ℝg_n=∫_ℝg\end{array}\right\}$Subtracting,$\lim_{n→∞}∫_{B_n}g_n=0$,by comparison,$\lim_{n→∞}∫_{B_n}f_n=0$.<br>
+Therefore $\lim_{n→∞}∫_ℝf_n=\lim_{n→∞}∫_{B_n}f_n+\lim_{n→∞}∫_{ℝ∖B_n}f_n=∫_ℝf$.
+</li><li>If $f_n→f$ a.e. then ${|f_n-f|}→0$ a.e.<br>Let $F_n={|f_n-f|},F=0,G=2g$. Then $F_n→F$ a.e.<br>If ${|f_n|}≤g$ and $f_n→f$ a.e. then ${|f|}≤g$ a.e. so ${|f_n-f|}≤2g$ a.e.<br>
+${|F_n|}≤G$ and $∫_ℝG<∞$, by DCT $∫_ℝF_n→∫_ℝF$.</li></ol>
+</li></ol></li></ol>
