@@ -1,0 +1,149 @@
+---
+mathjax: true
+tag: Integration
+excerpt: Integration Sheet 3 — HT 2023
+---
+<style>
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}
+div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+</style>
+<div class="q">Let $α∈(0,∞)$. Show that $Γ(α)≔\int_0^∞ x^{α-1}\mathrm e^{-x}\,dx$ exists as a Lebesgue integral, and that $Γ(α+1)=αΓ(α)$.</div>
+For $x∈[0,1]$, since $α-1>-1$, $x^{α-1}$ is integrable on $[0,1]⇒x^{α-1}\mathrm e^{-x}≤x^{α-1}$ is integrable on $[0,1]$.<br>Since $\lim_{x→∞}\mathrm e^{-x}x^n=0$, it is bounded by some constant $C⇒\mathrm e^{-x}≤Cx^{-n}⇒x^{α-1}\mathrm e^{-x}≤Cx^{α-1-n}$.<br>For $n>α$, $x^{α-1-n}$ is integrable on $[1,∞)⇒x^{α-1}\mathrm e^{-x}≤x^{α-1-n}$ is integrable on $[1,∞)$.
+$$Γ(α+1)=\lim_{n→∞}\int_0^nx^αe^{-x}dx=-\lim_{n→∞}(n^αe^{-n}-αΓ(α))=αΓ(α)$$
+<div class="q">We know that $\frac{\sin x}x$ is not integrable over $(1, ∞)$. Deduce, or prove otherwise, that neither of the following functions is integrable over the given intervals:
+<ol type="a">
+<li>$\frac{\sin\left(x^2\right)}x$ over $(1, ∞)$</li>
+<li>$\frac1x\sin\frac1{x^2}$ over $(0,1)$</li>
+</ol>
+</div>
+Apply <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=22">Thm 5.8. (Substitution)</a> with $f(x)=\frac{\sin x}x$ and $g(x)=x^2,\frac1{x^2}$
+<ol type="a">
+<li>$\frac{\sin\left(x^2\right)}x=\frac12f(g(x))g'(x)$ is not integrable over $g^{-1}(1,∞)=(1,∞)$.</li>
+<li>$\frac1x\sin\frac1{x^2}=-\frac12f(g(x))g'(x)$ is not integrable over $g^{-1}(1,∞)=(0,1)$.</li>
+</ol>
+<div class="q">By comparing terms in binomial expansions, or otherwise, show that
+\[
+\left(1+\frac{x}{n}\right)^n≤\left(1+\frac{x}{n+1}\right)^{n+1},
+\]
+for $n≥2, x≥0$. Use the MCT to deduce that
+\[
+\lim_{n→∞}\int_1^2\left(1+\frac{x}{n}\right)^{-n} \,dx=\mathrm e^{-1}-\mathrm e^{-2}
+\]
+</div>For $0≤x&lt;n$,\begin{align*}\left(1+\frac{x}{n}\right)^n&=
+1+x+\left(1-\frac1n\right)\frac{x^2}{2!}+\left(1-\frac1n\right)\left(1-\frac2n\right)\frac{x^3}{3!}+⋯\\&≤1+x+\left(1-\frac1{n+1}\right)\frac{x^2}{2!}+\left(1-\frac1{n+1}\right)\left(1-\frac2{n+1}\right)\frac{x^3}{3!}+⋯=\left(1+\frac{x}{n+1}\right)^{n+1}\end{align*}$∴\left(1+\frac{x}{n}\right)^{-n}≥\left(1+\frac{x}{n+1}\right)^{-(n+1)}$ and $\lim_{n→∞}\left(1+\frac{x}{n}\right)^{-n}=\mathrm e^{-x}$. By MCT and FTC\[\lim_{n→∞}\int_1^2\left(1+\frac{x}{n}\right)^{-n}\,dx=\int_1^2\mathrm e^{-x}\,dx=-\mathrm e^{-x}|_1^2=\mathrm e^{-1}-\mathrm e^{-2}\]
+<div class="noprint"><a href="https://math.stackexchange.com/questions/124033">Monotone Convergence Theorem for non-negative decreasing sequence of measurable functions</a></div>
+<div class="q">Use the binomial expansion of $(1-x)^{-k}$ to show that $\left(1-\frac{u}{n}\right)^{-n}≥\left(1-\frac{u}{n+1}\right)^{-(n+1)}$ for $n≥2$ and $0≤u&lt;n$. Hence, or otherwise, prove that
+\[
+\lim_{n→∞}n^α \int_0^1 x^{α-1}\mathrm e^{-n β x}(1-x)^n\,dx=(β+1)^{-α}Γ(α)
+\]
+where $α>0, β>-1$, and $Γ(α)=\int_0^∞\mathrm e^{-u} u^{α-1}\,du$.</div>
+\begin{align*}\left(1-\frac{u}{n}\right)^{-n}&=1+u+\left(1+\frac1n\right)\frac{u^2}{2!}+\left(1+\frac1n\right)\left(1+\frac2n\right)\frac{u^3}{3!}+⋯\\&≥1+u+\left(1+\frac1{n+1}\right)\frac{u^2}{2!}+\left(1+\frac1{n+1}\right)\left(1+\frac2{n+1}\right)\frac{u^3}{3!}+⋯=\left(1-\frac{u}{n+1}\right)^{-(n+1)}\end{align*}
+$∴\left(1-\frac{u}{n}\right)^n≤\left(1-\frac{u}{n+1}\right)^{n+1}$ and $\lim_{n→∞}\left(1-\frac{u}{n}\right)^n=\mathrm e^{-u}$
+\begin{align*}
+\lim_{n→∞}n^α \int_0^1 x^{α-1}\mathrm e^{-nβx}(1-x)^n\,dx&=\lim_{n→∞}\int_0^1 u^{α-1}\mathrm e^{-βu}\left(1-\frac un\right)^n\,du&\text{Let }u=nx\\
+&=\int_0^1 u^{α-1}\mathrm e^{-(β+1)u}\,du&\text{By MCT}\\
+&={1\overβ+1}\int_0^1 \left(t\overβ+1\right)^{α-1}\mathrm e^{-t}\,dt&\text{Let }t=(β+1)u\\
+&=(β+1)^{-α}Γ(α)&\text{By definition of Γ(α)}
+\end{align*}
+<div class="q">Show that $0≤\frac{x}{1+x^α}≤1$ for $α>1, x≥0$, and deduce that
+\[
+\lim_{n→∞}\int_0^{2π} \frac{n x \sin x}{1+n^α x^α}\,dx=0
+\]</div>
+Clearly $\frac{x}{1+x^α}≥0$. For $\frac{x}{1+x^α}≤1$, multiply by $1+x^α>0$, we get $x-1≤x^α$.<br>If $x≤1$, we have $x-1≤0≤x^α$; if $x>1$, since $α>1$, we have $x-1&lt;x&lt;x^α$.<br>
+Replace $x$ with $nx$, we get $0≤\frac{nx}{1+n^αx^α}≤1⇒\left|\frac{nx\sin x}{1+n^αx^α}\right|≤1$. By Bounded Convergence Theorem,
+\[
+\lim_{n→∞}\int_0^{2π}\frac{nx\sin x}{1+n^α x^α}\,dx=\int_0^{2π}\lim_{n→∞}\frac{nx\sin x}{1+n^α x^α}\,dx=\int_0^{2π}0=0
+\]
+<div class="q">Prove that
+\[
+\lim_{n→∞}\int_0^{n^2}n\left(\sin\frac xn\right)\mathrm e^{-x^2}\,dx=\frac12
+\]</div>
+Rewrite LHS using characteristic functions
+\[
+I=\lim_{n→∞}\int_0^∞χ_{(0,n^2)}n\left(\sin\frac xn\right)\mathrm e^{-x^2}\,dx
+\]
+Since $\left|\sin\frac xn\right|≤\frac xn\,∀x≥0$
+\[0≤n\left|\sin\frac xn\right|\mathrm e^{-x^2}≤x\mathrm e^{-x^2}\]
+By DCT and $\lim_{n→∞}n\left(\sin\frac xn\right)=x$
+\[
+I=\int_0^∞x\mathrm e^{-x^2}\,dx=-\left.\frac{\mathrm e^{-x^2}}2\right|_0^∞=\frac12
+\]
+<div class="q">Let $α>-1$. Show that $x^α\log x$ is integrable over $(0,1)$, and
+\[
+\int_0^1 x^α \log x\,dx=-(1+α)^{-2}
+\]
+Deduce that for $β>-1$, $x^β(1-x)^{-1}\log x$ is integrable over $(0,1)$, and
+\[
+\int_0^1 x^β(1-x)^{-1}\log x\,dx=-\sum_{n=1}^∞(n+β)^{-2}
+\]</div>
+For $0&lt;ε&lt;1$, integrating by parts
+\begin{align*}
+\int_ε^1x^α\log x\,dx&=\left.\frac{x^{α+1}}{α+1}\log x\right|^1_ε-\frac1{α+1}\int^1_εx^α\,dx
+\\ &=-\frac{ε^{α+1}}{α+1}\logε-\left[\frac1{(α+1)^2}-\frac{ε^{α+1}}{(α+1)^2}\right]
+\\&=-\frac{ε^{α+1}}{α+1}\logε+\frac{ε^{α+1}}{(α+1)^2}-\frac1{(α+1)^2}
+\end{align*}
+The intervals $[ε,1]$ increases to $[0,1]$. Apply Corollary 4.3.[Baby MCT] to $-x^α\log x>0$ we have$$\int_0^1 x^α\log x\,dx=\lim_{ε→0}\left[-\frac{ε^{α+1}}{α+1}\logε+\frac{ε^{α+1}}{(α+1)^2}-\frac1{(α+1)^2}\right]=-\frac1{(α+1)^2}$$<hr>Applying MCT for series to $-x^β(1-x)^{-1}\log x=\sum_{n=1}^∞-x^{n+β-1}\log x$\[
+-\int_0^1 x^β(1-x)^{-1}\log x\,dx=-\sum_{n=1}^∞\int_0^1x^{n+β-1}\log x\,dx=\sum_{n=1}^∞(n+β)^{-2}&lt;∞
+\]So $x^β(1-x)^{-1}\log x$ is integrable over $(0,1)$.
+<div class="q">Show that for $n>0$, $\mathrm e^{-nx}\sin x$ is integrable over $[0, ∞)$, and
+\[
+\int_0^∞\mathrm e^{-nx}\sin x\,dx=\frac1{1+n^2}
+\]
+Deduce that for $0≤a≤1,\left(\mathrm e^x-a\right)^{-1}\sin x$ is integrable over $[0, ∞)$, and
+\[
+\int_0^∞\left(\mathrm e^x-a\right)^{-1}\sin x\,dx=\sum_{n=1}^∞\frac{a^{n-1}}{1+n^2}
+\]</div>$\left|\mathrm e^{-nx}\sin x\right|≤\mathrm e^{-nx}$ and $\int_0^∞\mathrm e^{-nx}\,dx=1/n$, by comparison, $\mathrm e^{-nx}\sin x$ is integrable on $[0,∞]$. Integrating by parts,
+\begin{align*}
+I=\int_0^∞\mathrm e^{-nx}\sin x\,dx&=-\frac1n\mathrm e^{-nx}\sin x|_0^∞+\frac1n\int_0^∞\mathrm e^{-nx}\cos x\,dx\\
+&=\frac1n\int_0^∞\mathrm e^{-nx}\cos x\,dx\\
+&=-\frac1{n^2}\mathrm e^{-nx}\cos x|_0^∞-\frac1{n^2}\int_0^∞\mathrm e^{-nx}\sin x\,dx\\&=\frac1{n^2}-\frac1{n^2}I\\⇒I&=\frac1{1+n^2}
+\end{align*}$0≤a≤1,x>0⇒0≤a\mathrm e^{-x}&lt;1⇒\left(\mathrm e^x-a\right)^{-1}=\left(1-a\mathrm e^{-x}\right)^{-1}\mathrm e^{-x}=\sum_{n=1}^∞a^{n-1}\mathrm e^{-nx}$<br>
+By ratio test, $\sum_{n=1}^∞\frac{a^{n-1}}{1+n^2}$ converges. By Lebesgue’s Series Theorem
+\[
+\int_0^∞\left(\mathrm e^x-a\right)^{-1}\sin x\,dx=\sum_{n=1}^∞a^{n-1}\int_0^∞\mathrm e^{-nx}\sin x\,dx=\sum_{n=1}^∞\frac{a^{n-1}}{1+n^2}
+\]
+<div class="q">Let $a∈(0,1)$. Prove that $\frac{\mathrm e^{-ax}-\mathrm e^{(a-1)x}}{1-\mathrm e^{-x}}$ is an integrable function on ℝ, and that
+\[
+\frac12\int_{-∞}^∞\frac{\mathrm e^{-ax}-\mathrm e^{(a-1)x}}{1-\mathrm e^{-x}}\,dx=\frac1a+\frac1{a-1}+\frac1{a+1}+\frac1{a-2}+\frac1{a+2}+\frac1{a-3}+…
+\]</div>$f(-x)=\frac{\mathrm e^{-ax}-\mathrm e^{(a-1)x}}{1-\mathrm e^{-x}}$ Dividing by $-\mathrm e^x$ we get $f(-x)=f(x)$. So we only need to consider $[0,∞)$.<br>Since $\mathrm e^{-kx}>0$, for all $k$, $(\mathrm e^{-ax}-\mathrm e^{(a-1)x})\mathrm e^{-kx}$ have same sign. By MCT for series\begin{align*}\int_0^∞\frac{\mathrm e^{-ax}-\mathrm e^{(a-1)x}}{1-\mathrm e^{-x}}dx&=\int_0^∞\sum_{k=0}^∞(\mathrm e^{-ax}-\mathrm e^{(a-1)x})\mathrm e^{-kx}dx\\&=\sum_{k=0}^∞\int_0^∞(\mathrm e^{-ax}-\mathrm e^{(a-1)x})\mathrm e^{-kx}dx\\&=\sum_{k=0}^∞\frac1{a+k}+\frac1{a-k-1}\end{align*}
+$\left|\frac1{a+k}+\frac1{a-k-1}\right|=\frac{|2a-1|}{(a+k)(1-a+k)}≤\frac{|2a-1|}{k^2}⇒$RHS converges$⇒\frac{\mathrm e^{-ax}-\mathrm e^{(a-1)x}}{1-\mathrm e^{-x}}$ is integrable on $[0,∞)$.
+<div class="q">Prove that $\int_0^∞ \cos x \arctan(λx)\mathrm e^{-x}\,dx→\fracπ4$ as $λ→∞$.</div>For $x>0$, the non-negative sequence $\left(\arctan(λx)\right)_{λ≥1}$ increases to $\fracπ2$, by MCT and $ℒ\{\cos x\}(s)=\frac s{s^2+1}$\[\lim_{λ→∞}\int_0^∞\cos x\arctan(λx)\mathrm e^{-x}\,dx=\fracπ2\int_0^∞(\cos x)\mathrm e^{-x}\,dx=\fracπ2ℒ\{\cos x\}(1)=\fracπ4\]
+<div class="q">Let $J_0(x)=\frac2π\int_0^{π/2}\cos(x\cosθ)\,dθ$.<ol type="a"><li>Show that $J_0$ is differentiable on ℝ.</li><li>Show that the function Γ, as defined in Q1, is differentiable on $(0,∞)$.</li></div>
+<ol type="a"><li>(1) Since $\cos(x\cosθ)$ is bounded, it is integrable on $(0,\fracπ2)$ for all $x∈ℝ$.<br>(2) $\frac∂{∂x}\cos(x\cosθ)=-\cosθ\sin(x\cosθ)$ exists for all $x∈ℝ,θ∈(0,\fracπ2)$.<br>(3) $\left|\frac∂{∂x}\cos(x\cosθ)\right|≤\cosθ$ for all $x∈ℝ,θ∈(0,\fracπ2)$ and $\int_0^{π/2}\cosθ\,dθ=1$.<br>
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=28&zoom=auto,-86,378">Thm 7.5</a> $J_0$ is differentiable on ℝ.</li>
+<li>$Γ(x)≔\int_0^∞ t^{x-1}\mathrm e^{-t}\,dt$ exists for all $x∈(0,∞)$ as shown in Q1.<br>
+$\frac∂{∂x}t^{x-1}\mathrm e^{-t}=t^{x-1}\mathrm e^{-t}\log t$ exists for all $t,x∈(0,∞)$. Consider $(0,1)$ and $(1,∞)$ separately:<br>
+$\left|t^{x-1}\mathrm e^{-t}\log t\right|≤t^{x-1}\log t$ and $t^{x-1}\log t$ is integrable over $(0,1)$ by Q7, so $t^{x-1}\mathrm e^{-t}\log t$ is integrable over $(0,1)$.<br>Since $\lim_{t→∞}\mathrm e^{-t/2}\log t=0$, it is bounded by some constant $C$.\begin{align*}∫_1^∞(t^{x-1}\mathrm e^{-t/2})\mathrm e^{-t/2}\log t\,dt&&lt;C∫_1^∞t^{x-1}\mathrm e^{-t/2}\,dt\\&=C2^x∫_1^∞u^{x-1}\mathrm e^{-u}\,du \text{substitute }u=t/2\\&&lt;C2^xΓ(x)\end{align*}By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=28&zoom=auto,-86,378">Thm 7.5</a> Γ is differentiable on $(0,∞)$.</li></ol>
+<div class="q">Let $f(x,y)=y^3\mathrm e^{-y^2x},F(y)=\int_0^∞f(x,y)\,dx$. Calculate $F'(0)$ and $\int_0^∞\frac{∂f}{∂y}(x,0)\,dx$.<br>
+How do your answers relate to the theorem about differentiating through integrals?</div>
+\begin{gather*}F(y)=y^3\int_0^∞\mathrm e^{-y^2x}\,dx=\left.y^3⋅\frac{\mathrm e^{-y^2x}}{-y^2}\right|_{x=0}^∞=y^3⋅\frac1{y^2}=y⇒F'(0)=1\\\frac{∂f}{∂y}(x,0)=\lim_{y→0}\frac{f(x,y)}y=\lim_{y→0}y^2\mathrm e^{-y^2x}=0⇒\int_0^∞\frac{∂f}{∂y}(x,0)\,dx=0\end{gather*}So $F'(0)>\int_0^∞\frac{∂f}{∂y}(x,0)\,dx$. This agrees with the corollary Fatou's lemma: $F'(0)≥\int_0^∞\frac{∂f}{∂y}(x,0)\,dx$.<hr>We will show $f$ has no bounding function $g$ that satisfies the conditions of DCT:<br>Suppose $∃g:g(x)≥\left|\frac{∂f}{∂y}(x,y)\right|∀{|y|}&lt;δ$, let $y=x^{-1/2}$ then ${|y|}&lt;δ⇔\left|x^{-1/2}\right|&lt;δ⇔{|x|}>δ^{-2}$
+\[g(x)≥\left|\frac{∂f}{∂y}(x,x^{-1/2})\right|=e^{-1}x^{-1} ∀{|x|}>δ^{-2}\]so $g(x)$ is not integrable on $[0,∞)$.
+<div class="q">By differentiating through the integral sign, evaluate the following integrals:<ol type="a">
+<li>$\int_0^∞\frac{\mathrm e^{-x} \sin t x}x\,dx$</li><li>$\int_0^{π/2}\log\left(a^2\cos^2x+b^2\sin^2x\right)\,dx$, where $a,b>0$.</li></ol></div>
+<ol type="a"><li>$\frac{d}{dt}\int_0^∞\frac{\mathrm e^{-x} \sin t x}x\,dx=\int_0^∞\mathrm e^{-x} \cos t x\,dx=ℒ\{\cos tx\}(1)=\frac1{t^2+1}$<br>The integral is 0 when $t=0$. Therefore $\int_0^∞\frac{\mathrm e^{-x} \sin t x}x\,dx=\int_0^t\frac1{τ^2+1}\,dτ=\arctan t$</li><li>Let $I(a,b)=…$ Then\begin{align*}
+\frac{∂I}{∂a}&=\int_0^{π/2}\frac{2a\cos^2x}{a^2\cos^2x+b^2\sin^2x}\mathrm dx,\\
+\frac{∂I}{∂b}&=\int_0^{π/2}\frac{2b\sin^2x}{a^2\cos^2x+b^2\sin^2x}\mathrm dx,
+\end{align*}By <a href="/285/5.html">Complex Analysis sheet 5 Q10</a>,\[\int_0^{2π}\frac{dx}{a^2\cos^2x+b^2\sin^2x}=\frac{2π}{ab}\]By substitution $x↦π+x$ we find the integral on $[π,2π]$ and $[0,π]$ are equal, so\[\int_0^π\frac{dx}{a^2\cos^2x+b^2\sin^2x}=\fracπ{ab}\]By substitution $x↦π-x$ we find the integral on $[\fracπ2,π]$ and $[0,\fracπ2]$ are equal, so\[\int_0^{π/2}\frac{dx}{a^2\cos^2x+b^2\sin^2x}=\fracπ{2ab}\]So we get $b\frac{∂I}{∂a}+a\frac{∂I}{∂b}=π$. Also it is easy to see $a\frac{∂I}{∂a}+b\frac{∂I}{∂b}=π$.<br>For $a≠b$, this linear system has unique solution $\frac{∂I}{∂a}=\frac{∂I}{∂b}=\fracπ{a+b}⇒I=π\log(a+b)+C$.<br>
+For $a=b$, $I(a,b)=π\log a$, in particular $I(1,1)=0$. By continuity $I=π\log\left(a+b\over2\right)$.
+</li></ol>
+<div class="q">Let $K(t)=\int_1^∞\frac{\cos(tx)}{x^2}dx$. Show carefully that $K'(t)=\frac{K(t)-\cos t}t$ for $t>0$.</div><div class="noprint"><a href="https://math.stackexchange.com/questions/4140304">Derivative of $\int_1^∞\frac{\cos(xt)}{t^2}dt$</a></div>
+A formal differentiation under the integral suggests that
+\begin{align*}
+-\int_1^∞{\sin(tx)\over x}dx&={1\over t}\left(\left.\cos(tx)\over x\right|_1^∞+\int_1^∞{\cos(tx)\over x^2}dx\right)\\
+&=\frac{K(t)-\cos t}t
+\end{align*}But this integral <i>doesn't exist</i>. Taking a step back, rewrite $K$ using Integration by parts:
+\begin{equation}\label1
+K(t) = -{\sin t\over t}+{2\over t}\int_1^∞ {\sin(tx)\over x^3}dx
+\end{equation}
+Since $\left|\sin(tx)\over x^3\right|≤\frac1{x^3}$, the integral $G(t)≔\int_1^∞ {\sin(tx)\over x^3}dx
+$ exists for all $t$.<br>$\sin(tx)\over x^3$ is differentiable wrt $t$ for all $x$. Since $\left|\cos(tx)\over x^2\right|≤\frac1{x^3}$ and $1\over x^3$ is integrable over $[1,∞)$, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=28&amp;zoom=auto,-86,378">Thm 7.5</a>
+$$
+G'(t)=\int_1^∞{\cos(tx)\over x^2}dx=K(t)$$ Differentiating \eqref{1} we have
+\begin{align*}
+K'(t)&= {\sin t-t\cos t\over t^2} + {2\over t}K(t) -{2\over t^2}G(t)\cr
+&={\sin t-t\cos t\over t^2}+ {2\over t}K(t) -{2\over t^2}\left({t\over 2}K(t)+{\sin t\over 2} \right)\cr
+&= -{\cos t\over t}+{1\over t}K(t).
+\end{align*}<hr>Alternatively, substitute $x↦x/t$
+$$K(t)=tf(t) f(t)=\int_t^∞\frac{\cos x}{x^2}dx$$
+By FTC $f'(t)=-\frac{\cos t}{t^2}⇒K'(t)=f(t)+tf'(t)=\frac{K(t)-\cos t}t$
