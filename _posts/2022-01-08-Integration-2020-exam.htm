@@ -1,0 +1,179 @@
+---
+mathjax: true
+tag: Integration
+excerpt: A4 paper 2020
+---
+<ol><li>
+<ul class="litype_4"><li>Let $A$ be a subset of ℝ. Define the outer (Lebesgue) measure $m^*(A)$ of $A$. What does it mean to say that $A$ is a null set? What does it mean to say that $A$ is (Lebesgue) measurable?
+Let $A_n$ be subsets of ℝ for $n=1,2, …$. Show that
+$$
+m^*\left(\bigcup_{n=1}^∞ A_n\right) ⩽ \sum_{n=1}^∞ m^*\left(A_n\right) .
+$$
+</li>
+<li>Let $A^{(2)}=\left\{x^2: x ∈ A\right\}$. Show that the following statements are true.
+<ul class="litype_5"><li>If $A ⊆[0,1]$, then $m^*\left(A^{(2)}\right) ⩽ 2 m^*(A)$.
+</li>
+<li>If $A$ is a null subset of ℝ, then $A^{(2)}$ is null.</li></ul>
+</li>
+<li>
+<ul class="litype_5"><li>Give an example, without proof, of a continuous function $Ψ: ℝ → ℝ$ and a null set $E$ such that $Ψ(E)$ is not null.
+</li>
+<li>Let $f: ℝ → ℝ$ be a continuous function, and assume that $f(E)$ is null for every null set $E$. Let $A$ be a measurable subset of ℝ. Show that $f(A)$ is measurable. [You may assume that $A=\bigcup_{n=1}^∞ K_n ∪ F$ where $K_n$ are closed subsets of ℝ and $F$ is null, and you may use standard facts about measurable sets.]
+</li>
+<li>Let $g: ℝ → ℝ$ be a function such that $g(A)$ is measurable for all measurable sets $A$ of ℝ. Let $E$ be a null subset of ℝ. Show that $g(E)$ is null. [You may assume without proof that every measurable subset of ℝ which is not null contains a non-measurable subset of ℝ.]<br><a href="https://math.stackexchange.com/questions/1821476">A set with strictly positive Lebesgue measure doesn't have to contain an interval</a></li></ul></li></ul>
+</li>
+<li>For an interval $I$ in ℝ and $p ⩾ 1$, $L^p(I)$ denotes the vector space of (equivalence classes of) measurable functions $f: I → ℝ$ such that $|f|^p$ is integrable. Moreover, $χ_I$ denotes the characteristic (indicator) function of $I$.
+<ul class="litype_4"><li>
+<ul class="litype_5"><li>Let $α ∈ ℝ$ and $β&gt;0$. For which values of $α$ and $β$ is $x^α\left(1+x^β\right)^{-1} ∈$ $L^1(0, ∞)$?
+</li>
+<li>Let $β&gt;0$. For which values of $p ⩾ 1$ is $x\left(1+x^β\right)^{-1} ∈ L^p(0, ∞)$ ?
+</li>
+<li>Let $β&gt;α&gt;0$. For which values of $p ⩾ 1$ is $\left(x^α+x^β\right)^{-1} ∈ L^p(0, ∞)$ ?
+You should justify your answers, but you may use standard facts about integrability of $x^α$.</li></ul>
+</li>
+<li>Let $f(x)=x\left(1+\mathrm{e}^x \sin ^2 x\right)^{-1}$ for $x&gt;0$. By comparing $f(x)$ with a function of the form
+$$
+\left(1+x^2\right)^{-1}+\sum_{k=1}^∞ c_k χ_{I_k}(x)
+$$
+for suitable $c_k&gt;0$ and intervals $I_k$, or otherwise, show that $f ∈ L^1(0, ∞)$.<br>[Your answer should explain how you would choose $c_k$ and $I_k$ in order to show that $f$ is integrable, and why it is possible to choose them in that way. It is not necessary to specify precise choices of $c_k$ and $I_k$.]<br>
+For which values of $p&gt;1$ is $f ∈ L^p(0, ∞)$ ? Give a brief explanation of your answer.
+</li>
+<li>State Hölder's inequality.<br>
+Let $f$ be a measurable function on $(0, ∞)$, and assume that $∫_0^∞{|f g|}⩽\left(∫_0^∞{|g|}^2\right)^{1 / 2}$ for all $g ∈ L^2(0, ∞)$. Show that $f ∈ L^2(0, ∞)$.</li></ul>
+</li><li><ul class="litype_4"><li>Let $f: I → ℝ$ be a function defined by a formula of the form
+$$
+f(x)=∫_J g(x, t) \mathrm{d} t
+$$
+where $I$ and $J$ are intervals and $g: I × J → ℝ$ is a suitable function. State and prove a theorem that gives sufficient conditions for differentiability of $f$ and a formula for $f'(x)$. [You may use the Dominated Convergence Theorem without proof.]
+</li>
+<li>Define $f: ℝ → ℝ$ by
+$$
+f(x)=∫_ℝ \frac{t \sin (x t)}{\left(1+t^2\right)^2} \mathrm{~d} t
+$$
+Show carefully that $f$ is differentiable on ℝ, and that
+$$
+x f'(x)=∫_ℝ \frac{2 t\left(1-t^2\right) \sin (x t)}{\left(1+t^2\right)^3} \mathrm{~d} t
+$$
+for all $x ∈ ℝ$.
+At which points $x ∈ ℝ$ does $f''(x)$ exist?</li></ul>
+</li></ol>
+<h1>Solution</h1>
+<ol id="right"><li>
+<ul class="litype_4"><li>Let $m(I)$ be the length of an interval $I$.
+$$
+m^*(A)=\inf \left\{\sum_{n=1}^∞m\left(I_n\right): I_n \text { intervals, } A ⊆ \bigcup_{n=1}^∞I_n\right\}
+$$
+$A$ is null if $m^*(A)=0$.<br>
+$A$ is measurable if $m^*(A)=m^*(A ∩ E)+m^*(A∖ E)$ for all subsets $E$ of ℝ.<br>
+Let $ε&gt;0$. For each $n$, there exist intervals $I_{r n}$ such that $A_n ⊆ \bigcup_{r=1}^∞I_{r n}$ and $\sum_r m\left(I_{r n}\right)&lt;m^*\left(A_n\right)+ε 2^{-n}$. Now $\left\{I_{r n}: r, n=1,2, …\right\}$ is a countable family of intervals covering $\bigcup A_n$, so
+$$
+m^*\left(\bigcup_n A_n\right)=\sum_n \sum_r m\left(I_{r n}\right)&lt;\sum_n\left(m^*\left(A_n\right)+ε 2^{-n}\right)=\sum_n m^*\left(A_n\right)+ε
+$$
+Hence $m^*\left(\bigcup_n A_n\right) ≤ \sum_n m^*\left(A_n\right)$.
+</li>
+<li>
+<ul class="litype_5"><li>Let $I$ be an interval with endpoints $a, b$ where $0 ≤ a&lt;b ≤ 1$. Then $m\left(I^{(2)}\right)=b^2-a^2=(b+a)(b-a) ≤ 2 m(I)$.<br>
+Let $A ⊆[0,1]$. Let $I_n$ be intervals such that $A ⊆ \bigcup_n I_n$ and (without loss of generality) $I_n ⊆[0,1]$. Then $A^{(2)} ⊆ \bigcup_n I_n^{(2)}$, so
+$$
+m^*\left(A^{(2)}\right) ≤ \sum_n m\left(I_n^{(2)}\right) ≤ 2 \sum_n m\left(I_n\right)
+$$
+Taking the infimum gives $m^*\left(A^{(2)}\right) ≤ 2 m^*(A)$.
+</li>
+<li>Consider $A ∩[0, k]$, where $k ∈ ℕ$. By a minor variation of the above, $m^*\left((A ∩[0, k])^{(2)}\right) ≤2 k m^*(A ∩[0, k]) ≤ 2 k m^*(A)=0$. Similarly $m^*\left((A ∩[-k, 0])^{(2)}\right)$ is null. Now $A^{(2)}$ is the union of the countably many sets of the form $(A ∩[-k, 0])^{(2)}$ or $(A ∩[0, k])^{(2)}$, so $m^*\left(A^{(2)}\right)=0$, by (a).</li></ul>
+</li>
+<li><ul class="litype_5"><li>Consider the function $Ψ$ defined on the Cantor set $C$ by
+$$
+Ψ\left(\sum_{n=1}^∞a_n 3^{-n}\right)=\sum_{n=1}^∞{a_n\over2} 2^{-n}   \text { if } a_n ∈\{0,2\} \text { for all } n
+$$
+and extended to be monotonic and continuous on $[0,1]$ and 0 on $(-∞, 0]$ and 1 on $[1, ∞)$. Then $C$ is null and $Ψ(C)=[0,1]$ which is not null.</li>
+<li>Let $A=\bigcup_n K_n ∪ F$, where $K_n$ is closed and $F$ is null. Consider $E_{k n}:=K_n ∩[-k, k]$. This set is closed and bounded, hence compact. Since $f$ is continuous, $f\left(E_{k n}\right)$ is compact, hence closed and therefore measurable. Also, $f(F)$ is null hence measurable. Now
+$$
+f(A)=\bigcup_{k, n} f\left(E_{k n}\right) ∪ f(F)
+$$
+This is a countable union of measurable sets, and so is measurable.</li><li>Suppose that $E$ is null and the measurable set $g(E)$ is not null. By the given information, $g(E)$ contains a non-measurable set $B$. Let $A=E ∩ g^{-1}(B)$. Then $A ⊆ E$, so $A$ is null, and $g(A)=B$, which is not measurable. This is a contradiction.</li></ul></li></ul>
+</li>
+<li>
+<ul class="litype_4"><li>$x^α ∈ L^1(0,1)$ if and only if $α&gt;-1$, and $x^α ∈ L^1(1, ∞)$ if and only if $α&lt;-1$. All the functions in parts (a) and (b) are continuous on $(0, ∞)$, hence measurable.
+<ul class="litype_5"><li>On $(0,1), x^α / 2 ≤ f(x) ≤ x^α$, so by comparison $f ∈ L^1(0,1)$ if and only if $α&gt;-1$.
+On $(1, ∞), x^{α-β} / 2&lt;f(x)&lt;x^{α-β}$, so $f ∈ L^1(1, ∞)$ if and only if $α-β&lt;-1$.
+Hence $f ∈ L^1(0, ∞)$ if and only if $α&gt;-1$ and $β&gt;α+1$.
+</li>
+<li>$\left(x\left(1+x^β\right)^{-1}\right)^p$ is comparable with $x^p\left(1+x^{p β}\right)^{-1}$. From (i) it is integrable if and only if $p&gt;-1$ (which is automatic) and $p β&gt;p+1$, i.e. $β&gt;1+1 / p$.
+</li>
+<li>$\left(x^α+x^β\right)^{-1}=\frac{x^{-α}}{1+x^{β-α}}$. This is in $L^p(0, ∞)$ if and only if $α p&lt;1$ and $β p&gt;1$, i.e $1 / α&lt;p&lt;1 / β$.</li></ul>
+</li>
+<li>Note that $f$ is non-negative, and continuous on $[0, ∞)$, hence bounded and integrable on $(0, π)$, so it suffices to check integrability on $(π, ∞)$. We will take intervals $I_k=\left(k π-δ_k, k π+δ_k\right)$, where $δ_k ∈(0, π / 2)$ are to be chosen. We will assume that $\left(δ_k\right)_{k ≥ 1}$ are decreasing. On the interval $I_k$,
+$$
+0&lt;f(x)&lt;k π+1=:c_k .
+$$
+We want to arrange that $\sum_k c_k δ_k&lt;∞$ and $f(x)&lt;\left(1+x^2\right)^{-1}=:g(x)$ if $x ∈\left(k π+δ_k,(k+1) π-δ_{k+1}\right)$. For those $x$,
+$$
+f(x)&lt;\frac{(k+1) π}{\mathrm{e}^{k π} \sin ^2 δ_{k+1}}&lt;\frac{(k+1) π^3}{4 \mathrm{e}^{k π} δ_{k+1}^2},   g(x)&gt;\frac{1}{(k+1)^2 π^2},
+$$
+using Jordan's inequality. So it suffices that
+$$
+δ_{k+1}^2&gt;(k+1)^3 π^5 \mathrm{e}^{-k π}
+$$
+We may take $δ_{k+1}=(k+1)^2 π^3 \mathrm{e}^{-3 k / 2}$ (for example). This sequence is decreasing, and satisfies $\sum_k c_k δ_k&lt;∞$. With these choices of $c_k$ and $δ_k$, we have that
+$$
+∫_π^∞f ≤ \frac{π}{2}+\sum_{k=1}^∞2 δ_k c_k&lt;∞
+$$
+$f ∈ L^p(0, ∞)$ for all $p ≥ 1$ ($p$ finite). The same proof works with minor modifications.
+</li>
+<li>Let $f ∈ L^p$ and $g ∈ L^q$, where $p, q&gt;1$ and $1 / p+1 / q=1$. Then $f g ∈ L^1$ and $∫{|f g|} ≤\left(∫{|f|}^p\right)^{1 / p}\left(∫{|g|}^q\right)^{1 / q}$.<br>
+Let
+$$
+g_n(x)= \begin{cases}\min ({|f(x)|}, n) &amp; \text { if }|x|&lt;n \\ 0 &amp; \text { if }|x|&gt;n .\end{cases}
+$$
+Then $g_n$ is bounded, measurable, and supported by $[-n, n]$, so $\left|g_n\right|^2$ is integrable. By assumption,
+$$
+\left(∫\left|f g_n\right|\right)^2 ≤ ∫\left|g_n\right|^2 ≤ ∫\left|f g_n\right| .
+$$
+Hence (even if $\left.∫\left|f g_n\right|=0\right) ∫\left|f g_n\right| ≤ 1$. As $n → ∞,\left|f g_n\right|$ increases (pointwise) to ${|f|}^2$, so by MCT, $∫{|f|}^2 ≤ 1$, and $f ∈ L^2$.</li></ul>
+</li>
+<li>
+<ul class="litype_4"><li>Let $I$ and $J$ be intervals in ℝ, and $g: I × J → ℝ$ be a function such that:
+<ul><li>for each $x$ in $J, t ↦ g(x, t)$ is integrable over $I$,</li>
+<li>for each $x$ in $I$ and $t$ in $J, \frac{∂ g}{∂ x}(x, t)$ exists,</li>
+<li>there is an integrable $h: J → ℝ$ such that for each $x$ in $I,\left|\frac{∂ g}{∂ x}(x, t)\right| ≤ h(t)$ a.e. $(t)$.</li></ul>
+Define $f(x)=∫_J g(x, t) \mathrm{d} t \;(x ∈ I)$. Then $f$ is differentiable on $I$ and
+$$
+f'(x)=∫_J \frac{∂ g}{∂ x}(x, t) d t
+$$
+Proof. Fix $x$ in $I$, and let $\left(x_n\right)$ be any sequence in $I$ converging to $x$ (with $x_n ≠ x$). Let
+$$
+g_n(t)=\frac{g\left(x_n, t\right)-g(x, t)}{x_n-x} .
+$$
+Then $g_n$ is integrable over $J, g_n(t) → \frac{∂ g}{∂ x}(x, t)$ as $n → ∞$. Moreover, the Mean Value Theorem says that there exists a point $ξ$ (depending on $t$ and $n$) between $x_n$ and $x$ such that $g_n(t)=\frac{∂ g}{∂ x}(ξ, t)$. It follows from the third bullet point that $\left|g_n(t)\right| ≤ h(x)$ a.e. $(t)$. This shows that the DCT is applicable, so
+$$
+\frac{f\left(x_n\right)-f(x)}{x_n-x}=∫_I g_n(t) d t → ∫_I \frac{∂ g}{∂ x}(x, t) d t   \text { as } n → ∞ .
+$$
+Since $\left(x_n\right)$ is an arbitrary sequence tending to $x$, and the right-hand side is independent of the choice of sequence, it follows that
+$$
+\frac{f\left(x'\right)-f(x)}{x'-x} → ∫_I \frac{∂ g}{∂ x}(x, t) d t   \text { as } x' → x
+$$
+which completes the proof.</li>
+<li>Let $g(x, t)=\frac{t \sin (t x)}{\left(1+t^2\right)^2}$. Then $\frac{∂ g}{∂ x}=\frac{t^2 \cos (t x)}{\left(1+t^2\right)^2},  \left|\frac{∂ g}{∂ x}\right| ≤ \frac{1}{1+t^2}$.<br>
+Since $\left(1+t^2\right)^{-1}$ is integrable over ℝ, the theorem in (a) shows that $f$ is differentiable on ℝ, and
+$$
+f'(x)=∫_ℝ \frac{t^2 \cos (t x)}{\left(1+t^2\right)^2} \mathrm{~d} t
+$$
+Integration by parts on $[-k, k]$ gives
+$$
+∫_{-k}^k \frac{x t^2 \cos (t x)}{\left(1+t^2\right)^2} d t=\frac{2 k^2 \sin (t k)}{\left(1+k^2\right)^2}+∫_{-k}^k \frac{2 t\left(1-t^2\right) \sin (t x)}{\left(1+t^2\right)^3} \mathrm{~d} t
+$$
+Since $\left|2 t\left(1-t^2\right) \sin (t x)\over\left(1+t^2\right)^3\right| ≤ {2\over1+t^2}$, the function is integrable over ℝ and
+$$
+x f'(x)=\lim _{k → ∞} ∫_{-k}^k \frac{x t^2 \cos (t x)}{1+t^2} d t=∫_ℝ \frac{2 t\left(1-t^2\right) \sin (t x)}{\left(1+t^2\right)^3} \mathrm{~d} t
+$$
+Now,
+$$
+\left|\frac{∂}{∂ x}\left(\frac{2 t\left(1-t^2\right) \sin (t x)}{\left(1+t^2\right)^3}\right)\right|=\left|\frac{2 t^2\left(1-t^2\right) \cos (t x)}{\left(1+t^2\right)^3}\right| ≤ \frac{2}{1+t^2}
+$$
+As before, we may apply the theorem in (a) to deduce that $x f'(x)$ is differentiable on ℝ. Since $x^{-1}$ is differentiable on $ℝ∖\{0\}$, it follows that $f'(x)=x^{-1}\left(x f'(x)\right)$ is differentiable on $ℝ∖\{0\}$.
+For $x ∈(0,1)$,
+\begin{align*}
+-\frac{f'(x)-f'(0)}x&=\frac{2}{x} ∫_0^∞\frac{t^2(1-\cos (t x))}{\left(1+t^2\right)^2} \mathrm{~d} t\\&=2 ∫_0^∞\frac{y^2(1-\cos y)}{\left(x^2+y^2\right)^2} \mathrm{~d} y\\&&gt;2 ∫_0^∞\frac{y^2(1-\cos y)}{\left(1+y^2\right)^2} \mathrm{~d} y\\&&gt;0
+\end{align*}
+So, if $f''(0)$ exists, $f''(0)&lt;0$. However, $f'$ is an even function, so if $f''(0)$ exists, it must be 0 . Consequently, $f''(0)$ does not exist.</li></ul>
+</li></ol>
