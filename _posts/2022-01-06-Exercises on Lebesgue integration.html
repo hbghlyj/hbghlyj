@@ -1,0 +1,63 @@
+---
+mathjax: true
+tag: Integration
+excerpt: Mock exam — HT 2023
+---
+<style>div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;width:max-content;vertical-align:top;}</style>
+<ol><li><ol type="a"><li><div class="q">Give an example of a sequence $\left(f_n\right)$ in $ℒ^1(ℝ)$ such that $\lim_{n→∞}\left\|f_n\right\|_1=0$ and $\limsup_{n→∞}f_n(x)=∞$ for each $x∈(0,1)$.</div>$f_n(x)=rχ_{((k-1)2^{-r},k2^{-r})},n=2^r+k,k∈\{1,2,…,2^r\}$</li><li><div class="q">∄ a sequence $\left(g_n\right)_{n⩾1}$ in $ℒ^1(ℝ)$ such that $\lim_{n→∞}\left\|g_n\right\|_1=0$ and $\liminf_{n→ ∞}\left|g_n(x)\right|>0$ for each $x∈(0,1)$</div>Proof: By Fatou's lemma$$\int_ℝ\liminf_{n→∞}{|g_n(x)|}⩽\liminf_{n→∞}\int_ℝ{|g_n(x)|}=0$$so $\liminf_{n→ ∞}\left|g_n(x)\right|=0$ a.e.</li></ol></li>
+<li><ol type="a"><li><div class="q">State the Monotone and the Dominated Convergence Theorems.</div>Theorem 4.2. [Monotone Convergence Theorem] If $(f_n)$ is an increasing sequence of non-negative measurable functions and $f=\lim_{n→∞}f_n$, then $∫f=\lim_{n→∞}∫f_n$<hr>Theorem 6.3. [Dominated Convergence Theorem] Let $(f_n)$ be a sequence of measurable functions such that:
+<ul class="litype_3">
+<li>$(f_n(x))$ converges a.e. to a limit $f(x)$,</li>
+<li>there is an integrable function $g$ such that, for each $n$, ${|f_n(x)|}≤g(x)$ a.e.</li>
+</ol>Then $f$ is integrable, and $∫f=\lim_{n→∞}∫f_n$
+</li>
+<li><div class="q">Let $\left(f_n\right)$ be a sequence of real-valued Lebesgue integrable functions on ℝ. Prove that if the series$$\sum_{n=1}^∞\int_ℝ\left|f_n\right|$$is convergent to $K∈ℝ$ then the series $\sum_{n=1}^∞\left|f_n\right|$ converges almost everywhere to an integrable function.</div>For every $x$, the sequence $g_m(x)≔\sum_{n=1}^m\left|f_n(x)\right|,m=1,2,…$ is increasing\[\int_ℝg_m=\sum_{n=1}^m\int_ℝ\left|f_n\right|⩽\sum_{n=1}^∞\int_ℝ\left|f_n\right|=K\]So $g_m(x)<∞$ a.e. $x$ [Bounded monotone sequence converges] So $g_m(x)$ converges a.e. $x$\[\int_ℝ\lim_{m→∞}g_m\xlongequal{\text{MCT}}\lim_{m→∞}\int_ℝg_m\xlongequal{\text{interchange ∫ with finite sum}}\lim_{m→∞}\sum_{n=1}^m\int_ℝ\left|f_n\right|=K\]
+<div class="q">Deduce, or prove otherwise, that $\sum_{n=1}^∞f_n$ converges almost everywhere to an integrable function $h$ and that
+$$
+\int_ℝ h=\sum_{n=1}^∞\int_ℝ f_n
+$$</div>We just proved $\sum_{n=1}^∞\left|f_n\right|$ converges a.e. to a function $g$, so [Absolute convergence implies convergence] $\sum_{n=1}^∞f_n$ converges a.e. to a function $h$.
+$$\left|h_m\right|≤g_m≤g⟹\int_ℝh\xlongequal{\text{DCT}}\lim_{m→∞}\int_ℝh_m\xlongequal{\text{interchange ∫ with finite sum}}\lim_{m→∞}\sum_{n=1}^m\int_ℝf_m=\sum_{n=1}^∞\int_ℝ f_n$$
+</li>
+<li><div class="q">Prove that if $α$ is a real number then
+$$
+\int_0^∞\frac{\sin α x}{\mathrm{e}^x-1} \mathrm{~d} x=\sum_{n=1}^∞\frac{α}{α^2+n^2} .
+$$</div>
+For each positive integer $n$ the function $ϕ_n(x)=χ_{(0, ∞)}(x) x \mathrm{e}^{-n x}$ and $f_n(x):=χ_{(0, ∞)}(x) \mathrm{e}^{-n x} \sin α x$ are integrable.<br>For $x≥0$, ${|\sin αx|}≤{|α|}x$. So $\left|f_n(x)\right|≤{|α|}ϕ_n(x)$.$$\sum_{n=1}^∞\int_ℝϕ_n(x)=\sum_{n=1}^∞\frac1{n^2}&lt;∞$$So the condition in (b) is satisfied.
+$$
+\int_0^∞\frac{\sinα x}{e^x-1}=\int_ℝ\sum_{n=1}^∞f_n\overset{\text{(b)}}=\sum_{n=1}^∞\int_ℝf_n=\sum_{n=1}^∞\fracα{α^2+n^2}
+$$</li></ol>
+</li>
+<li>
+<ol type="a"><li><div class="q">Give careful statements of the theorems of Fubini and Tonelli.</div>Theorem 8.2. [Fubini’s Theorem] Let $f:ℝ^2→ℝ$ be integrable. Then, for almost     all $y$, the function $x↦f(x,y)$ is integrable. Moreover, defining (for almost all $y$) by $F(y)=∫f(x,y)dx$, then $F$ is integrable, and$$\int_{ℝ^{2}} f(x, y) d(x, y)=\int_ℝ\left(\int_ℝ f(x, y) d x\right) d y$$<hr>Theorem 8.3. [Tonelli’s Theorem] Let $f:ℝ^2→ℝ$ be a measurable function, and suppose that either of the following repeated integrals is finite:$$\int_ℝ\left(\int_ℝ|f(x, y)| d x\right) d y, \quad \int_ℝ\left(\int_ℝ|f(x, y)| d y\right) d x$$Then $f$ is integrable.
+</li>
+<li><div class="q">By applying these theorems to the function $f$ defined on $[0,n]×[0,∞)$ by
+$$
+f(x, t)=\sin x \mathrm{e}^{-t x}
+$$
+show that
+$$
+\lim_{n→∞}\int_0^n \frac{\sin x}{x}\mathrm{~d}x=\fracπ2
+$$</div>
+\begin{align*}
+I_n&=\int_0^n\int_0^∞\sin x\mathrm{e}^{-t x}\mathrm{~d}t\mathrm{~d}x\\
+&=\int_0^n\frac{\sin x}x\mathrm{~d}x
+\end{align*}
+${|f(x,t)|}≤ x \mathrm{e}^{-t x}$ and $∫_0^n∫_0^ ∞x\mathrm{e}^{-t x}\mathrm{~d}t\mathrm{~d}x=∫_0^n1\mathrm{~d}x=n$, by Tonelli $f(x,t)$ is integrable on $[0,n]×[0,∞)$. By Fubini,
+\begin{align*}
+I_n&=\int_0^∞\int_0^n\sin x\mathrm{e}^{-t x}\mathrm{~d}x\mathrm{~d}t\\
+&=\int_0^∞\frac1{t^2+1}\mathrm{~d}t-\int_0^∞\frac{e^{-tn}\left(t\sin n+\cos n\right)}{t^2+1}\mathrm{~d}t
+\end{align*}
+Taking the limit $n→∞$ the second integral$→0$ [Because $\left|\frac{e^{-tn}\left(t\sin n+\cos n\right)}{t^2+1}\right|≤(t+1)e^{-tn}$ and $∫_0^∞(t+1)e^{-tn}\mathrm dt=n^{-2}+n^{-1}→0$]
+\[\lim_{n→∞}I_n=\int_0^∞\frac1{t^2+1}\mathrm{~d}t=\fracπ2\]
+</li><li><div class="q">Is $\frac{\sin x}{x}$ Lebesgue integrable on $(0, ∞)$ ?</div>
+<a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=21&zoom=auto,-86,608">Ex5.3</a> 5. Consider $f(x)=(\sin x) / x$ over $(0, ∞)$. Now
+$$
+\int_{r \pi}^{(r+1) \pi}\left|\frac{\sin x}{x}\right| d x \geq \int_{r \pi}^{(r+1) \pi} \frac{|\sin x|}{(r+1) \pi} d x=\frac{2}{(r+1) \pi} .
+$$
+Hence,
+$$
+\lim_{n→∞}\int_0^{n \pi}{|f(x)|} d x \geq \lim_{n→∞}\sum_{r=0}^{n-1} \frac{2}{(r+1) \pi}=∞ .
+$$
+So $|f|$ is not integrable, and hence $f$ is not integrable, over $(0, ∞)$.
+</li></ol>
+</li></ol>
