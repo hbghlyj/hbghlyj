@@ -1,0 +1,136 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: sheet 1 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+ol[type="a"]{padding-left: 20px;}ol.chapt1>li{counter-increment: li;}ol.chapt1>li::marker{content:"1."counter(li)" "}
+ol[type="a"]>li{counter-increment: a;}ol[type="a"]>li::marker{content:counter(a,lower-alpha)") "}</style>
+$\newcommand{\abs}[1]{\left|#1\right|}\newcommand{\d}{\mathrm{\ d}}$
+<h2>ODEs and Picard's Theorem:</h1>
+<ol class="chapt1"><li>Consider the initial-value problems
+\[
+y'(x)=(1-2 x) y(x), \quad y(0)=1 .
+\]
+<ol type="a">
+<li>Find $y_0, y_1, y_2, y_3$, where $\left\{y_n\right\}_{n≥0}$ is the sequence of Picard iterates.</li>
+<li>Use Picard's theorem to show that the problem has a unique solution for all $x$.</li>
+<li>Find the solution $y$ explicitly.</li>
+<li>Find an explicit expression for the Picard iterates $y_n$ and use this expression as well as the Weierstrass M-test to prove directly that $y_n$ converges uniformly on every interval $[-h,h]$ to the solution $y$ obtained in (c).<br></li>
+</ol>
+<b>Solution.</b>
+<ol type="a">
+<li>\begin{align*}
+y_1(x)&=1+\int_0^x(1-2t)y_0(t)\d t=-x^2+x+1
+\\y_2(x)&=1+\int_0^x(1-2t)y_1(t)\d t=\frac{x^4}{2}-x^3-\frac{x^2}{2}+x+1
+\\y_3(x)&=1+\int_0^x(1-2t)y_2(t)\d t=-\frac{x^6}{6}+\frac{x^5}{2}-\frac{5 x^3}{6}-\frac{x^2}{2}+x+1
+\end{align*}</li>
+<li>$f(x,y)=(1-2x)y$ is continuous, so P(i) holds.
+\[\abs{f(x,u)-f(x,v)}=\abs{1-2x}⋅\abs{u-v}≤(1+2h)\abs{u-v}\]
+so P(iii) holds for all $h$. So there is a unique solution for all $x$.</li>
+<li>Separating variables,$$y^{-1}\d y=(1-2x)\d x$$Integrating,$$\log y=x-x^2+C$$Using the initial value $y(0)=1$,$$\log y=x-x^2⇒y=\exp(x-x^2)$$</li>
+<li>Write $y_n(x)$ as a polynomial in $(x-x^2)$,
+\begin{align*}
+y_1(x)&=1+(x-x^2)
+\\y_2(x)&=1+(x-x^2)+\frac{(x-x^2)^2}2
+\\y_3(x)&=1+(x-x^2)+\frac{(x-x^2)^2}2+\frac{(x-x^2)^3}6
+\end{align*}
+We find$$y_n(x)=\sum_{i=0}^n\frac{(x-x^2)^i}{i!}$$Let $M$ be the maximum of the continuous function $\abs{x-x^2}$ on the closed interval $[-h,h]$, then $\frac{\big(x-x^2\big)^i}{i!}≤\frac{M^i}{i!}$ for $i=0,1,⋯$ and $x∈[-h,h]$.<br>By ratio test, the series $\sum_{i=0}^∞\frac{M^i}{i!}$ converges. By Weierstrass M-test, $y_n$ converges uniformly on $[-h,h]$.
+</li>
+</ol>
+</li>
+<li>Consider the initial-value problem
+\[
+y'(x)=xy^{1/3}(x), \quad y(0)=b,
+\]
+<ol type="a">
+<li>Use Picard's theorem to show that if $b>0$ then there is a unique solution on an interval $[-h, h]$, for a suitable $h>0$ which you should specify (you must check carefully that the assumptions of Picard's theorem are satisfied).</li>
+<li>Show that the function $F(x,y)=xy^{1/3}$ does not satisfy a Lipschitz condition on any rectangle $\{(x,y):\abs x≤h,\abs y≤k\}$ with $h>0$ and $k>0$.</li>
+<li>Show that if $b=0$ then for any $c>0$ there is a solution $y_c$ which is identically zero on $[-c, c]$ and positive when $\abs x>c$. Are there any other solutions of the initial value problem?</li>
+<li>Now return to the case $b>0$. Consider the set $R=\{(x, y):y≥b,\abs x≤h\}$. By working in this $R$, and adapting the proof of Picard's theorem, prove that in fact there is a unique solution of the problem on $\abs x≤h$ for any $h$ and hence that there is global existence of solutions.</li></ol><b>Solution.</b>
+<ol type="a">
+<li>Pick $0< ϵ< b$, the function $y^{1/3}$ is Lipschitz on $(ϵ,2b-ϵ)$. Let $k=b-ϵ$, then $M=h(2b-ϵ)^{1/3}$, so$$Mh≤k⇔h^2(2b-ϵ)^{1/3}≤b-ϵ⇔h≤\left((b-ϵ)^3\over2b-ϵ\right)^{1/6}$$
+    RHS is a decreasing function of ϵ for $ϵ∈(0,b)$.<br>
+    By Picard's theorem, there is a unique solution on $[-h,h]$.<br>
+    Let $ϵ→0$, we get the largest interval $\left(-\frac{b^{1/3}}{2^{1/6}},\frac{b^{1/3}}{2^{1/6}}\right)$.
+</li>
+<li>Assume $∃L>0,\abs{xy^{1/3}}=\abs{f(x, y)-f(x, 0)}≤L\abs y$, then $L≥\abs{xy^{-2/3}}$, but $\lim_{y→0^+}y^{-2/3}=∞$.</li>
+<li>For any $c>0$,$$y_c(x)=\begin{cases}0&\abs{x}≤c\\\left(x^2-c^2\over3\right)^{3/2}&\abs x>c\end{cases}$$There are other solutions, for $d≤c$,$$y(x)=\begin{cases}0&x∈[d,c]\\\left(x^2-c^2\over3\right)^{3/2}&x∉[d,c]\end{cases}$$the limit case $d→-∞$ is$$y(x)=\begin{cases}0&x≤c\\\left(x^2-c^2\over3\right)^{3/2}&x>c\end{cases}$$the limit case $c→∞$ is$$y(x)=\begin{cases}0&x>d\\\left(x^2-c^2\over3\right)^{3/2}&x≤d\end{cases}$$</li>
+<li>Adapted proof of Claim 1: Assume the graph of $y_n$ is in $R$, then $y_n(t)>0$.
+    For $x≤0$, we have $-t≥0$, so$$\int_0^x t⋅y_n(t)^{1/3}\d t=\int_x^0(-t)⋅y_n(t)^{1/3}\d t≥0$$For $x≥0$, we have $t≥0$, so$$\int_0^x t⋅y_n(t)^{1/3}\d t≥0\quad∀x ∈[-h,h]$$Then
+    $$y_{n+1}(x)=b+\int_0^x t⋅y_n(t)^{1/3}\d t≥b$$
+the graph of $y_{n+1}$ is in $R$.
+</li>
+</ol>
+<div class="noprint">
+    <a href="https://math.stackexchange.com/questions/1274119">Is Lipschitz's condition necessary for existence of unique solution of an I.V.P.?</a><br>
+    <a href="https://math.stackexchange.com/a/2771929/42969">Picard's theorem - global version</a>
+</div>
+</li>
+<li><ol type="a"><li>Show that $f(x,y)=x^{1/3}\left(1+y^2\right)$ satisfies the Lipschitz-condition on $[-h,h]×[-k,k]$ for every $h,k>0$. Does $f$ also satisfy the global Lipschitz condition (P(iii))?</li>
+<li>
+Determine the maximal number $h_0>0$ so that Picard's theorem guarantees the existence of a unique solution on $\left[-h_0, h_0\right]$ of the initial value problem
+\[
+y'(x)=x^{1/3}\left(1+y^2(x)\right), \quad y(0)=0 .
+\]
+Does this interval agree with the maximal interval on which a unique solution exists?
+</li>
+</ol><b>Solution.</b>
+<ol type="a">
+<li>$f_y=2x^{1/3}y$ is bounded on $[-h,h]×[-k,k]$, so $f$ satisfies the Lipschitz-condition on $[-h,h]×[-k,k]$.<br>$f$ doesn't satisfy the global Lipschitz condition: for $u>0,v=u+1$,\[\abs{f(1,u)-f(1,v)}=(2u+1)\abs{u-v}\]and $2u+1→∞$ as $u→∞$.</li>
+<li>$$M=h^{1/3}\left(1+k^2\right)$$Condition for Picard's theorem:
+$$Mh≤k⇔h^{4/3}\left(1+k^2\right)≤k⇔h≤\left(k\over1+k^2\right)^{3/4}$$
+$$h_0=\max_{k>0}\left(k\over1+k^2\right)^{3/4}=2^{-3/4}$$
+To solve the ODE, separating variables,$$\frac{\mathrm{{}d}y}{1+y^2}=x^{1/3}\d x$$Integrating,$$\arctan y=\frac34x^{4/3}$$Since $\arctan y∈(-π/2,π/2)$, the maximal interval on which a unique solution exists is $[-h,h],h=\left(\frac{2 \pi }{3}\right)^{3/4}$, which is larger.<br>
+<font color="brown">When we continue building rectangles on the vertex as new initial condition, $M$ increases, so the permitted $h$ decreases, but the total length of $x$-interval$<\left(\frac{2 \pi }{3}\right)^{3/4}$.</font>
+</li>
+</ol>
+</li>
+<li>Suppose that $f:[a, b]→ℝ$ and $K:[a, b]×[a, b]→ℝ$ are continuous. Consider the integral equation
+\[
+y(x)=f(x)+\int_a^x K(x, t) y(t)\d t, \quad x∈[a, b] .
+\]
+For $x∈[a, b]$ define
+\begin{aligned}
+y_0(x) &=f(x) \\
+y_{n+1}(x) &=f(x)+\int_a^x K(x, t) y_n(t)\d t .
+\end{aligned}
+<ol type="a">
+<li>
+    Adapt the proof of Picard's theorem to show that $y_n$ converges uniformly to a solution of the integral equation for all $x∈[a,b]$.<br>
+    <i>You may assume that if $y:[a,b]→ℝ$ is continuous then so too is $f(x)+\int_a^x K(x,t)y(t)\d t$ for $x∈[a,b]$.</i>
+</li>
+<li>Show that the solution of (IE) is unique and prove that the solution depends continuously on $f$. (<i>You will need to define what this means.</i>)</li>
+</ol>
+<b>Proof.</b><ol type="a">
+<li>Let $e_0(x)=f(x),e_{n+1}(x)=y_{n+1}(x)-y_n(x)$ and $\abs{f(x)}≤M$ and $\abs{K(x,t)}≤N$, we prove $\abs{e_n(x)}≤\frac{N^nM}{n!}(x-a)^n$ inductively:\begin{align*}
+    \abs{e_{n+1}(x)}&=\abs{\int_a^xK(x,t)⋅e_n(t)\d t}\\&≤\int_a^x\abs{K(x,t)}⋅\abs{e_n(t)}\d t\\&≤\int_a^xN⋅\frac{N^nM}{n!}(t-a)^n\d t\\&=\frac{N^{n+1}M}{(n+1)!}(x-a)^{n+1}
+    \end{align*}
+    Applying the Weierstrass M-test to $y_n=\sum_{i=0}^ne_i(x)$, the uniform convergence follows.
+<div class="noprint">
+    <a href="https://ptolemy.berkeley.edu/projects/embedded/eecsx44/lectures/Spring2013/Picard.pdf">Picard’s Existence and Uniqueness Theorem</a><br>
+    <a href="https://www.colorado.edu/amath/sites/default/files/attached-files/fredholm.pdf"> Section 3.3: Fredholm Integral Equations - University of Colorado</a><br>
+    <a href="https://math.stackexchange.com/questions/1470667">Contraction Map (Fredholm integral type)</a><br>
+    <a href="https://math.stackexchange.com/questions/2207097">Calculating the $p+1$ derivative</a><br>
+    <a href="https://math.stackexchange.com/questions/2702846">Proving existence of unique fixed point in C([a,b]) satisfying integral equation</a><br>
+We will show that the sup condition implies that $T$ is a contraction mapping in $C([a,b])$\begin{aligned}\left\|T f_1-T f_2\right\| &=\sup _{a≤x≤b}\left|T f_1(x)-T f_2(x)\right| \\ &=\sup _{a≤x≤b}\left|\int_a^b K(x, y)\left(f_1(y)-f_2(y)\right) d y\right| \\ &≤\sup _{a≤x≤b} \int_a^b\abs{K(x, y)}\cdot\left|f_1(y)-f_2(y)\right| d y \\ & \leq\left\|f_1-f_2\right\| \underbrace{\sup _{a≤x≤b} \int_a^b\abs{K(x, y)}\d y}_{< 1} \end{aligned}</div>
+</li>
+<li>We say the solution depends continuously on $f$, if for solutions $y_1$ and $y_2$, $∀ϵ>0,∃δ>0,\sup\abs{f_1(x)-f_2(x)}≤δ⇒\sup\abs{y_1(x)-y_2(x)}≤ϵ$.
+\[
+y_1(x)-y_2(x)=f_1(x)-f_2(x)+\int_a^xK(x,t)(y_1(t)-y_2(t))\d t
+\]
+Let $L=\sup\abs{K(x,t)},E=\sup\abs{f_1(x)-f_2(x)}$. By triangle inequality,
+\[
+\abs{y_1(x)-y_2(x)}≤E+\abs{\int_a^x L\abs{y_1(t)-y_2(t)}\d t}
+\]
+By Grönwall's inequality,
+\[
+\abs{y_1(x)-y_2(x)}≤Ee^{L(x-a)}
+\]
+Since $a≤x≤b$,
+\[
+⇒\sup\abs{y_1(x)-y_2(x)}≤Ee^{L(b-a)}
+\]Let $E=0$ we have uniqueness. Since $Ee^{L(b-a)}→0$ as $E→0$, we have continuous dependence.</li>
+</ol>
+</li>
+</ol>
