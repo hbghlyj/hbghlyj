@@ -1,0 +1,209 @@
+<style>
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}
+sub{font-size: 70%;}hr{border-style: dashed;}
+div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+</style>
+<div class="q">
+Let $\left(ω_n\right)$ be a sequence of non-negative real numbers. For a subset $E$ of $ℕ$, let
+\[
+μ_ω(E)=\sum_{n∈E} ω_n .
+\]
+<ol type="a">
+<li>Show that $μ_ω$ is a measure on $(ℕ, 𝒫(ℕ))$.</li>
+<li>Now let $ν$ be any measure on $(ℕ, 𝒫(ℕ))$, and define $ω_n=ν(\{n\})$. Show that $ν(E)=μ_ω(E)$ for all subsets $E$ of $ℕ$.</li></ol>
+</div>
+<ol type="a">
+<li>$ω_n≥0⇒μ_ω(E)≥0$. Clearly $μ_ω(∅)=0$. For disjoint subsets $E_i$ of ℕ,\[μ\left(\bigcup_{i=1}^∞E_i\right)=\sum_{i=1}^∞\sum_{n∈E_i} ω_n=\sum_{i=1}^∞μ\left(E_i\right)\]</li>
+<li>Since ν is countable additive, $ν(E)=\sum_{n∈E}ν(\{n\})=\sum_{n∈E}ω_n=μ_ω(E)$.</li>
+</ol>
+<div class="q">
+Let (Ω, ℱ, μ) be any measure space. If $\left(A_n\right)$ is a decreasing sequence of sets in $ℱ$ and $μ\left(A_1\right)&lt;∞$, prove that
+\[
+μ\left(\bigcap_{n=1}^∞A_n\right)=\lim_{n→∞} μ\left(A_n\right)
+\]
+Is this still true if $μ\left(A_1\right)=∞$ ?
+</div>
+If $μ\left(A_1\right)&lt;∞$, $\left(A_1∖A_n\right)$ is an increasing sequence of sets in ℱ,\begin{align*}μ(A_1)-μ\left(\bigcap_{n=1}^∞A_n\right)&=μ\left(A_1∖\bigcap_{n=1}^∞A_n\right)&\text{since $\bigcap_{n=1}^∞A_n$ and $A_1∖\bigcap_{n=1}^∞A_n$ are disjoint}\\&=μ\left(\bigcup_{n=1}^∞(A_1∖A_n)\right)&\text{De Morgan's law}\\&=μ(A_1)-\lim_{n→∞}μ(A_n)&\href{https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=10&zoom=auto,-78,283}{\text{Proposition 3.2.2}}\\⇒μ\left(\bigcap_{n=1}^∞A_n\right)&=\lim_{n→∞}μ(A_n)\end{align*}
+If $μ\left(A_1\right)=∞$ this is false: in (ℝ, ℳ<sub>Bor</sub>, <i>m</i>), let $A_n=[n,∞)$, we have $\lim_{n→∞}m(A_n)=∞$ but $m\left(\bigcap_{n=1}^∞A_n\right)=m(∅)=0$.
+<div class="noprint">
+    The Unapologetic Mathematician – <a href="https://unapologetic.wordpress.com/2010/03/23/continuity-of-measures/">Continuity of Measures</a><br>
+    <a href="https://math.stackexchange.com/q/234292/169852">continuity from above</a>
+</div>
+<div class="q">
+<ol type="a">
+    <li>Let $b∈ℝ$. Show that $(-∞,b)=\bigcup_{n=1}^∞\left(ℝ∖\left(b-\frac1n,∞\right)\right)$. Deduce that if ℱ is a σ-algebra on ℝ containing the intervals $(a,∞)$ for each $a∈ℝ$, then ℱ contains all open intervals, and hence all open subsets of ℝ.</li>
+    <li>
+        Let $f:ℝ→ℝ$ be a function. Show that
+        \[
+        𝒢:=\left\{G⊂ℝ: f^{-1}(G)∈ℳ_\text{Leb}\right\}
+        \]
+        is a σ-algebra. Deduce that if $f^{-1}(a,∞)∈ℳ_\text{Leb}$ for every $a$, then $f^{-1}(G)∈ℳ_\text{Leb}$ for every $G∈ℳ_\text{Bor}$.
+    </li>
+</ol>
+</div>
+<ol type="a">
+<li>$x∈\bigcup_{n=1}^∞\left(ℝ∖\left(b-\frac1n,∞\right)\right)⇔∃n≥1:x≤b-\frac1n⇔x&lt;b$. So $(-∞,b)=\bigcup_{n=1}^∞\left(ℝ∖\left(b-\frac1n,∞\right)\right)$.<br>If ℱ is a σ-algebra on ℝ containing $(a,∞)$ for each $a∈ℝ$, by the above identity, $(-∞,b)∈ℱ$.<br>For $a< b$, $(-∞,b)∩(a,∞)=(a,b)∈ℱ$, so ℱ contains all open intervals, and hence all open subsets of ℝ, since they are countable union of open intervals.</li>
+<li>$f^{-1}(∅)=∅∈ℱ⇒∅∈𝒢$.<br>
+If $G∈𝒢$ then $f^{-1}(ℝ∖G)=ℝ∖f^{-1}(G)∈ℱ⇒ℝ∖G∈𝒢$.<br>
+If $G_i∈𝒢$, then $f^{-1}\left(\bigcup_{n=1}^∞G_i\right)=\bigcup_{n=1}^∞f^{-1}(G_i)∈ℱ⇒\bigcup_{n=1}^∞G_i∈𝒢$.<br>
+Hence 𝒢 is a σ-algebra. By (a) if $(a,∞)∈𝒢$ for every $a$, then $G∈𝒢$ for every $G∈ℳ_\text{Bor}$.<div class="noprint"><a href="https://math.stackexchange.com/questions/494684">When do Inverse Images of Measurable Sets Generate the σ-algebra?</a><br><a href="https://math.stackexchange.com/questions/63374">Inverse images and σ-algebras</a></div>
+</li>
+</ol>
+<div class="q">
+<ol type="a">
+<li>Let $\left(ℱ_λ\right)_{λ∈Λ}$ be a non-empty family of σ-algebras on the same set Ω. Show that $⋂_{λ∈Λ}ℱ_λ$ is a σ-algebra.</li>
+<li>By considering the family of all σ-algebras containing ℬ, deduce that if ℬ is any subset of 𝒫(Ω), there is a unique σ-algebra $ℱ_ℬ$ such that</li>
+</ol>
+<ul>
+    <li>$ℬ⊂ℱ_ℬ$</li>
+    <li>If $𝒢$ is a σ-algebra on Ω and $ℬ⊂𝒢$, then $ℱ_ℬ⊂𝒢$.</li>
+</ul>
+</div>
+<ol type="a">
+<li>$∀λ∈Λ:∅∈ℱ_λ⇒∅∈⋂_{λ∈Λ}ℱ_λ$.<br>If $E∈⋂_{λ∈Λ}ℱ_λ$ then $∀λ∈Λ:E∈ℱ_λ⇒Ω∖E∈ℱ_λ⇒Ω∖E∈⋂_{λ∈Λ}ℱ_λ$.<br>
+If $∀n∈ℕ:E_n∈⋂_{λ∈Λ}ℱ_λ$ then $∀λ∈Λ:E_n∈ℱ_λ⇒∀λ∈Λ:\bigcup_{n∈ℕ}E_n∈ℱ_λ⇒\bigcup_{n∈ℕ}E_n∈⋂_{λ∈Λ}ℱ_λ$.</li>
+<li>Let 𝒮 be the family of all σ-algebras containing ℬ. By (a) $ℱ_ℬ=⋂_{𝒢∈𝒮}𝒢$ is a σ-algebra.<br>If $ℱ_ℬ'$ also satisfies the conditions, then $ℱ_ℬ⊂ℱ_ℬ'⊂ℱ_ℬ$, so $ℱ_ℬ=ℱ_ℬ'$ is unique.</li>
+</ol>
+<div class="q">
+Let (Ω, ℱ, μ) be a measure space, $Ω_*$ be a set, and $f:Ω→Ω_*$ be a function. Let
+\[
+f_*(ℱ)=\left\{G⊂Ω_*: f^{-1}(G)∈ℱ\right\}, \quad\left(f_* μ\right)(G)=μ\left(f^{-1}(G)\right) .
+\]
+<ol type="a">
+    <li>Show that $\left(Ω_*, f_*(ℱ), f_* μ\right)$ is a measure space.</li>
+    <li>Now let (Ω, ℱ, μ) = (ℝ, ℳ<sub>Bor</sub>, <i>m</i>), and $Ω_*=ℝ$. Determine $f_*\left(ℳ_\text{Bor}\right)$ and $f_*m$ when</li>
+    <ol type="i">
+        <li>$f(x)=\cases{\tan x&if $\cos x≠0$\\0&if $\cos x=0$}$</li>
+        <li>$f(x)=\arctan x$</li>
+    </ol>
+</ol>
+</div>
+<ol type="a">
+<li>Q3b proves $f_*(ℱ)$ is a σ-algebra on $Ω_*$, it remains to prove $f_*μ$ is a measure. Clearly $f_*μ≥0$.<br>
+$\left(f_* μ\right)(∅)=μ\left(f^{-1}(∅)\right)=μ(∅)=0$.<br>Let $E_n∈f_*(ℱ)$ be disjoint,\begin{align*}\left(f_* μ\right)\left(\bigcup^∞_{n=1}E_n\right)&=μ\left(f^{-1}\left(\bigcup^∞_{n=1}E_n\right)\right)\\&=μ\left(\bigcup^∞_{n=1}f^{-1}(E_n)\right)&&\text{inverse image of union equals union of inverse image}\\&=\sum^∞_{n=1}μ(f^{-1}(E_n))&&\text{since $f^{-1}(E_n)$ are disjoint}\\&=\sum^∞_{n=1}\left(f_* μ\right)(E_n)\end{align*}</li>
+<li><ol type="i">
+<li>Since $f$ is π-periodic, $f_*\left(ℳ_\text{Bor}\right)$ consists of<br>if $0∈E$, $\{x+kπ∣x∈E,k∈ℤ\}∪\{π/2+kπ∣k∈ℤ\}$;<br>if $0∉E$, $\{x+kπ∣x∈E,k∈ℤ\}$;<br>for all $E∈ℳ_\text{Bor},E⊂\left(-\fracπ2,\fracπ2\right)$.<br>
+For $E∈ℳ_\text{Bor}$, $\left(f_* m\right)(E)=m\left(\bigcup_{k∈ℤ}(kπ+\arctan E)\right)=∞⋅m\left(\arctan E\right)$<br>
+so $\left(f_* m\right)(E)=0$ if $m(E)=0$; $\left(f_* m\right)(E)=∞$ if $m(E)>0$.
+</li>
+<li>tan is continuous, so $f(E)∈ℳ_\text{Bor}$ for all $E∈ℳ_\text{Bor}$.<br>
+The range of $f$ is $\left(-\fracπ2,\fracπ2\right)$, so $f_*\left(ℳ_\text{Bor}\right)$ consists of $E∪F$ for all $E∈ℳ_\text{Bor}\left(-\fracπ2,\fracπ2\right)$, $F ⊂\left(∞,-\fracπ2\right]∪\left[\fracπ2,∞\right)$.<br>
+For $E∈f_*(ℳ_\text{Bor})$, if $E∩\left(-\fracπ2,\fracπ2\right)=∅$, then $f^{-1}(E)=∅$, $\left(f_* m\right)(E)=0$; otherwise $E∩\left(-\fracπ2,\fracπ2\right)$ is union of disjoint intervals between $a_i,b_i$ with $-\fracπ2≤a_i&lt;b_i≤\fracπ2$, so $\left(f_* m\right)(E)=\sum\tan b_i-\tan a_i$
+</li>
+</ol></li></ol>
+<div class="q">
+<ol type="a">
+    <li>Let $I$ be an interval of positive length, let $a∈I$, $f, g: I→ℝ$ be functions such that $f(x)=g(x)$ a.e., and suppose that $f$ and $g$ are continuous at $a$. Show that $f(a)=g(a)$.</li>
+    <li>Is $χ_ℚ$ continuous a.e.? Does there exist a continuous function $g$ such that $χ_ℚ=g$ a.e.?</li>
+    <li>Is $χ_{(0,∞)}$ continuous a.e.? Does there exist a continuous function $g$ such that $χ_{(0,∞)}=g$ a.e.?</li>
+</ol>
+</div>
+<ol type="a">
+<li>Assume $f(a)>g(a)$, since $f-g$ is continuous at $a$, $∃r>0∀x∈B(a,r):f(x)>g(x)$, and $m(B(a,r))=2r>0$, contradicting $f(x)=g(x)$ a.e.</li>
+<li>ℚ, $ℝ∖ℚ$ are dense in ℝ, $∀x∈ℝ∀r>0∃p,q∈B(x,r):χ_ℚ(p)=1,χ_ℚ(q)=0$, so $χ_ℚ$ is discontinuous at any $x$.<br>$χ_ℚ(x)=0$ a.e. and 0 is continuous.
+<font color="red">Warning: equal to a continuous function a.e. doesn't imply continuous a.e.</font></li>
+<li>$χ_{(0,∞)}$ is continuous except 0, so it is continuous a.e. Suppose $g$ is a continuous function, $χ_{(0,∞)}=g$ a.e.<br>Applying (a) to $I=[0,1]$ and $I=[-1,0]$, we have $g(0)=1$ and $g(0)=0$ respectively, contradiction.</li>
+</ol>
+<div class="q">
+Let $f, g$ be measurable functions from ℝ to ℝ, and $h:ℝ→ℝ$ be continuous. Recall from lectures that $f+g$ and $h∘f$ are measurable. Prove that the following functions are measurable.
+<ol type="a">
+    <li>$f^2: x↦ f(x)^2$</li>
+    <li>$f g: x↦ f(x) g(x)$</li>
+    <li>${|f|}: x↦{|f(x)|}$</li>
+    <li>$\max(f, g):x↦\max(f(x), g(x))$</li>
+</ol>
+</div>
+<ol type="a">
+<li>$h(x)=x^2$ is continuous, so $f^2=h∘f$ is measurable.</li>
+<li>By (a), $(f+g)^2,f^2,g^2$ are measurable. so $fg=\frac{(f+g)^2-f^2-g^2}2$ is measurable.</li>
+<li>$h(x)={|x|}$ is continuous, so ${|f|}=h∘f$ is measurable.</li>
+<li>By (c), $|f-g|$ is measurable, so $\max(f, g)=\frac{f+g+{|f-g|}}2$ is measurable.</li>
+</ol>
+<div class="q">Let (Ω, ℱ, μ) be a complete measure space. For two functions $f$ and $g$ from Ω to ℝ,
+<ol type="a">
+    <li>Suppose that $g$ is a measurable function and $f=g$ a.e. Show that $f$ is measurable.<br></li>
+    <li>Take (Ω, ℱ) to be $(ℝ,ℳ_\text{Leb})$. μ denotes the Lebesgue measure.<br>Suppose that $f$ is continuous a.e. Show that there is a sequence of step functions $\left(ϕ_n\right)$ such that$$f=\lim_{n→∞}ϕ_n \text{a.e.}$$Deduce that $f$ is measurable.</li>
+</ol>
+</div>
+<ol type="a">
+<li>Let $E≔\{x∈Ω: f(x)=g(x)\}$, then $Eᶜ$ is null. For $a∈ℝ$, we have
+\[
+\{x∈Ω: f(x)>a\}=\{x∈E: f(x)>a\}∪\left\{x∈Eᶜ: f(x)>a\right\} .
+\]
+Moreover,
+\[
+\{x∈E: f(x)>a\}=\{x∈E: g(x)>a\}=\{x∈Ω: g(x)>a\}∖\left\{x∈Eᶜ: g(x)>a\right\} .
+\]
+Since μ is a complete measure and $Eᶜ$ is a null set, $\left\{x∈Eᶜ:f(x)>a\right\}$ and $\left\{x∈Eᶜ:g(x)>a\right\}$ are measurable.<br>Because $g$ is measurable, $\{x∈Ω:g(x)>a\}$ is measurable. This shows that $\{x∈E: f(x)>a\}$ is measurable, hence $\{x∈Ω:f(x)>a\}$ is measurable for every $a∈ℝ$. Therefore, $f$ is measurable.
+<div class="noprint">Real Analysis, Stein & Shakarchi, Chapt 1 Theorem 4.1, Property 6, p.30.<br>completeness of measure space is <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9942">necessary</a></div></li>
+<li>First assume $f≥0$ and $f(x)=0$ for $x∉[0,1]$. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=14&zoom=auto,-78,613">Prop 3.9</a> ∃ a sequence $(g_n)_{n=1}^∞$ of non-negative simple functions such that $g_n(x)→f(x)∀x∈ℝ$. Let  $g_n=\sum_{i=1}^ka_{n,i}χ_{E_{n,i}}$ for disjoint measurable sets $(E_{n,i})_{i=1}^k$.<br>By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=9&zoom=auto,-78,650">Cor 2.7</a> ∃ open set $O_{n,i}$ such that $E_{n,i}=O_{n,i}∖N_{n,i},μ(N_{n,i})&lt;\frac1{kn}$.<br>Let $N_n=\bigcup_{i=1}^kN_{n,i}$, then $μ(N_n)&lt;\frac1n$. Let $N=\bigcap_{n=1}^∞N_n$, then $μ(N)=0$.<br>Each $O_{n,i}$ is a finite union of open intervals, so $ϕ_n=\sum_{i=1}^ka_{n,i}χ_{O_{n,i}}$ is a step function. $∀x∉N_n:ϕ_n(x)=g_n(x)$.<br>$∀x∉N:f=\lim_{n→∞}ϕ_n$. So $f=\lim_{n→∞}ϕ_n$ a.e. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=13&zoom=auto,-78,567">Prop 3.7</a> $\lim_{n→∞}ϕ_n$ is measurable, then by part (a) $f$ is measurable.<br>Extend to general $f$: apply the above to $fχ_{[n,n+1)}$ then use $f=\sum_{n∈ℤ}fχ_{[n,n+1)}$.<br>
+$f^+$ and $f^-$ can be approximated by step functions $ϕ^+$ and $ϕ^-$, set $ϕ=ϕ^+-ϕ^-$.
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/298860">If a function is almost everywhere continuous then it is the limit of step functions almost everywhere.</a><br>
+Stronger result ‘For every measurable function, ∃ a sequence of step functions’ See<br>
+Real Analysis, Stein & Shakarchi, Theorem 4.3 p.32.<br>
+<a href="https://math.stackexchange.com/questions/992900">MSE – Measurable Functions as Limits (a.e) of Step Functions</a>
+<br>Measure Integral & Probability, Capinski & Kopp, Theorem 4.25
+</div>
+</li>
+</ol>
+<div class="q">
+Let $f:ℝ→[-∞,∞]$ be an integrable function, and let $α>0$.<br>
+(a) Show that
+\[
+m(\{x:{|f(x)|}≥α\})≤\frac1α∫{|f|}
+\]
+(b) Deduce that
+<ol type="i">
+<li>$f(x)∈ℝ$ a.e.</li>
+<li>If $∫{|f|}=0$, then $f(x)=0$ a.e.</li>
+</ol>
+</div>
+<ol type="a">
+<li>$ϕ=αχ_{\{x:{|f(x)|}≥α\}}$ is a simple function and $0≤ϕ≤{|f|}$, by definition of $∫{|f|}$,
+\[∫ϕ≤∫{|f|}⇒m(\{x:{|f(x)|}≥α\})≤\frac1α∫{|f|}\]</li>
+<li><ol type="i"><li>$m(\{x:{|f(x)|}=∞\})≤m(\{x:{|f(x)|}≥α\})≤\frac1α∫{|f|}$ when $α→∞$ we get $m(\{x:{|f(x)|}=∞\})=0$.</li><li>By (a), $E_n=\left\{x:{|f(x)|}≥\frac1n\right\}$ is null, then $\bigcup_{n=1}^∞ E_n=\{x:f(x)>0\}$ is a countable union of null sets, so is null.<div class="noprint">Measure Integral & Probability, Capinski & Kopp, Theorem 4.8</div></li></ol></li></ol>
+<a href="https://math.stackexchange.com/questions/1123943">Lebesgue integral of a positive function on a set of positive measure</a>
+<p>Let $E$ be a subset of ℝ with positive Lebesgue measure, $\lambda(E)>0$.  Let $f$ be a function from ℝ to ℝ which is positive on $E$, that is $f(x)>0$ for all $x\in E$. Prove that $\int_E f\,d\lambda$ is strictly positive.</p>
+Since $f$ is strictly positive on $E$, we have
+$$
+E = \bigcup_{n \geq 1} E_n, \quad  \mbox{ where } E_n = \left\{x \in E: f(x) > \frac{1}{n}\right\}.
+$$
+Since $\lambda(E) > 0$ there is some $n$ for which $\lambda(E_n)$ is positive (otherwise $E$ would be the countable union of measure $0$ sets, implying $\lambda(E)=0$). We then have
+$$
+\int_E f \, d\lambda \geq \int_{E_n} f \, d\lambda > \int_{E_n} \frac1n \, d\lambda = \frac{\lambda(E_n)}{n} > 0,
+$$
+as desired.
+<div class="q">
+In each of the following cases, decide whether the function $f$ is Lebesgue integrable over the interval $I$. Justify your answers and calculate $∫_I f$ in those cases where this is feasible.
+<ol type="a">
+    <li>$I=ℝ, f(x)=x$ if $x$ is rational, $f(x)=0$ if $x$ is irrational</li>
+    <li>$I=(0, π/2), f(x)=\tan x$</li>
+    <li>$I=[1,∞), f(x)=(-1)^n/n$ if $n≤x< n+1, n=1,2,3,…$</li>
+    <li>$I=(0,1], f(x)=\sin(1/x)$</li>
+    <li>$I=[0,∞), f(x)=x^ne^{-x}$ where $n$ is a positive integer</li>
+    <li>$I=(0,∞), f(x)=(\log x)e^{-x}$</li>
+    <li>$I=[1,∞), f(x)=x^α\log x$ where $α∈ℝ$</li>
+    <li>$I=(0,π), f(x)=(\operatorname{cosec}x)^{1/2}$</li>
+    <li>$I=(0,∞), f(x)=(1+x)^{-1}\cos x$</li>
+    <li>$I=[1,∞), f(x)=\sin(1/x)$</li>
+</ol>
+</div>
+<ol type="a">
+    <li>$f(x)=0$ a.e. By Proposition 5.1.5 $∫_I f=0$.</li>
+    <li>$\lim_{ϵ→0}∫_0^{π/2-ϵ}f=-\lim_{ϵ→0}\log\sinϵ=∞$. So $f$ isn't integrable on $I$.</li>
+    <li>$∫_1^{n+1}{|f|}=\sum^n_{k=1}\frac1k→∞$. So $f$ isn't integrable on $I$.<br>But $f$ is R-integrable, $∫_1^∞f=\ln2$.</li>
+    <li>$f$ is continuous so measurable and ${|f|}≤1$ on finite interval $I$, by Corollary 5.2.3, $f$ is integrable on $I$.<br>$\int_0^1 \sin(1/x)\,dx = \sin(1)-\operatorname{Ci}(1)≈0.504067$</li>
+    <li>$\lim_{x→∞}{f(x)\over x^{-2}}=0$ and $x^{-2}$ is integrable on $(1,∞)$, by Comparison Test, $f$ is integrable on $(1,∞)$.<br>$f$ is bounded on $[0,1]$, so $f$ is integrable on $[0,1]$. So $f$ is integrable on $[0,∞)$.<hr>Set $p=1$ in $\int_0^∞x^ne^{-px}=ℒ\{x^n\}(p)=\frac{n!}{p^{n+1}}$ we get $\int_0^∞x^ne^{-x}=n!$<br>Or use the definition of Gamma function.
+    </li>
+    <li>$\lim_{x→0}{f(x)\over x^{-1/2}}=0$ and $x^{-1/2}$ is integrable on $(0,1)$, so $f$ is integrable on $(0,1)$.<br>$\lim_{x→∞}{f(x)\over x^{-2}}=0$ and $x^{-2}$ is integrable on $(1,∞)$, so $f$ is integrable on $(1,∞)$.<br>So $f$ is integrable on $(0,∞)$.<br>Let $s=1$ in $ℒ\left\{ \log x\right\}(s)=-\frac{\log s+γ}s$, we get $\int_0^∞(\log x)e^{-x}=-γ$. <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=3796">拉普拉斯变换的问题</a>
+    </li>
+    <li>Integrating by parts,$$\int_1^A x^α\log x=\left.\frac{x^{α+1}}{α+1}\left(\log x-\frac1{α+1}\right)\right|_1^A=\frac1{(α+1)^2}+L(A)$$
+    where$$\lim_{A→∞}L(A)=\lim_{x→∞}\frac{x^{α+1}}{α+1}\left(\log x-\frac1{α+1}\right)=\begin{cases}∞&α≥-1\\0&α&lt;-1\end{cases}$$
+    For $α≥-1$, we also can use comparison test: $\int_1^∞ x^α\log x≥\int_1^∞ x^{-1}\log x=\left.\frac{\log^2x}2\right|_1^∞=∞$.<br>
+    </li>
+    <li>Since $\sin x>\frac2πx$ for $x∈\left(0,\fracπ2\right)$, we have $\operatorname{cosec}x&lt;\fracπ{2x}$ for $x∈\left(0,\fracπ2\right)$. But $x^{-1/2}$ is integrable on $\left(0,\fracπ2\right)$, by Comparison Test $f(x)=(\operatorname{cosec}x)^{1/2}$ is integrable on $\left(0,\fracπ2\right)$, by symmetry, $f$ is integrable on $(0,π)$.</li>
+    <li>$∫_{rπ}^{(r+1)π}{|f|}≥∫_{rπ}^{(r+1)π}\frac{|\cos x|}{(r+1)π}dx=\frac2{(r+1)π}$ and $\sum_{r=0}^∞\frac2{(r+1)π}=∞⇒f$ is not integrable on $I$.</li>
+    <li>Since $\sin x>x\sin1$ for $x∈(0,1)$, we have $\sin x^{-1}>x^{-1}\sin1$ for $x∈I$.<br>By Comparison Test, $x^{-1}$ is not integrable on $I⇒f$ is not integrable on $I$.</li>
+</ol>
