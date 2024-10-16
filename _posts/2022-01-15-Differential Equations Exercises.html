@@ -1,0 +1,109 @@
+---
+mathjax: true
+tag: Differential Equations 2
+excerpt: College exam — HT 2023
+---
+<ol><li>
+<ol type="a"><li>Find the general real solution of the differential equation:
+\begin{equation}
+ℒy ≡ \frac{1}{4} y''(x)+y'(x)+\left(1+\frac{π^2}{4}\right) y(x)=0,
+\end{equation}
+where prime denotes differentiation with respect to $x$.
+Consider the boundary value problem
+\begin{equation}
+ℒy(x)=f(x)   \text { on } 0< x< 1,   y'(0)+y(0)=0,   y(1)=0,
+\end{equation}
+with $L y$ as in (1). State the definition of the Green's function $g(x, ξ)$ using the delta function $δ(x)$.
+Determine the Green's function for the problem (2) explicitly.
+</li>
+<li>Find the eigenvalues $λ_n$ and corresponding eigenfunctions $y_n(x)$ for the problem
+\begin{equation}
+M y=-\frac{λ}{x} y
+\end{equation}
+where the operator $M$ is given by
+\begin{equation}
+M y ≡ x y''+y'+\frac{4}{x} y,   1< x< e^π,   y(1)=0,   y\left(e^π\right)=0
+\end{equation}
+Is the operator self-adjoint with respect to the inner product
+$$
+⟨f, g⟩=∫_1^{e^π} f(t) g(t) \mathrm{d} t ?
+$$</li></ol>
+</li>
+<li>
+<ol type="a"><li>Consider the equation
+\begin{equation}
+x y''(x)+(2 x-1) y'(x)+\frac{1}{x} y(x)=0 .
+\end{equation}
+Here prime denotes differentiation with respect to $x$. Classify the points $x=0, x=∞$ as ordinary, regular, or irregular singular points, giving reasons.<br>
+For $x=0$, determine the indicial equation and indicial exponents. Find the series expansion about $x=0$ for the solution of (5) that satisfies
+$$
+y'(0)=1
+$$
+and from it obtain the solution in closed form. Why is one initial condition sufficient to determine this solution uniquely?
+</li>
+<li>Consider Chebyshev's equation
+\begin{equation}
+\frac{\mathrm{d}}{\mathrm{d} x}\left(\left(1-x^2\right)^{1/2} \frac{\mathrm{d} y}{\mathrm{d} x}\right)+n^2\left(1-x^2\right)^{-1/2} y(x)=0,  -1< x< 1
+\end{equation}
+for integers $n ⩾ 0$.<br>
+Find the general solution to Chebyshev's equation, using the substitution $x=\cos z$. Denote by $T_n(x)=\cos (n \arccos (x))$ the polynomial solution of Chebyshev's equation of degree $n$. Show that the $T_n(x)$ satisfy the orthogonality relation
+$$
+∫_{-1}^1 T_n(x) T_m(x)\left(1-x^2\right)^{-1/2} \mathrm{~d} x=0 \text { for } m ≠ n .
+$$
+Determine the expansion of the function $g(x)=\left(1-x^2\right)^{1/2}$ in terms of the $T_n(x)$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>Find the first two terms in an asymptotic expansion for all 5 roots, $x$, of the polynomial
+$$
+x^5+x^2-ϵ=0,   \text { as } ϵ → 0
+$$
+Note: some roots will be complex valued.
+</li>
+<li>Consider the ODE problem
+$$
+ϵ \frac{\mathrm{d}^2 y}{\mathrm{~d} x^2}+(x+1) \frac{\mathrm{d} y}{\mathrm{~d} x}+y=0,   y(0)=0,   y(1)=1
+$$
+as $ϵ → 0$. Find the first terms of outer and inner solutions. You may assume that the boundary layer is near $x=0$.
+Match the first term of the inner solution to the one-term outer solution, and give a composite solution.</li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li><ol type="a"><li>characteristic equation $\frac14m^2+m+1+{π^2\over4}=0$ has solution $m=-2+iπ$<br>general solution $y=e^{-2x}(C_1\sin(πx)+C_2\cos(πx))$<br>Denote derivative wrt $x$ by $ℒ_x$<br>$ℒ_xg=δ(x-ξ)$ for $x,ξ∈(0,1),x≠ξ$<br>boundary condition $g_x(0,ξ)+g(0,ξ)=0,g(1,ξ)=0$<br>Let $g(x,ξ)=\begin{cases}e^{-2x}(A\sin(πx)+B\cos(πx))&0&lt;x&lt;ξ&lt;1\\e^{-2x}(C\sin(πx)+D\cos(πx))&0&lt;ξ&lt;x&lt;1\end{cases}$<br>$g_x(0,ξ)+g(0,ξ)=0⇒πA-2B+B=0⇒B=πA$<br>$g(1,ξ)=-e^{-2}D=0⇒D=0$<br>So $g(x,ξ)=\begin{cases}Ae^{-2x}(\sin(πx)+π\cos(πx))&0&lt;x&lt;ξ&lt;1\\Ce^{-2x}\sin(πx)&0&lt;ξ&lt;x&lt;1\end{cases}$<br>By continuity $[g]_{ξ-}^{ξ+}=0⇒A(\sin(πξ)+π\cos(πξ))=C\sin(πξ)$<br>Integrating $ℒ_xg=δ(x-ξ)$ across $x=ξ$ we get\begin{align*}4=[g_x]_{ξ-}^{ξ+}=&C\left(-2e^{-2ξ}\sin(πξ)+e^{-2ξ}π\cos(πξ)\right)\\&-A\left(-2e^{-2ξ}(\sin(πξ)+π\cos(πξ))+e^{-2ξ}π(\cos(πξ)-π\sin(πξ))\right)\end{align*}Solving the linear equations<pre>FullSimplify[Solve[{a*(Sin[π*ξ] + π*Cos[π*ξ]) == c*Sin[π*ξ], 4 == c*D[Exp[-2*ξ]*Sin[π*ξ], ξ] - a*D[Exp[-2*ξ]*(Sin[π*ξ] + π*Cos[π*ξ]), ξ]}, {a, c}]]</pre>\begin{cases}A=\frac4{π^2}e^{2ξ}\sin(πξ)\\C=\frac4{π^2}e^{2ξ}(\sin(πξ)+π\cos(πξ))\end{cases}So\[g(x,ξ)=\begin{cases}\frac4{π^2}e^{2(ξ-x)}\sin(πξ)(\sin(πx)+π\cos(πx))&0&lt;x&lt;ξ&lt;1\\\frac4{π^2}e^{2(ξ-x)}\sin(πx)\left(\sin(πξ)+π\cos(πξ)\right)&0&lt;ξ&lt;x&lt;1\end{cases}\]</li><li>$My=-\fracλxy⇔x^2y''+xy'+(4+λ)y=0$ Cauchy-Euler equation<br>characteristic equation $m(m-1)+m+4+λ=0⇒m=±i\sqrt{4+λ}$ for $4+λ≥0$ [If $4+λ&lt;0$ only trivial solution]$$y=A\cos(\sqrt{4+λ}\ln x)+B\sin(\sqrt{4+λ}\ln x)$$$y(1)=0⇒A=0$<br>$y(e^π)=0⇒\sin(π\sqrt{4+λ})=0$ for non-trivial solution $B≠0$<br>$⇒\sqrt{4+λ}=k∈ℤ⇒λ_k=k^2-4$ is eigenvalue, $y_k=B\sin(k\ln x)$ is eigenfunction.<br>Let $y(1)=w(1)=0,y(e^π)=w(e^π)=0$
+\begin{split}
+⟨My, w⟩&=∫_1^{e^π} (ty''+y'+\frac4ty) w \mathrm{d} t\\
+&=∫_1^{e^π} (ty')'w+\frac4tyw \mathrm{d} t\\
+&=[ty'w]_1^{e^π}+∫_1^{e^π}(-ty'w'+\frac4tyw) \mathrm{d} t\\
+&=[t(y'w-yw')]_1^{e^π}+∫_1^{e^π}(tw')'y+\frac4tyw \mathrm{d} t=⟨y,Mw⟩
+\end{split}So the problem is self-adjoint.</li></ol></li><li><ol type="a"><li>At 0, $P(x)=2-\frac1x,Q(x)=\frac1{x^2}$ not analytic but $xP(x),x^2Q(x)$ are, so 0 is regular singular.<br>Substitute $x=1/t,y(x)=u(t)$\begin{array}l
+y'=\dot u{dt\over dx}=-t^2\dot u\\y''=-2t{dt\over dx}\dot u-t^2{dt\over dx}\ddot u=2t^3\dot u+t^4\ddot u\end{array}the ODE becomes\[2t^2\dot u+t^3\ddot u-t(2-t)\dot u+tu=0⇔P(t)=(3t^{-1}-2t^{-2}),Q(t)=t^{-2}\]$tP(t)$ not analytic, so $∞$ is irregular singular.<br>For $x=0$, indicial equation $α(α-1)-α+1=0⇒$double root $α=1$ Case II See §5.2.6<br>$y_1(x)=x\sum_{k=0}^∞a_nx^k=\sum_{k=0}^∞a_kx^{k+1}$<br>$y_2(x)=y_1(x)\ln(x)+\sum_{k=0}^∞b_kx^{k+1}$<br>Because (5) is homogeneous, let $a_0=1$<br>$\lim_{x→0}y_1'(x)=1$ bounded<br>$\lim_{x→0}y_2'(x)=\lim_{x→0}\ln(x)+x\frac1x+b_0=∞$<br>$y'(0)=1⇒y=y_1(x)$.<br>For $k≥1:a_k=-\frac2ka_{k-1}⇒a_k=\frac{(-2)^k}{k!}⇒y_1(x)=\sum_{k=0}^∞\frac{(-2)^k}{k!}x^{k+1}=xe^{-2x}$</li><li>Substitute $x=\cos z,z∈(0,π),y(x)=u(z),\frac{dy}{dx}=u_z\frac{dz}{dx}=-\frac{u_z}{\sin z},$\[\frac{u_{zz}}{\sin z}+n^2\frac{u}{\sin z}=0⇒u_{zz}+n^2u=0\]$⇒u=A\cos(nz)+B\sin(nz)⇒y(x)=A\cos(n\arccos x)+B\sin(n\arccos x)$
+$$
+I(n,m)≔∫_{-1}^1 T_n(x) T_m(x)\left(1-x^2\right)^{-1/2} \mathrm{~d} x=∫_0^π \cos(nz)\cos(mz)\mathrm{~d}z
+$$
+Sturm-Liouville problem, eigenfunctions $T_n$, weighting function $r(x)=(1-x^2)^{-1/2}$<br>By §4.7.2 Orthogonality $I(n,m)=0$ for $n≠m$.<br>$T_0(x)=1⇒I(0,0)=π$<br>For $n>0$, $I(n,n)=\int_0^π\cos^2(nz)\mathrm{~d}z=\fracπ2$<br>To find eigenfunction expansion of $g(x)=\left(1-x^2\right)^{1/2}$, let $g(x)=\sum_{n=0}^∞c_nT_n(x)$\begin{align*}
+c_0&=\frac1{I(0,0)}∫_{-1}^1T_0(x)g(x)\left(1-x^2\right)^{-1/2}\mathrm{~d}x=\frac1π∫_{-1}^1\mathrm{~d}x=\frac2π\\
+c_n&=\frac1{I(n,n)}∫_{-1}^1T_n(x)g(x)\left(1-x^2\right)^{-1/2}\mathrm{~d}x=\frac2π∫_0^π\cos(nz)\sin(z)\mathrm{~d}z=\frac{(-1)^{n+1}-1}π\frac2{n^2-1}
+\end{align*}Therefore\begin{align*}g(x)&=\frac2π+\sum_{n=1}^∞\frac{(-1)^{n+1}-1}π\frac2{n^2-1}\cos(n\arccos x)\\&=\frac2π-\frac2π\sum_{n=1}^∞\frac2{4n^2-1}\cos(2n\arccos x)\end{align*}<pre>FourierCosCoefficient[(1 - Cos[x]^2)^(1/2), x, n]</pre></li></ol></li><li><ol type="a"><li>Substitute $x∼x_0+ϵx_1+…$<br>$O(1):x_0^5+x_0^2=0⇒x_0=0,0,-1,e^{±iπ/3}$<br>$O(ϵ):5x_0^4x_1+2x_0x_1-1=0⇒x_0(5x_0^3x_1+2x_1)=1$ [At $x_0=0$ this is 0=1, need rescale]<br>For $x_0^3=-1$ this is $x_0x_1(-3)=1⇒x_1=-\frac1{3x_0}$ we get three solutions\begin{array}l
+x∼-1+\fracϵ3\\x∼e^{iπ\over3}+{e^{i{2π\over3}}\over3}\\x∼e^{-iπ\over3}+{e^{-i{2π\over3}}\over3}
+\end{array}For $x_0=0$ need rescale $x∼ϵ^{1/2}$, let $x=Xϵ^{1/2}$, equation becomes
+$$ϵ^{5/2}X^5+ϵX^2-ϵ=0⇒ϵ^{3/2}X^5+X^2-1=0$$
+Let $X=X_0+X_1ϵ^{1/2}+X_2ϵ+X_3ϵ^{3/2}$
+\begin{array}l
+O(1):&X_0^2-1=0⇒X_0=±1\\
+O(ϵ^{1/2}):&2X_0X_1=0⇒X_1=0\\
+O(ϵ):&X_1^2+2X_0X_2=0⇒X_2=0\\
+O(ϵ^{3/2}):&X_0^5+2X_1X_2+2X_0X_3=0⇒X_3=-\frac12
+\end{array}
+$⇒X=±1-\frac12ϵ^{3/2}+O(ϵ^2)⇒x=±ϵ^{1/2}-\frac{ϵ^2}2+O(ϵ^{5/2})$
+<br>
+</li><li>$ϵy''+(x+1)y'+y=0(ϵ→0)$<br>Taking $ϵ→0$ for leading order expansion: $(x+1)y_0'+y_0=0⇒y_0=\frac A{x+1}$<br>$P_1(x)>0∀x⇒$boundary layer at left ($x=0$)<br>Outer expansion: At $x=1$, $y_0(1)=1⇒A=2⇒y_0(x)=\frac2{x+1}$<br>Inner expansion: Let $x=δX,y(x)=Y(X)$ for $δ≪1$, substitute in\[\fracϵ{δ^2}Y''(X)+\frac{δX+1}δY'(X)+Y(X)=0\]Dominant balance: for $δ=ϵ$,\[Y_0''(X)+Y_0'(X)=0,Y_0(0)=0⇒Y_0(X)=β(1-e^{-X})\]From matching $\lim_{X→∞}Y_0(X)=\lim_{x→0^+}y_0(x)⇒β=2⇒Y_0(X)=2(1-e^{-X})$
+\begin{align*}
+y_\text{comp}&=y_0(x)+Y_0(X)-\text{common limit}\\
+&=\frac2{x+1}+2(1-e^{-X})-2\\&=\frac2{x+1}-2e^{-x/ϵ}
+\end{align*}
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw(0,2)node[above]{0}--(0,0)--(2,0)--(2,2)node[above]{1};
+\draw[dashed](1,0)--(1,2);
+\node at(.5,1){$\epsilon X\to$};
+\node at(1.5,1){$\leftarrow x$};
+\end{tikzpicture}{% endlatex %}
+</li></ol></li></ol>
