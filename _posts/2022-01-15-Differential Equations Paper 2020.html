@@ -1,0 +1,372 @@
+---
+mathjax: true
+tag: Differential Equations 2
+excerpt: A6 paper 2020
+---
+<ol><li>Let $𝔏$ denote the second-order self-adjoint operator
+$$
+𝔏 y=\left(-p y'\right)'+q y
+$$
+where $p$ and $q$ are continuously differentiable positive functions.
+<ol type="a"><li>Let $y_1$ and $y_2$ be solutions of the differential equation $𝔏 y=0$. Define the Wronskian $W\left[y_1, y_2\right]$ of $y_1$ and $y_2$. Show that $W$ is either zero everywhere or zero nowhere. Show also that $W\left[y_1, y_2\right]$ is zero if and only if $y_1$ and $y_2$ are linearly dependent.
+</li>
+<li>Now consider the eigenvalue problem $𝔏 y=λ y$, posed on the interval $(a, b)$ and subject to the boundary conditions $y(a)=0=y(b)$
+<ol type="i"><li>Show that the eigenvalues $λ_n(n=1,2, …)$ are real and positive.
+</li>
+<li>Show that the eigenfunctions $y_n$ corresponding to distinct eigenvalues $λ_n$ are orthogonal, with respect to an inner product that you should define.
+</li></ol>
+</li>
+<li>Now consider the following inhomogeneous boundary value problem:
+$$\tag⋆
+𝔏 y-λ y=f   \text{ on }(a, b),   y(a)=α,   y(b)=β .
+$$
+<ol type="i"><li>For generic $λ$, obtain the solution to (⋆) as an eigenfunction expansion using the eigenfunctions $y_n$ from part (b). [You may express the coefficients in terms of unevaluated integrals.]
+</li>
+<li>Under what condition does (⋆) not have a unique solution for $y$ ?
+</li>
+<li>When the condition from part (ii) is satisfied, derive the additional solvability condition required for a solution to (⋆) to exist, and find the general solution to (⋆) in this case.</li></ol></li></ol>
+</li>
+<li>Consider the differential equation
+$$\tag⋆
+x(1-x) y''(x)+(2-3 x) y'(x)+λ y(x)=0
+$$
+where $λ$ is a real constant.
+<ol type="a"><li>Classify the singular points at $x=0$ and $x=1$, determining the indicial equations where relevant.
+Hence explain why, for given $λ$, there is one solution for $y(x)$ that is bounded as $x → 0$, and one solution that is bounded as $x → 1$.
+</li>
+<li>Show that (⋆) admits $n$th degree polynomial solution $y(x)=p_n(x)$ if and only if $λ=n(n+2)$ where $n$ is a non-negative integer.
+</li>
+<li>Show that the polynomial solutions $p_n$ satisfy the orthogonality relation
+$$
+∫_0^1 x p_n(x) p_m(x) \mathrm{d} x=0   \text{ for } n ≠ m
+$$
+and evaluate the above inner product for the case $m=n$, i.e. the integral $∫_0^1 x p_n(x)^2 \mathrm{~d} x$. [You may use without proof the <a href="https://www.physics.rutgers.edu/~shapiro/464/lects/rodrOrthPoly.pdf">Rodrigues formula</a>
+$$
+p_n(x)=\frac{(-1)^{n+1}}{(n+1) !} \frac{\mathrm{d}^{n+1}}{\mathrm{d} x^{n+1}}\left[x^n(1-x)^{n+1}\right]
+$$
+and the identity
+$$
+∫_0^1 x^n(1-x)^{n+1} \mathrm{~d} x=\frac{n !(n+1) !}{(2 n+2) !}
+$$
+for $n=0,1, ⋯$.]</li></ol>
+</li>
+<li>
+<ol type="a"><li>Define what it means for
+$$
+f(ϵ) ∼ \sum_n c_n ϕ_n(ϵ)
+$$
+to be an asymptotic expansion in the limit $ϵ → 0$.
+Express $f(ϵ)=\log (\log (1+ϵ))$ as an asymptotic expansion in the limit $ϵ → 0$, retaining terms up to and including order $ϵ^2$.
+</li>
+<li>Consider the differential equation
+$$
+y''(x)+ϵ(1+y(x)) y'(x)+y(x)=0
+$$
+in $x>0$, subject to the initial conditions $y(0)=1$ and $y'(0)=0$, where $0&lt;ϵ ≪ 1$,
+Construct an approximation to the solution $y(x)$ as an asymptotic expansion in powers of $ϵ$ up to and including order $ϵ$. For what values of $x$ is the asymptotic expansion valid?
+</li>
+<li>Consider the boundary-value problem
+$$
+ϵ y''(x)+\frac{y'(x)}{(1+x)^2}+\frac{y(x)}{(1+x)^{3}}=0
+$$
+on the interval $0&lt;x&lt;a$, subject to $y(0)=0$ and $y(a)=1$, where $0&lt;ϵ ≪ 1$.
+<ol type="i"><li>Explain why, in the limit $ϵ → 0$, there is a boundary layer at $x=0$ but not at $x=a$.
+</li>
+<li>Obtain the outer solution as an asymptotic expansion in powers of $ϵ$, that is, of the form $y(x) ∼ y_0(x)+ϵ y_1(x)+⋯$. Solve for $y_0$ and $y_1$, and show that
+$$
+y_n(x)=C_n\left(\frac{a-x}{1+x}\right) \text{ for } n ⩾ 1
+$$
+determining the constants $C_n$ for $n=1,2, ⋯$.
+</li>
+<li>Find the leading-order solution in the boundary layer at $x=0$ and match the inner and outer solutions at leading order.</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li>
+<ol type="a"><li>The Wronskian is defined by
+$$
+W\left[y_1, y_2\right]=\operatorname{det}\left(\begin{array}{ll}
+y_1 & y_2 \\
+y_1' & y_2'
+\end{array}\right)=y_1 y_2'-y_2 y_1'
+$$
+Since $y_1$ and $y_2$ satisfy the given ODE we have
+\begin{aligned}
+0 &=y_2\left[\left(-p y_1'\right)'+q y_1\right]-y_1\left[\left(-p y_2'\right)'+q y_2\right] \\
+&=\left(p y_1 y_2'-p y_2 y_1'\right)'=(p W)'
+\end{aligned}
+and therefore
+$$
+p W=K_1=\text{constant} .
+$$
+We are given that $p>0$. If $K_1$ is zero, then $W ≡ 0$ everywhere, but if $K_1$ is nonzero, then $W=K_1 / p$ is nonzero everywhere.
+Now suppose that $y_1$ and $y_2$ are linearly dependent, i.e. that there exist constants $c_1$ and $c_2$, not both zero, such that $c_1 y_1+c_2 y_2=0$. Since $y_1$ and $y_2$ are differentiable, we also have $c_1 y_1'+c_2 y_2'=0$ and therefore
+$$
+\left(\begin{array}{ll}
+y_1 & y_2 \\
+y_1' & y_2'
+\end{array}\right)\left(\begin{array}{l}
+c_1 \\
+c_2
+\end{array}\right)=\mathbf0
+$$
+Nontrivial solutions for $c_1$ and $c_2$ exist (by assumption) and therefore the determinant of this matrix, namely the Wronskian, must be zero.<br>
+For the converse, suppose that $W\left[y_1, y_2\right]=0$. Suppose also that $y_1$ is not the zero function—otherwise $y_1$ and $y_2$ are trivially linearly dependent. Thus there exists some point $a$ such that $y_1(a) ≠ 0$. Now define
+$$
+y(x)=y_1(a) y_2(x)-y_2(a) y_1(x) .
+$$
+Since $y_1$ and $y_2$ satisfy the given ODE then, by linearity, so does $y$. Also we observe that $y(a)=0$ and also $y'(a)=W(a)=0$ (by assumption) so $y$ satisfies the homogeneous initial-value problem
+$$
+𝔏 y(x)=0,   y(a)=0,   y'(a)=0 .
+$$
+We observe that $y=0$ satisfies this problem and, by Picard's Theorem, it is unique. Therefore $y=0$ and, since $y(a) ≠ 0$, we have that $y_1$ and $y_2$ are linearly dependent, as required.
+</li>
+<li>
+<ol type="i"><li>Let $λ_n$ be an eigenvalue with corresponding eigenfunction $y_n ≠ 0$, such that
+$$
+𝔏 y_n=λ_n y_n   \text{ and }   y_n(a)=0=y_n(b) .
+$$
+Multiply through by $y_n$ and integrate from $a$ to $b$ to get
+\begin{aligned}
+λ_n ∫_a^b y_n(x)^2 \mathrm{~d} x &=∫_a^b\left[-y_n(x)\left(p y_n'(x)\right)'+q y_n(x)^2\right] \mathrm{~d} x \\
+&=-\left[p y_n y_n'\right]_a^b+∫_a^b\left[p y_n'(x)^2+q y_n(x)^2\right] \mathrm{~d} x,
+\end{aligned}
+The boundary term is zero by $y(a)=0=y(b)$.<br>
+Given that $p$ and $q$ are positive and $y_n$ is nontrivial, we have
+$$
+λ_n={∫_a^b\left[p y_n'(x)^2+q y_n(x)^2\right] \mathrm{~d} x\over∫_a^b y_n(x)^2 \mathrm{~d} x}>0
+$$
+</li>
+<li>Now note that
+\begin{aligned}
+\left(λ_m-λ_n\right) ∫_a^b y_n(x) y_m(x) \mathrm{~d} x &=∫_a^b y_n(x) 𝔏 y_m(x) \mathrm{~d} x-∫_a^b y_m(x) 𝔏 y_n(x) \mathrm{~d} x \\
+&=\left[y_m p y_n'-y_n p y_m'\right]_a^b=0
+\end{aligned}
+by the boundary conditions. So eigenfunctions corresponding to distinct eigenvalues satisfy the orthogonality condition
+$$
+\left⟨y_n, y_m\right⟩:=∫_a^b y_n(x) y_m(x) \mathrm{d} x=0
+$$</li></ol>
+</li>
+<li>
+<ol type="i"><li>First need to incorporate inhomogeneous boundary conditions into inner product. Note that
+$$
+\left⟨y_k,(𝔏-λ) y\right⟩=\left⟨y_k, f\right⟩,  \left⟨(𝔏-λ) y_k, y\right⟩=\left(λ_k-λ\right)\left⟨y_k, y\right⟩
+$$
+and
+$$
+\left⟨y_k,(𝔏-λ) y\right⟩-\left⟨(𝔏-λ) y_k, y\right⟩=\left[p y_k' y-p y_k y'\right]_a^b=β p(b) y_k'(b)-α p(a) y_k'(a),
+$$
+when we apply the boundary conditions. Altogether, we therefore have
+$$
+\left⟨y_k, f\right⟩-\left(λ_k-λ\right)\left⟨y_k, y\right⟩=β p(b) y_k'(b)-α p(a) y_k'(a) 
+$$
+Now write solution of the inhomogeneous problem as an eigenfunction expansion, namely
+\begin{equation}
+	y(x)=\sum_k c_k y_k(x)
+\end{equation}where the coefficients $c_k$ are to be determined. By orthogonality, we have $\left⟨y_k, y\right⟩=c_k\left⟨y_k, y_k\right⟩$ so we get
+\begin{equation}
+	\left(λ_k-λ\right)\left⟨y_k, y_k\right⟩ c_k=\left⟨y_k, f\right⟩+α p(a) y_k'(a)-β p(b) y_k'(b)
+\end{equation}provided $λ ≠ λ_n$ for any $n$, the coefficients are all determined by
+\begin{equation}
+	c_k=\frac{\left⟨y_k, f\right⟩+α p(a) y_k'(a)-β p(b) y_k'(b)}{\left(λ_k-λ\right)\left⟨y_k, y_k\right⟩}
+\end{equation}
+</li>
+<li>The inhomogeneous problem does not have unique solution<br>⇔ the corresponding homogeneous problem has a nontrivial solution<br>$⇔λ=λ_n$ for some $n$.
+</li>
+<li>Now suppose that $λ=λ_n$ for some $n$. Then from (2) we read off the solvability condition
+$$
+\left⟨y_n, f\right⟩=∫_a^b y_n(x) f(x) \mathrm{d} x=β p(b) y_n'(b)-α p(a) y_n'(a)
+$$
+If this condition is satisfied, then the solution is given by (1), where $c_k$ is defined by $(3)$ for $k ≠ n$ and $c_n$ is arbitrary.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>The points at $x=0$ and $x=1$ are both regular singular points.
+Plug in $y(x) ∼ x^α$ as $x → 0$ to get the indicial equation
+$$
+α(α-1)+2 α=α(α+1)=0   \text{ at } x=0
+$$
+To analyse the point $x=1$, make life easier with the substitution $x=1+X$ to get
+$$
+X(1+X) y_{X X}+(1+3 X) y_{X}-λ y=0
+$$
+Now substituting $y(X) ∼ X^α$ gives the indicial equation
+$$
+α(α-1)+α=α^2=0   \text{ at } x=1
+$$
+One series solution about $x=0$ (corresponding to $α=0$) is given by
+$$
+y_1(x)=\sum_{k=0}^∞ a_k x^k
+$$
+with $a_0 ≠ 0$. The other solution (corresponding to $α=-1$) is given by either
+$$
+y_2(x)=x^{-1} \sum_{k=0}^∞ b_k x^k,   \text{ or }   y_2(x)=y_1(x) \log x+x^{-1} \sum_{k=0}^∞ b_k x^k
+$$
+with $b_0 ≠ 0$. In either case, $y_2$ is not bounded as $x → 0$, so (up to scalar multiples) there is just one bounded solution $y_1(x)$.
+At $x=1$, two linearly independent solutions (both with $α=0$) are given by
+\begin{aligned}
+y_1(x) &=\sum_{k=0}^∞ a_k(x-1)^k \\
+\text{ and }   y_2(x) &=y_1(x) \log (x-1)+\sum_{k=0}^∞ b_k(x-1)^k
+\end{aligned}
+with nonzero $a_0$ and $b_0$. Again $y_2$ is unbounded as $x → 1$ so there is just one bounded solution $y_1$.
+</li>
+<li>Plug in bounded power series solution about $x=0$ :
+\begin{aligned}
+0 &=\sum_{k=2}^∞ k(k-1) a_k(1-x) x^{k-1}+\sum_{k=1}^∞ k a_k(2-3 x) x^{k-1}+\sum_{k=0}^∞ λ a_k x^k \\
+&=\sum_{k=1}^∞ k(k+1) a_k x^{k-1}+\sum_{k=0}^∞[λ-k(k+2)] a_k x^k \\
+&=\sum_{k=0}^∞(k+1)(k+2) a_{k+1} x^k+\sum_{k=0}^∞[λ-k(k+2)] a_k x^k
+\end{aligned}
+and we read off the recurrence relation
+$$
+a_{k+1}=\frac{k(k+2)-λ}{(k+1)(k+2)} a_k
+$$
+for $k=0,1, ⋯$. The solution is a polynomial of degree $n$ if and only if $a_n ≠ 0$ but $a_{n+1}=0$ (and then $a_k=0$ for all $k ⩾n+1$). We see that this happens if and only if $λ=n(n+2)$, where $n$ is a non-negative integer.
+</li>
+<li>Turn (⋆) into SL form by multiplying through by $x$ :
+$$
+\left(x^2(1-x) y'(x)\right)'+λ x y(x)=0
+$$
+Now plug in $λ=n(n+2)$ and $λ=m(m+2)$ with corresponding polynomial solutions $p_n$ and $p_m$, i.e.
+$$
+\left(x^2(1-x) p_n'(x)\right)'+n(n+2) x p_n(x)=0=\left(x^2(1-x) p_m'(x)\right)'+m(m+2) x p_m(x) .
+$$
+Do $p_m ×$ the first one minus $p_n ×$ the second:
+$$\small
+\begin{aligned}
+(n(n+2)-m(m+2)) x p_n(x) p_m(x) &=p_n(x)\left(x^2(1-x) p_m'(x)\right)'-p_m(x)\left(x^2(1-x) p_n'(x)\right)' \\
+⇒  (n-m)(n+m+2) x p_n(x) p_m(x) &=\left[x^2(1-x)\left(p_n(x) p_m'(x)-p_m(x) p_n'(x)\right)\right]' .
+\end{aligned}$$
+Now integrate from 0 to 1. The term on the right-hand side vanishes at the end points because $p_n$ and $p_m$ are polynomials, so with $n, m ⩾ 0$, we must have
+$$
+∫_0^1 x p_n(x) p_m(x) \mathrm{~d} x=0 \text{ for } n ≠ m .
+$$
+For the case $m=n$, write
+$$
+p_n(x)=\frac{(-1)^{n+1}}{(n+1) !} \frac{\mathrm{d}^{n+1}}{\mathrm{d} x^{n+1}} q_n(x)
+$$
+where $q_n(x)=x^n(1-x)^{n+1}$. Note that the highest power of $x$ in $q_n(x)$ is $x^{2 n+1}$, with coefficient $(-1)^{n+1}$. The highest power of $x$ in $p_n(x)$ is therefore $x^n$ (as expected), with
+$$
+p_n(x)=\frac{(2 n+1) !}{n !(n+1) !} x^n+\text{lower powers of } x
+$$
+Note that
+\begin{gathered}
+q_n(0)=q_n'(0)=⋯=q_n^{(n-1)}(0)=0   \text{ and } q_n^{(n)}(0)=n !, \\
+q_n(1)=q_n'(1)=⋯=q_n^{(n)}(1)=0,
+\end{gathered}
+so when we integrate by parts $(n+1)$ times, all the boundary terms vanish and we are left with
+\begin{aligned}
+∫_0^1 x p_n(x)^2 \mathrm{~d} x &=\frac{(-1)^{n+1}}{(n+1) !} ∫_0^1 x p_n(x) q_n^{(n+1)}(x) \mathrm{d} x \\
+&=\frac1{(n+1) !} ∫_0^1 q_n(x) \frac{\mathrm{d}^{n+1}}{\mathrm{d} x^{n+1}}\left(x p_n(x)\right) \mathrm{d} x
+\end{aligned}
+Since $x p_n(x)$ is a polynomial of degree $(n+1)$, the final differentiated term is a constant, equal to $(n+1)!$ times the coefficient of $x^n$ in $p_n(x)$, calculated above, i.e.
+$$
+\frac{\mathrm{d}^{n+1}}{\mathrm{d} x^{n+1}}\left(x p_n(x)\right)=(n+1) ! × \frac{(2 n+1) !}{n !(n+1) !}=\frac{(2 n+1) !}{n !}
+$$
+Using the hint,
+$$
+∫_0^1 x p_n(x)^2 \mathrm{~d} x=\frac{(2 n+1) !}{n !(n+1) !} ∫_0^1 q(x) \mathrm{~d} x=\frac{(2 n+1) !}{(2 n+2) !}=\frac1{2(n+1)}
+$$
+</li></ol>
+</li>
+<li>
+<ol type="a"><li>The given expansion is asymptotic if, for all $n$,
+(1) $ϕ_{n+1}(ϵ)=o\left(ϕ_n(ϵ)\right)$ as $ϵ → 0$; and
+(2) $f(ϵ)-\sum_{k=0}^n c_k ϕ_k(ϵ)=o\left(ϕ_n(ϵ)\right)$ as $ϵ → 0$.
+Now expand
+\begin{aligned}
+\log (\log (1+ϵ)) & ∼ \log \left(ϵ-\frac{ϵ^2}2+\frac{ϵ^{3}}{3}+⋯\right) \\
+& ∼ \log (ϵ)+\log \left(1-\frac{ϵ}2+\frac{ϵ^2}{3}+⋯\right) \\
+& ∼ \log (ϵ)-\left(\frac{ϵ}2-\frac{ϵ^2}{3}\right)-\frac12\left(\frac{ϵ}2-\frac{ϵ^2}{3}\right)^2+⋯ \\
+& ∼ \log (ϵ)-\frac{ϵ}2+\frac{5 ϵ^2}{24}+⋯
+\end{aligned}
+</li>
+<li>Plug in $y(x) ∼ y_0(x)+ϵ y_1(x)+⋯$. At leading-order, we get
+$$
+y_0''+y_0=0,   y_0(0)=1,   y_0'(0)=0,
+$$
+with solution
+$$
+y_0(x)=\cos x
+$$
+At $\mathrm{O}(ϵ)$, we get
+$$
+y_1''(x)+y_1(x)=-\left(1+y_0(x)\right) y_0'(x)=(1+\cos x) \sin x=\sin (x)+\frac12 \sin (2 x),
+$$
+subject to $y_1(0)=y_1'(0)=0$. Try particular integral of the form $y_{\mathrm{PI}}(x)=A x \cos (x)+B \sin (2 x)$ and plug in to get
+$$
+y_{\mathrm{PI}}''(x)+y_{\mathrm{PI}}(x)=-2 A \sin (x)-3 B \sin (2 x) .
+$$
+Read off $A=-1 / 2$ and $B=-1 / 6$, so general solution is
+$$
+y_1(x)=-\frac12 x \cos (x)-\frac1{6} \sin (2 x)+a \cos (x)+b \sin (x)
+$$
+Then plug in initial conditions to get $a=0$ and $b=5 / 6$, i.e.
+$$
+y_1(x)=-\frac12 x \cos (x)-\frac1{6} \sin (2 x)+\frac{5}{6} \sin (x) .
+$$
+The asymptotic expansion $y ∼ y_0+ϵ y_1+⋯$ loses validity when $ϵ y_1$ becomes the same order as $y_0$, i.e. the expansion is valid provided $x ≪ ϵ^{-1}$.
+</li>
+<li>
+<ol type="i"><li>The coefficient of $y'$ is positive on the given interval. Therefore on any boundary layer we would end up with an ODE of the form
+$$
+y''+(\text{positive constant}) × y' ∼ 0
+$$
+whose solution consists of exponentials that decay in the positive-$x$ direction, but grow in the negative-$x$ direction. Therefore any boundary layer must be at the left-hand end of the domain, namely $x=0$.
+</li>
+<li>For the outer problem, note that the ODE can be written in the form
+$$
+((1+x) y(x))'=-ϵ(1+x)^{3} y''(x)
+$$
+which is to be solved subject to the right-hand boundary condition $y(a)=1$. Plug in the asymptotic expansion for $y$ to get:
+$$
+\begin{array}{ll}
+\left((1+x) y_0(x)\right)'=0, & y_0(a)=1 \\
+\left((1+x) y_n(x)\right)'=-(1+x)^{3} y_{n-1}''(x), & y_n(a)=0   \text{ for } n ⩾ 1
+\end{array}
+$$
+At leading order we get
+$$
+y_0(x)=\frac{1+a}{1+x}
+$$
+At $\mathrm{O}(ϵ)$
+$$
+\left((1+x) y_1(x)\right)'=-(1+x)^{3} y_0''(x)=-2(1+a)
+$$
+Integrate and apply the boundary condition to get
+$$
+y_1(x)=2(1+a)\left(\frac{a-x}{1+x}\right)
+$$
+which is indeed of the required form, with $C_1=2(1+a)$. Now assume for induction that $y_{n-1}$ is of the suggested form, i.e.
+$$
+y_{n-1}(x)=C_{n-1}\left(\frac{a-x}{1+x}\right)=\frac{C_{n-1}(1+a)}{1+x}+\text{constant}
+$$
+Then plug into recurrence relation to get
+$$
+\left((1+x) y_n(x)\right)'=-(1+x)^{3} y_{n-1}''(x)=-2(1+a) C_{n-1}
+$$
+Integrate and apply $y_n(a)=0$ to get
+$$
+y_n(x)=2(1+a) C_{n-1}\left(\frac{a-x}{1+x}\right)
+$$
+and by induction it follows that $y_n$ is of the suggested form for all $n ⩾ 1$, and that $C_n$ satisfies $C_n=2(1+a) C_{n-1}$. With $C_1=2(1+a)$ we get
+$$
+C_n=2^n(1+a)^n
+$$
+[Also OK if they spot that $y ∼ \frac{1+a}{1+x}+\frac{K(a-x)}{1+x}$ with $K=\frac{2(1+a) ϵ}{1-2(1+a) ϵ}$.]
+</li>
+<li>For the boundary layer, perform the rescaling $x=ϵ X,y(x)=Y(X)$
+to get
+$$
+Y''(X)+\frac{Y'(X)}{(1+ϵ X)^2}+\frac{ϵ Y(X)}{(1+ϵ X)^{3}}=0
+$$
+At leading order
+$$
+Y_0''+Y_0'=0
+$$
+subject to $Y_0(0)=0$ and matching with outer
+$$
+\lim _{X → ∞} Y_0(X)=\lim _{x → 0} y_0(x)=1+a
+$$
+Hence obtain leading-order inner solution
+$$
+Y_0(X)=(1+a)\left(1-\mathrm{e}^{-X}\right)
+$$</li></ol></li></ol>
+</li></ol>
