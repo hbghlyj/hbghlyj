@@ -91,14 +91,14 @@ Give an example where $h$ is injective, $f∼g$, but $f∘h≁g∘h$.</li></div>
 Let $S$ be Cantor set, $f(x)=-g(x)=χ_S$, and $h:ℝ→S$ be a bijection. $\{x:f(x)≠g(x)\}=S⇒f∼g$.<br>$f∘h(x)=1∀x∈ℝ,g∘h(x)=-1∀x∈ℝ⇒f∘h≁g∘h$.</li></ol>
 <div class="q">
 Let $p&gt;1$
-<ol type="a"><li>Find a sequence $\left(f_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}f_n(x)=0$ a.e. but $\lim_{n→∞}\left‖f_n\right‖_p≠0$.[<a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=40&zoom=auto,-86,264">Cor 9.6</a>]<br>For each $ϵ&gt;0$ find a measurable subset $E_ϵ$ of $[0,1]$ such that $m\left(E_ϵ\right)&lt;ϵ$ and $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.[Thm 9.7 Egorov’s Theorem]</li>
-<li>Find a sequence $\left(g_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}\left‖g_n\right‖_p=0$ but $\lim_{n→∞}g_n(x)$ does not exist for any $x∈(0,1)$. Find a subsequence $\left(g_{n_r}\right)$ such that $\lim_{r→∞}g_{n_r}(x)=0$ a.e.</li></ol>
+<ol type="a"><li>Find a sequence $\left(f_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}f_n(x)=0$ a.e. but $\lim_{n→∞}\left\|f_n\right\|_p≠0$.[<a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=40&zoom=auto,-86,264">Cor 9.6</a>]<br>For each $ϵ&gt;0$ find a measurable subset $E_ϵ$ of $[0,1]$ such that $m\left(E_ϵ\right)&lt;ϵ$ and $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.[Thm 9.7 Egorov’s Theorem]</li>
+<li>Find a sequence $\left(g_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}\left\|g_n\right\|_p=0$ but $\lim_{n→∞}g_n(x)$ does not exist for any $x∈(0,1)$. Find a subsequence $\left(g_{n_r}\right)$ such that $\lim_{r→∞}g_{n_r}(x)=0$ a.e.</li></ol>
 </div><ol type="a"><li>
-Let $f_n(x) =\sqrt[p]{n^2x^n(1-x)}\,(0 ≤ x ≤ 1)$, $f_n→0$ as $n→∞$ for all $x∈[0,1]$, but ${\left‖f_n\right‖_p\kern-.5ex=\sqrt[p]{\kern-.5ex\int^1_0f_n(x)^p\,dx}→1}$.<br>Let $E_ϵ=(1-\fracϵ2,1)$, then $m\left(E_ϵ\right)&lt;ϵ$. For $x∈[0,1]∖E_ϵ$ we have $x≤1-\fracϵ2,1-x≤1,$$$n^2x^n(1-x)≤n^2\left(1-\fracϵ2\right)^n$$therefore $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.</li><li>[Ex 9.4.2] Consider the sequence $g_n(x)=χ_{[k2^{-m},(k+1)2^{-m}]}$ where $n=2^m+k$ with $0≤k≤2^m-1$.
+Let $f_n(x) =\sqrt[p]{n^2x^n(1-x)}\,(0 ≤ x ≤ 1)$, $f_n→0$ as $n→∞$ for all $x∈[0,1]$, but ${\left\|f_n\right\|_p\kern-.5ex=\sqrt[p]{\kern-.5ex\int^1_0f_n(x)^p\,dx}→1}$.<br>Let $E_ϵ=(1-\fracϵ2,1)$, then $m\left(E_ϵ\right)&lt;ϵ$. For $x∈[0,1]∖E_ϵ$ we have $x≤1-\fracϵ2,1-x≤1,$$$n^2x^n(1-x)≤n^2\left(1-\fracϵ2\right)^n$$therefore $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.</li><li>[Ex 9.4.2] Consider the sequence $g_n(x)=χ_{[k2^{-m},(k+1)2^{-m}]}$ where $n=2^m+k$ with $0≤k≤2^m-1$.
 \begin{array}l
 χ_{[0,1]}\\
 χ_{[0,\frac12]}&χ_{[\frac12,1]}\\
-χ_{[0,\frac14]}&χ_{[\frac14,\frac12]}&χ_{[\frac12,\frac34]}&χ_{[\frac34,1]}\\…\end{array}As $n→∞$, $m→∞$, so $\left‖g_n\right‖_p=2^{-m/p}→0$.<br>
+χ_{[0,\frac14]}&χ_{[\frac14,\frac12]}&χ_{[\frac12,\frac34]}&χ_{[\frac34,1]}\\…\end{array}As $n→∞$, $m→∞$, so $\left\|g_n\right\|_p=2^{-m/p}→0$.<br>
 For any $x∈(0,1)$, $∀N∃n_0,n_1>N:f_{n_0}(x)=0,f_{n_1}(x)=1$, so $\lim_{n→∞}g_n(x)$ doesn't exist.<br>Take $k,m$ such that $x∉[k2^{-m},(k+1)2^{-m}],0≤k≤2^m-1$, then $χ_{[(k2^r)2^{-m-r},(k2^r+1)2^{-m-r}]}(x)=0\,∀r$</li></ol>
 <div class="q">Let $E⊂ℝ$ be measurable.
 <ol type="a">
