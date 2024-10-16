@@ -33,7 +33,7 @@ Compare the inner and outer approximations with the exact function <i>f</i> by p
 <div class="b">For $x=O(1)$, the first term is exponentially small, so the outer expansion is$$f(x;ϵ)∼\frac{\sin x}x-\operatorname{coth}x$$To find the inner expansion, rescale $x$ using $x=ϵy$, with $y=O(1)$, and set $f(x;ϵ)=F(y;ϵ)$. 
 Plugging this into the original equation,
 $$ F(y;ϵ)=\frac{e^{-y}}{ϵy}+\frac{\sin(ϵy)}{ϵy}-\coth(ϵy)$$Using Taylor expansions\begin{array}l\frac{\sin(ϵy)}{ϵy}=1+O(ϵ^2)\\\coth(ϵy)=\frac{1}{ϵy}+\frac{ϵy}{3}+O(ϵ^3)\end{array}Plugging into $F(y;ϵ)$$$F(y;ϵ)=1+\frac{e^{-y}-1}{ϵy}-\frac{ϵy}{3}+O(ϵ^2)$$Plot for $ϵ=0.1$
-<tex engine="asy">import graph;
+{% asy %}import graph;
 real eps=.1;
 real x_min = 0.2;
 real x_max = .6;
@@ -54,7 +54,7 @@ real f(real x) {
 }
 draw(graph(f, .25, x_max),L=Label("outer",E), green);
 xaxis(LeftTicks(Label("%f",1,W),new real[]{.2,.4,.6}));
-yaxis(LeftTicks("%f",new real[]{-1,-2,-3}));</tex></div></li>
+yaxis(LeftTicks("%f",new real[]{-1,-2,-3}));{% endasy %}</div></li>
 <li><b>Singular perturbation. </b>Use matched asymptotic expansions to find leading-order outer and inner solutions to the boundary value problem$$ϵy''(x)+xy'(x)+y(x)=0, 1&lt;x&lt;2, y(1)=0, y(2)=1$$where 0 &lt; ϵ ≪ 1. Construct the leading-order composite solution.<br>How would the analysis change if ϵ were small and negative? [You do not need to find the solution in this case.]<div class="b">The boundary layer is at $x=1$. To find inner expansion, let $x=1+ϵX,X=O(1),y(x)=Y(X)$
 Then $y'(x)=\frac{Y'(X)}ϵ,y''(x)=\frac{Y''(X)}{ϵ^2}$. Plugging in the equation\[\frac{Y''(X)}ϵ+Y'(X)(\frac1ϵ+X)+Y(X)=0⇒Y''_0(X)+Y'_0(X)=0\]Using $Y_0(0)=0$, we obtain $Y_0(X)=C\left(1-e^{-X}\right)$
 To find outer expansion, use regular expansion $y∼y_0(x)+ϵy_1(x)+⋯$\[xy_0'(x)+y_0(x)=0,y_0(2)=1⇒y_0(x)=\frac2x\]By <a href="https://en.wikipedia.org/wiki/Method_of_matched_asymptotic_expansions">the matching principle</a>\[\lim_{x→1^+}y_0(x)=2=\lim_{X→∞}Y_0(X)=C\]hence $C=2$. The common limit is 2 so the leading-order composite solution is\[y_0(x)+Y_0(X)-2=\frac2x-2e^{-(x-1)/ϵ}\]If $0&lt;-ϵ≪1$, the above $X=\frac{x-1}ϵ&lt;0$, $\lim_{X→-∞}Y_0(X)=∞$❌so the boundary layer must be $x=2$.</div></li>
