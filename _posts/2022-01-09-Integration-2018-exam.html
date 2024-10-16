@@ -56,7 +56,7 @@ By giving examples of suitable functions (justification is not required), show t
 <li>State Minkowski's inequality. Explain how the normed spaces $\left(L^p(I),\|⋅\|_{L^p(I)}\right)$ are defined, and how Minkowski's inequality is involved. [Detailed justifications are not required.]
 Show that the norm on $L^2(I)$ is associated with an inner product $⟨⋅, ⋅⟩_{L^2(I)}$ which you should define.
 </li>
-<li>In this part we identify functions in $ℒ^2(I)$ with the corresponding elements of $L^2(I)$. Thus we may write $\|f\|_{L^2(I)}$ and $\left⟨f_1, f_2\right⟩_{L^2(I)}$ for $f, f_1, f_2 ∈ ℒ^2(I)$.
+<li>In this part we identify functions in $ℒ^2(I)$ with the corresponding elements of $L^2(I)$. Thus we may write $\|f\|_{L^2(I)}$ and $\left\langle f_1, f_2\right\rangle_{L^2(I)}$ for $f, f_1, f_2 ∈ ℒ^2(I)$.
 Let $k ∈ ℒ^2\left(ℝ^2\right)$ satisfy $k(y, x)=k(x, y)$ for all $x, y ∈ ℝ$, and define $k_{x}(y)=k(x, y)$. Let $f ∈ ℒ^2(ℝ)$, and define
 $$
 g(x)=∫_ℝ k(x, y) f(y) \mathrm{~d} y
@@ -68,7 +68,7 @@ whenever this integral exists. Show that
 </li>
 <li>There exists $T f ∈ ℒ^2(ℝ)$ such that $T f=g$ a.e., and $\|T f\|_{L^2(ℝ)} ⩽\|f\|_{L^2(ℝ)}\|k\|_{L^2\left(ℝ^2\right)}$
 </li>
-<li>$\left⟨T f_1, f_2\right⟩_{L^2(ℝ)}=\left⟨f_1, T f_2\right⟩_{L^2(ℝ)}$ for all $f_1, f_2 ∈ ℒ^2(ℝ)$.<br>
+<li>$\left\langle T f_1, f_2\right\rangle_{L^2(ℝ)}=\left\langle f_1, T f_2\right\rangle_{L^2(ℝ)}$ for all $f_1, f_2 ∈ ℒ^2(ℝ)$.<br>
 [You may use standard results about inner products and Lebesgue integration without proof.]</li></ol></li></ol>
 </li></ol>
 <h1>Solutions</h1>
@@ -171,7 +171,7 @@ $$
 \|k\|_{L^2\left(ℝ^2\right)}^2=∫_{ℝ^2}\left|k_{x}(y)\right|^2 \mathrm{~d}(x, y)=∫_ℝ ∫_ℝ\left|k_{x}(y)\right|^2 \mathrm{~d} y \mathrm{~d} x=∫_ℝ\left\|k_{x}\right\|_{L^2(ℝ)}^2 \mathrm{~d} x.
 $$
 </li>
-<li>From (i) it follows that for almost all $x, k_{x} ∈ L^2(ℝ)$. Then $g(x)=\left⟨f, k_{x}\right⟩_{L^2(ℝ)}$ is defined. By Cauchy-Schwarz, $|g(x)| ⩽\|f\|_{L^2(ℝ)}\left\|k_{x}\right\|_{L^2(ℝ)}$.
+<li>From (i) it follows that for almost all $x, k_{x} ∈ L^2(ℝ)$. Then $g(x)=\left\langle f, k_{x}\right\rangle_{L^2(ℝ)}$ is defined. By Cauchy-Schwarz, $|g(x)| ⩽\|f\|_{L^2(ℝ)}\left\|k_{x}\right\|_{L^2(ℝ)}$.
 </li>
 <li>Let $T f$ be the function $g$ extended by 0 if $g(x)$ is not defined. It follows from (i) that $x ↦\left\|k_{x}\right\|_{L^2(ℝ)}^2$ is integrable. Using (ii) and comparison, $|g|^2$ is integrable, so $T f ∈ ℒ^2(ℝ)$ and
 $$
@@ -181,7 +181,7 @@ by (i)
 </li>
 <li>By Fubini and symmetry of $k$,
 $$
-\left⟨T f_1, f_2\right⟩_{L^2(ℝ)}=∫_ℝ ∫_ℝ k(x, y) f_1(y) f_2(x) \mathrm{d} y \mathrm{~d} x=∫_ℝ ∫_ℝ k(y, x) f_1(y) f_2(x) \mathrm{d} x \mathrm{~d} y=\left⟨f_1, T f_2\right⟩_{L^2(ℝ)} .
+\left\langle T f_1, f_2\right\rangle_{L^2(ℝ)}=∫_ℝ ∫_ℝ k(x, y) f_1(y) f_2(x) \mathrm{d} y \mathrm{~d} x=∫_ℝ ∫_ℝ k(y, x) f_1(y) f_2(x) \mathrm{d} x \mathrm{~d} y=\left\langle f_1, T f_2\right\rangle_{L^2(ℝ)} .
 $$
 The application of Fubini is justified by Tonelli, since the repeated integrals with $k, f_1, f_2$ replaced by $|k|,\left|f_1\right|,\left|f_2\right|$ are finite.</li></ol></li></ol>
 </li></ol>
