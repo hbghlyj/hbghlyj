@@ -38,7 +38,7 @@ is integrable on $[0,1]×[0,1]$. Must $f$ be integrable on $[0,1]$ ? Justify you
 </li><li>Determine whether the following measurable functions are Lebesgue integrable over the specified set. Justify your answers.
 <ol type="i"><li>$f(x)=\frac{\cos x}{x}$ over $(1,∞)$.</li><li>$g(x)=\frac{\cos(1/x)}{x}$ over $(0,1)$.</li><li>$h(x)=\frac{\sin x}{e^x-1}$ over $(0,∞)$.</li></ol></li>
 <li>Write $ℒ^1(ℝ)=\{f:ℝ→ℝ:f\text{ is integrable}\}$ and define ${‖f‖}_1=∫_ℝ{|f|}$ for $f∈ℒ^1(ℝ)$
-<ol type="i"><li>Let $\left(f_n\right)_{n=1}^∞$ and $\left(g_n\right)_{n=1}^∞$ be sequences in $ℒ^1(ℝ)$, and suppose that $f,g:ℝ→ℝ$ are such that $f_n→f$ and $g_n→g$ almost everywhere, and that $g∈ℒ^1(ℝ)$. Suppose that $\left|f_n\right|⩽g_n$ for all $n∈ℕ$ and $\left‖g_n\right‖_1→{‖g‖}_1$. Show $f∈ℒ^1(ℝ)$ and $∫_ℝf_n→∫_ℝf$.</li><li>Show that $\left‖f_n-f\right‖_1→0$.</li></ol>
+<ol type="i"><li>Let $\left(f_n\right)_{n=1}^∞$ and $\left(g_n\right)_{n=1}^∞$ be sequences in $ℒ^1(ℝ)$, and suppose that $f,g:ℝ→ℝ$ are such that $f_n→f$ and $g_n→g$ almost everywhere, and that $g∈ℒ^1(ℝ)$. Suppose that $\left|f_n\right|⩽g_n$ for all $n∈ℕ$ and $\left\|g_n\right\|_1→{‖g‖}_1$. Show $f∈ℒ^1(ℝ)$ and $∫_ℝf_n→∫_ℝf$.</li><li>Show that $\left\|f_n-f\right\|_1→0$.</li></ol>
 </li></ol></li></ol>
 <h1>Solution</h1>
 <ol><li><ol type="a"><li><ol type="i">
@@ -182,7 +182,7 @@ We have $g_n±f_n⩾0$ and $g_n±f_n→g±f$ a.e. Applying Fatou:
 $$
 ∫(g±f)⩽\liminf∫\left(g_n±f_n\right)
 $$
-As $g_n⩾0$, and $\left‖g_n\right‖_1→{‖g‖}_1$, we have $∫ g_n→∫ g$. Therefore [<a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&amp;tid=10739">sum of liminf</a>]
+As $g_n⩾0$, and $\left\|g_n\right\|_1→{‖g‖}_1$, we have $∫ g_n→∫ g$. Therefore [<a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&amp;tid=10739">sum of liminf</a>]
 $$
 ±∫ f⩽\liminf∫\left(±f_n\right)
 $$
