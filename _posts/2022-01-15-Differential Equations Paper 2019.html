@@ -1,0 +1,85 @@
+---
+mathjax: true
+tag: Differential Equations 2
+excerpt: <a href="https://www.maths.ox.ac.uk/system/files/attachments/A6_solutions2019.pdf">A6_solutions2019.pdf</a>
+---
+<ol><li>
+<ol type="a"><li>A linear differential operator $ℒ$ has the property that $ℒe^{m x} ≡ F(m) e^{m x}$, where $F(α)=F'(α)=0$ for some $α$. Show that the homogeneous differential equation $ℒ y=0$ is satisfied both by $y(x)=e^{α x}$ and by $y(x)=x e^{α x}$.<br>
+<span style="position:relative;left:-1em">Consider the boundary-value problem</span>
+$$\tag{#}\begin{aligned}
+ℒ y(x)&=y''(x)+6 y'(x)+9 y(x)=f(x)\\
+y(0)&=0\\
+y(1)&=0
+\end{aligned}$$
+</li>
+<li>In terms of the delta function, state the equation and boundary conditions satisfied by the Green's function $g(x, ξ)$ for the problem (#). Hence solve for $g$ and give the solution to (#) in terms of $g$.
+</li>
+<li>Find the eigenvalues $λ_n$ and eigenfunctions $y_n$ for the problem $ℒ y=λ y$, with the same boundary conditions as in (#). Find the adjoint operator $ℒ^*$ and adjoint boundary conditions, and thus find the eigenfunctions $w_n$ for the adjoint problem $ℒ^* w=λ w$. Thus obtain the solution to (#) as an eigenfunction expansion of the form $y(x)=\sum_i c_i y_i(x)$<br>
+[Note that $λ_n&lt;0$ for all n.]
+</li>
+<li>Show that the problem
+$$
+ℒ y(x)+π^2 y(x)=f(x),   y(0)=1,   y(1)=2
+$$
+has no solution for $y$ unless $f$ satisfies a solvability condition, which you should state explicitly.</li></ol>
+</li>
+<li>Consider the differential equation
+$$\tag†
+\left(1-x^2\right) y''(x)-x y'(x)+λ^2 y(x)=0
+$$
+where $λ$ is a real non-negative parameter.
+<ol type="a"><li>Classify $x= ± 1$ and $x=∞$ as ordinary, regular singular or irregular singular points of (†). Find the indicial equations, where appropriate, and thus give the leadingorder behaviour of two linearly independent solutions to (†) as $x → ± 1$ and as $x → ∞$, assuming that $2 λ$ is not an integer.<br>
+Explain briefly what might go wrong if $2 λ$ is an integer.
+</li>
+<li>Seek the solution to (†) as a power series expansion about $x=0$, i.e.
+$$
+y(x)=\sum_{k=0}^{∞} a_k x^k
+$$
+Find a recurrence relation for the coefficients $a_k$ and thus show that (†) admits a polynomial solution $P_n(x)$ if and only if $λ$ is equal to an integer $n$.
+</li>
+<li>By transforming (t) into self-adjoint form, or otherwise, show that the polynomials $P_{\mathrm{n}}(x)$ satisfy the orthogonality conditions
+$$
+∫_a^b \frac{P_n(x) P_m(x)}{\sqrt{1-x^2}} \mathrm{~d} x=0   \text { whenever } m ≠ n,
+$$
+where the limits $\{a, b\}$ of the domain are to be determined.</li></ol>
+</li>
+<li>
+<ol type="a"><li>When $0&lt;ϵ ⩽ 1$ and $x>0$, explain why the nonlinear algebraic equation
+$$\tag⋆
+\frac{ϵ y^2}{1+x y^2}+x^2 y=x^2
+$$
+has a unique positive solution $y(x ; ϵ)$. [Hint: consider how the left-hand side behaves as a function of $y$.]<br>
+Write this positive solution as an asymptotic expansion of the form
+$$
+y(x ; ϵ) ∼ y_0(x)+ϵ y_1(x)+⋯
+$$
+Calculate the first two terms $y_0$ and $y_1$, and deduce that the asymptotic expansion fails when $x=O\left(ϵ^{1 / 2}\right)$.<br>
+By using the re-scaling, $x=ϵ^{1 / 2} X$ and $y(x)=Y(X)$, find the leading-order inner solution $Y_0(X)$, and demonstrate that it matches asymptotically with the leading-order outer solution $y_0(x)$.
+</li>
+<li>With $0&lt;ϵ ≪ 1$, seek a solution to the nonlinear boundary value problem
+$$
+y''(x)+\left(1+ϵ λ+ϵ y'(x)^2-ϵ y(x)^2\right) y(x)=0,   y(0)=0,   y(π)=0
+$$
+as an asymptotic expansion of the form $y(x) ∼ y_0(x)+ϵ y_1(x)+⋯$. Show that a possible leading-order solution is $y_0(x)=A \sin x$, where $A$ satisfies the equation
+$$
+A\left(A^2-2 λ\right)=0
+$$
+[Hint: you may use without proof the identity $\sin ^3 x=\frac{3 \sin x-\sin (3 x)}{4}$.]
+</li>
+<li>Consider the boundary-value problem
+$$
+ϵ y''(x)-\left(1+x^2\right) y'(x)+x y(x)=0,   y(0)=1,   y(1)=0
+$$
+where $ϵ$ is a small positive parameter. Find the leading-order outer solution $y_0(x)$ in an asymptotic expansion of the form $y(x) ∼ y_0(x)+ϵ y_1(x)+⋯$. Verify that it is impossible to satisfy both boundary conditions. Identify where there is a boundary layer in the solution, solve for the leading-order inner solution in the boundary layer, and asymptotically match the inner and outer solutions. Hence show that the gradient of the solution at $x=1$ is given approximately by
+$$
+y'(1) ∼-\frac{2^{3 / 2}}{ϵ} .
+$$</li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li><ol type="a"><li>$ℒe^{m x} ≡ F(m) e^{m x}$, so $ℒe^{α x} = F(α) e^{α x}=0$ and $\frac∂{∂m}[ℒe^{mx}]=ℒ[\frac∂{∂m}e^{mx}]=ℒ[xe^{mx}]$<br>$∴ℒ[xe^{mx}]=\left(F'(m)+xF(m)\right)e^{mx}$<br>$∴ℒ[xe^{αx}]=(F'(α)+xF(α))e^{αx}=0$</li><li>Green’s function satisfies $g_{xx}+6g_x+9g=δ(x-ξ)$ with $g=0$ at $x=0,1$.<br>So we have $g_{xx}+6g_x+9g=0$ for $x≠ξ$<br>Auxiliary equation $(m+3)^2=0$, so general solution $g=C_1e^{-3x}+C_2xe^{-3x}$<br>Given boundary conditions$\begin{cases}
+	A(ξ)xe^{-3x}&0&lt;x&lt;ξ&lt;1\\
+    B(ξ)(1-x)e^{-3x}&0&lt;ξ&lt;x&lt;1
+\end{cases}$<br>At $x=ξ$, jump conditions$\begin{cases}
+	[g]_{ξ-}^{ξ+}=0\\
+    [g_x]_{ξ-}^{ξ+}=1
+\end{cases}$<br></li><li></li><li></li></ol></li><li><ol type="a"><li></li><li></li><li></li></ol></li><li><ol type="a"><li></li><li></li><li></li></ol></li></ol>
