@@ -1,0 +1,175 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: <a href="https://www.maths.ox.ac.uk/filebrowser/download/21824">A1 paper 2022</a> and <a href="https://www.maths.ox.ac.uk/filebrowser/download/21843">Solution</a>
+---
+<ol>
+<li>
+<ol type="a"><li>Let $μ ∈ ℝ$. Consider the initial value problem
+$$\tag†
+y'(x)=μ y(x)+x-μ,   y(0)=1 .
+$$
+<ol type="i"><li>Show that (†) has a unique solution on $ℝ$, stating carefully any results you use.
+</li>
+<li>Compute the first three Picard iterates: $y_0, y_1, y_2$.
+</li>
+<li>Hence, or otherwise, derive the general formula for $y_n(x)$, the $(n+1)$<sup>th</sup> Picard iterate, and deduce the series representation for the solution of (†). Justify your answers.
+</li>
+<li>Consider now $y=y_μ(x)$ as a function of both $x$ and $μ$. Deduce that for any fixed $x ∈ ℝ, μ ↦ y_μ(x)$ is a differentiable function on $ℝ$ and let $z_μ(x)$ denote the partial derivative $z_μ(x)=\frac{∂}{∂ μ} y_μ(x)$. Show that for a fixed $μ ∈ ℝ$, the function $x ↦ z_μ(x)$ is the unique solution of an initial value problem which you should specify.</li></ol>
+</li>
+<li>Let $f: R → ℝ$ be a continuous function on
+$$
+R:=\{(x,y,μ):{|x-a|}⩽h,{|y-b|}⩽k,{|μ|}⩽m\}
+$$
+with ${|f(x,y,μ)|}⩽ M$ on $R$ and $Mh⩽k$. Assume further that on $R, f$ is Lipschitz continuous in the second variable with Lipschitz constant $L$ and Lipschitz continuous in the third variable with Lipschitz constant $Λ$. Consider the initial value problem
+$$\tag‡
+y_μ'(x)=f\left(x, y_μ(x), μ\right),   y_μ(a)=b
+$$
+<ol type="i"><li>Citing a suitable result, explain briefly why, for any $μ ∈[-m, m]$, (‡) has a unique solution $y_μ:[a-h, a+h] →[b-k, b+k]$. Give an example of $f$ for which $μ ↦ y_μ$ is not differentiable at $μ=0$.
+</li>
+<li>State Gronwall's inequality. Hence, or otherwise, show that
+$$
+\left|y_μ(x)-y_η(x)\right| ⩽ \fracΛL{|μ-η|}\left(\mathrm{e}^{L{|x-a|}}-1\right)
+$$
+for any $x ∈[a-h, a+h]$ and any $μ, η ∈[-m, m]$.
+[You may find it helpful to consider the function $v(x)=Λ|μ-η|+L\left|y_μ(x)-y_η(x)\right|$.]
+</li>
+<li>Consider (†) as a special case of (‡) and, for given $h, k, m$, derive the smallest constants $M$, $L$ and $Λ$. Fix $h&gt;0$. Allowing $k, m$ to vary, determine the maximal parameter domain $D$ so that (b)(i) implies that $y_μ(x)$ is well defined for all $(x, μ) ∈[-h, h] × D$.</li></ol></li></ol>
+</li>
+<li>Consider the PDE for $z(x, y)$ :
+$$\tag{*}
+P(x, y) z_x+Q(x, y) z_y=R(x, y, z)
+$$
+along with data $x=x_0(s), y=y_0(s), z=z_0(s)$ for $s$ in a given range.
+<ol type="a"><li>
+<ol type="i"><li>Derive the characteristic equations for the system above.
+</li>
+<li>State the condition satisfied by Cauchy data. Explain the geometric significance of this condition.</li></ol>
+</li>
+<li>Let $P(x, y)=-y, Q(x, y)=x$, and let the data curve be given by $x_0=s$, $y_0=0, z_0=0$ for $s ∈[p, q]$, with $0&lt;p&lt;q$.
+<ol type="i"><li>Show that the data is Cauchy.
+</li>
+<li>Let $R(x, y, z)=y \sqrt{x^2+y^2}$. Obtain an explicit solution to the PDE system, and define the domain of definition.
+</li>
+<li>Now let $R(x, y, z) ≡ 1$. Show that the parametric solution surface is not single-valued in $z$. Explain how to obtain a single-valued solution, and sketch the solution surface. [You do not need to explicitly compute $z(x, y)$.]</li></ol>
+</li>
+<li>Suppose that the characteristic projections of the PDE (*) are straight half-lines all passing through the point $(0,1)$.
+<ol type="i"><li>Let some initial data $z=z_0(s)$ be given along the curve
+$$
+x_0(s)=3-2 \cos (s),   y_0(s)=1+2 \sin (s),   0 ⩽ s&lt;α
+$$
+where $α ∈(0, π)$ is a constant. Determine the range of $α$ for which the data is Cauchy. For $α$ in this range sketch the domain of definition. Does your answer depend on the function $R(x, y, z)$ in (*) ?
+</li>
+<li>Write down a PDE satisfying the given property of the characteristic projections.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Consider a plane autonomous system of ODEs of the form:
+\begin{aligned}
+&amp; \dot{x}=X(x, y), \\
+&amp; \dot{y}=Y(x, y),
+\end{aligned}
+where overdot denotes differentiation with respect to $t$ and $X, Y$ are Lipschitz continuous in $x$ and $y$.
+<ol type="i"><li>Define what is meant by a <i>critical point</i> of the system.
+</li>
+<li>Explain what is meant by a <i>trajectory</i> of the system in the phase plane.
+</li>
+<li>Show that trajectories never cross away from critical points.</li></ol>
+</li>
+<li>Let $a ∈ ℝ$ be a parameter and consider the system
+$$
+X(x, y)=-y+a x\left(1-x^2-y^2\right),   Y(x, y)=x+y\left(1-x^2-y^2\right) .
+$$
+<ol type="i"><li>Show that the unit circle $\left\{(x, y): x^2+y^2=1\right\}$ is a closed solution trajectory of the system.
+</li>
+<li>Show that $(0,0)$ is a critical point of the system and classify it depending on the value of $a ∈ ℝ \backslash\{-1\}$.
+</li>
+<li>Let $a&gt;0$. Show that $(0,0)$ is the only critical point. By considering $\dot{r}$, where $r^2=x^2+y^2$, or otherwise, show that every trajectory with $(x(0), y(0)) ≠(0,0)$ approaches the unit circle as $t → ∞$.
+</li>
+<li>Give a rough sketch of the phase plane for $a=1$.</li></ol>
+</li>
+<li>Consider the system in (b) with $a=-1$. Show that all trajectories within the unit circle are closed.
+[Hint: Derive the plane autonomous system of ODEs solved by $(u, v)=(x-y, x+y)$ and show that its trajectories are symmetric with respect to the axes.]</li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li><ol type="a"><li><ol type="i"><li>$f(x,y)=μy+x-μ$ is continuous for all $x,y∈ℝ$.<br>${|f(x,u)-f(x,v)|}={|μ|}{|u-v|}$, so $f$ satisfies Lipschitz condition in $y$ for all $x∈ℝ$.<br>By Picard's theorem, (†) has a unique solution for all $x∈[a-h,a+h]$.<br>By letting $h→∞$ we deduce that the solution exists on all of ℝ.</li>
+<li>\begin{split}y_0&=1\\y_1&=1+\int_0^xμy_0(t)+t-μ\mathrm{~d}t=1+\frac{x^2}2\\y_2&=1+\int_0^xμy_1(t)+t-μ\mathrm{~d}t=1+\frac{x^2}2+\frac{μx^3}6\end{split}</li>
+<li>$y_n(x)=1+\sum_{k=2}^{n+1}\frac{μ^{k-2}x^k}{k!}$<br>Suppose this is true for $n$\begin{split}y_{n+1}(x)&=1+\int_0^xμy_n(t)+t-μ\mathrm{~d}t\\&=1+\frac{x^2}2+μ\int_0^x\sum_{k=2}^{n+1}\frac{μ^{k-2}t^k}{k!}\mathrm{~d}t
+\\&=1+\frac{x^2}2+μ\sum_{k=2}^{n+1}\frac{μ^{k-2}x^{k+1}}{(k+1)!}
+\\&=1+μ\sum_{k=2}^{n+2}\frac{μ^{k-2}x^k}{(k+1)!}\end{split}so it is true for all $n≥1$.<br>The solution of (†) is $y(x)=1+\sum_{k=2}^∞\frac{μ^{k-2}x^k}{k!}=1+μ^{-2}(e^{μx}-1-μx)$ for all $x∈ℝ$.</li>
+<li>For any $x ∈ ℝ$, $y_μ(x)$ is a power series in $μ$, so it is differentiable wrt $μ$.<br>$z_μ(x)$ is a power series in $x$, so it is differentiable wrt $x$.\begin{split}\frac∂{∂x}z_μ(x)&=\frac∂{∂x}\frac∂{∂μ}y_μ(x)\\&=\frac∂{∂μ}\frac∂{∂x}y_μ(x)\\&=\frac∂{∂μ}(μy_μ(x)+x-μ)\\&=y_μ(x)+μz_μ(x)-1\end{split}and $z(0)=y'(0)=0$, so $z(x)$ is the solution of \begin{cases}z'(x)=g(x,z)≔μ^{-2}(e^{μx}-1-μx)+μz(x)\\z(0)=0\end{cases}This has a unique solution by Picard's theorem since $g(x,z)$ is Lipschitz in $z$.</li></ol></li>
+<li><ol type="i"><li>Fix ${|μ|}⩽m$, (‡) has a unique solution $y_μ:[a-h, a+h] →[b-k, b+k]$ by Picard.<br>Consider $f(x,y,μ)={|μ|}y(x)+x-{|μ|},y(0)=1$. $f$ is Lipschitz in $μ$.<br>By (a) $y_μ(x)=1+μ^{-2}(e^{{|μ|}x}-1-{|μ|}x)$ is not differentiable at $μ=0$.</li>
+<li>(Gronwall’s inequality)Suppose $A≥0$ and $b≥0$ are constants and $v$ is a non-negative continuous function satisfying\[v(x)⩽b+A\left|\int_a^xv(s)\mathrm{~d}s\right|\]Then $v(x)⩽b\exp(A{|x-a|})$.\begin{split}|y_μ(x)&-y_η(x)\mmlToken{mi}|=\left|\int_a^xf(s,y_μ(x),μ)-f(s,y_η(x),η)\mathrm{~d}s\right|\\&⩽\left|\int_a^x\left|f(s,y_μ(x),μ)-f(s,y_μ(x),η)\right|+\left|f(s,y_μ(x),η)-f(s,y_η(x),η)\right|\mathrm{~d}s\right|\\&⩽\left|\int_a^xΛ\left|μ-η\right|+L\left|y_μ(x)-y_η(x)\right|\mathrm{~d}s\right|\end{split}Let $v(x)=Λ{|μ-η|}+L\left|y_μ(x)-y_η(x)\right|$, we get\begin{split}\left|y_μ(x)-y_η(x)\right|&⩽\left|\int_a^xv(s)\mathrm{~d}s\right|\\⇒v(x)&⩽Λ{|μ-η|}+L\left|\int_a^xv(s)\mathrm{~d}s\right|\end{split}By Gronwall’s inequality\begin{split}v(x)&⩽{|μ-η|}\mathrm{e}^{L{|x-a|}}\\⇒\left|y_μ(x)-y_η(x)\right|&⩽\fracΛL{|μ-η|}\left(\mathrm{e}^{L{|x-a|}}-1\right)\end{split}</li>
+<li>In (†) $f(x,y,μ)=μ(y-1)+x,{|x|}⩽h,{|y-1|}⩽k,{|μ|}⩽m$.<br>$M=\max_{(x,y,μ)∈R}{|f(x,y,μ)|}=mk+h$<br>${|f(x,u,μ)-f(x,v,μ)|}={|μ|}{|u-v|}⩽m{|u-v|}$, so $L=m$<br>${|f(x,y,μ)-f(x,y,η)|}={|y-1|}{|μ-η|}⩽k{|μ-η|}$, so $Λ=k$<br>Fix $h>0$, we need $Mh⩽k⇒(mk+h)h⩽k⇒m⩽\frac 1h-\frac hk$<br>$h,k>0⇒m&lt;\frac1h$. So the maximal domain of μ is $\left(-\frac1h,\frac1h\right)$.</li></ol></li></ol></li>
+<li><ol type="a"><li><ol type="i"><li>The solution surface Σ parametrized $(x,y,z(x,y))$ has normal vector $𝐧=(-z_x,-z_y,1)$
+    \begin{split}
+    P(x, y) z_x+Q(x, y) z_y=R(x, y, z)&⇔(P(x,y),Q(x,y),R(x,y,z))⋅𝐧=0\\
+    &⇔(P(x,y),Q(x,y),R(x,y,z))\text{ is tangent to Σ}
+    \end{split}Starting from a point $(x_0(s), y_0(s), z_0(s))$ we look for a curve $(x(t), y(t), z(t))$ whose tangent is $(P,Q,R)$\begin{cases}(\dot x(t),\dot y(t),\dot z(t))=(P,Q,R)\\(x(0),y(0),z(0))=(x_0(s), y_0(s), z_0(s))\end{cases}</li>
+<li>Cauchy data means $Py_0'(s)-Qx_0'(s)≠0$ for $(x,y)$ on the data curve $(x_0(s),y_0(s))$.<br>Geometrically the characteristic projections are not tangent to the data curve,<br>since their tangents $(P,Q),(x_0'(s),y_0'(s))$ are linearly independent.</li></ol></li>
+<li><ol type="i"><li>$Py_0'(s)-Qx_0'(s)=-s≠0$ for $s∈[p,q]$, so the data is Cauchy.</li><li>Solve the characteristic equations\begin{array}l(\dot x,\dot y)=(-y,x)&⇒(x,y,z)=(A\cos(t+B),A\sin (t+B))
+\\(x(0),y(0))=(s,0)&⇒A=s,B=0
+\end{array}
+$\begin{array}l\dot z(t)=y\sqrt{x^2+y^2}=s^2\sin(t)\\z(0)=0\end{array}\Bigg\}⇒z(t)=s^2-s^2\cos t=x^2+y^2-x\sqrt{x^2+y^2}$<br>$(x(t),y(t))=(s\cos(t),s\sin(t))⇒$Solution is defined on the annulus $p^2&lt;x^2+y^2&lt;q^2$</li>
+<li>$\dot z(t)=1,z(0)=0⇒z=t⇒\tan z=y/x$<br>Restrict $t$ to an interval of length 2π to obtain a single-valued solution eg. $t∈(-π,π]$
+{% latex %}\usepackage{pgfplots}\pgfplotsset{compat=1.18}
+\begin{tikzpicture}
+  \begin{axis}[xlabel=\(x\),ylabel=\(y\),view={60}{50},
+    zmin=-3.15,zmax=3.15,
+    ztick={-pi, 0, pi},
+    zticklabels={$-\pi$,0,$\pi$}]
+    \foreach\yy in {-1,-.8,...,1}{
+        \addplot3[
+        domain=.6:1,color=red
+        ]
+    ({cos(\yy*180)*x}, {sin(\yy*180)*x}, {\yy*pi});}
+    \foreach\yy in {.6,.7,...,1}
+    \addplot3[
+    domain=-pi:pi,samples y=0,color=red
+    ]
+    ({\yy*cos(deg(x))}, {\yy*sin(deg(x))}, x);
+  \end{axis}
+\end{tikzpicture}
+{% endlatex %}
+</li></ol></li>
+<li><ol type="i"><li>{% asy float:left %}size(90);
+pair B = (3, 1);
+pair C = (5/3, 2*sqrt(5)/3 + 1);
+draw(arc(B,2,90,180));
+draw((0,3)--(0,0)--(3.5,0), Arrows);
+draw(I -- B -- C -- cycle);
+label("1", I, W);label("$(3, 1)$",B, S);
+label("2", interp(C, B,.4), E);
+label("3", (I + B)/2, S);
+dot(I);
+dot(B);
+dot(C);draw(arc(B,.5,aCos(-2/3),180),red);
+fill(arc(B,.5,aCos(-2/3),180)--B--cycle,red+opacity(.2));{% endasy %}{% asy float:right %}size(640/9);
+pair B = (3, 1);
+fill(arc(I,3.5,0,aSin(2/3))--I--cycle,lightgreen);
+draw(arc(B,2,aCos(-2/3),180));
+draw((0,3)--(0,0)--(3.5,0), Arrows);{% endasy %}</div>Data curve is circular arc of radius 2, center $(3,1)$<br>Data is Cauchy when $α≤\arccos\frac23$ so that characteristic projections only intersect once<br>Domain of definition is swept out by characteristic projections. This does depends on $R$: we require that $z$ has no singularities.</td></tr></table></li>
+<li>A line through $(0,1)$ is $y=1+cx$. Let $y=\dot y$.<br>Differentiating $y=1+cx$ we get $y=c\dot x⇒\dot x=\frac yc=\frac{xy}{y-1}$<br>corresponding to the PDE $\frac{xy}{y-1}z_x+yz_y=R(x,y,z)$.
+</li></ol></li></ol></li>
+<li><ol type="a"><li><ol type="i"><li>A point $(x_0,y_0)$ is a critical point if $X(x_0, y_0)=Y(x_0, y_0)=0$. So a critical point is a particular trajectory corresponding to solution $(x(t), y(t))$ that are constant in time.</li>
+<li>Given initial values, a solution defines a path in the phase plane called a trajectory.</li>
+<li>If $(x(t), y(t))$ and $(\tilde{x}(t), \tilde{y}(t))$ are trajectories through $(x_0,y_0)$<br>By time-shift we set $(x(0), y(0))=(\tilde{x}(0), \tilde{y}(0))=(x_0,y_0)$. By Theorem 1.6. (Picard’s existence theorem for systems), the two solutions must be the same.
+</li></ol></li>
+<li><ol type="i"><li>$x=\cos(t),y=\sin(t)⇒\dot x=-\sin(t)=-y,\dot y=\cos(t)=x$ satisfies the equations</li>
+<li>$X(0,0)=Y(0,0)=0⇒(0,0)$ is a critical point.\[M=\pmatrix{\frac{∂X}{∂x}&\frac{∂X}{∂y}\\\frac{∂Y}{∂x}&\frac{∂Y}{∂y}}=\pmatrix{a(1-y^2)-3ax^2&1-2xy\\-1-2axy&1-x^2-3y^2}\]At $(0,0)$, $M=\pmatrix{a&1\\-1&1}$ has eigenvalues $λ_1,λ_2$<br>$λ_1+λ_2=λ_1λ_2=a+1,(λ_1-λ_2)^2=(a+1)(a-3)$<br>For $a&lt;-1$, $λ_1λ_2&lt;0$, so $(0,0)$ is a saddle.<br>For $a=3,λ_1=λ_2=2>0,M=\pmatrix{3&1\\-1&1}≠2I$, so $(0,0)$ is an unstable inflected node.<br>For $a>3$, $λ_1>0,λ_2>0$, so $(0,0)$ is an unstable node.<br>For $-1&lt;a&lt;3$, $λ_1=\overline{λ_2}∉ℝ$, $\operatorname{Re}λ_1=\frac{a+1}2>0$, so $(0,0)$ is an unstable spiral.</li>
+<li>$Y=0⇒y=a x\left(1-x^2-y^2\right)$……(1)<br>
+    $X=0⇒x+y\left(1-x^2-y^2\right)=0$, by (1) we get $x\left[1+a\left(1-x^2-y^2\right)^2\right]=0$<br>For $a>0$, $[…]>0$, so $x=0$, by (1) $y=0$, so $(0,0)$ is the only critical point.$$r^2=x^2+y^2⇒r\dot r=x\dot x+y\dot y=(ax^2+y^2)\left(1-r^2\right)\tag2$$For initial point inside the circle, $\dot r>0$, but the trajectory can't intersect the trajectory $r=1$, so it tends towards $r=1$$$θ=\tan^{-1}\frac yx⇒\dotθ=\frac{x\dot y-y\dot x}{r^2}=1+(1-a)xy(r^{-2}-1)\tag3$$as $r→1$, $\dotθ→1$ it keeps rotating.</li>
+<li>when $a=1$ by (3) $\dotθ=1⇒θ=t+θ_0$<br>by (2) $1={\dot r\over r^2(1-r^2)}=\dot r\left(\frac1{1-r^2}+\frac1{r^2}\right)$ Integrating from 0 to $t$\begin{split}t&=\left(\operatorname{tanh}^{-1}(r)-\frac1r\right)-\left(\operatorname{tanh}^{-1}(r_0)-\frac1{r_0}\right)\text{ for }r_0&lt;1\\t&=\left(\operatorname{tanh}^{-1}\frac1r-\frac1r\right)-\left(\operatorname{tanh}^{-1}\frac1{r_0}-\frac1{r_0}\right)\text{ for }r_0>1\end{split}So the trajectory is\begin{split}θ-θ_0&=\left(\operatorname{tanh}^{-1}(r)-\frac1r\right)-\left(\operatorname{tanh}^{-1}(r_0)-\frac1{r_0}\right)\text{ for }r_0&lt;1\\θ-θ_0&=\left(\operatorname{tanh}^{-1}\frac1r-\frac1r\right)-\left(\operatorname{tanh}^{-1}\frac1{r_0}-\frac1{r_0}\right)\text{ for }r_0>1\end{split}Sketch for $θ_0=0$ and $r_0=0.2,1,2${% asy margin-left:1em %}import graph;
+unitsize(1cm);draw(unitcircle,MidArrow());
+draw(graph(new pair (real r) {return expi((atanh(1/r) - 1/r) - (atanh(1/2) - 1/2))*r;},2,1.01),MidArrow());
+draw(graph(new pair (real r) {return expi((atanh(r) - 1/r) - (atanh(1/5) - 5))*r;},0.2,.98),MidArrow());
+xaxis("$r$",xmin=0,xmax=2.5,blue,Arrow(SimpleHead));{% endasy %}</li></ol></li>
+<li>Dividing two equations to eliminate $t$\[[y+x(1-x^2-y^2)]dy+[x+y(1-x^2-y^2)]dx=0\]Integrating\[e^{-2 x y}(1-x^2-y^2) = \text{constant}\]Contour plot
+{% asy %}import contour;
+size(200);real[]c={.2,.4,.6,.8,.9};
+real f(real x, real y) {return exp(-2*x*y)*(1-x^2-y^2);}
+Label[] labels=sequence(new Label(int i) {
+return Label((string) c[i],Relative(1-0.1*i),(0,0),UnFill(1bp));
+},5);
+draw(labels,contour(f,(-1,-1),(1,1),c));draw(unitcircle);{% endasy %}<br>
+<a href="https://math.mit.edu/~jorloff/suppnotes/suppnotes03/lc.pdf">Poincare-Bendixson Theorem</a><br>
+Consider new coordinates $(u,v)=(x+y,x-y)$\begin{cases}\dot u=\dot x+\dot y=v-v\left(1-x^2-y^2\right)=v(x^2+y^2)=v\frac{u^2+v^2}2≕U(u,v)\\\dot v=\dot x-\dot y=-u-u\left(1-\frac{u^2+v^2}2\right)≕V(u,v)\end{cases}and the unit disk $x^2+y^2≤1$ becomes $D:u^2+v^2≤2$<br>Consider $\tilde u(t)=u(-t)$ and $\tilde v(t)=-v(-t)$. We have\begin{split}\dot{\tilde u}&=-\dot u(-t)=-v(-t)\frac{u(-t)^2+v(-t)^2}2=\tilde v(t)\frac{\tilde u(t)^2+\tilde v(t)^2}2=U(\tilde u,\tilde v)\\\dot{\tilde v}&=\dot v(-t)=-u(-t)-u(-t)\left(1-\frac{u(-t)^2+v(-t)^2}2\right)=-\tilde u-\tilde u\left(1-\frac{\tilde u^2+\tilde v^2}2\right)=V(\tilde u,\tilde v)\end{split}For any $(u_0,0)∈D,u(0)=u_0,v(0)=0$ by uniqueness of solution $(u(t),v(t))=(\tilde u(t),\tilde v(t))$ i.e. any solution passing through $(u_0,0)$ is symmetric about the $u$-axis. An analogous argument using $(-u(-t),v(-t))$ shows that a solution passing through $(0,v_0)$ is symmetric about the $v$-axis.<br>Finally, a solution starting at $(u_0,0),u_0>0$, by the form of $U,V$, will enter the quadrant $u>0,v&lt;0$ and both $u(t)$ and $v(t)$ will be decreasing. We know the solution stays in $D$.<br>At some small $t_0>0$ we thus have $0&lt;u(t_0)&lt;u_0$ and $v(t_0)&lt;0$.<br>Thereafter $\dot u=v\frac{u^2+v^2}2&lt;v⋅\frac{v^2}2&lt;\frac{v(t_0)^3}2$ is bounded from above by a negative number, so the solution crosses the $v$-axis in finite time. This shows trajectories are closed and symmetric about both $v$- and $u$-axis.</li></ol></li></ol>
