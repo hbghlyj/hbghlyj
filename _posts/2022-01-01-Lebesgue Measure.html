@@ -1,0 +1,255 @@
+---
+mathjax: true
+tag: Integration
+excerpt: Integration Sheet 1 — HT 2023
+---
+<style>
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}
+</style>
+<div class="q">$\def\d{\mathrm{~d}}$
+Let $f_n:[0,1]→ℝ$ be given by $f_n(x)=n^2 x^n(1-x)$. Show that
+<ol type="a">
+    <li>$\lim _{n→∞} f_n(x)=0$ for each $x∈[0,1]$.</li>
+    <li>$\lim _{n→∞} \int_0^1 f_n(x)\d x=1$.</li>
+</ol>
+</div>
+<ol type="a">
+<li>By L'hospital's rule$$\lim_{n→∞}n^2x^n=\lim_{n→∞}\frac{n^2}{x^{-n}}=\lim_{n→∞}\frac{2n}{-nx^{-n-1}}=\lim_{n→∞}\frac{2}{-x^{-n-1}}=0$$</li>
+<li>$$\int_0^1 f_n(x)\d x=n^2\left(\frac{x^{n+1}}{n+1}-\frac{x^{n+2}}{n+2}\right)\bigg|_0^1=\frac{n^2}{(n+1)(n+2)}→1\text{ as }n→∞$$</li>
+</ol>
+<div class="q">
+Show that $\int_0^1\left(\int_0^1 \frac{x-y}{(x+y)^3}\d x\right)\d y=-\frac{1}{2}$.<br>
+Deduce that $\int_0^1\left(\int_0^1 \frac{x-y}{(x+y)^3}\d y\right)\d x \neq \int_0^1\left(\int_0^1 \frac{x-y}{(x+y)^3}\d x\right)\d y$.
+</div>
+$$\int_{y=0}^{y=1}\left(\int_{x=0}^{x=1} \frac{x-y}{(x+y)^{3}} \d x\right)\d y=\int_{y=0}^{y=1}\left(\int_{x=0}^{x=1}\frac1{(x+y)^2}-\frac{2y}{(x+y)^3}\d x\right)\d y=\int_{y=0}^{y=1}\frac{-1}{(1+y)^2}\d y=-\frac12$$
+$$\int_{x=0}^{x=1}\left(\int_{y=0}^{y=1} \frac{x-y}{(x+y)^{3}} \d y\right)\d x=\int_{x=0}^{x=1}\left(\int_{y=0}^{y=1}-\frac1{(x+y)^2}+\frac{2x}{(x+y)^3}\d y\right)\d x=\int_{x=0}^{x=1}\frac{1}{(1+x)^2}\d x=\frac12$$
+<div class="q">
+(a) Let $E=ℚ∩[0,1]$. Show that there exists a sequence $\left(x_n\right)_{n≥1}$ in $[0,1]$ such that the sets $E+x_n:=\left\{y+x_n: y∈E\right\}(n=1,2,…)$ are disjoint. Show that
+\[
+0≤\sum_{n=1}^k χ_E\left(x-x_n\right)≤χ_{[0,2]}(x), \quad x∈ℝ, k∈\mathbb{N}
+\]
+(b) Let $V$ be a vector space of functions $ℝ→ℝ$, and $ϕ:V→ℝ$ be a linear functional such that
+<ol>
+    <li>For any bounded interval $I⊂ℝ$ with endpoints $a$ and $b$, $χ_I∈V$ and $ϕ\left(χ_I\right)=b-a$.</li>
+    <li>If $f∈V$ and $f(x)≥0$ for all $x∈ℝ$, then $ϕ(f)≥0$.</li>
+    <li>If $f∈V, a∈ℝ$ and $f_a(x)=f(x-a)$, then $f_a∈V$ and $ϕ\left(f_a\right)=ϕ(f)$.</li>
+</ol>
+If $χ_E∈V$, show that $ϕ\left(χ_E\right)=0$.
+</div>
+(a) Define relation ∼ in ℝ by $x∼y⇔x-y∈ℚ$. Each equivalence class $ℚ+x$ is countable, but ℝ is uncountable, so number of equivalence classes is uncountable. Take $x_n∈[0,1]$ from distinct equivalence classes, the equivalence classes $ℚ+x_n$ are disjoint, so their subsets $E+x_n$ are disjoint.<br>
+Since $E+x_n⊂[0,2]\,∀n≥1$,
+\[U=\bigcup_{n=1}^kE+x_n⊂[0,2]\]
+Since $E+x_n$ are disjoint,
+\[
+\sum_{n=1}^k χ_E\left(x-x_n\right)=\sum_{n=1}^k χ_{E+x_n}(x)=χ_U(x)≤χ_{[0,2]}(x)
+\]
+(b) By 1, $ϕ\left(χ_{[0,2]}\right)=2$. By 2, $ϕ(χ_E)≥0$. By 3, $ϕ(χ_E(x-x_n))=ϕ(χ_E)$. By linearity,\[kϕ(χ_E)=\sum_{n=1}^kϕ(χ_E(x-x_n))≤2⇒ϕ(χ_E)≤\frac{2}k\]
+Let $k→∞$ we get $ϕ(χ_E)=0$.
+<div class="q">
+Find $\liminf _{n→∞} a_n$ and $\limsup _{n→∞} a_n$ when
+<ol type="a">
+    <li>$a_n=\exp (-\cos n)$</li>
+    <li>$a_n=\exp \left(n \sin \left(\frac{n π}{2}\right)\right)+\exp \left(\frac{1}{n} \cos \left(\frac{nπ}2\right)\right)$</li>
+    <li>$a_n=\cosh \left(n \sin \left(\frac{n^2+1}n\fracπ2\right)\right)$</li>
+</ol>
+</div>
+<ol type="a">
+<li>$\liminf _{n→∞} a_n=\exp (-1),\limsup _{n→∞} a_n=\exp (1)$<br>
+By uniform continuity it suffices to show that $0,π$ are limit points of $b_n=n\bmod2π$<br>
+Claim: $(b_n)$ is dense in $[0,2π]$.<br>
+Proof: Since $π∉ℚ$, $b_n$ are distinct, by compactness, $(b_n)$ has a limit point $p∈[0,2π]$.<br>$∀x∈[0,2π],∀δ>0,∃n,k∈ℤ^+$ such that ${|b_n-p|}&lt;δ/2,{|b_{n+k}-p|}&lt;δ/2$. Then $b_{n+k}-b_n=γ,0&lt;{|γ|}&lt;δ$.<br>If $γ>0$, since $x≥0≥b_n-2π$,$$∃m∈ℕ,r∈[0,γ): x-(b_n-2π)=mγ+r$$Then $x-b_{n+mk}=r&lt;δ$;<br>If $γ&lt;0$, since $x≤2π≤b_n+2π$,$$∃m∈ℕ,r∈[0,-γ): x-(b_n+2π)=mγ+r$$Then $x-b_{n+mk}=r&lt;δ$. So any $x∈[0,1]$ is a limit point of $(b_n)$.</li>
+<li>$\begin{aligned}[t]n=2k &⟹\sin \left(n \fracπ2\right)=0,\cos \left(n \fracπ2\right)=(-1)^k⟹a_{2 k}=1+\exp \left(\frac1{2 k}(-1)^k\right) \\ n=2 k+1 &⟹\cos \left(n \fracπ2\right)=0,\sin \left(n \fracπ2\right)=(-1)^k⟹a_{2 k+1}=\exp \big((2 k+1)(-1)^k\big)+1\end{aligned}$<br>
+$a_{2k}→1,a_{2k+1}(k\text{ even})→∞,a_{2k+1}(k\text{ odd})→1$, so: $\liminf_{n→∞}a_n=1,\limsup_{n→∞}a_n=∞$</li>
+<li>Let $b_n = n\sin\left(\frac{n^2+1}n\fracπ2\right)$<br>
+Divide into 4 subsequences:
+\begin{align*}
+b_{4k+1}&=(4k+1)\sin\left(\fracπ2+\fracπ{8k+2}\right)→∞&∴a_{4k+1}→∞\\
+b_{4k-1}&=(4k-1)\sin\left(-\fracπ2+\fracπ{8k-2}\right)→-∞&∴a_{4k-1}→∞\\
+b_{4k}&=4k\sin\fracπ{8k}→\fracπ2&∴a_{4k}→\cosh\fracπ2\\
+b_{4k+2}&=(4k+2)\sin\left(π+\fracπ{8k+4}\right)→-\fracπ2&∴a_{4k+2}→\cosh\fracπ2
+\end{align*}
+So, $\liminf_{n→∞} a_n = \cosh\fracπ2,\limsup_{n→∞} a_n = ∞$</li>
+</ol>
+<div class="q">
+Let $\left(a_n\right)$ and $\left(b_n\right)$ be bounded real sequences. Prove that
+<ol type="a">
+<li>If $a_n≤b_n$ for all $n$ then $\limsup _{n→∞} a_n≤\limsup _{n→∞} b_n$.</li>
+<li>$\limsup _{n→∞}\left(a_n+b_n\right)≤\limsup _{n→∞} a_n+\limsup _{n→∞} b_n$.</li>
+<li>There is a subsequence $\left(a_{n_r}\right)_{r≥1}$ of $\left(a_n\right)$ such that $\lim _{r→∞} a_{n_r}=\limsup _{n→∞} a_n$.</li>
+<li>If $\left(a_{k_r}\right)_{r≥1}$ is any convergent subsequence of $\left(a_n\right)$, then $\lim _{r→∞} a_{k_r}≤\limsup _{n→∞} a_n$.</li>
+</ol>
+</div>
+<ol type="a">
+<li>$∀i≥m:a_i≤b_i≤\sup_{n≥m}b_n$. So $\sup_{n≥m}b_n$ is an upper bound for $a_i$. So $\sup_{n≥m} a_n≤\sup_{n≥m} b_n$.<br>Let $m→∞$ we get $\limsup _{n→∞} a_n≤\limsup _{n→∞} b_n$</li>
+<li>For all $i≥k$ we have$$a_i+b_i≤\sup_{n≥k}a_n+\sup_{n≥k}b_n$$Fix $k$, the right hand side is an upper bound for $a_i+b_i$, so
+$$\sup_{n≥k}(a_n+b_n)≤\sup_{n≥k}a_n+\sup_{n≥k}b_n$$
+Let $k→∞$ we get $\limsup _{n→∞} \left(a_n+b_n\right)≤\limsup _{n→∞} a_n+\limsup _{n→∞} b_n$.</li>
+<li>Let $\limsup_{n→∞}a_n=α$ and $s_k=\sup_{n≥k}a_n$. Then $∃n_k≥k$ such that $\left|a_{n_k}-s_k\right|&lt;\frac1m$.<br>Since $\inf_{k≥1}s_k=α,∃k_m>k_{m-1}:\left|s_{k_m}-α\right|&lt;\frac1m$.
+$$\left|a_{n_{k_m}}-α\right|≤\left|a_{n_{k_m}}-s_{k_m}\right|+\left|s_{k_m}-α\right|&lt;\frac2m⇒\lim_{m→∞}a_{n_{k_m}}=α$$</li>
+<li>$a_{k_r}≤\sup_{n≥k_r}a_n$, let $r→∞$ we get $\lim _{r→∞} a_{k_r}≤\limsup _{n→∞} a_n$.</li>
+</ol>
+<div class="q">
+Let $C$ be the Cantor set. Explain, in as much detail as you think is appropriate, why
+\[
+C=\left\{\sum_{n=1}^∞ a_n 3^{-n}: a_n=0 \text { or } 2\right\} .
+\]
+Prove that $C$ is uncountable, for example by either (or all) of the following methods:
+<ol type="a">
+    <li>adapting Cantor's proof, via decimal expansions, that $[0,1]$ is uncountable,</li>
+    <li>constructing a surjection of $C$ onto $[0,1]$ – think about binary expansions in $[0,1]$.</li>
+    <li>Prove that $C+C=[0,2]$ and deduce that $C$ is uncountable.</li>
+</ol>
+</div>
+By construction
+\[
+C=\bigcap_{k≥1}\left\{\sum_{n=1}^∞ a_n 3^{-n}: a_1=⋯=a_k=0 \text { or } 2\right\} .
+\]
+So
+\[
+C=\left\{\sum_{n=1}^∞ a_n 3^{-n}: a_n=0 \text { or } 2\right\} .
+\]
+To prove $C$ is uncountable, by 3 methods:
+<ol type="a">
+<li>Suppose $C=\left\{\sum_{n=1}^∞ a_{r,n} 3^{-n}:r=1,2,⋯\right\}$, but $\sum_{n=1}^∞(2-a_{r,n})3^{-n} ∈ C$ not included, contradiction.</li>
+<li>$∀x∈C$, define $f:C→[0,1]$ by$$f\left(\sum_{i=1}^∞ r_j 3^{-j}\right)=\sum_{i=1}^∞ \frac{r_j}2 2^{-j}$$
+To show that $f$ is a surjection, define $g:[0,1]→C$ by$$g\left(\sum_{i=1}^∞ r_j 2^{-j}\right)=\sum_{i=1}^∞2r_j 3^{-j}$$Then $f∘g=$id</li>
+<li>$\frac12C=\left\{\sum_{n=1}^∞ a_n 3^{-n}: a_n=0 \text{ or } 1\right\}.∀a,b∈\frac12C:a=\sum_{n=1}^∞ a_n 3^{-n},b=\sum_{n=1}^∞ b_n 3^{-n}$, where $a_n,b_n∈\{0,1\}$.<br>Then $a_n+b_n∈\{0,1,2\}$, so $a+b=\sum_{n=1}^∞(a_n+b_n)3^{-n}∈[0,1]$.<br>
+On the other direction, $∀c∈[0,1]$ has a ternary expansion $c=\sum_{n=1}^∞ c_n 3^{-n}$, where $c_n∈\{0,1,2\}$.<br>Since 0=0+0, 1=1+0, 2=1+1, there exist $a,b∈\frac12C$ such that $a+b=c$. So $\frac12C+\frac12C=[0,1]$. So $C+C=[0,2]$.<br>We constructed a surjection from $C×C$ onto uncountable set $[0,2]$, so $C$ is uncountable.</li>
+</ol>
+<div class="q">
+<ol type="a">
+    <li>Show that the set of all real numbers which have a decimal expansion not containing the digit 4 is null.</li>
+    <li>Show that if $A$ is null and $B$ is countable, then $A+B$ is null.</li>
+    <li>Show that if $A$ is null and $f:ℝ→ℝ$ has a continuous derivative, then $f(A)$ is null.</li>
+</ol>
+</div>
+<ol type="a">
+<li>Since the union of countable null sets is null, we only need to consider numbers between 0 and 1.<br>Let $A_n = \{x∈[0,1]:\text{first $n$ digits of }x\text{ not }4\}$. For example 0.4 = 0.399⋯ not containing 4.<br>
+Since $A_n=\{x∈A_{n-1}:n\text{th digit of }x\text{ not }4\}$,<br>
+$$
+m(A_n)=0.9m(A_{n-1})
+$$
+$A_1 = [0,0.4]∪[0.5,1]⇒m(A_1)=0.9$ finite. $A_n$ is decreasing, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=10&zoom=100,-174,282">Proposition 3.2</a> $m^*(A)=\lim_{n→∞}m(A_n)=0$</li>
+<li>Since $m^*$ is translation invariant, $m^*(A+b)=m^*(A)=0$.<br>$A+B=⋃_{b∈B}(A+b)$ and $A+b$ are disjoint, by countable subadditivity$$m^*(A+B)≤\sum_{b∈B}m^*(A+b)=0$$Then $A+B$ is null.</li>
+<li>Since countable union of null sets is null and $A=⋃_{n∈ℤ}A∩[n,n+1]$, we can assume $A⊂[0,1]$.<br>Since $f'$ is bounded on $[0,1]$, by mean value theorem, $∃C>0∀a,b∈[0,1]:{|f(a)-f(b)|}&lt;C{|a-b|}$<br>
+Since $A$ is null, $∀ϵ>0∃$a sequence of intervals $I_n$ cover $A$ with $∑_{n=1}^∞m(I_n)&lt;ϵ$.<br>Since $I_n$ is connected and $f$ is continuous, $f(I_n)$ is connected, so $f(I_n)$ is an interval, $m(f(I_n))&lt;Cm(I_n)$.
+\[f(A)⊂\bigcup_{n=1}^∞f(I_n),\sum_{n=1}^∞m(f(I_n))&lt;Cϵ⇒m(f(A))&lt;Cϵ\]
+So $f(A)$ is null.</li></ol>
+<div class="q">
+Let $A,B$ and $A_n$ be subsets of ℝ, and $x,α∈ℝ$. Prove the following
+<ol type="a">
+<li>$m^*(A+x)=m^*(A)$;</li>
+<li>$m^*(αA)={|α|}m^*(A)$,</li>
+<li>$m^*(A∪B)≤m^*(A)+m^*(B)$,</li>
+<li>$m^*\left(⋃_{n=1}^∞A_n\right)≤\sum_{n=1}^∞m^*\left(A_n\right)$.</li>
+</ol>
+</div>
+<ol type="a">
+<li>$∀ϵ>0∃$a sequence of intervals $I_n$ cover $A$ with $\sum_{n=1}^∞ m\left(I_n\right)≤m^*(A)+ϵ$.<br>
+Then $A+x⊂⋃_{n=1}^∞I_n+x$ and $I_n+x$ are intervals$⇒m^*(A+x)≤\sum_{n=1}^∞ m\left(I_n+x\right)$.<br>
+Since $I_n$ are intervals, $m(I_n+x)=m(I_n)$. So $m^*(A+x)≤m^*(A)+ϵ$.<br>
+Let $ϵ→0$ we get $m^*(A+x)≤m^*(A)$. Since $(A+x)+(-x)=A$, we can prove $m^*(A+x)≥m^*(A)$.</li>
+<li>For $α=0$ it is trivial. For $α≠0$:<br>
+$∀ϵ>0∃$a sequence of intervals $I_n$ cover $A$ with $\sum_{n=1}^∞ m\left(I_n\right)≤m^*(A)+ϵ$.<br>
+Then $αA⊂⋃_{n=1}^∞αI_n$ and $αI_n$ are intervals$⇒m^*(αA)≤\sum_{n=1}^∞ m\left(αI_n\right)$.<br>
+Since $I_n$ are intervals, $m(αI_n)={|α|}m(I_n)$. So $m^*(αA)≤{|α|}m^*(A)+{|α|}ϵ$.<br>
+Let $ϵ→0$ we get $m^*(αA)≤{|α|}m^*(A)$. Since $α^{-1}(αA)=A$, we can prove $m^*(αA)≥{|α|}m^*(A)$.</li>
+<li>$∀ϵ>0∃$a sequence of intervals $I_{n,1}$ cover $A$ with $\sum_{n=1}^∞ m\left(I_{n,1}\right)≤m^*(A)+ϵ$.<br>∃a sequence of intervals $I_{n,2}$ cover $B$ with $\sum_{n=1}^∞ m\left(I_{n,2}\right)≤m^*(B)+ϵ$.<br>
+The collection of open intervals $\left\{I_{j, k}: j∈ℤ^+,k=1,2\right\}$ is countable.<br>
+Thus $m^*(A∪B)≤m^*(A)+m^*(B)+2ϵ$.<br>Let $ϵ→0$ we get $m^*(A∪B)≤m^*(A)+m^*(B)$.</li>
+<li>If $m^*(A_k)=∞$ for some $k∈ℤ^+$, the inequality clearly holds. Thus assume $m^*(A_k)<∞$ for all $k∈ℤ^+$.<br>
+Let $ε>0$. For each $k∈ℤ^+$, let $I_{1, k}, I_{2, k}, …$ be a sequence of intervals cover $A_k$ such that
+\[
+\sum_{j=1}^∞ m\left(I_{j, k}\right)≤\fracε{2^k}+m^*(A_k)
+\]
+Thus
+\[\tag1
+\sum_{k=1}^∞ \sum_{j=1}^∞m\left(I_{j, k}\right) ≤ ε+\sum_{k=1}^∞m^*(A_k)
+\]
+The doubly indexed collection of open intervals $\left\{I_{j, k}: j, k∈ℤ^+\right\}$ is countable.<br>
+Inequality (1) shows that the sum of the lengths of the intervals listed above$≤ε+\sum_{k=1}^∞m^*(A_k)$.<br>Thus $m^*\left(\bigcup_{k=1}^∞ A_k\right)≤ε+\sum_{k=1}^∞m^*(A_k)$.<br>Let $ϵ→0$ we get $m^*\left(\bigcup_{k=1}^∞ A_k\right)≤\sum_{k=1}^∞m^*(A_k)$.
+</li>
+</ol>
+<div class="q">
+Prove the following:
+<ol type="a">
+    <li>Any null set is (Lebesgue) measurable.</li>
+    <li>Any interval is measurable.</li>
+    <li>If $E$ and $F$ are measurable and $x, α∈ℝ$, then $E+x, α E$ and $E∪F$ are measurable.</li>
+    <li>If $E_n$ are disjoint measurable subsets of ℝ, then $⋃_{n=1}^∞ E_n$ is measurable and $m^*\left(\bigcup_{n=1}^∞ E_n\right)=\sum_{n=1}^∞ m^*\left(E_n\right)$</li>
+</ol>
+</div>
+<ol type="a">
+<li>If $N$ is null, then $m^*(N)=0$. So for any $A⊂ℝ$ we have
+\begin{aligned}
+m^*(A∩N)≤m^*(N)=0&\text { since } A∩N⊂N\\
+m^*\left(A∖N\right)≤m^*(A)&\text { since } A∖N⊂A
+\end{aligned}
+and adding together we have proved $m^*(A∩N)+m^*(A∖N)≤m^*(A)$.</li>
+<li>If $I$ is bounded, $∀A⊂ℝ$, if $m(A)=∞$, then $m(A∖I)=∞$ we have $∞=∞$; if $m(A)&lt;∞$, $∀ε>0,∃$a sequence of intervals $I_n$ cover $A$ with $\sum_{n=1}^∞m\left(I_n\right)≤m^*(A)+ε$……(1)<br>
+The intervals $I_n'=I_n∩I$ cover $A∩I$, so
+\[
+m^*(A∩I)≤\sum_{n=1}^∞m\left(I_n'\right) .
+\]
+Let $I⊂[a, b]$. The intervals $I_n''=I_n∩(-∞, a), I_n'''=I_n∩(b,∞)$ cover $A∖I$, so
+\[
+m^*\left(A∖I\right)≤\sum_{n=1}^∞m\left(I_n''\right)+\sum_{n=1}^∞m\left(I_n'''\right) .
+\]
+Add these inequalities then use (1) and $m(I_n)=m(I_n')+m(I_n'')+m(I_n''')$,$$m^*(A∩I)+m^*(A∖I)≤m^*(A)+ε$$Let $ε→0$ we get $m^*(A∩I)+m^*(A∖I)≤m^*(A)$.<br>
+If $I$ is unbounded, say $I=[a, ∞)$, it suffices to consider $I_n'=I_n∩[a, ∞)$ and $I_n''=I_n∩(-∞, a)$.</li>
+<li>By Q8, $m^*(A-x)=m^*(A),m^*((A-x)∩E)=m^*(A∩(E+x)),m^*((A-x)∖E)=m^*(A∖(E+x))$.<br>
+$E$ is measurable$⇒m^*(A-x)=m^*((A-x)∩E)+m^*((A-x)∖E)$<br>$⇒m^*(A)=m^*(A∩(E+x))+m^*(A∖(E+x))⇒E+x$ is measurable.<hr style="border-style: dashed;">For $α=0$, $αA=\{0\}$ is measurable. For $α≠0$,<br>
+By Q8, $m^*(A)={|α|}m^*(α^{-1}A),m^*(A∩αE)={|α|}m^*(α^{-1}A∩E),m^*(A∖αE)={|α|}m^*(α^{-1}A∖E),$<br>
+$E$ is measurable$⇒m^*(α^{-1}A)=m^*(α^{-1}A∩E)+m^*(α^{-1}A∖E)$<br>$⇒m^*(A)=m^*(A∩αE)+m^*(A∖αE)⇒αE$ is measurable.<hr style="border-style: dashed;">
+$F$ is measurable$⇒m^*(A)=m^*(A∩F)+m^*(A∩Fᶜ)$<br>
+With $A∩Eᶜ$ in place of $A$ we get
+\[\tag1
+m^*\left(A∩Eᶜ\right)=m^*\left(A∩Eᶜ∩F\right)+m^*\left(A∩Eᶜ∩Fᶜ\right) .
+\]
+$E$ is measurable$⇒m^*(A)=m^*(A∩E)+m^*(A∩Eᶜ)$……(2)<br>$A∩\left(E∪F\right)$ is disjoint union of $A∩E$ and $A∩Eᶜ∩F$<br>
+We insert (1) into (2) to get
+\begin{align*}
+m^*(A)&=m^*\left(A∩E\right)+m^*\left(A∩Eᶜ∩F\right)+m^*\left(A∩Eᶜ∩Fᶜ\right)\\
+\text{additivity} &=m^*\left(A∩\left(E∪F\right)\right)+m^*\left(A∩Eᶜ∩Fᶜ\right)\\
+\text{de Morgan's law} &=m^*\left(A∩\left(E∪F\right)\right)+m^*\left(A∩\left(E∪F\right)ᶜ\right)
+\end{align*}Therefore $E∪F$ is measurable.</li>
+<li>Induct on $n$. For $n=1$,  $m^*(A)=m^*(A)$ is true. For $n=2$, we need to prove
+\[\tag1
+m^*\left(E_1∪E_2\right)=m^*(E_2)+m^*(E_1)
+\]
+Since $E_2$ is measurable, apply definition with $A=E_1∪E_2$ :
+\[
+m^*\left(E_1∪E_2\right)=m^*\left((E_1∪E_2)∩E_2\right)+m^*\left((E_1∪E_2)∩E_2^{\mathrm{c}}\right)
+\]
+Since $E_1,E_2$ are disjoint, we get (1).<br>Assume theorem is true for $n-1$, then
+\[\tag2
+m^*\left(\bigcup_{k=1}^{n-1}E_k\right)=\sum_{k=1}^{n-1} m^*(E_k)
+\]
+Applying (1) with $E_n$ and $\bigcup_{k=1}^{n-1} E_k$
+\[
+m^*\left(\bigcup_{k=1}^n E_k\right)=m^*\left(E_n\right)+m^*\left(\bigcup_{k=1}^{n-1} E_k\right),
+\]
+Inserting (2) we get
+\[
+m^*\left(\bigcup_{k=1}^n E_k\right)=\sum_{k=1}^n m^*(E_k)
+\]
+as required to complete the induction step. It remains true when $n→∞$.</li></ol>
+<div class="q">
+Let $G$ be an open subset of $ℝ$. For $x, y∈G$, let $I_{x, y}$ be the closed (or open, if you prefer) interval between $x$ and $y$, so $I_{x, x}=\{x\}$ (or ∅). Define a relation ∼ on $G$ by $x∼y$ if and only if $I_{x, y}⊂G$.
+<ol type="a">
+<li>Show that ∼ is an equivalence relation on $G$.</li>
+<li>Show that each equivalence class is an open interval.</li>
+<li>Show that there are (at most) countably many equivalence classes.</li>
+<li>Deduce that $G$ is the union of (at most) countably many, disjoint open intervals.</li>
+</ol>
+</div>
+<ol type="a">
+<li>If $x∈G$, then $I_{x,x}=\{x\}⊂G$, so $x∼x$<br>
+If $x∼y$, then $I_{y,x}=I_{x,y}⊂G$, so $y∼x$<br>
+If $x∼y,y∼z$, then $I_{x,z}⊂I_{x,y}∪I_{y,z}⊂G$, so $x∼z$</li>
+<li>Let $A$ be an equivalence class. By metric space <a href="https://courses.maths.ox.ac.uk/pluginfile.php/30035/mod_resource/content/2/A2-metricspaces.pdf#page=50&zoom=auto,-18,460">Theorem 7.2.1.</a> $A$ is an interval.<br>For any $a∈A$, since $G$ is open, $∃r>0:B(a,r)⊂G$. Note that $∀b∈B(a,r):b∼A$. So $B(a,r)⊂A$.
+So $A$ is open.</li>
+<li>Each rational number is in one equivalence class and each equivalence class contains some rational numbers. We constructed a surjection from ℚ to $G/$∼ and $G/$∼ is infinite, so $G/$∼ is countable.</li>
+<li>$G$ is the union of equivalence classes, which are disjoint open intervals. We proved they are countable.</li>
+</ol>
