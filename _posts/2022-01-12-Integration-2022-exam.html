@@ -4,7 +4,7 @@ tag: Integration
 excerpt: A4 paper 2022
 ---
 <ol><li>Let $m$ denote the Lebesgue measure on $ℝ$.
-ol type="a"><li>ol type="i"><li>
+<ol type="a"><li>ol type="i"><li>
 Define the Lebesgue outer measure $m^*$ and what it means for $E ⊆ ℝ$ to be Lebesgue measurable.</li><li>Show that for any subsets $E_1, E_2, …$ of $ℝ$,
 $$
 m^*\left(⋃_{n=1}^∞ E_n\right) ⩽ \sum_{n=1}^∞ m^*\left(E_n\right)
@@ -21,7 +21,7 @@ $$
 $$</li></ul>
 </li></ul>
 </li>
-<li>ol type="a"><li>State <i>Fubini’s</i> and <i>Tonelli’s</i> theorems for a measurable function $f:ℝ^2→ℝ$</li>
+<li><ol type="a"><li>State <i>Fubini’s</i> and <i>Tonelli’s</i> theorems for a measurable function $f:ℝ^2→ℝ$</li>
 <li>Let $a&gt;1$.ol type="i"><li>Show that the function $f(x, y)=e^{-x y}$ is integrable on $[0,∞)×[1, a]$.</li><li>Show that
 $$
 ∫_0^∞ \frac{e^{-x}-e^{-a x}}{x} \mathrm{~d} x=\log a
@@ -33,7 +33,7 @@ is integrable on $[0,1]×[0,1]$. Must $f$ be integrable on $[0,1]$ ? Justify you
 </ul>
 </li>
 <li>
-ol type="a"><li>
+<ol type="a"><li>
 ol type="i"><li>Define a simple function $ϕ:ℝ→[0,∞]$, and state an expression for the Lebesgue integral of $ϕ$.</li><li>Let $f:ℝ→[0,∞]$ be measurable. Explain how to define its Lebesgue integral $∫_ℝf$.</li><li>Let $f:ℝ→[-∞,∞]$ be measurable. What does it mean for $f$ to be <i>Lebesgue integrable</i>, and in that case define $∫_ℝf$.</li><li>Suppose that $f,g:ℝ→[-∞,∞]$ are Lebesgue integrable with $f(x)⩽g(x)$ for all $x$. Show that $∫_ℝf⩽∫_ℝg$.</li></ul>
 </li><li>Determine whether the following measurable functions are Lebesgue integrable over the specified set. Justify your answers.
 ol type="i"><li>$f(x)=\frac{\cos x}{x}$ over $(1,∞)$.</li><li>$g(x)=\frac{\cos(1/x)}{x}$ over $(0,1)$.</li><li>$h(x)=\frac{\sin x}{e^x-1}$ over $(0,∞)$.</li></ul></li>
@@ -41,7 +41,7 @@ ol type="i"><li>$f(x)=\frac{\cos x}{x}$ over $(1,∞)$.</li><li>$g(x)=\frac{\cos
 ol type="i"><li>Let $\left(f_n\right)_{n=1}^∞$ and $\left(g_n\right)_{n=1}^∞$ be sequences in $ℒ^1(ℝ)$, and suppose that $f,g:ℝ→ℝ$ are such that $f_n→f$ and $g_n→g$ almost everywhere, and that $g∈ℒ^1(ℝ)$. Suppose that $\left|f_n\right|⩽g_n$ for all $n∈ℕ$ and $\left‖g_n\right‖_1→{‖g‖}_1$. Show $f∈ℒ^1(ℝ)$ and $∫_ℝf_n→∫_ℝf$.</li><li>Show that $\left‖f_n-f\right‖_1→0$.</li></ul>
 </li></ul></li></ol>
 <h1>Solution</h1>
-<ol><li>ol type="a"><li>ol type="i">
+<ol><li><ol type="a"><li>ol type="i">
 <li>
 $$
 m^*(E)=\inf \left\{\sum_{n=1}^∞ m\left(I_n\right): I_n \text { are intervals and } E ⊆ ⋃_{n=1}^∞ I_n\right\},
@@ -85,7 +85,7 @@ Therefore $f_m(x) / a_m → 0$ as $m →∞$ for $x ∉ E$.<br>
 <i>Sourced from Stein and Shakarchi chapter 1.</i></li></ul>
 </li></ul>
 </li>
-<li>ol type="a">
+<li><ol type="a">
 <li>Fubini: Let $f: ℝ^2 → ℝ$ be integrable. Then, for almost all $y, x ↦ f(x, y)$ is integrable, and if $F(y)$ is defined (for those $y$) by
 $$
 F(y)=∫_{ℝ} f(x, y) d x
@@ -159,7 +159,7 @@ $$
 $$comparison gives $∫^1_0 {|f (x)|} &lt; ∞$. Therefore $f$ is integrable on $[0, 1]$.</li></ul>
 </li>
 <li>
-ol type="a"><li>ol type="i"><li>A simple function is a measurable function which takes only finitely many values. Such a function ϕ can be written in the form $ϕ=∑^n_{i=1}α_iχ_{B_i}$ with $α_i&gt;0$ and measureable sets $B_i$. Then $∫_ℝ ϕ=∑^n_{i=1}α_im(B_i)$.
+<ol type="a"><li>ol type="i"><li>A simple function is a measurable function which takes only finitely many values. Such a function ϕ can be written in the form $ϕ=∑^n_{i=1}α_iχ_{B_i}$ with $α_i&gt;0$ and measureable sets $B_i$. Then $∫_ℝ ϕ=∑^n_{i=1}α_im(B_i)$.
 </li><li>$∫_ℝf=\sup\left\{∫_ℝϕ:0⩽ϕ⩽f,ϕ\text { simple}\right\}$
 </li><li>Let $f^{+}(x)=\max(f(x),0)$ and $f^{-}(x)=\max(-f(x),0). f$ is integrable iff $∫_ℝf^{+}&lt;∞$ and $∫_ℝf^{-}&lt;∞$. In this case we define $∫_ℝf=∫_ℝf^{+}-∫_ℝf^{-}$.
 </li><li>Firstly assume that $0⩽f⩽g$. If $ϕ:ℝ→[0,∞]$ is simple and $ϕ⩽f$, then $ϕ⩽g$. Therefore $\sup\{∫_ℝϕ:0⩽ϕ⩽f,ϕ\text{ simple}\}⩽\sup\{∫_ℝϕ:0⩽ϕ⩽g,ϕ\text{ simple}\}$,and so
