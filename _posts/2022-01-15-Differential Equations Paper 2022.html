@@ -1,0 +1,179 @@
+---
+mathjax: true
+tag: Differential Equations 2
+excerpt: A6 paper 2022
+---
+<ol><li>We consider a second-order, linear differential operator $𝔏 y(x)$ for $a&lt;x&lt;b$ supplemented by linear homogeneous boundary conditions $𝔅_1 y, 𝔅_2 y$.
+<ol type="a"><li>Explain how the adjoint operator $𝔏^*$ and the corresponding adjoint boundary conditions are defined.<br>
+State the three possibilities for the existence and uniqueness of the solutions of the inhomogeneous problem $𝔏 y=f$, forming the Fredholm Alternative.
+</li>
+<li>Assuming that the solution $y(x)$ of the inhomogeneous ODE $𝔏 y=f$ takes the form
+$$
+y(x)=\sum_i c_i y_i(x)
+$$
+where $y_i$ are the eigenfunctions of the differential operator, provide an expression for the coefficients $c_i$ and determine under what condition all the coefficients are well defined. Use this expression to express the Green's function of the problem in terms of these eigenfunctions.
+</li>
+<li>Let 𝔏 be given by $𝔏 y ≡-x y''(x)$, $a=1$ and $b=2$, and let the boundary conditions be $𝔅_1 y ≡ y'(1)=0, 𝔅_2 y ≡ y'(2)=0$. Determine the condition on $f$ for the existence of solutions for the inhomogeneous ODE $𝔏 y=f$.
+</li>
+<li>Consider now the case when $𝔏 y ≡ y''(x)+4 y(x)$, with $a=0$ and $b=1$, and the general boundary conditions
+$$
+\left.\begin{aligned}
+𝔅_1 y &≡ α_1 y(a)+α_2 y'(a)+β_1 y(b)+β_2 y'(b)=0 \\
+𝔅_2 y &≡ α_3 y(a)+α_4 y'(a)+β_3 y(b)+β_4 y'(b)=0
+\end{aligned}\right\}
+$$
+where $\left(α_1, α_2, β_1, β_2\right)$ and $\left(α_3, α_4, β_3, β_4\right)$ are linearly independent.
+<ol type="i"><li>Give an example of values for $\left(α_1, α_2, β_1, β_2\right)$ and $\left(α_3, α_4, β_3, β_4\right)$ for which the solution of the inhomogeneous problem $𝔏 y=f$ is either undefined or not uniquely defined. Justify your answer.
+</li>
+<li>Taking now $𝔅_1 y ≡ y(0)=0, 𝔅_2 y ≡ y(1)=0$, determine an eigenfunction decomposition for the Green's function.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Show that any second order linear operator
+$$
+𝔏 y ≡ P_2(x) y''+P_1(x) y'+P_0(x) y
+$$
+with $P_2(x) ≠ 0$ can be converted to a Sturm-Liouville operator.<br>
+Assuming that the boundary conditions are self-adjoint, show that the eigenvalue problem
+$$
+𝔏 y=λ y
+$$
+has real eigenvalues, and that the eigenfunctions are orthogonal with respect to a modified inner product.<br>
+[You may use results from Sturm-Liouville theory if clearly stated.]
+</li>
+<li>For each $n ∈ ℕ_0$, we define the function $H_n: ℝ → ℝ$ by
+$$
+H_n(x)=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}
+$$
+Determine the explicit expressions for $H_1(x), H_2(x), H_3(x)$ and $H_4(x)$, and then show that, in general, $H_n(x)$ is a polynomial of degree $n$.
+</li>
+<li>Using $∫_{-∞}^∞ e^{-x^2} d x=\sqrt{π}$, show the orthogonality conditions
+$$
+∫_{-∞}^∞ H_m(x) H_n(x) e^{-x^2} d x=2^n n ! \sqrt{π} δ_{n m}
+$$
+</li>
+<li>By considering a Taylor expansion in the $t$ variable, verify that
+$$
+e^{2 x t-t^2}=\sum_{n=0}^∞ \frac{1}{n !} H_n(x) t^n .
+$$
+Using this result, or otherwise, show that $y=H_n(x)$ satisfies the ODE
+$$
+y''-2 x y'+2 n y=0
+$$
+and determine its Sturm-Liouville form.<br>
+[You may find it helpful to note that $2 x t-t^2=x^2-(x-t)^2$.]</li></ol>
+</li>
+<li>
+<ol type="a"><li>For a function $f(ϵ)$ to have an asymptotic expansion of the form
+$$
+f(ϵ) ∼ \sum_k a_k ϕ_k(ϵ)   \text { as } ϵ → 0
+$$
+what are the conditions that should be satisfied by the gauge functions $ϕ_k$ and by the series?<br>
+Explain the difference between an asymptotic expansion and a convergent series.<br>
+Give an example of two functions that have the same asymptotic expansion but are different.
+</li>
+<li>Consider the differential equation
+$$
+y''(x)+y(x)=ϵ y^n(x)
+$$
+for $0&lt;x&lt;2 π, 0&lt;ϵ ≪ 1$ and $n ∈ ℕ$.
+<ol type="i"><li>Take the boundary conditions $y'(0)=0$ and $y'(2 π)=0$. Using the Fredholm Alternative Theorem, give the values of $n$ when the asymptotic expansion
+$$
+y ∼ y_0+ϵ y_1+…
+$$
+yields only the trivial solution.
+</li>
+<li>In the case $n=3$, now considering the initial conditions $y(0)=0$ and $y'(0)=1$, show that the asymptotic expansion breaks down for $x$ of a certain order that you should determine.<br>
+[Hint: You may use the identity $\sin ^3 x=\frac{1}{4}(3 \sin x-\sin 3 x)$.]</li></ol>
+</li>
+<li>Consider the boundary value problem
+$$
+ϵ y''(x)+p(x) y'(x)+y(x)=0
+$$
+subject to the conditions $y(0)=1$ and $y(1)=0$, where $0&lt;ϵ ≪ 1$ is a small parameter. We further assume that $p(x)$ is strictly negative and that $p(0)=p(1)=-1$. Determine the location of the boundary layer and construct leading order inner and outer solutions.</li></ol></li></ol>
+<ol id="right"><li><ol type="a"><li>$𝔏^*$ is defined by $⟨𝔏y,w⟩=⟨y,𝔏^*w⟩$ where $⟨y,w⟩=\int_a^by(x)\overline{w(x)}dx$
+\begin{split}
+𝔏y&=P_2 y''+P_1 y'+P_0 y \\ 𝔏^*y&=\left(P_2 w\right)''-\left(P_1 w\right)'+P_0 w\\
+⟨𝔏 y, w⟩-\left⟨y, 𝔏^* w\right⟩&=\left[P_2 w y'-\left(P_2 w\right)' y+P_1 w y\right]_{a}^{b} \\&=\require{mathtools}\mathmakebox[.9width]{\left(K_1^* w\right)\left(𝔅_1 y\right)+\left(K_2^* w\right)\left(𝔅_2 y\right)+\left(K_1 y\right)\left(𝔅_1^* w\right)+\left(K_2 y\right)\left(𝔅_2^* w\right)}\end{split}where $K_1y,K_2y$ are linearly independent of $B_1y,B_2y$, and $K_1^*w,K_2^*w$ are linearly independent of $B_1^*w,B_2^*w$.<br> 
+$𝔅_1^* w,𝔅_2^* w$ is the corresponding adjoint boundary conditions.<br>{% latex %}\usepackage{tikz}
+\usetikzlibrary{positioning}
+\newdimen\nodeDist
+\nodeDist=35mm
+\begin{tikzpicture}[
+    node/.style={%
+      draw,
+      rectangle,
+    },
+  ]
+    \node [node] (A) {(H+BC) has non-trivial solution};
+    \path (A) ++(-135:\nodeDist) node [node] (B) {$1$ solution};
+    \path (A) ++(-45:\nodeDist) node [node] (C) {$\langle f,w\rangle=0$ for all $w$ satisfying (H*+BC*)};
+    \path (C) ++(-135:\nodeDist) node [node] (D) {$0$ solution};
+    \path (C) ++(-45:\nodeDist) node [node] (E) {$\infty$ solutions};
+    \draw (A) -- (B) node [left,pos=0.5] {no}(A);
+    \draw (A) -- (C) node [right,pos=0.5] {yes}(A);
+    \draw (C) -- (D) node [left,pos=0.5] {no}(A);
+    \draw (C) -- (E) node [right,pos=0.5] {yes}(A);
+\end{tikzpicture}
+{% endlatex %}<br>
+Theorem 2.2. Fredholm Alternative (linear ODE version)<br>
+Exactly one of the following possibilities occurs.<br>
+1. The homogeneous problem (H+BC) has only the zero solution. In this case the solution of (N+BC) is unique.<br>
+2. The homogeneous problem (H+BC) admits non-trivial solutions, and so does (H*+BC*). In this case there are two sub-possibilities:<br>
+2(a) if $⟨f,w⟩=0$ for all $w$ satisfying (H*+BC*), then (N+BC) has a non-unique solution;<br>
+2(b) otherwise, (N+BC) has no solution.
+</li><li>Let $𝔏y_i=λ_iy_i,𝔏^*w_i=λ_iw_i$. Interchange the inner product with ∑ and use orthogonality
+\[⟨f,w_k⟩=⟨y,𝔏^*w_k⟩=\left<\sum_ic_iy_i,λ_kw_k\right>=\sum_ic_iλ_k⟨y_i,w_k⟩=c_kλ_k⟨y_k,w_k⟩\]
+If $λ_k≠0$, we can solve for $c_k$\[c_k={⟨f,w_k⟩\overλ_k⟨y_k,w_k⟩}\]
+If $λ_k=0$, either
+<ul><li>$⟨f,w_k⟩=0$, then $c_k$ is arbitrary: the solution is non-unique; or</li>
+<li>$⟨f,w_k⟩≠0$, it is inconsistent: the solution does not exist.</li></ol>\[y(x)=\sum_ic_iy_i(x)=\sum_i{\int_a^bf(ξ)w_i(ξ)y_i(x)dξ\overλ_i⟨y_i,w_i⟩}=\int_a^bf(ξ)\sum_i{w_i(ξ)y_i(x)\overλ_i⟨y_i,w_i⟩}dξ\]So the Green's function is $\sum_i{w_i(ξ)y_i(x)\overλ_i⟨y_i,w_i⟩}$</li>
+<li>$𝔏^* w ≡-(x w(x))'',⟨𝔏y,w⟩-⟨y,𝔏^*w⟩=[(xw(x))'y(x)-xw(x)y'(x)]_1^2$<br>$𝔅_1^* w = (xw(x))'|_1$, $𝔅_2^* w ≡ (xw(x))'|_2$
+\begin{eqnarray*}
+𝔏^* w=0&⇒&w(x)=\frac Ax+B,(xw(x))'=B\\
+𝔅_1^* w=0&⇒&B=0\\
+𝔅_2^* w=0&⇒&B=0
+\end{eqnarray*}
+$w=\frac Ax$, so $𝔏 y=f$ exists solution iff $∫_1^2f(x)\frac1xdx=0$</li>
+<li><ol type="i"><li>By (a), the solution of $𝔏 y=f$ is either undefined or not uniquely defined iff $𝔏 y=0$ has a non-trivial solution.<br>$𝔏 y=0⇒y(x)=A\cos(2x)+B\sin(2x)$\begin{array}ly(0)=A&y(1)=A\cos2+B\sin2\\\frac{y'(0)}2=B&\frac{y'(1)}2=-A\sin2+B\cos2\end{array}$\begin{cases}y(1)=y(0)\cos2+\frac{y'(0)}2\sin2\\\frac{y'(1)}2=-y(0)\sin2+\frac{y'(0)}2\cos2\end{cases}$ is satisfied by $y(x)=A\cos(2x)+B\sin(2x)$ for all $A,B$
+</li><li>$𝔏w≡ w''+4 w,⟨𝔏y,w⟩-⟨y,𝔏^*w⟩=[y'(x)w(x)-y(x)w'(x)]_0^1$, so the adjoint BC\begin{array}l
+𝔅_1^*w=w(0)\\𝔅_2^*w=w(1)
+\end{array}$𝔏w=λw⇒w''+(4-λ)w=0$<br>
+For $λ>4$, $w(x)=Ae^{\sqrt{λ-4}x}+Be^{-\sqrt{λ-4}x}$, only $w=0$ can satisfy $w(0)=w(1)=0$.<br>
+For $λ=4$, $w(x)=Ax+B$, only $w=0$ can satisfy $w(0)=w(1)=0$.<br>
+For $λ&lt;4$, $w(x)=A\cos(\sqrt{4-λ}x)+B\sin(\sqrt{4-λ}x)$
+\begin{array}l
+w(0)=0⇒A=0\\w(1)=0⇒A\cos(\sqrt{4-λ})+B\sin(\sqrt{4-λ})=0
+\end{array}$B≠0⇒\sin(\sqrt{4-λ})=0⇒\sqrt{4-λ}=kπ,k=1,2…$<br>Let $B=1,y_k(x)=w_k(x)=\sin(kπx)$, then $⟨y_k,w_k⟩=\frac12$<br>By (b) Green's function $\sum_{k=1}^∞{w_k(ξ)y_k(x)\overλ_k⟨y_k,w_k⟩}=\sum_{k=1}^∞{2\sin(kπξ)\sin(kπx)\over4-k^2π^2}$
+</li></ol></li></ol></li><li><ol type="a"><li>Comparing$$r(x)𝔏y ≡ r(x)P_2(x) y''+r(x)P_1(x) y'+r(x)P_0(x) y$$with$$\hat𝔏y≡-(py')'+qy$$we need $\frac{P_1(x)}{P_2(x)}=\frac{p'(x)}{p(x)}⇒p(x)=∫\exp\left(P_1(x)\over P_2(x)\right)dx⇒r(x)=-\frac{p(x)}{P_2(x)},q(x)=r(x)P_0(x)$<br>$𝔏y=λy⇔\hat𝔏y=λry$<br>Assuming that the boundary conditions are self-adjoint, $\hat𝔏y=λry$ is fully self-adjoint
+$$r(x)>0⇒⟨y_k,ry_k⟩=\int r(x)\left|y_k(x)\right|^2>0$$
+$$λ_k^*⟨y_k,ry_k⟩=⟨y_k,𝔏y_k⟩=⟨𝔏y_k,y_k⟩=λ_k⟨ry_k,y_k⟩⇒λ_k∈ℝ$$and for $j≠k$,$$λ_k⟨y_j,ry_k⟩=⟨y_j,𝔏y_k⟩=⟨𝔏y_j,y_k⟩=λ_j⟨ry_j,y_k⟩⇒⟨y_j,ry_k⟩=0$$</li>
+<li>$H_0(x)=1,H_1(x)=2x,H_2(x)=4x^2-2,H_3(x)=8x^3-12x,H_4=4 \left(4 x^4-12 x^2+3\right)$.<br>Suppose $H_{n-1}(x)$ is a polynomial of degree $n-1$,\begin{align*}
+H_n(x)&=(-1)^n e^{x^2} \frac{d^n}{d x^n} e^{-x^2}
+\\&=(-1)^n e^{x^2} \frac{d}{dx}\left(\frac{d^{n-1}}{d x^{n-1}} e^{-x^2}\right)
+\\&=-e^{x^2} \frac{d}{d x}\left(e^{-x^2}H_{n-1}(x)\right)
+\\&=-e^{x^2} \left(e^{-x^2}H'_{n-1}(x)-2xe^{-x^2}H_{n-1}(x)\right)
+\\&=-H'_{n-1}(x)+2xH_{n-1}(x)
+\end{align*}$\deg H'_{n-1}(x)≤n-2,\deg2xH_{n-1}(x)=n⇒H_n(x)$ is a polynomial of degree $n$.</li>
+<li>Let $I_{m,n}=∫_{-∞}^∞ H_m(x) H_n(x) e^{-x^2}\ d x$.
+\begin{align*}
+I_{m,n}&=(-1)^n∫_{-∞}^∞ H_m(x)⋅\frac{d^n}{dx^n}e^{-x^2}\ d x
+\\&=\left[H_m(x)⋅\frac{d^{n-1}}{dx^{n-1}}e^{-x^2}\right]_{-∞}^∞+(-1)^{n-1}∫_{-∞}^∞ \frac{d}{dx}H_m(x)⋅\frac{d^{n-1}}{dx^{n-1}}e^{-x^2}\ d x
+\\&=\left[\frac{d}{dx}H_m(x)⋅\frac{d^{n-2}}{dx^{n-2}}e^{-x^2}\right]_{-∞}^∞+(-1)^{n-2}∫_{-∞}^∞ \frac{d^2}{dx^2}H_m(x)⋅\frac{d^{n-2}}{dx^{n-2}}e^{-x^2}\ d x
+\\&⋮
+\\&=\left[\frac{d^{n-1}}{dx^{n-1}}H_m(x)⋅e^{-x^2}\right]_{-∞}^∞+∫_{-∞}^∞\frac{d^n}{dx^n}H_m(x)⋅e^{-x^2}\ d x
+\end{align*}
+For $m&lt;n$, $\deg H_m(x)&lt;n$, so $\frac{d^n}{dx^n}H_m(x)=0$, so $I(m,n)=0$.<br>
+For $m>n$, by symmetry, $I(m,n)=0$.<br>
+For $m=n$, $H_n(x)=-H'_{n-1}(x)+2xH_{n-1}(x),H_1'(x)=2⇒\frac{d^n}{dx^n}H_n(x)=2n\frac{d^{n-1}}{dx^{n-1}}H_{n-1}(x)=⋯=2^nn!⇒I(n,n)=∫_{-∞}^∞2^nn!⋅e^{-x^2}\ d x=2^nn!\sqrtπ$.
+</li><li>$H_n(x)=(-1)^ne^{x^2}\frac{d^n}{dx^n}e^{-x^2}$ Replacing $x$ with $y=t-x$<br>$=e^{x^2}\left.\frac{d^n}{dy^n}e^{-y^2}\right|_{t=0}=e^{x^2}\left.\frac{d^n}{dt^n}e^{-y^2}\right|_{t=0}=\left.\frac{d^n}{dt^n}e^{2tx-t^2}\right|_{t=0}$<br>So $e^{2 x t-t^2}=\sum_{n=0}^∞\frac{1}{n!} H_n(x) t^n$
+\begin{align*}
+\sum_{n=1}^∞\frac d{dx}[e^{-x^2}H_n'(x)]\frac{t^n}{n!}
+&=\frac d{dx}\left(e^{-x^2}\sum_{n=0}^∞H_n'(x)\frac{t^n}{n!}\right)\\
+&=\frac d{dx}\left(e^{-x^2}\frac d{dx}e^{2xt-t^2}\right)\\
+&=2t\frac d{dx}e^{-(x-t)^2}\\
+&=-2t\frac d{dt}e^{-(x-t)^2}\\
+&=-2e^{-x^2}t\frac d{dt}e^{2xt-t^2}\\
+&=-2e^{-x^2}\sum_{n=1}^∞H_n(x)\frac{nt^n}{n!}\\
+\end{align*}
+$⇒\frac d{dx}[e^{-x^2}H_n'(x)]=-2ne^{-x^2}H_n(x)$[Sturm-Liouville]<br>$⇒H_n''(x)-2 xH_n'(x)+2 nH_n(x)=0$</li></ol></li><li><ol type="a"><li>$ϕ_{k+1}(ϵ)=o(ϕ_k(ϵ))$ as $ϵ→0$, i.e. each term is smaller magnitude than the previous term.<br>$f(ϵ)-\sum_{k=0}^N a_kϕ_k(ϵ)=o(ϕ_N(ϵ))$, i.e. the approximation gets more accurate as $N$ increases.<br>For a convergent series of the form\[f(ϵ)=\sum^∞_{k=0}a_kϕ_k(ϵ),\]we require that the partial sum\[f_N(ϵ) =\sum^N_{k=0}a_kϕ_k(ϵ),\]converges to $f(ϵ)$ as $N→∞$, with $ϵ$ held fixed. For an asymptotic expansion\[f(ϵ)∼\sum_ka_kϕ_k(ϵ),\]we instead require that the partial sum converges asymptotically to $f(ϵ)$ as $ϵ→0$, with $N$ held fixed.<br>$\frac1{1-ϵ}$ and $\frac1{1-ϵ}+e^{-1/ϵ}$ has the same asympototic expansion $\sum_{k≥0}ϵ^k$ as $ϵ→0$<br>$\frac1{1-ϵ^{-1}}$ and $\frac1{1-ϵ^{-1}}+\logϵ$ has the same asympototic expansion $\sum_{k≤0}ϵ^k$ as $ϵ→0$</li><li><ol type="i"><li>At O(1) we get $y_0''(x)+y_0(x)=0,y_0'(0)=y_0'(2π)=0⇒y_0(x)=A\cos x$<br>At $O(ϵ)$ we get $y_1''(x)+y_1(x)=A\cos^nx$ by FAT since $y''+y$ is self-adjoint, the condition for existence of solution is $⟨A\cos^nx,y_0(x)⟩=0⇔∫_0^{2π}\cos^{n+1}x\mathrm{~d}x=0$<br>For $n$ odd, $∫_0^{2π}\cos^{n+1}x\mathrm{~d}x>0$; for $n$ even, by symmetry $∫_0^{2π}\cos^{n+1}x\mathrm{~d}x=0$.<br>So when $n$ is odd, the asympototic expansion yields only the trivial solution.</li>
+<li>O(1): $y_0''(x)+y_0(x)=0,y_0(0)=0,y_0'(0)=1⇒$\[y_0(x)=\sin x\]O(ϵ): $y_1''(x)+y_1(x)=\sin^3x=\frac{3 \sin x-\sin 3 x}4,y_1(0)=y_1'(0)=0⇒$\[y_1(x)=\frac{9\sin x+\sin3x-12 x\cos x}{32}=\frac{x^5}{20}+O(x^7)\]$⇒y(x;ϵ)∼\sin x+ϵ\frac{9\sin x+\sin3x-12 x\cos x}{32}+…$<br>The expansion becomes nonuniform when $\sin x∼ϵx^5⇔x=O(ϵ^{-1/4})$</li></ol></li><li>$p(x)$ is strictly negative, so boundary layer at right ($x=1$)<br>Outer expansion: substitute $y∼y_0+O(ϵ)$ into the equation\[p(x)y'_0(x)+y_0(x)=0,y_0(0)=1⇒y_0(x)=\exp\left(-\int_0^x\frac1{p(x)}dx\right)\]Inner expansion: dominant balance $ϵy''(x)$ with $p(x)y'(x)$, let $x=1-ϵX,y(x)=Y(X),X∼X_0+O(ϵ)$, then $y'(x)=-ϵ^{-1}Y'(X),y''(x)=ϵ^{-2}Y''(X)$\[Y_0''(X)-p(1)Y_0'(X)=0,Y_0(0)=0⇒Y_0(X)=C(1-e^{-X})\]From matching $C=\lim_{X→∞}Y_0(X)=\lim_{x→1-}y_0(x)=\exp\left(-\int_0^1\frac1{p(x)}dx\right)$<br>$⇒y∼\exp\left(-\int_0^1\frac1{p(x)}dx\right)(1-e^{x-1\overϵ})+O(ϵ)$</li></ol></li></ol>
