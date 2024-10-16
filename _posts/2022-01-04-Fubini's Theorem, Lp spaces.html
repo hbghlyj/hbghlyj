@@ -11,37 +11,37 @@ div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 
 </style>
 <div class="q">
 Evaluate $\int_0^1\left(\int_0^x e^{-y}d y\right)d x$ and $\int_0^1\left(\int_0^{x-x^2}(x+y)d y\right)d x$
-<ul class="litype_4"><li>directly;
-</li><li>by reversing the order of integration.</li></ul></div>
-<ul class="litype_4">
+<ol type="a"><li>directly;
+</li><li>by reversing the order of integration.</li></ol></div>
+<ol type="a">
 <li>$$\int_0^1\left(\int_0^x e^{-y}d y\right)d x=\int_0^1\left(1-e^{-x}\right)d x=e^{-1}$$
 $$\int_0^1\left(\int_0^{x-x^2}(x+y)d y\right)d x=\int_0^1\left((x-x^2)x+\frac12(x-x^2)^2\right)d x=\int_0^1\left(\frac32x^2-2x^3+\frac12x^4\right)d x=\frac1{10}$$
 </li><li>$e^{-y}>0$ and $(x,y)↦e^{-y}$ is measurable, by Thm 8.1. (Tonelli)$$\int_0^1\left(\int_0^x e^{-y}d y\right)d x=\int_0^1\left(\int_y^1 e^{-y}d x\right)d y=\int_0^1(1-y)e^{-y}d y=ye^{-y}|_0^1=e^{-1}$$$x+y>0$ and $(x,y)↦x+y$ is measurable, by Thm 8.1. (Tonelli)
 $$\int_0^1\left(\int_0^{x-x^2}(x+y)d y\right)d x=\int_0^1\left(\int_{\frac12-\sqrt{\frac14-y}}^{\frac12+\sqrt{\frac14-y}}(x+y)d x\right)d y=\int_0^{1/4}(2y+1)\sqrt{\frac14-y}\,dy$$
 Substitute $u=\sqrt{\frac14-y}$
-$$=\int_{1/2}^0\left(\frac32-2u^2\right)u(-2u)du=\int_{1/2}^0(4u^4-3u^2)du=\frac1{10}$$</li></ul>
+$$=\int_{1/2}^0\left(\frac32-2u^2\right)u(-2u)du=\int_{1/2}^0(4u^4-3u^2)du=\frac1{10}$$</li></ol>
 <div class="q">In each of the following cases, is $f$ integrable over the given region?
-<ul class="litype_4"><li>$f(x,y)=e^{-x y}$ over $[0,∞)×[0,∞)$</li>
+<ol type="a"><li>$f(x,y)=e^{-x y}$ over $[0,∞)×[0,∞)$</li>
 <li>$f(x,y)=e^{-x y}$ over $\left\{(x,y):0&lt;x&lt;y&lt;x+x^2\right\}$</li>
 <li>$f(x,y)=\frac{(\sin x)(\sin y)}{x^2+y^2}$ over $\left(-\fracπ2,\fracπ2\right)×\left(-\fracπ2,\fracπ2\right)$.
-[Applications of Tonelli or Fubini should be carefully justified.]</li></ul></div><ul class="litype_4"><li>$f$ is continuous on $ℝ^2$, so it is measurable. $f(x,y)>0$, by Thm 8.1. (Tonelli)\[\int_0^∞\int_0^∞e^{-xy}dydx=\int_0^∞\frac1xdx=∞\]So $f$ is not integrable over $[0,∞)×[0,∞)$.</li><li>Let $M=\sup_{x&gt;0}\frac{1-e^{-x^3}}{x^2}$ [it is bounded since it is continuous on $(0,∞)$ and $\lim_{x→∞}\frac{1-e^{-x^3}}{x^2}=M\lim_{x→0+}\frac{1-e^{-x^3}}{x^2}=0$]\[\int_0^∞\int_x^{x+x^2}e^{-xy}dydx=\int_0^∞\frac{1-e^{-x^3}}xe^{-x^2}dx&lt;M\int_0^∞xe^{-x^2}dx=\frac M2\]By Thm 8.3. (Tonelli), $f$ is integrable over $\left\{(x,y):0&lt;x&lt;y&lt;x+x^2\right\}$.</li><li>$f$ is continuous almost everywhere on $ℝ^2$, so it is measurable.
+[Applications of Tonelli or Fubini should be carefully justified.]</li></ol></div><ol type="a"><li>$f$ is continuous on $ℝ^2$, so it is measurable. $f(x,y)>0$, by Thm 8.1. (Tonelli)\[\int_0^∞\int_0^∞e^{-xy}dydx=\int_0^∞\frac1xdx=∞\]So $f$ is not integrable over $[0,∞)×[0,∞)$.</li><li>Let $M=\sup_{x&gt;0}\frac{1-e^{-x^3}}{x^2}$ [it is bounded since it is continuous on $(0,∞)$ and $\lim_{x→∞}\frac{1-e^{-x^3}}{x^2}=M\lim_{x→0+}\frac{1-e^{-x^3}}{x^2}=0$]\[\int_0^∞\int_x^{x+x^2}e^{-xy}dydx=\int_0^∞\frac{1-e^{-x^3}}xe^{-x^2}dx&lt;M\int_0^∞xe^{-x^2}dx=\frac M2\]By Thm 8.3. (Tonelli), $f$ is integrable over $\left\{(x,y):0&lt;x&lt;y&lt;x+x^2\right\}$.</li><li>$f$ is continuous almost everywhere on $ℝ^2$, so it is measurable.
 $$\int_0^{π/2}\int_0^{π/2}\left|(\sin x)(\sin y)\over x^2+y^2\right|dxdy≤\int_0^{π/2}\int_0^{π/2}{xy\over x^2+y^2}dxdy≤\int_0^{π/2}\int_0^{π/2}{1\over2}dxdy$$
 By Fubini's theorem, $f$ is integrable over $\left(0,\fracπ2\right)×\left(0,\fracπ2\right)$.<br>
-By substitution $x↦-x,y↦-y$, $f$ is measurable over $\left(-\fracπ2,\fracπ2\right)×\left(-\fracπ2,\fracπ2\right)$.</li></ul>
-<div class="q"><ul class="litype_4"><li>Let $J_0(x)=\frac{2}{π}\int_0^{π/2}\cos(x\cos θ)d θ$. Show that $\int_0^∞ J_0(x)e^{-a x}d x=\frac{1}{\sqrt{1+a^2}}$ if $a&gt;0$.</li><li>Take $b&gt;a&gt;1$. By considering $x^{-y}$ over $(1,∞)×(a,b)$, show that $\int_1^∞\frac{x^{-a}-x^{-b}}{\log x}d x$ exists, and find its value.</li></ul></div><ul class="litype_4"><li>$\left|\cos(x\cos θ)\right|≤1⇒\left|J_0(x)\right|≤1$<br>
+By substitution $x↦-x,y↦-y$, $f$ is measurable over $\left(-\fracπ2,\fracπ2\right)×\left(-\fracπ2,\fracπ2\right)$.</li></ol>
+<div class="q"><ol type="a"><li>Let $J_0(x)=\frac{2}{π}\int_0^{π/2}\cos(x\cos θ)d θ$. Show that $\int_0^∞ J_0(x)e^{-a x}d x=\frac{1}{\sqrt{1+a^2}}$ if $a&gt;0$.</li><li>Take $b&gt;a&gt;1$. By considering $x^{-y}$ over $(1,∞)×(a,b)$, show that $\int_1^∞\frac{x^{-a}-x^{-b}}{\log x}d x$ exists, and find its value.</li></ol></div><ol type="a"><li>$\left|\cos(x\cos θ)\right|≤1⇒\left|J_0(x)\right|≤1$<br>
 $\int_0^∞e^{-a x}\,d x=\frac1a⇒J_0(x)e^{-a x}$ is integrable on (0, ∞)<br>
 By Thm 8.3. [Tonelli]
 \begin{align*}&\frac{2}{π}\int_0^∞\int_0^{π/2}\cos(x\cos θ)e^{-a x}d θd x\\&=\frac{2}{π}\int_0^{π/2}\int_0^∞\cos(x\cos θ)e^{-a x}d xd θ&\because\small\int_0^∞\cos(x\cos θ)e^{-a x}d x=ℒ\{\cos(x\cos θ)\}(a)=\frac{a}{a^2+\cos^2θ}\\&=\frac{2}{π}\int_0^{π/2}\frac{a}{a^2+\cos^2θ}d θ\\&=\frac{2a}{π}\int_0^{π/2}\frac{\sec^2θ}{a^2\sec^2θ+1}d θ&\text{Substitute }x=\tanθ\\&=\frac{2a}{π}\int_0^∞\frac1{a^2(x^2+1)+1}dx\\&=\frac{2a}{π(1+a^2)}\int_0^∞\frac1{\frac{a^2}{a^2+1}x^2+1}dx\\&=\frac1{\sqrt{1+a^2}}\end{align*}</li><li>$x^{-y}>0$ and $(x,y)↦x^{-y}$ is measurable, by Fubini's theorem$$\int_1^∞\frac{x^{-a}-x^{-b}}{\log x}d x=\int_1^∞\int_a^bx^{-y}dydx=\int_a^b\int_1^∞x^{-y}dxdy$$
 since $y>1$, $\lim_{x→∞}x^{1-y}=0$
-$$=\int_a^b\frac1{y-1}dy=\log\left(b-1\over a-1\right)$$</li></ul>
+$$=\int_a^b\frac1{y-1}dy=\log\left(b-1\over a-1\right)$$</li></ol>
 <div class="q">Let $f:ℝ→ℝ$ be non-negative and measurable, and let
 $$
 E=\left\{(x,y)∈ℝ^2:0≤y≤f(x)\right\}
 $$
-<ul class="litype_4"><li>Show that $f$ is measurable if and only if $E$ is measurable [Recall that an argument was given in lectures to show that if $E_1,E_2$ are measurable subsets of ℝ, then $E_1× E_2$ is measurable in $ℝ^2$.]</li>
-<li>If $f$ (and hence by (a) $E$) is measurable show that $m(E)=\int_ℝ f(x)d x$.</li></ul></div><ul class="litype_4"><li>Define $g:ℝ×ℝ^{≥0}→ℝ,g(x,y)=f(x)$. Then $\{(x,y)∣g(x,y)≤α\}=\{x∣f(x)≤α\}×ℝ$, so $g$ is measurable.<br>Also, the projection map $h:ℝ×ℝ^{≥0}→ℝ,h(x,y)=y$ is measurable.<br>
+<ol type="a"><li>Show that $f$ is measurable if and only if $E$ is measurable [Recall that an argument was given in lectures to show that if $E_1,E_2$ are measurable subsets of ℝ, then $E_1× E_2$ is measurable in $ℝ^2$.]</li>
+<li>If $f$ (and hence by (a) $E$) is measurable show that $m(E)=\int_ℝ f(x)d x$.</li></ol></div><ol type="a"><li>Define $g:ℝ×ℝ^{≥0}→ℝ,g(x,y)=f(x)$. Then $\{(x,y)∣g(x,y)≤α\}=\{x∣f(x)≤α\}×ℝ$, so $g$ is measurable.<br>Also, the projection map $h:ℝ×ℝ^{≥0}→ℝ,h(x,y)=y$ is measurable.<br>
 Therefore $T=g-h,T(x,y)=f(x)-y$ is measurable. We conclude that $E=T^{-1}(ℝ^{≥0})$ is measurable.<br>
-Conversely, if $E$ is measurable, $∀a∈ℝ:E∩\{(x,y):y>a\}$ is measurable, its projection on $x$-axis $\{x:f(x)>a\}$ is measurable, so $f$ is measurable.</li><li>$χ_E:ℝ^2→ℝ^{≥0}$ is measurable, by Fubini's theorem, $m(E)=\int_{ℝ^2}χ_E=\int_ℝ\kern-1ex\int_ℝχ_Edydx=\int_ℝ f(x)d x$</li></ul><div class="q">Let $f∈ℒ^1(ℝ)$ be non-negative with $\int_{-∞}^∞ f(x)d x=1$, and let $F(x)=\int_{-∞}^x f(y)d y$.<br>
+Conversely, if $E$ is measurable, $∀a∈ℝ:E∩\{(x,y):y>a\}$ is measurable, its projection on $x$-axis $\{x:f(x)>a\}$ is measurable, so $f$ is measurable.</li><li>$χ_E:ℝ^2→ℝ^{≥0}$ is measurable, by Fubini's theorem, $m(E)=\int_{ℝ^2}χ_E=\int_ℝ\kern-1ex\int_ℝχ_Edydx=\int_ℝ f(x)d x$</li></ol><div class="q">Let $f∈ℒ^1(ℝ)$ be non-negative with $\int_{-∞}^∞ f(x)d x=1$, and let $F(x)=\int_{-∞}^x f(y)d y$.<br>
 Assume that $x f(x)∈ℒ^1(ℝ)$. Use Fubini's Theorem to prove that
 $$
 \int_0^∞(1-F(x))d x=\int_0^∞ x f(x)d x, \int_{-∞}^0 F(x)d x=-\int_{-∞}^0 x f(x)d x
@@ -55,7 +55,7 @@ $$
 $$
 [Remark (not a hint): Imagine that $f$ is the probability density function of a random variable $X$. The first part of the question then says that $𝔼(X)=\int_0^∞(ℙ[X&gt;x]-ℙ[X≤-x])d x$. This formula holds for all random variables (discrete, continuous, etc) with $𝔼({|X|})&lt;∞$. In particular it holds for $g(X)$. Then the last part proves that $𝔼[g(X)]=\int_{-∞}^∞ f(x)g(x)d x$, a fact sometimes known as the Law of the Unconscious Statistician.]
 </div>
-<ul class="litype_3"><li>By assumption $y\mapsto f(y)$ is integrable, $x\mapsto xf(x)$ is integrable.
+<ol><li>By assumption $y\mapsto f(y)$ is integrable, $x\mapsto xf(x)$ is integrable.
 $$\int_{-\infty}^{\infty} f(x) d x=1, F(x)=\int_{-\infty}^x f(y) d y\implies 1-F(x)=\int_x^{\infty} f(y) d y$$
 Applying Fubini's Theorem
 $$\int_0^{\infty}(1-F(x)) d x=\int_0^{\infty}\int_x^{\infty} f(y) dydx=\int_0^{\infty}\int_0^yf(y) dxdy=\int_0^{\infty}yf(y) dy$$
@@ -66,63 +66,63 @@ $$\int_{-\infty}^0 F(x) d x=\int_{-\infty}^0\int_{-\infty}^x f(y) d ydx=\int_{-\
 &=\int_{\{g(x)>0\}}\int_0^{g(x)}f(x) dydx-\int_{\{g(x)\le 0\}}\int^{-g(x)}_0f(x) dydx\\
 &=\int_{\{g(x)>0\}}f(x)g(x)dx+\int_{\{g(x)\le 0\}}f(x)g(x)dx\\
 &=\int_{-\infty}^\infty f(x)g(x)dx
-\end{align*}</li></ul>
-<div class="q"><ul class="litype_4"><li>Let $α&gt;1$, $f(x,y)=\left(x^2+y^2\right)^{-α}$, $g(x,y)=\left(1+x^2+y^2\right)^{-α}$. Show that $f$ is integrable over $[1,∞)×[0,∞)$.<br>Deduce that $f$ is integrable over $[0,1]×[1,∞)$, and that $g$ is integrable over $ℝ^2$.</li><li>Use polar coordinates to show that $g$ is integrable over $ℝ^2$.</li></ul></div>
-<ul class="litype_4"><li>Change of variables $y=u x$$$\int_1^∞\int_0^∞\left(x^2+y^2\right)^{-α}dydx=\int_1^∞x^{1-2α}dx\int_0^∞\left(1+u^2\right)^{-α}du$$Since $2-2α&lt;0$, $x^{1-2α}$ is integrable on $(1,∞)$.<br>
+\end{align*}</li></ol>
+<div class="q"><ol type="a"><li>Let $α&gt;1$, $f(x,y)=\left(x^2+y^2\right)^{-α}$, $g(x,y)=\left(1+x^2+y^2\right)^{-α}$. Show that $f$ is integrable over $[1,∞)×[0,∞)$.<br>Deduce that $f$ is integrable over $[0,1]×[1,∞)$, and that $g$ is integrable over $ℝ^2$.</li><li>Use polar coordinates to show that $g$ is integrable over $ℝ^2$.</li></ol></div>
+<ol type="a"><li>Change of variables $y=u x$$$\int_1^∞\int_0^∞\left(x^2+y^2\right)^{-α}dydx=\int_1^∞x^{1-2α}dx\int_0^∞\left(1+u^2\right)^{-α}du$$Since $2-2α&lt;0$, $x^{1-2α}$ is integrable on $(1,∞)$.<br>
 Since $\left(1+u^2\right)^{-α}&lt;\left(1+u^2\right)^{-1}$ and $∫_0^∞\left(1+u^2\right)^{-1}du=\arctan(u)|_0^∞=\fracπ2$, $\left(1+u^2\right)^{-α}$ is integrable on $ℝ^{≥0}$.<br>
 By Thm 8.3. and $f≥0$, $f$ is integrable over $[1,∞)×[0,∞)$. So $f$ is integrable over $[0,1]×[1,∞)$.<br>
-$g≤f⇒g$ is integrable on $[1,∞)×[0,∞)$, but $g(x,y)=g(y,x)=g(-x,-y)$, so $g$ is integrable on $ℝ^2∖[0,1]^2$<br>$g$ is continuous, so integrable on $[0,1]^2$, so integrable on $ℝ^2$.</li><li>$g(x,y)=\left(1+r^2\right)^{-α}$$$\int_{ℝ^2}g(x,y)dxdy=\int_0^∞\int_0^{2π}\left(1+r^2\right)^{-α}rdθdr=π\int_0^∞2r\left(1+r^2\right)^{-α}dr=\left.\frac{π\left(1+r^2\right)^{1-α}}{1-α}\right|_{r=0}^∞$$Since $1-α&lt;0$, we have $\lim_{r→∞}\left(1+r^2\right)^{1-α}=0⇒\int_{ℝ^2}g(x,y)dxdy=\fracπ{α-1}$</li></ul>
+$g≤f⇒g$ is integrable on $[1,∞)×[0,∞)$, but $g(x,y)=g(y,x)=g(-x,-y)$, so $g$ is integrable on $ℝ^2∖[0,1]^2$<br>$g$ is continuous, so integrable on $[0,1]^2$, so integrable on $ℝ^2$.</li><li>$g(x,y)=\left(1+r^2\right)^{-α}$$$\int_{ℝ^2}g(x,y)dxdy=\int_0^∞\int_0^{2π}\left(1+r^2\right)^{-α}rdθdr=π\int_0^∞2r\left(1+r^2\right)^{-α}dr=\left.\frac{π\left(1+r^2\right)^{1-α}}{1-α}\right|_{r=0}^∞$$Since $1-α&lt;0$, we have $\lim_{r→∞}\left(1+r^2\right)^{1-α}=0⇒\int_{ℝ^2}g(x,y)dxdy=\fracπ{α-1}$</li></ol>
 <div class="q">
-<ul class="litype_4">
+<ol type="a">
 <li>For $p&gt;0$, calculate $‖f‖_p$ when $f$ is (i) $χ_{(0,1)}$, (ii) $χ_{(1,2)}$, (iii) $χ_{(0,2)}$.</li>
 <li>Now assume that $0&lt;p&lt;1$.
-<ul class="litype_5"><li>Is $‖⋅‖_p$ a norm on $L^p$ ?</li>
-<li>For $f,g∈L^p(ℝ)$, let $d_p(f,g)=∫\left|f-g\right|^p$. Show that $d_p$ is a metric on $L^p(ℝ)$.</li></ul></li></ul></div>
-<ul class="litype_4"><li>${‖f‖}_p=\left(∫_ℝ{|f|}^p\right)^{1/p}$, so (i) 1, (ii) 1, (iii) $2^{1/p}$.</li><li><ul class="litype_5"><li>$χ_{(0,2)}=χ_{(0,1]}+χ_{(1,2)}$ but$${‖χ_{(0,1]}‖}_p+{‖χ_{(1,2)}‖}_p=2&lt;{‖χ_{(0,2)}‖}_p=2^{1/p}$$so $‖⋅‖_p$ doesn't satisfy triangle inequality, so it is not a norm on $L^p$.</li><li>$1={a\over a+b}+{b\over a+b}≤\left(a\over a+b\right)^p+\left(b\over a+b\right)^p⇒(a+b)^p≤a^p+b^p$ for all $a,b>0$. <br>Obviously $d_p$ is positive-definite, symmetric. To prove triangle inequality,$$\int_ℝ\left({|f-g|}^p+{|g-h|}^p\right)≥\int_ℝ({|f-g|}+{|g-h|})^p≥\int_ℝ{|f-h|}^p$$So $d_p(f, g)+d_p(g, h)≥d_p(f, h)$. So $d_p$ is a metric on $L^p(ℝ)$.</li></ul></li></ul>
+<ol type="a"><li>Is $‖⋅‖_p$ a norm on $L^p$ ?</li>
+<li>For $f,g∈L^p(ℝ)$, let $d_p(f,g)=∫\left|f-g\right|^p$. Show that $d_p$ is a metric on $L^p(ℝ)$.</li></ol></li></ol></div>
+<ol type="a"><li>${‖f‖}_p=\left(∫_ℝ{|f|}^p\right)^{1/p}$, so (i) 1, (ii) 1, (iii) $2^{1/p}$.</li><li><ol type="a"><li>$χ_{(0,2)}=χ_{(0,1]}+χ_{(1,2)}$ but$${‖χ_{(0,1]}‖}_p+{‖χ_{(1,2)}‖}_p=2&lt;{‖χ_{(0,2)}‖}_p=2^{1/p}$$so $‖⋅‖_p$ doesn't satisfy triangle inequality, so it is not a norm on $L^p$.</li><li>$1={a\over a+b}+{b\over a+b}≤\left(a\over a+b\right)^p+\left(b\over a+b\right)^p⇒(a+b)^p≤a^p+b^p$ for all $a,b>0$. <br>Obviously $d_p$ is positive-definite, symmetric. To prove triangle inequality,$$\int_ℝ\left({|f-g|}^p+{|g-h|}^p\right)≥\int_ℝ({|f-g|}+{|g-h|})^p≥\int_ℝ{|f-h|}^p$$So $d_p(f, g)+d_p(g, h)≥d_p(f, h)$. So $d_p$ is a metric on $L^p(ℝ)$.</li></ol></li></ol>
 <div class="q">Consider the relation $∼$ on the space of measurable functions $f:ℝ→ℝ$ given by: $f∼g⟺f=g$ a.e.<br>
 State which properties of null sets are used to prove each of the following true statements $(f,g,h$, etc are measurable functions) :
-<ul class="litype_4"><li>$f∼f$</li>
+<ol type="a"><li>$f∼f$</li>
 <li>$f∼g⟹g∼f$</li>
 <li>$f∼g,g∼h⟹f∼h$</li>
 <li>If $f_n∼g_n$ for all $n∈ℕ$, then $\sup f_n∼\sup g_n$</li>
 <li>If $f∼g$, then $h∘f∼h∘g$.<br>
 Give an example where $h$ is injective, $f∼g$, but $f∘h≁g∘h$.</li></div>
-<ul class="litype_4"><li>$\{x:f(x)≠f(x)\}=∅$ is null.</li><li>$\{x:f(x)≠g(x)\}=\{x:g(x)≠f(x)\}$ is null.</li><li>$\{x:f(x)≠g(x)\},\{x:g(x)≠h(x)\}$ are null, so $\{x:f(x)≠g(x)\}∪\{x:g(x)≠h(x)\}$ is null.<br>$\{x:f(x)≠h(x)\}⊂\{x:f(x)≠g(x)\}∪\{x:g(x)≠h(x)\}$, so $\{x:f(x)≠h(x)\}$ is null.</li><li>$\{x:f_n(x)≠g_n(x)\}$ is null for all $n∈ℕ$, so $⋃_{n∈ℕ}\{x:f_n(x)≠g_n(x)\}$ is null.<br>$\{x:\sup f_n(x)≠\sup g_n(x)\}⊂⋃_{n∈ℕ}\{x:f_n(x)≠g_n(x)\}$, so $\{x:\sup f_n(x)≠\sup g_n(x)\}$ is null.</li><li>$\{x:f(x)≠g(x)\}$ is null and $\{x:h∘f(x)≠h∘g(x)\}⊂\{x:f(x)≠g(x)\}$, so $\{x:h∘f(x)≠h∘g(x)\}$ is null.<br>
-Let $S$ be Cantor set, $f(x)=-g(x)=χ_S$, and $h:ℝ→S$ be a bijection. $\{x:f(x)≠g(x)\}=S⇒f∼g$.<br>$f∘h(x)=1∀x∈ℝ,g∘h(x)=-1∀x∈ℝ⇒f∘h≁g∘h$.</li></ul>
+<ol type="a"><li>$\{x:f(x)≠f(x)\}=∅$ is null.</li><li>$\{x:f(x)≠g(x)\}=\{x:g(x)≠f(x)\}$ is null.</li><li>$\{x:f(x)≠g(x)\},\{x:g(x)≠h(x)\}$ are null, so $\{x:f(x)≠g(x)\}∪\{x:g(x)≠h(x)\}$ is null.<br>$\{x:f(x)≠h(x)\}⊂\{x:f(x)≠g(x)\}∪\{x:g(x)≠h(x)\}$, so $\{x:f(x)≠h(x)\}$ is null.</li><li>$\{x:f_n(x)≠g_n(x)\}$ is null for all $n∈ℕ$, so $⋃_{n∈ℕ}\{x:f_n(x)≠g_n(x)\}$ is null.<br>$\{x:\sup f_n(x)≠\sup g_n(x)\}⊂⋃_{n∈ℕ}\{x:f_n(x)≠g_n(x)\}$, so $\{x:\sup f_n(x)≠\sup g_n(x)\}$ is null.</li><li>$\{x:f(x)≠g(x)\}$ is null and $\{x:h∘f(x)≠h∘g(x)\}⊂\{x:f(x)≠g(x)\}$, so $\{x:h∘f(x)≠h∘g(x)\}$ is null.<br>
+Let $S$ be Cantor set, $f(x)=-g(x)=χ_S$, and $h:ℝ→S$ be a bijection. $\{x:f(x)≠g(x)\}=S⇒f∼g$.<br>$f∘h(x)=1∀x∈ℝ,g∘h(x)=-1∀x∈ℝ⇒f∘h≁g∘h$.</li></ol>
 <div class="q">
 Let $p&gt;1$
-<ul class="litype_4"><li>Find a sequence $\left(f_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}f_n(x)=0$ a.e. but $\lim_{n→∞}\left‖f_n\right‖_p≠0$.[<a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=40&zoom=auto,-86,264">Cor 9.6</a>]<br>For each $ϵ&gt;0$ find a measurable subset $E_ϵ$ of $[0,1]$ such that $m\left(E_ϵ\right)&lt;ϵ$ and $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.[Thm 9.7 Egorov’s Theorem]</li>
-<li>Find a sequence $\left(g_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}\left‖g_n\right‖_p=0$ but $\lim_{n→∞}g_n(x)$ does not exist for any $x∈(0,1)$. Find a subsequence $\left(g_{n_r}\right)$ such that $\lim_{r→∞}g_{n_r}(x)=0$ a.e.</li></ul>
-</div><ul class="litype_4"><li>
+<ol type="a"><li>Find a sequence $\left(f_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}f_n(x)=0$ a.e. but $\lim_{n→∞}\left‖f_n\right‖_p≠0$.[<a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=40&zoom=auto,-86,264">Cor 9.6</a>]<br>For each $ϵ&gt;0$ find a measurable subset $E_ϵ$ of $[0,1]$ such that $m\left(E_ϵ\right)&lt;ϵ$ and $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.[Thm 9.7 Egorov’s Theorem]</li>
+<li>Find a sequence $\left(g_n\right)$ in $L^p(0,1)$ such that $\lim_{n→∞}\left‖g_n\right‖_p=0$ but $\lim_{n→∞}g_n(x)$ does not exist for any $x∈(0,1)$. Find a subsequence $\left(g_{n_r}\right)$ such that $\lim_{r→∞}g_{n_r}(x)=0$ a.e.</li></ol>
+</div><ol type="a"><li>
 Let $f_n(x) =\sqrt[p]{n^2x^n(1-x)}\,(0 ≤ x ≤ 1)$, $f_n→0$ as $n→∞$ for all $x∈[0,1]$, but ${\left‖f_n\right‖_p\kern-.5ex=\sqrt[p]{\kern-.5ex\int^1_0f_n(x)^p\,dx}→1}$.<br>Let $E_ϵ=(1-\fracϵ2,1)$, then $m\left(E_ϵ\right)&lt;ϵ$. For $x∈[0,1]∖E_ϵ$ we have $x≤1-\fracϵ2,1-x≤1,$$$n^2x^n(1-x)≤n^2\left(1-\fracϵ2\right)^n$$therefore $f_n(x)→0$ uniformly on $[0,1]∖E_ϵ$.</li><li>[Ex 9.4.2] Consider the sequence $g_n(x)=χ_{[k2^{-m},(k+1)2^{-m}]}$ where $n=2^m+k$ with $0≤k≤2^m-1$.
 \begin{array}l
 χ_{[0,1]}\\
 χ_{[0,\frac12]}&χ_{[\frac12,1]}\\
 χ_{[0,\frac14]}&χ_{[\frac14,\frac12]}&χ_{[\frac12,\frac34]}&χ_{[\frac34,1]}\\…\end{array}As $n→∞$, $m→∞$, so $\left‖g_n\right‖_p=2^{-m/p}→0$.<br>
-For any $x∈(0,1)$, $∀N∃n_0,n_1>N:f_{n_0}(x)=0,f_{n_1}(x)=1$, so $\lim_{n→∞}g_n(x)$ doesn't exist.<br>Take $k,m$ such that $x∉[k2^{-m},(k+1)2^{-m}],0≤k≤2^m-1$, then $χ_{[(k2^r)2^{-m-r},(k2^r+1)2^{-m-r}]}(x)=0\,∀r$</li></ul>
+For any $x∈(0,1)$, $∀N∃n_0,n_1>N:f_{n_0}(x)=0,f_{n_1}(x)=1$, so $\lim_{n→∞}g_n(x)$ doesn't exist.<br>Take $k,m$ such that $x∉[k2^{-m},(k+1)2^{-m}],0≤k≤2^m-1$, then $χ_{[(k2^r)2^{-m-r},(k2^r+1)2^{-m-r}]}(x)=0\,∀r$</li></ol>
 <div class="q">Let $E⊂ℝ$ be measurable.
-<ul class="litype_4">
+<ol type="a">
 <li>Show that ${‖⋅‖}_∞$ gives a norm on $L^∞(E)$.</li>
-<li>Show that $\left(L^∞(E),{‖⋅‖}_∞\right)$ is complete.</li></ul></div>
-<ul class="litype_4"><li>${‖⋅‖}_∞=\inf\{C>0:{|f|}≤C\text{ a.e.}\}≥0$, and ${‖f‖}_∞=0⇔f=0$ a.e. So ${‖⋅‖}_∞$ is positive definite.<br>
+<li>Show that $\left(L^∞(E),{‖⋅‖}_∞\right)$ is complete.</li></ol></div>
+<ol type="a"><li>${‖⋅‖}_∞=\inf\{C>0:{|f|}≤C\text{ a.e.}\}≥0$, and ${‖f‖}_∞=0⇔f=0$ a.e. So ${‖⋅‖}_∞$ is positive definite.<br>
 For α>0, ${|f|}≤C$ a.e. ⇔ ${|αf|}≤αC$ a.e. So we have positive homogeneity ${‖αf‖}_∞=α{‖f‖}_∞$.<br>
 To prove the triangle inequality ${∥f+g∥}_∞≤{∥f∥}_∞+{∥g∥}_∞$:<br>
 From the definition of $L^∞$, there exists null sets $N_1,N_2$ such that: <center>${|f(x)|}≤{∥f∥}_∞$ for $x∉N_1$<br>${|g(x)|}≤{∥g∥}_∞$ for $x∉N_2$</center>Then, for $x∉N_1∪N_2$ we have
 <center>${|f(x)+g(x)|}≤{∥f∥}_∞+{∥g∥}_∞$</center>Since $N_1∪N_2$ is null, we have ${∥f+g∥}_∞≤{∥f∥}_∞+{∥g∥}_∞$.</li><li>Let $\left(f_n\right)_{n⩾1}$ be a Cauchy sequence in $L^∞$.<br>For $n,m$, there is a null set $N_{n,m}$ such that ${|f_n(x)-f_m(x)|}≤{‖f_n-f_m‖}_∞$ for $x∉N_{n,m}$.<br>Define $N≔\bigcup_{n,m}N_{n,m}$ then $N$ is null.<br>For fixed $x∉N$, $f_n(x)$ is a Cauchy sequence in ℝ, so it converges. Define $f(x)=\lim_{n→∞}f_n(x)$ for $x∉N$.<br>
 Given $ϵ>0$, $∃M>0,∀m,n>M:{‖f_m-f_n‖}_∞&lt;ϵ$.<br>
 Let $m→∞$, ${‖f-f_n‖}_∞&lt;ϵ$.
-Then $f_n→f$ in $L^∞$.</li></ul>
+Then $f_n→f$ in $L^∞$.</li></ol>
 <div class="q">A function $g:[0,∞)→ℝ$ is <i>convex</i> if
 $$
 g(x)=\sup\big\{α x+β:α y+β≤g(y)\text { for all }y∈[0,∞)\big\}
 $$
 [If $g$ is continuous on $[0,∞)$ with non-negative second derivative on $(0,∞)$, then $g$ is convex.]<br>Let $f:[0,1]→[0,∞)$ be bounded, measurable, and $M_n=\int_0^1 f^n d x={‖f‖}_{L^n}^n$. Show that
-<ul class="litype_4">
+<ol type="a">
 <li>$g\left(\int_0^1 f(x)d x\right)≤\int_0^1 g(f(x))d x$ for every convex function $g$.</li>
 <li>$M_n^2≤M_{n+1}M_{n-1}$;</li>
 <li>${‖f‖}_{L^n}≤M_{n+1}/M_n≤{‖f‖}_{L^∞}$.</li>
-<li>$\lim_{n→∞}M_{n+1}/M_n={‖f‖}_{L^∞}$.</li></ul></div>
+<li>$\lim_{n→∞}M_{n+1}/M_n={‖f‖}_{L^∞}$.</li></ol></div>
 <div class="noprint">Jensen's inequality <a href="Proof 2 (measure-theoretic form)">Proof 2 (measure-theoretic form)</a></div>
-<ul class="litype_4"><li>Define $x_0=\int_0^1 f(x)d x$. By definition $∃a,b$ such that $ax+b≤g(x)\;∀x≥0$ and $ax_0+b=g(x_0)$.<br>
+<ol type="a"><li>Define $x_0=\int_0^1 f(x)d x$. By definition $∃a,b$ such that $ax+b≤g(x)\;∀x≥0$ and $ax_0+b=g(x_0)$.<br>
 Then $g(f(x))≥af(x)+b\;∀x ∈[0,1]$.
-$$\int_0^1g(f(x))dx≥\int_0^1af(x)+b\,dx=a\int_0^1f(x)dx+b=ax_0+b=g(x_0)=g\left(\int_0^1f(x)dx\right)$$</li><li>By Cauchy-Schwarz inequality, since $f≥0$,$$M_n^2=\left(\int_0^1f^ndx\right)^2≤\left(\int_0^1f^{n+1}dx\right)\left(\int_0^1f^{n-1}dx\right)=M_{n+1} M_{n-1}$$</li><li>By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=39&zoom=auto,-86,211">Cor 9.3</a> ${‖f‖}_{L^n}≤{‖f‖}_{L^{n+1}}⇔{‖f‖}_{L^n}^{n+1}≤{‖f‖}_{L^{n+1}}^{n+1}⇔{‖f‖}_{L^n}≤M_{n+1}/M_n$<br>From (b)(d) we have ${M_n\over M_{n-1}}≤{M_{n+1}\over M_n}\implies{M_{n+1}\over M_n}≤\lim_{n→∞}{M_{n+1}\over M_n}={‖f‖}_{L^∞}$</li><li>By the <a href="https://en.wikipedia.org/wiki/Radius_of_convergence#Finding_the_radius_of_convergence">root test</a> $\lim_{n→∞}M_{n+1}/M_n=\lim_{n→∞}\sqrt[n]{M_n}=\lim_{n→∞}{‖f‖}_{L^n}={‖f‖}_{L^∞}$</li></ul>
+$$\int_0^1g(f(x))dx≥\int_0^1af(x)+b\,dx=a\int_0^1f(x)dx+b=ax_0+b=g(x_0)=g\left(\int_0^1f(x)dx\right)$$</li><li>By Cauchy-Schwarz inequality, since $f≥0$,$$M_n^2=\left(\int_0^1f^ndx\right)^2≤\left(\int_0^1f^{n+1}dx\right)\left(\int_0^1f^{n-1}dx\right)=M_{n+1} M_{n-1}$$</li><li>By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29962/mod_resource/content/6/integration.pdf#page=39&zoom=auto,-86,211">Cor 9.3</a> ${‖f‖}_{L^n}≤{‖f‖}_{L^{n+1}}⇔{‖f‖}_{L^n}^{n+1}≤{‖f‖}_{L^{n+1}}^{n+1}⇔{‖f‖}_{L^n}≤M_{n+1}/M_n$<br>From (b)(d) we have ${M_n\over M_{n-1}}≤{M_{n+1}\over M_n}\implies{M_{n+1}\over M_n}≤\lim_{n→∞}{M_{n+1}\over M_n}={‖f‖}_{L^∞}$</li><li>By the <a href="https://en.wikipedia.org/wiki/Radius_of_convergence#Finding_the_radius_of_convergence">root test</a> $\lim_{n→∞}M_{n+1}/M_n=\lim_{n→∞}\sqrt[n]{M_n}=\lim_{n→∞}{‖f‖}_{L^n}={‖f‖}_{L^∞}$</li></ol>
