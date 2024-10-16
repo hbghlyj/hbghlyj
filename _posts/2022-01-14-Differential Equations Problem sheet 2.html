@@ -1,0 +1,142 @@
+---
+mathjax: true
+tag: Differential Equations 2
+excerpt: sheet 2 — HT 2023
+---
+<style>.b{background-color: beige;text-indent:0;white-space:pre-wrap;}</style>
+<ol>
+<li>
+<b>Order relations.</b><ol type="a"><li>Determine the order as ϵ → 0 of $\frac{\sqrtϵ}{1-\cosϵ}$</li><li>Obtain an asymptotic expansion of exp(tan ϵ) in integer powers of ϵ up to O(ϵ<sup>4</sup>).</li><li>Show that log ϵ = o(ϵ<sup>−<i>p</i></sup>) as ϵ → 0<sup>+</sup> for all <i>p</i> > 0.</li></ol>
+<div class="b"><ol type="a"><li>$\frac{\sqrt{ϵ}}{1-\cos ϵ}=\frac{ϵ^{1/2}}{\frac12ϵ^2+O(ϵ^4)}∼2ϵ^{-3/2}$</li><li>Substitute $\tanϵ=ϵ+\frac{ϵ^3}3+O\left(ϵ^5\right)$ into $\exp(x)=1+x+\frac{x^2}2+\frac{x^3}6+\frac{x^4}{24}+O\left(x^5\right)$ we get\begin{align*}\exp(\tanϵ)&=1+ϵ+\frac{ϵ^3}3+O\left(ϵ^5\right)+\frac12\left(ϵ+\frac{ϵ^3}3+O\left(ϵ^5\right)\right)^2+\frac16\left(ϵ+O\left(ϵ^3\right)\right)^3+\frac1{24}\left(ϵ+O\left(ϵ^3\right)\right)^4+O\left(ϵ^5\right)\\&=1+ϵ+\frac{ϵ^3}3+\frac{ϵ^2}2+\frac{ϵ^4}3+\frac{ϵ^3}6+O\left(ϵ^5\right)\\&=1+ϵ+\frac{ϵ^2}2+\frac{ϵ^3}2+\frac{ϵ^4}3+O\left(ϵ^5\right)\end{align*}</li><li>Using $\lim_{x→0^+}\frac{\log x}{x^{-1}}=0$, let $x=ϵ^p$, $\lim_{ϵ→0^+}\frac{p\log ϵ}{ϵ^{-p}}=0$, factor out constant $p$, $\lim_{ϵ→0^+}\frac{\log ϵ}{ϵ^{-p}}=0$</li></ol></div>
+</li>
+<li>
+<b>Approximating roots.</b> Find expansions for all roots of the equations below as ϵ → 0 with two nonzero terms in each expansion:
+<ol type="a">
+<li>$ϵx^3-x+1=0$</li><li>$\tan x=\fracϵx$
+<small>[Hint: The roots are near <i>n</i>π for integer <i>n</i>, but the root near zero must be treated separately]</small></li>
+</ol>
+<div class="b"><div class="b"><ol type="a"><li>Setting $ϵ=0$ we get $x=1$. The root near 1 is $x=\sum_{n≥0}\frac{\binom{3n}{n}}{2n+1}⋅ϵ^n$
+To find the far-off roots: Dominant balance: $x=O(ϵ^{-1/2})$
+Set $x=Xϵ^{-1/2},X=X_0+ϵ^{1/2}X_1+O(ϵ)$. Plugging in the equation$$X^3-X+ϵ^{1/2}=0$$$O(ϵ^0):X_0^3-X_0=0⇒X_0=0,±1⇒±1$ are new solutions
+$O(ϵ^{1/2}):3X_0^2X_1-X_1+1=0⇒X_1=-1/2$
+$X=±1-\frac12ϵ^{1/2}+O(ϵ)$
+$x=±ϵ^{-1/2}-\frac12+O(ϵ^{1/2})$
+</li><li>Putting $x∼x_0+ϵx_1+O(ϵ^2)$ into the equation, expanding $\tan x$ at $x_0$,$$\left(\tan x_0+(1+\tan^2 x_0)ϵx_1+O(ϵ^2)\right)\left(x_0+ϵx_1+O(ϵ^2)\right)=ϵ$$Equating the constant terms\[x_0\tan x_0=0⇒x_0=kπ,k∈\Bbb Z\]The equation becomes$$\left(ϵx_1+O(ϵ^2)\right)\left(kπ+ϵx_1+O(ϵ^2)\right)=ϵ$$For $k≠0$, equating the coefficients of $ϵ$\[x_1=\frac1{kπ}\]we obtain the asymptotic expansion$$x\sim kπ+\fracϵ{kπ}+O(ϵ^2)$$<hr><small>The root near zero must be treated separately because leading order is different:</small>
+For $k=0$, equating the coefficient of $ϵ^1$ we get $0=1$😯
+When $x\to0$, $\tan x=x+O(x^3)$, so $x(x+O(x^3))=ϵ$, we must have $x=O(ϵ^{1/2})$. Let$$x∼ϵ^{1/2}(x_0+ϵx_1+O(ϵ^2))$$Plugging into the equation, if expanding $\tan x$ at $x_0$,\[\left(\tan(ϵ^{1/2}x_0)+(1+\tan^2(ϵ^{1/2}x_0))ϵ^{3/2}x_1+O(ϵ^{5/2})\right)ϵ^{1/2}\left(x_0+ϵx_1+O(ϵ^2)\right)=ϵ\]which is cumbersome. To get rid of $\tan()$ let us expand at 0 instead\[\left(ϵ^{1/2}x_0+ϵ^{3/2}x_1+O(ϵ^{5/2})+\frac13\left(ϵ^{1/2}x_0+O(ϵ^{3/2})\right)^3+O(ϵ^{5/2})\right)ϵ^{1/2}\left(x_0+ϵx_1+O(ϵ^2)\right)=ϵ\]Equating the coefficient of $ϵ^1$ we get$$x_0^2=1⇒x_0=±1$$Equating the coefficient of $ϵ^2$, using $x_0^2=1$ we get$$2x_0x_1+\frac{x_0^4}3=0⇒x_1=-\frac16x_0$$we obtain the asymptotic expansions $±ϵ^{1/2}(1-\fracϵ6+O(ϵ^2))$</li></div></li>
+<li><b>Regular perturbation.</b> Find the first two terms in an asymptotic expansion in powers of the small parameter ϵ of the solution to$$xy'(x)+y(x)=ϵy(x)^{1/2}, x>1, y(1)=1$$Explain why the expansion is not valid as $x→∞$. What form of rescaling would be necessary to examine the behaviour for large <i>x</i>? [You do not need to carry out the resulting analysis.]
+<div class="b">Letting ϵ = 0, we obtain $$ xy'(x) + y(x) = 0⇒xy(x)=\text{const}$$Using $y(1)=1$, we get $y(x)=\frac1x$. Assume a better approximation of the form$$ y(x) = \frac 1x + ϵy_0(x)+ O(ϵ^2)$$Differentiate this to get$$ y'(x) = -\frac 1{x^2} + ϵy_0'(x) + O(ϵ^2)$$The ODE becomes\begin{align*}ϵy_0'(x)x+ ϵy_0(x)+ O(ϵ^2)&=ϵ\left(\frac 1x + ϵy_0(x)+ O(ϵ^2)\right)^{1/2}\\&=\fracϵ{x^{1/2}}\left(1+\fracϵ2y_0(x)x+O(ϵ^2)\right)
+\end{align*}Equate the coefficient of ϵ$$y_0'(x)x+y_0(x)=x^{-1/2}⇒y_0(x)=\frac2{x^{1/2}}+\frac{c}{x}$$$$y_0(1)=0⇒c=-2⇒y(x)=\frac1x+ϵ\frac{2(x^{1/2}-1)}x$$The expansion becomes nonuniform when $\frac{1}{x}∼ϵ{x^{1/2}\over x}⇔x∼ϵ^{-2}$. Rescale $X=ϵ^2x$ with $X=O(1)$.</li></div>
+</li>
+<li><b>Inner and outer expansions.</b> Find inner and outer expansions, correct up to and including terms of order ϵ, for the function$$f(x;ϵ)=\frac{\mathrm{e}^{-x/ϵ}}x+\frac{\sin x}x-\operatorname{coth}x$$for <i>x</i> > 0 and 0 &lt; ϵ ≪ 1.<br>
+Compare the inner and outer approximations with the exact function <i>f</i> by plotting all three on the same graph for various small values of ϵ.
+<div class="b">For $x=O(1)$, the first term is exponentially small, so the outer expansion is$$f(x;ϵ)∼\frac{\sin x}x-\operatorname{coth}x$$To find the inner expansion, rescale $x$ using $x=ϵy$, with $y=O(1)$, and set $f(x;ϵ)=F(y;ϵ)$. 
+Plugging this into the original equation,
+$$ F(y;ϵ)=\frac{e^{-y}}{ϵy}+\frac{\sin(ϵy)}{ϵy}-\coth(ϵy)$$Using Taylor expansions\begin{array}l\frac{\sin(ϵy)}{ϵy}=1+O(ϵ^2)\\\coth(ϵy)=\frac{1}{ϵy}+\frac{ϵy}{3}+O(ϵ^3)\end{array}Plugging into $F(y;ϵ)$$$F(y;ϵ)=1+\frac{e^{-y}-1}{ϵy}-\frac{ϵy}{3}+O(ϵ^2)$$Plot for $ϵ=0.1$
+<tex engine="asy">import graph;
+real eps=.1;
+real x_min = 0.2;
+real x_max = .6;
+unitsize(20cm,3cm);
+real coth(real x) {
+  return (exp(x) + exp(-x))/(exp(x) - exp(-x));
+}
+real f(real x) {
+  return exp(-x/eps)/x+sin(x)/x - coth(x);
+}
+draw(graph(f, x_min, x_max),L=Label("exact",N), linewidth(1bp));
+real f(real x) {
+  return 1+(exp(-x/eps)-1)/x-x/3;
+}
+draw(graph(f, x_min, x_max),L=Label("inner",.2,W), red);
+real f(real x) {
+  return sin(x)/x - coth(x);
+}
+draw(graph(f, .25, x_max),L=Label("outer",E), green);
+xaxis(LeftTicks(Label("%f",1,W),new real[]{.2,.4,.6}));
+yaxis(LeftTicks("%f",new real[]{-1,-2,-3}));</tex></div></li>
+<li><b>Singular perturbation. </b>Use matched asymptotic expansions to find leading-order outer and inner solutions to the boundary value problem$$ϵy''(x)+xy'(x)+y(x)=0, 1&lt;x&lt;2, y(1)=0, y(2)=1$$where 0 &lt; ϵ ≪ 1. Construct the leading-order composite solution.<br>How would the analysis change if ϵ were small and negative? [You do not need to find the solution in this case.]<div class="b">The boundary layer is at $x=1$. To find inner expansion, let $x=1+ϵX,X=O(1),y(x)=Y(X)$
+Then $y'(x)=\frac{Y'(X)}ϵ,y''(x)=\frac{Y''(X)}{ϵ^2}$. Plugging in the equation\[\frac{Y''(X)}ϵ+Y'(X)(\frac1ϵ+X)+Y(X)=0⇒Y''_0(X)+Y'_0(X)=0\]Using $Y_0(0)=0$, we obtain $Y_0(X)=C\left(1-e^{-X}\right)$
+To find outer expansion, use regular expansion $y∼y_0(x)+ϵy_1(x)+⋯$\[xy_0'(x)+y_0(x)=0,y_0(2)=1⇒y_0(x)=\frac2x\]By <a href="https://en.wikipedia.org/wiki/Method_of_matched_asymptotic_expansions">the matching principle</a>\[\lim_{x→1^+}y_0(x)=2=\lim_{X→∞}Y_0(X)=C\]hence $C=2$. The common limit is 2 so the leading-order composite solution is\[y_0(x)+Y_0(X)-2=\frac2x-2e^{-(x-1)/ϵ}\]If $0&lt;-ϵ≪1$, the above $X=\frac{x-1}ϵ&lt;0$, $\lim_{X→-∞}Y_0(X)=∞$❌so the boundary layer must be $x=2$.</div></li>
+<li><b>Boundary layer.</b> Construct leading-order inner and outer solutions to$$ϵu''(x)+u'(x)=\frac{u(x)+u(x)^3}{1+3 u(x)^2}, 0&lt;x&lt;1, u(0)=0, u(1)=1$$where 0 &lt; ϵ ≪ 1. [You will only be able to determine the outer solution implicitly.]<br>Sketch a graph of the leading-order composite solution.<div class="b">Boundary layer is at $x=0$.
+To find outer expansion $u_0(x)$ satisfies$$u_0'(x)=\frac{u_0(x)+u_0(x)^3}{1 + 3u_0(x)^2}⇔\frac{d}{dx}\ln(u_0(x)+u_0(x)^3)=1$$Integrating gives$$\ln\Big(u_0(x)+u_0(x)^3\Big)=x+C$$Plugging in boundary condition $u_0(1)=1$ gives $C=\ln2-1$, hence our outer expansion satisfies$$u_0(x)+u_0(x)^3=2e^{x-1}⇒u_0(0)≈0.560074$$<span style="float:right;"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="70 0 690 500" width="5mm"><path d="m70 70v350h455v70l105-105-105-105v70h-385v-280z"></path></svg>By monotonicity, $u_0(x)$ is unique.</span>
+<p style="white-space: pre;">To find inner expansion, let $x=ϵX,u(x)=U(X)⇒u'(x)=\frac{U'(X)}ϵ,u''(x)=\frac{U''(X)}{ϵ^2}$</p>$$U_0''(X)+U_0'(X)=0,U_0(0)=0⇒U_0(X)=C(1-e^{-X})$$Using matching principle$$\lim_{X→∞}U_0(X)=C=u_0(0)$$The leading-order composite solution is$$u_0(x)+U_0(X)-\text{common limit}=u_0(x)-u_0(0)e^{-x/ϵ}$$<table><tr><td>{% asy %}import graph;size(300);
+
+real epsilon = 0.2;
+
+real f(real x) {
+  return cubicroots(1,0,1,-2exp(x-1))[0];
+}
+
+real xMin = 0;
+real xMax = 1;
+real yMin = 0;
+real yMax = 1;
+
+// Draw the function
+path myFunc = graph(f, xMin, xMax, n=1000, join=operator ..);
+draw(myFunc, blue, L=Label("$y^3+y=2e^{x-1}$", align=SE));
+
+// Draw the dashed horizontal asymptote
+draw((xMin, 1)--(xMax, 1)--(xMax,0), dashed+red);
+
+// Draw the doublehead arrow and labels
+draw((1,0)--(epsilon,0), Arrows, L=Label("$O(\epsilon)$",position=1,align=S));
+draw((epsilon,1)--(epsilon,f(epsilon))--(1,f(epsilon)),dashed);
+label("$0$", (0,0), SW);
+label("$1$", (xMax,0), S);
+label("$1$", (0,yMax), W);
+label("$C$", (0,0.560074), W);
+xaxis(xMin, xMax);
+yaxis(yMin, yMax);{% endasy %}</td><td>Outer expansion</td></tr><tr><td>{% asy %}import graph;size(300);
+
+real C = 0.560074;
+real epsilon = 0.2;
+
+real f(real x) {
+  return C*(1-exp(-x/epsilon));
+}
+
+real xMin = 0;
+real xMax = 1;
+real yMin = 0;
+real yMax = C*1.1;
+
+// Draw the function
+path myFunc = graph(f, xMin, xMax, n=1000, join=operator ..);
+draw(myFunc, blue, L=Label("$y=C(1-e^{-x/\epsilon})$", align=SE));
+
+// Draw the dashed horizontal asymptote
+draw((xMin, C)--(xMax, C), dashed+red);
+
+// Draw the doublehead arrow and labels
+draw((0,0)--(epsilon,0), Arrows, L=Label("$O(\epsilon)$",position=1,align=S));
+draw((epsilon,0)--(epsilon,f(epsilon))--(0,f(epsilon)),dashed);
+label("$0$", (0,0), SW);
+label("$1$", (xMax,0), S);
+label("$C$", (0,C), W);
+
+xaxis(xMin, xMax);
+yaxis(yMin, yMax);</tex></td><td>Inner expansion</td></tr><tr><td><tex engine="asy">import graph;size(300);
+
+real C = 0.560074;
+real epsilon = 0.2;
+
+real f(real x) {
+  return C*(1-exp(-x/epsilon))+cubicroots(1,0,1,-2exp(x-1))[0]-C;
+}
+
+real xMin = 0;
+real xMax = 1;
+real yMin = 0;
+real yMax = 1;
+
+// Draw the function
+path myFunc = graph(f, xMin, xMax, n=1000, join=operator ..);
+draw(myFunc, blue, L=Label("$y=u_0(x)-Ce^{-x/\epsilon}$", align=SE));
+draw((xMin, 1)--(xMax, 1)--(xMax,0), dashed+red);
+label("$0$", (0,0), SW);
+label("$1$", (xMax,0), S);
+label("$1$", (0,yMax), W);
+xaxis(xMin, xMax);
+yaxis(yMin, yMax);{% endasy %}</td><td>Composite expansion</td></tr></table></div></li>
