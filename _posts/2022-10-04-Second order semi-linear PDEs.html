@@ -1,0 +1,173 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: sheet 4 — MT 2022
+---
+<style>ol[type="a"]{padding-left: 20px;}ol.chapt4>li{counter-increment: li;}ol.chapt4>li::marker{content:"4."counter(li)" "}ol[type="a"]>li{counter-increment: a;}ol[type="a"]>li::marker{content:counter(a,lower-alpha)") "}</style>
+<ol class="chapt4">
+<li>Show that the equation
+\[
+y u_{x x}+(x+y) u_{x y}+x u_{y y}=0
+\]
+is hyperbolic everywhere except on the line $y=x$. Find the characteristic variables, reduce the equation to canonical form, and show that the general solution is
+\[
+u=\frac1{y-x} f\left(y^2-x^2\right)+g(y-x)
+\]<a href="https://math.stackexchange.com/questions/84549">Solving $yu_{xx}+(x+y)u_{xy}+xu_{yy}=0$</a><br>
+<b>Solution.</b><br>
+$\det\pmatrix{y&-{x+y\over2}\\-{x+y\over2}&x}=-\frac{(x-y)^2}2< 0$ if $y≠x$<br>
+$yλ^2-(x+y)λ+x=0⇒λ_1=1,λ_2=x/y$<br>
+Solve $y'(x)=1,y'(x)=x/y$ by $y-x=$const, $y^2-x^2=$const, so put\[ϕ=y-x ψ=y^2-x^2\]Calculate\begin{align*}u_x&=-u_ϕ-2xu_ψ\\u_y&=u_ϕ+2yu_ψ\end{align*}So that\begin{align*}u_{xx}=(u_{ϕϕ}+2xu_{ϕψ})-2u_ψ+(2xu_{ϕψ}+4x^2u_{ψψ})&=(u_{ϕϕ}+4xu_{ϕψ}+4x^2u_{ψψ})-2u_ψ\\u_{xy}&=-u_{ϕϕ}-(2x+2y)u_{ϕψ}-4xyu_{ψψ}\\u_{yy}=(u_{ϕϕ}+2yu_{ϕψ})+2u_ψ+(2yu_{ϕψ}+4y^2u_{ψψ})&=(u_{ϕϕ}+4yu_{ϕψ}+4y^2u_{ψψ})+2u_ψ\end{align*}Now the PDE becomes\[-2(x-y)^2u_{ϕψ}+2(x-y)u_ψ=0⇒\frac{u_{ϕψ}}{u_ψ}+\frac1ϕ=0\]
+Integrate wrt ϕ$$\log u_ψ+\log ϕ=C_1(ψ)⇒u_ψ=\frac{C_2(ψ)}ϕ$$
+Integrate wrt ψ$$u=\frac{f(ψ)}ϕ+g(ϕ)=\frac{1}{y-x} f\left(y^2-x^2\right)+g(y-x)$$
+</li><li>Consider the partial differential equation
+\[
+\mathrm{e}^{2 y} u_{x x}+u_y=u_{y y}
+\]
+Write down the differential equation satisfied by its characteristic curves and show that $ϕ=x+\mathrm{e}^y$ and $ψ=x-\mathrm{e}^y$ are characteristic variables for the partial differential equation.<br>
+Reduce the equation to canonical form and find the solution of the equation for which $u=x$ and $u_y=1$ on the line $y=0,0 ≤x ≤1$.<br>
+Sketch the characteristic curves $x+e^y=1,\;x+e^y=2,\;x-e^y=-1,\;x-e^y=0$.<br>
+In what region of the $x, y$-plane is your solution uniquely determined by the initial data? Show this region on your diagram.<br>
+<b>Solution.</b><br>
+The characteristic equation is\[
+\left(dy\over dx\right)^2\mathrm{e}^{2 y}=1⇒dx±\mathrm{e}^ydy=0⇒x±\mathrm{e}^y=\text{const}
+\]$∴ϕ=x+\mathrm{e}^y$ and $ψ=x-\mathrm{e}^y$ are characteristic variables\begin{align*}u_x&=u_ϕ+u_ψ\\u_y&=\mathrm{e}^yu_ϕ-\mathrm{e}^yu_ψ\end{align*}So that\begin{align*}u_{xx}&=u_{ϕϕ}+2u_{ϕψ}+u_{ψψ}\\u_{yy}=(\mathrm{e}^yu_ϕ+\mathrm{e}^{2y}u_{ϕϕ}-\mathrm{e}^{2y}u_{ϕψ})+(-\mathrm{e}^yu_ψ-\mathrm{e}^{2y}u_{ϕψ}+\mathrm{e}^{2y}u_{ψψ})&=\mathrm{e}^{2y}u_{ϕϕ}-2\mathrm{e}^{2y}u_{ϕψ}+\mathrm{e}^{2y}u_{ψψ}+\mathrm{e}^yu_ϕ-\mathrm{e}^yu_ψ\end{align*}Now the PDE becomes\[4\mathrm{e}^{2y}u_{ϕψ}=0⇒u_{ϕψ}=0⇒u=f(ϕ)+g(ψ)\]
+From the initial data\begin{align}u(x,0)&=f(x+1)+g(x-1)=x\\u_y(x,0)&=f'(x+1)-g'(x-1)=1\end{align}Differentiate (1)\begin{equation}f'(x+1)+g'(x-1)=1\end{equation}Add (2) and (3), $2f'(x+1)=2⇒f(x+1)=x+C⇒f(x)=x-1+C$.<br>Plug into (1), $g(x-1)=-C⇒g(x)=-C$.<br>Plug into $u=f(ϕ)+g(ψ)$,\[u(x,y)=x+e^y-1\]Domain of definition is $\cases{1≤x+e^y≤2\\-1≤x-e^y≤0}$<br>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=2]
+\draw[domain=-1.2:.3] plot({1-exp(\x)},\x)node[left]{$x+e^y=1$}plot({exp(\x)},\x)node[right]{$x-e^y=0$};
+\draw[domain=-.4:.6] plot({2-exp(\x)},\x)node[left]{$x+e^y=2$}plot({-1+exp(\x)},\x)node[right]{$x-e^y=-1$};
+\draw[red](0,0)--(1,0);
+\end{tikzpicture}{% endlatex %}
+</li>
+<li>Determine the type of the PDE
+\[
+y^2 u_{x x}+x^2 u_{y y}=0, x>0, y>0
+\]
+and transform it into normal form.<br>
+<b>Solution.</b><br>
+$\det\pmatrix{y^2&0\\0&x^2}=x^2y^2>0⇒$elliptic<br>The characteristic equation is
+\[y^2\left(dy\over dx\right)^2+x^2=0⇒ydy±ixdx=0⇒y^2±ix^2=\text{const}\]So take as variables $ζ=y^2;η=x^2$. Calculate
+\begin{align*}
+u_x&=2xu_η\\
+u_y&=2yu_ζ
+\end{align*}So that\begin{align*}
+u_{xx}&=2u_η+4ηu_{ηη}\\
+u_{yy}&=2u_ζ+4ζu_{ζζ}
+\end{align*}Now the PDE becomes\[4ηζ(u_{ηη}+u_{ζζ})+2ζu_η+2ηu_ζ=0⇒u_{ηη}+u_{ζζ}=-{ζu_η+ηu_ζ\over2ηζ}\]</li><li>Recall from Prelims that the solution of the initial-value problem
+\begin{aligned}
+c^2 u_{x x} &=u_{t t} \\
+u(x, 0)=f(x),   u_t(x, 0) &=g(x),  -∞< x<∞
+\end{aligned}
+where $f$ and $g$ are prescribed functions is given by d'Alembert's formula. Use the formula to show that if ${|f(x)|}≤δ$ and ${|g(x)|}≤δ$ for $-∞< x< ∞$ then
+\[\tag1
+{|u(x, t)|}≤(1+T) δ \text { for }-∞< x<∞, 0≤t≤T.
+\]
+Formulate a definition of what it means for the solution $u$ of this initial-value problem to depend continuously on the data $f$ and $g$ on any strip $\{(x, t):-∞< x<∞, \; 0 ≤t≤T\}$. Use (1) above to show that your definition is satisfied.<br>
+<b>Solution.</b><br>
+d'Alembert's formula $u(x,t)=\frac12\left[f(x-ct)+f(x+ct)\right]+\frac1{2c}∫_{x-ct}^{x+ct}g(ξ)\,dξ$
+\[\left|u(x,t)\right|≤δ+\frac1{2c}∫_{x-ct}^{x+ct}δ\,dξ=(1+t)δ≤(1+T)δ\]$u$ depends continuously on the data $f$ and $g$ Definition: $∀ϵ>0,∃δ$ such that if $u_i,i=1,2$ are solutions with initial value $f_i,g_i$ then\[\sup\left|f_1-f_2\right|< δ,\;\sup\left|g_1-g_2\right|< δ⇒\sup\left|u_1-u_2\right|< ϵ\]By linearity, $u_1-u_2$ is a solution with initial value $f_1-f_2,g_1-g_2$, by (1)\[\sup\left|f_1-f_2\right|< δ,\;\sup\left|g_1-g_2\right|< δ⇒\sup\left|u_1-u_2\right|< (1+T)δ\]
+For $δ=\fracϵ{1+T}$ the definition is satisfied.
+<br>
+</li>
+<li>Let $D=\left(a_1, a_2\right)×(0,τ)$ for some $τ>0$ and $a_1< a_2$ and let $f: D→ℝ$, $g_{1,2}:[0,τ]→ℝ$ and $u_0:\left[a_1, a_2\right]→ℝ$ be continuously differentiable functions so that $g_{1,2}(0)=u_0\left(a_{1,2}\right)$.<br>
+a) Show that the solution $u=u(x, t)$ of the inhomogeneous heat equation
+\[\tag1
+∂_t u-∂_{x x} u=f \text { on } D
+\]
+with initial and boundary values
+\[\tag2
+u(x, 0)=u_0(x) \text { for } x ∈\left[a_1, a_2\right] \text { and } u\left(a_{1,2}, t\right)=g_{1,2}(t) \text { for } t ∈[0, τ]
+\]
+is unique and depends continuously on the initial and boundary data, if it exists.<br>
+b) Prove that the only non-negative solution of
+\[
+∂_t u-∂_{x x} u=-u^2,
+\]
+with $u\left(a_{1,2}, t\right)=0, t ∈[0, τ]$ and $u(x, 0)=0, x ∈\left[a_1, a_2\right]$ is the trivial solution $u=0$.<br>
+c) Show that the solution of (1) is also unique if we replace the boundary condition $u\left(a_2, t\right)=g_2(t)$ in (2) by the condition that
+\[
+∂_x u\left(a_2, t\right)+u\left(a_2, t\right)=g_2(t) \text { for } t ∈(0, τ)
+\]
+d) Show that if $u$ is a positive function which solves
+\[
+∂_t u=∂_x\left(u ∂_x u\right)+u \text { in } D
+\]
+then $u(x, t)$ attains its minimum value on the parabolic boundary
+\[
+∂_P D=\left[a_1, a_2\right] ×\{0\} ∪\left\{a_1\right\} ×[0, τ] ∪\left\{a_2\right\} ×[0, τ] .
+\]
+<b>Proof.</b><br>
+a) Suppose that $u_i(i=1,2)$ are solutions of (1) in $D$ with data $(g_{1,2})_i$.<br>
+$u=u_1-u_2$ satisfies (1) with $f=0$ and $u\left(a_{1,2}, t\right)=(g_{1,2})_1-(g_{1,2})_2,u(x, 0)=(u_0)_1(x)-(u_0)_2(x)$ for $t∈[0,τ]$.<br>Thus $u$ and $-u$ take their maximum values on $∂D∖\{t=τ\}$. Hence
+\[
+\sup_D u≤\max \{\sup[(u_0)_1-(u_0)_2], \sup[(g_1)_1-(g_1)_2], \sup[(g_2)_1-(g_2)_2]\}
+\]
+and
+\[
+\sup_D-u≤\max \{\sup-[(u_0)_1-(u_0)_2], \sup-[(g_1)_1-(g_1)_2], \sup-[(g_2)_1-(g_2)_2]\}
+\]
+So
+\[
+\sup_D{|u|}≤\max \{\sup\left|(u_0)_1-(u_0)_2\right|, \sup\left|(g_1)_1-(g_1)_2\right|, \sup\left|(g_2)_1-(g_2)_2\right|\},
+\]
+and continuous dependence follows. In particular, if $(u_0)_1-(u_0)_2=(g_1)_1-(g_1)_2=(g_2)_1-(g_2)_2=0$ then $u=0$ and uniqueness follows.
+<details>
+<summary style="color: blue; text-decoration:underline">From Prelims M5 Fourier Series</summary>
+the unique solution is given by$$T(x, t)=∫_{-∞}^∞ \frac{f(s)}{\sqrt{4 π t}} \exp \left(-\frac{(s-x)^{2}}{4 t}\right) \mathrm{d} s$$i.e. the superposition of fundamental solutions of the heat equation weighted by the initial temperature profile. Continuous dependence on the initial data may then be established as follows
+Let $ϵ>0$ and suppose that the initial data $f=f_1$ and $f=f_2$ are close together in the sense that
+\[
+\left|f_1(x)-f_2(x)\right|< ϵ \text { for }-∞< x< ∞ .
+\]
+Then
+\[
+\left|T_1(x, t)-T_2(x, t)\right|≤∫_{-∞}^∞ \frac{\left|f_1(s)-f_2(s)\right|}{\sqrt{4 π t}} \exp \left(-\frac{(s-x)^2}{4 t}\right) \mathrm{d} s≤∫_{-∞}^∞ \frac{ϵ}{\sqrt{4 π t}} \exp \left(-\frac{(s-x)^2}{4 t}\right) \mathrm{d} s=ϵ
+\]
+for $-∞< x<∞, t>0$.</details>
+b) $u$ satisfies $∂_tu-∂_{xx}u≤0$. By maximum principle, $u$ takes its maximum value on $t=0∪x=a_1∪x=a_2$, where $u=0$, so $u=0$ is the only non-negative solution.<br>
+c) If $u_1$ and $u_2$ are two solutions, then $u=u_1-u_2$ satisfy
+$$∂_x u\left(a_2, t\right)+u\left(a_2, t\right)=0$$
+If $u$ achieve a positive maximum on $x=a_2$, then $∂_xu(a_2,t)>0$ and $u(a_2,t)≥0$, contradiction.
+So $\max u(a_2,t)≤0$.<br>
+d) if $∂_tu=∂_xu=0$ at an interior point of $D$, the PDE implies $u∂_{xx}u+u=0$; since $u(x,t)&gt;0$, it follows that $∂_{xx}u=-1$ at that point, so $u$ cannot attain a minimum there.<br><a href="https://math.stackexchange.com/questions/1138658">Energy in the heat equation.</a>
+</li>
+<li>
+Let $D ⊂ ℝ^2$ be a bounded open set, let $u: ℝ^2→ℝ$ be twice continuously differentiable.<br>
+a) Show that if $u$ achieves its maximum in a point $\left(x_0, y_0\right)∈D$ then the Hessian matrix at $\left(x_0, y_0\right)$ is negative semi-definite, i.e.
+\[
+A:=\pmatrix{
+u_{x x}\left(x_0, y_0\right) & u_{x y}\left(x_0, y_0\right) \\
+u_{x y}\left(x_0, y_0\right) & u_{y y}\left(x_0, y_0\right)}
+\]
+satisfies
+\[
+\left(v_1, v_2\right) A\binom{v_1}{v_2}≤0 \text { for all }\left(v_1, v_2\right)∈ℝ^2 .
+\]
+b) Suppose that $u$ satisfies
+\[
+x^2 u_{x x}-14 x y u_{x y}+\left(49 y^2+1\right) u_{y y}≥0 \text { in } D .
+\]
+Adapt the proof of the Maximum principle for the Laplace operator to show that $u$ achieves its maximum over $\bar{D}$ on the boundary $∂ D$.<br>
+<b>Proof.</b><br>
+a) Let $f(t)=u\left(\left(x_0, y_0\right)+t\left(v_1, v_2\right)\right)$. Apply chain rule,
+\[
+f'(t)=\left(v_1, v_2\right)\binom{f_x(t)}{f_y(t)}
+\]Apply chain rule once more,
+\[
+f''(t)=\left(v_1, v_2\right)\pmatrix{
+    f_{x x}(t) & f_{x y}(t) \\
+    f_{x y}(t) & f_{y y}(t)}\binom{v_1}{v_2}
+\]
+Since $f(t)$ achieves its maximum at $t=0$, we have $f''(0)≤0$, that is$$\left(v_1, v_2\right) A\binom{v_1}{v_2}≤0$$<i>Remark: Hessian matrix is symmetric ⇒ eigenvalues are real.<br>A symmetric matrix is negative semi-definite ⇔ eigenvalues all ≤0<br>Warning: $M=\begin{bmatrix}1&1\\-1&1\end{bmatrix}$ non-symmetric, <a href="https://en.wikipedia.org/wiki/Definite_matrix#Consistency_between_real_and_complex_definitions">positive definite</a> and no real eigenvalues.</i><br>
+b) Let $ℒu=x^2 u_{x x}-14 x y u_{x y}+\left(49 y^2+1\right) u_{y y}$. Assume $ℒu>0$ in $D$ and $u$ has an interior maximum at some point $(x_0,y_0)$ inside $D$. Apply a) to $(v_1,v_2)=(x_0,-7y_0)$, we get\[\left(x_0,-7y_0\right)\pmatrix{
+u_{x x}(x_0,y_0) & u_{x y}(x_0,y_0) \\
+u_{x y}(x_0,y_0) & u_{y y}(x_0,y_0)}\binom{x_0}{-7y_0}=
+x_0^2 u_{x x}-14 x_0 y_0 u_{x y}+49 y_0^2u_{y y}≤0
+\]Because $u_{yy}(x_0,y_0)< 0$, we have\[
+x^2 u_{x x}(x_0,y_0)-14 x y u_{x y}(x_0,y_0)+\left(49 y^2+1\right) u_{y y}(x_0,y_0)< 0
+\]contradiction.<br>
+So the maximum must be in the boundary.<hr>
+For $ℒu≥0$ consider $v(x,y)=u(x,y)+ϵy^2$ where $ϵ$ is a positive constant. Then$$ℒv=ℒu+2(49y^2+1)ϵ>0$$
+Using the result just proved, $v$ attains its maximum value on $∂D$. So
+\[u(x,y)+ϵy^2≤\sup_{∂D}u(x,y)+ϵ\sup_{∂D}y^2\text{ in }D\]
+Letting $ϵ→0$, we see that $u(x,y)≤\sup_{∂D}u(x,y)$ throughout $D$, i.e. that $u$ attains its maximum value on $∂D$.
+</li>
+</ol>
