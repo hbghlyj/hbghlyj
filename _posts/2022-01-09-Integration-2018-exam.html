@@ -1,0 +1,187 @@
+---
+mathjax: true
+tag: Integration
+excerpt: A4 paper 2018
+---
+<ol><li>Throughout this question assume that measurable subsets of $ℝ$, the (Lebesgue) measure of such sets, and measurable functions have been defined.
+<ol type="a"><li>What does it mean to say that a function $φ: ℝ →[0, ∞)$ is a simple function? How is the integral $∫_ℝ φ(x) \mathrm{~d}x$ of a simple function defined?<br>
+Let $f: ℝ →[0, ∞]$ be a measurable function. How is the integral $∫_ℝ f(x) \mathrm{~d} x$ defined?<br>
+Let $g: ℝ → ℝ$ be a measurable function. What does it mean to say that $g$ is integrable over $ℝ$ ? How is the integral $∫_ℝ g(x) \mathrm{~d}x$ defined?
+</li>
+<li>Show that each of the following functions $f(x)$ is integrable over ℝ:
+<ol type="i"><li>$\mathrm{e}^{-|x|}$,
+</li>
+<li>$\mathrm{e}^{-x^2}$,
+</li>
+<li>$\mathrm{e}^{-x^2} \cos x$
+</li>
+<li>$\mathrm{e}^{-|x|}|x|^{-1 / 2}$
+</li></ol>
+</li>
+<li>You are given that $∫_ℝ \mathrm{e}^{-x^2} \mathrm{~d} x=\sqrt{π}$. Find the values of
+<ol type="i"><li>$∫_ℝ \mathrm{e}^{-|x|}|x|^{-1 / 2} \mathrm{~d} x$
+</li>
+<li>$∫_ℝ \mathrm{e}^{-x^2} \cos x \mathrm{~d} x$.<br>
+[In parts (b) and (c), you may use standard properties of the Lebesgue integral, provided that you state them clearly.]
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>State the Dominated Convergence Theorem and Fubini's Theorem.
+</li>
+<li>Define $f:(0, ∞) ×[0, ∞) → ℝ$ by
+$$
+f(x, y)=\frac{(\sin \sqrt{x y})^2}{x^2+y}
+$$
+Let $y ⩾ 0$. Show that the function $x ↦ f(x, y)$ is integrable over $(0, ∞)$.
+[You may use standard inequalities for the sine function.]
+</li>
+<li>Let $f$ be as in part (b), and define $F:[0, ∞) → ℝ$ by
+$$
+F(y)=∫_0^∞ f(x, y) \mathrm{~d} x
+$$
+<ol type="i"><li>Show that $F$ is continuous on $[0, ∞)$.
+</li>
+<li>Show that $F$ is not integrable over $[0, ∞)$.
+</li>
+<li>Does the right-hand derivative of $F$ exist at $y=0$ ? You should justify your answer. [Substitutions of the form $t=x y$ may be helpful.]</li></ol></li></ol>
+</li>
+<li>Let $I$ either be an interval in $ℝ$ or $I=ℝ^2$. For $1 ⩽ p&lt;∞$, let $ℒ^p(I)$ be the vector space of all measurable functions $f: I → ℝ$ such that $|f|^p$ is integrable over $I$.
+<ol type="a"><li>Show that $ℒ^2(0,1) ⊆ ℒ^1(0,1)$.
+By giving examples of suitable functions (justification is not required), show that
+<ol type="i"><li>$ℒ^2(ℝ)⊈ℒ^1(ℝ)$
+</li>
+<li>$ℒ^1(ℝ) ⊈ ℒ^2(ℝ)$
+</li></ol>
+</li>
+<li>State Minkowski's inequality. Explain how the normed spaces $\left(L^p(I),\|⋅\|_{L^p(I)}\right)$ are defined, and how Minkowski's inequality is involved. [Detailed justifications are not required.]
+Show that the norm on $L^2(I)$ is associated with an inner product $⟨⋅, ⋅⟩_{L^2(I)}$ which you should define.
+</li>
+<li>In this part we identify functions in $ℒ^2(I)$ with the corresponding elements of $L^2(I)$. Thus we may write $\|f\|_{L^2(I)}$ and $\left⟨f_1, f_2\right⟩_{L^2(I)}$ for $f, f_1, f_2 ∈ ℒ^2(I)$.
+Let $k ∈ ℒ^2\left(ℝ^2\right)$ satisfy $k(y, x)=k(x, y)$ for all $x, y ∈ ℝ$, and define $k_{x}(y)=k(x, y)$. Let $f ∈ ℒ^2(ℝ)$, and define
+$$
+g(x)=∫_ℝ k(x, y) f(y) \mathrm{~d} y
+$$
+whenever this integral exists. Show that
+<ol type="i"><li>$\|k\|_{L^2\left(ℝ^2\right)}^2=∫_ℝ\left\|k_{x}\right\|_{L^2(ℝ)}^2 \mathrm{~d} x$
+</li>
+<li>For almost all $x, g(x)$ is defined and $|g(x)| ⩽\|f\|_{L^2(ℝ)}\left\|k_{x}\right\|_{L^2(ℝ)}$,
+</li>
+<li>There exists $T f ∈ ℒ^2(ℝ)$ such that $T f=g$ a.e., and $\|T f\|_{L^2(ℝ)} ⩽\|f\|_{L^2(ℝ)}\|k\|_{L^2\left(ℝ^2\right)}$
+</li>
+<li>$\left⟨T f_1, f_2\right⟩_{L^2(ℝ)}=\left⟨f_1, T f_2\right⟩_{L^2(ℝ)}$ for all $f_1, f_2 ∈ ℒ^2(ℝ)$.<br>
+[You may use standard results about inner products and Lebesgue integration without proof.]</li></ol></li></ol>
+</li></ol>
+<h1>Solutions</h1>
+<ol><li>
+<ol type="a"><li>$φ$ is a simple function if it is measurable and takes only finitely many values.<br>Equivalently, $φ=\sum_{i=1}^{k} α_{i} χ_{B_{i}}$ where $B_{i}$ are measurable. Then $∫_ℝ φ=\sum_{i=1}^{k} α_{i} m\left(χ_{B_{i}}\right)$.
+$$
+∫_ℝ f(x) \mathrm{~d} x=\sup \left\{∫_ℝ φ: φ \text { simple, } 0 ⩽ φ ⩽ f\right\} .
+$$
+[Note: The supremum may be $∞$.]<br>
+$g$ is integrable if $∫_ℝ g^+$ and $∫_ℝ g^-$ are both finite, and then $∫_ℝ g=∫_ℝ g^+-∫_ℝ g^-$.
+</li>
+<li>All functions are continuous on $ℝ∖\{0\}$, hence measurable.
+<ol type="i"><li>By the FTC on $[-n, 0]$ and $[0, n], ∫_{-n}^n e^{-|x|} \mathrm{d} x=2\left(1-e^{-n}\right) → 2$ as $n → ∞$. By (Baby) MCT, $e^{-|x|}$ is integrable over $ℝ$.
+</li>
+<li>$0 ⩽ e^{-x^2} ⩽ C e^{-|x|}$, so $e^{-x^2}$ is integrable by comparison. [Note: $C ⩾ e^{1 / 4}$ ]
+</li>
+<li>$\left|e^{-x^2} \cos x\right| ⩽ e^{-x^2}$, so $e^{-x^2} \cos x$ is integrable by comparison.
+</li>
+<li>By the Substitution Theorem with $y=x^{1 / 2}, e^{-x} x^{-1 / 2}$ is integrable over $(0, ∞)$ if and only if $2 e^{-y^2}$ is integrable over $(0, ∞)$, which is true by (i). Similarly over $(-∞, 0)$.
+[Alternatively, for $|x| ⩾ 1, e^{-|x|}|x|^{-1 / 2} ⩽ e^{-|x|}$; by (i) and comparison, the function is integrable over the region $|x| ⩾ 1$. Using FTC,
+$$
+∫_{n^{-1} ⩽|x| ⩽ 1} e^{-|x|}|x|^{-1 / 2} \mathrm{~d} x≤∫_{n^{-1} ⩽|x| ⩽ 1}|x|^{-1 / 2} \mathrm{~d} x=4\left(1-n^{-1 / 2}\right) → 4
+$$
+so the function is integrable over $[-1,1]$ by Baby MCT.]</li></ol>
+<h3>Standard facts used above</h3>
+Any function which is continuous a.e. is measurable.<br>
+Baby MCT: If $f$ is measurable on $ℝ, f ⩾ 0$ and $\sup _n ∫_{I_n} f$ is finite for an increasing sequence of measurable sets $I_n$ with union $I$, then $f$ is integrable over $I$.<br>
+Comparison: If $g$ is integrable, $f$ is measurable and $|f| ⩽ g$, then $f$ is integrable.
+Substitution: Let $g: I → ℝ$ be a monotonic function with a continuous derivative on an interval $I$, and let $J$ be the interval $g(I)$. A (measurable) function $f: J → ℝ$ is integrable over $J$ if and only if $(f ∘ g) ⋅ g'$ is integrable over $I$. Then $∫_{J} f(x) d x=∫_{I} f(g(y))\left|g'(y)\right| d y$.<br>
+FTC is a theorem of Riemann (or even simpler) integration in Prelims, so candidates are not required to state it. Similarly they are not required to state the Substitution Theorem for continuous $f$ on closed bounded intervals, but they should state the version above if they use it in other contexts.</li>
+<li><ol type="i"><li>Substitute $x=y^2$$$∫_0^∞ \mathrm{e}^{-|x|}|x|^{-1 / 2} \mathrm{~d} x=2 ∫_0^∞ e^{-y^2} \mathrm{~d} y=\sqrt{π}$$</li><li>
+$$
+∫_ℝ e^{-x^2} \cos x \mathrm{~d} x=∫_ℝ e^{-x^2} \frac{e^{i x}+e^{-i x}}2 \mathrm{~d} x=\frac{e^{-1 / 4}}2 ∫_ℝ\left(e^{-\left(x-\frac{i}2\right)^2}+e^{-\left(x+\frac{i}2\right)^2}\right) \mathrm{~d} x .
+$$
+Now we borrow from A2 (reminder given in A4) the fact that $∫_ℝ e^{-(x-i b)^2} \mathrm{~d} x=∫_ℝ e^{-x^2} \mathrm{~d} x$ and we conclude that $∫_ℝ e^{-x^2} \cos x \mathrm{~d} x=e^{-1 / 4} \sqrt{π}$.
+There are alternative methods for (c)(ii). If they use integration by parts for $C^1$-functions on closed bounded intervals, there is no need to state it. If they use it on infinite intervals without justifying it, they may lose one mark. 
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>DCT: Let $\left(f_n\right)$ be a sequence of integrable functions such that:
+<ol type="i"><li>$\left(f_n(x)\right)$ converges a.e. to a limit $f(x)$, and
+</li>
+<li>there is an integrable function $g$ such that, for each $n,\left|f_n(x)\right| ⩽ g(x)$ a.e.</li></ol>
+Then $f$ is integrable, and $∫ f=\lim _{n → ∞} ∫ f_n$.<br>
+Fubini: Let $f: ℝ^2 → ℝ$ be integrable. Then, for almost all $y$, the function $x ↦ f(x, y)$ is integrable. Moreover, if $F(y)$ is defined (for almost all $y$ ) by $F(y)=∫ f(x, y) d x$, then $F$ is integrable, and
+$$
+∫_{ℝ^2} f(x, y) d(x, y)=∫_ℝ\left(∫_ℝ f(x, y) d x\right) d y
+$$
+</li>
+<li>Note that $f$ is continuous, so $f(⋅, y)$ is continuous, hence measurable. Moreover
+$$
+0 ⩽ f(x, y) ⩽ \frac1{x^2+y} ⩽ \min \left(x^{-2}, y^{-1}\right)
+$$
+Fix $y&gt;0$. The constant $y^{-1}$ is integrable w.r.t. $x$ over $(0,1)$, and $x^{-2}$ is integrable over $(1, ∞)($ by Baby MCT). By comparison, the function $x ↦ f(x, y)$ is integrable over $(0,1)$ and $(1, ∞)$, hence over $(0, ∞)$. For $y=0, f(x, 0)=0$ which is integrable.
+</li>
+<li>
+<ol type="i"><li>Fix $y ∈[0, ∞)$. The inequality $|\sin t| ⩽|t|$ gives
+$$
+0 ⩽ f(x, y) ⩽ \frac{x y}{x^2+y} ⩽ x
+$$
+Let $\left(y_n\right)$ be a sequence in $(0, ∞)$ converging to $y$, and let $g_n(x)=f\left(x, y_n\right)$. Then $g_n(x) → f(x, y)$ by continuity of $f$. From (1) and (2) we obtain $0 ⩽ g_n(x) ⩽ \min \left(x^{-2}, x\right)$ which is integrable. By DCT
+$$
+F\left(y_n\right)=∫_0^∞ g_n(x) \mathrm{d} x → ∫_0^∞ f(x, y) \mathrm{d} x=F(y)
+$$
+It follows (from Prelims real analysis) that $F$ is continuous at $y$. So $F$ is continuous on $[0, ∞)$.
+</li>
+<li>Let $x&gt;0$. By putting $t=x y$ and then $u=\sqrt{t}$,
+$$
+\begin{array}{r}
+∫_0^∞ f(x, y) \mathrm{d} y=∫_0^∞ \frac{(\sin \sqrt{t})^2}{x^2+(t / x)} \frac{\mathrm{d} t}{x}=∫_0^∞ \frac{(\sin u)^2}{x^{3}+u^2} 2 u \mathrm{~d} u ⩾ \sum_{n=1}^∞ ∫_{\left(n+\frac1{4}\right) π}^{\left(n+\frac{3}{4}\right) π} \frac{2 u(\sin u)^2}{x^2+u^2} \mathrm{~d} u \\
+⩾ \sum_{n=1}^∞ ∫_{\left(n+\frac1{4}\right) π}^{\left(n+\frac{3}{4}\right) π} \frac{n π}{x^{3}+(n+1)^2 π^2} \mathrm{~d} u=\sum_{n=1}^∞ \frac{n π}{2\left(x^{3}+(n+1)^2 π^2\right)}=∞
+\end{array}
+$$
+By the contrapositive of Tonelli/Fubini, $F$ is not integrable over $(0, ∞)$.
+</li>
+<li>Clearly $F(0)=0$. For $y&gt;0$, using the substitution $t=y x$ with $y$ fixed, then letting $y → 0+$ using MCT, and then using Jordan's inequality,
+$$
+\frac{F(y)-F(0)}{y}=∫_0^∞ \frac1{y} \frac{(\sin \sqrt{t})^2}{(t / y)^2+y} \frac{\mathrm{d} t}{y}=∫_0^∞ \frac{(\sin \sqrt{t})^2}{t^2+y^{3}} \mathrm{~d} t → ∫_0^∞ \frac{(\sin \sqrt{t})^2}{t^2} \mathrm{~d} t ⩾ ∫_0^1 \frac{4}{π^2 t} \mathrm{~d} t=∞
+$$
+So the right-hand derivative does not exist. 
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>For any real number $y,|y| ⩽ 1+|y|^2$. Hence if $f ∈ ℒ^2(0,1),|f| ⩽ 1+|f|^2$ and $f$ is measurable. Since $1,|f| ∈ ℒ^2(0,1)$, it follows by comparison that $|f|$ is integrable, and hence $f$ is integrable.
+<ol type="i"><li>Let $f(x)=\left\{\begin{array}{ll}x^{-1} &amp; (x&gt;1) \\ 0 &amp; (x&lt;1)\end{array}\right.$. Then $f ∈ ℒ^2(ℝ), f ∉ ℒ^1(ℝ)$.
+</li>
+<li>Let $g(x)=\left\{\begin{array}{ll}x^{-1 / 2} &amp; (0&lt;x&lt;1) \\ 0 &amp; \text { otherwise }\end{array}\right.$. Then $g ∈ ℒ^1(ℝ), g ∉ ℒ^2(ℝ)$.
+</li></ol>
+</li>
+<li>Minkowski: For measurable functions $f$ and $g$,
+$$
+\left(∫|f+g|^p\right)^{1 / p} ⩽\left(∫|f|^p\right)^{1 / p}+\left(∫|f|^p\right)^{1 / p}
+$$
+Define $\|f\|_{ℒ^p(I)}=\left(∫_{I}|f|^p\right)^{1 / p}$. Minkowski says that $\|⋅\|_{ℒ^p(I)}$ satisfies the triangle inequality. It is trivial that $\|λ f\|_{ℒ^p(I)}=|λ|\|f\|_{ℒ^p(I)}$. However it is not a norm. Let $𝒩$ be the set of all measurable functions $f$ such that $f=0$ a.e. This is a subspace of $ℒ^p(I)$. Let $L^p(I)=ℒ^p(I) / 𝒩$ as a quotient vector space. There is a well-defined norm on $L^p(I)$ given by $\|[f]\|_{L^p(I)}=\|f\|_{ℒ^p(I)}$, where $[f]=f+𝒩$.
+Define $⟨f, g⟩=∫ f g$ for $f, g ∈ ℒ^2(I)$. This integral exists because $|f g| ⩽ \frac12\left(|f|^2+|g|^2\right)$. Moreover $⟨f, f⟩=\|f\|_2^2$
+</li>
+<li>
+<ol type="i"><li>By Fubini [for non-negative functions, or via Tonelli]
+$$
+\|k\|_{L^2\left(ℝ^2\right)}^2=∫_{ℝ^2}\left|k_{x}(y)\right|^2 \mathrm{~d}(x, y)=∫_ℝ ∫_ℝ\left|k_{x}(y)\right|^2 \mathrm{~d} y \mathrm{~d} x=∫_ℝ\left\|k_{x}\right\|_{L^2(ℝ)}^2 \mathrm{~d} x.
+$$
+</li>
+<li>From (i) it follows that for almost all $x, k_{x} ∈ L^2(ℝ)$. Then $g(x)=\left⟨f, k_{x}\right⟩_{L^2(ℝ)}$ is defined. By Cauchy-Schwarz, $|g(x)| ⩽\|f\|_{L^2(ℝ)}\left\|k_{x}\right\|_{L^2(ℝ)}$.
+</li>
+<li>Let $T f$ be the function $g$ extended by 0 if $g(x)$ is not defined. It follows from (i) that $x ↦\left\|k_{x}\right\|_{L^2(ℝ)}^2$ is integrable. Using (ii) and comparison, $|g|^2$ is integrable, so $T f ∈ ℒ^2(ℝ)$ and
+$$
+∫_ℝ|(T f)(x)|^2 \mathrm{~d} x ⩽\|f\|_{L^2(ℝ)}^2 ∫_ℝ\left\|k_{x}\right\|_{L^2(ℝ)}^2 \mathrm{~d} x=\|f\|_{L^2(ℝ)}^2\|k\|_{L^2\left(ℝ^2\right)}^2,
+$$
+by (i)
+</li>
+<li>By Fubini and symmetry of $k$,
+$$
+\left⟨T f_1, f_2\right⟩_{L^2(ℝ)}=∫_ℝ ∫_ℝ k(x, y) f_1(y) f_2(x) \mathrm{d} y \mathrm{~d} x=∫_ℝ ∫_ℝ k(y, x) f_1(y) f_2(x) \mathrm{d} x \mathrm{~d} y=\left⟨f_1, T f_2\right⟩_{L^2(ℝ)} .
+$$
+The application of Fubini is justified by Tonelli, since the repeated integrals with $k, f_1, f_2$ replaced by $|k|,\left|f_1\right|,\left|f_2\right|$ are finite.</li></ol></li></ol>
+</li></ol>
