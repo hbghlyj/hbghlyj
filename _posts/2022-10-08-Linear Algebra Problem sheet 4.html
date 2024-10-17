@@ -83,8 +83,8 @@ excerpt: sheet 4 — MT 2022
     $(T^* T)^*=T^*(T^*)^*=T^*T⇒T^*T$ is self-adjoint. Let $λ$ be an eigenvalue of $T^*T$ then $∃v∈V∖\{0\},\ T^*Tv=λv⇒⟨Tv,Tv⟩＝⟨v,T^*Tv⟩=λ⟨v,v⟩⇒{‖Tv‖}^2=λ{‖v‖}^2⇒λ∈ℝ^{≥0}.$<br>
     By spectral theorem for self-adjoint maps, there exists an orthonormal basis $\{v_1,…,v_n\}$ for $V$ consisting of eigenvectors of $T^*T$, so any $v∈V$ can be written as $v=a_1v_1+⋯+a_nv_n$ for some $a_1,…,a_n∈ℂ$.<br>
     Let $λ_1,…,λ_n∈ℝ^{≥0}$ be the corresponding eigenvectors, then
-    $${‖Tv‖}^2=⟨v,T^*Tv⟩＝⟨a_1v_1+⋯+a_nv_n,λ_1a_1v_1+⋯+λ_na_nv_n⟩=λ_1{‖a_1‖}^2+⋯+λ_n{‖a_n‖}^2$$
-    $$λ_\min^{1/2}\sqrt{{‖a_1‖}^2+⋯+{‖a_n‖}^2}≤\sqrt{λ_1{‖a_1‖}^2+⋯+λ_n{‖a_n‖}^2}≤λ_\max^{1/2}\sqrt{{‖a_1‖}^2+⋯+{‖a_n‖}^2}$$
+    $${‖Tv‖}^2=⟨v,T^*Tv⟩＝⟨a_1v_1+⋯+a_nv_n,λ_1a_1v_1+⋯+λ_na_nv_n⟩=λ_1‖a_1‖^2+⋯+λ_n‖a_n‖^2$$
+    $$λ_\min^{1/2}\sqrt{‖a_1‖^2+⋯+‖a_n‖^2}≤\sqrt{λ_1‖a_1‖^2+⋯+λ_n‖a_n‖^2}≤λ_\max^{1/2}\sqrt{‖a_1‖^2+⋯+‖a_n‖^2}$$
     $$⟺λ_\min^{1 / 2}{‖v‖}≤{‖T v‖}≤λ_\max^{1 / 2}{‖v‖}$$
     <div class="noprint"><a href="https://en.wikipedia.org/wiki/Min-max_theorem">Min-max theorem</a><br><b>alternate proof for real vector space.</b><br>
     Let $A=T^* T$. To maximize or minimize $θ(v)=\bar v^{\sf T}Av$ subject to ${‖v‖}=1$, form the Lagrange function\[L(v;μ)=θ(v)-μ\left({‖v‖}^2-1\right)=\sum_{i, j=1}^m A_{i j}\bar v_i v_j-μ \sum_{i=1}^m\left(\bar v_i v_i-1\right)\]Compute partial derivatives\begin{aligned}\frac{\partial L}{\partial v_l}(v ; μ)&=\sum_{i, j=1}^m A_{i j} \frac{\partial}{\partial v_l}\left(v_i v_j\right)-μ \frac{\partial}{\partial v_l}\left(v_i v_i\right)=\sum_{i, j=1}^m A_{i j}\left(\delta_l^i v_j+v_i \delta_l^j\right)+\sum_{i=1}^m 2 μ \delta_l^i v_i \\&=\sum_{j=1}^m A_{l j} v_j+\sum_{i=1}^m A_{i l} v_i-2μ v_l=2 \sum_{j=1}^m A_{l j} v_j-2μ v_l \end{aligned}where $δ_l^i$ is Kronecker symbol. The critical points of $L$ are$$2 \sum_{j=1}^m A_{l j} v_j-2μ v_l=0, \quad l=1, \cdots, m$$This is equivalent to $Av=μv$. So $v$ is an eigenvector for $A$.<br>
