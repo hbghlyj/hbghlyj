@@ -1,0 +1,596 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: A2 Paper 2020
+---
+<ol><li>
+<ol type="a"><li>Let $X$ and $Y$ be two metric spaces with metrics $d_X$ and $d_Y$ respectively.
+<ol type="i"><li>State the definition that the metric space $X$ is compact, and the definition that $X$ is connected.
+</li>
+<li>State the definition that a function $f: X → Y$ is continuous.
+</li>
+<li>Suppose $f: X → Y$ is continuous, and suppose $X$ is compact. Show that $f(X)$ is compact, where $f(X)=\{f(x): x ∈ X\}$.
+</li>
+<li>Suppose $f: X → Y$ is continuous and onto, and suppose $Y$ is compact. Is $X$ necessarily compact?</li></ol>
+</li>
+<li>Let $(X, d)$ be a metric space. Define
+$$
+ρ(x, y)=\frac{d(x, y)}{1+d(x, y)}   \text { for } x, y ∈ X
+$$
+<ol type="i"><li>Show that $ρ$ is a metric on $X$.
+</li>
+<li>Show that a sequence $a_n ∈ X$ (where $\left.n=1,2, …\right)$ is a Cauchy sequence in $(X, d)$ if and only if $a_n(n=1,2, …)$ is a Cauchy sequence in $(X, ρ)$.
+</li>
+<li>Show that a subset $U ⊆ X$ is open in $(X, d)$, if and only if $U$ is open in $(X, ρ)$.</li></ol>
+</li>
+<li>Let $ℓ_∞$ be the vector space of all bounded sequences $x=\left(x_k\right)_{k ⩾ 1}$ of complex numbers. Define
+$$
+d(x, y)=\sum_{k=1}^∞ \frac{1}{2^k} \frac{\left|x_k-y_k\right|}{1+\left|x_k-y_k\right|}
+$$
+for $x=\left(x_k\right)_{k ⩾ 1} ∈ ℓ_∞$ and $y=\left(y_k\right)_{k ⩾ 1} ∈ ℓ_∞$.
+<ol type="i"><li>Show that $d$ is a metric on $ℓ_∞$.
+</li>
+<li>Let $A$ be the collection of all sequences $\left(x_k\right)_{k ⩾ 1}$ of complex numbers such that $x_k=0$ for all but for finitely many $k ∈ ℕ$. Show that $A ⊂ ℓ_∞$ and show that $A$ is dense in $\left(ℓ_∞, d\right)$, that is $U ∩ A ≠ ∅$ for any non-empty open subset $U$ of $ℓ_∞$.
+</li>
+<li>For each $n=1,2, ⋯$, let $x^{(n)}=\left(x_1^{(n)}, x_2^{(n)}, …\right)$ be an element of $\left(ℓ_∞, d\right)$. Show that $x^{(1)}, x^{(2)}, …$ is a Cauchy sequence in $\left(ℓ_∞, d\right)$ if and only if for each $k=1,2, ⋯$, the sequence $\left(x_k^{(n)}\right)_{n ⩾ 1}$ is a Cauchy sequence of numbers.
+</li>
+<li>Let $T, S$ be two mappings from $ℓ_∞$ to $ℓ_∞$ defined as follows. For $a=\left(a_1, a_2, ⋯\right) ∈ ℓ_∞$, let $T(a)$ be the sequence $\left(a_2, a_3, ⋯\right)$, and $S(a)$ be the sequence $\left(0, a_1, a_2, ⋯\right)$. Show that $T$ is not a contraction mapping. Is $S$ a contraction mapping? What are the fixed points of $S$ and $T$ respectively?</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>State the definition that a metric space is path-connected. Show that a path-connected metric space must be connected.
+</li>
+<li>Determine which of the following sets are path-connected.
+<ol type="i"><li>The subset of $ℝ$ :
+$$
+\{x ∈[0,1]: x \text { is rational}\}
+$$
+</li>
+<li>The subset of $ℝ^2$ :
+$$
+\left\{(x, y) ∈ ℝ^2: x y>1 \text { and } x>1\right\} ∪\left\{(x, y) ∈ ℝ^2: x y ⩽ 1 \text { and } x ⩽ 1\right\} .
+$$
+</li>
+<li>The subset of $ℝ^3$ :
+$$
+\left\{(x, y, z) ∈ ℝ^3: x^2+y^2 ⩽ z\right\} ∪\left\{(x, y, z) ∈ ℝ^3: x^2+y^2+z^2>3\right\} .
+$$
+</li>
+<li>The subset of $ℝ^2$ :
+$$
+\left\{(x, y) ∈ ℝ^2: 0 ⩽ x&lt;1\right\} ∪\{(x, 0): 1&lt;x&lt;2\} .
+$$</li></ol>
+</li>
+<li>Let $(X, d)$ be a metric space. For two non-empty subsets $A, B ⊂ X$, define the distance between them by
+$$
+d(A, B)=\inf \{d(x, y): x ∈ A, y ∈ B\} .
+$$
+<ol type="i"><li>Show that $d(A, B)=0$ if $A ∩ B ≠ ∅$. Is the converse necessarily true for closed non-empty subsets; that is, if $A, B ⊂ X$ are closed and $A ∩ B=∅$, must one have $d(A, B)>0$?
+</li>
+<li>Let $A ⊂ X$ be non-empty and compact, $x ∈ X$ but $x ∉ A$. Show that $d(A,\{x\})=d(x, y)$ for some $y ∈ A$, and conclude that $d(A,\{x\})>0$. <a href="https://proofwiki.org/wiki/Distance_between_Disjoint_Compact_Set_and_Closed_Set_in_Metric_Space_is_Positive">Distance between Disjoint Compact Set and Closed Set in Metric Space is Positive</a>
+</li>
+<li>Let $A ⊂ X$ be non-empty. Show that the closure $\bar{A}$ of $A$ is
+$$
+\{x ∈ X: d(A,\{x\})=0\}
+$$</li></ol>
+</li>
+<li>Let $A ⊂ ℝ^2$ be non-empty. Show that $A$ is compact if and only if every continuous function $f: A → ℝ$ is bounded above and attains its maximum at some point of $A$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>State Morera's Theorem.
+</li>
+<li>Suppose that $D$ is a domain containing the closed unit disc, $f$ is a complex-valued function on $D$ and $\left(f_n\right)_{n=1}^∞$ is a sequence of holomorphic functions on $D$ that converges uniformly to $f$.
+<ol type="i"><li>Prove that $f$ is holomorphic on $D$.
+</li>
+<li>Let the contour $γ$ be the positively oriented unit circle. For $\left|z_0\right|&lt;1$, write down Cauchy's Integral Formula for the $k$ th derivative $f^{(k)}\left(z_0\right)$ in terms of an integral of $f$ around $γ$
+</li>
+<li>Prove that for every $k ⩾ 1$ and every $z$ in the open unit disc $D(0,1)$ we have $f_n^{(k)}(z) →f^{(k)}(z)$ as $n → ∞$.
+Prove further that if $r&lt;1$ then the convergence is uniform on the disc $D(0, r)$.</li></ol>
+</li>
+<li>Is there a sequence $p_n(z)$ of polynomials such that $p_n(z) → 1 / z$ uniformly on $\{z:{|z|}=1\} ?$
+</li>
+<li>Define $n^{-z}=\exp (-z \log n)$. Prove that
+$$
+\sum_{n=1}^∞ n^{-z}
+$$
+converges to a holomorphic function on $\{z ∈ ℂ: ℜ(z)>1\}$, where $ℜ(z)$ denotes the real part of $z$.
+[You may use standard convergence tests, provided that you state them clearly.]</li></ol>
+</li>
+<li>
+<ol type="a"><li>State Laurent's Theorem about expansions of holomorphic functions in an annulus
+$$
+A=\{z: R&lt;|z-a|&lt;S\}
+$$
+where $0 ⩽ R&lt;S$.
+</li>
+<li>Let $f$ be a complex-valued function on a domain $D$ and let $a ∈ D$. Explain what is meant by the following statements:
+<ol type="i"><li>$f$ has a removable singularity at $a$;
+</li>
+<li>$f$ has a pole of order $m$ at $a$;
+</li>
+<li>$f$ has an essential singularity at $a$.</li></ol>
+</li>
+<li>Find and classify the singularities of the following functions:
+(i)
+$$
+f(z)=\frac{(z-1)^2 \sin z}{z(z-a)^3}
+$$
+where $a ∈ ℝ$;
+(ii)
+$$
+g(z)=\frac{\cot (π / z)}{z}
+$$
+</li>
+<li>The Bessel functions $J_n(w)$, for $n=0,1,2, …$, form a sequence of functions satisfying the identity
+$$
+\exp \left(\frac{w}{2}\left(z-\frac{1}{z}\right)\right)=\sum_{n=0}^∞ J_n(w) z^n
+$$
+for $z, w ≠ 0$.
+<ol type="i"><li>Show that
+$$
+J_0(w)=\sum_{k=0}^∞(-1)^k \frac{w^{2 k}}{(k !)^2 4^k}
+$$
+</li>
+<li>Show that
+$$
+J_n(w)=\frac{1}{2 π} ∫_{-π}^π \cos (w \sin θ-n θ) d θ
+$$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $U ⊆ ℂ$ be an open set. Suppose that $f: U → ℂ$ is continuous and let $γ:[a, b] → U$ be a contour in $U$. Define the contour integral $∫_γ f(z) \mathrm{d} z$.
+</li>
+<li>Define the residue of a function $f$ at a point $a$. State Cauchy's Residue Theorem.
+</li>
+<li>Evaluate the integral
+$$
+∫_{-∞}^∞ \frac{\cos (k x)}{(x+b)^2+a^2} \mathrm{~d} x
+$$
+where $k>0, a>0$ and $b$ is a real number.
+</li>
+<li>Show that, for $t ∈(-1,1)$,
+$$
+∫_0^∞ \frac{x^t}{x^2+1} \mathrm{~d} x=\frac{π}{2 \cos (π t / 2)}
+$$
+[Hint: Consider a keyhole contour on $ℂ∖[0, ∞)$.]</li></ol>
+</li>
+<li>Let $D=\{z ∈ ℂ:{|z|}&lt;1\}$ be the unit disc, and $H=\{z ∈ ℂ: ℑ z>0\}$ the upper half plane.
+<ol type="a"><li>Let $R ⊂ ℂ$ be a domain; that is, $R$ is open and connected.
+<ol type="i"><li>Let $f: R → ℂ$ be holomorphic on $R$. State a condition for $f$ to be conformal on $R$.
+</li>
+<li>Suppose $f: R → ℂ$ is one-to-one, holomorphic and conformal on $R$, and suppose its range $G=f(R)$ is open. Show that its inverse function $f^{-1}: G → ℂ$ is also conformal.
+</li>
+<li>Is there any holomorphic bijection $f: H → D$?
+</li>
+<li>Is there any non-constant holomorphic function $f: ℂ → H$ ?</li></ol>
+</li>
+<li><ol type="i"><li>Let
+$$
+R_1=\{z ∈ ℂ:{|z-2|}&lt;2 \text { and }{|z-3|}>1\}
+$$
+Find a conformal one-to-one and onto mapping from $R_1$ to $H$.<br>
+{% asy %}unitsize(1cm);
+filldraw(circle((2,0), 2)--reverse(circle((3,0), 1))--cycle,gray);
+draw(Label("$x$",1),(0, 0) -- (4.5, 0), Arrow);
+draw(Label("$y$",1),(0,-2) -- (0,2), Arrow);{% endasy %}
+</li>
+<li>Let
+$$
+R_2=\{z ∈ ℂ:{|z-i|}&lt;2 \text { and } ℑ z>0\} .
+$$
+Find a conformal one-to-one and onto mapping from $R_2$ to $D$.<br>
+{% asy %}unitsize(1cm);filldraw(arc(I,2,-30,210)--cycle,gray);
+dot(I);
+draw(Label("$x$",1),(-2.5, 0) -- (2.5, 0), Arrow);
+draw(Label("$y$",1),(0,-.5) -- (0,3.5), Arrow);
+label("$i$",I,E);label('$\sqrt3$',(sqrt(3),0),S);{% endasy %}</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>
+<ol type="i"><li>$X$ is compact if for every open cover $\left\{U_α\right\}$ of $X$, i.e. $U_α$ are open and $⋃_α U_α ⊇ X$, there is a finite sub-cover, that is, there are finite many $α_1, ⋯, α_N$ (for some $N ∈ ℕ$), $⋃_{i=1}^N U_{α_i} ⊇ X$.<br>
+$X$ is connected, if $X=U ∪ V$, where $U, V$ are open and disjoint: $U ∩ V=∅$, then $U=X$ or ∅ (so similarly $V=∅\text{ or }X$).
+</li>
+<li>$f: X → Y$ is continuous if for every open set $V ⊆ Y, f^{-1}(V)$ is open in $X$. [Equivalent definitions are acceptable too]
+</li>
+<li>Let $\left\{V_α\right\}$ be an open cover of $f(X)$, since $f: X → Y$ is continuous, $U_α=f^{-1}\left(V_α\right)$ is open in $X$. Since $⋃_α V_α ⊇ f(X)$, for every $x ∈ X, f(x) ∈f(X) ⊆ ⋃_α V_α$. Hence there is $α$ such that $f(x) ∈ V_α$, which implies that $x ∈ U_α$. Therefore $\left\{U_α\right\}$ is an open cover of $X$. Since $X$ is compact, so there are finite many $α_1, ⋯, α_N$ such that $⋃_{i=1}^N U_{α_i} ⊇ X$. Then by definition, $⋃_{i=1}^N V_{α_i} ⊇ f(X)$, $\left\{V_{α_1}, ⋯, V_{α_N}\right\}$ is a finite sub-cover of $f(X)$, so that $f(X)$ is compact.
+</li>
+<li>Let $X=ℝ$ and $Y=[-1,1], f(x)=\sin x$ is continuous and onto from $X$ to $Y$, but $X$ is not compact.</li></ol>
+</li>
+<li>
+<ol type="i"><li>$ρ(x, y) ≥ 0, ρ(x, y)=ρ(y, x)$ are clear. Also
+$$
+ρ(x, y)=\frac{d(x, y)}{1+d(x, y)}=0
+$$
+is equivalent to that $d(x, y)=0$ so is equivalent to that $x=y$. To show the triangle inequality we use the following elementary inequality: for $s ≥ 0$ and $t ≥ 0$
+$$
+\frac{s}{1+s}+\frac{t}{1+t}=\frac{s+t+2 s t}{1+s+t+s t} ≥ \frac{s+t+s t}{1+s+t+s t} ≥ \frac{s+t}{1+s+t}
+$$
+or via the equality
+$$
+\frac{s}{1+s}+\frac{t}{1+t}-\frac{s+t}{1+s+t}=\frac{s t(s+t+2)}{(1+s+t)(1+s+t+s t)} ≥ 0
+$$
+so by setting $s=d(x, y)$ and $t=d(y, z)$ to obtain that
+\begin{aligned}
+ρ(x, y)+ρ(y, z) & =\frac{d(x, y)}{1+d(x, y)}+\frac{d(y, z)}{1+d(y, z)} ≥ \frac{d(x, y)+d(y, z)}{1+d(x, y)+d(y, z)} \\
+& ≥ \frac{d(x, z)}{1+d(x, z)} ≥ ρ(x, z)
+\end{aligned}
+which shows that $ρ$ is a metric on $X$.
+</li>
+<li>Since, by definition, $ρ(x, y) ≤ d(x, y)$, hence if $\left\{a_n\right\}$ is a Cauchy sequence with respect $d$, so is with respect $ρ$. Conversely, suppose $\left\{a_n\right\}$ is Cauchy with respect to $ρ$, by definition $ρ\left(a_n, a_m\right) → 0$ as $n, m → ∞$, hence for every $ε>0$, there is $N$ such that
+$$
+ρ\left(a_n, a_m\right)<\frac12\min \{ε, 1\}   \text { for } n, m ≥ N .
+$$
+Therefore
+$$
+d\left(a_n, a_m\right)=\frac{ρ\left(a_n, a_m\right)}{1-ρ\left(a_n, a_m\right)}≤\frac{ρ\left(a_n, a_m\right)}{1-\frac12}=2 ρ\left(a_n, a_m\right)&lt;ε   \text { for } n, m ≥ N
+$$
+so by definition, $\left\{a_n\right\}$ is Cauchy with respect to $d$.
+</li>
+<li>Suppose $U$ is open in $(X, d)$, then for every $a ∈ U$, there is $ε>0$ such that the open ball in $(X, d)$
+$$
+\{x ∈ X: d(x, a)&lt;ε\} ⊆ U
+$$
+Let $δ=\frac{1}{2} \min \{ε, 1\}$. If $ρ(x, a)&lt;δ$, then
+$$
+d(x, a)=\frac{ρ(x, a)}{1-ρ(x, a)} ≤ 2 ρ(x, a)&lt;ε
+$$
+which implies that
+$$
+\{x ∈ X: ρ(x, a)&lt;δ\} ⊆\{x ∈ X: d(x, a)&lt;ε\} ⊆ U .
+$$
+By definition, $U$ is open in $(X, ρ)$.<br>
+Conversely, if $U$ is open in $(X, ρ)$, then for every $a ∈ U$ there is $ε>0$ such that $\{x ∈ X: ρ(x, a)&lt;ε\} ⊆ U$. Since $ρ ≤ d$ we must have
+$$
+\{x ∈ X: d(x, a)&lt;ε\} ⊆\{x ∈ X: ρ(x, a)&lt;ε\} ⊆ U
+$$
+and therefore $U$ is open in $(X, d)$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>$d$ is a metric on $ℓ_∞$ because it is clearly nonnegative and symmetric, and as in part (b)
+\begin{aligned}
+d(x, y)+d(y, z) & =\sum_{k=1}^∞ \frac{1}{2^k}\left(\frac{\left|x_k-y_k\right|}{1+\left|x_k-y_k\right|}+\frac{\left|y_k-z_k\right|}{1+\left|y_k-z_k\right|}\right) \\
+& ≥ \sum_{k=1}^∞ \frac{1}{2^k} \frac{\left|x_k-z_k\right|}{1+\left|x_k-z_k\right|}=d(x, z)
+\end{aligned}
+so the triangle inequality holds. Therefore $d$ is a metric on $ℓ_∞$.
+</li>
+<li>Any finite sequence of numbers must be bounded, so $A ⊂ ℓ_∞$. Let $a=\left(a_k\right) ∈ U$. Then there is $ε>0$ such that $\left\{x ∈ ℓ_∞: d(x, a)&lt;ε\right\} ⊆ U$.
+Choose $N$ such that $\sum_{k=N+1}^∞ \frac{1}{2^k}&lt;ε$ and $x_k=a_k$ for $k=1, ⋯, N$ and $x_k=0$ for $k ≥ N+1$. Then $x=\left(x_k\right) ∈ A$, and
+$$
+d(x, a)=\sum_{k=N+1}^∞ \frac{1}{2^k} \frac{\left|a_k\right|}{1+\left|a_k\right|} ≤ \sum_{k=N+1}^∞ \frac{1}{2^k}&lt;ε
+$$
+so that $x ∈ U$ and therefore $A ∩ U ≠ ∅$.
+</li>
+<li>Suppose $x^{(n)}=\left(x_k^{(n)}\right)_{k ≥ 1}$ (where $n=1,2, ⋯$) is a Cauchy sequence in $\left(ℓ_∞, d\right)$, then for every $k=1,2, ⋯$
+$$
+0 ≤ \frac{\left|x_k^{(n)}-x_k^{(m)}\right|}{1+\left|x_k^{(n)}-x_k^{(m)}\right|} ≤ 2^k d\left(x^{(n)}, x^{(m)}\right) → 0
+$$
+as $n, m → ∞$. By part (b)(ii), $\left\{x_k^{(n)}\right\}_{n ≥ 1}$ is Cauchy in ℂ.<br>
+Conversely suppose $\left\{x_k^{(n)}\right\}_{n ≥ 1}$ is Cauchy in ℂ for every $k$. Let $ε>0$. Since $\sum_{k=1}^∞ \frac{1}{2^k}<∞$, there is $M$ such that $\sum_{k=M+1}^∞ \frac{1}{2^k} ≤ \fracε{2}$. Now for each $k$, since $\left\{x_k^{(n)}\right\}_{n ≥ 1}$ is Cauchy, there is an $N_k$, such that
+$$
+\left|x_k^{(n)}-x_k^{(m)}\right|<\fracε{2}   \text { for any } n, m ≥ N_k
+$$
+Let $N=\max \left\{N_1, ⋯, N_M\right\}$. Then for $n, m ≥ N$ we have\begin{aligned}
+d\left(x^{(n)}, x^{(m)}\right) & =\sum_{k=1}^∞ \frac{1}{2^k} \frac{\left|x_k^{(n)}-x_k^{(m)}\right|}{1+\left|x_k^{(n)}-x_k^{(m)}\right|}\\& ≤ \sum_{k=1}^M \frac{1}{2^k} \frac{\left|x_k^{(n)}-x_k^{(m)}\right|}{1+\left|x_k^{(n)}-x_k^{(m)}\right|}+\sum_{k=M+1}^∞ \frac{1}{2^k} \\
+& &lt;\sum_{k=1}^M \frac{1}{2^k} \fracε{2}+\fracε{2}&lt;ε
+\end{aligned}
+so $\left\{x^{(n)}\right\}$ is Cauchy sequence in $\left(ℓ_∞, d\right)$.
+</li>
+<li>Suppose $a=\left(a_k\right), b=\left(b_k\right) ∈ ℓ_∞$, then
+$$
+d(T(a), T(b))=\sum_{k=1}^∞ \frac{1}{2^k} \frac{\left|a_{k+1}-b_{k+1}\right|}{1+\left|a_{k+1}-b_{k+1}\right|}=2 \sum_{k=1}^∞ \frac{1}{2^{k+1}} \frac{\left|a_{k+1}-b_{k+1}\right|}{1+\left|a_{k+1}-b_{k+1}\right|} .
+$$
+Thus if $a_1=b_1=0$, then
+$$
+d(T(a), T(b))=2 d(a, b)
+$$
+so $T$ is not a contraction. If $T(a)=a$, if and only if $a=\left(a_1, a_1, ⋯\right)$ is a constant sequence.<br>
+On the other hand,
+$$
+d(S(a), S(b))=\sum_{k=1}^∞ \frac{1}{2^{k+1}} \frac{\left|a_k-b_k\right|}{1+\left|a_k-b_k\right|}=\frac{1}{2} d(a, b)
+$$
+so $S$ is a contraction mapping. Hence $S$ has a unique fixed point $(0,0, ⋯)$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>A metric space $X$ is path-connected, if for every $x, y ∈ X$, there is a continuous path $p:[0,1] → X$ such that $p(0)=x$ and $p(1)=y$.<br>
+Suppose $X$ is path-connected, and suppose $X=U ∪ V$ where $U$ and $V$ are open and disjoint. If both $U, V$ are non-empty, take $x ∈ U$ and $y ∈ V$. Since $X$ is path-connected, there is a continuous mapping $p:[0,1] → X$ such that $p(0)=x$ and $p(1)=y$. Then $[0,1]=p^{-1}(U) ∪ p^{-1}(V)$, both $p^{-1}(U)$ and $p^{-1}(V)$ are open, disjoint and non-empty as $0 ∈ p^{-1}(U)$ and $1 ∈ p^{-1}(V)$, which contradicts to the fact that $[0,1]$ is connected.
+</li>
+<li>
+<ol type="i"><li>$A$ is not path-connected. if a continuous function $p:[0,1] → ℝ$ satisfies that $p(0)=0$ and $p(1)=1$, then it attains any value between 0 and 1, such as $\sqrt{2} / 2$ which does not belong to $A$, so $p$ can not be a continuous path in $A$.
+</li>
+<li>The subset $B$ is path-connected. Any point in
+$$
+\left\{(x, y) ∈ ℝ^2: x y>1 \text { and } x>1\right\}
+$$
+can be connected to $(1,1) ∈ B$ by a straight line, and any point $(x, y)$ with $x>0$ in
+$$
+\left\{(x, y) ∈ ℝ^2: x y ≤ 1 \text { and } x ≤ 1\right\}
+$$
+can be connected to the curve $\{(x, y): x y=1,0&lt;x ≤ 1\}$ hence connected by continuous path to $(1,1)$. Any $(x, y) ∈ B$ with $x ≤ 0$ can be connected to $(1,1)$ by a straight line, so $B$ is path-connected.
+</li>
+<li>$C$ is path-connected, as any two points in the set $C$ can be connected by straight line to for example $(0,0,3)$.
+</li>
+<li>The subset $D$ is not connected, so not path-connected. In fact, let
+$$
+U=\left\{(x, y) ∈ ℝ^2: x&lt;1\right\} ∩ D
+$$
+and
+$$
+V=\{(x, y): 1&lt;x&lt;2\} ∩ D .
+$$
+Then both $U$ and $V$ are open in $D$, disjoint, and non-empty, and $D=U ∪ V$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>If there is a point $x ∈ A ∩ B$, then $d(A, B) ≤ d(x, x)=0$ so $d(A, B)=0$. For disjoint closed $A$ and $B$, it is not necessary to have $d(A, B)>0$. For example, $A=\{(x, y): x y=1\}$ and $B=\{(x, 0): x ≥ 0\}$. Then both $A$ and $B$ are closed disjoint subsets of $ℝ^2$, and $d(A, B)=0$.
+</li>
+<li>By definition $\{d(a, x): a ∈ A\}$ is bounded below and non-empty, so $d(A,\{x\})$ exists. For every $n$, there is $a_n ∈ A$ such that
+$$
+d(A,\{x\}) ≤ d\left(a_n, x\right) ≤ d(A,\{x\})+\frac{1}{n}
+$$
+for every $n=1,2, ⋯$. Since $A$ compact metric space, so it is sequential compact so there is a convergent sub-sequence say $a_{n_k}$ such that $a_{n_k} → a$. Then $a ∈ A$ so $x ≠ a$, and moreover
+$$
+d(A,\{x\})=\lim_{k → ∞} d\left(a_{n_k}, x\right)=d(a, x)>0 .
+$$
+</li>
+<li>By definition, $\bar{A}$ is defined to be the least closed set which contains $A$, that is $\bar{A}=∩\{F: F$ is closed and $F ⊇ A\}$. Consider $f(x)=d(A,\{x\})$.
+\begin{aligned}
+d(A,\{x\}) & =\inf \{d(a, x): a ∈ A\} ≤ \inf \{d(a, y)+d(x, y): a ∈ A\} \\
+& =\inf \{d(a, y): a ∈ A\}+d(x, y) \\
+& =d(A,\{y\})+d(x, y)
+\end{aligned}
+and similarly
+$$
+d(A,\{y\}) ≤ d(A,\{x\})+d(x, y)
+$$
+The previous two inequalities together imply that
+$$
+{|f(x)-f(y)|} ≤ d(x, y)
+$$
+for every $x, y ∈ X$. In particular $f$ is continuous on $X$, so that $\{x ∈ X: d(A,\{x\})=0\}$ is closed, and contains $A$ as $f(x)=0$ for $x ∈ A$. Suppose $F ⊇ A$ is closed. If $d(A,\{x\})=0$, and $x ∉ A$, then by definition for every $ε>0$ there is $a_ε ∈ A$ such that $d\left(a_ε, x\right)&lt;ε$, that is $(A∖\{x\}) ∩ B(x, ε) ≠ ∅$, Since $F^c$ is open and $A ∩ F^c=∅$, hence $x ∉ F^c$ and therefore $x ∈ F$, that is
+$$
+\{x ∈ X: d(A,\{x\})=0\} ⊆ F .
+$$
+Therefore by definition
+$$
+\bar{A}=\{x ∈ X: d(A,\{x\})=0\}
+$$</li></ol>
+</li>
+<li>By Heine-Borel theorem, $A ⊂ ℝ^2$ is compact if and only if $A$ is closed and bounded.<br>Conversely, suppose any continuous function $f$ is bounded above and $f(A)$ has a maximum. Suppose $A$ is not compact, then by Heine-Borel theorem, $A$ is unbounded or not closed. If $A$ is unbounded, then there is a sequence $x_n$ such that $\left|x_n\right| → ∞$. But $f(x)={|x|}$ is continuous on $A$ and is not bounded above, which is a contradiction. If $A$ is not closed but bounded, then there is a sequence $a_n ∈ A$, such that $a_n → a$ but $a ∉ A$. Consider the function
+$$
+f(x)=\frac{1}{|x-a|}
+$$
+which is continuous on $A$, but not bounded above, also a contradiction.</li></ol>
+</li>
+<li>
+<ol type="a"><li>Morera's Theorem: Let $U$ be an open subset of $ℂ$. Suppose that $f: U → ℂ$ is continuous function such that for every closed path $γ:[a, b] → U$ we have $∫_γ f(z) d z=0$. Then $f$ is holomorphic.
+</li>
+<li>
+<ol type="i"><li>Each $f_n$ is continuous and so $f$ is continuous on $D$ by uniform convergence. For any contour $γ$ in $D$, uniform convergence implies that, as $n → ∞$,
+$$
+∫_γ f_n(z) d z → ∫_γ f(z) d z
+$$
+But $∫_γ f_n(z) d z=0$ by Cauchy's Theorem, and so $∫_γ f(z) d z=0$. By Morera's Theorem, $f$ is holomorphic.</li>
+<li>$$
+f^{(k)}\left(z_0\right)=\frac{1}{2 π i} ∫_γ \frac{f(z)}{\left(z-z_0\right)^{k+1}} d z
+$$
+</li>
+<li>It is enough to prove the second part. If $\left|z_0\right|&lt;r$ then $\left|z-z_0\right|&gt;1-r$, and so by the Estimation Theorem
+\begin{aligned}
+\left|f_n^{(k)}\left(z_0\right)-f^{(k)}\left(z_0\right)\right| &=\left|\frac{1}{2 π i} ∫_γ \frac{f_n(z)-f(z)}{\left(z-z_0\right)^{k+1}} d z\right| \\
+&≤ \frac{\sup_{|z|=1} \left|f_n(z)-f(z)\right|}{(1-r)^{k+1}},
+\end{aligned}
+as $γ$ has length $2 π$. So
+$$
+\sup_{|z|&lt;r}\left|f_n^{(k)}\left(z_0\right)-f^{(k)}\left(z_0\right)\right| ≤ \frac{\sup_{|z|=1} \left|f_n(z)-f(z)\right|}{(1-r)^{k+1}},
+$$
+which tends to 0 as $n → ∞$. So $f_n^{(k)}$ converges uniformly to $f^{(k)}$ on $\{|z|&lt;r\}$.</li></ol>
+</li>
+<li>Suppose that $p_n(z) → 1 / z$ uniformly on the unit circle. Let $γ$ trace the positively oriented unit circle. Then $∫_g p_n(z) d z=0$ for each $n$, while $∫_γ(1 / z) d z=2 π i$. By uniform convergence, $∫_γ p_n(z) d x →∫_γ(1 / z) d z$, which gives a contradiction.
+</li>
+<li>Note first that if $z=x+i y$ then $\left|n^{-z}\right|=|\exp (-(x+i y) \log n)|=n^{-x}$. For $t&gt;1$, consider the half-plane $H_t:=\{x+i y: x&gt;t\}:$ then $\left|n^{-z}\right| ≤ n^{-t}$ for all $z ∈ H_t$.<br>Now the Weierstrass M-Test states that if $\sum M_n$ is a convergent series of nonnegative numbers and $\left(f_n\right)$ is a sequence of continuous functions on a domain $D$ such that $\left|f_n(z)\right| ≤ M_n$ for all $n$ and all $z ∈ D$ then $\sum f_n$ converges uniformly on $\bar{D}$. Applying this with $M_n=n^{-t}$, we see that $\sum n^{-z}$ converges uniformly on $H_t$. Since each summand is holomorphic on $H_t$, part (b) implies that $\sum n^{-z}$ is holomorphic on $H_t$. It follows that the sum is holomorphic on $⋃_{t&gt;1} H_t$, which is $H_1$, as required.</li></ol>
+</li>
+<li>
+<ol type="a"><li>If $f$ is holomorphic on the annulus $R&lt;|z-a|&lt;S$ then, for $z$ in the annulus,
+$$
+f(z)=\sum_{n=-∞}^{∞} c_n(z-a)^n,
+$$
+where, for $r ∈(R, S)$,
+$$
+c_n=\frac{1}{2 π i} ∫_γ \frac{f(w)}{(w-a)^{n+1}} d w
+$$
+and $γ=γ(a, r)$.
+</li>
+<li>Suppose $f$ is holomorphic on the punctured disc $D^{\prime}(a, r)$, for some $r&gt;0$. Let $\sum_{n=-∞}^{∞} a_n(z-a)^n$ be the Laurent expansion of $f$ around $a$. Then $f$ has a removable singularity if $a_n=0$ for $n&lt;0$; $f$ has a pole of order $n$ if $a_{-n} ≠ 0$ and $a_k=0$ for all $k&lt;-n$; and $f$ has an essential singularity if there are infinitely many $k&lt;0$ such that $a_k ≠ 0$.
+</li>
+<li>
+<ol type="i"><li>For $a=0$ there is a pole of order $4-1=3$ at 0.<br>
+For $a=1$ there is a simple pole at $z=1$ and a removable singularity at $z=0$ (as $z$ and $\sin z$ have a simple zero there).<br>For $a=n π$, where $n$ is a nonzero integer: there is a removable singularity at $z=0$ and a double pole at $z=a$.<br>For any other $a$ : there is a removable singularity at $z=0$ and a triple pole at $z=a$.
+</li>
+<li>$\cot (z)=\cos (z) / \sin (z)$ has a simple pole whenever $\sin (z)$ has a zero, i.e. at all $n π, n ∈ ℤ$. Thus $\cot (π / z) / z$ has a simple pole whenever $z$ is of form $1 / n$, for $n$ a nonzero integer. Additionally, there is a nonisolated singularity at $z=0$, as this is a limit point of singularities.</li></ol></li>
+<li>
+<ol type="i"><li>
+We have
+\begin{aligned}
+\exp \left(\frac{w}{2}\left(z-\frac{1}{z}\right)\right) &=\exp \left(\frac{w z}{2}\right) \exp \left(-\frac{w}{2 z}\right) \\
+&=\sum_{n=0}^{∞} \frac{w^n}{2^n n !} z^n \sum_{n=0}^{∞}(-1)^n \frac{w^n}{2^n n !} z^{-n}
+\end{aligned}
+The two series converge absolutely for $z ≠ 0$, so we may rearrange and collect the terms with $z^0$ to obtain:
+$$
+J_0(w)=\sum_{n=0}^{∞}(-1)^n \frac{w^{2 n}}{4^n n !^2}
+$$
+</li>
+<li>Let $γ$ trace the unit circle with positive orientation. Then, by Laurent's Theorem, and taking $z=e^{i θ}$,
+\begin{aligned}
+J_n(w) &=\frac{1}{2 π i} ∫_γ \exp \left(\frac{w}{2}\left(z-\frac{1}{z}\right)\right) \frac{d z}{z^{n+1}} \\
+&=\frac{1}{2 π i} ∫_{-π}^π \exp \left(\frac{w}{2}\left(e^{i θ}-e^{-i θ}\right)\right) \frac{i e^{i θ}}{e^{i(n+1) θ}} d θ \\
+&=\frac{1}{2 π} ∫_{-π}^π e^{-i(n θ-w \sin θ)} d θ \\
+&=\frac{1}{2 π} ∫_{-π}^π \cos (-n θ+w \sin θ)+i \sin (-n θ+w \sin θ) d θ
+\end{aligned}
+Since $-n θ+w \sin θ$ is odd, $\sin (-n θ+w \sin θ)$ is also odd, and so the integral is equal to
+$$
+\frac{1}{2 π} ∫_{-π}^π \cos (-n θ+w \sin θ) d θ .
+$$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>$∫_γ f(z) d z=∫_a^b f(γ(t)) γ^{\prime}(t) d t$.
+</li>
+<li>The residue of $f$ at $a$ is the coefficient $c_{-1}$ in the Laurent expansion of $f$ around $a$.<br>Residue Theorem: Let $f$ be holomorphic inside and on a closed, positively oriented contour $γ$ except at a finite number of poles $a_1, …, a_n$. Then
+$$
+∫_γ f(z) d z=2 π i \sum_{i=1}^n \operatorname{res}\left(f ; a_i\right) .
+$$
+</li>
+<li>Consider the function
+$$
+f(z)=\frac{\exp (i k z)}{(x+b)^2+a^2} .
+$$
+We use a semicircular contour $γ$ :
+The function $f$ has simple poles at $-b ± i a$, of which $-b+i a$ lies inside the contour (for large enough $R$ ). The residue at $-b+i a$ is
+$$
+\left.\frac{\exp (i k z)}{2(z+b)}\right|_{z=-b+i a}=\frac{\exp (-k a-i b k)}{2 a i} .
+$$
+By Cauchy's Residue Theorem,
+$$
+∫_g f(z) d z=π \exp (-k a-i b k) / a
+$$
+which has real part $π \exp (-k a) \cos (b k) / a$.
+Now the integral along $γ_R$ converges to 0 as $R → ∞$, as $|\exp (i k z)| ≤$ 1 in the upper half plane and so by the Estimation Theorem
+$$
+\left|∫_{γ_R} f(z) d z\right| ≤ π R ⋅ \frac{1}{(R-b)^2-a^2} → 0 .
+$$
+The required integral is the real part of $\lim_{R → ∞} ∫_{γ_0} f(z) d z$ which equals $π \exp (-k a) \cos (b k) / a$.
+</li>
+<li>Let
+$$
+f(z)=\frac{z^t}{z^2+1}
+$$
+and let $γ$ be the following contour, where the outer circle has radius $R$, the inner circle has radius $ϵ$, and the contours $γ_{ ±}$lie just above and below the axis:<br>We define a branch of the logarithm on $ℂ \backslash[0, ∞)$ by $\log (z)=\log {|z|}+i \arg (z)$, where $\arg (z) ∈(0,2 π)$, and correspondingly $z^t=\exp ((t) \log (z)$.
+The function $f$ has simple poles at $z= ± i$, with residues
+$$
+\left.\frac{z^t}{2 z}\right|_{z=i}=\frac{1}{2 i} \exp (i π t / 2)
+$$
+and
+$$
+\left.\frac{z^t}{2 z}\right|_{z=-i}=-\frac{1}{2 i} \exp (3 i π t / 2)
+$$
+So
+\begin{aligned}
+∫_γ f(z) d z &=2 π i\left(\frac{1}{2 i} \exp (i π t / 2)-\frac{1}{2 i} \exp (3 i π t / 2)\right) \\
+&=π(\exp (i π t / 2)-\exp (3 i π t / 2)) .
+\end{aligned}
+Now on $ρ$, we have $|f(z)| ≤ R^t /\left(R^2-1\right)$, and so by the Estimation Theorem
+$$
+\left|∫_ρ f(z) d z\right| ≤ 2 π R ⋅ R^t /\left(R^2-1\right) \text {, }
+$$
+which tends to 0 as $R → ∞$, as $t ∈(-1,1)$.
+On $γ_ϵ$, for small $ϵ$, we have $|f(z)| ≤ 2 ϵ^t$, and so again by the Estimation Theorem we get
+$$
+\left|∫_{γ_ϵ} f(z) d z\right| ≤ 2 π ϵ ⋅ 2 ϵ^t=4 π ϵ^{1+t}
+$$
+which tends to 0 as $ϵ → 0$.
+Finally, we have
+$$
+∫_{γ_+} f(z) d z+∫_{γ_-} f(z) d z=\left(1-e^{2 π i t}\right) ∫_ϵ^R f(x) d x,
+$$
+as Log has an extra $+2 π i$ on $γ_-$, and we are integrating in the reverse direction.<br>
+So taking $ϵ → 0$ and $R → ∞$, we obtain $\left(1-e^{2 π i t}\right) ∫_0^{∞} f(x) d x=π\left(e^{i π t / 2}-e^{3 i π t / 2}\right)$, and so
+\begin{aligned}
+∫_0^{∞} f(x) d x &=\frac{π\left(e^{i π t / 2}-e^{3 i π t / 2}\right)}{1-e^{2 π i t}} \\
+&=π e^{i π t / 2} \frac{1-e^{i π t}}{1-e^{2 π i t}} \\
+&=π e^{i π t / 2} \frac{1}{1+e^{π i t}} \\
+&=π \frac{1}{e^{-π i t / 2}+e^{π i t / 2}} \\
+&=\frac{π}{2 \cos (π t / 2)}
+\end{aligned}</li></ol>
+</li>
+<li>
+<ol type="a"><li><ol type="i"><li>Holomorphic function $f: R → ℂ$ is conformal on $R$ if $f'(z) ≠ 0$ for every $z ∈ R$.
+</li>
+<li>By (i) $f'(z) ≠ 0$. Let $g=f^{-1}$. Let $w_0 ∈ G$. We show that $g'\left(w_0\right)$ exists and $g'\left(w_0\right) ≠ 0$. If $w ∈ G$ such that $w ≠ w_0$, then by injectivity $z=g(w) ≠ z_0=g\left(w_0\right)$. By open mapping theorem, $g$ is continuous. Therefore as $w → w_0$, we have $z → z_0$. Hence
+$$
+\frac{g(w)-g\left(w_0\right)}{w-w_0}=\frac{z-z_0}{f(z)-f\left(z_0\right)}=\frac{1}{\frac{f(z)-f\left(z_0\right)}{z-z_0}} → \frac{1}{f'\left(z_0\right)}
+$$
+as $w → w_0$ exists and does not vanish. Therefore $g$ is conformal.
+</li>
+<li>The answer is yes, by Riemann conformal mapping theorem, as $H$ is simply connected. Explicitly we may construct conformal mapping by applying Möbius transformations. Pick any point $a ∈ H$ which is sent to 0, so that its symmetric point against $∂ H$ (the real line), $\bar{a}$ is mapped to $∞$. Hence
+$$
+f(z)=e^{i θ} \frac{z-a}{z-\bar{a}}
+$$
+where $θ$ is a real number, which has an inverse obtained by solving $z$ in terms of $w=f(z)$, that is,
+$$
+z=\frac{\bar{a} w-a e^{i θ}}{w-e^{i θ}}
+$$
+Simple computation leads to the following relation that
+$$
+ℑ z=\frac{1-{|w|}^2}{\left|w-e^{i θ}\right|^2} ℑ a
+$$
+so that $z∈H⇔ℑz>0⇔{|w|}&lt;1⇔w∈D$ which shows that $f:H→D$ is bijective.
+</li>
+<li>Suppose $f$ is holomorphic from ℂ to $H$, then by part (iii), the mapping
+$$
+z → \frac{f(z)-i}{f(z)+i}
+$$
+is holomorphic from ℂ to the unit disk, hence, by the Liouville theorem, this holomorphic function must be constant. That is
+$$
+\frac{f(z)-i}{f(z)+i}=A
+$$
+for some $A$ with ${|A|}&lt;1$. Hence
+$$
+f(z)=\frac{2 i}{1-A}-i
+$$
+is a constant.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $C_1:{|z-2|}=2$ and $C_2:{|z-3|}=1$, two circles, tangent at $z=4$. Let us apply the Möbius transformation
+$$
+f_1(z)=\frac{1}{z-4}
+$$
+which sends 4 to $∞$, so the two circles $C_1$ and $C_2$ are mapped to two parallel lines $l_1$ and $l_2$.<br>$f_1$ preserves the real axis, and two circles are orthogonal to real axis. Therefore $l_1$ and $l_2$ must be orthogonal to real axis too. Since 0 and $z=2+2 i$ are two points lying on $C_1$, and
+$$
+f_1(0)=-\frac{1}{4},   \text { and } f_1(2+2 i)=\frac{1}{-2+2 i}=-\frac{1}{2} \frac{1}{1-i}=-\frac{1}{4}-\frac{1}{4} i
+$$
+hence $l_1$ is the line that $ℜ z=-\frac{1}{4}$. Now $2 ∈ C_2$ and
+$$
+f_1(2)=-\frac{1}{2}
+$$
+so $l_2$ is the line having equation $ℜ z=-\frac{1}{2}$. Since $1 ∈ R_1$ and $f(1)=-\frac{1}{3}$, thus the range $R_1$ is mapped one-to-one onto the strip that $-\frac{1}{2}&lt;ℜ z&lt;-\frac{1}{4}$. Now the mapping $f_2(z)=4 π\left(z+\frac{1}{2}\right)$ sends the strip $-\frac{1}{2}&lt;ℜ z<-\frac{1}{4}$ to the strip $0&lt;ℜ z&lt;π$. Apply $f_3(z)=\exp (i z)$ which maps the strip $0&lt;ℜ z&lt;π$ to $H$. Therefore
+$$
+f(z)=f_3 ∘ f_2 ∘ f_1(z)=\exp \left(\frac{4 π i}{z-4}+2 π i\right)=\exp \left(\frac{4 π i}{z-4}\right)
+$$
+is a conformal mapping sending $R_1$ one-to-one and onto $H$.
+</li>
+<li>Sketch the range $R_2$ we discover that the circle $C_3:|z-i|=2$ has two cutting points with $C_4: ℑ z=0$ at $x$ where $|x-i|^2=4$, solve $x$ to obtain $x= ± \sqrt{3}$. Now we apply a Möbius transformation which sends $-\sqrt{3}$ to 0 and $\sqrt{3}$ to $∞$, thus $C_3$ and $C_4$ are mapped to two lines through the origin $l_3$ and $l_4$. We may use
+$$
+f_1(z)=\frac{z+\sqrt{3}}{z-\sqrt{3}} .
+$$
+It is clear that the Möbius transformation $f_1$ preserves real axis (i.e. $C_4$, the line $ℑ z=0$ ), or by checking that $0 ∈ C_4$ and $f_1(0)=-1$ so that $l_4$ must be the real axis.
+Now $3 i ∈ C_3$ and
+$$
+f_1(3 i)=\frac{3 i+\sqrt{3}}{3 i-\sqrt{3}}=\frac{1}{2}-\frac{\sqrt{3}}{2} i,
+$$
+which implies that $l_3$ is the line $\arg z=-\frac{π}{3}$. Since $i ∈ R_2$ and
+$$
+f_1(i)=\frac{i+\sqrt{3}}{i-\sqrt{3}}=-\frac{1}{2}-\frac{\sqrt{3}}{2} i
+$$
+which yields that
+$$
+f_1\left(R_2\right)=\left\{z ∈ ℂ:-π<\arg z<-\frac{π}{3}\right\} .
+$$
+Rotating the range by $π$, i.e. $f_2: z → e^{i π} z=-z$ mapping $f_1\left(R_2\right)$ to the range that $0<\arg z<\frac{2}{3} π$, which is the wedge with angle $\frac{2}{3} π$ then enlarging the wedge angle by conformal mapping $f_3: z → z^{\frac{3}{2}}$ which sends the wedge to $H$, where
+$$
+f_3(z)=z^{\frac{3}{2}}=\exp \left[\frac{3}{2} \ln z\right]
+$$
+where $\ln z=\ln {|z|}+i \arg z$ where $0<\arg z&lt;2 π$ is the principal branch of log. Together with Part (a)(iii) we conclude that
+$$
+f(z)=f_4 ∘ f_3 ∘ f_2 ∘ f_1(z)
+$$
+where $f_3(z)=e^{i θ} \frac{z-a}{z-\bar{a}}(ℑ a>0$ and $θ$ is real as parameters). That is
+$$
+f(z)=e^{i θ} \frac{\exp \left[\frac{3}{2} \ln \frac{\sqrt{3}+z}{\sqrt{3}-z}\right]-a}{\exp \left[\frac{3}{2} \ln \frac{\sqrt{3}+z}{\sqrt{3}-z}\right]-\bar{a}}
+$$
+sends $R_2$ one-to-one onto conformly to the unit disk $D$.
+Another method: One can apply $f_1(z)=\frac{z-\sqrt{3}}{z+\sqrt{3}}$ instead at the first step, the other steps are similar. $l_4$ is still the real axis. Since
+$$
+f_1(3 i)=\frac{1}{2}+\frac{\sqrt{3}}{2} i,   f_1(i)=\frac{1}{2}-\frac{\sqrt{3}}{2} i
+$$
+so that the range $f_1\left(R_2\right)$ is given by $-\frac{2}{3} π&lt;\arg z&lt;0$, therefore we conclude that
+$$
+f(z)=e^{i θ} \frac{\exp \left[\frac{3}{2} \ln \left(e^{\frac{2}{3} π i} \frac{z-\sqrt{3}}{z+\sqrt{3}}\right)\right]-a}{\exp \left[\frac{3}{2} \ln \left(e^{\frac{2}{3} π i} \frac{z-\sqrt{3}}{z+\sqrt{3}}\right)\right]-\bar{a}}
+$$
+will do.</li></ol></li></ol>
+</li></ol>

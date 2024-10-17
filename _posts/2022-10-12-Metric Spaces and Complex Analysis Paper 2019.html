@@ -1,0 +1,514 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: A2 Paper 2019
+---
+<ol><li>
+<ol type="a"><li>Let $(X, d)$ be a metric space, and $φ$ be a non-decreasing function on $[0, ∞)$ such that $φ(0)=0, φ(t)&gt;0$ for $t&gt;0, φ$ is continuous at 0, and $φ(s+t)⩽φ(s)+φ(t)$ for all $s, t⩾0$. Define $ρ(x, y)=φ(d(x, y))$ for $x, y ∈ X$.
+<ol type="i"><li>Show that $ρ$ is a metric on $X$.</li>
+<li>Show that $x_{n} → x$ in $(X, d)$ implies that $x_{n} → x$ in $(X, ρ)$. Is the converse also true? That is, if $x_{n} → x$ in $(X, ρ)$, is it true that $x_{n} → x$ in $(X, d)$ too? Justify your answer.</li>
+<li>Show that there is a bounded metric $d'$ on $X$ which is equivalent to $d$ in the sense that $d\left(x_{n}, x\right) → 0$ if and only if $d'\left(x_{n}, x\right) → 0$ as $n → ∞$
+</li></ol>
+</li>
+<li>Let $A$ and $B$ be two subsets of a metric space $X$. Show that $\bar{A} ∪ \bar{B}=\overline{A ∪ B}$, where $\bar{A}$ denotes the closure of a subset $A$. Is it true that $\overline{A ∩ B}=\bar{A} ∩ \bar{B}$ ?<br>
+Give an example of subsets $A$ and $B$ of $ℝ$, such that $A ∩ \bar{B}$ and $\bar{A} ∩ B$, are different.</li>
+<li>Let $(X, d)$ be a metric space.
+<ol type="i"><li>What does it mean that $f: X → X$ is a contraction? State the Contraction Mapping Theorem.
+</li>
+<li>Suppose $(X, d)$ is compact and non-empty, and $g: X → X$ is mapping such that $d(g(x), g(y))&lt;d(x, y)$ for any $x, y ∈ X, x ≠ y$. Show that there is a unique $x_{0} ∈ X$ such that $g\left(x_{0}\right)=x_{0}$.
+</li></ol>
+</li>
+<li>Let $Y$ be the vector space of all convergent real sequences $a=\left(a_{n}\right)_{n⩾0}$ with $\lim_{n → ∞} a_{n}=0$, equipped with the norm $‖a‖=\sup_{n⩾0}\left|a_{n}\right|$. Let $d(a, b)=‖a-b‖$ for $a=\left(a_{n}\right)_{n⩾0} ∈ Y$ and $b=\left(b_{n}\right)_{n⩾0} ∈ Y$, where $a-b$ is the sequence $\left(a_{n}-b_{n}\right)_{n⩾0}$. You may assume that $d$ is a metric on $Y$.<br>
+Let $B=\{a ∈ Y:‖a‖⩽1\}$ be the closed unit ball of $Y$. Consider the mapping $F: B → Y$ defined as the following. If $a=\left(a_{n}\right)_{n⩾0} ∈ B$ then $F(a)=\left(ξ_{n}\right)_{n⩾0}$ is given by$$
+ξ_{0}=\frac12(1+‖a‖),   ξ_{n}=a_{n-1}\left(1-\frac1{2^{n}}\right) \text { for } n⩾1 .$$Show that $F$ maps $B$ into $B$, and moreover show that$$
+d(F(a), F(b))&lt;d(a, b)$$for any $a, b ∈ B, a ≠ b$. Prove that the equation $F(a)=a$ has no solution in $B$.<br>
+Is the closed unit ball $B$ compact? Justify your answer.<br>
+[Hint: you may use the fact, without proof, that the sequence $\prod_{k=1}^{n}\left(1-2^{-k}\right)$ converges to a positive number as $n → ∞$.]</li></ol></li>
+<li><ol type="a"><li>
+What does it mean that a metric space $X$ is connected? What does it mean that $X$ is path-connected?
+</li>
+<li><ol type="i"><li>From the definition, show that a metric space $X$ is connected if and only if any continuous function $f$ from $X$ to the two point discrete space $\{0,1\}$ is constant.</li>
+<li>Show that $X ⊆ ℝ$ is connected if and only if $X$ is an interval $J$.<br>
+[You may use the Intermediate Value Theorem for real continuous functions, as long as you state it clearly. You may also use the fact that $J ⊆ ℝ$ is an interval if and only if for every $x, y ∈ J$ and $x⩽y$, then $(x, y) ⊆ J$. In particular an interval can be unbounded.]</li>
+<li>Show that a path-connected space must be connected.</li></ol></li>
+<li>Let $X$ be an open and connected subset of Euclidean space $ℝ^{n}$. Show that $X$ is path-connected.</li>
+<li>Show that there is no homeomorphism between $[0,1]$ and the unit circle $S^1=\{z ∈ ℂ:{|z|}=1\}$. Find a map which sends $[0,1]$ one-to-one and onto $S^1$.
+</li></ol>
+</li>
+<li>Let $D$ be an open subset of $ℂ$, and $f$ be a complex function on $D$. Let $z=x+y i$ where $(x, y)$ are real coordinates, and write $f(z)=u(x, y)+v(x, y) i$ for $z=x+y i ∈ D$, where $u$ and $v$ are real functions in $D$.
+<ol type="a"><li>
+<ol type="i"><li>What does it mean that $f$ is holomorphic in $D$ ?</li>
+<li>State the Cauchy-Riemann equations. Prove that if $f$ is holomorphic in $D$, then $u, v$ are solutions to the Cauchy-Riemann equations.</li>
+<li>Show that if $D$ is connected and if $f$ is real and holomorphic then $f$ is constant.
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>Suppose now $f$ is holomorphic in $D$ and $a ∈ D$. State Taylor's expansion for $f$ about $a$, and the Cauchy integral formula for $f$ at $a$.</li>
+<li>Show that if $f$ is holomorphic and bounded on the complex plane $ℂ$, then $f$ is constant. [If you use Liouville's theorem, then you need to state it and prove it.]
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $a ∈ ℂ$. What does it mean to say that $a$ is an isolated singularity of $f$ ? What does it mean that $a$ is a removable singularity of $f$ ?</li>
+<li>Suppose that $b$ is an isolated singularity of $f$, state Laurent's expansion for $f$ about $b$.</li>
+<li>Show that if $f$ is bounded near $b$, then $b$ is removable.<a href="https://proofwiki.org/wiki/Riemann_Removable_Singularities_Theorem">Riemann Removable Singularities Theorem</a></li>
+<li>Suppose now $f$ is holomorphic on $ℂ$, and $|f(z)| ⩽|\sin z+\cos z|$ for every $z ∈ ℂ$. Show that $f(z)=A(\sin z+\cos z)$ for all $z ∈ ℂ$, where $A$ is a constant.</li></ol></li></ol></li><li><ol type="a"><li>Let $R$ be a connected and open subset of $ℂ$, and $f$ be holomorphic in $R$.<ol type="i">
+<li>Consider$$
+A=\left\{z ∈ R: f^{(n)}(z)=0 \text { for all } n=0,1,2, ⋯\right\}$$Show that $A$ is open. Show that $A$ is closed too. Hence, or otherwise, prove that $A$ is empty or $A=R$.</li>
+<li>State and prove the Identity Theorem for holomorphic functions.
+</li></ol>
+</li>
+<li>Is there a holomorphic function $f$ in $D=\{z:|z|&lt;1\}$ such that<ol type="i">
+<li>$f\left(\frac1{n}\right)=(-1)^{n}+1$ for $n=2,3, ⋯$ ? Justify your answer.</li>
+<li>$f\left(\frac1{n}\right)=\frac{n}{n+1}$ for $n=2,3, ⋯$ ? Justify your answer.</li>
+<li>$f\left(\frac{n-1}{n}\right)=1-\frac2{n}+\frac1{n^2}$ for $n=1,2, ⋯ ?$ Is such $f$ unique? Justify your answer.
+</li></ol>
+</li>
+<li>Let $a ∈ ℂ$, and $f$ be a holomorphic function near $a$ so that $a$ is an isolated singularity of $f$.
+<ol type="i"><li>Define the residue $\operatorname{Res}(f, a)$ of $f$ at the isolated singularity $a$. What does it mean that $a$ is an essential singularity of $f$?<br>
+In the following parts (ii) and (iii), suppose $a$ is an essential singularity of $f$.</li>
+<li>Show that for any $δ&gt;0$ and $M&gt;0$, there is $z ∈ ℂ$ such that $|z-a|&lt;δ$ and $|f(z)|&gt;M$. That is, $f$ is unbounded near $a$.</li>
+<li>Show that for any $ε&gt;0, δ&gt;0$ and any complex number $C$, there is a point $z ∈ ℂ$ such that $|z-a|&lt;δ$ and $|f(z)-C|&lt;ε$.<br>
+[Taylor's expansion and Laurent's expansion may be applied as long as you state them clearly.]
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>State the Residue Theorem, and show that$$
+∫_{0}^{2 π} \frac{d θ}{1-2 p \cos θ+p^2}=\frac{2 π}{1-p^2}$$where $p ∈ ℂ$ such that ${|p|}&lt;1$.</li>
+<li>Define a holomorphic branch of $\log z$, and use a suitable contour integral to compute the integral$$
+∫_{0}^∞ \frac{\ln^2 x}{1+x^2} d x$$Justify your computations.</li>
+<li>Suppose $f$ is holomorphic in an open set $R$ containing $\{z ∈ ℂ:{|z|}⩽1\}$. Let $C(0,1)$ be the unit circle $\{z ∈ ℂ:|z|=1\}$ with the anti-clockwise orientation, and $D(0,1)$ be the unit disk $\{z ∈ ℂ:|z|&lt;1\}$.
+<ol type="i"><li>Suppose $f$ does not equal zero identically in $D(0,1)$, and suppose $a ∈ D(0,1)$ is a zero of $f$, show that $f(z)=(z-a)^{m} g(z)$ for some $m⩾1$ ($m$ is called the order of zero $a$) and for some holomorphic function $g$ on $D(a, r)$ for some $r&gt;0$, and $g(z) ≠ 0$ for $z$ near $a$.<br>
+Hence, or otherwise, deduce that $a$ is a simple pole of $\frac{f'(z)}{f(z)}$, if $f$ does not equal zero identically.</li>
+<li>Suppose now that $f$ possesses finitely many zeros $a_{i} ∈ D(0,1)$ of order $m_{i}$, where $i=1, ⋯, k$, and $ϕ$ is a holomorphic function in $R$. Show that$$
+\frac1{2 π i} ∫_{C(0,1)} ϕ(z) \frac{f'(z)}{f(z)} d z=\sum_{i=1}^{k} m_{i} ϕ\left(a_{i}\right) .
+$$
+</li></ol></li></ol>
+</li>
+<li>Let $H=\{z: \operatorname{Im} z&gt;0\}$ and $D=\{z:|z|&lt;1\}$ the unit disk.
+<ol type="a"><li>Let $a ∈ H$. Find a Möbius transformation $h$ which maps $H$ one-to-one and onto the unit disk $D$, such that $h(a)=0$, and find a one-to-one conformal map which sends $D$ onto $H$.</li>
+<li>Show that the Möbius transformation $φ: z → \frac{z-α}{1-\bar{α} z}$ maps $D$ one-to-one and onto $D$ for every $α ∈ D$. What is the image $φ(D)$ in the case where $|α|&gt;1$ ?</li>
+<li>Let $R=\{z:|z|&lt;1$ and $\operatorname{Im} z&gt;0\}$. Find a conformal map which sends $R$ one-to-one and onto the unit disk $D$.</li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>
+<ol type="i"><li>Since $φ ≥ 0$, so $ρ(x, y)=φ(d(x, y)) ≥ 0$. Since $d(x, y)=d(y, x)$
+$$
+ρ(x, y)=φ(d(x, y))=φ(d(y, x))=ρ(y, x)
+$$
+By assumption, $φ(t)=0$ only when $t=0$, hence $ρ(x, y)=φ(d(x, y))=0$ implies that $d(x, y)=0$, so that $x=y$ as $d$ is a metric. Finally verify that $ρ$ also satisfies the triangle inequality. If $x, y$ and $z$ in $X$, we have $d(x, z)≤d(x, y)+d(y, z)$, so that, by using the assumptions on $φ$ we have
+\begin{aligned}
+ρ(x, z) &=φ(d(x, z))\\&≤φ(d(x, y)+d(y, z))\\&≤φ(d(x, y))+φ(d(y, z)) \\
+&=ρ(x, y)+ρ(y, z) .
+\end{aligned}
+Therefore $ρ$ is a metric on $X$.
+</li>
+<li>Suppose $x_n → x$ in $(X, d)$, i.e. $d\left(x_n, x\right) → 0$, since $φ$ is (right) continuous at 0, $φ\left(d\left(x_n, x\right)\right) → 0$, that is, $ρ\left(x_n, x\right) → 0$.<br>
+The converse is also true, we may argue by contradiction. Suppose $ρ\left(x_n, x\right) → 0$ but $d\left(x_n, x\right)$ does not tend to zero, thus there is $ε&gt;0$ and there is a sub-sequence $\left\{x_{n_k}\right\}$ such that $d\left(x_{n_k}, x\right) ≥ ε$, $φ$ is non-decreasing implies that $ρ\left(x_{n_k}, x\right) ≥ φ(ε)&gt;0$ for all $k$, which is a contradiction.
+</li>
+<li>We may choose $φ(t)=\frac{t}{1+t}$ and $ρ(x, y)=φ(d(x, y))$.<center>{% latex %}\usepackage{tikz}\begin{tikzpicture}[scale=2]
+  \draw[->] (0,0) -- (2.3,0) node[right] {$t$};
+  \draw[->] (0,0) -- (0,1.3) node[above] {$\varphi(t) = \frac{t}{1+t}$};
+  \draw[blue,thick,domain=0:2] plot (\x,{\x/(1+\x)});
+  \foreach \x in {0.5, 1, 1.5, 2}
+    \draw (\x,-1pt) -- (\x,1pt) node[below=2pt] {\x};
+\draw (1pt,0.5) -- (-1pt,0.5) node[left] {0.5};
+\draw[dashed] (2,1) -- (-1pt,1) node[left] {1};
+\end{tikzpicture}{% endlatex %}</center>Then $φ$ is increasing on $[0, ∞)$ and $φ(t)=0$ only for $t=0$. $φ$ is continuous at 0, and
+$$
+\frac{t+s}{1+t+s}=\frac{t}{1+t+s}+\frac{s}{1+s+t}≤\frac{t}{1+t}+\frac{s}{1+s}
+$$
+for all $s, t ≥ 0$, that is, $φ(s+t)≤φ(s)+φ(t)$. Therefore, by a) and b), $d'=ρ$ is a metric equivalent to $d$. While $d'(x, y)≤1$ for all $x, y ∈ X$.</li></ol>
+</li>
+<li>Since $A ⊆ \overline{A ∪ B}$ so $\bar{A} ⊆ \overline{A ∪ B}$ and similarly $\bar{B} ⊆ \overline{A ∪ B}$. On the other hand $A ∪ B ⊆ \bar{A} ∪ \bar{B}$ and $\bar{A} ∪ \bar{B}$ is closed, we therefore have $\overline{A ∪ B} ⊆ \bar{A} ∪ \bar{B}$. Hence $\bar{A} ∪ \bar{B}=\overline{A ∪ B}$.<br>In general $\overline{A ∩ B}=\bar{A} ∩ \bar{B}$ is false, for example $A=ℚ$ and $B=ℝ∖ ℚ$. Then $A ∩ B=∅$ but $\bar{A}=\bar{B}=ℝ$.
+Moreover $A ∩ \bar{B}=ℚ, \bar{A} ∩ B=ℝ∖ ℚ, \overline{A ∩ B}=∅$ and $\bar{A} ∩ \bar{B}=ℝ$ are different.
+</li>
+<li>
+<ol type="i"><li>$f: X → X$ is a contraction if there is a constant $0≤c&lt;1$ such that $d(f(x), f(y))≤c d(x, y)$ for every $x, y ∈ X$. The Contraction Mapping Theorem says that if $f: X → X$
+is a contraction on a complete metric space $(X, d)$, then $f$ has a unique point, i.e. there is a unique $x ∈ X$, such that $f(x)=x$.
+</li>
+<li>Let us consider the function $F(x)=d(g(x), x)$ for $x ∈ X$. Then
+\begin{aligned}
+|F(x)-F(y)| &=|d(g(x), x)-d(g(y), y)| \\
+&=|d(g(x), x)-d(x, g(y))+d(x, g(y))-d(g(y), y)| \\
+&≤d(g(x), g(y))+d(x, y) \\
+&≤2 d(x, y)
+\end{aligned}
+for all $x, y$, hence $F$ is continuous on $X$. Since $X$ is compact, $F$ achieves its minimum on $X$, that is, there is $x_0 ∈ X$, such that
+$$
+d\left(g\left(x_0\right), x_0\right)=\inf_{x ∈ X} d(g(x), x)
+$$
+If $g\left(x_0\right) ≠ x_0$, then $d\left(g^2\left(x_0\right), g\left(x_0\right)\right)&lt;F\left(x_0\right)$ by assumption, so that $F\left(g\left(x_0\right)\right)&lt;F\left(x_0\right)$ which contradicts to the claim $x_0$ is the inf of $F$. Thus $x_0$ must be a fixed point of $g$.</li></ol>
+</li>
+<li>Suppose $a ∈ B$, then $F(a)=ξ=\left(ξ_n\right)$ given in the question possesses the following properties:
+$$
+ξ_n=a_{n-1}\left(1-\frac1{2^n}\right) → 0   \text { as } n → ∞
+$$
+and
+$$
+\left|ξ_0\right|=\frac12(1+‖a‖)&lt;1
+$$
+While for $n ≥ 1$ we have
+$$
+\left|ξ_n\right|=\left|a_{n-1}\right|\left(1-\frac1{2^n}\right) ≤\left|a_{n-1}\right| ≤‖a‖
+$$
+so by definition $‖ξ‖≤1$, and therefore $F(a) ∈ B$ for every $a ∈ B$.<br>
+Suppose $a=\left(a_n\right), b=\left(b_n\right) ∈ B$, and let $ξ=F(a)$ and $F(b)=η$. Then $ξ_0-η_0=\frac12({‖a‖}-{‖b‖})$ and for $n ≥ 1$
+$$
+ξ_n-η_n=\left(a_{n-1}-b_{n-1}\right)\left(1-\frac1{2^n}\right)
+$$
+so that
+$$
+\left|ξ_0-η_0\right|≤\frac12‖a-b‖
+$$
+and for $n ≥ 1$
+$$
+\left|ξ_n-η_n\right| ≤\left(1-\frac1{2^n}\right)\left|a_{n-1}-b_{n-1}\right|
+$$
+If $a ≠ b$, then $‖a-b‖&gt;0$. Since $a_n-b_n → 0$ so there is $N ∈ ℕ,\left|a_{n-1}-b_{n-1}\right|≤\frac12‖a-b‖$ for $n ≥ N$. Hence
+$$
+\left|ξ_n-η_n\right| ≤\left[\left(1-\frac1{2^N}\right) ∨ \frac12\right]‖a-b‖
+$$
+for all $n$, it follows that
+$$
+‖F(a)-F(b)‖ ≤\left[\left(1-\frac1{2^N}\right) ∨ \frac12\right]‖a-b‖&lt;‖a-b‖
+$$
+as long as $a ≠ b$.<br>
+We are going to show that $F$ has no fixed point. Argue by contradiction. Suppose $a=F(a)$ where $a=\left(a_n\right) ∈ B$. Then, by definition of $F$
+$$
+a_0=\frac12(1+‖a‖)
+$$
+and
+$$
+a_n=a_{n-1}\left(1-\frac1{2^n}\right)
+$$
+for $n ≥ 1$. It follows that
+$$
+a_n=\prod_{k=1}^n\left(1-\frac1{2^k}\right) a_0=\frac12(1+‖a‖) \prod_{k=1}^n\left(1-\frac1{2^k}\right)
+$$
+which does not converge to zero, a contradiction to the assumption that $a ∈ B$. By part (c), one can conclude that $B$ is not compact. [An argument by using unit vectors is also fine].
+</li></ol>
+</li>
+<li>
+<ol type="a"><li>$X$ is connected if $X=U ∪ V$ where $U, V$ are open and disjoint, then $U$ or $V$ is empty.<br>
+$X$ is path-connected, if for every $x, y ∈ X$ there is a continuous mapping $γ$ from $[0,1]$ to $X$ such that $γ(0)=x$ and $γ(1)=y$.
+</li>
+<li>
+<ol type="i"><li>Suppose $f: X →\{0,1\}$ is continuous. Let $U=f^{-1}(0)$ and $V=f^{-1}(1)$. Then $U, V$ are open (also closed), disjoint and $X=U ∪ V$. If $X$ is connected, then $U$ or $V$ is empty, so $f(x)=0$ for all $x$, or $f(x)=1$ for all $x$, accordingly. Conversely, if $X$ is disconnected, so that $X=U ∪ V$ where $U, V$ are open disjoint and both are nonempty. Define $f(x)=0$ for $x ∈ U$, and $f(x)=1$ for $x ∈ V$. Then $f$ is continuous, and $f$ is not constant.
+</li>
+<li>Let us prove that $X ⊆ ℝ$ is connected if and only if $X=J$ is an interval. First prove any interval is connected. If $X$ is an interval with end points $a≤b$. If $a=b$ then $X=[a, a]=\{a\}$ which is connected. Otherwise we argue by contradiction. Suppose $f: X →\{0,1\}$ is continuous, so $f$ is also a continuous function from $X$ to $[0,1]$. If $f$ is not constant, then there are $x, y ∈ X$ such that $f(x)=0$ and $f(y)=1$. We may assume that $x&lt;y$. Since $X$ is an interval, so that $[x, y] ⊆ X$ and $f$ is continuous on $[x, y]$. By IVT, there is $z ∈[x, y]$ such that $f(z)=1 / 2$, which is a contradiction.<br>
+Conversely, assume that $X$ is connected, we show that $X$ is an interval, that is, if $x&lt;y$ and $x, y ∈ X$, we need to show that $(x, y) ⊆ X$. Argue by contradiction. Suppose $c ∈(x, y)$ but $c ∉ X$. Let $U=X ∩(-∞, c)$ and $V=X ∩(c, ∞)$. Then $U, V$ are open and disjoint, $x ∈ U, y ∈ V$, and $X=U ∪ V$ as $c ∉ X$. Thus $X$ is disconnected, a contradiction.
+</li>
+<li>Suppose $X$ is path-connected, and we show that $X$ is connected. Again argue by contradiction. Suppose $X$ is disconnected, that is $X=U ∪ V$ where $U, V$ are open, disjoint and both non-empty. Let $x ∈ U$, and $y ∈ V$. Since $X$ is path-connected, so there is a continuous map $p:[0,1] → X$ such that $p(0)=x$ and $p(1)=y$. Then
+$$
+[0,1]=p^{-1}(U) ∪ p^{-1}(V)
+$$
+where $p^{-1}(U), p^{-1}(V)$ are open, disjoint, and no one is empty, which would yield that the interval $[0,1]$ is disconnected, a contradiction.</li></ol>
+</li>
+<li>Suppose $X ⊆ ℝ^n$ is open and connected. Let $a ∈ X$ be any but fixed point, and let $A=\{x ∈ X: x$ can be connected to $a\}$, i.e. $A$ consists of all points $x ∈ X$, such that there is a continuous $p:[0,1]→X$ such that $p(0)=x$ and $p(1)=a$. We show that both $A$ and $A^c$ are open. Suppose $x ∈ A$, then also $x ∈ X$. Since $X$ is open in $ℝ^n$, so there is $r&gt;0$, the open ball $B(x, r) ⊆ X$. Since any point $y ∈ B(x, r)$ can be connected to the center $x$ then to $a$, so that $B(x, r) ⊆ A$. Therefore $A$ is open. Similar argument shows that if $A^c$ were non-empty, then $A^c$ is open too. Since $X$ is connected, and $A$ is non-empty, so that $A=X$ which implies that $X$ is path-connected.
+</li>
+<li>Suppose there is 1-1 onto continuous $f:[0,1] → S^1$, then $f$ maps disconnected space $[0, c) ∪(c, 1]$ one to one and onto $S^1∖\{a\}$ where $a=f(c)$, and $c ∈(0,1)$. Since $f$ and $f^{-1}$ are continuous, and $f^{-1}$ maps a connected space $S^1∖\{a\}$ to a disconnected one, which produces a contradiction.<br>
+Choose $a_n=\frac1{n}(n=1,2, ⋯)$. Let $f(x)=e^{i 2 π x}$ for $x ∈[0,1)$ but $x ≠ a_n$ for $n ≥ 1$ and $f\left(a_n\right)=e^{i 2 π a_{n+1}}$ for $n ≥ 1$.<a href="https://en.wikipedia.org/wiki/Hilbert%27s_paradox_of_the_Grand_Hotel">Hilbert's hotel</a>
+</li></ol>
+</li>
+<li>
+<ol type="a"><li><ol type="i"><li>$f$ is holomorphic in an open subset $D ⊆ ℂ$, if for every $z ∈ D$, the complex derivative
+$$
+f'(z)=\lim_{h → 0} \frac{f(z+h)-f(z)}{h}
+$$
+exists for every $z ∈ D$.</li>
+<li>By letting $h∈ℝ$ go to zero, we obtain that, if $f=u+v i$ is holomorphic,
+$$
+f'(z)=u_x+v_x i
+$$
+and by letting $h=i δ$, where $δ∈ℝ$ and $δ → 0$, to obtain
+$$
+f'(z)=\frac1{i}\left(u_y+v_y i\right)
+$$
+and therefore
+$$
+u_x+v_x i=\frac1{i}\left(u_y+v_y i\right)
+$$
+which is equivalent to the Cauchy-Riemann equations:
+$$
+u_x=v_y \text { and } u_y=-v_x
+$$
+</li>
+<li>If $f=u+v i$ is real, so that $v=0$, which implies $u_x=u_y=0$ too by Cauchy-Riemann equations. Hence $u$ is constant as $D$ is connected and open. It follows that $f$ is constant on $D$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Talyor's expansion: If $f$ is holomorphic in $D$, and suppose $r&gt;0$ such that the disk $D(a, r) ⊆ D$, then
+$$
+f(z)=\sum_{n=0}^∞ a_n(z-a)^n \text { for any } z ∈ D(a, r)
+$$
+where
+$$
+a_n=\frac1{n !} f^{(n)}(a)=\frac1{2 π i} ∫_{C(a, ρ)} \frac{f(w)}{(w-a)^{n+1}} d w
+$$
+where $C(a, ρ)$ is the circle with center $a$ and radius $ρ$, as long as $0&lt;ρ&lt;r$.
+</li>
+<li>Suppose $f$ is bounded and holomorphic in $ℂ$, then
+$$
+f(z)=\sum_{n=0}^∞ a_n z^n \text { for any } z
+$$
+where
+$$
+a_n=\frac1{2 π i} ∫_{C(0, R)} \frac{f(w)}{w^{n+1}} d w
+$$
+Suppose $|f(z)|≤M$ for any $z ∈ ℂ$, where $M$ is a bound of $f$ in $ℂ$. Then, by the Estimation Lemma,
+\begin{aligned}
+\left|a_n\right| &≤\frac1{2 π} 2 π R \max_{|w|=R}\left|\frac{f(w)}{w^{n+1}}\right|\\&=R \frac1{R^{n+1}} M \\
+&=\frac1{R^n} M
+\end{aligned}
+for any $R&gt;0$. Therefore, for $n ≥ 1$, by letting $R → ∞$ we conclude that $\left|a_n\right|≤0$, so $a_n=0$ for all $n ≥ 1$, hence $f(z)=a_0$ is constant.</li></ol>
+</li>
+<li>
+<ol type="i"><li>It is said that $a$ is an isolated singularity of $f$, if there is $r&gt;0, f$ is holomorphic on $D(a, r)∖\{a\}$, where $D(a, r)∖\{a\}=\{z: 0&lt;|z-a|&lt;r\}$.<br>An isolated singularity is removable if there is a holomorphic function $g$ in $D(a, r)$ (for some $r&gt;0$) such that $f=g$ on $D(a, r)∖\{a\}$, that is, $f$ can be extended (uniquely) to a holomorphic function in $D(a, r)$.
+</li>
+<li>Laurent's expansion. If $b$ is an isolated singularity, so that there is $r&gt;0$ such that $f$ is holomorphic in $D(b, r)∖\{b\}$, and
+$$
+f(z)=\sum_{n=1}^∞ c_{-n}(z-b)^{-n}+\sum_{n=0}^∞ c_n(z-b)^n=\sum_{n=-∞}^∞ c_n(z-b)^n \text { for any } 0&lt;|z-b|&lt;r
+$$
+where
+$$
+c_n=\frac1{2 π i} ∫_{C(b, ρ)} \frac{f(w)}{(w-b)^{n+1}} d w
+$$
+for all $n ∈ ℤ$, where $0&lt;ρ&lt;r$.
+</li>
+<li>Suppose $f$ is bounded on $D(b, r)∖\{b\}$, say ${|f(z)|}≤M$ for any $0&lt;{|z-b|}&lt;r$. Then, by Estimation Lemma,
+\begin{aligned}
+\left|c_n\right| &≤\frac1{2 π} 2 π ρ \max_{|w-b|=ρ}\left|\frac{f(w)}{(w-b)^{n+1}}\right|\\&=\frac1{2 π} 2 π ρ \frac1{ρ^{n+1}} \max_{|w-b|=ρ}|f(w)| \\
+&≤ρ^{-n} M
+\end{aligned}
+for any $n ∈ ℤ$ and $0&lt;ρ&lt;r$. Letting $ρ ↓ 0$, then $ρ^{-n} → 0$ if $-n&gt;0$, so that $c_{-n}=0$ for $n=1,2, ⋯$. Therefore
+$$
+f(z)=\sum_{n=0}^∞ c_n(z-b)^n \text { for } 0&lt;|z-b|&lt;r
+$$
+The right-hand side defines a holomorphic function on $D(b, r)$, including $b$ too, so $b$ is removable.
+</li>
+<li>For the last part, we introduce $h(z)=\sin z+\cos z$ whose zeros are isolated. In fact
+$$
+h(z)=\sqrt2 \sin \left(z+\frac{π}{4}\right)
+$$
+so its zeros are $a_n=n π-\frac{π}{4}$ where $n ∈ ℤ$. Now consider $g(z)=f(z) / h(z)$ for $z ≠ a_n$, so that $a_n$ are isolated singularity of $g$. Now $|g(z)|≤1$ for all $z ≠ a_n$, thus $a_n$ are all removable, and therefore $g$ is (extended to be) holomorphic in $ℂ$, and still we have $|g(z)|≤1$, thus $g$ is bounded and holomorphic in $ℂ$, so that $g$ must be constant. It follows that
+$$
+f(z)=A h(z)=A(\sin z+\cos z)
+$$
+for a constant $A$, with $|A|≤1$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>We show that $A$ is open. Suppose $a ∈ R$, then there is $r&gt;0$ such that $D(a, r) ⊆ R$, and according to Taylor's expansion
+$$
+f(z)=\sum_{n=0}^∞ {f^{(n)}(a)\over n!}(z-a)^n \text { for }{|z-a|}&lt;r
+$$
+If $a ∈ A$, then all $f^{(n)}(a)=0$ so that $f(z)=0$ for $z ∈ D(a, r)$, and therefore $f^{(n)}(z)=0$ too for all $n ≥ 0$ and $z ∈ D(a, r)$. Therefore $A$ is open.<br>On the other hand for each $n,\left\{z ∈ R: f^{(n)}(z)=0\right\}$ is the pre-image of $\{0\}$ under $f^{(n)}$ which is continuous, and therefore is closed. It follows that
+$$
+A=\bigcap_{n=0}^∞\left\{z ∈ R: f^{(n)}(z)=0\right\}
+$$
+is closed in $R$. Therefore $A$ is a closed and open subset of $R$. Since $R$ is connected, so that $A$ must be empty or $A=R$.
+</li>
+<li>Identity Theorem. Suppose $f$ is holomorphic on a connected open set $R ⊆ ℂ$, $a ∈ R$ and there is a sequence of $z_n ∈ R∖\{a\}, z_n → a,f\left(z_n\right)=0$ for $n=1,2, ⋯$, then $f(z)=0$ for all $z ∈ R$.<br>
+Proof. Let $A$ as defined above. By Taylor's expansion
+$$
+f(z)=\sum_{n=0}^∞ a_n(z-a)^n \text { for }{|z-a|}&lt;r
+$$
+for some $r&gt;0$. We claim that all $a_n=0$.<br>Since $f(a)=\lim_{n → ∞} f\left(z_n\right)=0$, so $a_0=0$.<br>Suppose there is $k ∈ ℕ$, such that $a_k ≠ 0$, and $a_n=0$ for $n&lt;k$, then
+$$
+\frac{f(z)}{(z-a)^k}=a_k+a_{k+1}(z-a)^{k+1}+⋯
+$$
+for any $0&lt;{|z-a|}&lt;r$. In particular
+$$
+0=\frac{f\left(z_n\right)}{\left(z_n-a\right)^k}=a_k+a_{k+1}\left(z_n-a\right)^{k+1}+⋯
+$$
+so by letting $n → ∞$ we obtain that $a_k=0$ which contradicts to the assumption. Therefore $f^{(k)}(a)=0$ for all $k$. Hence $a ∈ A$, thus $A$ is non-empty, so that $A=R$, which means that $f(z)=0$ for every $z ∈ R$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Since $\frac1{n} → 0 ∈ D$, by Identity Theorem, $f(z)=2$ as $f\left(\frac1{2 n}\right)=2$, and also $f(z)=0$ as $f\left(\frac1{2 n+1}\right)=0$, for every $z ∈ D$. Therefore there is no such holomorphic function.
+</li>
+<li>$f(z)=\frac1{1+z}$ will do, which is unique.
+</li>
+<li>$f(z)=z^2$ will do, also
+$$
+f(z)=z^2+\sin \frac{π}{1-z}
+$$
+works as well. Identity Theorem does not apply in this case as $\frac{n-1}{n} → 1$, but 1 does not belong to the open unit disk $D(0,1)$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>If $a$ is an isolated singularity for $f$, then there is $r&gt;0$, we have Laurent's expansion about $a$ in the following form
+$$
+f(z)=\sum_{n=1}^∞ c_{-n}(z-a)^{-n}+\sum_{n=1}^∞ c_n(z-a)^n \text { for } 0&lt;|z-a|&lt;r
+$$
+here the coefficient
+$$
+c_n=\frac1{2 π i} ∫_{C(a, ρ)} \frac{f(w)}{(w-a)^{n+1}} d w
+$$
+where $0&lt;ρ&lt;r$. The coefficient of $(z-a)^{-1}$, that is,
+\begin{equation}
+c_{-1}=\frac1{2 π i} ∫_{C(a, ρ)} f(z) d z
+\end{equation}
+is called the residue of $f$ at $a$. [It is an acceptable answer that the residue of $f$ at $a$ is given by (1).] $a$ is essential if there are infinite many $c_{-n}($ where $n ∈ ℕ$) do not vanish.
+</li>
+<li>Suppose ${|f(z)|}≤M$ for $n ≥ 1,0&lt;ρ&lt;δ$, we have by Estimation Lemma
+$$
+\left|c_{-n}\right|≤\frac1{2 π} 2 π ρ \max_{|w-a|=ρ}\left|\frac{f(w)}{(w-a)^{-n+1}}\right|≤ρ^n M
+$$
+by letting $ρ ↓ 0$ we may conclude that all $c_{-n}$ vanish for $n=1,2, ⋯$, so $a$ is not essential by definition.
+</li>
+<li>For every complex number $C$, $a$ is an essential singularity of $f(z)-C$ too. If there is a sequence $z_n → a$ such that $f\left(z_n\right)-C=0$, then we are done. Otherwise, there is $r&gt;0$ such that $f(z)-C ≠ 0$ has on $D(a, r)∖\{a\}$ for some $r&gt;0$. Now consider the function $h(z)=\frac1{f(z)-C}$ for $0&lt;|z-a|&lt;r$, so that $a$ is an isolated singularity. We show that $h$ is unbounded. Suppose $h$ is bounded, then $a$ is a removable singularity of $h$ so that $\lim_{z → a} h(z)$ exists. If $h(z) → 0$, then $a$ is a zero of $h$. Since $h$ is not identically equal to zero, so that $a$ is an isolated zero. Hence $h(z)=(z-a)^k g(z)$ where $g(z)$ is holomorphic, and has no zero in $|z-a|&lt;r$ for some $r&gt;0$. Hence
+$$
+f(z)=C+\frac1{h(z)}=C+\frac1{(z-a)^k} \frac1{g(z)}
+$$
+and therefore $a$ is a pole of order $k$, not an essential one, which is a contradiction. Hence $h(a) ≠ 0$. In this case $h ≠ 0$ is holomorphic in $D(a, r)$ for some $r&gt;0$, hence $f(z)=C+\frac1{h(z)}$ is holomorphic up to $a$ too, thus $a$ is removable, a contradiction too.<br>
+We therefore can conclude that $a$ is an essential singularity of $h$ too. In particular $h$ is unbounded, hence there is $z$ such that $0&lt;|z-a|&lt;δ$ but $|h(z)|&gt;\frac1ε$, that is $|f(z)-C|&lt;ε$.</li></ol></li></ol></li>
+<li><ol type="a"><li>The Residue Theorem: Suppose that $U$ is an open set in ℂ and $γ$ is a path whose inside is contained in $U$, so that for all $z∉U$ we have $I(γ, z) = 0$.
+Then if $S ⊂ U$ is a finite set such that $S ∩ γ^* = ∅$ and $f$ is a holomorphic function on $U∖S$ we have
+$$
+∫_C f(z) d z=2 π i \sum_{a∈S} \operatorname{Res}(f, a)
+$$
+Let’s do the substitution $z=e^{i θ}$ with $θ: 0 → 2 π$ in the integral on the left-hand side, which is denoted by $I$ for simplicity. Then $d θ=d z /(i z), \cos θ=\frac12\left(z+\frac1{z}\right)$ so that $I$ can be turned into the following contour integral
+\begin{aligned}
+I &=∫_{C(0,1)} \frac1{1-p\left(z+\frac1{z}\right)+p^2} \frac{d z}{i z} \\
+&=\frac1{i} ∫_{C(0,1)} \frac1{z-p\left(z^2+1\right)+p^2 z} d z \\
+&=\frac1{i} ∫_{C(0,1)} \frac1{(z-p)(1-p z)} d z \\
+&=2 π \frac1{1-p p}=\frac{2 π}{1-p^2}
+\end{aligned}
+where the last equality follows from the Cauchy formula applying to function $\frac1{1-p z}$ at point $p$, which is holomorphic in $D\left(0, \frac1{|p|}\right)$.</li>
+<li>Let $f(z)=\frac{\ln^2 z}{1+z^2}$ where $\ln z$ is a holomorphic branch to be chosen later. Set up contour as the following. Let $0&lt;ε&lt;R$ where $ε&lt;1$ and $R&gt;1$. The contour $Γ$ consists of the upper semi-circle $C_R$ with center zero and radius $R$, starting at $R$ to $-R$, which has a parameterization $z=R e^{i θ}, θ: 0 → π$ and $d z=i R e^{i θ} d θ$. The second part $Γ_2$ is the section along the real line $[-R,-ε]$, and the 3rd part $Γ_3$ is $[ε, R]$, both has parameterization $z=x$ and $d z=d x$. The last part is the small semi-circle $C_ε^-$ center at 0 with radius $ε$, with clock-wise orientation, so that it has parameterization $z=ε e^{i t}$ where $t: π → 0$, and $d z=i ε e^{i t} d t$<br>
+Choose a holomorphic branch $\ln z$ so that it is holomorphic inside the contour, so we may choose
+$$
+\ln z=\ln |z|+i \arg z, \text { with }-\frac{π}2&lt;\arg z&lt;\frac{3 π}2
+$$
+Then $f$ has one simple pole $i$ inside the contour $Γ$, whose residue
+$$
+\operatorname{Res}(f, i)=\left.\frac{\ln^2 z}{\left(1+z^2\right)'}\right|_{z=i}=\frac{\ln^2 i}{2 i}=\frac1{2 i}\left(\frac{π}2 i\right)^2=-\frac1{2 π i} \frac{π^3}{4}
+$$
+so that by Residue Theorem
+$$
+∫_{Γ} f(z) d z=2 π i \operatorname{Res}(f, i)=-\frac{π^3}{4}
+$$
+On the other hand,
+\begin{align}
+\nonumber&∫_{Γ_2} f(z) d z+∫_{Γ_3} f(z) d z\\\nonumber&=∫_{-R}^{-ε} \frac{\ln^2 x}{1+x^2} d x+∫_ε^R \frac{\ln^2 x}{1+x^2} d x\\
+&\nonumber=∫_{-R}^{-ε} \frac{(\ln |x|+i π)^2}{1+x^2} d x+∫_ε^R \frac{\ln^2 x}{1+x^2} d x\\
+&=2 π i ∫_ε^R \frac{\ln x}{1+x^2} d x-π^2 ∫_ε^R \frac1{1+x^2} d x+2 ∫_ε^R \frac{\ln^2 x}{1+x^2} d x
+\end{align}
+While the path integral
+$$
+∫_{C_R} f(z) d z=∫_0^π \frac{(\ln R+i θ)^2}{1+R^2 e^{2 θ i}} i R e^{i θ} d θ
+$$
+so that
+$$
+\left|∫_{C_R} f(z) d z\right|≤π \frac{(\ln R+π)^2}{R^2-1} R → 0 \text { as } R ↑ ∞
+$$
+Similarly
+$$
+∫_{C_ε^-} f(z) d z=-∫_0^π \frac{(\ln ε+i t)^2}{1+ε^2 e^{2 t i}} i ε e^{i t} d t
+$$
+so that
+$$
+\left|∫_{C_ε^-} f(z) d z\right|≤π \frac{(\ln ε+π)^2}{1-ε^2} ε→ 0\text{ as }ε ↓ 0
+$$
+Therefore by letting $ε ↓ 0$ then by letting $R ↑ ∞$ in (2) to obtain
+$$
+2 π i ∫_0^∞ \frac{\ln x}{1+x^2} d x-π^2 ∫_0^∞ \frac1{1+x^2} d x+2 ∫_0^∞ \frac{\ln^2 x}{1+x^2} d x=\lim_{\substack{R ↑ ∞\\ε ↓ 0}} ∫_{Γ} f(z) d z=-\frac{π^3}{4}
+$$
+Therefore we must have, by comparing the real parts of two sides in the above equation,
+$$
+-π^2 ∫_0^∞ \frac1{1+x^2} d x+2 ∫_0^∞ \frac{\ln^2 x}{1+x^2} d x=-\frac{π^3}{4}
+$$
+so that
+$$
+2 ∫_0^∞ \frac{\ln^2 x}{1+x^2} d x=π^2 ∫_0^∞ \frac1{1+x^2} d x-\frac{π^3}{4}=π^2 \frac{π}2-\frac{π^3}{4}=\frac{π^3}{4}
+$$
+and therefore
+$$
+∫_0^∞ \frac{\ln^2 x}{1+x^2} d x=\frac{π^3}{8}
+$$
+</li>
+<li>
+<ol type="i"><li>By Taylor's expansion
+$$
+f(z)=\sum_{n=0}^∞ a_n(z-a)^n
+$$
+for all $z$ such that $|z-a|&lt;r$, where $r&gt;0$ is any such that $D(a, r) ⊆ D(0,1)$. If $f$ is not identically equal to zero, then not all $a_n=0$, thus, there is $m$ such that $a_m ≠ 0$ but $a_l=0$ for any $l&lt;m$. Hence
+$$
+f(z)=(z-a)^m \sum_{n=k}^∞ a_k(z-a)^{n-m}=(z-a)^m g(z)
+$$
+where $g(z)=\sum_{n=k}^∞ a_n(z-a)^{n-m}$ which is holomorphic and $g(a) ≠ 0$. If $f$ is not identically equal to zero, then $a$ is an isolated zero, so that $a$ is an isolated singularity of $f' / f$. In fact, since $f'(z)=m(z-a)^{m-1} g(z)+(z-a)^m g'(z)$, so that
+\begin{aligned}
+\frac{f'(z)}{f(z)} &=\frac{m(z-a)^{m-1} g(z)+(z-a)^m g'(z)}{(z-a)^m g(z)} \\
+&=\frac{m}{z-a}+\frac{g'(z)}{g(z)}
+\end{aligned}
+Since $g(a) ≠ 0$, so $g' / g$ is holomorphic near $a$, thus $a$ is a simple pole of $f' / f$.
+</li>
+<li>Similar to (i), if $a$ is a zero of $f$, then
+\begin{aligned}
+ϕ(z) \frac{f'(z)}{f(z)} &=ϕ(z) \frac{m(z-a)^{m-1} g(z)+(z-a)^m g'(z)}{(z-a)^m g(z)} \\
+&=\frac{m}{z-a} ϕ(z)+ϕ(z) \frac{g'(z)}{g(z)} .
+\end{aligned}
+Since $g(a) ≠ 0$ and $g$ and $ϕ$ are holomorphic, so that $a$ is a simple pole of $ϕ(z) \frac{f'(z)}{f(z)}$, whose residue equals
+\begin{aligned}
+\lim_{z → a}(z-a) ϕ(z) \frac{f'(z)}{f(z)} &=\lim_{z → a} m ϕ(z)+\lim_{z → a}(z-a) ϕ(z) \frac{g'(z)}{g(z)} \\
+&=m ϕ(a) .
+\end{aligned}
+Therefore, according to the Residue Theorem
+$$
+\frac1{2 π i} ∫_{C(0,1)} ϕ(z) \frac{f'(z)}{f(z)} d z=\sum_{i=1}^k \operatorname{Res}\left(ϕ(z) \frac{f'(z)}{f(z)}, a_i\right)=\sum_{i=1}^k m_i ϕ\left(a_i\right)
+$$
+which completes the proof.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>By the basic properties of Möbius transformations, if $h$ maps $H$ onto $D$, and sends $a$ to 0, then $h$ sends $\bar{a}$ to $∞$, so that
+$$
+h(z)=e^{i θ} \frac{z-a}{z-\bar{a}}
+$$
+where $θ$ is real. The inverse of $h$ maps $D$ onto $H$. To work out the inverse of $h$ explicitly. Let $w=h(z)$. Then
+$$
+e^{-i θ} w=\frac{z-a}{z-\bar{a}}
+$$
+solves $z$ to obtain
+$$
+z=\frac{\bar{a} w-a e^{i θ}}{w-e^{i θ}}
+$$
+</li>
+<li>Let $w=φ(z)$, where $|α| ≠ 1$. Then
+\begin{aligned}
+|w|^2-1 &=\frac{z-α}{1-\bar{α} z} \frac{\bar{z}-\bar{α}}{1-α \bar{z}}-1 \\
+&=\frac{\left(1-|α|^2\right)\left(|z|^2-1\right)}{1-\bar{α} z-α \bar{z}+|α|^2|z|^2} \\
+&=\frac{1-|α|^2}{|1-\bar{α} z|^2}\left(|z|^2-1\right)
+\end{aligned}
+so that, if $|α|&lt;1$, then $|w|&lt;1$ if and only if $|z|&lt;1$.
+If $|α|&gt;1$, then $|w|&gt;1$ if and only if $|z|&lt;1$. That is, if $|α|&lt;1$, then $φ(D)=D$, and if $|α|&gt;1$ then $φ(D)=D^c$.
+</li>
+<li>The circle $|z|=1$ intersects the real axis at $±1$, thus we first apply the Möbius transformation $f_1$ which sends 1 to $0$, $-1$ to $∞$, that is
+$$
+f_1(z)=\frac{z-1}{z+1}
+$$
+Now $i$∈upper semi-circle $\{z:|z|=1,\operatorname{Im} z&gt;0\}$, and
+$$
+f_1(i)=\frac{i-1}{i+1}=\frac{(i-1)(-i+1)}2=i
+$$
+so the unit circle is mapped to the imaginary axis.<br>
+$0 ∈$real axis, and $f_1(0)=-1$, so $f_1$ maps the real axis to real axis.<br>
+Choose a point say $i / 2$ inside the domain $R$. Since
+$$
+f\left(\frac{i}2\right)=\frac{i-2}{i+2}=\frac{(i-2)(-i+2)}{5}=\frac{-3+4 i}{5}
+$$
+we thus may conclude that
+$$
+f_1(R)=\{z=x+i y: y&gt;0, x&lt;0\}
+$$
+Let $f_2(z)=e^{-\frac{π}2 i} z=-i z$, so that
+$$
+f_2 ∘ f_1(R)=\{z=x+i y: y&gt;0, x&gt;0\}
+$$
+and then apply $f_3(z)=z^2$, so that
+$$
+f_3 ∘ f_2 ∘ f_1(z)=\left(-i \frac{z-1}{z+1}\right)^2=-\left(\frac{z-1}{z+1}\right)^2
+$$
+maps $R$ to $H$. Therefore, by part a)
+$$
+f(z)=e^{i θ} \frac{-\left(\frac{z-1}{z+1}\right)^2-a}{-\left(\frac{z-1}{z+1}\right)^2-\bar{a}}
+$$
+maps $R$ one-to-one onto the unit disk $D$, for arbitrary $θ∈ℝ,a ∈ H$.</li></ol>
+</li></ol>

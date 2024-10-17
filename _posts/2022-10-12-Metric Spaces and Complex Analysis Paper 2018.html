@@ -1,0 +1,299 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: A2 Paper 2018
+---
+<ol><li>Let $\left(X, d_X\right)$ and $\left(Y, d_Y\right)$ be two metric spaces and let $Y$ be bounded. Define $𝒞(X, Y)$ to be the set of continuous functions from $X$ to $Y$.
+<ol type="a"><li>
+<ol type="i"><li>Show that
+$$
+d_{∞}(f, g)=\sup _{x ∈ X} d_Y(f(x), g(x))
+$$
+defines a metric on $𝒞(X, Y)$.
+</li>
+<li>Show that if $K ⊂ X$ is compact and $U ⊂ Y$ is open then
+$$
+V(K, U)=\{f ∈ 𝒞(X, Y) ∣ f(K) ⊂ U\}
+$$
+is an open set in $𝒞(X, Y)$.
+[You may assume that the metric defines a continuous function in any metric space.]</li></ol>
+</li>
+<li>
+<ol type="i"><li>Show that if $\left(Y, d_Y\right)$ is complete then so is $𝒞(X, Y)$.
+</li>
+<li>Show that $𝒞([0,1],[0,1])$ is not compact.
+[You may assume that compactness implies sequential compactness.]</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $(X, d)$ be a metric space.
+<ol type="i"><li>What does it mean for a map $f: X → X$ to be a contraction?
+</li>
+<li>State and prove the Contraction Mapping Theorem.</li></ol>
+</li>
+<li>Prove or disprove the following statements.
+<ol type="i"><li>Let $(X, d)$ be complete and $f: X → X$ be a continuous map with $d(f(x), f(y))&lt;d(x, y)$ for all $x ≠ y$. Then $f$ has a unique fixed point.
+</li>
+<li>Let $(X, d)$ be compact and $f: X → X$ be a continuous map with $d(f(x), f(y))&lt;d(x, y)$ for all $x ≠ y$. Then $f$ has a unique fixed point.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $X=\{z ∈ ℂ ∣ ℜ(z) ⩾ 0\}$ and $D$ be a domain in $ℂ$ containing $X$. Assume $g$ is holomorphic in $D$ with $g(X) ⊂ X$, and there exists a $λ$ with $0&lt;λ&lt;1$ such that
+$$
+\left|g'(z)\right| ⩽ λ \text { for all } z ∈ X
+$$
+Prove that $g$ is a contraction of $X$.
+</li>
+<li>Prove that for all $λ$ with $0&lt;λ&lt;1$, there exists a unique $z$ with
+$$
+ℜ(z) ⩾ 0 \text { and } z=1+e^{-λ z} .
+$$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $f: U → ℂ$ be a holomorphic function defined on an open subset $U$ of $ℂ$ and let $u=ℜ f$ and $v=ℑf$.
+State and prove the Cauchy-Riemann equations satisfied by $u$ and $v$.
+Consider the continuous function $\sqrt{z}$ on the cut plane $ℂ∖(-∞, 0]$ whose real and imaginary parts satisfy
+$$
+u^2-v^2=x,   2 u v=y
+$$
+Verify explicitly the Cauchy-Riemann equations in this case.
+</li>
+<li>
+<ol type="i"><li>Define the holomorphic branch $L(z)$ of $\log z$ on the cut-plane $ℂ∖ R_α$, such that $L(1)=0$, where the ray $R_α$ is given by $R_α=\left\{z ∈ ℂ: z=r e^{i α}, r ∈[0, ∞)\right\}$ with $2 π&gt;α&gt;0$. Assume $α ≠ π / 2$ and compute $i^i$ using this branch.
+</li>
+<li>Define a holomorphic branch of $f(z)=\log \left(z^2-1\right)$ on the cut-plane
+$$
+ℂ∖\{(-∞,-1] ∪[1, ∞)\}
+$$
+Show that the branch is single valued as we cross the real axis away from the cut.
+</li>
+<li>Define a holomorphic branch of $f(z)=\log \frac{z-1}{z+1}$ on the cut-plane $ℂ∖[-1,1]$. Show that the branch is single valued as we cross the real axis away from the cut.</li></ol>
+</li>
+<li>Explain why the following sequence of functions<a href="https://en.wikipedia.org/wiki/Mittag-Leffler%27s_theorem">Mittag-Leffler's theorem</a>
+$$
+f_n(z)=\sum_{k=-n}^n \frac{(-1)^k}{(z+k)^2}
+$$
+converges to a holomorphic function $f(z)$ on $ℂ∖ ℤ$ as $n → ∞$. Explain why $f(z)$ is periodic and then find a closed form expression for it. Use this expression to compute
+$$
+\sum_{k=1}^{∞} \frac{(-1)^k}{k^2}
+$$</li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $a ∈ ℂ$ and $r&gt;0$. Let $f$ be a holomorphic function on the punctured disc $D'(a, r)=\{z ∈ ℂ: 0&lt;{|z-a|}&lt;r\}$. Classify the possible singularities of $f$ at $a$.
+[You may quote Laurent's Theorem without proof.]<br>
+Classify, with brief explanations, the singularities of the following functions:
+$$
+f(z)=\frac{\left(\exp z-\exp \frac{π}{2}\right)^2}{\cos ^2 z} ;   g(z)=\frac{1}{1-z^n},
+$$
+where $n$ is a positive integer. For $g(z)$ compute the residue at every pole.
+</li>
+<li>Compute the following integrals:
+(i)
+$$
+∫_{γ(0,1)} \frac{z}{4 z^4+17 z^2+4} d z
+$$
+(ii)
+$$
+∫_0^{2 π} \frac{\cos 2 t}{5-4 \cos t} d t
+$$
+where $γ(0, R)$ is the path $γ(0, R)(t)=R e^{i t}$ for $t ∈[0,2 π]$.
+</li>
+<li>Compute the following integral
+$$
+∫_{γ\left(0,\left(k+\frac{1}{2}\right) π\right)} \frac{1}{z \sinh ^2 z} d z,
+$$
+where $k$ is a positive integer. Then deduce from it the value of the following sum
+$$
+\sum_{n=1}^{∞} \frac{1}{n^2}
+$$
+[You may assume the integral tends to zero as the radius of the contour of integration tends to infinity.]</li></ol>
+</li>
+<li>
+<ol type="a"><li>State Cauchy's Integral Formula.
+Let $f: ℂ → ℂ$ be an entire function. Use Cauchy's Integral Formula to show that if $f$ is bounded then it is constant.
+</li>
+<li>Let $f(z)$ be a complex function, holomorphic in the closed upper half plane, such that ${|f(z)|} ⩽ \frac1{|z|}$ for all ${|z|}&gt;R$ for some $R$. Prove the relations
+\begin{gathered}
+u\left(x'\right)=\frac{1}{π} ∫_{-∞}^{∞} \frac{v(x)}{x-x'} d x, \\
+v\left(x'\right)=-\frac{1}{π} ∫_{-∞}^{∞} \frac{u(x)}{x-x'} d x,
+\end{gathered}
+for real $x, x'$ and where $u(z), v(z)$ are the real and imaginary parts of $f(z)=u(z)+i v(z)$.
+</li>
+<li>Compute the following integrals:
+(i)
+$$
+∫_0^{∞} \frac{1-\cos (p x)}{x^2} d x
+$$
+(ii)
+$$
+∫_0^{∞} \frac{x^2}{1+x^4} d x
+$$
+Integrals over the real line with a singularity are defined by
+$$
+∫_{-∞}^{∞} \frac{v(x)}{x-x'} d x=\lim _{ϵ → 0}\left(∫_{-∞}^{x'-ϵ} \frac{v(x)}{x-x'} d x+∫_{x'+ϵ}^{∞} \frac{v(x)}{x-x'} d x\right)
+$$</li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Explain what we mean by the extended complex plane and describe, with a sketch, the map called stereographic projection.
+</li>
+<li>Let $ℂ P^1$ denote the set of complex lines through the origin in $ℂ^2$. If $\left[z_1, z_2\right]$ denotes the line through $\left(z_1, z_2\right) ∈ ℂ^2∖\{(0,0)\}$, show that the assignment $\left[z_1, z_2\right] ↦ z_1 / z_2$ defines a bijection between $ℂ P^1$ and the extended complex plane.
+</li>
+<li>Show that the non-zero scalars $ℂ^*=ℂ∖\{0\}$ under multiplication form a normal subgroup of the group of two-by-two complex invertible matrices $\mathrm{GL}(2, ℂ)$, and that the standard action of $\mathrm{GL}(2, ℂ)$ on $ℂ^2$ induces an action of the quotient group $\operatorname{PGL}(2, ℂ)=\mathrm{GL}(2, ℂ) / ℂ^*$ on $ℂ P^1$.
+</li>
+<li>Show that under the bijection in (a)(ii), PGL(2, C) can be identified with the group of Möbius transformations of the extended complex plane.</li></ol>
+</li>
+<li>
+<ol type="i"><li>What does it mean for a map $f: D → ℂ$ to be conformal, where $D$ is a domain in $ℂ$ ?
+</li>
+<li>Show that Möbius transformations are conformal on $ℂ$ except possibly at one point.
+</li>
+<li>Find a conformal map from the half-strip $H=\{z ∈ ℂ ∣ 0&lt;ℑ(z), 0&lt;ℜ(z)&lt;π\}$ to the upper half plane.
+</li>
+<li>Briefly explain why the map found in (b)(iii) cannot be a Möbius transformation.</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li><ol type="a"><li><ol type="i"><li></li><li></li></ol></li><li><ol type="i"><li></li><li></li></ol></li></ol></li><li><ol type="a"><li><ol type="i"><li>$f:X→X$ is a contraction if $∃0&lt;λ&lt;1$ such that $∀x,y∈X:d(f(x),f(y))≤λd(x,y)$.</li><li>Let $(X,d)$ be complete and $f:X→X$ a contraction. Then $f$ has a unique fixed point.<br>Proof: Let $x_0∈X$ and define $x_n≔f(x_{n-1})$. Then $d(x_n,x_{n-1})≤λd(x_{n-1},x_{n-2})≤…≤λ^{n-1}d(x_1,x_0)$ and for $n≥m$\[d(x_n,x_m)≤(λ^{n-1}+…+λ^m)d(x_1,x_0)&lt;\frac{λ^m}{1-λ}d(x_1,x_0)\]As ${λ^m\over1-λ}→0$ with $m→∞$, $(x_n)$ is Cauchy.<br>As $X$ is complete, $(x_n)$ has a limit $x_∞$.<br>As $f$ is continuous,$$f(x_∞)=f(\lim x_n)=\lim f(x_n)=\lim x_{n+1}=x_∞$$So there exists a fixed point.<br>Assume $p$ is another fixed point. Then $d(x_∞,p)=d(f(x_∞),f(p))&lt;λd(x_∞,p)$.<br>Hence $d(x_∞,p)=0$ and hence $x_∞=p$.</li></ol></li><li><ol type="i"><li>False: $X=[1,∞)$ is complete. Consider $f(x)=x+x^{-1}$ and let $y&lt;x$. Then $d(f(x),f(y))=x-y+x^{-1}-y^{-1}&lt;x-y=d(x,y)$. Similar for $x&lt;y$. But $f$ has no fixed points as $x^{-1}≠0$.</li><li>True. $f$ and $d$ are continuous and hence $ϕ(x)=d(f(x),x)$ is continuous. As $X$ is compact, $ϕ$ attains its infimum, say at $\tilde x$. Assume $d(f(\tilde x),\tilde x)=ϵ>0$. Then $ϵ=d(f(\tilde x),\tilde x)>d(f(f(\tilde x)),f(\tilde x))≥ϵ$, a contradiction. So $f(\tilde x)=\tilde x$.<br>If $p$ is another fixed point then $d(\tilde x,p)>d(f(\tilde x),f(p))=d(\tilde x,p)$, a contradiction, unless $\tilde x=p$.</li></ol></li><li><ol type="i"><li>Let $γ(t)=tb+(1-t)a$ be a straight line between $a$ and $b$. Note: $X$ is convex!<br>Then\begin{align*}d(g(a),g(b))≤\text{length}(g∘γ)&=∫_0^1\left|(g∘γ)'(t)\right|\mathrm dt\\&=∫_0^1\left|g'(γ(t))γ'(t)\right|\mathrm dt\\&=∫_0^1\left|g'(γ(t))\right|{|b-a|}\mathrm dt≤λ{|b-a|}=λd(a,b)\end{align*}Hence $g$ is a contraction.</li><li>Consider $g(z)=1+e^{-λz}$ for $0&lt;λ&lt;1$. Then $\left|g'(z)\right|=\left|-λe^{-λz}\right|=λe^{-λℜ(z)}≤λ$ for $z∈X$.<br>Also $g(X)⊂X$ as $ℜ(g(z))=1+e^{-λℜ(z)}\cos(λℑ(z))>0$. Hence, by (i), $g$ is a contraction.<br>Also $X$ is complete as it is a closed subspace of the complete space $ℂ$.</li></ol></li></ol></li>
+<li>
+<ol type="a"><li>The Cauchy-Riemann equations state $u_x=v_y$ and $u_y=-v_x$.We can take $f'(z)$ in two different ways, and they should agree. Introducing $z=x+i y$ we can compute
+$$
+\begin{aligned}
+&amp; ∂_x f\left(z_0\right)=\lim _{t → 0} \frac{f\left(z_0+t\right)-f\left(z_0\right)}{t}=f'\left(z_0\right) \\
+&amp; ∂_y f\left(z_0\right)=\lim _{t → 0} \frac{f\left(z_0+i t\right)-f\left(z_0\right)}{t}=i \lim _{t → 0} \frac{f\left(z_0+i t\right)-f\left(z_0\right)}{i t}=i f'\left(z_0\right)
+\end{aligned}
+$$
+hence $∂_y f\left(z_0\right)=i ∂_x f\left(z_0\right)$. Writing $f(z)=u(z)+i v(z)$ and decomposing into real and imaginary parts, the Cauchy-Riemann equations follow. <br>The real and imaginary part of the square root satisfy $u^2-v^2=x$ and $2 u v=y$. Hence
+$$
+2\left(u u_x-v v_x\right)=1,   2\left(u u_y-v v_y\right)=0,   2\left(u v_x+u_x v\right)=0,   2\left(u v_y+u_y v\right)=1
+$$
+We can then solve for $u_x, u_y, v_x, v_y$, to find
+$$
+u_x=v_y=\frac{u}{2\left(u^2+v^2\right)},   u_y=-v_x=\frac{v}{2\left(u^2+v^2\right)}
+$$
+</li>
+<li>
+<ol type="i"><li>Each $z$ on the given cut plane can we written as $z=r e^{i θ}$ with $r&gt;0$ and $α-2 π&lt;θ&lt;α$. We then define $L(z)=\log r+i θ$ which indeed satisfies $L(1)=0$. Now $i^i=e^{i L(i)}$. If $α&gt;π / 2$ the $L(i)=\frac12i π$. Otherwise $L(i)=-\frac32 i π$. From here we can write $i^i$ for each case.
+</li>
+<li>Now we define $z-1=r_1 e^{i θ_1}$ and $z+1=r_2 e^{i θ_2}$, where $0&lt;θ_1&lt;2 π$ and $-π&lt;θ_2&lt;π$.
+$$
+L\left(z^2-1\right)=\log \left(r_1 r_2\right)+i\left(θ_1+θ_2\right)
+$$
+As we cross the real axis along the segment $[-1,1]$, e.g. across $z=1 / 2$ or $z=-1 / 2$, both $θ_1$ and $θ_2$ change continuously.<pre>FunctionSingularities[Log[1 - z] + Log[z + 1] + Pi I, z, Complexes]</pre>{% latex %}\usepackage{tikz}\begin{tikzpicture}
+\draw[->] (-2,0)--(2,0) node[right] {$x$};
+\draw[->] (0,-2)--(0,2) node[above] {$y$};
+\draw[red,thick](1,0)circle(1pt)node[below]{1}--(1.9,0)(-1,0)circle(1pt)node[below]{-1}--(-1.9,0);
+\end{tikzpicture}{% endlatex %}
+</li>
+<li>Again we define $z-1=r_1 e^{i θ_1}$ and $z+1=r_2 e^{i θ_2}$, but now $-π&lt;θ_1, θ_2&lt;π$. Then
+$$
+L\left(\frac{z-1}{z+1}\right)=\log \left(r_1 / r_2\right)+i\left(θ_1-θ_2\right)
+$$
+As we cross the $x&gt;1$ part of the real axis, both arguments change continuously. As we cross the part $x&lt;-1$, both arguments change by $2 π$, but this change cancels in the above combination.<pre>Reduce@FunctionSingularities[Log[(z - 1)/(z + 1)], z, Complexes]</pre>{% latex %}\usepackage{tikz}\begin{tikzpicture}
+\draw[->] (-2,0)--(2,0) node[right] {$x$};
+\draw[->] (0,-2)--(0,2) node[above] {$y$};
+\draw[red,thick](1,0)circle(1pt)node[below]{1}--(-1,0)circle(1pt)node[below]{-1};
+\end{tikzpicture}{% endlatex %}</li></ol>
+</li>
+<li>The functions $f_n(z)$ are clearly holomorphic in the complex plane except at $2 n+1$ points where the poles are located. Now we can choose a disk with center not among these
+points, and small enough radius. The M-test says that the series converge uniformly. The function $f_n(z)$ has double poles at integer values $z=-k, ⋯, k$ with residue $(-1)^k$. In the limit $n → ∞$ we see the function is invariant under $z → z+2$. A way to find the result is by noting that $f(z)=-g'(z)$, where $g(z)$ has single poles with residue $(-1)^k$. Then by periodicity it follows $g(z)=π / \sin (π z)$. Taking the derivative it follows $$
+f(z)=\frac{π^2}{\sin (π z) \tan (π z)}
+$$
+To solve the last part we compute the expansion of this function around $z=0$. We get
+$$
+f(z)=\frac{1}{z^2}-\frac{π^2}{6}+⋯
+$$
+The quadratic pole corresponds to the term $k=0$ in the sum defining $f(z)$ as a sum. The finite part corresponds to twice the sum we are asked to compute. We find
+$$
+\sum_{k=1}^{∞} \frac{(-1)^k}{k^2}=-\frac{π^2}{12}
+$$</li></ol>
+</li>
+<li>
+<ol type="a"><li>By Laurent's Theorem there exist unique $c_n ∈ ℂ$ such that
+$$
+f(z)=\sum_{n=-∞}^{∞} c_n(z-a)^n,   0&lt;|z-a|&lt;r
+$$
+Then we say that $f(z)$ at $a$ has:
+<ul><li>A removable singularity if $c_n=0$ for all $n&lt;0$.</li>
+<li>A pole of order $n$ if $c_{-n} ≠ 0$ and $c_m=0$ for all $m&lt;-n$.</li>
+<li>An essential singularity if $c_n ≠ 0$ for infinitely many $n&lt;0$.</li></ul>An equivalent definition is to say that $f(z)$ has a removable singularity if it is bounded near $z_0$, a pole if $1 / f(z)$ has a removable singularity at $z_0$ and an essential singularity it it has an isolated singularity which is neither removable nor a pole.<br>
+For the first function we note $\cos z=0$ at $z=π / 2+2 n π$ and $z=-π / 2+2 n π$. Hence at these points we have double poles, except at $z=π / 2$ where we have a removable singularity.<br>In the second case we have single poles at all the $n$ roots of unity. In other words $z=e^{i π 2 k / n}$, where $k=0, ⋯, n-1$.<br>
+To compute the residue at these poles$$\left.{1\over\frac{d}{dz}(1-z^n)}\right|_{z=w^k}=\left.1\over-nz^{n-1}\right|_{z=w^k}=-\frac{w^k} n$$using the expression for the residues in terms of derivatives evaluated at the respective poles.
+</li>
+<li>
+<ol type="i"><li>The poles in this case are at $z= ± \frac{i}{2}$ and $z= ± 2 i$. The poles at $± 2 i$ do not contribute to the integral. A short computation shows that the residue at $z= ± i / 2$ is $1 / 30$.<a href="https://math.stackexchange.com/questions/519651">Residue function of odd functions is even</a> Hence the integral gives
+$$
+∫_{γ(0,1)} \frac{z d z}{4 z^4+17 z^2+4}=2 π i \frac{1}{15}
+$$
+</li>
+<li>We consider the following integral in the unit disc
+$$
+I=∫_{γ(0,1)} \frac{d z}{z}\ \frac{z^2+z^{-2}}{5-2\left(z+z^{-1}\right)}
+$$
+The integrand has poles at $z=0$ and $z=1 / 2$, plus a pole at $z=2$ which does not contribute to the integral. The residue at zero is slightly long to compute, since the pole is of second order, but the computation is straightforward. We obtain
+$$
+I=2πi\operatorname{Res}(f;0,\frac12)=2πi\left(-\frac{5}{4}+\frac{17}{12}\right)=2 π i \frac{1}{6}
+$$
+Finally, replacing $z=e^{i θ}$ the integral we are interested in is ${1\over2 i}I=\frac{π}{6}$.</li></ol></li>
+<li>First we have the contribution from the pole at $z=0$. This is a pole of cubic order, and the residue is $-1 / 3$. Then, consider $\sinh ^2 z$. This function vanishes at $z=n π i$, for integer $n$. For the integration contour at hand we need to include the residues at $n= ± 1, ± 2, ⋯, ± k$. What is the residue at these poles? We first note the following
+$$
+\frac{1}{\sinh ^2 z}=\frac{1}{(z-n π i)^2}-\frac{1}{3}+⋯
+$$
+Since the function is periodic, it suffices to show this around $z=0$. Then the residue of the integrand is
+$$
+\frac{1}{z \sinh ^2 z}=\frac{1}{nπi+(z-n π i)}\frac1{\sinh ^2 (z-n π i)}=\frac{1}{n π i(z-n π i)^2}+\left(\frac{1}{n^2 π^2}\right) \frac{1}{(z-n π i)}+⋯
+$$
+Which leads to $$
+I=2 π i\left(-\frac{1}{3}+2 \sum_{n=1}^k \frac{1}{π^2 n^2}\right)
+$$
+As the radius of the integration contour tends to infinity, the integral tends to zero. For a large arc the real part of $z$ (either positive or negative) makes the factor $\sinh ^{-2} z$ to decay exponentially. For $z$ real there is a small arc where this does not happen, but the size of the arc goes to zero and it also does not contribute to the integral. This together with the previous result lead to $$
+\sum_{n=1}^{∞} \frac{1}{n^2}=\frac{π^2}{6}
+$$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Suppose that $f: U → ℂ$ is a holomorphic function on an open set $U$ which contains the disc $\bar{B}(a, r)$. Then for all $w$ in the interior of the disc we have
+$$
+f(w)=\frac{1}{2 π i} ∫_{γ(a, r)} \frac{f(z)}{z-w} d z
+$$
+Suppose that ${|f(z)|}≤ M$ for all $z ∈ ℂ$. Let $γ_R$ be the circular path around the origin with radius $R$. Then for $R ≥{|w|}$ the integral formula shows
+$$
+\begin{array}{r}
+2 π{|f(w)-f(0)|}=\left|∫_{γ_R} f(z)\left(\frac{1}{z-w}-\frac{1}{z}\right)\right|=\left|∫_{γ_R} \frac{w f(z)}{z(z-w)} d z\right| ≤ 2 π R \sup _{|z|=R}\left|\frac{w f(z)}{z(z-w)}\right| \\
+≤ 2 π R \frac{M{|w|}}{R(R-{|w|})}=\frac{2 π M{|w|}}{R-{|w|}}
+\end{array}
+$$
+taking $R → ∞$ the result follows.
+</li>
+<li>We start with the following result from Cauchy's residue theorem for a holomorphic function
+$$
+∫_{Γ} \frac{f(z)}{z-x'} d z=0
+$$
+where $x'$ is located in the real axis, and the contour consists of the real axis, with a hump over the pole at $z=x'$ and a large semicircle in the upper half plane. The integral over the large semicircle vanishes.<center>{% latex %}\usepackage{tikz}\begin{tikzpicture}[line width=1pt]
+\draw(-3,0)--(1,0)arc(180:0:.5)--(3,0)arc(0:180:3);\fill(1.5,0)circle(1pt)node[below]{$x'$};
+\draw[red,->,transform canvas={rotate=50}](3,0);
+\draw[red,->,transform canvas={rotate around={90:(1.5,0)},yscale=-1}](2,0);
+\end{tikzpicture}{% endlatex %}</center>
+The reason for this is that while the length grows as $R$, the integrand decays as $1 / R^2$ or faster, by our assumption on the behaviour of $f(z)$. As the radius of the hump becomes zero we are left with the following
+$$
+0=∫_{Γ} \frac{f(z)}{z-x'} d z=∫_{-∞}^{∞} \frac{f(x)}{x-x'} d x-i π f\left(x'\right)
+$$
+where in the second term we have used the residue theorem and the first integral is defined as explained in the hint. The real and imaginary part of this relation lead to the required result.
+</li>
+<li>
+<ol type="i"><li>First we write $\cos p x=ℜe^{i p x}$ and consider the integral of
+$$
+f(z)=\frac{1-e^{i p z}}{z^2}
+$$
+Note that this function has a single pole at $z=0$ with residue $-ip$. Depending on the sign of $p$ we need to close the contour appropriately and the Residue theorem leads to the answer $π{|p|}\over2$.<a href="https://math.stackexchange.com/questions/1926972">Question 1</a> <a href="https://math.stackexchange.com/questions/1677090">Question 2</a>
+</li>
+<li>Consider the integral of $f(z)=\frac{z^2}{1+z^4}$ on a contour given by the real axis with a great circle closing the contour on the upper half plane. The poles of our function are the four roots of $-1$. Let's call them $ω_k=e^{i π / 4} e^{i π k / 2}$, with $k=0,1$ and $-w_0,-w_1$.<br>
+The function $f(z)$ has four single poles, but only $z=w_0$ and $z=w_1$ are on the upper half-plane. The residue at $z=w_0$ is
+$$
+\operatorname{Res}_{w_0}=\frac{w_0^2}{4w_0^3}=\frac1{4w_0}=-\frac14w_1
+$$
+while the residue at $w_1$ is
+$$
+\operatorname{Res}_{w_1}=\frac{w_1^2}{4w_1^3}=\frac1{4w_1}=-\frac14w_0
+$$
+The total integral is the $2 π i$ times the sum of the residues. Furthermore, the integral over the great arc can be seen to vanish as the radius tends to infinity. Hence
+$$
+∫_0^{∞} \frac{x^2}{1+x^4} d x=π i\left(\operatorname{Res}_{w_0}+\operatorname{Res}_{w_1}\right)=πi⋅-\frac{i\sqrt2}4=\frac{π}{2 \sqrt{2}}
+$$</li></ol></li></ol>
+</li>
+<li><ol type="a"><li><ol type="i"><li></li><li></li><li></li><li></li></ol></li><li><ol type="i"><li></li><li></li><li></li><li></li></ol></li></ol></li></ol>

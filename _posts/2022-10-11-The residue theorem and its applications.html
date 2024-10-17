@@ -1,0 +1,83 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: <a href="https://people.math.harvard.edu/~knill/teaching/residues_1996/residue.pdf">Oliver Knill</a>
+---
+<u>Definition.</u> Let $D \subset \mathbf{C}$ be open (every point in $D$ has a small disc around it which still is in $D)$. Denote by $C^1(D)$ the differentiable functions $D→C$. This means that for $f(z)=f(x+i y)=u(x+i y)+i v(x+i y)$ the partial derivatives
+\[
+\frac{∂u}{∂x}, \frac{∂u}{∂y}, \frac{∂v}{∂x}, \frac{∂v}{∂y}
+\]
+are continuous, real-valued functions on $D$.<br>
+<u>Definition.</u> Let $\gamma:(a, b)→D$ be a differentiable curve in $D$. Define the complex line integral
+\[
+\int_\gamma f(z) d z=\int_a^b f(\gamma(t)) \cdot \dot{\gamma}(t) d t
+\]
+If $z=x+i y$, and $f=u+i v$, we have
+\[
+\int_\gamma f(z) d z=\int_a^b(u \dot{x}-v \dot{y})+i(u \dot{y}+v \dot{x}) d t
+\]
+The integral for piecewise differentiable curves $\gamma$ is obtained by adding the integrals of the pieces. We always assume from now on that all curves $\gamma$ are piecewise differentiable.<br>
+<u>Example.</u> $D=\{|z|< r\}$ with $r>1, \gamma:[0, k \cdot 2 \pi]→D, \gamma(t)=(\cos (t), \sin (t)), f(z)=z^n$ with $k \in \mathbf{N}, \mathbf{n} \in \mathbf{Z}$
+\[
+\int_\gamma z^n d z=\int_0^{k 2 \pi} e^{i n t} e^{i t} i d t=\int_0^{k 2 \pi} e^{i(n+1) t} i d t
+\]
+If $n \neq-1$, we get
+\[
+\int_\gamma z^n d z=\left.\frac{1}{n+1} e^{i(n+2) t}\right|_0 ^{k 2 \pi}=0
+\]
+If $n=-1$, we have $\int_\gamma z^n d z=\int_0^{k 2 \pi} i d t=k \cdot 2 \pi i$.<br>
+We recall from vector calculus the <b>Green formula</b> for a vector field $(u, v)$ in $\mathbf{R}^2$
+\[
+\int_\gamma(u \dot{x}+v \dot{y}) d t=\int_D\left(v_x-u_y\right) d x \wedge d y,
+\]
+where $D$ is the open set enclosed by closed curve $\gamma=\delta D$ and where $d x \wedge d y=d x d y$ is the <b>volume form</b> in the plane. Write $d z=d x+i d y, d \bar{z}=d x-i d y$ and $d z \wedge d \bar{z}=2 i d x \wedge d y$. Define for $f \in C^1(D)$
+<div style="margin:0 200px"><b>Theorem 1.1 (Complex Green Formula)</b><div style="border: solid 1px #000">$f \in C^{1}(D), D \subset \mathbf{C}, \gamma=\delta D$\[\int_{\gamma} f(z) d z=\int_{D} \frac{\partial f}{\partial \bar{z}} d z \wedge d \bar{z}\]</div></div>
+<u>Proof.</u> Green's theorem applied twice (to the real part with the vector field $(u,-v)$ and to the imaginary part with the vector field $(v, u))$ shows that
+\[
+\int_\gamma f(z) d z=\int_a^b(u \dot{x}-v \dot{y})+i \cdot(u \dot{y}+v \dot{x}) d t
+\]
+coincides with
+\begin{aligned}
+\int_D \frac{∂f}{∂\bar{z}} d z \wedge d \bar{z} &=\int_D \frac{1}{2}\left(u_x-v_y\right)+\frac{i}{2}\left(u_y+v_x\right) 2 i d x \wedge d y \\
+&=\int_D\left(-u_y-v_x\right) d x \wedge d y+i \cdot \int_D\left(u_x-v_y\right) d x \wedge d y
+\end{aligned}■<br>
+We check that
+\[
+\frac{∂f}{∂\bar{z}}=0 \Leftrightarrow \frac{∂u}{∂x}=\frac{∂v}{∂y}, \frac{∂v}{∂x}=-\frac{∂u}{∂y} .
+\]
+The right hand side are called the <b>Cauchy-Riemann differential equations</b>.<br>
+<u>Definition.</u> Denote by $C^\omega(D)$ the set of functions in $C^1(D)$ for which $\frac{∂f}{∂\bar{z}}=0$ for all $z \in D$. Functions $f \in C^\omega(D)$ are called <b>analytic</b> or <b>holomorphic</b> in $D$.
+<div style="margin:0 200px"><b>Corollary 1.2 (Theorem of Cauchy)</b><div style="border: solid 1px #000">$f \in C^{\omega}(D), D \subset \mathbf{C}, \gamma=\delta D$\[\int_{\gamma} f(z) d z=0\]</div></div>
+Proof.
+$$\int_{\gamma} f(z) d z=\int_{D} \frac{\partial f}{\partial \bar{z}} d z \wedge d \bar{z}=0$$
+■
+<div style="margin:0 200px"><b>Corollary 1.3 (Cauchy’s Integral formula)</b><div style="border: solid 1px #000">$f \in C^{\omega}(D), D$ simply connected, $\gamma=\delta D$. For any $a \in D$$$f(a)=\frac{1}{2 \pi i} \int_{\gamma} \frac{f(w) d w}{w-a}$$</div></div>
+Proof. Define for small enough $\epsilon>0$ the set $D_\epsilon=D∖\{|z-a| \leq \epsilon\}$ and the curve $\gamma_\epsilon: t \mapsto z+\epsilon e^{i t}$. (Because $D$ is open, the set $D_\epsilon$ is contained in $D$ for small enough $\epsilon$ ). Because $\gamma \cup-\gamma_\epsilon=\delta D_\epsilon$ we get by Cauchy's theorem $1.2$
+\[
+\int_\gamma \frac{f(w)}{w-a} d w-\int_{\gamma_\epsilon} \frac{f(w)}{w-a} d w=0 .
+\]
+We compute
+\[
+\int_{\gamma_\epsilon} \frac{f(w)}{w-a} d w=\int_0^{2 \pi} \frac{f\left(z+\epsilon \cdot e^{i t}\right)}{a+\epsilon \cdot e^{i t}-a} \frac{d}{d t}\left(a+\epsilon e^{i t}\right) d t=i \cdot \int_0^{2 \pi} f\left(a+\epsilon \cdot e^{i t}\right) d t
+\]
+The right hand side converges for $\epsilon \rightarrow 0$ to $2 \pi$ if $(a)$ because $f \in C^1(D)$ implies
+\[
+\left|f\left(a+\epsilon e^{i t}\right)-f(a)\right|< C \cdot \epsilon
+\]
+<div style="margin:0 200px"><b>Corollary 1.4 (Generalized Cauchy Integral formulas)</b><div style="border: solid 1px #000">Assume $f \in C^\omega(D)$ and $D \subset \mathbf{C}$ simply connected, and $\delta D=\gamma$. For all $n \in \mathbf{N}$ one has $f^{(n)}(z) \in C^\omega(D)$ and for any $z \notin \gamma$
+\[
+f^{(n)}(z)=\frac{n !}{2 \pi i} \int_\gamma \frac{f(w) d z}{(w-z)^{n+1}} .
+\]</div></div>Proof. Just differentiate Cauchy’s integral formula $n$ times.<br>
+It follows that $f ∈ C^ω (D)$ is arbitrary often differentiable.<br>
+<u>Definition</u> Let $f \in C^\omega(D \backslash\{a\})$ and $a \in D$ with simply connected $D \subset \mathbf{C}$ with boundary $\gamma$. Define the residue of $f$ at $a$ as
+\[
+\operatorname{Res}(f, a):=\frac{1}{2 \pi i} \int_\gamma f(z) d z .
+\]
+By Cauchy's theorem, the value does not depend on $D$.<br>
+<u>Example.</u> $f(z)=(z-a)^{-1}$ and $D=\{|z-a|< 1\}$. Our calculation in the example at the beginning of the section gives $\operatorname{Res}(f, a)=1$.<br>
+A generalization of Cauchy's theorem is the following residue theorem:
+<div style="margin:0 200px"><b>Corollary 1.5 (The residue theorem)</b><div style="border: solid 1px #000">$f \in C^\omega\left(D \backslash\left\{z_i\right\}_{i=1}^n\right), D$ open containing $\left\{z_i\right\}$ with boundary $\delta D=\gamma$
+\[
+\frac{1}{2 \pi i} \int_\gamma f(z) d z=\sum_{i=1}^n \operatorname{Res}\left(f, z_i\right) .
+\]
+</div></div>Proof. Take $\epsilon$ so small that $D_i=\left\{\left|z-z_i\right| \leq \epsilon\right\}$ are all disjoint and contained in $D$. Applying Cauchy's theorem to the domain $D \backslash \bigcup_{1=1}^n D_i$ leads to the above formula.

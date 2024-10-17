@@ -1,0 +1,40 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: <a href="https://stacks.math.columbia.edu/tag/004R">The Stacks project</a> 5.7 Connected components
+---
+<style>span.qed {float: right;margin-top: 0;}</style>
+<p><b>Lemma 5.7.2.</b> Let $f : X \to Y$ be a continuous map of topological spaces. If $E \subset X$ is a connected subset, then $f(E) \subset Y$ is connected as well. </p>
+<p>
+<strong>Proof.</strong>
+Omitted. 
+<span class="qed">$\square$</span>
+</p>
+<p><b>Lemma 5.7.3.</b> Let $X$ be a topological space. </p>
+If $T \subset X$ is connected, then so is its closure. 
+</p>
+<ol><li>
+Any connected component of $X$ is closed (but not necessarily open). 
+</li><li>
+Every connected subset of $X$ is contained in a unique connected component of $X$. 
+</li><li>
+Every point of $X$ is contained in a unique connected component, in other words, $X$ is the union of its connected components. 
+</li></ol>
+<p>
+<strong>Proof.</strong>
+Let $\overline{T}$ be the closure of the connected subset $T$. Suppose $\overline{T} = T_1 \amalg T_2$ with $T_ i \subset \overline{T}$ open and closed. Then $T = (T\cap T_1) \amalg (T \cap T_2)$. Hence $T$ equals one of the two, say $T = T_1 \cap T$. Thus clearly $\overline{T} \subset T_1$ as desired. </p>
+<p>
+Pick a point $x\in X$. Consider the set $A$ of connected subsets $x∈T_\alpha \subset X$. Note that $A$ is nonempty since $\{ x\} ∈A$. There is a partial ordering on $A$ coming from inclusion: $\alpha \leq \alpha ' \Leftrightarrow T_\alpha \subset T_{\alpha '}$. Choose a maximal totally ordered subset $A' \subset A$, and let $T = \bigcup _{\alpha∈A'} T_\alpha $. We claim that $T$ is connected. Namely, suppose that $T = T_1 \amalg T_2$ is a disjoint union of two open and closed subsets of $T$. For each $\alpha∈A'$ we have either $T_\alpha \subset T_1$ or $T_\alpha \subset T_2$, by connectedness of $T_\alpha $. Suppose that for some $\alpha _0∈A'$ we have $T_{\alpha _0} \not\subset T_1$ (say, if not we're done anyway). Then, since $A'$ is totally ordered we see immediately that $T_\alpha \subset T_2$ for all $\alpha∈A'$. Hence $T = T_2$. </p>
+<p>
+To get an example where connected components are not open, just take an infinite product $\prod _{n∈\mathbf{N}} \{ 0, 1\} $ with the product topology. Its connected components are singletons, which are not open. 
+<span class="qed">$\square$</span></p>
+<a href="https://math.stackexchange.com/questions/3357843">Prove that each connected component is closed</a><br>
+<a href="https://math.stackexchange.com/questions/2486461">Connected Components are Closed</a><hr>
+<a href="https://en.wikipedia.org/wiki/Connected_space#Connected_components">Wikipedia – connected space</a><br>
+Given some point \(x\) in a topological space \(X,\) the union of any collection of connected subsets such that each contains \(x\) will once again be a connected subset. 
+The <b>connected component of a point</b> \(x\) in \(X\) is the union of all connected subsets of \(X\) that contain \(x;\) it is the unique largest (with respect to \(\subseteq\)) connected subset of \(X\) that contains \(x.\) 
+The maximal connected subsets (ordered by inclusion \(\subseteq\)) of a non-empty topological space are called the <b>connected components</b> of the space.<br>
+The components of any topological space \(X\) form a partition of&nbsp;\(X\): they are disjoint, non-empty and their union is the whole space.<br>
+Every component is a closed subset of the original space. It follows that, in the case where their number is finite, each component is also an open subset. However, if their number is infinite, this might not be the case; for instance, the connected components of the set of the rational numbers are the one-point sets (singletons), which are not open. Proof: Any two distinct rational numbers \(q_1< q_2\) are in different components. Take an irrational number \(q_1 < r < q_2,\) and then set \(A = \{q∈ℚ : q < r\}\) and \(B = \{q∈ℚ : q > r\}.\) Then \((A,B)\) is a separation of \(ℚ,\) and \(q_1∈A, q_2∈B\). Thus each component is a one-point set.<br>
+Let \(\Gamma_x\) be the connected component of \(x\) in a topological space \(X,\) and \(\Gamma_x'\) be the intersection of all clopen sets containing \(x\) (called <a href="http://en.wikipedia.org/wiki/Locally_connected_space" title="Locally connected space">quasi-component</a> of \(x.\)) Then \(\Gamma_x \subset \Gamma'_x\) where the equality holds if \(X\) is compact Hausdorff or locally connected.<br>
+<a href="https://math.stackexchange.com/questions/1314013/">General topology - Components of the set of rational numbers</a>

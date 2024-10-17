@@ -1,0 +1,8 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: H. A. Priestley <cite>Complex Analysis</cite> 20.10
+---
+Consider the following erroneous argument. Let $I=\int_0^∞(1+x^4)^{-1}dx$. Put $x=iy$. Then
+\[I=\int_0^∞(1+y^4)^{-1}dy=iI\]So $I=0$, which is clearly wrong, because the integrand is strictly positive. The correct value for $I$ is $π/(2\sqrt2)$, as we showed in Example 19.1 by integrating $(1+z^4)^{-1}$ round a semicircular contour. We could alternatively have derived this result using the contour in Fig. 20.8. We can now see that the integrals along the rays $\arg z=0$ and $\arg z=π/2$, which the substitution equates, in fact differ by $2πi\operatorname{res}\left\{(1+z^4)^{-1};e^{πi/4}\right\}$. To assert this, we have to prove also that the integral along the linking arc tends to zero as $R→∞$.<hr><a href="https://math.stackexchange.com/questions/3125448">Changing variable in complex variable integrals</a><br>Complex integrals are path integrals so a change of variables needs to preserve the path and in your example the straight change moves from the reals to a different line in the complex plane (for real integrals there is only one path so to speak up to orientation so a change of variable is just a reparametrization)<br>
+Contour integration uses that the integral of an analytic function on a loop is zero, so you make a loop from the reals to the complex line obtained by turning by - technically you truncate at a large and join the segments by another curve, generally the arc of radius and show that the integral on that arc goes to zero as goes to infinity. Of course there are many variations and the ingenuity is in finding both the right analytic function and the right closed curve<hr>See 20.16 Tactical tip

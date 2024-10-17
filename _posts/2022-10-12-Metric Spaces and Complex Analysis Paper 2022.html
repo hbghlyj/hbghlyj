@@ -1,0 +1,270 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: A2 Paper 2022 <a href="https://www.maths.ox.ac.uk/filebrowser/download/21846">Solution</a>
+---
+<ol><li>
+<ol type="a"><li>What does it mean for a metric space to be <i>sequentially compact</i>? What does it mean for it to be <i>totally bounded</i>?<br>
+Prove that a sequentially compact metric space is totally bounded.
+</li>
+<li>Let $X=𝒞[0,1]$ be the space of continuous real-valued functions on the closed interval $[0,1]$ with the supremum metric
+$$
+d(f, g)=\sup _{x ∈[0,1]}{|f(x)-g(x)|},   \text { for } f, g ∈ X
+$$
+[<i>You do not need to show that this is a metric.</i>]
+<ol type="i"><li>Let $Y$ be a totally bounded subset of $X$. Show that given $ε>0$ there exists $δ>0$ such that ${|f(x)-f(y)|}&lt;ε$ whenever ${|x-y|}&lt;δ$ and $f ∈ Y$. <a href="https://planetmath.org/equicontinuous">equicontinuous</a>
+</li>
+<li>Assume instead now that $Y$ is merely a bounded subset of $X$. Does the same conclusion hold? Justify your answer.</li></ol>
+</li>
+<li>Let $Z$ be the space of binary sequences, that is, sequences $\mathbf{x}=\left(x_n\right)_{n=1}^∞$ with $x_n ∈\{0,1\}$ for $n ∈ ℕ$, together with the metric
+$$
+d(\mathbf{x}, \mathbf{y})=\sum_{n=1}^∞ \frac{\left|x_n-y_n\right|}{2^n},   \text { for } \mathbf{x}=\left(x_n\right)_{n=1}^∞, \mathbf{y}=\left(y_n\right)_{n=1}^∞ ∈ Z
+$$
+[<i>You do not need to show that this is a metric.</i>] Prove that $Z$ is sequentially compact.</li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $X$ be a metric space. What does it mean for a map $f: X → X$ to be a <i>contraction</i>?<br>
+Prove that a contraction $f: X → X$ can have at most one fixed point.
+Give an example of a metric space $X$ and contraction $f$ which has no fixed points.
+</li>
+<li>Now let $X$ be $ℝ^n$ endowed with the standard Euclidean metric $d$, and let
+$$
+B=\left\{x ∈ ℝ^n: d(x, 0) ⩽ 1\right\}
+$$
+be the usual closed unit ball in $ℝ^n$.
+<ol type="i"><li>Let $T: B → B$ be a 1-Lipschitz map, that is to say
+$$
+d(T(x), T(y)) ⩽ d(x, y)   \text { for all } x, y ∈ B
+$$
+Prove that $T$ has a fixed point.<br>
+[<i>Hint: for each positive integer $n$ consider the map</i> $(1-1 / n) T$.]
+</li>
+<li>Give an example to show that this fixed point may be unique, and another to show that there may be many fixed points.
+</li>
+<li>Need the conclusion in (i) hold for $B$ an arbitrary compact set in $ℝ^n$ and $T: B → B$ a 1-Lipschitz map? Justify your answer.
+</li>
+<li>Suppose now that we replace the standard Euclidean metric $d$ throughout by the $d_∞$ metric on $ℝ^n$. Need the conclusion in (i) then hold? And likewise for when we replace $d$ by the discrete metric on $ℝ^n$ ? Briefly justify your answers.</li></ol>
+</li>
+<li>Let $ℕ$ denote the positive integers. Let $d$ be the Euclidean metric on $ℕ$ and define the metric
+$$
+δ(x, y):=\frac{d(x, y)}{x y}   \text { for } x, y ∈ ℕ
+$$
+[<i>You do not need to show that this is a metric.</i>]
+<ol type="i"><li>Show that every subset of $ℕ$ is open with respect to both metrics $d$ and $δ$.
+</li>
+<li>Prove that $ℕ$ is complete with respect to $d$, but not complete with respect to $δ$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Describe the Taylor expansion at $a ∈ ℂ$ of a holomorphic function $f$ defined on the disk
+$$
+D(a, R)=\{z ∈ ℂ:{|z-a|}&lt;R\}
+$$
+giving the coefficients explicitly in terms of an integral.
+</li>
+<li>Describe the Laurent expansion of a holomorphic function $f$ defined on the annulus
+$$
+A(a, r, R)=\{z ∈ ℂ: r&lt;{|z-a|}&lt;R\}
+$$</li></ol>
+</li>
+<li>Let $f(z)$ be a holomorphic function on $D(0,1)$ and let $0&lt;r&lt;1$.
+<ol type="i"><li>Show that there is a sequence $p_n(z)$ of polynomials which converges uniformly to $f(z)$ on $D(0, r)$.
+</li>
+<li>Need there be a sequence of polynomials which converges uniformly to $f(z)$ on $D(0,1)$? Justify your answer.</li></ol>
+</li>
+<li>Consider now holomorphic functions $f(z)$ on $ℂ∖\{0\}$.
+<ol type="i"><li>Give an example to show that there need not be a sequence $p_n(z)$ of polynomials which converges uniformly to $f(z)$ on $A(0,1,2)$.
+</li>
+<li>Show that there exists a sequence $q_n(z)$ of rational functions, whose only possible singularity is the origin, which converges uniformly to $f(z)$ on $A(0,1,2)$.
+</li>
+<li>Need there exist a sequence $q_n(z)$ of rational functions, whose only possible singularity is the origin, which converges uniformly to $f(z)$ on $D(0,1)∖\{0\}$ ? Justify your answer.
+[Recall that a rational function is one of the form $u(z) / v(z)$ where $u(z)$ and $v(z)$ are polynomials and $v(z)$ is not identically zero.]</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li><ol type="i"><li>Define the holomorphic branch $L(z)$ of $\log z$ on the cut plane $ℂ∖(-∞, 0]$ such that $L(1)=0$.
+</li>
+<li>Determine the real and imaginary parts of $L(z)$ and show directly that they satisfy the Cauchy-Riemann equations.</li></ol>
+</li>
+<li>For $z ∈ ℂ$, the hyperbolic tangent $\tanh z$ is defined by
+$$
+\tanh z=\frac{\sinh z}{\cosh z}=\frac{\exp (2 z)-1}{\exp (2 z)+1}
+$$
+<ol type="i"><li>Write down, in terms of $L(z)$, the holomorphic branch of the inverse hyperbolic tangent $\tanh^{-1}z$ in the cut plane
+$$
+X=ℂ∖((-∞,-1] ∪[1, ∞))
+$$
+and such that $\tanh^{-1}0=0$.
+</li>
+<li>What is the image of $X$ under $\tanh^{-1}z$ ? Justify your answer.
+</li>
+<li>Determine the Taylor expansion of $\tanh^{-1}z$ centred at 0. What is its radius of convergence?</li></ol>
+</li>
+<li>
+<ol type="i"><li>Determine the Laurent expansion of $1 /(\tanh z)$, centred at 0, up to the $z$ term.
+</li>
+<li>Let $C_r$ denote the circle $|z|=r$, positively oriented. Evaluate
+$$
+∫_{C_3} \frac{\mathrm{d} z}{\tanh z}   \text { and }   ∫_{C_4} \frac{\mathrm{d} z}{\tanh z}
+$$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>By using a keyhole contour, or otherwise, calculate
+$$
+∫_0^∞ \frac{\sqrt[3]{x}}{(1+x)^2} d x
+$$
+Carefully justify all the steps in your calculation.
+</li>
+<li>Let $-1&lt;α&lt;1$. Evaluate
+$$
+∫_0^{2 π} \frac{\mathrm{d} θ}{1-α \cos θ}
+$$
+Deduce that for non-negative integers $n$ we have
+$$
+∫_0^{2 π} \cos ^{2 n} θ \mathrm{d} θ=\frac{(2 n) ! π}{2^{2 n-1}(n !)^2}
+$$
+Carefully justify all the steps in your calculation.</li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Prove that every Möbius transformation is a composition of mappings of the form
+$$
+T: z ↦ z+1,   I: z ↦ \frac{1}{z},   D_r: z ↦ r z,   R_θ: z ↦ e^{i θ} z
+$$
+where $r ∈ ℝ_{>0}$ and $θ ∈[0,2 π)$.
+</li>
+<li>Let
+$$
+L:=\{z ∈ ℂ:|z-i| ⩽ \sqrt{2} \text { and }|z+i| ⩽ \sqrt{2}\} .
+$$
+Find a Möbius transformation which maps $L$ bijectively to the first quadrant
+$$
+Q:=\{z ∈ ℂ: \operatorname{Re}(z) ⩾ 0, \operatorname{Im}(z) ⩾ 0\} ∪\{∞\}
+$$
+of the extended complex plane $ℂ_∞=ℂ ∪\{∞\}$, and in addition maps 0 to $e^{i π / 4}$. Write this transformation as a composition of the mappings in part (i).
+</li>
+<li>Determine all Möbius transformations which map $L$ bijectively to $Q$, justifying your answer.</li></ol>
+</li>
+<li>Let $ϕ: ℂ_∞ → ℂ_∞$ be given by
+$$
+ϕ(z):=z+\frac{1}{z}
+$$
+and define
+$$
+U:=\{z ∈ ℂ: 0&lt;|z|&lt;1\},   S^1:=\{z ∈ ℂ:|z|=1\}
+$$
+<ol type="i"><li>Prove that $ϕ$ restricts to a two-to-one map from $S^1$ onto the real interval $[-2,2]$. Further show that $ϕ$ maps $U$ bijectively to $ℂ∖[-2,2]$.
+</li>
+<li>By considering the complex function $ψ(z)$ defined implicitly by the equation
+$$
+\frac{ψ(z)-1}{ψ(z)+1}=\left(\frac{z-1}{z+1}\right)^2,
+$$
+or otherwise, write $ϕ(z)$ as a composition of Möbius transformations and the squaring map.</li></ol>
+</li>
+<li>State Riemann's mapping theorem.
+Let $W$ be an open connected and simply connected proper subset of $ℂ$ and $a ∈ W$. Let $D=\{z:|z|&lt;1\}$ and take $b ∈ D$ and $α ∈ ℝ$. Show that there is a unique bijective conformal map $f$ from $W$ to $D$ such that $f(a)=b$ and $\arg f'(a)=α$.</li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>$X$ is sequentially compact if every sequence in $X$ has a convergent sub-sequence.<br>
+$X$ is totally bounded if $∀ε>0$, $X$ can be covered by finitely many open balls of radius $ε$.<br>
+Suppose $X$ is not totally bounded, so $∃ε$, finitely many balls of radius $ε$ can't cover $X$. Take $x_1∈X$. Suppose ∃ $(x_k)_{k=1}^n$ such that $∀i,j:{|x_i-x_j|}>ε$, take $x_{n+1}∈X∖⋃_{k=1}^nB(x_k,ε)$, then $(x_k)_{k=1}^{n+1}$ satisfy $∀i,j:{|x_i-x_j|}>ε$. In this way we construct a sequence $(x_k)_{k=1}^∞$ in $X$ that has no Cauchy sub-sequence, so $X$ is not sequentially compact.</li>
+<li><ol type="i"><li>For $Y$ finite, since $[0,1]$ is compact each $f_i∈Y$ is uniformly continuous, so $∃δ_i>0$ such that $∀x,y∈[0,1],{|x-y|}&lt;δ_i:{|f_i(x)-f_i(y)|}&lt;ε$, then set $δ=\min_iδ_i$.<br>In general for $Y$ totally bounded, cover $Y$ by finitely many open balls $B(f_i,ε)$, we proved $∃δ>0$ such that $∀x,y∈[0,1],{|x-y|}&lt;δ:{|f_i(x)-f_i(y)|}&lt;ε$.<br>
+$∀f∈Y,∃i:f∈B(f_i,ε)⇒∀x:{|f(x)-f_i(x)|}&lt;ε$. By triangle inequality $∀x,y∈[0,1],{|x-y|}&lt;δ:{|f(x)-f(y)|}≤{|f(x)-f_i(x)|}+{|f_i(x)-f_i(y)|}+{|f(y)-f_i(y)|}≤3ε$</li>
+<li>Counterexample: $f_n=\begin{cases}1&x≥1/n\\nx&x≤1/n\end{cases}$ are continuous and bounded by 1.<br>Take $ε=1$. For any $δ>0$, we have $f_n(\fracδ2)-f_n(0)=1$ for $n>\frac2δ$</li></ol></li>
+<li>$Z_0=\{0,1\},Z_1=\left\{0,\frac12\right\},Z_2=\left\{0,\frac14\right\},⋯$ with Euclidean metric are all sequentially compact.<br>By <a href="https://en.wikipedia.org/wiki/Tychonoff%27s_theorem">Tychonoff’s theorem</a> $Z=Z_0×Z_1×Z_2×⋯$ with <a href="https://en.wikipedia.org/wiki/Product_metric">product metric</a>\[d((x_1,x_2,…),(y_1,y_2,…))=\left\|\left(d_{Z_1}(x_1,y_{1}),d_{Z_2}(x_2,y_2),…\right)\right\|_1\]is sequentially compact.</li></ol></li>
+<li><ol type="a"><li>$∃K∈(0,1):∀x_1,x_2∈X:d_X(f(x_1),f(x_2))≤K⋅d_X(x_1,x_2)$<br>
+Let $x_1≠x_2$ be fixed points\begin{align*}\text{By contraction }d_X(x_1,x_2)&=d_X(f(x_1),f(x_2))\\&≤K⋅d_X(x_1,x_2)\\d_X(x_1,x_2)>0&⇒1≤K\text{, contradiction.}\end{align*}$X=ℝ^+,f(x)=\frac x2$ is a contraction that has no fixed points</li>
+<li><ol type="i"><li>For $n∈ℕ$ the map $T_n≔(1-\frac1n)T$ is a contraction and $T_n(B)=B(0,1-\frac1n)⊂B$<br>So $T_n:B→B$ has a fixed point $a_n$. Since $B$ is sequentially compact, $(a_n)$ has a convergent subsequence $a_{n_k}→a∈B$\[(1-\frac1{n_k})T(a_{n_k})=a_{n_k}⇒\lim_k T(a_{n_k})=\lim_k a_{n_k}=a\]Since $T$ is continuous, $T(a)=T(\lim_k a_{n_k})=\lim_k T(a_{n_k})=a$</li>
+<li>If $T$ is constant, fixed point is unique. If $T=\text{id}_B$ any point of $B$ is a fixed point.</li>
+<li>For $[-2,-1]∪[1,2]$, $x↦-x$ has no fixed point.<br>If the subset need to be connected, take an annulus and rotate about center.</li><li>For $d_∞$ the closed unit ball $B=[-1,1]^n$ is still compact, $T_n(B)⊂B$.<br>For discrete metric $B=ℝ^n$ is not compact, the conclusion does not hold for $x↦x+1$</li></ol></li>
+<li><ol type="i"><li>Union of open sets is open, it suffices to prove $\{x\}$ open: $\{x\}=B_d(x,\frac12)=B_δ(x,\frac1{x^2+x})$<br>To prove $B_δ(x,\frac1{x^2+x})=\{x\}$, for any $y≠x$\[δ(x,y)=\left|\frac1x-\frac1y\right|≥\left|\frac1x-\frac1{x+1}\right|=\frac1{x^2+x}⇒y∉B_δ\left(x,\frac1{x^2+x}\right)\]{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[xscale=5]
+\draw(1/12,0)--(1,0);
+\foreach\i in{1,...,12}\draw({1/\i},0)node[below]{$\frac1{\i}$}--+(0,1);
+\end{tikzpicture}{% endlatex %}</li>
+<li>Let $a_n$ be a Cauchy sequence in $(ℕ,d)$.$$∃N:∀n,m≥N:d(a_n,a_m)&lt;1⇒d(a_n,a_N)&lt;1⇒a_n=a_N$$so $a_n→a_N$, so $(ℕ,d)$ is complete. To prove $(ℕ,δ)$ is not complete:<br>Consider the sequence $a_n=n$ in $(ℕ,δ)$. We show $a_n$ is Cauchy. $∀ε>0$, let $N>\frac1ε$,$$∀x>y≥N:δ(x,y)=\left|\frac1x-\frac1y\right|<\frac1y≤\frac1N<\frac1ε$$Suppose $a_n→a∈ℕ$, for $n>a,δ(a,n)=\frac1a-\frac1n$ is strictly increasing, contraction.</li></ol>
+</ol></li>
+<li><ol type="a"><li><ol type="i"><li>There exist unique $c_n∈ℂ$ such that $f(z)=\sum_{k=0}^∞c_k(z-a)^k$ for all $z∈D(a,R)$\[c_k=\frac1{2πi}\int_{γ(a,ρ)}\frac{f(w)}{(w-a)^{k+1}}\mathrm{d}w 0&lt;ρ&lt;R\]</li>
+<li>There exist unique $c_n∈ℂ$ such that $f(z)=\sum_{k=-∞}^∞c_k(z-a)^k$ for all $z∈A(a,r,R)$\[c_k=\frac1{2πi}\int_{γ(a,ρ)}\frac{f(w)}{(w-a)^{k+1}}\mathrm{d}w r&lt;ρ&lt;R\]</li></ol></li><li><ol type="i"><li>By the estimation lemma, take $ρ∈(r,1)$, let $M=\max_{z∈γ(0,ρ)}{|f(z)|}$\[{|c_k|}≤\frac1{2π}\int_{γ(0,ρ)}\left|\frac{f(w)}{w^{k+1}}\right|\mathrm{d}w≤\frac1{2π}⋅2πρ⋅\frac{M}{ρ^{k+1}}=\frac{M}{ρ^k}\]Let $p_n(z)$ be the partial sum $\sum_{k=0}^{n-1}c_kz^k$. For $z∈D(0,r)$\[\left|p_n(z)-f(z)\right|≤\sum_{k=n}^∞{|c_k|}r^k≤\sum_{k=n}^∞M\left(r\overρ\right)^k\text{ converges}\]By Weierstrass M-test, $p_n(z)→f(z)$ uniformly on $D(0,r)$.</li>
+<li>$f(z)=\log(1-z)$ is holomorphic on the open disk $D(0,1)$. The idea is that $f(z)$ is unbounded near 1 but $p(z)$ is bounded.<br>Suppose $p_n(z)→f$ uniformly on $D(0,1)$, then $∃N∀n>N:\sup_{D(0,1)}{|f-p_n|}≤1⇒f$ is bounded, contradiction.</li>
+</ol><li><ol type="i"><li>$f(z)=z^{-1}$ is holomorphic on $ℂ∖\{0\}$. If a sequence of polynomials $p_n(z)→f(z)$ uniformly on $A(0,1,2)$, take $r∈(1,2)$, then $γ(0,r)⊂A(0,1,2)$,\[0=∫_{γ(0,r)}p_n→∫_{γ(0,r)}f=2πi\text{ contradiction.}\]</li>
+<li>To prove $q_n(z)=\sum_{k=-n}^nc_kz^k→f(z)$ uniformly on $A(0,1,2)$.<br>Like b(i) take $ρ∈(2,∞)$, let $M=\max_{z∈γ(0,ρ)}{|f(z)|}$,
+\[{|c_k|}≤\frac1{2π}\int_{γ(0,ρ)}\left|\frac{f(w)}{w^{k+1}}\right|\mathrm{d}w≤\frac1{2π}⋅2πρ⋅\frac{M}{ρ^{k+1}}={M\overρ^k}\]
+\[⇒
+\left|\sum_{k=n}^∞c_kz^k\right|≤\sum_{k=n}^∞\frac{M}{ρ^k}{|z|}^k≤\sum_{k=n}^∞M\left(2\over ρ\right)^k\text{ converges}
+\]
+By Weierstrass M-test, $\sum_{k=n}^∞c_kz^k→0$ uniformly on ${|z|}≤2$.<br>Take $ρ∈(0,1)$, let $M=\max_{z∈γ(0,ρ)}{|f(z)|}$,
+\[{|c_k|}≤\frac1{2π}\int_{γ(0,ρ)}\left|\frac{f(w)}{w^{k+1}}\right|\mathrm{d}w≤\frac1{2π}⋅2πρ⋅\frac{M}{ρ^{k+1}}={M\overρ^k}\]
+\[⇒
+\left|\sum_{k=-∞}^{-n}c_kz^k\right|≤\sum_{k=-∞}^{-n}{M\overρ^k}{|z|}^k≤\sum_{k=-∞}^{-n}{M\overρ^k}\text{ converges}
+\]By Weierstrass M-test, $\sum_{k=-∞}^{-n}c_kz^k→0$ uniformly on ${|z|}≥1$.
+</li>
+<li>Suppose $q_n(z)$ converges to $f(z)=\sin\left(\frac1z\right)$ uniformly on $D(0,1)∖\{0\}$.<br>Take $0&lt;ε&lt;\frac12$, then $∃N:∀n>N:\sup_{0&lt;{|z|}≤1}{|q_n(z)-f(z)|}&lt;ε$.<br>For $z_k=\frac1{kπ},f(z_k)=0$, so $∀n>N:{|q_n(z_k)|}&lt;ε$, let $k→∞$, ${|q_n(0)|}≤ε$<br>For $z_k=\frac1{\fracπ2+2kπ},f(z_k)=1$, so $∀n>N:{|q_n(z_k)-1|}&lt;ε$, let $k→∞$, ${|q_n(0)-1|}≤ε$<br>But $ε&lt;\frac12$, contradiction.</li>
+</ol></li>
+</ol></li>
+<li><ol type="a"><li><ol type="i"><li>$L(z)=\log{|z|}+i\arg z,\arg z∈(-π,π)$</li>
+<li>$u(x,y)=\log{|x+iy|}=\frac12\log(x^2+y^2),v(x,y)=\arg(x+iy)$
+\begin{align*}
+{∂u\over∂x}&=\frac{2x}{2(x^2+y^2)}=\frac x{x^2+y^2}&{∂u\over∂y}&=\frac{2y}{2(x^2+y^2)}=\frac y{x^2+y^2}\\
+{∂v\over∂x}&=\frac{-y/x^2}{1+y^2/x^2}=-\frac y{x^2+y^2}&{∂v\over∂y}&=\frac{1/x}{1+y^2/x^2}=\frac x{x^2+y^2}
+\end{align*}They satisfy ${∂u\over∂x}={∂v\over∂y},{∂u\over∂y}=-{∂v\over∂x}$</li></ol></li><li><ol type="i"><li>$w=\tanh^{-1} z⇒z=\tanh w=\frac{\exp(2w)-1}{\exp(2w)+1}⇒\exp(2w)=\frac{z+1}{1-z}⇒w=\frac{L(z+1)-L(1-z)}2$</li><li>$\frac{z+1}{1-z}$ is a bijection on $ℂ∪\{∞\}$ so the image of $X$ is $ℂ∖(-∞,0]$<br>
+The image of $|z|$ for $z∈ℂ∖(-∞,0]$ is $(0,∞)$<br>
+The image of $\log{|z|}$ for $z∈ℂ∖(-∞,0]$ is ℝ<br>
+The image of $\arg z$ for $z∈ℂ∖(-∞,0]$ is $(-π,π)$<br>
+So the image of $X$ under the composition $\tanh^{-1}z=\frac12L\left(\frac{z+1}{1-z}\right)$ is $ℝ×\left(-\fracπ2,\fracπ2\right)$</li><li>$\tanh^{-1}z=\frac{L(z+1)-L(1-z)}2=\frac12\left(\sum_{k=1}^∞-\frac{(-1)^kz^k}k+\frac{z^k}k\right)=\sum_{k=1}^∞\frac{z^{2k-1}}{2k-1}$<br>$\tanh^{-1}z$ has branch points $±1$, so the radius of convergence is 1<br>Also $\frac1{\lim_{k→∞}\sqrt[2k-1]{2k-1}}=1$</li></ol></li>
+<li><ol type="i"><li>$\frac1{\tanh z}=\frac{\cosh z}{\sinh z}=\frac{1+\frac{z^2}2+O(z^4)}{z\left(1+\frac{z^2}6+O(z^4)\right)}=\frac1z\left(1+\frac{z^2}2+O(z^4)\right)\left(1-\frac{z^2}6+O(z^4)\right)=\frac1z+\frac z3+O(z^3)$<br>Or use $\frac1{\tanh z}=\tanh(z-\fracπ2i)$</li>
+<li>The poles of $\frac1{\tanh z}$ is $iπn,n∈ℤ$ and $\frac1{\tanh z}$ is $iπ$-periodic. By (i) $\DeclareMathOperator*{\res}{Res}$the residue at 0 is 1, so the residue at $iπn,n∈ℤ$ are all 1.
+\begin{align*}
+∫_{C_3} \frac{\mathrm{d} z}{\tanh z}&=2πi\res_0\frac1{\tanh z}=2πi
+\\∫_{C_4} \frac{\mathrm{d} z}{\tanh z}&=2πi\res_{0,±iπ}\frac1{\tanh z}=6πi
+\end{align*}</li></ol></li></ol></li>
+<li><ol type="a"><li>Using the keyhole contour, outer arc $γ_R$ of radius $R$, inner arc $γ_ϵ$ of radius $ϵ$,
+\[2πi\res_{-1}f(z)=\int_{γ_R}f(z)dz-\int_{γ_ϵ}f(z)dz+\int_{ϵ\exp(δi)}^{R\exp(δi)}f(z)dz-\int_{ϵ\exp(-δi)}^{R\exp(-δi)}f(z)dz\]As $ϵ,δ→0$,
+\begin{split}
+\int_{ϵ\exp(δi)}^{R\exp(δi)}f(z)dz&→\int_0^∞f(x)dx
+\\\int_{ϵ\exp(-δi)}^{R\exp(-δi)}f(z)dz&→e^{2πi/3}\int_0^∞f(x)dx
+\end{split}
+Inside the contour the integrand has a double pole $-1$ with residue$$\res_{-1}f(z)=\left.\frac d{dz}[(z-1)^2f(z)]\right|_{-1}=\frac1{3e^{2πi/3}}$$By estimation lemma
+\begin{split}
+\left|\int_{γ_R}f(z)dz\right|&≤2πR\sup_{γ_R}\left|\frac{\sqrt[3]z}{(z+1)^2}\right|≤2πR\frac{\sqrt[3]R}{(R-1)^2}→0 \text{as }R→∞\\
+\left|\int_{γ_ϵ}f(z)dz\right|&≤2πϵ\sup_{γ_ϵ}\left|\frac{\sqrt[3]z}{(z+1)^2}\right|≤2πϵ\frac{\sqrt[3]ϵ}{(1-ϵ)^2}→0 \text{as }ϵ→0
+\end{split}Substituting in\[∫_0^∞ \frac{\sqrt[3]{x}}{(1+x)^2} d x=\frac{2πi}{3e^{2πi/3}(1-e^{2πi/3})}=\frac{2π}{3\sqrt3}\]
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=.4,>=stealth]
+\begin{scope}[red,thick]
+\draw[->](1,.2) -- (5.5,.2);
+\draw(5.5,.2) --  (10,.2);
+\draw[->](10,-.2) -- (6,-.2);
+\draw(6,-.2) -- (1,-.2);
+\draw[->](10,.2) arc(asin(.02):30:10);
+\draw(30:10) arc(30:360-asin(.02):10);
+\draw(1,.2) arc(asin(.2):360-asin(.2):1);
+\draw (60:10) node[below left] {$R$};
+\draw (0,.8) node[above right] {$\epsilon$};
+\end{scope}
+\draw[thin, dashed,->](-11,0) -- (11,0);
+\draw[thin, dashed,->](0,-11) -- (0,11);
+\fill (0,0) circle(0.1);
+\fill (-2,0) circle(0.1)node[above]{$-1$};
+\end{tikzpicture}
+{% endlatex %}</li><li>Let γ be the unit circle.\[∫_0^{2π}\frac{dθ}{1-α\cosθ}=\int_γ\frac1{1-α\frac{z+z^{-1}}2}{dz\over iz}=\frac{2i}α\int_γ\frac{dz}{z^2-\frac2αz+1}\]The integrand has 2 simple poles $α^{-1}±\sqrt{α^{-2}-1}$<br>$z_1=α^{-1}+\sqrt{α^{-2}-1}>α^{-1}>1$ is outside γ<br>$z_2=α^{-1}-\sqrt{α^{-2}-1}=\frac1{z_1}&lt;1$ is inside γ with residue $\frac1{(z^2-\frac2αz+1)'|_{z_1}}=-\frac1{2\sqrt{α^{-2}-1}}$
+\begin{align*}∫_0^{2π}\frac{dθ}{1-α\cosθ}&=\frac{2i}α⋅2πi⋅\res_{z_2}f(z)\\&=\frac{2π}{\sqrt{1-α^2}}\\&=2π\sum_{n=0}^∞\binom{-\frac12}n(-1)^nα^{2n}\end{align*}
+By the Weierstrass M-Test, $\sum_{n=0}^∞(α\cosθ)^n≤\sum_{n=0}^∞α^n&lt;∞$ converges uniformly on θ∈[0,2π] and so can swap the order of integration and summation
+\begin{align*}∫_0^{2π}\frac{dθ}{1-α\cosθ}&=\sum_{n=0}^∞∫_0^{2π}(α\cosθ)^ndθ\\&=\sum_{n=0}^∞α^n∫_0^{2π}\cos^nθdθ
+\end{align*}Comparing coefficient of $α^{2n}$
+\[∫_0^{2π}\cos^{2n}θdθ=2π\binom{-\frac12}n(-1)^n=2π\frac{1×3×⋯×(2n-1)}{2^nn!}=2π\frac{(2n)!}{2^{2n}(n!)^2}\]
+</li></ol></li>
+<li><ol type="a"><li><ol type="i"><li>$\frac{az+b}{cz+d}=\frac ac\left(\frac{\frac{bc}{ad}-1}{\frac cdz+1}+1\right)⇒\frac{az+b}{cz+d}=D_{\frac ac}∘T∘D_{\frac{bc}{ad}-1}∘I∘T∘D_{\frac cd}$<br>Then use $D_{re^{iθ}}=D_rR_θ$</li><li>A Möbius transformation $f$ such that $f(-1)=0,f(1)=∞$ has the form $f(z)=C\frac{z+1}{1-z}$<br>
+Let $f(0)=e^{iπ/4}$, we find $C=e^{iπ/4}$. To verify $f(L)=Q$\[z∈L⇔\arg{z-1\over z+1}∈\left[-\fracπ4,\fracπ4\right]⇔\arg f(z)∈\left[0,\fracπ2\right]⇔f(z)∈Q\]Write as a composition $f=(-e^{iπ/4}z)∘(z+1)∘(-2z)∘\frac1z∘(z+1)∘(-z)$
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\filldraw[blue!30,draw=blue,line width=1.5](1,0)arc(45:135:1.414)arc(-135:-45:1.414);
+\draw[-stealth](0,-1.5)--(0,1.5);
+\draw[-stealth](-1.5,0)--(1.5,0);
+\fill(0,1)circle(1.5pt)node[left]{$i$}(0,-1)circle(1.5pt)node[left]{$-i$}(-1,0)circle(1.5pt)node[below,xshift=-2]{$-1$}(1,0)circle(1.5pt)node[below]{$1$};
+\end{tikzpicture}
+{% endlatex %}</li>
+<li>It suffices to determine all Möbius bijection $T:L→L$. Then $T$ maps points ±1 to ±1. Assume $T(1)=1$ [if $T(1)=-1$ precompose with the map $z↦-z$]. Take a point $p=(\sqrt2-1)i$ on the upper boundary of $L$. Then $T(p)$ is any point other than ±1 on the upper boundary because $T$ preserves orientation of three points.<br>$T$ is determined by $T(p),T(1),T(-1)$. Then $T$ maps the upper boundary to itself as circline containing $±1,T(p)$. Also $T$ is conformal, the lower boundary must be mapped to the lower boundary, since it is the unique circline intersecting upper boundary at ±1 with $±π/2$.</li></ol></li><li><ol type="i"><li>For $w∈[-2,2]$, let $θ=\arccos\frac w2$, $w=ϕ(z)⇒z=e^{±iθ}$. So ${ϕ|}_{S^1}$ is a two-to-one map.<br>For $w∈ℂ∖[-2,2]$, $ϕ(z)=w⇔z^2-wz+1=0$ has two solutions $z_1,z_2({|z_1|}≤{|z_2|})$.<br>${|z_1|}≠1,{|z_1|}⋅{|z_2|}=1⇒z_1∈U$. So $w↦z_1$ is inverse of ${ϕ|}_U^{-1}$. So ${ϕ|}_U$ is a bijection.</li><li>Rearranging $\frac{ψ(z)-1}{ψ(z)+1}=\left(\frac{z-1}{z+1}\right)^2$ we find\[ψ(z)={(z+1)^2+(z-1)^2\over(z+1)^2-(z-1)^2}=\frac12\left(z+\frac1z\right)=\frac12ϕ(z)\]So $ϕ=2ψ=\frac{2(z+1)}{1-z}∘z^2∘\frac{z-1}{z+1}$</li></ol></li><li>(Riemann's mapping theorem) Let $W$ be an open connected and simply-connected proper subset of ℂ. Then for any $z_0∈W$ there is a unique bijective conformal map $g:W→D$ such that $g(z_0)=0,g'(z_0)>0$<br>So there is a bijective conformal map $g:W→D,g(a)=0,g'(a)>0$<br>Let $h(z)=\frac{b+z}{\overline b z+1}$. Then $h'(0)=1-b\bar b>0$.<br>
+For $z∈D$, $\left|\bar bz+1\right|^2-\left|b+z\right|^2=(1-{|b|}^2)(1-{|z|}^2)>0⇒h(z)∈D$, so $h(D)⊂D$.<br>Also $h^{-1}(z)=\frac{-b+z}{-\bar b z+1}=-h(-z)⇒h^{-1}(D)⊂D$, so $h$ is a bijection $D→D$.<br>
+So $f=h∘R_α∘g$ satisfies $f(a)=h(R_α(0))=h(0)=b$ and by chain rule
+\[\arg f'(a)=\arg h'(0)+\arg R_α'(0)+\arg g'(a)=0+α+0=α\]<hr>
+In general <a href="https://math.stackexchange.com/questions/1583160">a Möbius transformation is an involution</a> when it is the identity or traceless</li></ol></li></ol>

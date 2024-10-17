@@ -1,0 +1,14 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+---
+<blockquote class="statement">
+    (a)  Let $f$ be an entire function such that there exist real constants $M$ and $N$ such that $|f(z)|< M|z|+N$ for all $z$. Prove that for any three pairwise different complex numbers $a,b,c$,$$\frac{f(a)}{(a-b)(a-c)}+\frac{f(b)}{(b-a)(b-c)}+\frac{f(c)}{(c-a)(c-b)}=0$$<br>
+    (b) Deduce that there are constants $A,B\in\mathbb{C}$ such that $f(z)=Az+B$ for all $z$.
+</blockquote>
+<!--more-->
+(a) LHS is the sum of residues (without $2\pi i$) of the integral $\oint_Γ\frac{f(z)}{(z-a)(z-b)(z-c)}dz$. That is,
+$$\oint_Γ\frac{f(z)}{(z-a)(z-b)(z-c)}dz=2\pi i\left(\frac{f(a)}{(a-b)(a-c)}+\frac{f(b)}{(b-a)(b-c)}+\frac{f(c)}{(c-a)(c-b)}\right),$$ for $\Gamma$ being the circle contour of radius $R$. Furthermore, for the equality to hold, singularities at $z=a,b,c$ must be inside $\Gamma$.<br>
+So the next chain of thought would be show that $$\oint_Γ\frac{f(z)}{(z-a)(z-b)(z-c)}dz=0.$$This will obviously yield the result I want. I relate to limits and the M-L Lemma to do this. So,
+$$\left|\frac{f(z)}{(z-a)(z-b)(z-c)}\right|\leq\frac{MR+N}{(R-|a|)(R-|b|)(R-|c|)},$$ by the inequality given in the question, reverse triangle inequality and since complex numbers $a,b,c$ lie inside the contour thus $|a|,|b|,|c|< R$. Thus by the M-L lemma we have that $$\lim_{R→∞}\left|\oint_Γ\frac{f(z)}{(z-a)(z-b)(z-c)}dz\right|\leq \lim_{R→∞}\frac{(MR+N)2\pi R}{(R-|a|)(R-|b|)(R- |c|)}$$ Clearly the RHS of the inequality converges to $0$. Thus $$\lim_{R→∞}\oint_Γ\frac{f(z)}{(z-a)(z-b)(z-c)}dz=0.$$By residue theorem$$\lim_{R→∞}\oint_Γ\frac{f(z)}{(z-a)(z-b)(z-c)}dz=2\pi i\left(\frac{f(a)}{(a-b)(a-c)}+\frac{f(b)}{(b-a)(b-c)}+\frac{f(c)}{(c-a)(c-b)}\right).$$ So $$\frac{f(a)}{(a-b)(a-c)}+\frac{f(b)}{(b-a)(b-c)}+\frac{f(c)}{(c-a)(c-b)}=0.$$
+(b) Simplifying the expression I have $$f(a)(b-c)+f(b)(c-a)+f(c)(a-b)=0$$Rename $z = a$,$$f(z)=\frac{f(b)-f(c)}{b-c}z+\frac{f(c)b-f(b)c}{b-c}$$See also <a href="6.html">sheet 6 Q5</a>
