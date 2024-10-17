@@ -1,0 +1,120 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: A0 paper 2019
+---
+<ol><li>
+<ol type="a"><li>Let $V$ be a finite dimensional vector space over $ℂ$ and let $T: V → V$ be a linear transformation.
+<ol type="i"><li>Define the minimal polynomial $m_T(x)$ of $T$. Show that $λ ∈ ℂ$ is a root of $m_T(x)$ if and only if $λ$ is an eigenvalue of $T$.
+</li>
+<li>Show that $m_T(x)$ has distinct roots if and only if $T$ is diagonalizable (i.e. $V$ has a basis consisting of eigenvectors of $T$).
+</li>
+<li>Assume that $\dim V>1$. Prove that there exists a linear transformation $B: V → V$ such that for every polynomial $p(x) ∈ ℂ[x]$ we have $B ≠ p(T)$.<br>
+[You may use without proof properties of polynomials over fields and the Cayley-Hamilton theorem provided you state them clearly. If you use the Primary Decomposition Theorem you should prove it.]</li></ol>
+</li>
+<li>For a field $𝔽$ we denote by $S L(2, F)$ the set of 2 by 2 matrices with entries in F and having determinant 1.
+<ol type="i"><li>Suppose that $A ∈ S L(2, ℂ)$ is diagonalizable. Show that $A=B^2$ for some $B ∈ S L(2, ℂ)$
+</li>
+<li>Show that the map $A ↦ A^2$ for $A ∈ S L(2, ℂ)$ is not surjective onto $S L(2, ℂ)$.
+</li>
+<li>Suppose now $𝔽=𝔽_p$ is a finite field of size $p$, where $p$ is a prime number. Does there exist $p$ such that the map $A ↦ A^2$ with $A ∈ S L\left(2, 𝔽_p\right)$ is surjective onto $S L\left(2, 𝔽_p\right)$ ? Justify your answer.</li></ol></li></ol>
+</li>
+<li>Let $V, W$ be two vector spaces over a field $𝔽$ and let $V'$ and $W'$ denote the dual spaces of $V$ and $W$ respectively. Let $T: V → W$ be a linear transformation and let $T': W' → V'$ be the dual of $T$.
+<ol type="a"><li>Assume that both $V$ and $W$ are finite-dimensional spaces.
+<ol type="i"><li>Let $B$ be a basis of $V$ and let $C$ be a basis of $W$. Define the dual basis $B'$ to $B$ in $V'$. Let $C'$ be the dual basis to $C$ in $W'$. Prove that the matrix $B_{B'}\left[T'\right]_{C'}$ is the transpose of $C[T]_B$.
+</li>
+<li>Suppose $V=W$. Show that $T$ and $T'$ have the same minimal polynomial and the same characteristic polynomial.
+</li>
+<li>For a subspace $U$ of $V$ define its annihilator $U^0$ in $V'$ and prove that $\dim U+\dim U^0=\dim V$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Suppose $\dim V$ and $\dim W$ are both finite. Prove that $\dim \operatorname{Im}(T)=\dim \operatorname{Im}\left(T'\right)$.
+</li>
+<li>Now suppose $\dim V$ is infinite but $\dim W$ is finite. Is it still true that $\dim \operatorname{Im}(T)=\dim \operatorname{Im}\left(T'\right)$ ? Give a proof or a counterexample.</li></ol>
+</li>
+<li>Assume that $\dim V$ is finite. Let $f_1, …, f_k ∈ V'$. Show that $\left\{f_1, …, f_k\right\}$ span $V'$ if and only if $\bigcap_{i=1}^k \ker f_i=\{0\}$.</li></ol>
+</li>
+<li>Let $V$ be a finite-dimensional inner product space over $ℂ$ and let $N: V → V$ be a linear transformation.
+<ol type="a"><li>For a subspace $U ⊆ V$, prove that $V=U ⊕ U^⟂$.
+[You may assume that $U$ has an orthonormal basis.]
+</li>
+<li>
+<ol type="i"><li>Define the adjoint $N^*$ of $N$. [You don't have to show its existence or uniqueness.]
+</li>
+<li>Suppose that $U$ is a subspace of $V$ such that $N(U) ⊆ U$. Show that $N^*\left(U^⟂\right) ⊆ U^⟂$.
+</li>
+<li>Prove that $N$ can be written uniquely as a sum $N=S+A$ where $S^*=S$ and $A^*=-A$. Show that $N$ and $N^*$ commute (i.e. $N N^*=N^* N$) if and only if $S$ and $A$ commute.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Suppose that $N N^*=N^* N$. Show that $\ker N=\ker N^*$ and $\operatorname{Im}(N)=\operatorname{Im}\left(N^*\right)$.
+</li>
+<li>Suppose that ${‖N(v)‖}=\left‖N^*(v)\right‖$ for all $v ∈ V$. Show that $N N^*=N^* N$.</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>The minimal polynomial $m_T(x)$ is defined to be the monic polynomial $f(x)$ of least degree such that $f(T)=0$. It exists since the Cayley-Hamilton theorem states that $χ(T)=0$ where $χ(x)=\det(x I-T)$ is the characteristic polynomial of $T$.
+Now if $λ$ is an eigenvalue of $T$ with eigenvector $v$, then $0=m_T(T)(v)=m_T(λ) v$ and hence $m_T(λ)=0$. Conversely if $λ$ is a root of $m_T$ then $m_T=(x-λ) g(x)$ with $\deg g(x)&lt;\deg m_T$. Therefore $g(T) ≠ 0$ and we can find a nonzero vector $v$ such that $w:=g(T) v ≠ 0$. But then $(T-λ) w=(T-λ) g(T) v=m_T(T) v=0$ and so $λ$ is an eigenvalue of $T$ with eigenvector $w$.
+</li>
+<li>If $T$ is diagonalizable with respect to some basis $B$ so that $X={ }_B[T]_B$ is a diagonal matrix, we consider a polynomial $f(x)$ to be product of linear factors $(x-μ)$ where $μ$ ranges over the distinct diagonal entries of $X$. We see $f(T)=0$ and together with (a)(i) we deduce that $f=m_T$ and has distinct roots. Conversely suppose $m_T=\prod_{i=1}^k\left(x-μ_k\right)$ has distinct roots. We argue by induction on $k$, the case $k=1$ being clear. Let $m_T(x)=\left(x-μ_1\right) g(x)$. Then $g\left(μ_1\right) ≠ 0$. Let $U_1=\ker\left(T-μ_1\right), U_2=\ker g(x)$. If $v ∈ U_1 ∩ U_2$ then $0=g(T) v=g\left(μ_1\right) v$ and so $v=0$ since $μ_1$ is not a root of $g(x)$. We now show $V=U_1+U_2$. Let $v ∈ V$ and define $v_1=g\left(μ_1\right)^{-1} g(T) v, v_2=v-v_1$. Since $m_T(v)=0=\left(T-μ_1\right) g(T) v$ it follows that $T v_1=μ_1 v$, i.e. $v_1 ∈ U_1$. Also $g(T) v_2=g(T) v-g(T) v_1=g(T) v-g\left(μ_1\right) v_1=0$ by the definition of $v_1$. So $v_2 ∈ U_2$. Therefore $V=U_1 ⊕ U_2$. Now $T$ acts as the scalar $μ_1$ on $U_1$ and $g(T)=0$ on $U_2$ hence the minimal polynomial of $T$ on $U_2$ has degree less than $k$. By induction we can choose a basis diagonalizing $T$ on $U_2$ and adding any basis of $U_1$ we are finished.
+</li>
+<li>Let $v$ be an eigenvector of $T$, and note that $v$ is still an eigenvector for any $p(T)$. We can extend $v$ to a basis $v, w_1, w_2 …$ of $V$ and define $B(v)=w_1$ and $B\left(w_i\right)=0$. Then $v$ is not an eigenvector of $B$ and so $B ≠ p(T)$ for any polynomial $p(x)$. The students can also argue using that the dimension of the space spanned by $\left\{1, T, T^2, …,\right\}$ in $\operatorname{End}(V)$ is exactly deg $m_T ≤ n$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>If $A$ is diagonalizable, then for some change of basis matrix $P$ the matrix $P^{-1} A P$ is a diagonal matrix with eigenvalues $λ, λ^{-1}$ for some nonzero $λ ∈ ℂ$. Take $μ ∈ ℂ$ such that $μ^2=λ$ and let $X$ be the diagonal matrix with entries $μ, μ^{-1}$. Take $B=P^{-1} X P$.
+</li>
+<li>Take $A=\left(\begin{array}{cc}-1&1 \\ 0&-1\end{array}\right)$. Suppose $A=B^2$. The eigenvalues of $B$ must be $± i$ and since $\det(B)=1$ they must be distinct: $i$ and $-i$. By part (a) $B$ is similar to a diagonal matrix with diagonal entries $\{i,-i\}$ and so $B^2=-I d ≠ A$. Contradiction.
+</li>
+<li>SL$(2, 𝔽)$ is a finite set so if the map $A ↦ A^2$ is surjective it must be injective. But this is not true, as for odd $p$ we have $I d^2=(-I d)^2$ while if $p=2$
+then Id$^{2}=\left(\begin{array}{ll}1&1 \\ 0&1\end{array}\right)^{2}$</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Suppose $B=\left\{b_1, …, b_n\right\}$ is a basis of $V$ and $C=\left\{c_1, …, c_m\right\}$ is a basis of $W$. We define $B'=\left\{b_1', …, b_n'\right\}$ where $b_i' ∈ V'$ is such that $b_i'\left(b_j\right)=δ_{i j}$.<br>Similarly we take $C'=\left\{c_1', …, c_m'\right\}$. Suppose $_C[T]_B=\left(a_{i j}\right)$ so that $T\left(b_j\right)=\sum_{i=1}^m a_{i j} c_i$. We compute $T'\left(c_j'\right)\left(b_s\right)=c_j'\left(T\left(b_s\right)\right)=c_j'\left(\sum_{i=1}^m a_{i s} c_i\right)=a_{j s}$ This gives $T'\left(c_j'\right)=\sum_{i=1}^n a_{j i} b_i'$ and so $_{B'}\left[T'\right]_{C^r}$ is the transpose of $_C[T]_B$.
+</li>
+<li>For a polynomial $f(x)$ and a square matrix $X$ we have $f\left(X^t\right)=(f(X))^t$ and so $f(T)=0$ if and only if $f\left(X^t\right)=0$. It follows that $m_T=m_{T'}$. Let $A=B[T]_B$. Then $χ_T(x)=\det(x \text{Id}-A)=\det(x\text{Id}-A)^t=\det\left(x \text{Id}-A^t\right)=χ_{T^r}(x)$.
+</li>
+<li>We define $U^0:=\left\{f ∈ V' ∣ f(u)=0,∀ u ∈ U\right\}$.
+Let $b_1, …, b_k$ be a basis of $U$ and extend this to a basis $B=\left\{b_1, …, b_n\right\}$ of $V$. We claim that $U^0$ has basis $b_{k+1}', …, b_n'$. Indeed these functionals are linearly independent (since they are a subset of $B'$), and for $f=\sum_{i=1}^n α_i b_i'$ the condition $f ∈ U^0$ is equivalent to $f\left(b_i\right)=0$ for $i=1, …, k$, which is equivalent to $α_1=⋯=α_k=0$. This proves the claim. Hence $\dim U^0=n-k=\dim V-\dim U$ and we are done.</li></ol>
+</li>
+<li>
+<ol type="i"><li>There are many ways to argue this, here is an argument which also applies to (ii).<br>We note that $(\operatorname{Im}(T))^0=\ker T'$. Indeed $f ∈(\operatorname{Im}(T))^0$ iff $f(T v)=0$ for all $v ∈ V$ iff $f ∘ T=0$ iff $f ∈ \ker T'$. Now by part (a) (iii) and the Rank-Nullity theorem applied to $T'$ we have
+$$
+\dim \operatorname{Im}(T)=\dim W-\dim(\operatorname{Im}(T))^0=\dim W'-\dim \ker T'=\dim \operatorname{Im}\left(T'\right)
+$$
+</li>
+<li>The above argument only uses that $\dim W$ is finite, so the result remains true even if $\dim V$ is infinite.</li></ol>
+</li>
+<li>Let $U=\bigcap_{i=1}^k\ker f_i$ and let $L$ be the subspace of $V'$ spanned by all $f_i$. Observe that $U=\bigcap_{h ∈ L}$ ker $h$. Now if $L=V'$ then choosing a basis $B$ of $V$ we consider the dual basis $B'$ and then $U=\bigcap_{b ∈ B'} \ker b=\{0\}$.<br>For the converse the students may argue using the natural isomorphism between $V$ and $V''$. Here is an alternative short argument: Suppose $\dim V=n$ and $L ≠ V'$. Choose a basis $g_1, …, g_k$ of $L$ and note $k&lt;n$. Thus
+$$
+U=\bigcap_{i=1}^k \ker g_i=\ker ϕ
+$$
+where $ϕ: V → \mathrm{F}^k$ is the linear map $ϕ(v)=\left(g_1(v), g_2(v), …, g_k(v)\right)$. Since $k&lt;\dim V$ the Rank-Nullity Theorem applied to $ϕ$ gives that $U=\ker ϕ ≠\{0\}$. Contradiction, therefore $L=V'$.</li></ol>
+</li><li><ol type="a"><li>If $v ∈ U ∩ U^⟂$ then $⟨v, v⟩=0$ and hence $v=0$ since the inner product is positive definite. Hence $U ∩ U^⟂=\{0\}$. We now show that $V=U+U^⟂$.<br>Let $v ∈V$. Let $e_1, …, e_k$ be an orthonormal basis of $U$ and define $v_1=\sum_{i=1}^k\left< v, e_i\right> e_i$. Then $v_1 ∈ U$ and $\left< v, e_i\right>=\left< v_1, e_i\right>$ for all $i$ which implies that $v-v_1$ is orthogonal to each $e_i$, i.e. $v-v_1 ∈ U^⟂$. Hence $V=U+U^⟂$ and therefore $V=U ⊕ U^⟂$.
+</li>
+<li>
+<ol type="i"><li>The adjoint $N^*$ is the unique linear transformation $N^*: V → V$ such that $\left< N^*(v), w\right>=⟨v, N(w)⟩$ for all $v, w ∈ V$.
+</li>
+<li>Fix $w ∈ U^⟂$ and let $v ∈ U$. We have $\left< N^*(w), v\right>=⟨w, N(v)⟩=0$ since $N(v) ∈ U$. This holds for all $v ∈ U$ and hence $N^*(w) ∈ U^⟂$. The vector $w ∈ U^⟂$ was arbitrary and so $N^*\left(U^⟂\right) ⊆ U^⟂$
+</li>
+<li>If $N=S+A$ as required then $N^*=S-A$ and so we can solve $S=\left(N+N^*\right) / 2, A=\left(N-N^*\right) / 2$. This $A$ and $S$ are uniquely determined by $N$. Conversely we check $\left(\frac{N+N^*}{2}\right)^*=\frac{N+N^*}{2}$ and $\left(\frac{N-N^*}{2}\right)^*=-\frac{N-N^*}{2}$ so $A$ and $S$ exist for any $N$.
+Now if $N N^*=N^* N$ then we check
+$$
+\frac{N+N^*}{2} \frac{N-N^*}{2}=\frac{N^2-\left(N^*\right)^2}{2}=\frac{N-N^*}{2} \frac{N+N^*}{2}
+$$
+Conversely if $A$ and $S$ commute than $N N^*=(A+S)(S-A)=S^2-A^2=(S-A)(A+S)=N^* N$</li></ol>
+</li>
+<li>
+<ol type="i"><li>Suppose $v ∈ \ker N$. Then $\left\|N^*(v)\right\|^2=\left< N^* v, N^* v\right>=\left< v, N N^* v\right>=\left< v, N^* N v\right>=0$ and so $N^*(v)=0$ giving that $v ∈$ ker $N^*$. Hence ker $N ⊆$ ker $N^*$ The same argument applied with $N^*$ instead of $N$ gives the opposite containment and hence ker $N^*=$ ker $N$.<br>
+Let $U=\ker N=\ker N^*$. Since both $N$ and $N^*$ send $U$ into $U$, from part (b) (ii) we have $N\left(U^⟂\right) ⊆ U^⟂$ and $N^*\left(U^⟂\right) ⊆ U^⟂$. Also both $N$ and $N^*$ are injective when restricted to $U^⟂$ and hence both maps are bijections when restricted to $U^⟂$. Finally $N(V)=N\left(U+U^⟂\right)=N\left(U^⟂\right)=U^⟂$ and arguing with $N^*$ in place of $N$ we get $\operatorname{Im}(N)=\operatorname{Im}\left(N^*\right)=U^⟂$.
+</li>
+<li>We have $\left\|N^*(v)\right\|=\left< v, N N^*(v)\right>$ and ${\|N(v)\|}=\left< v, N^* N(v)\right>$. Therefore if we set $A=N N^*-N^* N$ we get $⟨v, A v⟩=0$ for all $v ∈ V$. From this point the students can argue with the spectral theorem to deduce $A=0$ but there is a direct way: Let $u, v ∈ V$ and apply the above equality to $u+v$. So $0=⟨u+v, A(u+v)⟩$. Using $⟨v, A v⟩=⟨u, A(u)⟩=0$ we obtain
+$$
+⟨u, A(v)⟩+⟨v, A(u)⟩=0
+$$
+Now replace $v$ with $iv$ to obtain
+$$
+i⟨u, A(v)⟩-i⟨v, A(u)⟩=0
+$$
+Solving the two equations we get $⟨u, A(v)⟩=0$ for all $u, v ∈ V$ and so $A=0$ and $NN^*=N^* N$.</li></ol></li></ol></li>
+</ol>

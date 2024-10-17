@@ -1,0 +1,134 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: A0 paper 2022
+---
+$\DeclareMathOperator{\im}{Im}\DeclareMathOperator{\re}{Re}\DeclareMathOperator{\span}{Span}\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\tr}{tr}$<ol>
+<li>Let $W ⩽ V$ be finite-dimensional complex vector spaces and let $T: V → V$ be a linear map.
+<ol type="a"><li>Let $ℬ$ be a basis for $V$ containing a basis $ℬ_1$ for $W$, and let $ℬ_2:=ℬ∖ℬ_1$.
+<ol type="i"><li>Show that $q\left(ℬ_2\right)$ is a basis for $V / W$, where $q: V → V / W$ is given by $q(v)=v+W$.
+</li>
+<li>Suppose that $W$ is $T$-invariant. Prove that there exists a well-defined linear map $\bar{T}: V / W → V / W$ such that $\bar{T} ∘ q=q ∘ T$.
+</li>
+<li>Show that there exists a matrix $C$ such that$$\sideset{_ℬ}{_ℬ}{[T]}={\mmlToken{mo}(\begin{smallmatrix}\hskip5mu[{T|}_W]_{ℬ_1\kern-18.5mmℬ_1}&C\\0&\sideset{_{q(ℬ_2)}}{_{q(ℬ_2)}}{[\bar T]}\end{smallmatrix}\mmlToken{mo})}$$
+</li>
+<li>State and prove the Cayley-Hamilton Theorem.</li></ol>
+</li>
+<li>Now suppose that $V$ has basis $\{u, v\}$ and that $T(u)=i u$ and $T(v)=u+i v$.
+<ol type="i"><li>Prove that $\{u, i u, v, i v\}$ is a basis for $V$, viewed as an $ℝ$-vector space.
+</li>
+<li>Calculate the matrix $A$ of the $ℝ$-linear map $T: V → V$ with respect to $\{u, i u, v, i v\}$.
+</li>
+<li>Find the minimal polynomial of $A$, justifying your answer.
+</li>
+<li>Calculate the Jordan Normal Form of $A$, justifying your answer.</li></ol></li></ol>
+</li>
+<li>Let $V$ be a finite dimensional vector space over a field $𝔽$, and let $T: V → V$ be a linear map.
+<ol type="a"><li>Let $p(x), q(x) ∈ 𝔽[x]$ be coprime polynomials such that $\im p(T) ⊆ \ker q(T)$.
+<ol type="i"><li>Prove that $V=\ker p(T) ⊕ \ker q(T)$.
+</li>
+<li>Is the conclusion of (a)(i) true if $p(x)$ and $q(x)$ are not necessarily coprime?
+</li>
+<li>Suppose that the minimal polynomial of $T$ is equal to a product of distinct linear factors over $𝔽$. Prove that $T$ is diagonalisable.
+</li>
+<li>Does the converse to (a)(iii) hold?</li></ol>
+</li>
+<li>Suppose that $T^p=I$ for some prime number $p$. Assume that the characteristic of $𝔽$ is zero, and that there exists $ζ ∈ 𝔽$ such that $ζ^p=1$ but $ζ ≠ 1$. Let $ℰ$ denote the set of all $𝔽$-linear maps $S: V → V$, and for each integer $i$ let
+$$
+ℰ(i):=\left\{S ∈ ℰ: T S=ζ^i S T\right\}
+$$
+<ol type="i"><li>Using part (a)(iii) applied to a suitable map defined on $ℰ$, prove that
+$$
+ℰ=ℰ(0) ⊕ ℰ(1) ⊕ ⋯ ⊕ ℰ(p-1)
+$$
+For each $S ∈ ℰ$ and any integer $i$, let
+$$
+ϵ_i(S):=\sum_{j=0}^{p-1} ζ^{i j} T^j S T^{p-j} ∈ ℰ .
+$$
+</li>
+<li>Show that $ϵ_i(S) ∈ ℰ(-i)$ for any integer $i$.
+</li>
+<li>Deduce that $ϵ_i(S)^p$ commutes with $T$ for any integer $i$.
+</li>
+<li>Show that if $S ≠ 0$, then $ϵ_i(S) ≠ 0$ for at least one integer $i$.
+[Hint: you may find it helpful to consider the sum $ϵ_0(S)+⋯+ϵ_{p-1}(S)$.]</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Define what is meant by a <i>complex inner product space</i>.
+</li>
+<li>Let $M_n(ℂ)$ be the vector space of $n × n$ complex matrices. Prove that
+$$
+⟨ x, y⟩:=\operatorname{tr}\left(\bar{x} y^T\right)   \text { for } x, y ∈ M_n(ℂ)
+$$
+turns $M_n(ℂ)$ into a complex inner product space.
+</li>
+<li>Let $X:=\left\{x ∈ M_n(ℂ): x_{i j}=0\right.$ for all $\left.i>j\right\}$ be the subspace of upper triangular matrices. Find the orthogonal complement $X^{⟂}$ of $X$ in $M_n(ℂ)$.</li></ol>
+</li>
+<li>Let $U, V$ and $W$ be finite dimensional complex inner product spaces.
+<ol type="i"><li>Let $α: U → V$ be a linear map. Define the adjoint map $α^*: V → U$, and prove that it is unique. Show that $\left(α^*\right)^*=α$.
+[You may assume that $α^*: V → U$ always exists.]
+</li>
+<li>Show that $\imα∩\kerα^*=\{0\}$.
+</li>
+<li>Let $β: V → W$ be another linear map such that $\imα=\kerβ$, and let
+$$
+γ:=α α^*+β^* β
+$$
+Prove that $γ: V → V$ is invertible. <a href="https://math.stackexchange.com/questions/3821063">MSE</a></li></ol></li></ol>
+</li>
+</ol>
+<h1>Solution</h1>
+<ol><li><ol type="a"><li><ol type="i"><li>Let $\{e_1, ⋯, e_k\}=ℬ_1,\{e_{k+1}, ⋯, e_n\}=ℬ_2$.<br>To show $V/W=\spanℬ_2$. Take any $q(v)∈V/W$, since $V=\spanℬ$, $∃a_1, ⋯, a_n ∈ℂ:$
+$$
+v=a_1 e_1+⋯+a_k e_k+a_{k+1} e_{k+1}+⋯+a_n e_n
+$$Since $e_1,…,e_k∈\ker q$,
+\[q(v)=a_{k+1}\left(q(e_{k+1})\right)+⋯+a_n\left(q(e_n)\right)\]
+To show linear independence, assume for some $a_{k+1},…,a_n∈ℂ:$
+$$
+a_{k+1}\left(q(e_{k+1})\right)+⋯+a_n\left(q(e_n)\right)=0_W
+$$
+Then $a_{k+1}e_{k+1}+⋯+a_ne_n∈\ker q=W$. Then $∃a_1,…,a_k∈ℂ:$
+$$
+a_1 e_1+⋯+a_k e_k=a_{k+1} e_{k+1}+⋯+a_n e_n
+$$Since ℬ is linearly independent, $a_{k+1}=⋯=a_n=0$.</li>
+<li>For any $q(v)∈V/W$, define $\bar{T}(q(v))=q(T(v))$.<br>
+For any $w∈W$, $T(w)∈W$, so $\bar{T}(q(w))=q(T(w))=0$. $\bar T$ is well-defined <a href="https://courses.maths.ox.ac.uk/pluginfile.php/30064/mod_resource/content/2/A0.pdf#page=15&zoom=auto,-78,139">Lemma 3.8</a></li>
+<li>Let $a_{ij}∈ℂ$ be the $(i,j)$-entry of $\sideset{_ℬ}{_ℬ}{[T]}$<br>For $j≤k$, $e_j∈W$, so $T(e_j)∈W$<br>
+ so for $i>k,a_{ij}=0$; for $i≤k$, $a_{ij}$ is equal to the $(i,j)$-entry of $\sideset{_{ℬ_1}}{_{ℬ_1}}{[{T|}_W]}$
+<br>For $j>k$, $q(T(e_j))=\bar T(q(e_j))$,<br> so for $i>k$, $a_{ij}$ is equal to the $(i-k,j)$ entry of $\sideset{_{q(ℬ_2)}}{_{q(ℬ_2)}}{[\bar T]}$
+</li><li>If $V$ is a finite-dimensional ℂ-vector space and $T:V→V$ is linear, then $χ_T(T)=0$.<br>
+Proof: $∃P∈M_n(ℂ):A=P^{-1}TP$ is upper triangular. Suppose the theorem holds for $A$,\[χ_T(x)=\det(xI-T)=\det\left(P(xI-A)P^{-1}\right)=\det(xI-A)=χ_A(x)\]$⇒χ_T(T)=χ_A(T)=Pχ_A(A)P^{-1}=0$, the theorem holds for $T$.<br>It remains to prove the theorem for any upper triangular matrix $A=\pmatrix{λ_1&*&*\\&⋱&*\\&&λ_n}$<br>
+Let $e_1,…,e_n$ be the standard basis vectors for $ℂ^n$. Then for all $v∈ℂ^n$\begin{align*}(A-λ_nI)v&∈⟨e_1,…,e_{n-1}⟩\\
+(A-λ_{n-1}I)(A-λ_nI)v&∈⟨e_1,…,e_{n-2}⟩\\
+&⋮\\
+(A-λ_1I)⋯(A-λ_{n-1}I)(A-λ_nI)v&∈\{0\}
+\end{align*}so $χ_A(A)=(A-λ_1I)⋯(A-λ_{n-1}I)(A-λ_nI)=0$ as required.
+</li></ol></li><li><ol type="i"><li>spanning: $∀x∈V,∃λ,μ∈ℂ:x=λu+μv$<br>
+$⇒x=(\reλ)u+(\imλ)iu+(\reμ)v+(\imμ)iv∈⟨u,iu,v,iv⟩_ℝ$.<br>
+linear independent: $a,b,c,d∈ℝ,au+biu+cv+div=0⇒(a+bi)u+(c+di)v=0$<br>$\{u,v\}$ are linearly independent over ℂ$⇒a+bi=c+di=0⇒a=b=c=d=0$.</li>
+<li>$T(u)=iu,T(iu)=-u,T(v)=u+iv,T(iv)=iu-v⇒A=\pmatrix{&-1&1\\
+1&&&1\\
+&&&-1\\
+&&1}$</li><li>By Cayley-Hamilton $m_A(x)|χ_A(x)=(x^2+1)^2$<br>$T^2(v)=T(u)+T(iv)=2iu-v≠0⇒(A^2+I)v≠0$<br>$⇒m_A(x)∤(x^2+1)⇒m_A(x)=(x^2+1)^2$</li>
+<li>Eigenvalues of $A$ are roots $±i$ of $m_A(x)$.<br>By primary decomposition theorem,$V=\ker(A-iI)^2⊕\ker(A+iI)^2$<br>Take $v_1∈\ker(A-iI)^2∖\ker(A-i)$, the matrix of $T$ over $\{(A-iI)v_1,v_1\}$ is $\pmatrix{i&1\\&i}$<br>Take $v_2∈\ker(A+iI)^2∖\ker(A+iI)$, the matrix of $T$ over $\{(A+iI)v_2,v_2\}$ is $\pmatrix{-i&1\\&-i}$
+so the Jordan Normal Form of $A$ is $\pmatrix{i&1\\&i\\&&-i&1\\&&&-i}$</li></ol></li></ol></li><li><ol type="a"><li><ol type="i"><li>Since $p(x),q(x)$ are coprime, $∃a(x),b(x)∈𝔽[x]:a(x)p(x)+b(x)q(x)=1$.<br>$∀v∈V:v=\underbrace{a(T)p(T)v}_{∈\ker q(T)}+\underbrace{b(T)q(T)v}_{∈\ker p(T)}$<br>And if $v∈\ker p(T)∩\ker q(T)$, $v=a(T)p(T)v+b(T)q(T)v=0+0$</li>
+<li>Set $𝔽=ℝ,\dim V=2,p(x)=q(x)=x$. We need $\im T⊆\ker T⇔T^2=0$<br>Set $T=\pmatrix{0&1\\0&0}$ then $T^2=0$, $\ker T=\span\{\pmatrix{1\\0}\}$, $\ker p(T)∩\ker q(T)≠\{0\}$</li><li>Induct on $\deg m_T$. For $\deg m_T=1$, $m_T(x)=x-λ_1⇒T=λ_1I$. Suppose it's true for $\deg m_T=n-1$.<br>Let $m_T(x)=\prod_{i=1}^n(x-λ_i)$ for distinct $λ_i∈𝔽$.<br>Let $p(x)=(x-λ_1)⋯(x-λ_{n-1}),q(x)=x-λ_n$.<br>Let $a(x),b(x)$ be minimal polynomial of the restriction of $T$ to $\ker p(T),\ker q(T)$, then $a(x)|p(x),b(x)|q(x)$. Also $a(x)b(x)$ annihilates $T$ on $V$, we have $p(x)q(x)|a(x)b(x)$, so $a(x)=p(x),b(x)=q(x)$. So the minimal polynomial of ${T|}_{\ker p(T)}$ is $p(x)$, a product of $n-1$ distinct linear factors. By induction hypothesis $\ker p(T)=\bigoplus_{i=1}^{n-1}\ker(T-λ_iI)$.<br>By (a.i) $V=\ker p(T)⊕\ker q(T)⇒V=\bigoplus_{i=1}^n\ker(T-λ_iI)$, let $0≠v_i∈\ker(T-λ_iI)$, $ℬ=\{v_1,…,v_n\}$ then $\sideset{_ℬ}{_ℬ}{[T]}=\diag(λ_1,…,λ_n)$.</li><li>Yes. If $T$ is diagonalisable, ∃ a basis ℬ of $V$ such that $M=\sideset{_ℬ}{_ℬ}{[T]}$ is a diagonal matrix. Let $λ_1,…,λ_n$ be the distinct diagonal entries of $M$, and let $f(x)=(x-λ_1)⋯(x-λ_n)$.<br>$∀v∈ℬ$, $∃k∈\{1,…,n\}:Tv=λ_kv⇒(T-λ_kI)v=0⇒f(T)v=(T-λ_1I)⋯(T-λ_kI)v=0$.
+Since ℬ spans $V$, $f(T)v=0∀v∈V$. Hence $m_T(x)$ divides $f(x)$, so $m_T(x)$ is a product of distinct linear factors.</li></ol></li><li><ol type="i"><li>Note that $T$ is invertible because $TT^{p-1}=T^{p-1}T=I$.<br>
+Define $T$-conjugation map $C:ℰ→ℰ,S↦TST^{-1}$. Then $C$ is linear.<br>$∀k≥1:C^k(S)=T^kST^{-k}$. Hence $C^p(S)=T^pST^{-p}=S$, so $C^p=\text{id}_ℰ$,<br>$m_C(x)$ divides $x^p-1$ which factors over 𝔽 as $∏^{p-1}_{i=0}(x-ζ^i)$. Now $ζ$ has order dividing $p$ in $𝔽^×$. Since $ζ≠1$, this order is > 1. Since $p$ is prime, this order is $p$. Hence the elements $ζ^0,ζ^1,…,ζ^{p-1}$ are pairwise distinct. So $m_C(x)$ is a product of
+distinct linear factors, by (a)(iii) $C:ℰ→ℰ$ is diagonalisable. The only possible eigenvalues of $C$ are $ζ^i,i=0,…,p-1$, and $\ker(C-ζ^iI)=\{S∈ℰ:TST^{-1}=ζ^iS\}=ℰ(i)$.<br>
+Hence $ℰ=ℰ(0) ⊕ ℰ(1) ⊕ ⋯ ⊕ ℰ(p-1)$.</li><li>Since $T^p=I$, $ϵ_i(S)=\sum_{j=0}^{p-1} ζ^{i j} T^j S T^{-j}=\sum_{j=0}^{p-1} ζ^{i j} C^j(S)$\[C(ϵ_i(S))=\sum_{j=0}^{p-1} ζ^{i j} C^{j+1}(S)=\sum_{j=0}^{p-1} ζ^{i (j-1)} C^j(S)=ζ^{-i}ϵ_i(S)\]
+So $ϵ_i(S)∈ℰ(-i)$.</li><li>If $U ∈ ℰ(i)$ and $V ∈ ℰ(j)$, then $C(U)=ζ^i U$ and $C(V)=ζ^j V$, so $C(U V)=T U V T^{-1}=T U T^{-1} T V T^{-1}=C(U) C(V)=ζ^{i+j} U V$. Hence $U V ∈ ℰ(i+j)$, which impies that $U^p ∈ ℰ(0)$ for any $U ∈ ℰ(i)$.<br>In particular, $ϵ_i(S)^p ∈ ℰ(0)$ because $ϵ_i(S) ∈ ℰ(-i)$ by the above. But $ℰ(0)$ consists of precisely those $S ∈ ℰ$ that commute with $T$.</li><li>Since $S ≠ 0$ and the characteristic of $𝔽$ is zero, it is enough to show that $ϵ_0(S)+ϵ_1(S)+⋯+ϵ_{p-1}(S)=p S$.<br>The expression on the left hand side is equal to
+$$
+\sum_{i=0}^{p-1}\left(\sum_{j=0}^{p-1} ζ^{i j} C^j(S)\right)=\sum_{j=0}^{p-1}\left(\sum_{i=0}^{p-1} ζ^{i j}\right) C^j(S) .
+$$
+If $1 ⩽ j ⩽ p-1$, then because $p∤j$, $\left\{ζ^0, ζ^j, ζ^{2 j}, ⋯, ζ^{(p-1) j}\right\}=\left\{ζ^0, ζ^1, ⋯, ζ^{p-1}\right\}$.<br>Hence $\sum_{i=0}^{p-1} ζ^{i j}=\sum_{i=0}^{p-1} ζ^i=0=\frac{ζ^p-1}{ζ-1}=0$. Hence $\sum_{i=0}^{p-1} ϵ_i(S)=p S$ as claimed.</li></ol></li></ol></li><li><ol type="a"><li><ol type="i"><li>A complex vector space $V$ with a sesquilinear, conjugate symmetric, positive definite form $⟨·,·⟩$ is called a complex inner product space.<br>
+sesquilinear: $⟨u+v,w⟩=⟨u,w⟩+⟨v,w⟩,⟨\barλv,w⟩=λ⟨v,w⟩=⟨v,λw⟩$ for $v,w∈V$<br>
+conjugate symmetric: $\overline{⟨v,w⟩}=⟨w,v⟩$ for $v,w∈V$<br>
+positive definite: $⟨v,v⟩>0$ for $v≠0$</li>
+<li>$\tr(\overline{u+v}w)=\tr(\overline uw+\overline vw)=\tr(\overline uw)+\tr(\overline vw),\tr(\overline{\barλv}w)=λ\tr(\bar vw)=\tr(\bar vλw)$<br>
+$\overline{\tr(\bar vw)}=\tr(\overline{\bar vw})=\tr(\bar wv)$<br>
+$\tr(\bar vv)=\sum_{i,j=1}^n\bar v_{ij}v_{ij}=\sum_{i,j=1}^n\left|v_{ij}\right|^2>0$ for $v≠0$.</li>
+<li>Suppose $y∈X^⟂$, we'll show $y_{ij}=0$ for all $i≤j$.<br>Let $x∈ M_n(ℂ)$ with $x_{ij}=\bar y_{ij}$ and all other entries 0, then$$x∈X⇒\tr(\bar xy)=\left|y_{ij}\right|^2=0⇒y_{ij}=0$$Conversely, if $y_{ij}=0$ for all $i≤j$, then $∀x∈X:$
+\[\tr(\bar xy)=\sum_{i,j=0}^n\bar x_{ij}y_{ij}=\sum_{i≤j}\bar x_{ij}0+\sum_{i>j}0y_{ij}=0\]Hence $X^⊥$ is the space of strictly lower-triangular matrices.</li></ol></li><li><ol type="i"><li>$α^*$ is uniquely defined by $⟨v,α(w)⟩=⟨α^*(v),w⟩$<br><i>Proof. </i>Let $\tilde α$ be another map satisfying $⟨v,α(w)⟩=⟨\tilde α(v),w⟩$. Then for all $v,w∈V$
+\begin{aligned}\left< α^*(v)-\tilde{α}(v),w\right>&=\left< α^*(v),w\right>-⟨\tilde{α}(v),w⟩\\&=⟨v,α(w)⟩-⟨v,α(w)⟩\\&=0\end{aligned}But $⟨·,·⟩$ is positive definite, hence $α^*(v)=\tilde α(v)∀v∈V$, so $α^*=\tilde α$.<hr>$∀v,w∈V:⟨v,α(w)⟩=⟨α^*(v),w⟩=⟨v,(α^*)^*(w)⟩⇒α(w)=(α^*)^*(w)⇒α=α^*$</li><li>$∀v∈\imα∩\kerα^*:v=α(x)$ for some $x$ and $α^*(v)=0$\[⟨v,v⟩=⟨v,α(x)⟩=⟨α^*(v),x⟩=0⇒v=0\]</li><li>Lemma 1: $V=E⊕F$ where $E=\im(β^*)=\ker(α^*),F=\im(α)=\ker(β)$<br><i>Proof.</i> $∀v∈V,w∈\im(α)^⟂:0=⟨α(v),w⟩=⟨v,α^*(w)⟩⇒α^*(w)=0⇒w∈\ker(α^*)$Conversely $∀v∈V,w∈\ker(α^*):⟨α(v),w⟩=⟨v,α^*(w)⟩=0⇒w∈\im(α)^⟂$<br>Therefore $\ker(α^*)=\im(α)^⟂⇒\ker(α^*)=\ker(β)^⊥$<br>Similarly $\ker(β)=\im(β^*)^⊥⇒\im(α)=\im(β^*)^⊥$<hr>Lemma 2: $\ker(αα^*)=\ker(α^*)$<br><i>Proof.</i> If $αα^*v=0$ then $0=⟨αα^*v,v⟩=⟨α^*v,α^*v⟩$, so $α^*v=0$<br>Conversely if $α^*v=0$ then $αα^*v=α0=0$<hr>Lemma 3: $αα^*:\im(α)→\im(α)$ is invertible.<br><i>Proof.</i> $\ker(αα^*)∩\im(α)=\ker(α^*)∩\im(α)=\{0\}$ by lemma 2 and (ii).<br>By rank-nullity theorem, $αα^*:\im(α)→\im(α)$ is invertible.<hr>Lemma 4: $β^*β$ restricted to $\im(β^*)$ is invertible.<br><i>Proof.</i> $\ker(β^*β)∩\im(β^*)=\ker(β)∩\im(β^*)=\{0\}$ by lemma 2 and (ii).<br>By rank-nullity theorem, $β^*β:\im(β^*)→\im(β^*)$ is invertible.<hr>$γ$ has matrix $\begin{pmatrix}αα^* & 0 \\ 0 & β^*β\end{pmatrix}$ with respect to the decomposition in Lemma 1, where both diagonal entries are invertible (as maps $E→E$ and $F→F$). Thus $γ$ is invertible.</li></ol></li></ol></li></ol>

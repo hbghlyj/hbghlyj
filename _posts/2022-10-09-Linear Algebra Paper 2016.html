@@ -1,0 +1,221 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: A0 paper 2018
+---
+<ol>
+<li>(a) Suppose that $V$ is a finite-dimensional vector space over a field $𝔽$, and that $T: V→V$ is a linear transformation.<br>
+(i) Prove that there exists a non-zero polynomial $p(x)$ such that $p(T)=0$.<br>
+(ii) Prove that there exists a unique monic polynomial $m(x)$ such that for all polynomials $q(x), q(T)=0$ if and only if $m(x)$ divides $q(x)$.<br>
+(iii) State a criterion for diagonalisability of $T$ in terms of $m(x)$.<br>
+(b) Suppose that $V$ is a finite-dimensional vector space over a field 𝔽 and $T: V →V$ is a linear transformation.<br>
+(i) Prove that for all $i,\ker T^i$ is a subspace of $\ker T^{i+1}$.<br>Let $B_1 \subseteq B_2 \subseteq \cdots$ be sets such that $B_i$ is a basis for $\ker T^i$.<br>
+(ii) Deduce that if for some $k, T^k=0$, then $T$ is upper-triangularisable. Deduce that for any $\lambda∈𝔽$, if $(T-\lambda I)^k=0$, then $T$ is upper-triangularisable.<br>
+(iii) Show that $T$ is upper-triangularisable if and only if $m(x)$ is a product of linear factors. [<i>You may use the Primary Decomposition Theorem.</i>]<br>
+(c) For which values of $α$ and $\beta$ is the matrix<br>
+\[
+A=\left(\begin{array}{ccc}
+2 & 1 & -1 \\
+α-1 & α-\beta & \beta \\
+α-1 & α-\beta-1 & \beta+1
+\end{array}\right)
+\]
+diagonalisable over $ℝ$ ?<br>
+For which values of $α$ and $\beta$ is it upper-triangularisable over $ℝ$ ?
+<hr>
+(a) (i) If the dimension of $V$ is $n$, then that of $\operatorname{Hom}(V)$ is $n^2$. So, $\left\{I, T, T^2, \ldots, T^{n^2}\right\}$ is linearly dependent. Hence there exist constants $α_0, α_1, \ldots, α_{n^2}$ not all zero such that
+\[
+\sum_{i=0}^{n^2} α_i T^i=0 .
+\]
+Let $p(x)=\sum_{i=0}^{n^2} α_i x^i$<br>
+Then $p(x)$ is a non-zero polynomial and $p(T)=0$, as required.<br>
+(ii) Let $p(x)$ be a non-zero polynomial of minimal degree such that $p(T)=0$.<br>
+Define $m(x)$ to be the result of dividing $p(x)$ by its leading coefficient.<br>
+Then $m(x)$ is monic, and $m(T)=0$. Hence if $m(x)$ divides $q(x)$, then $q(T)=0$.<br>
+Now suppose that $q(x)$ is a polynomial such that $q(T)=0$.<br>
+Then there exist polynomials $a(x)$ and $b(x)$ such that<br>
+\[<br>
+q(x)=a(x) m(x)+b(x),<br>
+\]<br>
+and $b(x)=0$ or the degree of $b(x)$ is less than that of $m(x)$.<br>
+But then $b(x)$ must be zero, yielding that $m(x)$ divides $q(x)$, for otherwise $b(x)=q(x)-a(x) m(x)$, so $b(T)=0$, contradicting the minimality of the degree of $m(x)$.<br>
+(iii) $T$ is diagonalisable if and only if $m(x)$ is a product of distinct linear factors.<br>
+(b) (i) Suppose that $v \in\ker T^i$.<br>
+Then $T^i(v)=0$.
+<br>Hence $T\left(T^i(v)\right)=0$.
+<br>That is, $T^{i+1}(v)=0$.
+<br>So $v \in\ker T^{i+1}$.
+<br>(ii) Writing $B_k$ with the elements of $B_1$ first, followed by the elements of $B_2 \backslash B_1$, and so on, the matrix of $T$ with respect to $B_k$ is upper-triangular, and indeed all diagonal entries are zero.
+<br>
+<br>We justify the statement that the matrix is upper-triangularisable as follows. The first few columns correspond to element of $B_1$, which belong to the kernel of $T$, and so have no non-zero entries at all. Any subsequent column corresponds to an element of $\ker T^{i+1} \backslash\ker T^i$, for some $i$, which is sent by $T$ to an element of ker $T^i$, so to a linear combination of members of the basis which are strictly earlier in the ordering. So all non-zero entries in that column are strictly above the diagonal.
+<br>
+<br>If $(T-\lambda I)^k=0$, let $S=T-\lambda I$. Then $S$ is upper-triangularisable. It follows immediately that $T$ is. 
+<br>(iii) Now suppose that
+\[
+m(x)=\prod_{i=1}^r\left(x-\lambda_i\right)^{k_i}
+\]
+By the Primary Decomposition Theorem,$$V=\bigoplus_{i=1}^{r} \ker\left(T-\lambda_i I\right)^{k_{i}}$$
+Let $B_i$ be a basis of $\ker\left(T-\lambda_i I\right)^{k_i}$ with respect to which $T↾_{\ker\left(T-\lambda_i I\right)^{k_i}}$ is upper-triangularisable. Then if $B=\bigcup_{i=1}^r B_i$, then the matrix of $T$ with respect to $B$ is upper-triangular.
+<br>
+<br>That $m(x)$ splits into linear factors if $T$ is upper-triangularisable is obvious; because if $\lambda_1, \ldots, \lambda_n$ are the diagonal entries, then $\prod_{i=1}^n\left(T-\lambda_i I\right)$ is strictly upper-triangular (that is, all diagonal entries are zero), and therefore idempotent. Thus for some $k$ (in fact, for some $k \leqslant n$ ), $\left(\prod_{i=1}^n\left(T-\lambda_i I\right)\right)^k=0$. Thus $m_T(x)$ divides $\left(\prod_{i=1}^n\left(x-\lambda_i\right)\right)^n$, and thus splits into linear factors.<br>
+(c) Let
+\[
+A=\left(\begin{array}{ccc}
+2 & 1 & -1 \\
+α-1 & α-\beta & \beta \\
+α-1 & α-\beta-1 & \beta+1
+\end{array}\right) .
+\]
+Then
+\begin{aligned}
+\operatorname{det}(A-x I)=&(2-x)((α-\beta-x)(\beta+1-x)-\beta(α-\beta-1)) \\
+&-((α-1)(\beta+1-x)-\beta(α-1)) \\
+&-((α-1)(α-\beta-1)-(α-1)(α-\beta-x)) \\
+=&(2-x)((α-\beta-x)(\beta+1-x)-\beta(α-\beta-1)) \\
+&+(1-α)((\beta+1-x)-\beta+(α-\beta-1)-(α-\beta-x)) \\
+=&(2-x)\left(x^2+x(-1-α)+α\right) \\
+=&(2-x)(x-1)(x-α) .
+\end{aligned}
+If $α$ is not equal to 1 or 2 , then $\chi_A(x)$ has three distinct roots and so $A$ is diagonalisable.
+<br>If $α$ is equal to 1 or 2 , then $\chi_A(x)$ has a repeated root, and $A$ is diagonalisable if and only if $(A-I)(A-2 I)=0$.
+<br>Now the $(2,1)$-entry of $(A-I)(A-2 I)$ is $(α-1)^2$, which is not zero unless $α=1$. So if $α=2$, $A$ is not diagonalisable.<br>
+If $α=1$, then
+\[
+(A-I)(A-2 I)=\left(\begin{array}{ccc}
+1 & 1 & -1 \\
+0 & -\beta & \beta \\
+0 & -\beta & \beta
+\end{array}\right)\left(\begin{array}{ccc}
+0 & 1 & -1 \\
+0 & -\beta-1 & \beta \\
+0 & -\beta & \beta-1
+\end{array}\right)=\left(\begin{array}{ccc}
+0 & 0 & 0 \\
+0 & \beta & -\beta \\
+0 & \beta & -\beta
+\end{array}\right)
+\]
+which is zero if and only if $\beta=0$.
+<br>So $A$ is diagonalisable if and only if either $α$ is not 1 or 2 , or $α=1$ and $\beta=0$.
+<br>By the criterion in part (b), $A$ is upper-triangularisable whatever the values of $α$ and $\beta$, since by the Cayley-Hamilton Theorem $m(x)$ divides $(x-2)(x-1)(x-α)$ and so is a product of linear factors.
+</li><li>(a) Suppose that $V$ is a finite-dimensional vector space over a field $𝔽$. Suppose that $B=\left\{e_1, \ldots, e_n\right\}$ is a basis for $V$.<br>
+(i) Define the <i>dual space</i> $V'$ of $V$ and the <i>dual basis</i> $B'=\left\{e_1', \ldots, e_n'\right\}$. Prove that $B'$ is indeed a basis for $V'$.<br>
+(ii) If $T: V→V$ is a linear transformation, define the <i>dual map</i> $T'$. State and prove a relationship between the matrices of $T$ and $T'$ with respect to the bases given. How are the characteristic polynomials of $T$ and $T'$ related? How are the minimum polynomials related? Justify your answers briefly.<br>
+(iii) If $U$ is a subspace of $V$, define the <i>annihilator</i> $U^∘$ of $U$.<br>
+(iv) Define a natural isomorphism $Φ$ between $V$ and its double dual $V''$. (You do not need to give proofs that $Φ$ is well-defined or that it is an isomorphism.) Prove that if $U$ is a subspace of $V$, then $\left.Φ\right|_U$ is a bijection between $U$ and $U^{∘∘}$.<br>
+(b) Let $V$ be the vector space of all functions $f: \mathbb{N}→ℝ$ such that for all but finitely many $n, f(n)=0$, equipped with operations of vector addition and scalar multiplication defined so that $(f+g)(n)=f(n)+g(n)$ and $(α f)(n)=α f(n)$ for all $f, g∈V$, $n∈\mathbb{N}$, and $α∈ℝ$.<br>
+Define $W$ to be the vector space of all functions from $\mathbb{N}$ to $ℝ$, with similarly defined operations of vector addition and scalar multiplication.<br>
+If $f∈W$, define $\theta_f: V→ℝ$ so that
+\[
+\theta_f(g)=\sum_{n=0}^{\infty} f(n) g(n)
+\]
+Prove that the map $f \mapsto \theta_f$ is an isomorphism between $W$ and $V'$.<br>
+Prove that the map $Φ: V→V''$ defined as in part (a) is not a surjection.<br>
+[<i>You may assume that if $U$ is a vector space over ℝ, $L$ is a linearly independent subset of $U$, and $h: L→ℝ$, then there exists a linear functional $k: U→ℝ$ such that $\left.k\right|_L=h$</i>]
+<hr>
+(a) (i) The dual space $V'$ is the set of all linear functionals on $V$, that is to say, the set of all functions $f: V→𝔽$ such that $f(u+v)=f(u)+f(v)$ and $f(α v)=α f(v)$ for all $α∈𝔽$ and all $u, v∈V$, with vector addition and scalar multiplication defined so that $(f+g)(v)=f(v)+g(v)$ and $(α f)(v)=α f(v)$ for all $v∈V, f, g∈V'$ and $α∈𝔽$.<br>
+The dual basis is defined so that $e_i'\left(e_j\right)=\delta_{i, j}$.<br>
+The dual basis is linearly independent, since if
+\[
+α_1 e_1'+\cdots+α_n e_n'=0,
+\]
+then for all $i$,
+\[
+\left(α_1 e_1'+\cdots+α_n e_n'\right)\left(e_i\right)=0,
+\]
+that is, $α_i=0$.<br>
+To prove that it is a spanning set, suppose that $f∈V'$. Let $α_i=f\left(e_i\right)$ for all $i$. Then for all $i$,
+\[
+f\left(e_i\right)=α_i=\left(\sum_j α_j e_j'\right) e_i
+\]
+so since $f$ and $\sum_j α_j e_j'$ are linear and agree on a spanning set, they are equal.<br>
+(ii) If $f∈V'$, then define $T'(f)$ so that $T'(f)(v)=f(T(v))$ for all $v∈V$.<br>
+Let the matrix of $T$ with respect to $B$ be $\left(a_{i, j}\right)$ and the matrix of $T'$ with respect to $B'$ be $\left(b_{i, j}\right)$. Then\[e_i'\left(T\left(e_j\right)\right)=e_i'\left(\sum_{k=1}^n a_{k, j} e_k\right)=a_{i, j}\]while\[\left(T'\left(e_i'\right)\right)\left(e_j\right)=\left(\sum_{k=1}^n b_{k, i} e_k'\right)\left(e_j\right)=b_{j, i} .\]So $b_{j, i}=a_{i, j}$, and the matrices are each other's transpose; and so their minimum polynomials are the same, as are their characteristic polynomials.<br>
+(iii) $U^∘=\left\{f∈V'∣\forall u∈U: f(u)=0\right\}$.<br>
+(iv) $Φ$ is defined so that for all $f∈V'$ and $v∈V$,\[Φ(v)(f)=f(v) .\]We show that $u∈U$ if and only if for all $f∈U^∘, f(u)=0$. The forward direction is simply the definition of $U^∘$. As for the reverse direction, let $\left\{e_1, \ldots, e_k\right\}$ be a basis for $U$ and extend it to a basis $\left\{e_1, \ldots, e_n\right\}$ for $V$. Let $\left\{e_1', \ldots, e_n'\right\}$ be the dual basis. Then $\left(\sum_{j=1}^n α_j e_j'\right)\left(e_i\right)=0$ if and only if $α_i=0$. It follows that $f\left(e_i\right)=0$ for all $i≤k$ if and only if $f$ is in the span of $\left\{e_{k+1}', \ldots, e_n'\right\}$. It now readily follows that $U^∘$ is the span of $\left\{e_{k+1}', \ldots, e_n'\right\}$.<br>
+Now, $u∈U$ if and only if for all $f∈U^∘, f(u)=0$, if and only if for all $f∈U^∘, Φ(u)(f)=0$, if and only if $Φ(u)∈U^{∘∘}$.<br>
+(b) If $f∈W$, we observe that $\theta_f$ is linear, so is an element of $V'$. Also, if $f \neq 0$, then there exists $n∈ℕ$ such that $f(n) \neq 0$. Now we define $g∈V$ such that $g(n)=1$, and $g(m)=0$ for all $m \neq n$. Then $\theta_f(g)=f(n) \neq 0$. So the operator $f \mapsto \theta_f$ is one-to-one. Finally, to show that it is onto, let $h$ be any element of $V'$. Then if $g_n$ is defined, for each natural number $n$, so that $g_n(m)=1$ if $m=n$ and is equal to 0 otherwise, then the set of $g_n$ is a basis for $V$. So if $f$ is defined so that $f(n)=h\left(g_n\right)$ for each $n$, then for any $g∈V, g=\sum_n g(n) g_n$, and $\theta_f(g)=\sum_n f(n) g(n)=\sum_n h\left(g_n\right) g(n)=h\left(\sum_n g(n) g_n\right)=h(g)$. So $h=\theta_f$.<br>
+For each $n$, define $f_n(m)$ to be 1 if $n=m$ and 0 if $n \neq m$. Let $g$ be the function $n \mapsto 1$. Then $\left\{f_n: n∈\mathbb{N}\right\} \cup\{g\}$ is linearly independent in $W$, and so its image under the operator $f \mapsto \theta_f$ is linearly independent in $V'$.<br>
+Define $h\left(\theta_{f_n}\right)$ to be 0 and $h(g)$ to be 1. Extend this to a linear functional $k$ on $V'$.<br>
+Since $k\left(\theta_{f_n}\right)=0$ for all $n$ and $k(g)=1$, $k$ cannot be in the image of $Φ$.<li>Let $V$ be a finite-dimensional inner-product space over $\mathbb{C}$.<br>
+(a) Suppose that $T: V→V$ is a linear transformation. Define the adjoint map $T^*$.<br>
+Suppose that $T$ has the property that $T^*=α T$ for some $α∈\mathbb{C}$. Prove that $T$ is diagonalisable.<br>
+(b) We say that $T$ is self-adjoint if $T^*=T$, and that it is skew-adjoint if $T^*=-T$. Observe that if $S$ and $T$ are self-adjoint, then so are $S+T, S-T$, and $\beta T$, for any real number $\beta$.<br>
+Recall that if $T: V→V$ is any linear transformation, then $T+T^*$ is self-adjoint.<br>
+(i) Prove that any linear transformation $T$ can be written as the sum of a self-adjoint and a skew-adjoint linear transformation.<br>
+Is it the case that a sum of diagonalisable linear transformations is diagonalisable? Give a proof or a counterexample.<br>
+(ii) What are the possible eigenvalues of a self-adjoint linear transformation? Justify your answer carefully.<br>
+(iii) Characterise the possible Jordan Normal Forms of linear transformations $T: V→V$ such that $T^2$ is self-adjoint.<br>
+(c) Suppose now that $T: V→V$ is a linear transformation, and that $T T^*=T^* T$.<br>
+(i) Prove that if $v$ is an eigenvector of $T^*$, then $v^{\perp}$ is $T$-invariant.<br>
+(ii) Prove that if $V_\lambda=\operatorname{ker}(T-\lambda I)$, and $v∈V_\lambda$, then $T^* v∈V_\lambda$ also.<br>
+(iii) Hence prove that there exists an orthogonal basis for $V$ consisting of vectors which are eigenvectors for both $T$ and $T^*$.<br>
+(iv) Does it follow that $T$ is self-adjoint? Give a proof or a counterexample.<hr>
+(a) The adjoint is the unique linear transformation $T^*: V→V$ such that for all $u, v∈V$, $\left(T^* v, u\right)=(v, T u)$.<br>
+Suppose that $T^*=α T$, where $α \neq 0$. Assume that $V$ is not trivial. Since the underlying field is $\mathbb{C}, \chi_T(x)$ has a root, so $T$ has an eigenvector, $v$; say $\lambda$ is the eigenvalue.<br>
+We prove that $v^{\perp}$ is $T$-invariant.<br>
+Suppose that $u∈v^{\perp}$.<br>
+Then $(u, v)=0$.<br>
+Also $(T u, v)=(\lambda u, v)=\lambda(u, v)=0$.<br>
+So $\left(u, T^* v\right)=0$.<br>
+Now $T^* v=α T v$, so $(u, α T v)=0$, so $\bar{α}(u, T v)=0$, so since $α \neq 0,(u, T v)=0$ as required.<br>
+By the inductive hypothesis we assume that $T↾_{v^{\perp}}$ has a basis $B$ of eigenvectors. Then $B \cup\{v\}$ is a basis of eigenvectors for $T$.<br>
+(b) (i) $T-T^*$ is clearly skew-self-adjoint.<br>
+$T=\frac12\left(T+T^*\right)+\frac12\left(T-T^*\right)$ as required.<br>
+The linear transformation with matrix with respect to the standard basis given by
+\begin{bmatrix}
+0 & 1 \\
+0 & 0
+\end{bmatrix}
+is not diagonalisable, since its characteristic polynomial is $x^2$ and its minimum polynomial is not $x$.<br>
+But it is the sum of a self-adjoint and a skew-self-adjoint transformation as above.<br>
+(ii) $I$ is certainly self-adjoint so for all real $\beta, \beta I$ is self-adjoint also, and has eigenvalue $\beta$.<br>
+Conversely, if $T$ is self-adjoint with eigenvalue $\lambda$, then $(T v, v)=(\lambda v, v)=\lambda\|v\|^2$, while $(v, T v)=(v, \lambda v)=\bar{\lambda}\|v\|^2$, so $\lambda=\bar{\lambda}$ and $\lambda$ is real.<br>
+(iii) Suppose that $T^2$ is self-adjoint and
+\[
+A=\left(\begin{array}{cccc}
+\lambda & 1 & \ldots & 0 \\
+0 & \lambda & & \\
+& & & \lambda
+\end{array}\right)
+\]
+is a Jordan block for $T$.<br>
+Then $A^2$ has the form
+\[
+\left(\begin{array}{ccccc}
+\lambda^2 & 2 \lambda & 1 & … &…& 0 \\
+0 & \lambda^2 & 2 \lambda &  ⋱\\
+& &⋱ & ⋱&⋱\\
+& & &\lambda^2 & 2\lambda&1\\
+& & &&\lambda^2 & 2\lambda\\
+& & & && \lambda^2
+\end{array}\right)
+\]
+and is diagonal if and only if either the size of the block is $1 \times 1$, or it has size $2 \times 2$ and $\lambda=0$.<br>
+Also, $A^2$ is diagonalisable if and only if it is diagonal; for if it is not diagonal then its minimum polynomial is $\left(x-\lambda^2\right)^k$ for some $k>1$, which is not a product of distinct linear factors.<br>
+So the Jordan Normal Forms of transformations $T$ such that $T^2$ is self-adjoint have Jordan blocks of that form, with $\lambda$ being either real or purely imaginary.<br>
+(c) (i) Suppose $v$ is an eigenvector of $T^*$, and $u∈v^{\perp}$.<br>
+Then $(v, u)=0$.<br>
+Since $T^* v$ is a scalar multiple of $v,\left(T^* v, u\right)=0$.<br>
+Hence $(v, T u)=0$, and so $T u∈v^{\perp}$, as required.<br>
+(ii) Suppose that $v∈V_\lambda$.<br>
+Then $T^* T v=T^*(\lambda v)=\lambda T^* v$. But also $T^* T v=T T^* v$. Hence $T\left(T^* v\right)=\lambda T^* v$, and so $T^* v∈V_\lambda$<br>
+<a href="https://en.wikipedia.org/wiki/Schur's_lemma#Statement_and_Proof_of_the_Lemma">Schur's lemma</a><br>
+(iii) If $V$ is non-trivial, then the characteristic polynomial of $T$, being a non-constant complex polynomial, has a root. So $T$ has an eigenvalue $\lambda$, whose corresponding eigenspace $V_\lambda$ is nontrivial. Now $\left.T^*\right|_{V_\lambda}$ also has an eigenvector by the same reasoning, which is a simultaneous eigenvector of $T$ and $T^*$.<br>
+We do induction on $\dim V$.<br>
+Let $u$ be a simultaneous eigenvector for $T$ and $T^*$. Then $u^{\perp}$ is invariant under both $T^*$ and $T$. By the inductive hypothesis, $u^{\perp}$ has a basis $B$ of the correct form.<br>
+Then $B \cup\{u\}$ is a basis of the desired form for $V$.<br>
+(iv) If $T=\mathrm{i} I$, then $T^*=-\mathrm{i} I$. These commute, but are not equal.
+<div style="border: solid 1px #000;">
+    <a href="https://en.m.wikipedia.org/wiki/Normal_matrix">Normal matrix</a><br>
+    Among complex matrices, all unitary, Hermitian, and skew-Hermitian matrices are normal, with all eigenvalues being unit modulus, real, and imaginary, respectively. Likewise, among real matrices, all orthogonal, symmetric, and skew-symmetric matrices are normal, with all eigenvalues being complex conjugate pairs on the unit circle, real, and imaginary, respectively. However, it is <em>not</em> the case that all normal matrices are either unitary or (skew-)Hermitian, as their eigenvalues can be any complex number, in general.  For example,
+    \[A = \begin{bmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 1 & 0 & 1 \end{bmatrix}\]
+    is neither unitary, Hermitian, nor skew-Hermitian, because its eigenvalues are $2, (1\pm i\sqrt{3})/2$; yet it is normal because 
+    \[AA^* = \begin{bmatrix} 2 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 2 \end{bmatrix} = A^*A.\]
+    For the curious, the four classes
+         \begin{bmatrix} a & b & 0 \\ 0 & a &  b \\  b & 0 & a \end{bmatrix}
+         \begin{bmatrix} a & b & 0 \\ 0 & a & -b \\  b & 0 & a \end{bmatrix}
+         \begin{bmatrix} a & b & 0 \\ 0 & a &  b \\ -b & 0 & a \end{bmatrix}
+         \begin{bmatrix} a & b & 0 \\ 0 & a & -b \\ -b & 0 & a \end{bmatrix}
+         are neither unitary nor skew-Hermitian for all non-zero real $a$ and $b$. There are more 3×3 examples, but <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9913#lastpost">among 2×2 matrices, there are only ones that are multiples of unitary matrices.</a>
+</div>
