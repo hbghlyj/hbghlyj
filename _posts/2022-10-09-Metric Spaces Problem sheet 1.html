@@ -1,0 +1,135 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 1 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>
+<ol>
+<li>
+    Let $Σ=\{0,1\}^ℕ$ be the set of all sequences of 0 s and 1 s. If $σ=\left(a_n\right)_{n=1}^∞, σ'=\left(b_n\right)_{n=1}^∞ ∈ Σ$ define
+    $$
+    d\left(σ, σ'\right)=\frac{1}{\min \left\{n: a_n ≠ b_n\right\}},
+    $$
+    where the right-hand side is to be interpreted as zero when $a_n=b_n$ for all $n$. Show that $(Σ, d)$ is a metric space.<br>
+    <b>Proof.</b><br>
+    positivity: $d\left(σ, σ'\right)=0$ when $σ=σ'$; otherwise $ \min\left\{n: a_n ≠ b_n\right\}≥1⇒d\left(σ, σ'\right)>0$.<br>
+    symmetry: $d\left(σ, σ'\right)=\frac{1}{\min \left\{n: a_n ≠ b_n\right\}}=d\left(σ', σ\right)$<br>
+    triangle inequality: Let $σ''=\left(c_n\right)_{n=1}^∞ ∈ Σ,m=\min\left\{\min \left\{n: a_n ≠ b_n\right\},\min \left\{n: b_n ≠ c_n\right\}\right\}$.<br>
+    The first $m-1$ terms of $(a_n),(b_n)$ are equal, and the first $m-1$ terms of $(b_n),(c_n)$ are equal, so the first $m-1$ terms of $(a_n),(c_n)$ are equal.<br>
+    $⇒\min \left\{n: a_n ≠ c_n\right\} ≥m$<br>
+    $⇒\frac{1}{\min \left\{n: a_n ≠ c_n\right\}}≤\max\left\{\frac{1}{\min \left\{n: a_n ≠ b_n\right\}},\frac{1}{\min \left\{n: b_n ≠ c_n\right\}}\right\}≤\frac{1}{\min \left\{n: a_n ≠ b_n\right\}}+\frac{1}{\min \left\{n: b_n ≠ c_n\right\}}$<br>
+    $⇒d(σ,σ'')≤d(σ,σ')+d(σ',σ'')$
+</li>
+<li>
+    Let $Ω=ℝ^ℕ$ be the space of all real sequences. If $𝐱=\left(x_n\right)_{n=1}^∞,𝐲=\left(y_n\right)_{n=1}^∞ ∈ Ω$, define
+    $$
+    d(𝐱,𝐲)=\sum_{n=1}^∞ \frac{1}{2^n} \frac{\left|x_n-y_n\right|}{1+\left|x_n-y_n\right|}
+    $$
+    Show that this defines a metric on $Ω$.<br>
+    <b>Proof.</b><br>
+    $$
+    d(𝐱,𝐲)≤\sum_{n=1}^∞ \frac{1}{2^n}=1
+    $$
+    positivity: if $𝐱=𝐲$ then $∀n,\left|x_n-y_n\right|=0⇒d(𝐱,𝐲)=0$; otherwise $∃m,x_m≠y_m⇒\frac{\left|x_m-y_m\right|}{1+\left|x_m-y_m\right|}>0 ⇒d(𝐱,𝐲)>0$.<br>
+    symmetry: $\left|x_n-y_n\right|=\left|y_n-x_n\right|⇒d(𝐱,𝐲)=d(𝐲,𝐱)$.<br>
+    triangle inequality: The function $f(t)=\frac{t}{1+t},\ t≥0$ is increasing. Since ${|a+b|}≤{|a|}+{|b|}$, we have $f({|a+b|})≤f({|a|}+{|b|})$, so
+    \begin{aligned}
+    \frac{|a+b|}{1+{|a+b|}}&≤\frac{|a|}{1+{|a|}+{|b|}}+\frac{|b|}{1+{|a|}+{|b|}}\\
+    &≤\frac{|a|}{1+{|a|}}+ \frac{|b|}{1+{|b|}}
+    \end{aligned}
+    Let $a=x_n-y_n,b=y_n-z_n$, and summing over $n$, we get $d(𝐱, \mathbf{z})≤d(𝐱,𝐲)+d(𝐲, \mathbf{z})$.
+</li>
+<li>
+    Let $X=ℝ^n$ and suppose that $d$ is one of $d_1, d_2, d_∞$. Suppose we have two balls $B\left(x_1, 0.9\right), B\left(x_2, 0.9\right)$, both contained in $B(0,1)$. Show that they intersect. Is the same true in a general metric space $(X, d)$?<br>
+    $d_1, d_2, d_∞$ all arise from norm, so satisfy linearity. The proof below applies to all of them.<br>
+    <b>Proof 1.</b><br>
+    We will show $0∈B\left(x_1, 0.9\right)$, then $0∈B\left(x_2, 0.9\right)$, so they intersect.<br>
+    Suppose $0∉B\left(x_1, 0.9\right)$, then $d(x,0)≥0.9$, multiplying by 1.5, $d\left(\frac32x_1,0\right)≥1.35$.<br>
+    $d\left(\frac32x_1,x_1\right)=d\left(\frac12x_1,0\right)<\frac12$, so $\frac32x_1∈B(x_1,0.9)⊂B(0,1)$, so $d\left(\frac32x_1,0\right)< 1$, contradiction with previous line.
+    <div class="noprint">Replace 0.9 with α and replace $\frac12$ with $\frac1C$. For the proof to remain valid, we need $\cases{Cα≥1\\d\left((C-1)x_1,0\right)< α}⇔\cases{Cα≥1\\C< 1+α}⇔α>\frac{\sqrt5-1}2≈0.618$.</div>
+    <b>Proof 2.</b><br>
+    Let $v$ be the unit vector in the direction of $x_1$, then $x_1={‖x_1‖}v$. The fact that $B(x_1,0.9)⊂B(0,1)$ implies that $({‖x_1‖}+r)v∈B(0,1)$ for any $0< r< 0.9$. Thus ${\big‖({‖x_1‖}+r)v\big‖}={‖x_1‖}+r< 1$ for any $0< r< 0.9$. It follows that ${‖x_1‖}≤1-0.9=0.1$. Similarly ${‖x_2‖}≤0.1$. By triangle inequality ${‖x_1-x_2‖}≤0.2⇒x_1∈B(x_2,0.9)⇒x_1∈B(x_1,0.9)∩B(x_2,0.9)$.<br>
+    This is false in a general metric space $(X, d)$, for example, when $d$ is the discrete metric, $B\left(x_1, 0.9\right)=\{x_1\}, B\left(x_2, 0.9\right)=\{x_2\}$, and $\{x_1\}∩\{x_2\}=∅$.<br>Actually we can take $d$ be the discrete metric times a constant $α ∈(0.9,1]$, then we also have $B\left(x_1, 0.9\right)=\{x_1\}, B\left(x_2, 0.9\right)=\{x_2\}$, and $\{x_1\}∩\{x_2\}=∅$.
+</li>
+<li>
+    Let $(X, d)$ be a metric space, and let $‖·‖$ be a norm on $ℝ^2$. Define $\tilde{d}$ by
+    $$
+    \tilde{d}\left((x_1, x_2),(y_1, y_2)\right)=\left\|\left(d(x_1, y_1), d(x_2, y_2)\right)\right\| .
+    $$
+    Show that $\tilde{d}$ is a metric on $X × X$ if $‖·‖$ is the $ℓ^1$-norm or the $ℓ^∞$-norm. Is this in fact true for an arbitrary norm $‖·‖$?<br>
+    <b>Solution.</b><br>
+    Positivity and symmetry are trivial. Triangle inequality:<br>
+    For $ℓ^1$:
+    \begin{aligned}
+    &\tilde{d}\left((x_1,x_2),(y_1,y_2)\right)+\tilde{d}\left((y_1,y_2),(z_1,z_2)\right)\\
+    =&d(x_1, y_1)+d(x_2, y_2)+d(y_1, z_1)+d(y_2, z_2)\\
+    =&\left(d(x_1, y_1)+d(y_1, z_1)\right)+\left(d(x_2, y_2)+d(y_2, z_2)\right)\\
+    >&d(x_1, z_1)+d(x_2, z_2)\\
+    =&\tilde{d}\big((x_1,x_2), (z_1,z_2)\big).\end{aligned}
+    For $ℓ^2$, $\tilde{d}$ is the product metric.<br>
+    For $ℓ^∞$:
+    \begin{aligned}
+    &\tilde{d}\left((x_1,x_2),(y_1,y_2)\right)+\tilde{d}\left((y_1,y_2),(z_1,z_2)\right)\\
+    =&\max\left(d(x_1, y_1), d(x_2, y_2)\right)+\max\left(d(y_1, z_1), d(y_2, z_2)\right)\\
+    ≥&\max\left(d(x_1, y_1)+d(y_1, z_1), d(x_2, y_2)+d(y_2, z_2)\right)\\
+    >&\max\big(d(x_1, z_1), d(x_2, z_2)\big)\\=&\tilde{d}\big((x_1,x_2), (z_1,z_2)\big).
+    \end{aligned}
+    This is not true for an arbitrary norm $‖⋅‖$.<br>
+    Take $X=\Bbb R$ with $d(a,b)={|a-b|}$ and consider the norm ${‖(x,y)‖}={|x|}+{|x-y|}$ on $\Bbb R^2$. Then$$\tilde{d}\big((2,0),(0,0)\big)={\big‖\big(d(2,0),d(0,0)\big)\big‖}={‖(2,0)‖}=4$$is greater than$$\tilde{d}\big((2,0),(1,1)\big)+\tilde{d}\big((1,1),(0,0)\big)={\big‖\big(d(2,1),d(0,1)\big)\big‖}+{\big‖\big(d(1,0),d(1,0)\big)\big‖}={‖(1,1)‖}+{‖(1,1)‖}=2$$
+    <div class="noprint"><a href="https://math.stackexchange.com/questions/3872795/prove-whether-norm-is-or-is-not-metric?noredirect=1">Prove whether norm is or is not metric</a></div>
+</li>
+<li>
+    Consider the 2-adic metric on the integers defined in the lecture notes. Show that the sequence $9,99,999,…$ converges.<br>
+    <b>Proof.</b><br>
+    $d(10^n-1,-1)=2^{-n}$ converges to 0 as $n→∞$, so $10^n-1$ converges to $-1$.
+</li>
+<li>
+    Let $X$ be a metric space and suppose $f: X → ℝ$ is continuous. Show that if $f(a) ≠ 0$, then there is an $ε>0$ such that $1/f$ is defined and is continuous on $B(a, ε)$.<br>
+    <b>Proof.</b><br>
+    Just compose $f$ with $1/x$, since $1/x$ is continuous on the image of $f$. Or we prove it explicitly:<br>
+    By continuity of $f$, $∃ε>0,∀x∈B(a,ε):{|f(x)-f(a)|}<\frac12{|f(a)|}⇒{|f(x)|}>\frac12{|f(a)|}>0⇒1/f$ is defined on $B(a,ε)$.<br>
+    For all $ε_0>0$, by continuity of $f$, $∃δ>0,∀x∈B(a,δ):{|f(x)-f(a)|}< ε_0\left(\frac12f(a)\right)^2⇒\left|\frac1{f(x)}-\frac1{f(a)}\right|=\frac{|f(x)-f(a)|}{|f(a)|⋅{|f(x)|}}<\frac{|f(x)-f(a)|}{\left(\frac12f(a)\right)^2}< ε_0⇒1/f$ is continuous.
+</li>
+<li>
+    Suppose that $(X, d)$ is a metric space and that $X × X$ is endowed with the product metric defined in lectures. Show that the metric $d$, viewed as a map from $X × X$ to $ℝ$, is continuous.<br>
+    <b>Proof.</b><br>
+    Let $x, y, z, t∈X$. By triangle inequality,$${|d(x, y)-d(z, t)|}≤{|d(x, y)-d(z, y)|}+{|d(z,y)-d(z,t)|}≤d(x, z)+d(y, t)=d_1((x, y),(z, t))≤\sqrt2d_2((x, y),(z, t))$$So given $ε>0$ we may take $δ=ε/\sqrt2$, and if $d_2((x, y),(z, t))<\delta$ then ${|d(x, y)-d(z, t)|}< ε$, so $d:X×X→ℝ$ is continuous.
+<div class="noprint">
+    Introduction to Metric and Topological Spaces - Wilson A. Sutherland - Oxford University Press (2009)<br><a href="https://fdslive.oup.com/www.oup.com/booksites/pdf/uk/companion/9780199563081/l0k-Chapter5Solutions.pdf">Solutions to Chapter 5 exercises</a> (Need to sign up and log in)<br>
+    Exercise 5.17 is about $d_1$, but here "product metric" refers to $d_2$.
+</div>
+</li>
+<li>
+    Show that the map $f:ℤ→ℤ$ defined by $f(n)=n^2$ is continuous in the 2-adic metric.<br>
+    <b>Proof.</b><br>
+    Let $2^m∣x-a$, then $2^m∣x^2-a^2=(x-a)(x+a)$, so $d\big(f(x),f(a)\big)< d(x,a)$.<br>
+    $∀a∈ℤ,ε>0$, then $∀x∈B(a,ε):d\big(f(x),f(a)\big)< d(x,a)< ε$. So $f$ is continuous at $a$.
+    <div class="noprint">
+        <a href="https://www2.math.ethz.ch/education/bachelor/seminars/hs2011/p-adic/report7.pdf">P-adic Functions - Part 1</a><br>
+        <a href="https://www.math.arizona.edu/~ura-reports/061/Moore.Matthew/Final.pdf">p-adic Continued Fractions</a><br>
+        <a href="https://tex.stackexchange.com/questions/39444">Using htlatex to convert LaTeX to HTML</a>
+    </div>
+</li>
+<li>
+    Let $X, Y$ and $Z$ be metric spaces and equip $Y × Z$ with the product metric defined in lectures. If $F: X → Y × Z$ is a function and we write $F(x)=\left(f_1(x), f_2(x)\right)$, show that $F$ is continuous if and only if $f_1$ and $f_2$ are continuous.<br>
+    <b>Proof.</b><br>
+    If $f_1$ and $f_2$ are continuous, for any $ε>0$, we can find $δ>0$, such that $∀a∈B(x,δ):f_1(a)∈B\left(f_1(x),\fracε{\sqrt2}\right)$ and $f_2(a)∈B\left(f_2(x),\fracε{\sqrt2}\right)$.<br>
+    So $∀a∈B(x,δ):d_{Y×Z}\Big(\big(f_1(a),f_2(a)\big),\big(f_1(x),f_2(x)\big)\Big)=\sqrt{d_Y\big(f_1(a),f_1(x)\big)^2+d_Z\big(f_2(a),f_2(x)\big)^2}<\sqrt2\fracε{\sqrt2}=ε$. Therefore $F$ is continuous.<br>
+    If $F$ is continuous, for any $ε>0$, we can find $δ>0$, such that $∀a∈B(x,δ):ε>d_{Y×Z}\Big(\big(f_1(a),f_2(a)\big),\big(f_1(x),f_2(x)\big)\Big)=\sqrt{d_Y\big(f_1(a),f_1(x)\big)^2+d_Z\big(f_2(a),f_2(x)\big)^2}≥d_Y\big(f_1(a),f_1(x)\big)$.<br>
+    So $f_1$ is continuous. Similarly $f_2$ is continuous.
+</li>
+<li>
+    Let $X$ denote the vector space of sequences $𝐱=\left(x_n\right)_{n=1}^∞$ with $x_n ∈ ℝ$ and $\sum_{n=1}^∞ x_n^2<∞$. Explain why ${‖𝐱‖}_∞:=\sup_n\left|x_n\right|$ is a well-defined norm on $X$. Is the metric induced by this norm equivalent to the metric induced by the $ℓ^2$-norm?<br>
+    <b>Proof.</b><br>
+    ${‖𝐱‖}_∞=\sup_n\left|x_n\right|≤\sqrt{\sum_{n=1}^∞ x_n^2}={‖𝐱‖}_2$, so it is finite. Clearly ${‖𝐱‖}_∞=0$ iff $𝐱=0$; ${‖λ𝐱‖}_∞ = {|λ|}{‖𝐱‖}_∞$ for all $λ∈ℝ,𝐱∈X$; ${‖𝐱+𝐲‖}_∞=\sup_n\left|x_n+y_n\right|≤\sup_n\left|x_n\right|+\sup_n\left|y_n\right|={‖𝐱‖}_∞+{‖𝐲‖}_∞$ for all $𝐱,𝐲∈ X$. So ${‖𝐱‖}_∞$ is a well-defined norm on $X$.<br>
+    The metric induced by $ℓ^∞$-norm and $ℓ^2$-norm are not equivalent. Let ${\bf 0}=(0,0,…)$. Suppose $B_2({\bf0},1)⊃B_∞({\bf0},r)$ for some $r>0$.<br>Let $0< a< r$ and ${\bf a}_k=(\underbrace{a,a,…,a}_k,0,0,…)$. Then ${‖{\bf a}_k‖}_∞=a⇒{\bf a}_k∈B_∞({\bf0},r)$ but ${‖{\bf a}_k‖}_2=a\sqrt k⇒{\bf a}_k∉B_2({\bf0},1)$ for $k>a^{-2}$, contradicting to the assumption $B_2({\bf0},1)⊃B_∞({\bf0},r)$.
+</li>
+</ol>
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/2573349/how-do-i-show-a-function-on-2-adic-units-is-continuous">How do I show a function on 2-adic units is continuous?</a><br>
+<a href="https://math.stackexchange.com/questions/2916729/prove-that-a-subset-in-hilbert-space-is-open">Prove that a subset in Hilbert space is open</a><br>
+<a href="https://math.uchicago.edu/~may/VIGRE/VIGRE2011/REUPapers/Karger.pdf">A 2-adic extension of the Collatz function (REU papers)</a><br>
+<a href="https://www.math.uwaterloo.ca/~vpaulsen/FAQIChapter2.pdf">The Functional Analysis of Quantum Information Theory</a><br>
+<a href="https://math.berkeley.edu/~brent/files/104_hw4.pdf">104_hw4.pdf (Berkeley)</a><br>
+<a href="https://www.math.ucdavis.edu/~hunter/measure_theory/">Measure Theory(UC Davis)</a>
+</div>

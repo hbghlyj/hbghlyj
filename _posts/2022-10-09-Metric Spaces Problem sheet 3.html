@@ -1,0 +1,202 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 3 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>
+<ol>
+<li>Let $X=C[0,1]$, with the usual distance coming from the ${\|·\|}_∞$-norm. Is $X$ connected?<br>
+<b>Proof.</b><br>
+For any $f,g∈X$, there is a continuous map $h:[0,1]→C[0,1],h(λ)=(1-λ)f+λg$ with $h(0)=f,h(1)=g$. So $X$ is path-connected.
+By Theorem 7.4.1. $X$ is connected.
+</li>
+<li>a) Let $A⊆ℝ^2$ be the set of all points with at least one rational coordinate. $A$ is connected.<br>
+b) Let $A⊆ℝ^2$ be the set of all points with at least one irrational coordinate. $A$ is connected.<br>
+c) Let $A⊆ℝ^2$ be the set of all points with exactly one rational coordinate. $A$ is disconnected.<br>
+d) Let $A⊆ℝ^2$ be the set of all points with two rational coordinates. $A$ is disconnected.<br>
+e) Let $A⊆ℝ^2$ be the set of all points with two irrational coordinates. $A$ is disconnected.<br>
+<b>Proof.</b><br>
+a) For any $(x,y)∈A$, wlog let $x$ be rational. Consider the <a href="https://en.wikipedia.org/wiki/Polygonal_chain">polyline</a> Γ from $(0,0)$ to $(x,0)$ to $(x,y)$. Any point on Γ has a rational coordinate, so $Γ⊂A$, so $A$ is a <a href="https://en.wikipedia.org/wiki/Star_domain">star domain</a>, so $A$ is path connected, so $A$ is connected.<br>
+b) For any $(x,y)∈A$, wlog let $x$ be irrational. Consider the polyline Γ from $(0,π)$ to $(x,π)$ to $(x,y)$. Any point on Γ has an irrational coordinate, so $Γ⊂A$, so $A$ is connected.<br>
+c) Let $U=\{(x,y)∈ℝ^2∣x>y\}$ and $V=\{(x,y)∈ℝ^2∣x< y\}$. No element of $A$ lies on the line $x=y$, so $A⊂U∪V$. Since $U$ and $V$ are open sets, and $U∩V∩A=∅$, by lemma 7.1.3 $A$ is disconnected.<br>
+d) Let $U=\{(x,y)∈ℝ^2∣x>π\}$ and $V=\{(x,y)∈ℝ^2∣x< π\}$. No element of $A$ lies on the line $x=π$, so $A⊂U∪V$. Since $U$ and $V$ are open sets, and $U∩V∩A=∅$, by lemma 7.1.3 $A$ is disconnected.<br>
+e) Let $U=\{(x,y)∈ℝ^2∣x>0\}$ and $V=\{(x,y)∈ℝ^2∣x< 0\}$. No element of $A$ lies on the line $x=0$, so $A⊂U∪V$. Since $U$ and $V$ are open sets, and $U∩V∩A=∅$, by lemma 7.1.3 $A$ is disconnected.
+</li>
+<li>Show that there is no continuous injective map $f:ℝ^2→ℝ$. [<i>Hint: consider the restriction of $f$ to $ℝ^2∖\{a\}$, for a suitable point $a$</i>]<br>
+<b>Proof.</b><br>
+By Lemma 7.1.6 the image of a connected set $ℝ^2$ under continuous map $f$ is connected, that is a non-degenerate interval $I⊂ℝ$. Take an interior point $a$ of $I$, then $I∖\{a\}$ is not connected.<br>
+But $ℝ^2∖\{f^{-1}(a)\}$ is connected, by Lemma 7.1.6 the image under $f$ is connected, then $I∖\{a\}$ is connected, contradiction.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/3963057">Show that there is no continuous injective map $f:ℝ^2→ℝ$</a><br>
+Prove that $ℝ^n∖\{0\} $ is connected for $n>1$. <a href="https://math.stackexchange.com/questions/1871272">MSE</a></div>
+</li>
+<li>Let $X$ be a metric space and $A_1, A_2, …$ an infinite collection of subsets of $X$. For each of the following statements, give a proof or counterexample.
+<ol type="i">
+<li>If $A_1, A_2,…, A_k$ are sequentially compact then so is $A_1∪A_2∪…∪A_k$.</li>
+<li>If $A_1, A_2,…, A_k$ are connected then $A_1∩A_2∩…∩A_k$ is connected.</li>
+<li>If $A_1, A_2,…$ are sequentially compact then $⋃_{k⩾1} A_k$ is sequentially compact.</li>
+<li>If $A_1, A_2,…$ are connected and $A_j∩A_{j+1}≠∅$ then $⋃_{k⩾1} A_k$ is connected. [Generalization of Lemma 7.1.4]</li>
+</ol>
+<b>Solution.</b>
+<ol type="i">
+<li>
+    Proof: Let $(x_n)$ be a sequence in $A_1∪A_2∪…∪A_k$.
+    $∃i∈\{1,2,⋯,k\}$, $A_i$ contains infinite many terms of $(x_n)$, so they form a subsequence $(y_n)$.<br>
+    By sequential compactness of $A_i$, $(y_n)$ has a convergent subsequence, and it is a subsequence of $(x_n)$. Therefore $A_1∪A_2∪…∪A_k$ is sequentially compact.
+</li>
+<li>
+    Counterexample: $A_1=\{z∈ℂ:{|z|}=1,\operatorname{Im}z≥0\},A_2=\{z∈ℂ:{|z|}=1,\operatorname{Im}z≤0\}$, then $A_1∩A_2=\{1,-1\}$ is not connected.
+</li>
+<li>
+    Counterexample: $A_k=[k-1,k]$ is sequentially compact. Then $⋃_{k⩾1}A_k=[0,+∞)$ is unbounded, so is not sequentially compact, by Proposition 8.5.1.
+</li>
+<li>
+    Proof: Suppose $⋃_{k⩾1}A_k=X_1∪X_2$ where $X_1,X_2$ are disjoint open sets in $X$. Since $A_k,k=1,2,⋯$ is connected, we have either $A_k⊂X_1$ or $A_k⊂X_2$.<br>
+    If $A_1⊂X_1$, since $A_1∩A_2≠∅$, we have $A_2⊂X_1$, by the same argument $A_k⊂X_1,k=1,2,⋯$, so $X_2=∅$. Similarly if $A_1⊂X_2$, then $X_1=∅$. In conclusion $⋃_{k⩾1}A_k$ is connected.
+</li>
+</ol>
+</li>
+<li>Show that ℤ with the 2-adic metric is not connected.<br>
+<b>Proof.</b><br>
+\begin{array}l
+B(0,1)=\{y:d_2(0,y)< 1\}=\{y:2|y\}\\
+B(1,1)=\{y:d_2(1,y)< 1\}=\{y:2|y-1\}
+\end{array}$B(0,1),B(1,1)$ are disjoint and open sets and $ℤ=B(0,1)∪B(1,1)$. So $ℤ$ is not connected with the 2-adic metric.
+</li>
+<li>Suppose that $X$ is connected and that $f: X→Y$ is <i>locally constant</i>, meaning that every $x∈X$ lies in some open set $U$ on which $f$ is constant. Show that $f$ is constant.<br>
+<b>Proof.</b><br>
+Take $x∈X$. Let $U=f^{-1}(f(x))$. Every $y∈U$ lies in some open set $U_y$ such that $∀z∈U_y:f(z)=f(y)⇒f(z)=f(x)⇒z∈U⇒U_y⊂U$. So $U$ is open.<br>
+Every $w∈X∖U$ lies in some open set $U_w$ such that $∀z∈U_w:f(z)=f(w)⇒f(z)≠f(x)⇒z∈X∖U⇒U_w⊂X∖U$.
+So $X∖U$ is open.<br>$U$ is open and closed, and nonempty(since $x∈U$), therefore $U=X$, in other words, $f$ is constant.
+</li>
+<li>Suppose that $f:X→ℕ$ is continuous. Show that $f$ is constant on every connected component of $X$.<br>
+<b>Proof 1.</b><br>
+Let $X_1$ be a connected component of $X$, then $X_1$ is connected. $∀x∈X_1$, Since $f$ is continuous, $∃δ>0,∀y∈B(x,δ):{|f(x)-f(y)|}< 1$, but $f(x),f(y)∈ℕ$, so $f(x)=f(y)$, so $f$ is locally constant on $X_1$. Applying Q6 we're done.<br>
+<b>Proof 2.</b><br>
+Let $X_1$ be a connected component of $X$. Take an element $x_1$ of $X_1$. Let $U=\{x∈X_1:f(x)=f(x_1)\}$ and $V=\{x∈X_1:f(x)≠f(x_1)\}$.<br>
+Since $X_1$ is connected and $X_1=U∪V$ and $U≠∅$(as $x_1∈X_1$), we have $U=X_1$, so $f$ is constant on $X_1$.
+</li>
+<li>Is there a metric on ℕ which makes it connected?<br>
+<b>Solution.</b><br>
+No. Let $d$ be the supposed metric such that ℕ is connnected. For $x_0∈ℕ$, the function $Φ:ℕ→ℝ^+$ defined by $Φ(x)=d(x,x_0)$ satisfy ${|Φ(x)-Φ(y)|}≤d(x,y)$ by reverse triangle inequality, so Φ is continuous, so $Φ(ℕ)$ is connected. By positivity, $Φ(ℕ)$ has at least 2 elements (0 and a positive number), so $Φ(ℕ)$ contains a non-degenerate interval, so $Φ(ℕ)$ is uncountable, contradiction.
+</li>
+<li>Let $(V,{\|·\|})$ be a normed vector space whose unit sphere $S=\{v ∈V:{\|v\|}=1\}$ is sequentially compact.<ol type="a">
+<li>Show that any closed ball $B=\{v∈V:{\|v\|}≤R\}$ is sequentially compact.</li><li>Show that $V$ is complete.</li></ol>
+<ol type="a">
+<li><b>Proof 1.</b> $∀\{x_n\}⊂B(0;R)$.
+$r_n={‖x_n‖}$ is a sequence in $[0,R]$, so it has a subsequence $r'_n→r$. If $r=0$, then $x_n→0$; if $r≠0$, take $δ∈(0,r)$, then $∃N,∀n>N:r'_n>δ$.<br>Consider the map $(r,θ)↦rθ$ from $[δ,R]×S$ to $\{v∈V:δ≤{\|v\|}≤R\}$. Since <a href="https://planetmath.org/compactnessispreservedunderacontinuousmap">continuous surjective maps preserve compactness</a>, $(x_n')$ has a convergent subsequence.<hr><b>Proof 2.</b> $∀\{x_n\}⊂B(0;R)$.
+$r_n={‖x_n‖}$ is a sequence in $[0,R]$, so it has a subsequence $r'_n→r$. If $r=0$, then $x_n→0$; if $r≠0$, $∃N,∀n>N:r'_n≠0$.<br>
+Let $θ'_n=\frac{x'_n}{r'_n}$, then $θ'_n∈S$, so it has a subsequence $θ''_n→θ$.<br>
+So $x''_n=r''_nθ''_n→rθ$. So $(x''_n)$ is a convergent subsequence of $(x_n)$.
+<div class="noprint"><a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9990">compactness of closed unit ball in normed spaces</a><br><a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9416">unit sphere seq compact ⇒ closed ball seq compact</a><br><a href="https://math.stackexchange.com/questions/1751429">Question about the proof that a normed space is finite-dimensional if its closed unit ball is compact</a><br><a href="https://math.stackexchange.com/questions/2659347">If a normed space is finite dimensional, the unit sphere is compact</a></div></li>
+<li>Let $(x_n)$ be a Cauchy sequence in $V$, then $(x_n)$ is bounded, so $(x_n)$ is contained in a closed ball $B(0,R)$ for some $R$.<br>By a) $B(0,R)$ is compact, by Proposition 8.5.1. $B$ is complete, so $(x_n)$ converges, so $V$ is complete.</li></ol>
+<div class="noprint">
+    The proof of part (b) require unboundedness of $V$.<br>Warning: the union of compact sets is not necessarily complete, for example $⋃_{n≥2}[1/n,1]=(0,1]$<br>
+    Another example: Any finite set is compact but $⋃_{n≥1}\{1,2,⋯,n\}=ℕ$ is not complete.
+</div>
+</li>
+<li>Let $X$ be a subset of $ℝ^n$ such that every continuous function $f: X → ℝ$ is bounded. Show that $X$ is sequentially compact.<br>
+<b>Proof.</b><br>If $X$ is unbounded, then $f:x↦{\|x\|}$ is unbounded and continuous, which contradicts our assumption. So $X$ is bounded.<br>If $X$ is closed, by Bolzano-Weierstrass, $X$ is sequentially compact.<br>If $X$ is not closed, $∃x∈\overline X∖X$, then $ϕ:t↦{\|x-t\|}$ is continuous on $X$ and $ϕ(t)≠0$. By <a href="https://cjhb.site/index.php?dir=285%2F1.html">Sheet 1</a> Q6, $1/ϕ$ is continuous on $X$.<br>
+$x∈\overline X⇒∀M>0,∃t∈X∩B(x,1/M)⇒1/ϕ(t)>M$. Therefore $1/ϕ$ is unbounded on $X$.
+</li>
+<li>Let $\|⋅\|$ be an arbitrary norm on $ℝ^n$. Show that there is some constant $C$ such that<center>${\|v\|}≤C{\|v\|}_1$ for all $v ∈ ℝ^n$</center>Using this, show that there is some constant $c>0$ such that ${\|v\|}⩾ c{\|v\|}_1$ for all $v ∈ℝ^n$.<br>
+<b>Proof.</b> [lecture notes Proposition 3.3.2]<br>
+<b>Step 1:</b> We wish to show that
+$$
+c{\|x\|}_1≤{\|x\|}≤C{\|x\|}_1,
+$$
+is true for all $x ∈V$ for some $c, C$. It is trivially true for $x=0$, so we need only consider $x≠0$, in which case we can divide by ${\|x\|}_1$ to obtain the condition
+$$
+c≤{\|u\|}≤C,
+$$
+where $u=x /{\|x\|}_1$ satisfies ${\|u\|}_1=1$. So only need consider $\left\{u:{\|u\|}_1=1\right\}$.<br>
+<b>Step 2:</b>
+We wish to show ${\|⋅\|}: ℝ^n → ℝ$ is continuous function on $ℝ^n$ with the ${\|⋅\|}_1$-norm. That is, $∀ϵ>0, ∃δ>0,
+\left\|x-x'\right\|_1< δ ⇒{\big|{\|x\|}-\left\|x'\right\|\big|}< ϵ$.<br>
+By the triangle inequality
+$$
+{\big|{\|x\|}-\left\|x'\right\|\big|}≤\left\|x-x'\right\|
+$$
+Applying the triangle inequality again, and writing $x=\sum_{i=1}^{n} \alpha_i e_i$ and $x'=\sum_{i=1}^{n} \alpha_i' e_i$ in our basis, we obtain
+$$
+\left\|x-x'\right\|≤\sum_{i=1}^{n}\left|\alpha_i-\alpha_i'\right| ·\left\|e_i\right\|≤\max _i\left\|e_i\right\|⋅\sum_{i=1}^{n}\left|\alpha_i-\alpha_i'\right|=\max _i\left\|e_i\right\|⋅\left\|x-x'\right\|_1
+$$
+Therefore, if we choose
+$$
+δ=\frac{ϵ}{\max _i\left\|e_i\right\|}
+$$
+it immediately follows that
+$$
+\left\|x-x'\right\|_1< δ ⟹{\big|{\|x\|}-\left\|x'\right\|\big|}≤\left\|x-x'\right\|< ϵ.
+$$
+<b>Step 3:</b> By the extreme value theorem(or Lemma 8.3.1: a <i>continuous</i> image of a sequentially compact set is sequentially compact), a continuous function $\|·\|$ on compact set $\left\{u:{\|u\|}_1=1\right\}$ can achieve a maximum and minimum in the set. Let
+\begin{aligned}
+c&=\min_{\|u\|_1=1}{\|u\|} \\
+C&=\max_{\|u\|_1=1}{\|u\|}
+\end{aligned}
+Since $u≠0$ for ${\|u\|}_1=1$, it follows that $C≥c>0$ and
+$$
+c≤{\|u\|}≤C
+$$
+as required by step 1. Q.E.D.
+<div class="noprint">
+    Instead of extreme value theorem we can use lemma 2.2.1(a closed ball under a continuous linear function is bounded): ‖·‖ is a continuous linear function so has a infimum on a closed ball, but infimum can be 0 (since it not necessarily has a <b>minimum</b> on the sphere) 见<a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9778">连续线性函数</a><br>
+    <a href="https://math.mit.edu/~stevenj/18.335/norm-equivalence.pdf">Notes on the equivalence of norms</a></div>
+</li>
+<li>Write down an infinite compact subset of ℚ and prove that it is compact directly from the open cover definition of compactness.<br>
+<b>Solution.</b><br>
+$X=\{0\}\cup\left\{\frac1n:n∈ℤ^+\right\}$ is an infinite subset of ℚ. Let $𝒰=\{U_i:i∈I\}$ be an open cover of $X$.<br>
+Let $\frac1n∈X$ be covered by $U_{i_n}∈𝒰$. Let $0∈X$ be covered by $U_{i_0}∈𝒰$. Since $U_{i_0}$ is open, $∃ϵ>0,B(0,ϵ)⊂U_{i_0}$.<br>
+Let $r=\left⌊\frac1ϵ\right⌋$, then $X∖B(0,ϵ)=\left\{\frac1n:n=1,⋯,r\right\}$ is finite (empty if $r=0$). Therefore $\{U_{i_n}:n=0,1,⋯,r\}$ is a finite subcover.
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/554372">Every (Hausdorff) countable compact is homeomorphic to a subspace of ℚ.</a>
+</div>
+</li>
+<li>Consider the space Ω of all sequences $𝐱=(x_n)_{n=1}^∞$ with $x_n∈[0,1]$ for all $n$, together with the metric $d(𝐱,𝐲)=\sum_{k=1}^∞ 2^{-k}\left|x_k-y_k\right|$. Show that Ω is sequentially compact.<br>
+<b>Proof 1.</b><br>
+For a sequence in Ω
+$$𝐗_0 = 𝐱_1, 𝐱_2,…$$
+we need to extract a convergent subsequence. Let
+$$𝐗_1 = 𝐱_{11}, 𝐱_{12}, …$$
+be a subsequence of $𝐗_0$ such that the first coordinate of each sequence $𝐱_{11}, 𝐱_{12}, …$ converges. This is possible from sequential compactness of $[0,1]$.<br>
+Similarly, for all $n≥2$, let $𝐗_n$ be a subsequence of $𝐗_{n-1}$ such that the $n$-th coordinate converges.<br>
+Now consider the sequence
+$$𝐘 = 𝐱_{11}, 𝐱_{22}, 𝐱_{33}, … $$
+formed by taking the <i>diagonal</i> of the array
+\begin{array}l
+𝐱_{11}& 𝐱_{12}& 𝐱_{13}&…\\
+𝐱_{21}& 𝐱_{22}& 𝐱_{23}&…\\
+𝐱_{31}& 𝐱_{32}& 𝐱_{33}&…\\
+⋮&⋮&⋮&⋱
+\end{array}
+We claim this sequence converges in Ω. Note that for $m< n$, $𝐱_{nn}$ is an element of $𝐗_m$, and it comes strictly after $𝐱_{mm}$ in $𝐗_m$. Thus,
+$$ 𝐱_{11}, 𝐱_{22}, … $$
+is a subsequence of $𝐗_1$, so 𝐲 converges in the first coordinate. Similarly, 
+$$ 𝐱_{22}, 𝐱_{33}, … $$
+is a subsequence of $𝐗_2$, so 𝐲 converges in the second coordinate. Continuing like this, we see that 𝐲 converges pointwise in all coordinates, the rest is same as Proof 2.(b)(ii)<div class="noprint"><a href="https://math.stackexchange.com/questions/239885">Tychonov's theorem in countable spaces!?</a><br><a href="https://math.stackexchange.com/questions/1288007">Countable Product of Sequentially Compact spaces is Sequentially Compact</a><br><a href="https://math.stackexchange.com/questions/532164">Compactness of an infinite product space.</a></div>
+<b>Proof 2.</b><br>
+To prove Ω is compact, by Theorem 8.5.3. we need to prove (a) Ω is totally bounded (b) Ω is complete.<br>
+(a) $∀ϵ>0,∃m∈ℕ:\sum_{k≥m}2^{-k}<\fracϵ2$. Let $F_ϵ$ be a finite subset of $[0,1]$ such that the open $\fracϵ2$-balls centred at elements of $F_ϵ$ cover $[0,1]$. For each $k≥m$ let $x_k∈[0,1]$ be arbitrary. Let $F$ be the set of all sequences $(a_k)$ such that $a_k∈F_ϵ$ for $k< m$ and $a_k=0$ for $k≥m$. Clearly $F$ is a finite subset of $X$. Now we prove $ϵ$-balls centred at elements of $F$ cover Ω.<br>
+For any $𝐲=(y_k)_{k∈ℕ}∈Ω$. Construct $𝐱=(x_k)_{k∈ ℕ}∈F$ by $∀k< m,∃x_k∈F_ϵ:y_k∈B\left(x_k,\fracϵ2\right)$ and $∀k≥m:y_k=0$. Then
+\begin{align*}d(𝐱,𝐲)&=\sum_{k∈\Bbb N}2^{-k}\left|x_k-y_k\right|\\
+&=\sum_{k< m}2^{-k}\left|x_k-y_k\right|+\sum_{k≥m}2^{-k}\left|x_k-y_k\right|\\
+&<\sum_{k< m}\fracϵ{2^{k+1}}+\sum_{k≥m}2^{-k}\\
+&<\fracϵ2+\fracϵ2\\
+&=ϵ
+\end{align*}
+Therefore $X$ is totally bounded.<br>
+(b) For every Cauchy sequence $(𝐱_k)_{k ∈ℕ} = \left( \left( x_k^{(j)} \right)_{j ∈ℕ} \right)_{k ∈ℕ}$, we do as follows: (i) $∀j_0 ∈ℕ$, the $j_0$ th term $\left( x_k^{(j_0)} \right)_{k ∈ℕ}$ converges to $y^{(j_0)}$, (ii) set $𝐲=\left( y^{(j)} \right)_{j ∈ℕ}$, prove $\lim_{k→∞}𝐱_k = 𝐲$.<br>
+(i) fix $j_0 ∈ℕ, ϵ > 0$. By the Cauchy assumption, $∃K = K(2^{-j_0}ϵ) ∈ℕ$ such that if $k_1, k_2≥K$, then $$d(𝐱_{k_1} ,𝐱_{k_2} ) = \sum_{j = 1}^∞ 2^{-j} \left| x_{k_1}^{(j)} - x_{k_2}^{(j)} \right| < 2^{-j_0}ϵ.$$LHS includes the term $2^{ - j_0} \left| x_{k_1}^{(j_0)} - x_{k_2}^{(j_0)} \right|$, so $\left| x_{k_1}^{(j_0)} - x_{k_2}^{(j_0)} \right|< ϵ$, so $\left( x_k^{(j_0)} \right)_{k ∈ℕ}$ is Cauchy, and thus has a limit, call it $y^{(j_0)}$.<br>
+(ii) Now we show that $𝐲 = \lim_{k→∞}𝐱_k$. For every $j ∈ℕ , η > 0$, $∃L(j, η)$ such that if $k≥L(j, η)$, then $\left| x_k^{(j)} - y^{(j)} \right| < η$.<br>Fix $ϵ> 0$. $∃J ∈ℕ$ such that $\sum_{j = J + 1}^∞ 2^{-j} < ϵ/ 2$. Let $L = \max \left\{ L \left( 1, ϵ/ 2 \right) , … , L \left( J, ϵ/ 2 \right) \right\}$. Suppose $k≥L$. Then
+\begin{align*}
+d(𝐱_k , 𝐲 ) & = \sum_{j = 1}^∞ 2^{-j} \left| x_k^{(j)} - y^{(j)} \right| \\
+& = \sum_{j = 1}^{J} 2^{-j} \left| x_k^{(j)} - y^{(j)} \right| + \sum_{j = J + 1}^∞ 2^{-j} \left| x_k^{(j)} - y^{(j)} \right| \\
+& < \sum_{j = 1}^{J} 2^{-j} (ϵ/ 2) + \sum_{j = J + 1}^∞ 2^{-j} \\
+& < (ϵ/ 2) \sum_{j = 1}^∞ 2^{-j} + ϵ/ 2 \\
+& = ϵ/ 2 + ϵ/ 2 \\
+& = ϵ.
+\end{align*}
+<div class="noprint">
+    <a href="https://math.stackexchange.com/questions/1287635">countable product of totally bounded space is totally bounded</a><br>
+    <a href="https://math.stackexchange.com/questions/1947947">Hilbert Cube is Complete</a></div>
+</li>
+</ol>

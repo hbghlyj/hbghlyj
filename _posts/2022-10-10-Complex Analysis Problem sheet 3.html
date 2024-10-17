@@ -1,0 +1,227 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 6 — MT 2022
+---
+<style>ol[type="i"]{padding-left: 20px;}div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>$\newcommand{\abs}[1]{\left|#1\right|}$
+<ol><li>Suppose that $f:U→ℂ$ is a holomorphic function on a domain $U$.
+<ol type="i">
+<li>Show that, if $\bar{B}(a,r)⊆U$ then
+\[
+f(a)=\frac1{2π}\int_0^{2π}f(a+re^{it})\mathrm{\ d}t
+\]</li>
+<li>Suppose that $a∈U$ is such that $|f(a)|$ is a maximum for $\abs f:U→ℝ$. Show that $|f|$ must be constant near $a$.
+</li>
+<li>Deduce that $f$ is constant on all of $U$.</li></ol>
+<b>Solution.</b><ol type="i">
+<li>Define $γ:[0,2π]$ by $γ(t)=a+re^{it}$. By Cauchy’s Integral Formula,
+\begin{aligned}
+f(a)&=\frac1{2πi}\int_γ\frac{f(z)}{z-a}\mathrm{\ d}z\\
+&=\frac1{2πi}\int_0^{2π}\frac{f(a+re^{it})}{re^{it}}⋅ire^{it}\mathrm{\ d}t\\
+&=\frac1{2π}\int_0^{2π}f(a+re^{it})\mathrm{\ d}t
+\end{aligned}
+<div class="noprint">
+    <a href="https://mathworld.wolfram.com/GausssMean-ValueTheorem.html">Gauss's Mean-Value Theorem</a><br>
+    <a href="https://en.wikipedia.org/wiki/Maximum_modulus_principle">Maximum modulus principle</a><br>
+    <i>Introduction to Complex Analysis</i>, H. A. Priestley, Second Edition page 188(First Edition, page 75), The Maximum-modulus Theorem
+</div>
+</li><li>From (i) and $|f(a)|$ is a maximum for $|f|$,
+\[\abs{f(a)}=\frac1{2π}\abs{\int_0^{2π}f(a+re^{it})\mathrm{\ d}t}≤\frac1{2π}\int_0^{2π}{|f(a+re^{it})|}\mathrm{\ d}t≤\frac1{2π}\int_0^{2π}\abs{f(a)}\mathrm{\ d}t=\abs{f(a)}\]
+Second ≤ becomes equality$⇒\abs{f(a+re^{it})}=\abs{f(a)}\;∀t∈[0,2π]$.<br>
+</li>
+<li>$∀a,∃R:B(a,R)⊂U$. Applying (ii) to every $r< R$, $\abs f$ is constant on $B(a,R)$, so $\abs f$ is locally constant, by <a href="3.html">sheet 3 Q6</a>, $\abs f$ is constant on $U$. By <a href="4.html">sheet 4 Q6iii</a>, $f$ is constant on $U$.
+</li></ol>
+</li>
+<li>Suppose that $f$ is holomorphic on $ℂ$ and that $ℜf(z)≥0$ for all $z$. Show that $f$ is constant.<br>
+<b>Proof.</b><br>
+Let $g(z)=\exp(-f(z))$. For all $z$, $\left|g(z)\right|=\exp(-ℜf(z))≤1$, and $g(z)$ is entire, by Liouville's theorem, $g(z)$ is constant, so the image of $f$ is a subset of $\{-\operatorname{Log}g(z)+2kπi\mid k∈ℤ\}$.<br>Since $f$ is continuous and its domain ℂ is connected, the image of $f$ is connected. Therefore $f$ is constant.
+</li>
+<li>Suppose that $f: ℂ→ℂ$ is holomorphic on the whole complex plane (i.e. $f$ is an entire function).
+<ol type="i">
+<li>If $f(1/n)=1/n$ for all $n∈ℕ$ must $f(z)=z$ for all $z∈ℂ$ ?
+</li><li>If $f(n)=n$ for all $n∈ℕ$ must $f(z)=z$ for all $z∈ℂ$ ?
+</li><li>Show that there must be some $n∈ℕ$ such that $f(1/n)≠1/(n+1)$.</li></ol>
+<b>Proof.</b>
+<ol type="i">
+<li>Yes. $(1/n)$ converges to 0. By the identity theorem, $f(z)=z$ for all $z∈ℂ$.</li>
+<li>No. For example $f(z)=z\cos(2πz)$.
+</li><li>$g(z)=z/(z+1)$ is holomorphic $B(0,1)$. If $f(1/n)=1/(n+1)\;∀n∈ℕ$, then $f(z)=g(z)$ on $B(0,1)$, but $\lim_{z→-1} g(z)$ doesn't exist.
+</li></ol>
+</li>
+<li>Suppose that $f:ℂ→ℂ$ is an entire function, and for each $z_0∈ℂ$ the power series expansion $f(z)=∑_{n=0}^∞c_n\left(z-z_0\right)^n$ has at least one $c_n$ equal to zero. Prove that $f(z)$ is a polynomial.<br>
+<b>Proof.</b><br>Taking $n$-th derivative, we have $n!c_n=f^{(n)}(z_0)$. Since $ℂ$ is uncountable, there is $n$ such that $f^{(n)}(z_0)=0$ for uncountably many $z_0$. An uncountable subset of ℂ has a limit point. By Identity Theorem, $f^{(n)}(z)=0$, so $f(z)$ is a polynomial.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/310113">Accumulation points of uncountable sets - Math Stack Exchange</a>
+<br><a href="https://math.stackexchange.com/questions/2721854">Any uncountable subset S of ℂ must have a limit point .</a>
+<br><a href="https://planetmath.org/limitpointsofuncountablesubsetsofrn">limit points of uncountable subsets of R^n - PlanetMath</a></div>
+</li>
+<li>Let $f$ be an entire function.
+<ol type="i">
+<li>Prove that $f$ is a polynomial of degree at most $k$ if and only if there exist real constants $M, R>0$ and a non-negative integer $k$ such that
+\[
+\abs{f(z)}≤M\abs{z}^k \quad \text { for }\abs{z}>R .
+\]
+</li><li>What holomorphic functions $f$ satisfy $\abs{f(z)}≤\abs{z}^k$ for all $z∈ℂ$ ?
+</li><li>Let $g(z)$ be an entire function such that $\abs{f(z)}≤\abs{g(z)}$ for all $z∈ℂ$. Show that that there is some $c∈ℂ$ so that $f(z)=cg(z)$ for all $z∈ℂ$.</li></ol>
+<b>Proof.</b>
+<ol type="i">
+<li>If $f$ is a polynomial of degree at most $k$, let $f(z)=a_kz^k+o(z^k)$, then $\lim_{z→∞}\frac{f(z)}{z^k}=a_k$. Take $M>a_k$, then $∃R,∀\abs z>R:\abs{\frac{f(z)}{z^k}}< M$.<br>
+Conversely, suppose $\abs{f(z)}≤M\abs{z}^k$ for $\abs{z}>R$. By Cauchy's formula,
+$$\frac{f^{(n)}(0)}{n!}=\frac1{2πi}\int_{\abs{z}=r}\frac{f(z)}{z^{n+1}}\mathrm{\,d}z\quad∀n∈ℕ$$
+By Estimation Lemma,
+$$\frac{\left|f^{(n)}(0)\right|}{n!}≤\frac1{2π}⋅2πr\sup_{\abs{z}=r}\left|f(z)\over z^{n+1}\right|=r^{-n}\sup_{\abs{z}=r}\left|f(z)\right|≤Mr^{k-n}$$
+For $n>k$, let $r→∞$ we get $f^{(n)}(0)=0$, so $f$ is a polynomial of degree at most $k$.
+<div class="noprint">
+    <a href="https://en.wikipedia.org/wiki/Cauchy's_integral_formula#Consequences">Cauchy's integral formula#Consequences</a>
+    <br>If $f(z)=∑a_nz^n$ is holomorphic in $\abs{z}< R$ and $0< r< R$ then the coefficients $a_n$ satisfy Cauchy's inequality $\displaystyle \abs{a_n}\leq r^{-n}\sup _{\abs{z}=r}\abs{f(z)}$
+</div>
+</li><li>By (i), $f(z)$ is a polynomial of degree at most $k$, so $f(z)=∑_{n=0}^ka_nz^n$.<br>For $z≠0$ we have $\abs{z^kf(1/z)}≤1$, but $z^kf(1/z)=∑_{n=0}^ka_nz^{k-n}$, so $a_n=0\ ∀n≠k$, and $f(z)=a_kz^k,\ \abs{a_k}≤1$.
+</li><li>We will show that the meromorphic function $f/g$ has only removable singularities, so it can be extended to an entire function. $\abs{f/g}≤1$, by Liouville's Theorem, $f/g$ is constant.<br>
+Suppose $g(a)=0$ then $∃k∈ℤ^+,g(z)=(z-a)^kh(z)$, where $h$ is analytic in a neighborhood of $a$, and $h(a)≠0$. <br>
+From $\abs{f(a)}≤\abs{g(a)}$ it follows that $f(a)=0$, so $∃m∈ℤ^+,f(z)=(z-a)^mj(z)$ where $j(a)≠0$ and $j$ is analytic in a neighborhood of $a$.<br>
+For $z≠a$, $\abs f≤\abs g$ means that in a neighborhood of $a$,$$\displaystyle\left|(z-a)^{m-k}\frac{j(z)}{h(z)}\right|\le 1.$$
+Since $j/h≠0$, by continuity there is a constant $K$ such that $\abs{j/h}≥1/K$ in a neighborhood of $a$, so $$\left|(z-a)^{m-k}\frac{j(z)}{h(z)}\right|\ge\frac{\abs{z-a}^{m-k}}K,$$So $\abs{z-a}^{m-k}≤K$ for $z≠a$. Setting $z→k$ we have $m≥k$, so $a$ is a removable singularity of $f/g$.<div class="noprint">
+<a href="https://math.stackexchange.com/questions/613524">Suppose $f$ and $g$ are entire functions, and $\abs{f(z)} \leq \abs{g(z)}$ for all $z \in \mathbb{C}$, Prove that $f(z)=cg(z)$.</a><br>
+<a href="https://math.stackexchange.com/questions/2776068">Holomorphic function $f:ℂ→ℂ$ such that $|f(z)|\leq C|\cos(z)|$ for all $z \in \Bbb C$</a></div>
+</li></ol>
+</li>
+<li>
+<ol type="i">
+<li>Let $c_n$ be a bounded sequence of complex numbers. Show that
+\[
+\sum_{n=1}^∞c_n \frac{z^n}{1+z^n}
+\]
+is holomorphic at any $z∈ℂ$ with $\abs{z}< 1$.
+</li><li>Show that
+\[
+\sum_{r=1}^∞\frac{1}{(r-z)^2}
+\]
+is holomorphic on $ℂ∖ℕ$.<br>
+<i>[Hint: the series' convergence is not uniform on all of $ℂ∖ℕ$ but, for any $z∈ℂ∖ℕ$, is uniform on some neighbourhood of $z$.]</i></li></ol>
+<b>Proof.</b>
+<ol type="i">
+<li>For $\abs{z}< 1$, $1+z^n≠0$, so $f_n(z)=c_n\frac{z^n}{1+z^n}$ is holomorphic. Let $r< 1$, for $\abs{z}≤r$, $1-r\le1-r^n≤1-\abs{z}^n≤\abs{1+z^n}$. Let $c=\sup_n\abs{c_n}$, then
+\[
+\abs{f_n}\le c\frac{\abs{z^n}}{\abs{1+z^n}}\le c\frac{r^n}{1-r}
+\]
+Since $\sum_{n=1}^∞c\frac{r^n}{1-r}$ converges, the Weierstrass $M$-test tells us that $\sum_{n=1}^{∞}f_n$ converges uniformly on $\bar B(0,r)$, so the limit function is holomorphic on $B(0,1)$ by <a href="https://en.wikipedia.org/wiki/Morera's_theorem#Uniform_limits">Morera's theorem</a>.
+</li><li>For $r≥2n$ and $z∈K=\bar B(0,n)∖ℕ$, we have $\abs z≤n≤\frac{r}{2}$, and therefore $\abs{r-z}≥r-\abs z≥r-\frac{r}{2}=\frac{r}{2}$. That gives us
+$$\abs{\frac1{(r-z)^2}}≤\frac{4}{r^2}.$$
+Since $\sum_{r=2n}^∞\frac4{r^2}$ converges, the Weierstrass $M$-test tells us that $\sum_{r=2n}^∞\frac{1}{(r-z)^2}$ converges uniformly on $K$, so the limit function is holomorphic on $K$ by Morera's theorem.<div class="noprint">
+<a href="https://www.math.brown.edu/reschwar/M154/notes9.pdf">The Weierstrass Function</a><br>
+<a href="https://math.stackexchange.com/questions/1039655">Uniform convergence of the series $\sum_{r=1}^∞\frac{1}{(r-z)^2}$ in a neighborhood</a><br>
+<a href="https://math.stackexchange.com/questions/2813505">$f(z)=\sum_{k=1}^{∞}\frac{1}{(z-k)^2}+\sum_{k=1}^{∞}\frac{1}{(z+k)^2}+\frac{1}{z^2}$ holomorphic. $z \in \mathbb{C} \setminus \mathbb{Z}$</a><br>
+<a href="https://math.stackexchange.com/questions/2019135">Proof that the Riemann Zeta Function is holomorphic on $\operatorname{Re}(z)>1$</a></div>
+</li></ol>
+</li>
+<li>Identify the singularities of the following functions. Classify any singularities which are isolated.
+<ol type="i">
+<li>$\frac1{e^z-1}$</li>
+<li>$\frac{\sin2πz}{z^3(2z-1)}$</li>
+<li>$\sin\left(\frac1z\right)$</li>
+<li>$\frac1{\exp\left(\frac1z\right)+2}$</li>
+</ol>
+<b>Solution.</b>
+<ol type="i">
+<li>a simple pole at $z=2kπi, k∈ℤ$, since $\lim\frac{z-1}{e^z-1}=\frac1{(e^z-1)'|_{z=1}}=1$, and the function has period 2π, $2kπi$ is a simple pole with residue 1.</li>
+<li>a double pole at $z=0$ with residue $-4π$, since$$\frac{\sin2πz}{z^3(2z-1)}=\frac{2πz-\frac{4π^3z^3}3+⋯}{-z^3+2z^4}=-\frac{2π}{z^2}-\frac{4π}z+⋯$$a removable singularity at $z=\frac12$, since $\frac{\sin2πz}{z^3(2z-1)}=-\frac{\sin2π(z-\frac12)}{z^3(2z-1)}=-\frac{2π(z-\frac12)+⋯}{2z^3(z-\frac12)}$</li>
+<li>an essential singularity at $z=0$, since neither $\lim_{z→0}\sin\left(\frac1z\right)$ nor $\lim_{z→0}\csc\left(\frac1z\right)$ exist.$$\sin\left(z^{-1}\right)=z^{-1}-\frac{z^{-3}}{3!}+⋯$$residue is 1
+</li>
+<li>$\exp\left(\frac1z\right)+2=0⇒z=\frac1{\log2+(2k+1)πi},k∈ℤ$, all of them are simple poles, since they are all simple zeros of $\exp\left(\frac1z\right)+2$ with residue
+\[\lim_{z→\frac1{\log2+(2k+1)πi}}\frac{z-\frac1{\log2+(2k+1)πi}}{\exp \left(\frac{1}{z}\right)+2}=\lim_{z→\frac1{\log2+(2k+1)πi}}\frac1{-\frac1{z^2}\exp \left(\frac1z\right)}=\frac1{2 (\log2+(2k+1)πi)^2}\]
+Since $\frac1{\log2+(2k+1)πi}→0$ as $k→∞$, 0 is a non-isolated singularity. residue undefined.
+<div class="noprint"><a href="https://mathematica.stackexchange.com/questions/208877">Just because the origin is an essential singularity doesn't mean that the residue does not exist.</a><br>
+<a href="https://math.stackexchange.com/questions/1384908">For any rational function, the sum of the residues at all poles (including ∞) is 0.</a></div>
+</li>
+</ol>
+</li>
+<li>Let
+\[
+F(z)=\frac1{(z-1)^2(z+2)} .
+\]
+Find Laurent expansions for $F$ in
+\[
+A_1=D(0,1), \quad A_2=\{z:1<\abs z< 2\} ; \quad A_3=\{z: \sqrt2<\abs{z-i}<\sqrt5\}
+\]
+<b>Solution.</b><br>
+<style>td{vertical-align: top;}.pt{padding-top: 1.5ex;}#separator{content: "";border: 1px dashed #999;align-self: stretch;}</style>
+\[F(z)=-\frac1{9(z-1)}+\frac1{3(z-1)^2}+\frac1{9(z+2)}\]
+<div style="display: flex;justify-content: space-between;">
+<table style="width: 38%;text-align: left">
+<tr><td class="pt">For $\abs{z}<1$,</td>
+<td rowspan="3">\begin{aligned}
+-\frac1{9(z-1)}+\frac1{3(z-1)^2}&=\frac1{9(1-z)}+\frac1{3(1-z)^2}\\&=\sum_{k=0}^∞\frac{z^k}9+\frac{(k+1)z^k}3\\
+-\frac1{9(z-1)}+\frac1{3(z-1)^2}&=-\frac{z^{-1}}{9(1-z^{-1})}+\frac{z^{-2}}{3(1-z^{-1})^2}\\&=\sum_{k=0}^∞-\frac{z^{-k-1}}9+\frac{(k+1)z^{-k-2}}3\\
+\frac1{9(z+2)}&=\frac1{18\left(1+2^{-1}z\right)}\\&=\sum_{k=0}^∞\frac{(-2)^{-k}z^k}{18}\\
+\end{aligned}</td></tr>
+<tr><td class="pt">For $\abs{z}> 1$,</td></tr>
+<tr><td class="pt">For $\abs{z}< 2$,</td></tr>
+<tr><td class="pt">For $z∈A_1$,</td><td rowspan="2">\begin{aligned}F(z)&=\sum_{k=0}^∞\frac{z^k}9+\frac{(k+1)z^k}3+\frac{(-2)^{-k}z^k}{18}\\
+F(z)&=\sum_{k=0}^∞-\frac{z^{-k-1}}9+\frac{(k+1)z^{-k-2}}3+\frac{(-2)^{-k}z^k}{18}
+\end{aligned}</td></tr>
+<tr><td class="pt">For $z∈A_2$,</td></tr></table>
+<div id="separator"></div>
+<table style="width: 59%;text-align: left;height: fit-content;">
+<tr><td style="padding-top: 2ex;">For $\abs{z-i}> \sqrt2$,</td><td rowspan="2">\begin{aligned}-\frac1{9(z-1)}+\frac1{3(z-1)^2}&=-\frac{(z-i)^{-1}}{9\Big(1-(1-i)(z-i)^{-1}\Big)}+\frac1{3(z-i)^2\big(1-(1-i)(z-i)^{-1}\big)^2}\\
+&=\sum_{k=0}^∞-\frac{(1-i)^k(z-i)^{-k-1}}9+\frac{(k+1)(1-i)^k(z-i)^{-k-2}}3\\
+\frac1{9(z+2)}&=\frac1{9(2+i)\Big(1-(-2-i)^{-1}(z-i)\Big)}\\
+&=\sum_{k=0}^∞\frac{(-2-i)^{-k}(z-i)^k}{9(2+i)}
+\end{aligned}</td></tr>
+<tr><td style="position: relative;top: -1.5ex;">For $\abs{z-i}< \sqrt5$,</td></tr>
+<tr><td class="pt">For $z∈A_3$,</td><td>\[F(z)=\sum_{k=0}^∞-\frac{(1-i)^k(z-i)^{-k-1}}9+\frac{(k+1)(1-i)^k(z-i)^{-k-2}}3+\frac{(-2-i)^{-k}(z-i)^k}{9(2+i)}\]</td></tr>
+</table></div>
+</li>
+<li>Classify the singularities of the following functions
+<ol type="i">
+<li>$\fracπ{\tanπz}$</li>
+<li>$\frac{z^2-z}{1-\sin z}$</li>
+<li>$\frac{\cos z-1}{\left(e^z-1\right)^2}$</li>
+</ol>
+Calculate the residue at each of their singularities.<br><b>Solution.</b>
+<div class="noprint">$z_0$ is a pole of order $n$ of $\frac{P(z)}{Q(z)}$ if $P(z_0)≠0$ and $z_0$ is a root of multiplicity $n$ of $Q$</div>
+<ol type="i">
+<li>$\tanπz=0⇒z=k,k∈ℤ$ are simple poles with residue 1$$\fracπ{\tanπz}=\fracπ{\tanπ(z-k)}=\fracπ{π(z-k)+⋯}=\frac1{z-k}+⋯$$$\tanπz=∞⇒z=k+\frac12,k∈ℤ$ are removable singularities$$\lim_{z→k+\frac12}\fracπ{\tanπz}=0$$</li>
+<li>$1-\sin z=0⇒z=\fracπ2+2kπ,k∈ℤ$.<br>$z_k=\fracπ2+2kπ$ are double poles with residue $2\left(2z_k-1\right)$$$\frac1{1-\sin z}=\frac1{1-\cos\left(z-z_k\right)}=\frac1{\frac12\left(z-z_k\right)^2-\frac1{24}\left(z-z_k\right)^4+⋯}=2\left(z-z_k\right)^{-2}+\frac16+⋯$$$$z^2-z=z_k^2-z_k+\left(2z_k-1\right)\left(z-z_k\right)+\left(z-z_k\right)^2$$</li>
+<li>$e^z-1=0⇒z=2kπi,k∈ℤ$.\[e^z-1=e^{z-2kπi}-1=(z-2kπi)+\frac{(z-2kπi)^2}{2!}+⋯\]
+$⇒2kπi$ is a simple root of $e^z-1⇒2kπi$ is a double root of $(e^z-1)^2$$$\cos z-1=\frac{z^2}2+⋯$$
+$⇒z=0$ is a double root of $\cos z-1⇒z=0$ is a removable singularity of $\frac{\cos z-1}{\left(e^z-1\right)^2}$<br>
+For $k≠0$, $\cos(2kπi)-1≠0$, so $2kπi$ is a double pole of $\frac{\cos z-1}{\left(e^z-1\right)^2}$ with residue $1-\cosh(2kπ)-i\sinh(2kπ)$
+$$\frac{\cos z-1}{\left(e^z-1\right)^2}=\frac{\cosh(2kπ)-1-i\sinh(2kπ)(z-2kπi)+⋯}{(z-2kπi)^2+(z-2kπi)^3+⋯}=(\cosh(2kπ)-1)(z-2kπi)^{-2}+(1-\cosh(2kπ)-i\sinh(2kπ))(z-2kπi)^{-1}+⋯$$
+</li>
+</ol>
+</li>
+<li>
+<ol type="i">
+<li>Show that if $f$ is an entire function such that $\lim_{z→∞} f(z)=∞$ then $f$ is a polynomial.</li>
+<li>Show that if $f$ is a meromorphic function such that $\lim_{z→∞} f(z)=∞$ then $f$ is rational function.</li>
+</ol>
+<b>Solution.</b>
+<div class="noprint"><a href="https://proofwiki.org/wiki/Pole_at_Infinity_implies_Polynomial_Function">Pole at Infinity implies Polynomial Function</a></div>
+<ol type="i">
+<li>Since $f$ is entire, there exists a power series $f(z)=\sum_{n=0}^∞ a_n z^n$ for all $z∈ℂ$. This gives:
+$$f\left(\frac1z\right)=\sum_{n=0}^∞\frac{a_n}{z^n}$$
+Since $\lim_{z→∞} f(z)=∞$, we have $\lim_{z→0} f\left(\frac1z\right)=∞$, so $f\left(\frac1z\right)$ has a pole of order $N$ at $0$ for some $N∈ℤ^+$, so $a_n=0\,∀n > N$ and $a_N≠0$.
+That is, $f$ is a polynomial of degree $N$.</li>
+<li>same as (i) we find that 0 is a pole of $f\left(\frac1z\right)⇒∃r$ such that $f\left(\frac1z\right)$ is holomorphic in $0< \abs z< r⇒f(z)$ is holomorphic in $\frac1r< \abs z< ∞$. Thus poles of $f$ are in the compact set $\bar B\left(0,\frac1r\right)$.<br>
+$f$ is meromorphic$⇒$the set of poles has no accumulation point. An infinite subset of a compact set has an accumulation point, so $f$ can have only finitely many poles $z_1,…,z_n$.<br>
+$⇒g(z)=(z-z_1)…(z-z_n)f(z)$ is entire. $\lim_{z→∞} f(z)=∞⇒\lim_{z→∞} g(z)=∞$. By part (i), $g(z)$ is a polynomial, so $f(z)$ is a rational function.
+<div class="noprint">
+<span style="border: inset 4px gold;padding:2px">Stein-Shakarchi, <cite>Complex Analysis</cite>, Chapter 3, page 87, Theorem 3.4</span><br>
+The idea is to subtract from $f$ its principal parts at all its poles including $∞$. Near each pole $z_k \in \mathbb{C}$ we can write
+\[
+f(z)=f_k(z)+g_k(z),
+\]
+where $f_k(z)$ is the principal part of $f$ at $z_k$ and $g_k$ is holomorphic in a neighborhood of $z_k$. In particular, $f_k$ is a polynomial in $\frac1{z-z_k}$. Similarly, we can write
+\[
+f\left(\frac1z\right)=\tilde{f}_∞(z)+\tilde{g}_∞(z),
+\]
+where $\tilde{g}_∞$ is holomorphic in a neighborhood of 0 and $\tilde{f}_{\infty}$ is the principal part of $f\left(\frac1z\right)$ at 0, that is, a polynomial in $\frac1z$. Finally, let $f_∞(z)=\tilde{f}_∞\left(\frac1z\right)$.<br>
+We contend that the function $H=f-f_∞-\sum_{k=1}^n f_k$ is entire and bounded. Indeed, near the pole $z_k$ we subtracted the principal part of $f$ so that the function $H$ has a removable singularity there. Also, $H\left(\frac1z\right)$ is bounded for $z$ near 0 since we subtracted the principal part of the pole at $\infty$. This proves our contention, and by Liouville's theorem we conclude that $H$ is constant. From the definition of $H$, we find that $f$ is a rational function, as was to be shown.
+</div>
+<div class="noprint">
+<p>H. Priestley, Second Edition, page 206, 17.20 Theorem (meromorphic functions in $\tildeℂ$)</p>
+<a href="https://math.stackexchange.com/questions/2794883">Showing $f(z)$ is a rational function</a><br>
+<a href="https://math.stackexchange.com/questions/941361">Why can the meromorphic function only have finitely many poles in the complex plane?</a><br>
+<a href="https://math.stackexchange.com/questions/123259">Why is every meromorphic function on $\hatℂ$ a rational function?</a><br>
+<a href="https://artofproblemsolving.com/community/c7h462602p2594276">aops</a></div></li>
+</ol>
+</ol>

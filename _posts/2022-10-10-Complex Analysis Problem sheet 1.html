@@ -1,0 +1,216 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 4 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style><ol>
+<li>Let $f(z)=ze^z$. Write down expressions for the components $u(x, y),v(x, y)$, and check directly that $u$ is a harmonic function on $\mathbf{R}^2$. Do the same for $f(z)=\sin z$, giving your expressions for $u$ and $v$ in terms of the hyperbolic functions sinh, cosh.<br>
+<b>Solution.</b><br>
+$u(x,y)=e^x(x\cos y-y\sin y),v(x,y)=e^x (x\sin y+y\cos y)$<br>
+$∂^2_xu + ∂^2_yu=e^x(x\cos y+2\cos y-y\sin y)+e^x(-x\cos y-2\cos y+y\sin y)=0$.<br>
+$u(x,y)=\sin x\cosh y,v(x,y)=\cos x\sinh y$<br>
+$∂^2_xu + ∂^2_yu=-\sin x\cos y+\sin x\cosh y=0$.
+</li>
+<li>Does $f(z)=e^z$ extend to a continuous function from $ℂ_∞$ to itself?<br>
+<b>Solution.</b><br>
+$\lim_{z → ∞}f(z)= ∞$, so if $f(z)$ is continuous at ∞, we have $f(∞)=∞$.<br>
+$f$ is not continuous on $ℂ∪∞$.<br>
+$x,y∈ℝ$, with $x$ fixed and $y → ∞$, $e^z=e^{x+iy}= e^x(\cos y+i\sin y)$ doesn't converge.<hr>
+$f$ is continuous on $ℝ∪∞$.<br>
+<b>Proof.</b><br>
+$∀ε>0$, assume $ε< 2$, let $δ=2\left(1+\frac14\left[\log\left(\frac4{ε^2}-1\right)\right]^2\right)^{-1/2}$, assume $δ< 2$, then $∀z∈B(∞,δ)$, we have $\frac2{\sqrt{1+{|z|}^2}}< δ⇒{|z|}>\sqrt{\frac4{δ^2}-1}=\frac12\log\left(\frac4{ε^2}-1\right)$<br>
+Then $d(∞,e^z)=\frac2{\sqrt{1+{|e^z|}^2}}=\frac2{\sqrt{1+e^{2{|z|}}}}< ε$. Therefore $\bar f$ is continuous at $∞$.<br>
+Remark 1.
+$e^z,\sin z,\cos z$ has essential singularity at ∞.<br>
+Remark 2.
+$P(x)/Q(x)$ can be extended to a continous function at ∞.
+</li>
+<li>Give an explicit $z∈ℂ$ such that $\sin z=2$.<br>
+<b>Solution.</b>
+\begin{aligned}
+2&=\sin z=\cos\left(\fracπ2-z\right)=\cosh\left[i\left(\fracπ2-z\right)\right]\\
+i\left(\fracπ2-z\right)&=2kπi±\cosh^{-1}2\\
+\fracπ2-z&=2kπ±i\cosh^{-1}2\\
+z&=2kπ+\fracπ2±i\cosh^{-1}2
+\end{aligned}
+<div class="noprint">
+    $\sin z=2⇒\cos^2 z=1-2^2=-3⇒\cos z=±\sqrt3i$<br>
+    $\exp(iz)=\cos z+i\sin z=(2±\sqrt3)i=\exp[±\log(2+\sqrt3)+\fracπ2i]⇒z=\fracπ2±i\log(2+\sqrt3)+2kπ,k∈ℤ$
+</div>
+<div class="noprint">
+    $$\phi = \arcsin(z)$$
+    Using the exponential definition of sine, and letting $\xi = e^{i \phi}$,
+    \begin{align*}
+    z &= \frac{e^{i \phi} - e^{-i \phi}}{2i} \\
+    2iz &= \xi - \frac{1}{\xi} \\
+    0 &= \xi^2 - 2i z \xi - 1 \\
+    \xi &= iz \pm \sqrt{1 - z^2} \\
+    \phi &= -i \ln \left(iz \pm \sqrt{1 - z^2}\right)
+    \end{align*}
+    (the positive branch is chosen)
+    \[\phi= \arcsin(z) = -i \ln \left(iz + \sqrt{1-z^2} \right)\]</div>
+</li>
+<li>If $f: ℂ→ℂ$ is a function, define $f^∘(z):=\overline{f(\bar{z})}$. Show that $f$ is holomorphic if and only if $f^∘$ is.<br>
+<b>Solution.</b><br>
+If $f$ is holomorphic at $a∈ℂ$, by lemma 3.3, $f(z)-f(a)=f'(a)(z-a)+ε(z)(z-a)$ where $ε(z)→0$ as $z→a$. Substituting $\bar z$ for $z$ and $\bar a$ for $a$ and conjugating, we get $\overline{f(\bar z)}-\overline{f(\bar a)}=\overline{f'(\bar a)}(z-a)+ε'(z)(z-a)$ where $ε'(z)=\overline{ε(\bar z)}→0$ as $z→a$. So $f^∘$ is holomorphic at $a$.<br>
+If $f^∘$ is holomorphic, then $f=(f^∘)^∘$ is holomorphic.
+<div class="noprint"><a href="https://en.wikipedia.org/wiki/Schwarz_reflection_principle">Schwarz reflection principle</a></div>
+</li>
+<li>Let $f: ℂ→ℂ$ be the function defined by $f(x+iy)=\sqrt{|xy|}$ for all $x, y∈\mathbf{R}$. Show that $f$ satisfies the Cauchy-Riemann equations at 0 but is not complex differentiable there.<br>
+<b>Solution.</b>
+$$\frac{∂u}{∂x}(0,0)=\lim_{t→0}\frac{u(0+t,0)-u(0,0)}{t}=\lim_{t→0}\frac{0-0}t=0$$
+$$\frac{∂u}{∂y}(0,0)=\lim_{t→0}\frac{u(0,0+t)-u(0,0)}{t}=\lim_{t→0}\frac{0-0}t=0$$
+So $f$ satisfies the Cauchy-Riemann equations at 0. We shall prove $f$ is not complex differentiable there.<br>
+<b>Proof 1.</b>
+$f$ is nonconstant, Im$f=0$, by Q6, $f$ is not complex differentiable at 0.<br>
+<b>Proof 2.</b> $f(x+xi)={|x|},x∈ℝ$ is not differentiable at 0, so $f$ is not differentiable at 0.<br>
+<b>Proof 3.</b>
+If $x>0$ and $y>0$ the partial derivative
+$$u_x(x,y)=\frac12\sqrt{\frac{y}{x}}$$
+is not continous at (0,0). So $u(x,y)$ is not differentiable at (0,0). So $f$ is not complex differentiable at 0.<br>
+<b>Proof 4.</b> By definition of complex differentiability, we calculate<br>
+$$\lim_{x+iy→0}\frac{f(x+iy)-f(0)}{x+iy}$$
+Take the direction $-1$,$$\lim_{t↓0}\frac{\sqrt{t⋅0}}{t}=0$$Take the direction $-(1+i)$,$$\lim_{t↓0}\frac{\sqrt{t⋅t}}{(1+i)t}=\frac{1-i}2$$So the limit doesn't exist and $f$ is not complex differentiable at 0.
+<div class="noprint">For a function $ℝ^2→ℝ^2$<br>differentiable ⇒ continuity. The converse is false, e.g. $f(x,y)=\sqrt{|x|{|y|}}$<br>
+$f(x,y),f_x(x,y),f_y(x,y)$ all exist and continuous ⇔ differentiable.<br>
+differentiable ⟺ all the tangent lines lie in a plane ⟺ locally approximable by a linear map $\pmatrix{a&b\\c&d}$<br><hr>For a function $ℂ→ℂ$<br>
+holomorphic ⟺ satisfy Cauchy-Riemann equations & differentiable as a function $ℝ^2→ℝ^2$ ⟹ $u$ and $v$ are harmonic<br>
+holomorphic ⟺ conformal ⟺ Jacobian is of the form $\pmatrix{a&b\\-b&a}=aI+bJ$ where $J^2=-I$<br>
+holomorphic ⟺ continuous & $∫_γ f(z)dz=0$ for every closed piecewise $C^1$ curve γ.</div>
+</li>
+<li>Suppose that $f: ℂ→ℂ$ is a holomorphic function. Show that if any one of the following conditions is satisfied then $f$ is constant: (i) Re$(f)$ is constant; (ii) Im$(f)$ is constant; (iii) $|f|$ is constant.<br>
+<b>Proof.</b><br>
+(i) Let Re$(f)=u$, Im$(f)=v$. Suppose $u$ is constant on ℂ. The Cauchy-Riemann equations show that $∂_yv=∂_xv=0$ on ℂ. Applying the one-dimensional Mean-Value Theorem twice we find, for some $y_1$ between $b$ and $y$,
+$$
+v(x, y)-v(x, b)=(y-b) ∂_y v\left(x, y_1\right)=0
+$$
+and, for some $x_1$ between $a$ and $x$,
+$$
+v(x, b)-v(a, b)=(x-a) ∂_x v\left(x_1, b\right)=0
+$$
+Therefore $v(x, y)=v(a, b)$ for all $(x, y)$ in ℂ, so $v$ is constant, so $f$ is constant.<br>(ii) similar to (i).<br>
+(iii) Suppose $f≠0$, so $\bar f=\frac{|f|^2}f$ is holomorphic, Re$(f)=f+\bar f$ is holomorphic, but Im(Re$(f))=0$, by (ii), Re$(f)$ is constant, by (i), $f$ is constant.
+<div class="noprint">
+    Suppose $|f|$ is constant on ℂ. Then ${|f|}^2=u^2+v^2$ is constant on ℂ.
+    Taking partial derivatives we find
+    $$
+    u ∂_x u+v ∂_x v=0, \quad u ∂_yu+v ∂_y v=0 .
+    $$
+    By the Cauchy-Riemann equations the second equation can be written as
+    $$
+    v ∂_x u-u ∂_x v=0 .
+    $$
+    Eliminating $∂_x v$ we find $\left(u^2+v^2\right) ∂_x u=0$.
+<br>If $u^2+v^2=0$, then ${|f|}=0$, so $f=0$. If $u^2+v^2≠0$ then $∂_xu=0$; hence $u$ is constant, by (i) $f$ is constant.</div>
+</li>
+<li>For distinct points $z_k∈ℂ_∞, k=1,…4$ we define their <i>cross-ratio</i> as
+\[
+\left(z_1, z_2 ; z_3, z_4\right)=\frac{\left(z_3-z_1\right)\left(z_4-z_2\right)}{\left(z_3-z_2\right)\left(z_4-z_1\right)}
+\]
+with the convention that if one of $z_k$ is equal to $∞$ then the two factors involving $z_k$ are omitted. For example,
+\[
+(z_1, z_2 ; z_3, ∞)=\frac{z_3-z_1}{z_3-z_2} .
+\]
+(i) Show that the cross-ratio is invariant under Möbius transformations. Namely, if $f$ is a Möbius transformation, then
+\[
+(z_1, z_2 ; z_3, z_4)=\left(f\left(z_1\right), f\left(z_2\right) ; f\left(z_3\right), f\left(z_4\right)\right) .
+\]
+(ii) Let $z_1, z_2, z_3$ and $w_1, w_2, w_3$ be two triplets of distinct points in the extended complex plane $ℂ_∞$. Show that there is a unique Möbius transformation $f$ such that $f\left(z_k\right)=w_k, k=1,2,3$.<br>
+(iii) Show that the cross-ratio is real if and only if four points are either collinear or concyclic (equivalently, lie on the same circline).<br>
+(iv) Show that for every two circlines, there is a Möbius transformation mapping one circline onto another. Is this transformation unique?<br>
+<b>Proof.</b><br>
+(i) Every Möbius transformation is composition of a linear map with $z↦z^{-1}$ with a linear map. Evidently linear maps preserve cross-ratio.<br>Consider $f(z)=z^{-1}$,
+\[\frac{\left(z_3^{-1}-z_1^{-1}\right)\left(z_4^{-1}-z_2^{-1}\right)}{\left(z_3^{-1}-z_2^{-1}\right)\left(z_4^{-1}-z_1^{-1}\right)}=\frac{z_3^{-1}z_1^{-1}\left(z_1-z_3\right)z_4^{-1}z_2^{-1}\left(z_2-z_4\right)}{z_3^{-1}z_2^{-1}\left(z_2-z_3\right)z_4^{-1}z_1^{-1}\left(z_1-z_4\right)}=\frac{\left(z_3-z_1\right)\left(z_4-z_2\right)}{\left(z_3-z_2\right)\left(z_4-z_1\right)}\]
+It can also be verified for ∞.<br>
+(ii) Proof 1. If there exists a Möbius transformation mapping $z_i$ to $w_i$, by (i) we have$$(z_1, z_2 ; z_3, z)=(w_1, w_2 ; w_3, f(z))$$Conversely, for any $z$, the equation uniquely determines $f(z)$.<br>
+Proof 2. $g(z)=(z_1, z_2 ; z_3, z)$ maps $z_1,z_2,z_3$ to $0,∞,1$. And $h(z)=(w_1, w_2 ; w_3, z)$ maps $w_1,w_2,w_3$ to $0,∞,1$. So $f=h^{-1}∘g$.<br>For uniqueness, if there are two Möbius transformation $f_1,f_2$ mapping $z_i$ to $w_i$, then $h∘f_1∘g^{-1},h∘f_2∘g^{-1}$ maps $0,∞,1$ to $0,∞,1$, so it suffices to prove the Möbius transformation mapping $0,∞,1$ to $0,∞,1$ is unique. Let's write
+\[
+T(z)=\frac{A z+B}{C z+D} .
+\]
+Since $T(0)=0$ we must have $B=0$. Since $T(∞)=∞$ we must have $C=0$. Now $T(z)=(A / D) z$. But $T(1)=1$. Therefore, $A=D$, so $T(z)≡z$.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/296794">Computing a projective transformation</a> | <a href="https://math.stackexchange.com/questions/2487881">Projective Transformation mapping lines</a><br>
+In a $d$-dimensional projective space, need image of $d+2$ points to uniquely determine the projective transformation.</div>
+(iii) Proof 1. In terms of $z,\bar z$, the equation $(z_1, z_2 ; z_3, z)=\overline{(z_1, z_2 ; z_3, z)}$ is of the form $αz\bar z+\barβz+β\bar z+γ=0$, so it is a circline.<br>
+Proof 2.\begin{align*}
+\arg(z_1, z_2 ; z_3, z)&=\arg\frac{\left(z_3-z_1\right)\left(z_4-z_2\right)}{\left(z_3-z_2\right)\left(z_4-z_1\right)}\\
+&=∠z_2z_3z_1-∠z_2z_4z_1\\
+∴(z_1, z_2 ; z_3, z)∈ℝ&⇔\arg(z_1, z_2 ; z_3, z)=0\text{ or }π\\&⇔∠z_2z_3z_1=∠z_2z_4z_1\text{ or }∠z_2z_3z_1+∠z_1z_4z_2=π\\
+&⇔\text{lie on the same circline}
+\end{align*}
+Proof 3. By part ii, we can find a Möbius transformation $f$ mapping $z_1,z_2,z_3$ to $∞,0,1$, so $ℝ∋(z_1,z_2;z_3,z)=(∞,0;1,f(z))=f(z)$, so $∞,0,1,f(z)$ lie on the circline ℝ, so $z_1,z_2,z_3,z$ lie on the circline $f^{-1}(ℝ)$.<br>
+(iv) take three distinct points $z_1,z_2,z_3;w_1,w_2,w_3$ from each circline and use part ii to construct a Möbius transformation $f$ mapping $z_i$ to $w_i$. Since Möbius transformation preserves circlines, and the circline through three distinct points is unique, $f$ maps the circline through $z_i$ to the circline through $w_i$. But $f$ is not unique, since we can compose $f$ with a Möbius transformation that preserves the circline (for example, a rotation for a circle, a translation for a line).
+<div class="noprint"><a href="https://www.math.brown.edu/reschwar/MFS/handout5.pdf">handout5.pdf</a><br>
+<b>Lemma 6.4</b> Let $C$ be any circle in ℂ, the complex plane. Then there is a Mobius transformation $M$ such that $M(ℝ∪∞)=C$.<br>
+Proof: Consider the Mobius transformation
+\[
+T(z)=\frac1{z-i} .
+\]
+Then $T(i)=∞$. Hence $T(ℝ∪∞)$ does not contain $∞$. Let $C'=T(ℝ∪∞)$.
+We know that $C'$ is some circle in ℂ, but perhaps not the one we want.
+We can find a Mobius transformation $S$ such that $S(C')=C$. This just amounts to rotating, dilating, and translating the plane. But then let $M=S∘T$. We have $M(ℝ∪∞)=S(C')=C$.
+</div>
+</li>
+<li>Let $ℂ_∞$ be the extended complex plane, and let $ℙ^1(ℂ)$ be the projective line, as in lectures. Let $\iota: ℂ_∞→ℙ^1(ℂ)$ be the identification between these two sets as described in lectures. Let $\tilde{d}$ be the unique metric on $ℙ^1(ℂ)$ such that $\iota$ is an isometry (where, as usual, $ℂ_∞$ is given the metric $\left.d\right)$. Show that$$\tilde{d}\left(\left[z_1: w_1\right],\left[z_2: w_2\right]\right)=2\sqrt{1-\frac{\left|\left< v_1, v_2\right>\right|^2}{\left\|v_1\right\|^2\left\|v_2\right\|^2}}$$where $v_1=\left(z_1, w_1\right), v_2=\left(z_2, w_2\right)∈ℂ^2 \backslash\{0\}$ and $⟨,⟩$ denotes the Hermitian inner product on $ℂ^2$, that is to say $\left<\left(z_1, w_1\right),\left(z_2, w_2\right)\right>:=z_1 \bar{z}_2+w_1 \bar{w}_2$, and ${\|(z, w)\|}^2:=⟨(z, w),(z, w)⟩={|z|}^2+{|w|}^2$<br>
+<b>Solution.</b><br>
+If $w_1=w_2=0$, then $\tilde d(v_1,v_2)=0=2\sqrt{1-\frac{|z_1|^2{|z_2|}^2}{|z_1|^2{|z_2|}^2}}=2 \sqrt{1-\frac{\left|\left< v_1, v_2\right>\right|^2}{\left\|v_1\right\|^2\left\|v_2\right\|^2}}$<br>
+If $w_1=0,w_2≠0$, then $\left|\left< v_1,v_2\right>\right|=\left|z_1\bar z_2\right|={|z_1|}{|z_2|}$, so
+$$\tilde{d}\left(\left[z_1: w_1\right],\left[z_2: w_2\right]\right)=d\left(∞,\frac{z_2}{w_2}\right)=\frac2{\sqrt{1+\left|\frac{z_2}{w_2}\right|^2}}=2\sqrt{1-\frac{|z_1|^2{|z_2|}^2}{|z_1|^2({|z_2|}^2+{|w_2|}^2)}}=2 \sqrt{1-\frac{\left|\left< v_1, v_2\right>\right|^2}{\left\|v_1\right\|^2\left\|v_2\right\|^2}}$$
+If $w_1,w_2≠0$, from the identity$$(z_1w_2-z_2w_1)(\bar z_1\bar w_2-\bar z_2\bar w_1)=(z_1\bar z_1+w_1\bar w_1)(z_2\bar z_2+w_2\bar w_2)-(z_1\bar z_2+w_1\bar w_2)(\bar z_1z_2+\bar w_1w_2)$$
+we have
+$$\left|z_1w_2-z_2w_1\right|=\sqrt{(\left|z_1\right|^2+\left|w_1\right|^2)(\left|z_2\right|^2+\left|w_2\right|^2)-\left|z_1\bar z_2+w_1\bar w_2\right|^2}$$
+So
+$$\tilde{d}\left(\left[z_1: w_1\right],\left[z_2: w_2\right]\right)=d\left(\frac{z_1}{w_1},\frac{z_2}{w_2}\right)=2\frac{\left|\frac{z_1}{w_1}-\frac{z_2}{w_2}\right|}{\sqrt{1+\left|\frac{z_1}{w_1}\right|^2}\sqrt{1+\left|\frac{z_2}{w_2}\right|^2}}=2\frac{\left|z_1w_2-z_2w_1\right|}{\sqrt{|z_1|^2+{|w_1|}^2}\sqrt{|z_2|^2+{|w_2|}^2}}=2\sqrt{1-\frac{\left|\left< v_1, v_2\right>\right|^2}{\left\|v_1\right\|^2\left\|v_2\right\|^2}}$$
+</li>
+<li>The special unitary group $\mathrm{SU}(2)$ is the subgroup of $\mathrm{GL}_2(ℂ)$ consisting of matrices of the form $g=\left(\begin{array}ca & b \\ -\bar{b} & \bar{a}\end{array}\right)$, where $a, b∈ℂ$ and ${|a|}^2+{|b|}^2=1$. Check that this is indeed a group under matrix multiplication. Show that if $g∈\mathrm{SU}(2)$ then the Möbius transformation $\Psi_g$ is an isometry of $ℂ_∞$ (you may use the result of the previous question if you like).<br>
+<b>Proof.</b><br>
+For any $g,h∈\mathrm{SU}(2)$, $g=\left(\begin{array}ca & b \\ -\bar{b} & \bar{a}\end{array}\right),h=\left(\begin{array}cc & d \\ -\bar{d} & \bar{c}\end{array}\right)$, then $\det g=\det h=1$. We have $g^{-1}=\left(\begin{array}c\bar{a}&-b\\\bar{b}&a\end{array}\right)$, so $g^{-1}h=\left(\begin{array}c\bar{a}c+b\bar{d}&\bar{a}d-b\bar{c}\\\bar{b}c-a\bar{d}&\bar{b}d+a\bar{c}\end{array}\right)$, and $\det(g^{-1}h)=\det(g^{-1})\det(h)=1$, so $g^{-1}h∈\mathrm{SU}(2)$. So $\mathrm{SU}(2)$ is a subgroup of $\mathrm{GL}_2(ℂ)$.<br>
+Using the result of the previous question,\begin{aligned}\tilde d(\Phi_gv_1,\Phi_gv_2)&=\tilde d([az_1+bw_1,-\bar bz_1+\bar aw_1],[az_2+bw_2,-\bar bz_2+\bar aw_2])\\&=2\sqrt{1-\frac{\big((az_1+bw_1)(\bar a\bar z_2+\bar b\bar w_2)+(-\bar bz_1+\bar aw_1)(-b\bar z_2+a\bar w_2)\big)\big((\bar a\bar z_1+\bar b\bar w_1)(az_2+bw_2)+(-b\bar z_1+a\bar w_1)(-\bar bz_2+\bar aw_2)\big)}{\big((az_1+bw_1)(\bar a\bar z_1+\bar b\bar w_1)+(-\bar bz_1+\bar aw_1)(-b\bar z_1+a\bar w_1)\big)\big((az_2+bw_2)(\bar a\bar z_2+\bar b\bar w_2)+(-\bar bz_2+\bar aw_2)(-b\bar z_2+a\bar w_2)\big)}}\\&=2\sqrt{1-\frac{\big(z_1\bar z_2+w_1\bar w_2\big)\big(\bar z_1z_2+\bar w_1w_2\big)}{\big(z_1^2+w_1^2\big)\big(z_2^2+w_2^2\big)}}\\&=\tilde d(v_1,v_2)\end{aligned}
+</li>
+<li>Show that the series $\sum_{n=1}^∞ \frac{z^n}n$ has radius of convergence 1. Let $f(z)$ be the function to which it converges on the domain $D=\{z∈ℂ:{|z|}< 1\}$. Show that $\exp (f(z))=\frac1{1-z}$.<br>
+<b>Solution.</b><br>
+$\lim\left|\frac{z^n}n\right|^{1/n}=\lim\frac{|z|}{n^{1/n}}={|z|}$, by Cauchy-Hadamard formula, radius of convergence of the series is 1.<br>
+Let $g(z)=\exp (f(z)),h(z)=(1-z)g(z)$, then $g'(z)=g(z)f'(z)=g(z)\sum_{n=1}^∞ z^{n-1}=g(z)⋅\frac1{1-z}$<br>
+$h'(z)=(1-z)g'(z)-g(z)=0⇒h(z)$ is constant$⇒h(z)=h(0)=1⇒g(z)=\frac1{1-z}$<br>
+Convergence on the boundary <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@700&text=🤔"><span style="font-family:Noto Emoji;font-weight: 700;">🤔</span><br><a href="https://math.stackexchange.com/questions/118686/">MSE</a><br>
+Proof. We apply Dirichlet's test for convergence. The sequence of real numbers $\left\{\frac{1}{n}\right\}$ is non-increasing and converges to 0. By the triangle inequality,
+\[
+\left|\sum_{n=1}^N z^n\right|=\left|\frac{z-z^{N+1}}{1-z}\right| \leq \frac{|z|+|z|^{N+1}}{|1-z|}=\frac{2}{|1-z|}
+\]
+As $\sum_{n=1}^N z^n$ is bounded for fixed $z≠1$ on the unit circle, $\sum_{n=1}^∞\frac{z^n}{n}$ converges.
+</li>
+<li>Let $S:ℂ_∞→𝕊$ be the isometry from $ℂ_∞$ to the unit sphere $𝕊⊆ℝ^3$ described in lectures. Show that $S$ maps circlines in $ℂ_∞$ to circles in $𝕊$, and vice versa.<br>
+<b>Proof 1.</b><br>
+Let $Γ=\{x∈𝕊∣d(x,S(w))=R\}$ be a circle in $𝕊$ with center $S(w)$ and radius $R$. By Lemma 2.2.
+\[S(z)∈Γ⇔\frac{2{|z-w|}}{\sqrt{1+{|z|}^2} \sqrt{1+{|w|}^2}}=R⇔4(z-w)(\bar z-\bar w)=R^2\left(1+{|w|}^2\right)(1+z\bar z)\]
+In terms of $z$ and $\bar{z}$ this equation takes the form $αz\bar z+\bar βz+β\bar z+γ=0$, so it is a circline in $ℂ_∞$.<br>
+<b>Proof 2.</b><br>
+Observe that a circle in 𝕊 lies in a plane Π:$α_1 x_1+α_2 x_2+α_3 x_3=α_0$, where we can assume that $α_1^2+α_2^2+α_3^2=1$. 
+By Lemma 2.1$$S(x+yi)=\left(\frac{2 x}{x^2+y^2+1}, \frac{2 y}{x^2+y^2+1}, \frac{x^2+y^2-1}{x^2+y^2+1}\right)$$
+Substituting $x_1,x_2,x_3$ in Π,
+\[S(x+yi)∈Π⇔\left(α_0-α_3\right)\left(x^2+y^2\right)-2 α_1 x-2 α_2 y+α_0+α_3=0\]
+For $α_0≠α_3$ this is the equation of a circle, and for $α_0=α_3$ it represents a straight line. Conversely, the equation of any circle or straight line can be written in this form. The correspondence is consequently one to one.<br>
+<b>Proof 3.</b><br>
+For any point $P=(x,y,0)$ on a line, $S(P)$ lies on the plane through the line and $N=(0,0,1)$, so $S(P)$ lies on the intersection of the plane and 𝕊, which is a circle.<br>
+For any point $P=(x,y,0)$ on a circle $\left\|P-(x_0,y_0,0)\right\|=r$,
+then $P∈$sphere Π<br>
+with center $C=\left(x_0,y_0,z_0\right)$ radius $\sqrt{z_0^2+r^2}$ where $z_0=\frac{x_0^2+y_0^2-1-r^2}2$.
+\[\left\|S(P)-N\right\|=\left\|\left(\frac{2 x}{x^2+y^2+1},\frac{2 y}{x^2+y^2+1},\frac{x^2+y^2-1}{x^2+y^2+1}\right)-N\right\|=\frac2{‖P-N‖}\tag1\]
+The line $NP$ intersects Π at $P$, let the other intersection be $Q$. Then $Q=N+t(P-N),t∈ℝ$. 
+\[Q∈Π⇒\left\|N+t(P-N)-C\right\|=\sqrt{r^2+z_0^2}⇒\left\|N-C\right\|^2+2t(N-C)⋅(P-N)+t^2\left\|P-N\right\|^2=r^2+z_0^2\]
+where ⋅ is vector dot product.<br>
+This is a quadratic equation of $t$, by Vieta's theorem, the product of roots is
+\begin{align*}\frac{\left\|N-C\right\|^2-r^2-z_0^2}{\left\|P-N\right\|^2}
+&=\frac{x_0^2+y_0^2+(z_0-1)^2-r^2-z_0^2}{\left\|P-N\right\|^2}\\
+&=\frac{x_0^2+y_0^2-2z_0+1-r^2}{\left\|P-N\right\|^2}\\
+&=\frac2{\left\|P-N\right\|^2}\\
+\text{by (1)}&=\frac{\left\|S(P)-N\right\|}{\left\|P-N\right\|}
+\end{align*}
+The root $t=1$ correspond to $P$, so the other root is $t=\frac{\left\|S(P)-N\right\|}{\left\|P-N\right\|}$, so
+\begin{align*}Q&=N+t(P-N)\\
+&=N+\frac{\left\|S(P)-N\right\|}{\left\|P-N\right\|}(P-N)\\
+&=S(P)
+\end{align*}
+So $S(P)$ lies on Π. So $S(P)$ lies on $Π∩𝕊$, which is a circle.
+</div>
+</li>
+</ol>

@@ -1,0 +1,182 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 2 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>
+<ol>
+<li>Let $X$ be a metric space. A collection $\mathcal{U}$ of open sets in $X$ is said to be a basis for the topology on $X$ if every open set in $X$ is a union of sets from $\mathcal{U}$. Show that the collection of all open intervals whose length is $2^{-m}$ for some $m \geqslant 1$ is a basis for the topology on $\mathbf{R}$.<br>
+<b>Proof.</b><br>
+Let $(a,b)$ be an open interval. The length of $(a,b)$ has binary expansion $b-a=∑_n2^{-a_n}$ where $(a_n)$ is an increasing sequence of integers, which may be finite or infinite.<br>
+Let $s_m=∑_{n=0}^m2^{-a_n}$. Then $(a,b)∖\{s_m:m=0,1,…\}=\bigcup_{m=0,1,…}\left(a+s_m,a+s_{m+1}\right)$. Finally we can cover each point $s_m$ with an open interval of length $2^{-m}$ for sufficiently large $m$.
+</li>
+<li>Let $X$ be a metric space. $A$ and $B$ are subsets of $X$.<ol type="i">
+	<li>Show that $\overline{A∪B}=\bar{A}∪\bar{B}$</li>
+	<li>Show that $\overline{A∩B}⊂\bar{A}∩\bar{B}$. Give an example to show that equality may fail.</li></ol>
+<b>Proof.</b>
+<ol type="i">
+<li>
+	$A⊂A∪B$, so $\bar A⊂\overline{A∪B}$, similarly $\bar B⊂\overline{A∪B}$, so $\bar A∪\bar B⊂\overline{A∪B}$.<br>
+	Conversely, $\bar A∪\bar B$ is closed and contains $A∪B$, so $\overline{A∪B}⊂\bar A∪\bar B$.
+</li>
+<li>$A∩B⊂A$, so $\overline{A∩B}⊂\bar{A}$, similarly $\overline{A∩B}⊂\bar{B}$, so $\overline{A∩B}⊂\bar{A}∩\bar{B}$.<br>
+	Equality may fail: For $A=(0,1),B=\{0\}$ we have $\bar{A}∩\bar{B}=[0,1]∩\{0\}=\{0\}$ but $\overline{A∩B}=\bar∅=∅$.
+</li>
+</ol>
+<div class="noprint">
+	Sutherland: Introduction to Metric and Topological Spaces<br>Exercise 6.14 and 6.15
+</div>
+</li>
+<li>Let $A⊆[0,1]$ be the set of real numbers whose decimal expansion contains only 0s and 1s. Show that $A$ is closed.<br>
+<b>Proof.</b><br>
+Let $A_n(n=1,2,…)$ be the set of real numbers whose first $n$ digits of decimal expansion contains only 0 and 1.<br>$A_1=[0,0.1999⋯],A_2=[0,0.01999⋯]∪[0.1,0.11999⋯]$. In general,$$A_n=\bigcup_{c_i∈\{0,1\}}\Bigg[\sum_{i=1}^{n-1}{c_i\over10^i}\;,\;{2\over10^n}+\sum_{i=1}^{n-1}{c_i\over10^i}\Bigg]$$
+So $A_n$ is closed. So $A=⋂_{i=1}^∞A_n$ is closed.
+</li>
+<li>
+Let $A ⊆ \mathbf{R}$. For this question, write $i(A)$ for the interior of a set $A$ and $c(A)$ for its closure in $\mathbf{R}$.<br>
+(i) Find $i(A)$ and $c(A)$ when $A=(0,1)∪(1,2]$, and when $A=ℚ∩(0,1)$.<br>
+(ii) Give an example of a set $A$ such that 7 different sets (including $A$ itself) can be obtained by applying the $i()$ and $c()$ operations in some order.<br>
+(iii) Show that for every $A$ we have $icic(A)=ic(A)$ and $cici(A)=ci(A)$.<br>
+(iv) Show that for every $A$ at most 7 different sets (including $A$ itself) can be obtained by applying the $i()$ and $c()$ operations in some order.<br>
+<b>Solution.</b><br>
+(i) When $A=(0,1)∪(1,2],i(A)=(0,1)∪(1,2),c(A)=[0,2]$.<br>
+When $A=ℚ∩(0,1),i(A)=∅,c(A)=[0,1]$.<br>
+(ii) Let $A=(0,1)∪(1,2)∪\{3\}∪\left([4,5]∩ℚ\right)$. Then
+\begin{align*}
+c(A)&=[0,2]∪\{3\}∪[4,5]\\
+ic(A)&=(0,2)∪(4,5)\\
+cic(A)&=[0,2]∪[4,5]\\
+i(A)&=(0,1)∪(1,2)\\
+ci(A)&=[0,2]\\
+ici(A)&=(0,2)
+\end{align*}
+(iii) Note that $B⊂c(B)$ holds for all $B$ so also for $B = ic(A) $ so that 
+$$ic(A)⊂cic(A)$$
+and then we take $i$ on both sides by monotonicity of the interior, we get
+$$ic(A)=iic(A)⊂icic(A)$$
+and we're done for one half.<br>
+For the other half note that $i(B)⊂B$ for all $B$, and apply it to $B= c(A)$ to get
+$$ ic(A) ⊂ c(A)$$ 
+taking $c$ on both sides:
+$$cic(A)⊂ cc(A) = c(A)$$
+taking $i$ on both sides we get
+$$icic(A)⊂ic(A)$$
+giving us the other inclusion.<br>
+To derive one identity from the other: Take complement and interchange $i$ and $c$ using $i(∁B)=∁(cB),c(∁B)=∁(iB)$. This can be proved by $∂B=∂(∁B)$ and $i(B)=B∖∂B,c(B)=B∪∂B$.<br>
+(iv) Note that both $i$ and $c$ are idempotent, so the only way to achieve actual results is to intertwine them.
+<div class="noprint">
+	Kuratowski's closure-complement problem <a href="https://en.wikipedia.org/wiki/Kuratowski's_closure-complement_problem">Wikipedia</a> | <a href="?dir=285%2FThe+Kuratowski+Closure-Complement+Problem.html">supplements</a><br>
+	In general, we have
+	<center>
+	{% latex %}\usepackage{tikz-cd}
+	\begin{tikzcd}
+		&& {ci(A)} \\
+		{i(A)} & {ici(A)} && {cic(A)} & {c(A)} \\
+		&& {ic(A)} \\
+		&& A
+		\arrow[from=2-1, to=4-3]
+		\arrow[from=2-1, to=2-2]
+		\arrow[from=2-2, to=2-4]
+		\arrow[from=2-4, to=2-5]
+		\arrow[from=2-2, to=3-3]
+		\arrow[from=3-3, to=2-4]
+		\arrow[from=4-3, to=2-5]
+		\arrow[from=2-2, to=1-3]
+		\arrow[from=1-3, to=2-4]
+	\end{tikzcd}
+	{% endlatex %}
+	</center>
+	where ‘⟶’ means ‘⊆’. See notes by
+	<a href="The Kuratowski Closure-Complement Theorem (2009 Greg Strabel).pdf">Greg Strabel</a>
+	and
+	<a href="http://at.yorku.ca/p/a/c/a/24.pdf">Henno Brandsma</a>
+</div>
+</li>
+<li>Let $X$ be a metric space, and suppose that $A$ and $B$ are disjoint closed subsets of $X$. Define$$\operatorname{dist}(A, B):=\inf _{a∈A,b∈B} d(a, b)$$Show that if $A$ is a singleton then $\operatorname{dist}(A, B)>0$, but that this is not true in general.<br>
+<b>Proof.</b><br>
+Since $d(a,b)≥0$, we have $\operatorname{dist}(A, B)≥0$, so we need to show $\operatorname{dist}(A, B)≠0$.<br>
+Suppose $A=\{a\}$ and $\operatorname{dist}(A, B)=0$, for all $ε>0$, $ε$ is not a lower bound of $d(a,b)$, so $∃b∈B:d(a,b)< ε$, so $a∈\bar B$, but $B$ is closed, we deduce that $a∈B$, contradiction.<br>
+This is not true in general. For example $X=ℝ∖\{0\},A=(-∞,0)$ and $B=(0,+∞)$.
+<div class="noprint">
+	Sutherland: Introduction to Metric and Topological Spaces<br>Exercise 6.16
+</div>
+</li>
+<li>Show that, in $C[0,1]$ (with the sup norm), the piecewise linear functions are dense. [<i>$A$ function $f:[0,1] → ℝ$ is piecewise linear if there is some partition $0=x_0< x_1<\cdots< x_n=1$ such that $f$ is linear on $\left[x_i, x_{i+1}\right]$ for $i=0, \ldots, n-1$.</i>]<br>
+<b>Proof.</b><br>
+For any $f∈C[0,1]$, by Heine–Cantor theorem, $f$ is uniformly continuous. For any $ε>0$, there is a $\delta>0$ such that $∀x,y∈[0,1]:{|x-y|}< δ⇒{|f(x)-f(y)|}< ε$.<br>
+Take a partition $0=a_0< a_1< a_2<⋯< a_n=1$ such that $∀i\in\{1,2,\ldots,n\}:a_i-a_{i-1}< δ$. Let $g$ be the piecewise linear function on [0,1] defined by $∀i\in\{1,2,\ldots,n\}:g(a_i)=f(a_i)$. Then $∀x∈[a_{i-1},a_i]$, $g(x)$ lies between $f(a_{i-1})$ and $f(a_i)$, so ${|f(x)-g(x)|}≤\max\{|f(x)-f(a_{i-1})|,{|f(x)-f(a_i)|}\}< ε$, therefore $\sup_{[0,1]}{|f(x)-g(x)|}≤ε$, therefore $g∈B(f,ε)$, therefore the piecewise linear functions are dense.
+</li>
+<li>Consider $X=C[-1,1]$ with the metric defined by the norm ${\|f\|}_1=∫_{-1}^1{|f(t)|}\,\mathrm dt$. Consider the sequence of functions $\left(f_n\right)_{n=1}^∞$ defined by
+$$f_n(x)=\begin{cases}-1&x \leqslant-1 / n\\
+1&x \geqslant 1 / n\\
+n x&-1 / n \leqslant x \leqslant 1 / n\end{cases}$$
+Show that $\left(f_n\right)_{n=1}^{\infty}$ is a Cauchy sequence in $X$. Hence, or otherwise, show that $X$ is not complete.<br><b>Proof.</b><br>
+For any $ε>0$, we can find $N∈ℕ$ such that $\frac1N< ε$. Then $∀n>m>N,\left\|f_n-f_m\right\|_1=2∫_0^1f_n(t)-f_m(t)\,\mathrm dt< 2∫_0^11-f_m(t)\,\mathrm dt=2∫_0^{1/m}1-mt\,\mathrm dt=\left[2t-mt^2\right]_0^{1/m}=\frac1m<\frac1N< ε$. So $\left(f_n\right)$ is a Cauchy sequence in $X$.<br>Suppose $\left(f_n\right)$ converges to $f∈C[-1,1]$, then $\lim_{n→∞}\left\|f_n-f\right\|_1=0$, so $f(x)=1$ for $x∈(0,1]$ and $f(x)=-1$ for $x∈[-1,0)$, so $f$ is discontinuous at 0, contradiction. Hence $X$ is not complete.
+</li>
+<li>By considering the sequence of functions $\left(f_n\right)_{n=1}^∞$ defined by $f_n(x)={|x|}^{1+1/n}$, or otherwise, show that the set of functions in $C[-1,1]$ which are differentiable on $(-1,1)$ is not closed (in the metric induced by the sup norm).<br><b>Proof.</b><br>
+${|x|}$ is continous$⇒f_n(x)={|x|}^{1+1/n}∈C[-1,1]$.<br>
+$f_n'(x)=\left(1+\frac1n\right){|x|}^{1/n}⇒f_n$ is differentiable on $(-1,1)$.
+\begin{align*}
+	{\|f_n-f\|}_∞&=\sup_{x∈[-1,1]}{|x|}(1-{|x|}^{1/n})\\
+	&=\sup_{y∈[0,1]}y^n(1-y)\\
+	&=\frac{\left(1+\frac1n\right)^{-n}}{n+1}\\
+	&<\frac2{n+1}→0
+\end{align*}
+$\left(f_n\right)$ converges uniformly to $f(x)={|x|},x∈[-1,1]$, but $f$ is not differentiable at 0, so $C[-1,1]$ is not closed.
+</li>
+<li>Show that the space $Σ$ considered in Sheet 1, Q1 is complete.<br>
+<b>Proof.</b><br>
+Let $(σ_n)$ be a Cauchy sequence in $Σ$, then $∀k∈ℕ,∃N∈ℕ,∀n>m>N:{\|σ_n-σ_m\|}< 1/k⇒$the first $k$ terms of $σ_n$ and $σ_m$ are equal, so we can construct $σ∈Σ$ such that $∀k∈ℕ,∃N∈ℕ,∀n>N$, the first $k$ terms of $σ_n$ and $σ$ are equal, so ${\|σ_n-σ\|}< 1/k$, so $(σ_n)$ converges to $σ$.
+</li>
+<li>Show that ℤ is not complete with the 2-adic metric.<br>
+<b>Proof.</b><br>
+Define $(a_n)$ by $a_n=\sum_{i=0}^n4^i$, for any $ε>0$, take $N>\log_4\frac1ε$, then $∀n>m>N:{\|a_n-a_m\|}={\big\|\sum_{i=m+1}^n4^i\big\|}≤\frac1{4^{m+1}}< ε$, so $(a_n)$ is a Cauchy sequence. Suppose the sequence converges to $x∈ℤ$, then $∀k∈ℕ,∃N∈ℕ,∀n>N:{\|x-a_n\|}={\big\|x-\sum_{i=0}^n 4^i\big\|}<\frac1{2^k}⇒2^k\Big|x-\frac{4^{n+1}-1}3$……(1)<br>
+Similarly for $n+1>N$ we have $2^k\Big|x-\frac{4^{n+2}-1}3$……(2)<br>
+Multiply RHS of (1) by 4 we get $2^k\Big|4x-\frac{4^{n+2}-4}3$, subtracting (2) we get $2^k\Big|3x+1$, since this is true for all $k∈ℕ$ we have $3x+1=0$, contradiction.
+</li>
+<li>Give an example of a metric $d$ on ℝ such that the metric space $(ℝ,d)$ is incomplete.<br>
+<b>Proof.</b><br>
+Consider the homeomorphism $\exp:ℝ→ℝ^+$.<br>
+Since $ℝ^+$ is incomplete under the usual metric, the induced metric $d(x,y)={|\exp x-\exp y|}$ is incomplete.<br>
+For example $\exp(-n)$ is a Cauchy sequence that doesn't converge in $ℝ^+$, so $\log(\exp(-n))=-n$ is a divergent Cauchy sequence in $(ℝ,d)$.
+</li>
+<li>Let $X$ be a complete metric space, and let $A_1, A_2, …$ be a sequence of dense open sets in $X$. Show that $\bigcap_{n=1}^∞ A_n$ is nonempty and dense.<br>
+<b>Proof 1.</b><br>
+Let $W$ be any nonempty open subset of $X$. We will show that $W$ has some point $x$ in common with all of the $A_n$.<br>
+Because $A_1$ is dense, $W$ intersects $A_1$; because $A_1$ is open, there exists a point $x_1$ and a number $0 < r_1 < 1$ such that:
+$$\overline{B}\left(x_1, r_1\right) \subseteq W \cap A_1$$
+Since each $A_n$ is dense and a finite intersection of open sets is open, this construction can be continued recursively to find a pair of sequences $x_n$ and $0 < r_n < \frac{1}{n}$ such that:$$\overline{B}\left(x_n, r_n\right) \subseteq B\left(x_{n-1}, r_{n-1}\right) \cap A_n.$$The sequence $\left(x_n\right)$ is Cauchy because $x_n \in B\left(x_m, r_m\right)$ and $r_m<\frac1m$ for any $n > m$, and hence $\left(x_n\right)$ converges to some limit $x$ by completeness of $X$.<br>
+If $n$ is a positive integer then $x \in \overline{B}\left(x_n, r_n\right)$ (because this set is closed). <br>
+Thus $x \in W$ and $x \in A_n$ for all $n$.<br>
+<b>Proof 2.</b><br>
+Let $W$ be any nonempty open subset of $X$. We will show that $W$ has some point $x$ in common with all of the $A_n$.<br>
+Because $A_1$ is dense, $W$ intersects $A_1$; because $A_1$ is open, there exists a point $x_1$ and a number $0 < r_1 < 1$ such that:
+$$\overline{B}\left(x_1, r_1\right) \subseteq W \cap A_1$$
+Since each $A_n$ is dense and a finite intersection of open sets is open, this construction can be continued recursively to find a pair of sequences $x_n$ and $0 < r_n$ such that:$$\overline{B}\left(x_n, r_n\right) \subseteq B\left(x_{n-1}, r_{n-1}\right) \cap A_n.$$If $X$ is compact and by <a href="https://proofwiki.org/wiki/Nested_Sphere_Theorem">Nested Sphere Theorem</a> the intersection of closed nested balls is non-empty.<br>
+<font color="brown">Lemma 9.2.2(<a href="https://www.planetmath.org/CantorsIntersectionTheorem">Cantor’s Intersection Theorem</a>) is weaker than Nested Sphere Theorem: it assumes $X$ is <font color="green">compact</font>, but for the intersection of nested nonempty closed sets to be nonempty, it is enough for $X$ to be <font color="green">complete</font>.</font>
+<div class="noprint">
+	Baire category theorem <a href="https://en.wikipedia.org/wiki/Baire_category_theorem#Proof">Wikipedia</a> | <a href="https://www.bananaspace.org/wiki/讲义:数学分析/一元微积分拾遗:_Baire_纲定理,_Liouville_定理">香蕉空间</a>
+	<a href="https://mattbaker.blog/2014/07/07/real-numbers-and-infinite-games-part-ii/#more-733">The Choquet game and the Baire Category Theorem</a><br>
+	<a href="http://www.math.pitt.edu/~gartside/hex_Browuer.pdf">The Game of Hex and the Brouwer Fixed-Point Theorem</a><br>
+	David Gale<br>
+	The American Mathematical Monthly, Vol. 86, No. 10. (Dec., 1979), pp. 818-827.
+</div>
+</li>
+</ol>
+<a href="https://math.stackexchange.com/questions/627667">Every compact space is complete.</a>
+<ol>
+<li>A metric space $(X,d)$ is <font color="green">complete</font> if and only if for any sequence $\{F_n\}$ of non-empty closed sets with $F_1⊃F_2⊃⋯$ and $\operatorname{diam}F_n→0$, $⋂_{n=1}^∞F_n$ contains a single point. <a href="https://faculty.etsu.edu/gardnerr/5510/Beamer-Proofs/Proofs-II-3.pdf">Cantor's Theorem</a></li>
+<li>A metric space $(X,d)$ is <font color="green">compact</font> if and only if every collection ℱ of closed subsets with finite intersection property has $⋂ℱ≠∅$.</li>
+</ol>
+<hr>
+<font color="brown">Non-trivial open dense subset of ℝ?</font><br>
+If you remove any <font color="brown">finite</font> points from ℝ then the remaining set will be open and dense in ℝ.<br>
+If "finite" is replaced with "countable", then we must drop "open": (e.g. $ℝ∖ℚ$ is not open or closed)<br>
+If you remove any <font color="brown">countable</font> points from ℝ then the remaining set will be dense in ℝ.<br>
+<hr>
+An important non-trivial example is the <a href="http://en.wikipedia.org/wiki/Cantor_set">middle-thirds Cantor set</a> $C$: it’s a subset of ℝ of cardinality $2^ω=𝔠={|ℝ|}$, and since it is closed and nowhere dense in ℝ, its complement is open and dense. With a fairly small change in the construction one can construct a <a href="http://en.wikipedia.org/wiki/Smith%E2%80%93Volterra%E2%80%93Cantor_set">‘fat’ Cantor set</a> that has all of the properties of $C$ that I just mentioned and in addition has positive Lebesgue measure; its complement is again a dense open subset of ℝ. <a href="https://en.wikipedia.org/wiki/Nowhere_dense_set#Nowhere_dense_sets_with_positive_measure">Nowhere dense sets with positive measure</a><hr>
+$A$ is a nonempty open set in ℝ, $B$ is dense in ℝ, then $ℝ=A+B$.<br>
+<i>Proof:</i><br>
+$∀x∈ℝ$, 映射 $f:A→ℝ,a↦x-a$ 是同胚，所以 $x-A$ 跟 $A$ 一样都是非空开集，结合 $B$ 在 ℝ 中稠密有 $B∩ (x-A)≠∅$，所以 $∃b∈B∩(x-A)$，则 $b∈B$，且存在 $a∈A$ 使得 $b=x-a$，从而 $x=a+b∈A+B$，由 $x$ 的任意性有 $ℝ⊂A+B$，但反包含是显然的，所以 $ℝ=A+B$.<br>
+Let $B=A$, we have<br>
+Corollary: Let $A⊂ℝ$ be open and dense. Then $ℝ=\{x+y:x,y∈A\}$.

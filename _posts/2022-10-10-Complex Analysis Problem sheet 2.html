@@ -1,0 +1,277 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 5 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style><ol><li>
+(i) Suppose that $l(z)$ is holomorphic on $ℂ∖(-∞, 0]$ and satisfies $\exp l(z)=z$. Show that
+$$
+l(z)=\operatorname{Log}(z)+2nπi
+$$
+for some $n∈ℤ$ where $\operatorname{Log}(z)$ is the holomorphic branch of [log] defined in lectures.<br>
+(ii) Show that there is no holomorphic function $\lambda(z)$ on $ℂ ∖\{0\}$ such that $\exp λ(z)=z$.<br>
+(iii) There are unique holomorphic branches of $\log z, \sqrt{z}$ and $\sqrt[3]z$ on the cut plane $ℂ∖\{z∣z=-i{|z|}\}$ such that $\log 1=0 ; \sqrt1=1 ; \sqrt[3]1=1$. For these branches determine
+$$
+\log (1+i), \quad \sqrt{-1-i}, \quad \sqrt[3]{-2}, \quad \sqrt{1-i}
+$$
+(iv) Let $γ:[0,1]→ℂ$ be a $C^1$ curve with $γ(0)=i, γ(1)=-i$ such that $γ$ does not intersect $(-∞, 0]$. Calculate the integral
+$$
+\int_γ\operatorname{Log}^2(z) \mathrm{d} z .
+$$
+<b>Solution.</b><ol type="i">
+<li>Taking derivative on both sides of $\exp l(z)=z$, we find $l'(z)\exp l(z)=1$, so $l'(z)=\frac1z$, so $l(z)-\operatorname{Log}(z)$ is constant on $ℂ∖(-∞, 0]$.<br>From $\exp l(1)=1$ we have $l(1)=2nπi$ for some $n∈ℤ$, so $l(z)-\operatorname{Log}(z)=2nπi$.</li>
+<li>Proof 1: By (i), $∀z∈ℂ∖(-∞,0],λ(z)=\operatorname{Log}z+2nπi$ for some $n∈ℤ$. But $\lim_{z→-1}\operatorname{Log}(z)$ does not exist, so $\lim_{z→-1}\log(z)$ does not exist.<br>
+Proof 2: If we had a holomorphic function $f(z)$ such that $\exp f(z) = z$ then differentiating gives $f'(z) = 1/z$ for all $z ≠ 0$.<br>Integrating on ${|z|}=1$, the left gives $0$ by Cauchy's Theorem but the right is $2πi$, a contradiction.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/553806">math.stackexchange.com</a></div></li>
+<li>$\arg z$ jumps 2π across the branch cut, so $\arg z∈\left[-\fracπ2+2πn,\frac{3π}2+2πn\right]$<br>
+$\log 1=0⇒\arg 1=0⇒\arg z∈\left[-\fracπ2,\frac{3π}2\right]⇒\arg(1+i)=\fracπ4,\arg(-1-i)=\frac{5π}4,\arg(1-i)=-\fracπ4,\arg(-2)=π$<br>
+$\log(1+i)=\frac12\log2+i\arg(1+i)=\frac12\log2+i\fracπ4$<br>
+$\sqrt{-1-i}=\root4\of2\exp\left(i\frac12\arg(-1-i)\right)=\root4\of2\exp\left(i\frac{5π}8\right)$<br>
+$\sqrt{1-i}=\root4\of2\exp\left(i\frac12\arg(1-i)\right)=\root4\of2\exp\left(-i\fracπ8\right)$<br>
+$\root3\of{-2}=\root3\of2\exp\left(i\frac13\arg(-2)\right)=\root3\of2\exp\left(i\fracπ3\right)$
+</li>
+<li>$$\int_γ\log^2(z)\mathrm{~d}z=\int_γ\frac{\mathrm d}{\mathrm dz}(2 z+z\log ^2z-2z\log z)\mathrm{~d}z=[2 z+z\log ^2z-2z\log z]_i^{-i}=\frac{iπ^2}2-4i$$</li>
+</ol>
+</li><li>
+Calculate the integral$$\int_0^{2 π} e^{e^{it}} \mathrm{~d} t$$
+<b>Solution.</b><br>
+$e^z$ is holomorphic on the interior of $γ(t)=e^{it},t∈[0,2π]$. Thus
+\begin{aligned}
+&\int_0^{2 π} e^{e^{it}} \mathrm{~d} t\\
+&=\int_γe^z⋅\frac1{iz}\mathrm{~d}z\hspace1em\text{Definition of path integral, }γ'(t)=ie^{it}\\
+&=\frac1i\int_γ\frac{e^z}z\mathrm{~d}z\\
+&=\frac1i⋅2πie^0\hspace1em\text{Cauchy’s Integral Formula}\\
+&=2π
+\end{aligned}
+</li><li>
+<i>Green's Theorem</i> states, for a region $D$ in the plane, bounded by <abbr title="Note that the boundary of a region in the plane, for example “with holes”, may be a disjoint union of closed curves.">(an) oriented closed curve(s)</abbr> $C$ in $ℝ^2$ and for real-valued $L$ and $M$ with continuous partial derivatives on $D$, then
+$$
+\int_C(L \mathrm{~d} x+M \mathrm{~d} y)=\iint_D\left(M_x-L_y\right) \mathrm{~d} x \mathrm{~d} y .
+$$
+If we assume, for a holomorphic function $f=u+iv$, that $u_x,u_y,v_x,v_y$ are continuous, show that Cauchy's Theorem follows from Green's Theorem, that is, show that for a function $f$ which is holomorphic on the interior $D$ of a closed curve $C$, we have $\int_C f(z) \mathrm{~d}z=0$.<br>
+<b>Solution.</b>
+<div class="noprint"><a href="https://en.wikipedia.org/wiki/Line_integral#Relation_of_complex_line_integral_and_line_integral_of_vector_field">Relation of complex line integral and line integral of vector field</a></div>
+Applying Green's theorem to the closed curve $C$ with parameterization $𝐫(t)=(x(t),y(t))$ and the vector field $𝐅(x,y)=(u(x + iy), -v(x + iy))$.
+\begin{align*}
+   \int_L f(z)\,dz &= \int_C (u+iv)(dx+i\,dy) \\
+   &=\int_C (u,-v)⋅(dx,dy) + i\int_C (u,-v)\cdot (dy,-dx) \\
+   &=\int_C 𝐅(𝐫)⋅d𝐫+ i\int_C 𝐅(𝐫)⋅d𝐫^⟂\\
+   &=\iint_D\operatorname{rot}𝐅+i\operatorname{div}𝐅\,dxdy\\
+   &=\iint_D(v_x+u_y)+i(u_x-v_y)\,dxdy\\
+   \small\text{by Cauchy-Riemann}&=0
+ \end{align*}
+<div class="noprint">
+    <a href="https://math.stackexchange.com/questions/624568">two dimensional curl</a><br>
+    By Cauchy-Riemann equations, $v_x+u_y=u_x-v_y=0$.<br>
+    For $L(x,y)=u(x+iy),M(x,y)=-v(x+iy)$, we have $M_x-L_y=0$, by Green's Theorem, $\int_C\big(u(x+iy)\mathrm{~d} x-v(x+iy)\mathrm{~d} y\big)=0$.<br>
+    For $L(x,y)=v(x+iy),M(x,y)=u(x+iy)$, we have $M_x-L_y=0$, by Green's Theorem, $\int_C\big(v(x+iy)\mathrm{~d} x+u(x+iy)\mathrm{~d} y\big)=0$.<br>
+    Let $z:[0,1]→ℂ$ be a parametrization of $C$ and $z(t) = x(t) + iy(t)$. Then the complex line integral\begin{aligned}\int_C f(z)\mathrm{\ d}z&=\int_0^1\big(u(x+iy)+iv(x+iy)\big)\big(x'(t)+i y'(t)\big)\mathrm{\ d}t\\&=\int_0^1u(x+iy)x'(t)-v(x+iy)y'(t)\mathrm{\ d}t+i\int_0^1v(x+iy)x'(t)+u(x+iy)y'(t)\mathrm{\ d}t\\&=\int_C\big(u(x+iy)\mathrm{\ d}x-v(x+iy)\mathrm{\ d}y\big)+i\int_C\big(v(x+iy)\mathrm{\ d}x+u(x+iy)\mathrm{\ d}y\big)\\&=0\end{aligned}
+</div>
+</li>
+<p style="margin-left: -1em;">In the following questions, for $a \in ℂ, r \in ℝ_{>0}$ we let $γ(a, r)$ denote the positively oriented circle centred at $a$ of radius $r>0$.</p>
+<li>
+Let
+$$
+f(z)=\frac{5 z^2-8}{z^3-2z^2}.
+$$
+Determine $\int_{γ(0,1)} f(z) \mathrm{~d} z$.<br>Describe different closed paths $γ$ in $ℂ$ such that $\int_γf(z) \mathrm{~d} z$ equals $14 π i, \; 18 π i, \;{-2 π i}$.<br>
+<b>Solution.</b><br>
+Since $I(γ,0)=1,I(γ,2)=0,$
+\begin{aligned}
+\int_{γ(0,1)}f(z)\mathrm{~d}z&=\int_{γ(0,1)}\frac2z+\frac3{z-2}+\frac4{z^2}\mathrm{~d}z\qquad\text{Partial fractions}\\
+&=2⋅2πi+3⋅0+\int_{γ(0,1)}\frac4{z^2}\mathrm{~d}z \frac4{z^2}\text{ has primitive so integral is 0}\\
+&=4πi
+\end{aligned}
+<table>
+<tr><td style="width: 370px;">Integral on the path $z=\begin{cases}e^{8πit}&t∈[0,1/2]\\2+e^{(4t-1)πi}&t∈[1/2,1]\end{cases}$<br>equals $2⋅4πi+3⋅2πi=14πi$.</td>
+<td>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](-1.5,0)--(2,0)node[below]{2}-- (4.2,0)node[right] {$x$};
+\fill(2,0)circle(0.05)(0,0)circle(0.05)node[below]{0};
+\draw[-stealth,blue](0.3832,0.6873)node{\tiny$2\times$}(51:1)arc(51:411:1);
+\draw[-stealth,blue](2.3832,0.6873)node{\tiny$1\times$}(2,0)+(51:1)arc(51:411:1);
+\end{tikzpicture}
+{% endlatex %}</td></tr>
+<tr><td>Integral on the path $z=2+e^{6πit},t∈[0,1]$<br>equals $2⋅0+3⋅6πi=18πi$.</td>
+<td>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](-1.5,0)--(2,0)node[below]{2}-- (4.2,0)node[right] {$x$};
+\fill(2,0)circle(0.05)(0,0)circle(0.05)node[below]{0};
+\draw[-stealth,blue](2.3832,0.6873)node{\tiny$3\times$}(2,0)+(51:1)arc(51:411:1);
+\end{tikzpicture}
+{% endlatex %}</td></tr>
+<tr><td>Integral on the path $z=\begin{cases}e^{4πit}&t∈[0,1/2]\\2+e^{(1-4t)πi}&t∈[1/2,1]\end{cases}$<br>equals $2⋅2πi+3⋅-2πi=-2πi$.</td>
+<td>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](-1.5,0)--(2,0)node[below]{2}-- (4.2,0)node[right] {$x$};
+\fill(2,0)circle(0.05)(0,0)circle(0.05)node[below]{0};
+\draw[stealth-,blue](2.32,0.6873)node{\tiny$-1\times$}(2,0)+(51:1)arc(51:411:1);
+\draw[-stealth,blue](0.3832,0.6873)node{\tiny$1\times$}(51:1)arc(51:411:1);
+\end{tikzpicture}
+{% endlatex %}</td></tr>
+</table>
+</li><li>
+Let
+$$
+I=\int_{γ(0,1)} \frac{\Re z}{2 z-i} \mathrm{~d} z \quad \text { and } \quad J=\int_0^{2π} \frac{\cos^2 θ}{5-4 \sin θ} \mathrm{~d} θ \text {.}
+$$
+Using only Cauchy's Integral Formula, evaluate $I$. (Take note that $\Re z$ is not holomorphic.)<br>
+By setting $z=e^{iθ}$ in the integral for $I$, determine $J$.<br>
+<b>Solution.</b> Note that $\Re z\,,z∈γ$ can be extended to $\frac{z+z^{-1}}2,z∈ℂ^×$<br>
+\begin{aligned}I&=\frac12\int_{γ(0,1)} \frac{z+z^{-1}}{2 z-i}\mathrm{~d} z\\
+&=\frac12\int_{γ(0,1)} \frac {\frac z2-i}{z-\frac i2}+\frac iz\mathrm{~d} z\\
+&=\frac12⋅2πi\left(\frac i4-i+i\right)\\
+&=-\fracπ4
+\end{aligned}
+Setting $z=e^{iθ},\mathrm{\ d}θ=-iz^{-1}\mathrm{\ d}z$,
+\begin{aligned}J&=\int_0^{2π}\frac{\cos^2θ}{5-4\sinθ}\mathrm{\ d}θ\\&=\int_{γ(0,1)}\frac{\left(z+z^{-1}\over2\right)^2}{5-4\frac{z-z^{-1}}{2i}}⋅-iz^{-1}\mathrm{\ d}z\\
+&=\int_{γ(0,1)}-\frac12⋅\frac{\frac{z+z^{-1}}2}{2z-i}-\frac{i}{16z}+\frac1{8 z^2}\underbrace{-\frac{3 i}{16 (z-2 i)}}_\text{holomorphic}\mathrm{~d} z\\
+&=-\frac I2+\fracπ8\\
+&=\fracπ4
+\end{aligned}
+</li><li>
+(i) By making the substitution $z=re^{iθ}$, and making clear any special cases, for each integer $k$ determine $\int_{γ(0,r)}z^k\mathrm{~d}z$.<br>(ii) By writing $\sinθ=\frac{e^{iθ}-e^{-iθ}}{2i}$ rewrite the integral on the left as a path integral around $γ(0,1)$ and deduce that
+$$
+\int_0^{2π}\sin^{2n}θ\mathrm{\ d}θ=\frac{2π}{4^n}\binom{2n}n
+$$
+<b>Solution.</b><br>
+(i) Substitute $z=re^{iθ},\mathrm{\ d}z=ire^{iθ}\mathrm{\ d}θ$
+<table style="page-break-inside:avoid;width:700px">
+<tr><td>For $k=-1$,
+\begin{align*}
+\int_{γ(0,r)}z^{-1}\mathrm{~d}z&=\int_0^{2π}(re^{iθ})^{-1}rie^{iθ}\mathrm{~d}θ\\
+&=\int_0^{2π}i\mathrm{~d}θ\\
+&=2πi
+\end{align*}</td><td>For $k≠-1$,
+\begin{align*}
+\int_{γ(0,r)}z^k\mathrm{~d}z&=ir^{k+1}\int_0^{2π}e^{i(k+1)θ}\mathrm{~d}θ\\
+&=ir^{k+1}\left.\frac{e^{i(k+1)θ}}{i(k+1)}\right|_{θ=0}^{2π}\\&=0
+\end{align*}</td></tr></table>
+(ii)\begin{align*}\int_0^{2π}\sin^{2n}θ\mathrm{\ d}θ&=\int_0^{2π}\left(\frac{e^{iθ}-e^{-iθ}}{2i}\right)^{2n}\mathrm{\ d}θ\\
+&=\frac1{4^n}\int_0^{2π}\sum_{k=0}^{2n}\binom{2n}k(-1)^ke^{2iθ(n-k)}\mathrm{\ d}θ\\
+&=\frac{2π}{4^n}\binom{2n}n\qquad\text{all }k≠n\text{ terms vanishes}\end{align*}
+<div class="noprint"><a href="https://math.stackexchange.com/questions/2504180">combinatorial proof</a></div>
+</li><li>
+(i) Use the estimation lemma to show that, if $γ:[0,1]→ℂ$ is a piecewise $C^1$ closed path, then the winding number $I(γ,z)$ is constant on the connected components of $ℂ∖γ^*$<br>
+(ii) Let $γ=γ(0,1)$ and let $a, b∈ℂ$ with ${|a|}≠{|b|}$. Calculate the integral
+$$
+\int_γ \frac1{a z+b} \mathrm{~d} z
+$$
+<b>Proof.</b><ol type="i">
+<li><div class="noprint"><a href="https://mathweb.ucsd.edu/~jmckerna/Teaching/14-15/Autumn/220A/l_14.pdf#page=2&zoom=140,22,571">220A Autumn 2014</a></div>Since $I(γ, z)$ is integer-valued, it suffices to show it is a continuous function of $z$ on $ℂ∖γ^*$.<br>Since $ℂ∖γ^*$ is open, there exists $r>0$ such that $B(a,2r)⊂ℂ∖γ^*$. For any $z∈γ^*,w∈B(a,r)$, we have ${|z-w|}>r⇒\left|\frac1{(z-w)^2}\right|<\frac1{r^2}$<br>
+For any $b∈B(a,r)$,
+\begin{aligned}
+{|I(γ,a)-I(γ,b)|}&=\left|\frac1{2πi} \int_γ \frac1{z-a} -\frac{1}{z-b} \mathrm{~d}z\right|\\
+&=\frac1{2π}\left|\int_γ\int_a^b\frac1{(z-w)^2}\mathrm{~d}w\mathrm{~d}z\right|\\
+\small\text{by Estimation Lemma}&≤\frac{L(γ)}{2π}\sup_{z∈γ}\left|\int_a^b\frac1{(z-w)^2}\mathrm{~d}w\right|\\
+\small\text{by Estimation Lemma}&≤\frac{L(γ)}{2π}⋅{|a-b|}⋅\sup_{\substack{z∈γ\\w∈B(a,r)}}\left|\frac1{(z-w)^2}\right|\\
+&<\frac{L(γ)}{2π}⋅r ⋅\frac1{r^2}→0 \text{as }r→0
+\end{aligned}
+<div class="noprint"><a href="https://math.stackexchange.com/questions/2559707">To generalize to a rectifiable curve</a><br>
+Alternative proof, see <a href="https://courses.maths.ox.ac.uk/pluginfile.php/31199/mod_resource/content/1/complex.pdf#page=39&zoom=140,-37,454">Proposition 6.7</a>$$I(γ,w)=\frac1{2πi} \int_γ\frac1{z-w}\mathrm{\ d}z$$<br>
+We wish to show that for each $z_0∉γ^*$ we can find a disk $B\left(z_0, \epsilon\right)$ within which $I(γ,w)$ is given by a power series in $\left(w-z_0\right)$. Translating if necessary we may assume $z_0=0$.
+<br>
+Now since $ℂ∖γ^*$ is open, there is some $r>0$ such that $B(0,2r)∩γ^*=∅$. We claim that $I(γ,w)$ is holomorphic in $B(0,r)$. Indeed if $w∈B(0, r)$ and $z∈γ^*$ it follows that ${|w / z|}< 1 / 2$.
+\[
+\left|w^n / z^{n+1}\right|={|z|}^{-1}{|w / z|}^n<\frac1{2 r}(1 / 2)^n, \quad \forall z \in γ^* .
+\]
+It follows from the Weierstrass $M$-test that the series
+\[
+\sum_{n=0}^{\infty} \frac{w^n}{z^{n+1}}=\sum_{n=0}^{\infty} \frac1z(w / z)^n=\frac1z(1-w / z)^{-1}=\frac1{z-w}
+\]
+viewed as a function of $z$, converges uniformly on $γ^*$ to $1/(z-w)$. Thus for all $w \in B(0, r)$ we have
+\[
+I(γ, w)=\frac1{2 π i} \int_γ \frac{\mathrm{d}z}{z-w}=\sum_{n=0}^{\infty}\left(\frac1{2πi} \int_γ \frac1{z^{n+1}}\mathrm{\ d}z\right) w^n,
+\]
+hence $I(γ, w)$ is given by a power series in $B(0, r)$ (and hence is also holomorphic there) as required.</div>
+</li><li>If $a=0$, then function $\frac1b$ is constant, so it is holomorphic, so the integral is 0.<br>
+If ${|a|}<{|b|}$, then $\left|-\frac ba\right|>1$, so $I\left(γ,-\frac ba\right)=0$, so the integral is 0.<br>
+If ${|a|}>{|b|}$, then $\left|-\frac ba\right|< 1$, so $I\left(γ,-\frac ba\right)=1$, so the integral is $\int_γ \frac1{a z+b} \mathrm{~d} z=\frac1a\int_γ \frac1{z+b/a} \mathrm{~d} z=\frac{2πi}a$.</li>
+</ol>
+</li><li>
+Suppose that $f: U → ℂ$ is holomorphic on $U ∖\{p\}$ for some $p ∈ U$, and that $f$ is bounded near $p$ (thus there are constants $r, K \in ℝ_{>0}$ such that ${|f(z)|}< K$ for all $z ∈ B(p, r)$ ). Show that if $T$ is any triangle whose interior is entirely contained in $U$ then Cauchy's theorem for a triangle still holds, that is
+$$
+\int_T f(z)\mathrm{\ d}z=0 .
+$$
+<div class="noprint"><a href="https://math.stackexchange.com/questions/3270178">Stein Exercise 2.6</a></div>
+<b>Proof 1.</b><br>
+By Corollary 7.17 (Riemann’s removable singularity theorem) $f$ extends to a holomorphic function on all of $U$, then Cauchy's theorem for a triangle applies.<br>
+<b>Proof 2.</b><br>
+Case 1. If $p$ is a vertex of $T$, let $T=T_{pbc}$. For any $ϵ>0$, let $δ=\min\left(r,\frac ϵ{4K}\right)$. Let $B(p,δ)∩T=\{u,v\}$.<br>The circumference of $T_{puv}={|p-u|}+{|p-v|}+{|u-v|}≤δ+δ+2δ=4δ$.<br>
+{% latex float:right%}\usepackage{tikz}[every node/.style={circle,draw,color=blue,inner sep=1}]
+\draw(0,0)circle(1)node(p){$p$};
+\node at(2,-2)(c){$c$};
+\node at(-2,-2)(b){$b$};
+\draw(p)--(b)--(c)--(p);
+\node[fill=white] at(-135:1){$u$};
+\node[fill=white] at(-45:1){$v$};
+\end{tikzpicture}{% endlatex %}
+By Cauchy's theorem for triangle, $\int_{T_{vub}}f\mathrm{~d}z=\int_{T_{vbc}}f\mathrm{~d}z=0$,
+so $\int_{T_{pbc}}f\mathrm{~d}z=\int_{T_{puv}}f\mathrm{~d}z+\int_{T_{vub}}f\mathrm{~d}z+\int_{T_{vbc}}f\mathrm{~d}z=\int_{T_{puv}}f\mathrm{~d}z$
+\begin{align*}\left|\int_{T_{pbc}}f\mathrm{~d}z\right|&=\left|\int_{T_{puv}}f\mathrm{~d}z\right|\\&≤K\left|\int_{T_{puv}}\mathrm{~d}z\right|&&\text{by estimation lemma and }{|f(z)|}< K\text{ for all }z∈B(p,r)\\&≤4Kδ&&\text{The circumference of }T_{puv}≤4δ\\&≤ϵ\end{align*}
+Case 2. If $p∉$interior or boundary of $T$, Cauchy's theorem for a triangle applies. If $p∈$interior or boundary of $T$, let $a,b,c$ be the vertices of $T$, the integral along $T$ is the sum of integral along triangles $pab,pbc,pca$, and each of them is zero by Case 1.
+</li><li>
+Use Cauchy's Integral Formula and the holomorphic function \(f(z)=z^n(z-a)^{-1}\), where \(a \in ℝ\) with \(a>1\), to calculate the integral:
+\[
+\int_0^{2π}\frac{\cos nθ}{1-2a\cos θ+a^2}\mathrm{\ d}θ
+\]
+<b>Solution.</b>\begin{align*}\int_0^{2π}\frac{\cos nθ}{1-2a\cos θ+a^2}\mathrm{\ d}θ&=\int_0^{2π}\frac{ℜ(\cosθ+i\sinθ)^n}{(\cosθ+i\sinθ-a)(\cosθ-i\sinθ-a)}\mathrm{\ d}θ\\
+&=ℜ\int_{γ(0,1)}\frac{z^n}{(z-a)(z^{-1}-a)}⋅\frac1{iz}\mathrm{\ d}z\qquad\text{Substitute }z=e^{iθ},\mathrm{\ d}θ=\frac1{iz}\mathrm{\ d}z\\
+&=ℑ\int_{γ(0,1)}\frac{z^n}{(z-a)(1-az)}\mathrm{\ d}z\\
+&=\frac1{a^2-1}ℑ\int_{γ(0,1)}\frac{z^n}{z-a^{-1}}-\frac{z^n}{z-a}\mathrm{d}z\quad\text{Use Cauchy's Integral Formula }I(γ,a^{-1})=1,I(γ,a)=0,\\&=\frac{2πa^{-n}}{a^2-1}\end{align*}
+</li><li>
+Suppose that \(D\) is a domain bounded by a contour \(C\), which we assume can be parameterized by a function \(γ_1:[0,1]→ℂ\) (that is, \(C=γ_1^*\) ). Let \(z_0 \in D\) and let \(r>0\) be small enough so that \(\bar{B}\left(z_0, r\right) \subset D\). The region \(D ∖ \bar{B}\left(z_0, r\right)\) is thus bounded by \(C \cup \partial B\left(z_0, r\right)\). Use the result of question 3 to show that if \(f\) is holomorphic on \(D ∖\left\{z_0\right\}\) then
+\[
+\int_{γ_1} f(z)\mathrm{\ d}z=\int_{γ_2} f(z)\mathrm{\ d}z
+\]
+where \(γ_2(t)=z_0+r e^{i t},(0 \leq t \leq 2 π)\).
+Use this and question 6 to calculate
+\[
+\int_0^{2π}\frac{\mathrm{d}t}{a^2\cos^2t+b^2\sin^2t} (a,b>0)
+\]
+<b>Proof 1.</b><br>
+The region \(D∖\bar{B}\left(z_0, r\right)\) is bounded by $γ_1,γ_2^-$, by Green's theorem $\int_{γ_1} f(z)\mathrm{\ d}z+\int_{γ_2^-} f(z)\mathrm{\ d}z=0⇒\int_{γ_1} f(z)\mathrm{\ d}z=\int_{γ_2} f(z)\mathrm{\ d}z$.<br>
+<b>Proof 2.</b><br>
+There exists a piecewise $C^1$ path $ℓ:[0,1]→D∖\bar{B}\left(z_0, r\right)$ such that $ℓ(0)=γ_1(0)=γ_1(1)$ and $ℓ(1)=γ_2(0)=γ_2(1)$, then $γ=ℓ^-*γ_2^-*ℓ*γ_1$ is a simple closed piecewise $C^1$ path, and $f$ is holomorphic on interior of γ, by Cauchy's theorem, $∫_γf(z)\mathrm{\ d}z=0$. Since the integral on ℓ and $ℓ^-$ cancel, we have $\int_{γ_1} f(z)\mathrm{\ d}z=\int_{γ_2} f(z)\mathrm{\ d}z$.<br>
+<b>Solution 1.</b>
+<div class="noprint"><a href="https://math.stackexchange.com/questions/1965164">Calculating the integral …</a> | <a href="https://math.stackexchange.com/questions/518173">Calculate the integral … by deformation theorem.</a></div>
+Consider the (positively-oriented ellipse) contour $γ(t)=a\cos t+ib\sin t,t∈[0,2π]$
+\[\int_γ\frac{\mathrm{d}z}z=I(γ,0)=2πi\]
+On the other hand,\begin{align*}\int_\gamma\frac{\mathrm dz}z&=\int_0^{2\pi}\frac{\gamma'(t)}{\gamma(t)}\,\mathrm dt\\&=\int_0^{2\pi}\frac{-a\sin(t)+b\cos(t)i}{a\cos(t)+b\sin(t)i}\,\mathrm dt\\&=\int_0^{2\pi}\frac{(b^2-a^2)\cos(t)\sin(t)}{a^2\cos^2(t)+b^2\sin^2(t)}\,\mathrm dt+i\int_0^{2\pi}\frac{ab}{a^2\cos^2(t)+b^2\sin^2(t)}\,\mathrm dt\end{align*}
+Taking imaginary parts,
+\[\int_0^{2π}\frac{\mathrm{\ d}t}{a^2\cos^2t+b^2\sin^2t}=\frac{2π}{ab}\]
+<b>Solution 2.</b><br>
+Since $\cos^2t=\cos^2(t+π),\sin^2t=\sin^2(t+π)$, it suffices to prove
+\[
+\int_0^π\frac{\mathrm{d}t}{a^2\cos^2t+b^2\sin^2t}=\fracπ{ab}
+\]
+Note the trigonometric identity:
+\[\sum_{k=0}^{n-1}\frac1{a^2\cos^2\left(\frac kn⋅π\right)+b^2\sin^2\left(\frac kn⋅π\right)}=\frac{n}{ab}⋅\frac{(a+b)^n+(b-a)^n}{(a+b)^n-(b-a)^n}\]
+By definition of Riemann integral:\begin{align*}
+\int_0^π\frac{\mathrm{d}t}{a^2\cos^2t+b^2\sin^2t}&=\lim_{n→∞}\fracπn\sum_{k=0}^{n-1}\frac1{a^2\cos^2\left(\frac kn⋅π\right)+b^2\sin^2\left(\frac kn⋅π\right)}\\
+&=\lim_{n→∞}\fracπ{ab}⋅\frac{(a+b)^n+(b-a)^n}{(a+b)^n-(b-a)^n}\\
+&=\fracπ{a b}
+\end{align*}
+<b>Solution 3.</b><br>
+Substitute $u=\frac ba\tan t,\,\frac{\mathrm du}{\mathrm dt}=\frac ba\sec^2t$
+\begin{align*}
+\int_0^{2π}\frac{\mathrm{d}t}{a^2\cos^2t+b^2\sin^2t}&=4\int_0^{\pi/2}\frac{\mathrm{d}t}{a^2\cos^2t+b^2\sin^2t}\\
+&=4\int_0^{\pi/2}\frac{\sec^2t}{a^2+b^2\tan^2t}\,\mathrm{d}t\\&=\frac4{ab}\int_0^{\pi/2}\frac{\frac ba\sec^2t}{1+\left(\frac ba\tan t\right)^2}\,\mathrm dt\\&=\frac4{ab}\int_0^\infty\frac1{1+u^2}\,\mathrm du\\&=\frac{2\pi}{ab}\end{align*}
+<div class="noprint">
+    <a href="https://math.stackexchange.com/questions/4804715">Trigonometric sum related to ellipse</a><br>
+    <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=6115">一类三角函数分式的封闭和 </a>
+    \begin{gathered}\int_0^π\frac{\sin t\cos t\mathrm{\ d}t}{a^2\cos^2t+b^2\sin^2t}=0\\
+    \int_0^{2π}\frac{\sin t\cos t\mathrm{\ d}t}{a^2\cos^2t+b^2\sin^2t}=\frac{\log \left(\frac{a}{b}\right)}{a^2-b^2}\\
+    \int_0^π\frac{(a\cos t+b\sin t)^2\mathrm{\ d}t}{a^2\cos^2t+b^2\sin^2t}=π\\
+    \int_0^π\frac{\mathrm{\ d}t}{a^2\cos^2t+b^2\sin^2t}=\fracπ{ab}
+    \end{gathered}
+    <a href="https://math.stackexchange.com/questions/1752721">Any hint to solve given integral? [closed]</a><br>
+    <a href="https://math.stackexchange.com/questions/2479149">How can I show …</a><br>
+    <a href="https://math.stackexchange.com/questions/367798">Evaluating a trigonometric integral using residues</a><br>
+    <a href="https://math.stackexchange.com/questions/1311023">Showing …</a><br>
+    <a href="https://math.stackexchange.com/questions/3102102">How to evaluate for $a>0$ and $b>0$</a><br>
+    <a href="https://math.stackexchange.com/questions/2613177">Calculate integral … [duplicate]</a><br>
+    <a href="https://math.stackexchange.com/questions/1729259">An integral calculus [closed]</a><br>
+    <a href="https://en.wikipedia.org/wiki/Contour_integration">Contour integration – Wikipedia</a>
+</div>
+</li></ol>

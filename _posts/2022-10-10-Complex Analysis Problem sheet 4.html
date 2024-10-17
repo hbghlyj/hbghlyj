@@ -1,0 +1,254 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 7 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>
+$\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\min}{\mmlToken{mi}{min}}
+\newcommand{\d}{\mathrm{~d}}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
+\newcommand{\res}[1]{\operatorname*{Res}_{#1}}$<ol><li>Prove, for $a>0$, that
+\[
+\int_{-∞}^∞\frac{\d x}{x^4+a^4}=\fracπ{a^3 \sqrt2}
+\]
+<b>Solution.</b>
+<div class="noprint">H. A. Priestley <i>Complex Analysis</i> Exercise 20.2 <a href="https://math.stackexchange.com/questions/393875">Contour integral</a></div>
+{% latex float:right%}\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\begin{tikzpicture}
+\draw (45:1)node{$\times$}node[below]{$e^{\pi i/n}$};
+\draw[thick,red,decoration={ markings,
+      mark=at position 0.2 with {\arrow{latex}}, 
+      mark=at position 0.5 with {\arrow{latex}},
+      mark=at position 0.9 with {\arrow{latex}}}, 
+      postaction={decorate}]
+  (0,0) -- (2,0) arc (0:90:2) -- (0,0);
+\end{tikzpicture}
+{% endlatex %}
+Consider the sector $C$ of angle $\frac{2\pi}{n}$ and an edge $[0,R]$. By Jordan's lemma, the integral along the arc tends to 0 as $R→∞$. So
+$$\lim_{R→∞}\int_C \frac{\d z}{1+z^n} = \int_0^∞\frac{\d x}{1+x^n} - \int_0^∞\frac{e^{2\pi i/n} dx}{1+(e^{2\pi i/n} x)^n}=\left(1-e^{2\pi i/n}\right) \int_0^∞\frac{\d x}{1+x^n}$$
+Inside $C$, the integrand $\frac1{1+z^n}$ has one simple pole at $z=e^{\pi i/n}$.
+\[\res{z=e^{2\pi i/n}}\frac1{1+z^n}=\left.\frac1{nz^{n-1}}\right|_{z=e^{2\pi i/n}}=\frac1{ne^{2\pi i(n-1)/n}}\]
+By Residue Theorem,
+$$\left ( 1-e^{2\pi i/n}\right) \int_0^∞ \frac{\d x}{1+x^n} = \frac{2 \pi i}{n e^{i \pi (n-1)/n}}$$
+The final result is
+$$\int_0^∞ \frac{\d x}{1+x^n} = \frac{\pi}{n \sin{(\pi/n)}}$$
+Substituting $n=4,x=\frac ya$, we get $\int_{-∞}^∞\frac{\d y}{y^4+a^4}=2\int_0^∞\frac{\d y}{y^4+a^4}=\fracπ{a^3\sqrt2}$
+</li>
+<li>Show that$$\int_{-∞}^∞\frac{\cos πx}{2x-1}\d x=-\frac π2$$
+<b>Solution.</b>{% latex float:right%}
+\usetikzlibrary{decorations.markings}
+\begin{tikzpicture}[scale=.5]
+\node at (.5,0) {$\times$};\node at(.5,-.7){$\frac12$};
+\draw[thick,red,decoration={ markings,
+      mark=at position 0.2 with {\arrow{latex}}, 
+      mark=at position 0.4 with {\arrow{latex}},
+      mark=at position 0.8 with {\arrow{latex}}, 
+      mark=at position 0.98 with {\arrow{latex}}}, 
+      postaction={decorate}]
+  (-5,0) -- (0.1,0) arc (180:0:.4) -- (5,0);
+\draw[thick,red,decoration={ markings,
+      mark=at position 0.2 with {\arrow{latex}}, 
+      mark=at position 0.4 with {\arrow{latex}},
+      mark=at position 0.6 with {\arrow{latex}}, 
+      mark=at position 0.8 with {\arrow{latex}}}, 
+      postaction={decorate}]
+ (5,0) arc (0:180:5) -- (-5,0);
+\draw (-5.5,0) -- (5.5,0);
+\end{tikzpicture}
+{% endlatex %}<br>
+$f(z)=\frac{e^{iπz}}{2z-1}$ has a simple pole at $z=\frac12$. Consider the red contour in the upper half plane.<br>
+$$\res{z=\frac12}f(z)=\lim_{z→\frac12}\left(z-\frac12\right)\frac{e^{iπz}}{2z-1}=\left.\frac{e^{iπz}}2\right|_{z=\frac12}=\frac i2$$By Lemma 11.11. the integral of $f$ along the clockwise arc with center $\frac12$ and radius $ϵ→0$ is $\frac i2⋅(0-π)i=\fracπ2$.<br>
+$\lim_{z→∞}\frac1{2z-1}=0$, by Jordan's lemma, the integral of $f$ along the anticlockwise arc with radius $R→∞$ is 0.<br>
+Because there are no poles inside the contour, the integral is zero, we have $\fracπ2+\int_{-∞}^∞f(z)\d z=0$, so $\int_{-∞}^∞f(z)\d z=-\fracπ2$.<br>Taking real parts, we get
+$\int_{-∞}^∞\frac{\cos{\pi x}}{2 x-1}\mathrm{d}x= -\fracπ2$.
+<div class="noprint">
+Substitute $x+\fracπ2$ for $x$ this becomes $∫_{-∞}^∞\frac{\sin x}x\d x=\fracπ2$, see notes Example 11.9.<br>
+<a href="https://math.stackexchange.com/questions/589409">Residues at singularities</a><br>
+You are correct that $\frac{\cos(\pi x)}{2x-1}$ is entire (i.e. has no singularities). However, if you try to use this function with the Residue Theorem on either of the usual arbitrarily large "D" shaped contours, you will see that $\frac{\cos(\pi x)}{2x-1}$ blows up on the semi-circular part of the contour.<br>
+We can overcome this problem as follows. First note that by using the contour
+$$
+[-R,R]\cup{\color{#C0C0C0}[R,R{-}i]}\cup[R{-}i,-R{-}i]\cup{\color{#C0C0C0}[-R{-}i,-R]}
+$$
+we get
+$$
+\int_{-\infty}^\infty\frac{\cos(\pi x)}{2x-1}\,\mathrm{d}x
+=\int_{-i-\infty}^{-i+\infty}\frac{\cos(\pi x)}{2x-1}\,\mathrm{d}x
+$$
+since the integrand vanishes on the gray portions of the contour as $R→∞$.<br>
+Next, break up $\cos(x)$ and use the contours
+\begin{align*}
+U&=[-R-i,R-i]\cup Re^{[0,πi]}-i\\
+L&=[-R-i,R-i]\cup Re^{[0,-πi]}-i
+\end{align*}
+to get
+\begin{align*}
+\int_{-i-\infty}^{-i+\infty}\frac{\cos(\pi x)}{2x-1}\,\mathrm{d}x
+&=\frac12\int_{-i-\infty}^{-i+\infty}\frac{e^{i\pi x}+e^{-i\pi x}}{2x-1}\,\mathrm{d}x\\
+&=\frac12\int_U\frac{e^{i\pi x}}{2x-1}\,\mathrm{d}x
++\frac12\int_L\frac{e^{-i\pi x}}{2x-1}\,\mathrm{d}x\\
+&=\frac12(2\pi i)\frac i2+0\\
+&=-\frac\pi2
+\end{align*}
+since $\frac{e^{i\pi x}}{2x-1}$ has a pole at $x=\frac12$ with residue $\frac i2$ inside $U$ and $\frac{e^{-i\pi x}}{2x-1}$ has no pole inside $L$.<br>
+Note that $\frac{e^{i\pi x}}{2x-1}$ vanishes quickly on the circular part of $U$ and $\frac{e^{-i\pi x}}{2x-1}$ vanishes quickly on the circular part of $L$.
+</div>
+</li>
+<li>Write down a definition of a branch of $\log(z+i)$ which is holomorphic in the cut-plane region.$$ℂ∖\{z:\Re z=0,\Im z ≤-1\}$$
+By integrating $\log(z+i)/\left(z^2+1\right)$ around a suitable closed path, evaluate
+\[
+\int_{-∞}^∞\frac{\log(x+i)}{x^2+1}\d x
+\]
+and, by taking real parts, show that
+\[
+\int_{-∞}^∞\frac{\log\left(x^2+1\right)}{x^2+1}\d x=2π\log2
+\]
+<b>Solution.</b><br>
+$\operatorname{Log}(i(z+i))-i\fracπ2$ is a branch of $\log(z+i)$ which is holomorphic in the cut-plane region.<br>
+Consider the contour $γ=[-R,R]∗γ_R$ where $γ_R(t)=Re^{it},t∈[0,π],R>1$.<br>
+$f(z)=\frac{\log(z+i)}{z^2+1}$ has a simple pole $z=i$ inside $γ$.
+$$\res{z=i}f(z)=\left.\frac{\log(z+i)}{z+i}\right|_{z=i}=\frac{π-2i\log2}4$$By Residue Theorem, the integral of $f$ along $γ$ is $2πi⋅\frac{π-2i\log2}4=π\log2+\frac{iπ^2}2$.<br>
+Since $\lim_{z→∞}\abs{\log(z+i)\over z^{1/2}}=0$, there exists $C$ such that $\abs{\log(z+i)}≤C\abs{z}^{1/2}$, then $\abs{f(z)}≤C\abs{z}^{-3/2}$, by Estimation Lemma $∫_{γ_R}f(z)\d z≤πR\abs{f(z)}→0$ as $R→∞$. So
+\[
+\int_{-∞}^∞\frac{\log(x+i)}{x^2+1}\d x=π\log2+\frac{iπ^2}2
+\]
+Taking real parts, since $\Re\left(\log\left(x+i\right)\right)=\log\abs{x+i}=\frac12\log\left(x^2+1\right)$, we get\[
+\int_{-∞}^∞\frac{\log\left(x^2+1\right)}{x^2+1}\d x=2π\log2
+\]
+</li>
+<li>Show that
+\[
+\int_0^∞\frac{\sin px\sin qx}{x^2}\d x=\frac{π\min(p,q)}2
+\]
+where $p, q>0$.<br>
+<b>Solution 1.</b><br>
+Using $2\sin px\sin qx=\cos\abs{p-q}x-\cos(p+q)x$, we are left to prove $∀m>0,∫_0^∞\frac{1-\cos(mx)}{x^2}\d x=\frac{πm}4$. By Q2 we know $∀m>0,∫_0^∞\frac{\sin(mx)}x\d x=\fracπ4$.<br>
+Integrating by parts,
+\begin{align*}
+\int_0^∞\frac{1-\cos(mx)}{x^2}\d x&=\left.-\frac{1-\cos(mx)}x\right|_0^∞+m\int_0^∞\frac{\sin(mx)}x\d x\\
+&=m\int_0^∞\frac{\sin(mx)}x\d x\\
+&=\frac{πm}4
+\end{align*}
+<b>Solution 2.</b><br>
+Let $a=\max(p,q),b=\min(p,q)$.
+\begin{align*}2\int_0^∞\frac{\sin(ax)\sin(bx)}{x^2}\d x &=\int_0^∞\frac{\cos((a-b)x)-\cos((a+b)x)}{x^2}\d x \\ &= \int_0^∞\int_{a-b}^{a+b}\frac{\sin(xy)}x\d y\d x\\ &=\int_{a-b}^{a+b}\int_0^∞\frac{\sin(xy)}{x}\d x \d y\\ &=\int_{a-b}^{a+b}\fracπ2\d y\\&=πb\end{align*}
+<div class="noprint" style="width: max-content;">
+<a href="https://math.stackexchange.com/questions/441106">How do I show that $∫_0^∞\frac{\sin(ax) \sin(bx)}{x^2}\d x=π\min(a,b)/2$</a><br>
+<a href="https://math.stackexchange.com/questions/106570">How do I show that $∫_{-∞}^∞\frac{\sin x \sin nx}{x^2}\d x=π$?</a><br>
+<a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=8327">sinc 连乘积的积分</a>
+</div>
+</li>
+<li>Let $a∈ℂ$ with $-1<\Re a< 1$. By considering a rectangular contour with corners at $R, R+iπ,-R+iπ,-R$, show that
+\[
+\int_{-∞}^∞\frac{e^{ax}}{\cosh x}\d x=π\sec\left(\frac{πa}2\right)
+\]
+and hence evaluate, for real $n$,
+\[
+\int_{-∞}^∞\frac{\cos n x}{\cosh x}\d x
+\]
+<b>Solution.</b>{% latex float:right%}
+\usetikzlibrary{decorations.markings}
+\begin{tikzpicture}
+\fontsize{7pt}{12}\selectfont
+\draw(-1.5,0)--(1.5,0)(0,-.5)--(0,1.5);
+\node at(0,.5){$\times$};
+\node at(.3,.5){$i\pi\over2$};
+\draw[decoration={ markings,
+    mark=at position 0.1 with \arrow{latex},
+    mark=at position 0.3 with \arrow{latex}, 
+    mark=at position 0.6 with \arrow{latex},
+    mark=at position 0.8 with \arrow{latex}
+},postaction={decorate},red](1,0)node[below]{$R$}--(1,1)node[above]{$R+i\pi$}--(-1,1)node[above]{$-R+i\pi$}--(-1,0)node[below]{$-R$}--cycle;
+\end{tikzpicture}
+{% endlatex %}<br>
+$\cosh z=0⇔z=\frac{i(2k+1)π}2,k∈ℤ$. So $f(z)=\frac{e^{az}}{\cosh z}$ has a simple pole $\frac{iπ}2$ inside the contour.
+\[
+\res{z=\frac{iπ}2}f(z)=\frac{e^{iπa/2}}{\sinh\left(\frac{iπ}2\right)}=\frac{e^{iπa/2}}i
+\]
+By Residue Theorem, the integral of $f$ along the contour is $2πi⋅\frac{e^{iπa/2}}i=2πe^{iπa/2}$……(1)<br>
+Integrating on each segment,
+\[
+\int_{-R}^Rf(x)\d x+i\int_0^πf(R+ix)\d x-\int_{-R}^R{\color{green}f(x+iπ)}\d x-i\int_0^πf(-R+ix)\d x
+\]
+Applying ${\color{green}f(x+iπ)}=-e^{iπa}f(x)$,
+\[
+(1+e^{iπa})\int_{-R}^Rf(x)\d x+i\int_0^πf(R+ix)\d x-i\int_0^πf(-R+ix)\d x\tag2
+\]
+We will prove the 2nd and 3rd term both tend to 0 as $R→∞$.
+Let $\Re a=α$. Then $\abs{e^{aR}}=e^{αR}$. So
+$$\abs{f(R+ix)}=\frac{e^{αR}}{\abs{\cosh(R+ix)}}≤\frac{e^{αR}}{\sinh R}$$
+Since $0< α< 1$,
+$$\lim_{R→∞}\frac{e^{αR}}{\sinh R}=0$$
+By Estimation Lemma $∫_0^πf(R+ix)\d x→0$ as $R→∞$. Similarly $∫_0^πf(-R+ix)\d x→0$ as $R→∞$.
+Comparing (1)(2) we have$$\int_{-∞}^∞f(x)\d x=\frac{2πe^{iπa/2}}{1+e^{iπa}}=π\sec\left(πa\over2\right)$$For real $n$, since $\Re(in)=0$, we can apply the above formula,\[
+\int_{-∞}^∞\frac{\cos n x}{\cosh x}\d x=\int_{-∞}^∞\frac{e^{inx}+e^{-inx}}{2\cosh x}\d x=π\frac{\sec\left(iπn\over2\right)+\sec\left(-iπn\over2\right)}2=π\operatorname{sech}\left(πn\over2\right)
+\]
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/3057297">Evaluating $\int_{-∞}^∞\frac{e^{ax}}{\cosh{x}}\d x$ using contour integration</a><br>
+<a href="https://math.stackexchange.com/questions/804483">Do these integrals have a closed form? $I_1=\int_{-∞}^∞\frac{\sin(x)}{x\cosh(x)}\d x$</a>
+</div>
+</li>
+<li>Let $f:ℂ→ℂ$ be continuous. For $ϵ≥0$ consider the paths
+\[
+γ_{ϵ,R}:[0,R]→ℂ,γ_{ϵ,R}(t)=t+iϵ
+\]
+If $γ$ is the path $γ_{0,R}$ show that
+\[
+\int_{γ_{ϵ,R}}f(z)\d z→\int_γf(z)\d z
+\]
+as $ϵ→0$. (We will be using this exercise when we consider keyhole contours).<br>
+<b>Proof.</b><br>
+By Heine–Cantor theorem, $f$ is uniformly continuous on $[0,ϵ]×[0,R]$, so $∀a>0,∃δ>0$, for any $z,w∈[0,ϵ]×[0,R]$ such that $\abs{z-w}< δ$, $\abs{f(z)-f(w)}< a$. For $ϵ∈[0,δ]$,
+\begin{align*}
+\abs{\int_{γ_{ϵ,R}}f(z)\d z-\int_γf(z)\d z}&=\abs{\int_0^Rf(x+iϵ)-f(x)\d x}\\
+&≤\int_0^R\abs{f(x+iϵ)-f(x)}\d x\\
+&≤\int_0^Ra\d x\\
+&=aR
+\end{align*}
+tends to 0 as $a→0$.
+</li>
+<li>Let $f$ be an entire injective function. Show that $f(z)=az+b$ for some $a,b∈ℂ$.<br>
+<b>Proof.</b><br>
+$f$ cannot be a polynomial of degree greater than $1$, by the fundamental theorem of algebra. If $f$ is entire but not a polynomial, then $f(1/z)$ has an essential singularity at $z=0$. By Casorati-Weierstrass, $f(\{z:\abs z>n\})$ is dense in ℂ for each positive integer $n$. By the open mapping theorem, the set is open. By <a href="2.html">sheet2Q12</a>, $D=⋂_n f(\{z:\abs z>n\})$ is not empty, and every element of $D$ has infinitely many preimages under $f$, contradict. So $f$ is a linear function.
+<div class="noprint"><a href="https://en.wikipedia.org/wiki/Picard_theorem">Great Picard's Theorem</a><br><a href="https://math.stackexchange.com/questions/29758">Entire one-to-one functions are linear</a></div>
+</li>
+<li>Suppose that $f$ is a holomorphic function defined on an open set $U$ of the complex plane containing $\bar{B}(0,1)$. Let $S^1=\{z∈ℂ:\abs z=1\}=∂B(0,1)$. Show that if $f(S^1)$ is an ellipse and $f$ restricted on $S^1$ is injective, then $f$ is injective on $\bar{B}(0,1)$.<br>
+<b>Proof.</b><br>
+1) For $w_0∈ℂ∖f(S^1)$, let $N$ be the number of $z∈B(0,1)$ such that $f(z)=w_0$, then $N$ is the number of zeros of $g(z)=f(z)-w_0$ in $B(0,1)$.<br>By the argument principle, since $g$ is holomorphic, $N=I(g(S^1),0)=I(f(S^1),w_0)$ which is either 1 (if $w_0$ is inside the ellipse) or 0 (if outside).<br>2) If $f$ maps a point $z_1$ inside $S^1$ to a point on $f(S^1)$. Since the outside of $S^1$ is open, $∃r:B(z_1,r)⊂\text{inside of }S^1$, by the open mapping theorem, $f(B(z_1,r))$ is open, so $∃w_1∈f(B(z_1,r))∩\text{Exterior of }f(S^1)$, so $w_1$ has a preimage in $B(z_1,r)$, which is inside $S^1$, contract 1).
+<div class="noprint" style="width: max-content">
+<a href="https://math.stackexchange.com/questions/39118">injective holomorphic functions</a><br>
+<a href="https://math.stackexchange.com/questions/2390783">A mapping of the interior of unit circle to the exterior of an ellipse</a>(not holomorphic)
+</div>
+</li>
+<li>Suppose that $f: U→ℂ$ is a holomorphic function on an open set $U⊆ℂ$, and suppose $f'(a) ≠0$ for some $a∈U$. Show that<br>
+a) there is an $r>0$ such that $f$ is injective on $B(a,r)$<br>
+b) its inverse $g$ is given on the image of such a disk by
+\[
+g(w)=\frac1{2πi}\int_γ\frac{zf'(z)}{f(z)-w}\d z
+\]
+where $γ(t)=a+re^{it},t∈[0,2π]$.<br>
+{% latex float:right%}\usepackage{tikz}
+\draw[red,domain=45:405,smooth,samples=100]plot(\x:{2+.5*cos(8*\x)})node[right]{$f(\gamma(a,R))$};
+\draw(0,0)circle(1.5);
+\node at (0,1.1) {$B(f(a),m)$};
+\fill(0.5,0.5)circle(.05)node[below]{$w$};
+\fill(0,0)circle(.05)node[below]{$f(a)$};
+\end{tikzpicture}
+{% endlatex %}
+<b>Proof.</b><br>
+a) If $a$ is a limit point of $\{z∈U∣f(z)-f(a)=0\}$, by Identity Theorem, $f=f(a)$ on $U⇒f'(a)=0$, contradict.<br>Therefore $∃R > 0:f(z)-f(a)≠0\;∀z∈\bar B(a,R)∖\{a\}$. Then $\abs{f(z)-f(a)}>0$ on $γ(a,R)$.<br>Since $γ(a,R)$ is compact, $m≔\min\{\abs{f(z)-f(a)}:z∈γ(a,R)\}>0$.<br>
+By definition of $m$, $∀z∈γ(a,R),w∈B(f(a),m):\abs{f(z)-f(a)}>\abs{f(a)-w}$.<br>
+Since $f(z)-f(a)$ has 1 zero in $B(a,R)$, Rouché's theorem implies that $f(a)-w+f(z)-f(a)=f(z)-w$ has 1 zero in $B(a,R)$.<br>
+Since $f$ is continuous at $a$, $∃0< r< R$ such that $f(B(a,r))⊂B(f(a),m)$, so $f|_{B(a,r)}$ is injective.<br>
+<div class="noprint"><a href="https://math.stackexchange.com/a/2562543/745350">Why are conformal mappings necessarily 1 to 1?</a><br>This proof is an exercise, 16.5, in Priestley's book <cite>Introduction to Complex Analysis</cite>.</div>
+b) Let $g$ be the inverse of $f$ on $f(B(a,r))$. For $w∈f(B(a,r))$, let $h(z)=f(z)-w$, by Argument Principle, since $h$ has a simple zero at $z=g(w)$,\[g(w)=\frac1{2πi}\int_γz⋅\frac{f'(z)}{f(z)-w}\d z=\frac1{2πi}\int_γz⋅\frac{h'(z)}{h(z)}\d z=g(w)
+\]  
+<div class="noprint">
+  E. T. Whittaker, G. N. Watson - A Course of Modern Analysis-Cambridge University Press (2021) § 7.3 Bürmann's theorem<br>
+  <a href="https://en.wikipedia.org/wiki/Lagrange_inversion_theorem#Lagrange–Bürmann_formula">Lagrange–Bürmann formula</a><br>
+  <a href="https://math.stackexchange.com/questions/2631930">Show $f(w)=\frac1{2πi}∫_{∂Ω}f(z)\frac{g'(z)}{g(z)-g(w)}\d z$ for $w∈Ω$</a>
+</div>
+</li>
+</ol>

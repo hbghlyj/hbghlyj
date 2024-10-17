@@ -1,0 +1,247 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: sheet 8 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+ol[type="i"]{padding-left:1.5em}
+table{border-collapse: collapse}
+td{padding:0;vertical-align: top;}
+</style>
+$\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\d}{\mathrm{~d}}
+\DeclareMathOperator{\Re}{Re}
+\DeclareMathOperator{\Im}{Im}
+\newcommand{\res}[1]{\operatorname*{Res}_{#1}}$
+<ol><li>Evaluate, using a keyhole contour cut along the positive real axis, or otherwise,
+\[
+\int_0^∞\frac{x^{1/2}\log x}{(1+x)^2}\d x
+\]
+<b>Solution.</b><svg style="float:right;" width="120" height="120">
+<g transform="scale(.2936)" font-size="30px" font-style="italic">
+<path d="m141.5 1c-77.556 0-140.5 62.944-140.5 140.5s62.944 140.5 140.5 140.5c74.026 0 134.75-57.339 140.12-130h-131.09c-2.428 2.09-5.578 3.375-9.031 3.375-7.655 0-13.875-6.22-13.875-13.875s6.22-13.875 13.875-13.875c3.453 0 6.603 1.285 9.031 3.375h131.09c-5.373-72.661-66.099-130-140.12-130z" fill="none" stroke="#000" stroke-width="2"/>
+<text x="235.74034" y="268.41776">R</text>
+<text x="113.81183" y="169.24199">ϵ</text>
+<path transform="translate(35.786 -279.43)" d="m142.44 401.98 23.044 8.474-23.044 8.474c3.681-5.003 3.66-11.848 0-16.948zm45.464 21.021-23.045 8.474 23.044 8.474c-3.681-5.003-3.66-11.848 0-16.948z" stroke-width=".625"/>
+</g>
+</svg><br>$z^{1/2}=e^{\log z/2}$, so $z^{1/2}$ has same branch cut as $\log z$, normally is the negative real axis, $\arg z∈(-π,π]$, now it is the positive real axis, $\arg z ∈[0,2π)$.<br>
+Consider the keyhole contour $Γ_{R,ϵ}$. The function has a double pole at $z=-1$ with Laurent series
+\[(1+z)^{-2}(-1+(1+z))^{1/2}\log z=(1+z)^{-2}\left(i-\frac i2(1+z)+⋯\right)(πi-(1+z)+⋯)\]
+So\[\res{z=-1}\frac{z^{1/2}\log z}{(1+z)^2}=-\frac i2⋅πi-i=\fracπ2-i\]
+For $R>1>ϵ$, $-1$ is inside $Γ_{R,ϵ}$. By residue theorem,$$\int_{Γ_{R,ϵ}}\frac{z^{1/2}\log z}{(1+z)^2}\d z=2πi\left(\fracπ2-i\right)=2π+π^2i\tag1$$For $\abs z=R$, $\abs{\frac{z^{1/2}\log z}{(1+z)^2}}=\abs{\frac{z^{1/2}(\log\abs z+i\arg z)}{(1+z)^2}}≤R^{1/2}\frac{\log R+2π}{(R-1)^2}$. By estimation lemma,
+$$\abs{\int_{Γ_R}\frac{z^{1/2}\log z}{(1+z)^2}\d z}≤2πR⋅R^{1/2}\frac{\log R+2π}{(R-1)^2}→0\text{ as }R→∞$$Similarly,$$\abs{\int_{Γ_ϵ}\frac{z^{1/2}\log z}{(1+z)^2}\d z}≤2πϵ⋅ϵ^{1/2}\frac{\logϵ+2π}{(1-ϵ)^2}→0\text{ as }ϵ→0$$The integral of $f$ over the line segment above real axis tends to$$\int_0^∞\frac{x^{1/2}\log x}{(1+x)^2}\d x\tag2$$The integral of $f$ over the line segment below real axis tends to
+\[\int_∞^0\frac{(-x^{1/2})(\log(x)+2\pi i)}{(1+x)^2}\d x=\int_0^∞\frac{x^{1/2}(\log(x)+2\pi i)}{(1+x)^2}\d x\tag3\]
+(1) is the sum of (2) and (3). Taking the real part, we get
+$$\int_0^∞x^{1/2}\frac{\log(x)}{(1+x)^2}\d x=π$$
+</li><li>By considering the integral
+\[
+\int_{Γ_n}\frac{π\d w}{w^2\sinπw}
+\]
+where $Γ_n$ is the square in ℂ with vertices $±(n+1/2)(1±i)$ show that
+\[
+\frac{π^2}{12}=1-\frac14+\frac19-\frac1{16}+⋯
+\]
+<b>Proof.</b><br>
+We may write $\sin(z)=z(1-zh(z))$ where $h(z)=z/3!-z^3/5!+O(z^5)$ is holomorphic at $z=0$. Then
+$$\frac1{\sin z}=\frac1z(1-zh(z))^{-1}=\frac1z\left(1+\sum_{n≥1}z^nh(z)^n\right)=\frac1z+\frac z6+O(z^3)$$
+Substitute $πw$ for $z$ and multiply $π/w^2$,
+$$f(w)=\fracπ{w^2\sinπw}=\frac1{w^3}+\frac{π^2}{6w}+O(w^3)$$
+So $f(w)$ has a pole of order 3 at $w=0$, with residue $π^2/6$.<br>
+Similarly, we find the Laurent series for $f(w)$ at non-zero integer $n$,
+\begin{align*}
+f(w)&=\frac{(-1)^nπ}{(n+(w-n))^2\sin(π(w-n))}\\
+&=(-1)^nπ\left(\frac1{n^2}+O(w-n)\right)\left(\frac1{π(w-n)}+\frac{π(w-n)}6+O((w-n)^3)\right)
+\end{align*}
+So $f(w)$ has a simple pole at each non-zero integer $n$, with residue $(-1)^n/n^2$. By residue theorem, as $n→∞$, the integral of $f$ over $Γ_n$ tends to
+$$\frac{π^2}6+2\sum_{n=1}^∞\frac{(-1)^n}{n^2}$$
+<table>
+<tr>
+    <td>
+        It remains to prove the integral tends to 0.<br>
+        On $Γ_n$, we have $\abs{w}≥\left(n+\frac12\right)π$. As shown on the right, $\abs{\cscπw}≤C$.<br>
+        By estimation lemma,
+$$\abs{\int_{Γ_n}\frac{π\d w}{w^2\sinπw}}≤4(2n+1)⋅\frac{πC}{\left(n+\frac12\right)^2π^2}=\frac{8C}{\left(n+\frac12\right)π}$$
+tends to 0 as $n→∞$.</td><td style="border: solid 1px black;padding:2px;border-left: solid 1px black;">
+    For all $z=x+iy$,
+    $$\abs{\sin z}=\sqrt{\sin^2 x\cosh^2 y+\cos^2x\sinh^2y}=\sqrt{\sin^2 x+\sinh^2y}$$
+    <div style="border-bottom: solid 1px black;margin-bottom:1ex">Therefore $\abs{\sin z}≥\abs{\sin x}$, $\abs{\sin z}≥\abs{\sinh y}$.</div>
+    $∃C,∀w∈Γ_n,∀n≥1:\abs{\cscπw}≤C$<br><i>Proof.</i><br>
+    On the vertical sides, $\abs{\sinπw}≥\abs{\sin(\Re(πw))}=\abs{\sin\left(π\left(n+\frac12\right)\right)}=1$.<br>
+    On the horizontal sides, $\abs{\sinπw}≥\abs{\sinh(\Im(πw))}=\sinh\left(\left(n+\frac12\right)π\right)≥\sinh\frac{3π}2$.
+    </td>
+</tr></table>
+</li><li>Let $n≥2$. By using the contour comprising $[0,R]$, the circular arc from $R$ to $R e^{2πi/n}$, and $\left[0,Re^{2πi/n}\right]$, show that
+\[
+\int_0^∞\frac{\mathrm{d}x}{1+x^n}=\fracπ{n} \csc \left(\fracπ{n}\right)
+\]
+<b>Proof.</b>{% latex float:right%}
+\usepackage{tikz,amssymb}
+\definecolor{lightblue}{HTML}{e8f0f9}
+\definecolor{blue}{HTML}{4987ce}
+\begin{tikzpicture}[scale=2]
+\draw(0,-0.4)--(0,1.4)(-0.4,0)--(1.8,0);
+\filldraw[fill=lightblue,thick,draw=blue] (1.5,0)node[below]{$R$} arc (0:40:1.5)--(0,0)--cycle;
+\node at (1.6,0.4) {$\Gamma_R$};
+\node at (20:1) {\Large$\circlearrowleft$};
+\end{tikzpicture}
+{% endlatex %}<br>
+$f(z)=\frac1{1+z^n}$ has only one pole inside $Γ_R\,(R>1)$ at $z=e^{πi/n}$, with residue
+$$\res{z=e^{πi/n}}\frac1{1+z^n}=\lim_{z→e^{πi/n}}\frac {z-e^{πi/n}}{z^n+1}=-\frac1ne^{πi/n}$$So the integral is $-\frac {2πi}ne^{πi/n}$.<br>
+Since $n>1$, by estimation lemma, as $R→∞$, the integral on arc vanishes. Leaving us with
+$$-\frac {2πi}ne^{πi/n}=\int_0^∞f(x)\d x-e^{2\pi i/n}\int_0^∞f(e^{2πi/n}x)\d x$$
+Using $f(e^{2πi/n}x)=f(x)$ with $\sin\left(π\over n\right)=\frac{e^{πi/n}-e^{-πi/n}}{2i}$,$$\int_0^∞\frac{\mathrm{d}x}{1+x^n}=\fracπn\csc\left(π\over n\right)$$
+<div class="noprint" style="width: max-content;">
+<a href="https://math.stackexchange.com/questions/1217830">$∫_0^∞\frac1{1+x^9}\d x$</a><br>
+<a href="https://math.stackexchange.com/questions/1598581">Evaluating the improper integral $∫_0^∞\frac{\d x}{1+x^3}$</a><br>
+<a href="https://math.stackexchange.com/questions/2559997">How to finish calculating of $∫_0^∞\frac{\mathrm{d}z}{z^6+1}$?</a>
+</div>
+</li><li>In each of the following cases find a conformal mapping from the given region $G$ onto the open unit disc $𝔻=B(0,1)$.
+<ol type="i"><li>$G=\{z∈ℂ:\Im z>0\}$,</li>
+<li>$G=\{z∈ℂ:z≠0$ and $-π/4<\arg z< π/4\}$,</li>
+<li>$G=\{z∈ℂ:\abs{z-i}<\sqrt2$ and $\abs{z+i}>\sqrt2\}$.</li></ol>
+<b>Solution.</b><ol type="i">
+<li>Möbius transform $κ(z)=\frac{z-i}{z+i}$ maps $∞,1,-1$ to $1,-i,i$. Since κ maps circlines to circlines, κ maps the real line $L$ to the unit circle $S$.<br>By continuity, κ maps connected components of $ℂ∖L$ to connected components of $ℂ∖S$, but $κ(i)=0∈𝔻$, so $κ(G)=𝔻$.</li>
+<li>First take $f(z)=iz^2$ to map $G$ onto the upper half-plane, then compose with $κ(z)=\frac{z-i}{z+i}$ to get $κ(f(z))=\frac{z^2-1}{z^2+1}$.</li>
+<li>$\arg\frac{z-1}{z+1}$ = the angle formed by $-1,z,1$<br>$\arg\frac{z-1}{z+1}∈\left(-\frac{3π}4,-\fracπ4\right)$ iff $z∈G$.<br>Let $f(z)=\frac{z-1}{z+1}$. Then $f(G)=\{z∈ℂ:z≠0$ and $\arg z∈\left(-\frac{3π}4,-\fracπ4\right)\}$. Similar to (ii), we find $g(z)=\frac{z^2+1}{z^2-1}$ maps $f(G)$ to 𝔻. Therefore $g(f(z))=-\frac{1+z^2}{2z}$ maps $G$ to 𝔻.<br>
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\filldraw[red!30](1,0)arc(-45:225:1.414)arc(135:45:1.414);
+\draw[-stealth](0,-1.5)--(0,3);
+\draw[-stealth](-2,0)--(2,0);
+\fill(0,1)circle(1.5pt)node[left]{$i$}(0,-1)circle(1.5pt)node[left]{$-i$}(-1,0)circle(1.5pt)node[below]{$-1$}(1,0)circle(1.5pt)node[below]{$1$};
+\end{tikzpicture}
+{% endlatex %}
+</li>
+</ol>
+<div class="noprint">
+<a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9922">把上半平面共形映照到单位圆盘</a><br>
+<a href="https://en.wikipedia.org/wiki/Cayley_transform">Cayley transform - Wikipedia</a><br>
+<a href="https://math.stackexchange.com/questions/52338">Conformal Maps onto the Unit Disc in ℂ</a>
+</div></li><li>Let
+\[
+A=\{z∈ℂ:\abs{z-2}< 2\text { and }\abs{z-1}>1\} ; \quad B=\{z∈ℂ:0<\Re z< π\} .
+\]
+<ol type="i">
+<li>Find the image of $A$ under the map $z↦1/z$ and the image of $B$ under the map $z↦\exp(iz)$.</li>
+<li>Let $ℍ=\{z∈ℂ:\Im z>0\}$. Given $a, b∈ℍ$ find a conformal bijection $ℍ→ℍ$ of the form $z↦λz+μ$ which maps $a$ to $b$.</li>
+<li>Deduce that for any two points $a,b∈A$ there is a conformal bijection $f:A→A$ such that $f(a)=b$.</li>
+</ol>
+<b>Solution.</b><ol type="i">
+<li>
+    $A$ can be parametrized as $z=r(1+\cosθ+i\sinθ),\,θ∈(-π,π],\,r∈(1,2)$.
+    $$\Re\frac1z=\frac1r\Re\frac1{1+\cosθ+i\sinθ}=\frac1r\Re\frac{1+\cosθ-i\sinθ}{2+2\cosθ}=\frac1{2r}$$
+    So the image of $A$ under the map $z↦\frac1z$ is $\left\{\frac1{2r}+iy:r∈(1,2),y∈ℝ\right\}=\left\{z∈ℂ:\Re z∈\left(\frac14,\frac12\right)\right\}$.<br>
+    $B$ can be parametrized as $z=x+iy,\,x∈(0,π),\,y∈ℝ$.
+    $$\exp\big(i(x+iy)\big)=\mathrm{e}^{-y}(\cos x+i\sin x)$$
+    The range of $\mathrm{e}^{-y}$ is $ℝ^+$, so the image of $B$ under the map $z↦\exp(iz)$ is $\{z∈ℂ:\Im z>0\}$.
+</li>
+<li>
+    Since $z↦λz+μ$ maps boundary of ℍ to itself, we have $λ∈ℝ$. If $λ=0$ the map is constant so it is not bijective.<br>If $λ&lt;0$ it maps $ai,a>\frac{\Im μ}{-λ}$ to $aiλ+μ$, but $\Im(aiλ+μ)=aλ+\Im μ&lt;0$, so the image of $ai$ is not in ℍ. Hence $λ>0$.<br>
+    The image of ℍ is $\{z:\Im z>\Im μ\}$, as the map is surjective, $\Im μ=0$, so $μ∈ℝ$<br>$λa+μ=b⇒\Im(λa+μ)=\Im b⇒λ=\frac{\Im b}{\Im a},μ=b-λa=b-\frac{\Im b}{\Im a}a$
+</li>
+<li>
+    $A$ is mapped to $\left\{x+iy:x∈\left(\frac14,\frac12\right),y∈ℝ\right\}$ by $z↦\frac1z$, then mapped to $B$ by $z↦π(4x-1)$, then mapped to ℍ by $z↦\exp(iz)$. Denote the composition map by $h$, then $h(a)∈ℍ,h(b)∈ℍ$, by (ii), there is a conformal bijection $f_1:ℍ→ℍ$ which maps $h(a)$ to $h(b)$. Therefore $f=h^{-1}∘f_1∘h$ is a conformal bijection $A→A$ which maps $a$ to $b$.
+</li>
+</ol>
+</li><li>Let $ℝ_∞=ℝ∪\{∞\}⊂ℂ_∞$.
+<ol type="i"><li>Show that group $Γ$ of Möbius transformations $T$ for which $T(ℝ_∞)=ℝ_∞$ are exactly those of the form $T(z)=(az+b)/(cz+d)$ where $a,b,c,d$ can be chosen to be real.
+</li><li>Calculate the group $Γ_1$ of Möbius tranformations which preserve $ℍ=\{z∈ℂ:\Im(z)>0\}$.<br>
+[<i>Hint: Why must $Γ_1$ be a subgroup of $Γ$ ?</i>]</ol>
+<b>Solution.</b>
+<ol type="i"><li>If $c=0$, by definition of Möbius transformations, we have $ad-bc≠0$, so $d≠0$. Now $T(0)=\frac bd∈ℝ,T(1)-T(0)=\frac ad∈ℝ$, we may write $T(z)=\left(\frac adz+\frac bd\right)/\left(0z+1\right)$.
+<br>If $c≠0$, we may write $T(z)=\left(\frac acz+\frac bc\right)/\left(z+\frac dc\right)$, it remains to prove $\frac ac,\frac bc,\frac dc$ are real.<br>
+$T(z)=\frac{az+b}{cz+d},T^{-1}(z)=\frac{dz-b}{-cz+a}⟹T(∞)={a\over c}∈ℝ,T(0)={b\over d}∈ℝ_∞,T^{-1}(∞)=-\frac dc∈ℝ,T^{-1}(0)=-\frac ba∈ℝ_∞$. So we are done.<br>
+Alternate method:<br>
+Take 3 distinct points $a_1,a_2,a_3∈ℝ_∞$ that are mapped to $b_1,b_2,b_3∈ℝ_∞$. Then by invariance of cross-ratio we have for all $z∈ℂ$,
+$$\frac{z - a_1}{a_3 - a_1}:\frac{z - a_2}{a_3 - a_1}=\frac{T(z) - b_1}{b_3 - b_1}:\frac{T(z) - b_2}{b_3 - b_2}$$
+Solving for $T(z)$, we can express $a,b,c,d$ in terms of $a_1,a_2,a_3,b_1,b_2,b_3$ with the appropriate conventions on $∞$.</li>
+<li>Suppose $z∈ℍ$ and $T(z)∈ℍ$, then $\Im z>0$ and $\Im(T(z))>0$.
+$$\Im(T(z))=\Im\frac{(az+b)(c\bar z+d)}{\abs{cz+d}^2}=\frac{ad-bc}{\abs{cz+d}^2}⋅\Im(z)$$This implies $ad-bc>0$. We can normalize $ad-bc$ by dividing all of $a,b,c,d$ by $\sqrt{ad-bc}$. So $Γ_1=\left\{z↦\frac{az+b}{cz+d}:a,b,c,d∈ℝ,\,ad-bc=1\right\}$.</li></ol></li>
+<li>Write down a bounded solution $u(x, y)$ to the Dirichlet problem for the following region and boundary conditions:
+\[
+U=\{x+iy:0≤y≤1\}, \quad u(x, 0)=0, \quad u(x, 1)=1 .
+\]
+Hence, using appropriate conformal maps, solve the Dirichlet problem for the following regions and boundary conditions.
+<ol type="i"><li>$U_1=\left\{z:r_1≤\abs z≤r_2\right\},\quad u(z)=0$ when $\abs{z}=r_1,\quad u(z)=1$ when $\abs{z}=r_2$.
+</li><li>$U_2=\{z:\Im z≥0\},\quad u(x, 0)=0$ when $x>0,\quad u(x,0)=1$ when $x< 0$.
+</li><li>$U_3=\{z:\abs z≤1\},\quad u(z)=0$ when $\abs z=1$ and $\Im z< 0,\quad u(z)=1$ when $\abs z=1$ and $\Im z>0$.
+</li><li>$U_4=\{z:\Im z≥0\},\quad u(x, 0)=0$ when $\abs{x}>1, \quad u(x, 0)=1$ when $\abs{x}< 1$.</li></ol>
+<b>Solution.</b><br>
+For $u(z)=\Im z$, we have $u(U)=[0,1],u(x,0)=0,u(x,1)=1$, so it is a bounded solution.
+<ol type="i">
+<li>Let $f(z)=r_1\left(r_1\over r_2\right)^{iz}$. For $y∈[0,1]$, we have $\abs{f(x+iy)}=r_1\left(r_1\over r_2\right)^{-y}∈[r_1,r_2]$. As $\arg f(x+iy)=x\log\left(r_1\over r_2\right)$ ranges over ℝ, $f$ maps $U$ to $U_1$.<br>
+The inverse function is multivalued
+$$f^{-1}(w)= i\frac{ \log(w/r_1)}{\log(r_2/r_1)} $$
+Starting with $\Im:U→ℝ$, since $\Re(\log(w/r_1))=\log(\abs w/r_1)$, we find the solution $\Im∘f^{-1}:U_1→ℝ$
+$$\Im∘f^{-1}(w)=\frac{\log(\abs w/r_1)}{\log (r_2/r_1)}.$$
+Note that even though $f^{-1}$ is multivalued, the solution $u$ is uniquely defined, since we only use $\log:ℝ^+→ℝ$.
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/268770">Dirichlet Problem on an annulus.</a><br>
+<a href="https://www.math.usm.edu/lambers/mat417/class0425.pdf">Product Solutions to Laplace’s Equation</a>
+</div>
+Alternative method: Let $u(w)=A\log\abs w+B$, constant $A,B$ to be determined
+\[\begin{cases}A\log r_1+B=0\\A\log r_2+B=1\end{cases}⇒\begin{cases}A=\frac1{\log(r_2/r_1)}\\B=-{\log r_1\over\log(r_2/r_1)}\end{cases}\]
+</li>
+<li>$f_1(z)=e^{πz}$ maps $U$ to $U_2$, mapping the boundary $y=0$ to the positive real axis, and $y=1$ to the negative real axis.<br>
+Starting with $\Im:U→ℝ$, we find the solution $\Im∘f_1^{-1}:U_2→ℝ$
+\[\Im∘f_1^{-1}(z)=\frac1π\arg z\]
+</li>
+<li>$f_2(z)=\frac{z-i}{z+i}$ maps $U_3$ to $U_2$, mapping the upper unit semicircle to the positive real axis, the lower unit semicircle to the negative real axis.<br>
+$f_1^{-1}∘f_2^{-1}(z)=\frac1π\log\left(i\frac{1+z}{1-z}\right)=\frac12+\frac1π\log\left(\frac{1+z}{1-z}\right)$ maps $U_3$ to $U$, mapping the lower unit semicircle to $y=0$, and the upper unit semicircle to $y=1$.<br>
+Starting with $\Im:U→ℝ$, we find the solution $\Im∘f_1^{-1}∘f_2^{-1}:U_3→ℝ$
+\[\Im∘f_1^{-1}∘f_2^{-1}(z)=\frac1π\arg\left(\frac{1+z}{1-z}\right)\]
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/627170">Conformal map from unit disk to strip </a>
+</div>
+</li>
+<li>By Q6(ii), any Möbius transform of the upper half plane has the form $T(z)=\frac{az+b}{cz+d}$ with $a,b,c,d∈ℝ$, $ad-bc>0$. We need to map $(-\infty, 0)$ to $(-1,1)$, where $u(x,0)=1$, and since conformal maps preserve the orientation, $T(∞)=-1,T(0)=1$.<br>
+Let $T(z) = \frac{1+z}{1-z}$, then we find the solution $\Im∘f_1^{-1}∘T^{-1}:U_4→ℝ$
+\[\Im∘f_1^{-1}∘T^{-1}(z)=\frac1π\arg\left(\frac{z-1}{z+1}\right)\]
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/3063075">Using conformal maps to solve the Dirichlet problem on $U=\{z:\Im z≥0\}$</a><br>
+All <font color="red">conformal maps</font> of the upper half plane are <font color="red">Möbius transformations</font> of the form $T(z) = \frac{az+b}{cz+d}$ with $a,b,c,d∈ℝ$, $ad-bc > 0$. <font color="red">How to prove?</font><br>
+<a href="https://math.stackexchange.com/questions/1104803">Dirichlet Problem using conformal mapping</a><br>
+By the Poisson integral for the upper half plane ℍ. The solution is
+\begin{align*}P_f(x+iy)&=\frac1π\int_{-∞}^∞\frac{y}{(x-\xi)^2 + y^2}f(\xi)\d\xi\\
+&=\frac1π\int_{-1}^1\frac{y}{(x-\xi)^2 + y^2}\d\xi\\
+&=\frac1π\left(\arctan\frac{1-x}{y}-\arctan\frac{-1-x}{y}\right)\\
+&=\frac1π\left(\left(\fracπ2-\arctan\frac{y}{1-x}\right)-\left(\fracπ2-\arctan\frac{y}{-1-x}\right)\right)\\
+&=\frac1π\left(\arctan\frac{y}{-1-x}-\arctan\frac{y}{1-x}\right)\\
+&=\frac1π\left(\arctan\frac{y}{x-1}-\arctan\frac{y}{1+x}\right)\\
+&=\frac1π\left(\arg(z-1)-\arg(z+1)\right)\\
+&=\frac1π\arg\left(\frac{z-1}{z+1}\right)
+\end{align*}
+for $x+iy∈ℍ$.
+We have $P_f(x+iy)=f(x+iy)$ if $y=0,\abs x≠1$.
+</div>
+</li>
+</ol>
+</li><li>Let $f:𝔻→𝔻$ be a holomorphic function, where $𝔻=B(0,1)$.
+<ol type="i"><li>Show that if $f(0)=0$ then $\abs{f(z)}≤\abs{z}$ for all $z∈𝔻$. (hint: show that $\abs{f(z)/z} ≤1/r$ if $\abs z≤r$, for any $r< 1$).<br>
+Show that if, moreover, $\abs{f(z_0)}=\abs{z_0}$ for some $z_0∈𝔻, z_0≠0$, then $f$ is a rotation.
+</li><li>Show that if $a∈𝔻$ the function
+\[
+g_a(z)=\frac{a-z}{1-\bar{a} z}
+\]
+maps $𝔻$ to $𝔻$.
+</li><li>Show that if $f:𝔻→𝔻$ is holomorphic and bijective then there is some $θ∈ℝ$ and $a∈𝔻$ such that $f(z)=e^{iθ}g_a(z)$.</li></ol>
+<b>Proof.</b>
+<ol type="i">
+<li>Since $f$ is analytic on 𝔻 and $f(0)=0$,$$f(z)=f'(0)z+\frac{f''(0)}2z^2+⋯$$
+Then the function
+$$g(z)=f'(0)+\frac{f''(0)}2z+⋯$$
+is analytic on 𝔻.<br>By the maximum modulus principle, for $r< 1$, given any $z∈\bar B(0,r)$, there exists $z_r$ on the boundary of $\bar B(0,r)$ such that
+$$\abs{g(z)}≤\abs{g(z_r)}=\frac{|f(z_r)|}{|z_r|}=\frac{|f(z_r)|}r≤\frac1r$$
+As $r→1$ we get $\abs{g(z)}≤1$. So $\abs{f(z)}≤\abs{z}$.<br>
+Moreover, suppose $\abs{f'(0)}=1$ or $∃z∈𝔻 ∖\{0\}:\abs{f(z)}=\abs{z}$. Then $∃z∈𝔻:\abs{g(z)}=1$. By the maximum modulus principle, $g(z)=a$ constant, then $\abs{a}=1$. Therefore, $f(z)=az$.
+<div class="noprint">
+<a href="https://en.wikipedia.org/wiki/Schwarz_lemma">Schwarz lemma</a>
+</div></li>
+<li>Since $\abs a< 1$, for $\bar z≤1$, $1-\bar az≠0$, the map $g_a$ is holomorphic. If $\abs z=1$ then $z=e^{iθ}$ and$$g_a\left(e^{iθ}\right)=\frac{a-e^{iθ}}{e^{iθ}\left(e^{-iθ}-\bar{a}\right)}=e^{-iθ}\frac{w}{-\bar{w}}$$where $w=a-e^{iθ}$, therefore $\abs{g_a(z)}=1$. By the maximum modulus principle, $\abs{g_a(z)}≤1$ for all $z∈𝔻$. 
+<div class="noprint">Finally we make the following very simple observation:\begin{aligned}\left(g_a∘g_a\right)(z) &=\frac{a-\frac{a-z}{1-\bar a z}}{1-\bar a \frac{a-z}{1-\bar a z}} \\ &=\frac{a-\abs a^2z-a+z}{1-\bar a z-\abs a^2+\bar a z} \\ &=\frac{\left(1-\abs a^2\right) z}{1-\abs a^2} \\ &=z \end{aligned}from which we conclude that $g_a$ is its own inverse! Another important property of $g_a$ is that it vanishes at $z=a$; moreover it interchanges 0 and $a$, namely$$g_a(0)=a \quad \text { and } \quad g_a(a)=0$$
+Stein & Shakarchi, <i>Complex Analysis</i>, 2.1 Automorphisms of the disc (page 219)
+</div></li>
+<li>Let $a=f^{-1}(0), g=f∘g_a$ and observe that $g(0)=f\left(g_a(0)\right)=f(a)=0$, by (i), $\abs{g(z)}≤\abs z$. Moreover, $g^{-1}(0)=0$, applying (i) to $g^{-1}$ yields $\abs{g^{-1}(z)}≤\abs z$, so $\abs z=\abs{g^{-1}(g(z))}≤\abs{g(z)}$, so $\abs{g(z)}=\abs z$. Hence, $g$ is a rotation. Recall that we had $f∘g_a = g$. As $g_a = g_a^{-1}$, $f = g∘g_a$ as desired.
+<div class="noprint">Stein & Shakarchi, <i>Complex Analysis</i>, Theorem 2.2 (page 220)</div>
+</li>
+</ol></ol>
