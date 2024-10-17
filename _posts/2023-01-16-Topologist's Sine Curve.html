@@ -1,0 +1,11 @@
+---
+mathjax: true
+tag: Topology
+excerpt: <a href="https://sites.math.washington.edu/~morrow/334_15/sine%20curve.pdf">Topologist’s Sine Curve</a>
+---
+<p>Let $Γ=\left\{(x, y): 0< x ≤ 1, y=\sin \left(\frac{1}{x}\right)\right\} ∪\{(0, y):|y| ≤ 1\}$</p>
+<blockquote class="statement">
+<p>$Γ$ is not path connected.</p>
+</blockquote>
+<i>Proof.</i> Suppose $f(t)=(a(t), b(t))$ is a continuous curve defined on $[0,1]$ with $f(t) ∈ Γ$ for all $t$ and $f(0)=(0,0), f(1)=\left(\frac{1}{π}, 0\right)$. Then by the intermediate value theorem there is a $0< t_1< 1$ so that $a\left(t_1\right)=\frac{2}{3 π}$. Then there is $0< t_2< t_1$ so that $a\left(t_2\right)=\frac{2}{5 π}$. Continuing, we get a decreasing sequence $t_n$ so that $a\left(t_n\right)=\frac{2}{(2 n+1) π}$. It follows that $b\left(t_n\right)=(-1)^n$. Now since $t_n$ is a decreasing sequence bounded from below it tends to limit $t_n → c$. Since $f$ is continuous $\lim f\left(t_n\right)$ must exist. But $\lim _{n → ∞} b\left(t_n\right)$ does not exist.<hr>
+<p>The topologist's sine curve is not locally connected:</p> take a point $(0, y)∈Γ$. Then any small open ball at this point will contain infinitely many line segments from $Γ$. This cannot be connected, as each one of these is a component, within the neighborhood.

@@ -1,0 +1,36 @@
+---
+mathjax: true
+tag: Topology
+excerpt: From <i>Topology</i> by James Munkres
+---
+<blockquote class="statement">
+<b>Lemma 26.8 (The tube lemma).</b>
+Consider the product space $X × Y$, where $Y$ is compact.<br>
+If $N$ is an open set of $X × Y$ containing the slice $x_0 × Y$ of $X × Y$, then $N$ contains some tube $W × Y$ about $x_0 × Y$, where $W$ is a neighborhood of $x_0$ in $X$.
+</blockquote>
+<h3>Proof</h3>
+First let us cover $x_0 × Y$ by basis elements $U × V$ (for the topology of $X × Y$) lying in $N$. The space $x_0 × Y$ is compact, being homeomorphic to $Y$. Therefore, we can cover $x_0 × Y$ by finitely many such basis elements
+$$
+U_1 × V_1, …, U_n × V_n
+$$
+(We assume that each of the basis elements $U_i × V_i$ actually intersects $x_0 × Y$, since otherwise that basis element would be superfluous; we could discard it from the finite collection and still have a covering of $x_0 × Y$.) Define
+$$
+W=U_1 ∩ ⋯ ∩ U_n
+$$
+The set $W$ is open, and it contains $x_0$ because each set $U_i × V_i$ intersects $x_0 × Y$.<br>
+We assert that the sets $U_i × V_i$, which were chosen to cover the slice $x_0 × Y$, actually cover the tube $W × Y$. Let $x × y$ be a point of $W × Y$. Consider the point $x_0 × y$ of the slice $x_0 × Y$ having the same $y$-coordinate as this point. Now $x_0 × y$ belongs to $U_i × V_i$ for some $i$, so that $y ∈ V_i$. But $x ∈ U_j$ for every $j$ (because $x ∈ W$). Therefore, we have $x × y ∈ U_i × V_i$, as desired.<center>{% latex %}\usepackage{tikz}
+\usetikzlibrary{patterns,patterns.meta}
+\begin{tikzpicture}
+\fill[pattern={Lines[angle=45,distance={2pt}]},pattern color=blue] (-0.8,2) rectangle (0.2,-2.2);
+\draw  (-2,2) rectangle (1,1);
+\draw  (-1.5,1.5) rectangle (0.2,0.2);
+\draw  (2,-1) rectangle (-1,0.6);
+\draw  (-0.8,-0.4) rectangle (0.4,-1.6);
+\draw  (-1.6,-1.4) rectangle (0.8,-2.2);
+\fill  (-0.25,2) rectangle (-0.2,-2.2)node[below]{$x_0$};
+\draw (-3.2,-2.2) -- (3.2,-2.2)node[right]{$X$} (-3.2,2) -- (3.2,2);
+\draw  (-2.8,2) --node[left]{$Y$} (-2.8,-2.2);
+\draw[thick] plot[smooth, tension=.7] coordinates {(1.6,2) (1.4,1.2) (2.8,0.2) (2.8,-1) (1.8,-1.8) (1.2,-2.2)}plot[smooth, tension=.7] coordinates {(-2.2,2) (-2.2,0.8) (-1.4,-0.2) (-1.4,-1)(-2.2,-1.6) (-2,-2.2)};
+\node at (3,0.4) {$N$};
+\end{tikzpicture}
+{% endlatex %}</center>Since all the sets $U_i × V_i$ lie in $N$, and since they cover $W × Y$, the tube $W × Y$ lies in $N$ also. See Figure 26.2.

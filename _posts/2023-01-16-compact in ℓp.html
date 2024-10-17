@@ -1,0 +1,19 @@
+---
+mathjax: true
+tag: Topology
+---
+<h1>Compact subsets of $ℓ^1$</h1>
+<p>One can also construct compact sets that are not subsets of finite dimensional subspaces, for example  $\{ x\in\ell^1 | x_i\in [0,1/i] \;\forall i\in\Bbb N\}.$<a href="https://math.stackexchange.com/questions/3870113">MSE</a></p>
+<!--more-->
+<a href="https://www.math.kit.edu/iana3/%7Eschnaubelt/media/fa14-skript.pdf#Def.1.45">Proposition 1.45.</a> Let $p ∈[1, ∞)$. A set $K ⊆ ℓ^p$ is relatively compact if it is bounded and
+$$
+\lim _{N → ∞} \sup _{\left(x_j\right) ∈ K} \sum_{j=N+1}^{∞}\left|x_j\right|^p=0 .
+$$
+<b>Proof.</b> Due to Corollary 1.38 , it suffices to prove that $K$ is totally bounded. So let $ε>0$. By the assumption, there is an $N ∈ ℕ$ such that
+$$
+\sum_{j=N+1}^{∞}\left|x_j\right|^p&lt;ε^p   \text { for all }  \left(x_j\right) ∈ K .
+$$
+For $x=\left(x_j\right) ∈ K$, put $\hat{x}=\left(x_1, …, x_N\right) ∈ 𝔽^N$. Since $|\hat{x}|_p ≤\|x\|_p$, the set $\hat{K}=$ $\{\hat{x} ∣ x ∈ K\}$ is bounded in $𝔽^N$, and thus it is totally bounded by Example 1.40 and Corollary 1.38. So we obtain vectors $\hat{v}_1, …, \hat{v}_m ∈ 𝔽^m$ such that for all $x ∈ K$ there is an index $l ∈\{1, …, m\}$ with $\left|\hat{x}-\hat{v}_l\right|_p&lt;ε$. Set $v_k=\left(\hat{v}_k, 0, …\right) ∈ ℓ^p$ for all $k ∈\{1, …, m\}$. The total boundedness of $K$ now follows from
+$$
+\left\|x-v_l\right\|_p^p=\left|\hat{x}-\hat{v}_l\right|_p^p+\sum_{j=N+1}^{∞}\left|x_j\right|^p&lt;2 ε^p .
+$$
