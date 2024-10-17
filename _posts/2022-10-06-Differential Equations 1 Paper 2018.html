@@ -32,7 +32,7 @@ $$
 \(∃ L\) such that \(\abs{f (x, y) - f (x, z) } < L \abs{y - z}   ∀ y, z\) such that \(\abs{y + 1} < k, \abs{ z + 1 } < k\).<br>Let \(z = - 1\). The statement reads \(\abs{x \sqrt{y + 1} } < L \abs{y + 1}  ∀ \abs{y + 1} < k\), which would require \(\frac{\abs{x}}{\sqrt{y + 1}} < L\)<br>but then left side blows up as \(y→- 1^+\), so there does not exist such an \(L\). &there4;\(f\) not Lipschitz.
 \begin{cases}y' = x \sqrt{y + 1}\\y (0) = - 1\end{cases}
 One solution is \(y = - 1\). Can construct a second solution by separating variables:
-\[\frac{{\text{d}} y}{\sqrt{y + 1}} = x \text{d} x ⇒ 2 \sqrt{y + 1}= \frac{1}{2} x^2 + C, C = 0 \text{ by boundary condition }y (0) = - 1\]
+\[\frac{\text{d} y}{\sqrt{y + 1}} = x \text{d} x ⇒ 2 \sqrt{y + 1}= \frac{1}{2} x^2 + C, C = 0 \text{ by boundary condition }y (0) = - 1\]
 \(⇒ y = \frac{1}{16} x^4 - 1\) is a second solution.</li></ol></li><li><ol type="i"><li>$\begin{cases}y' = \tan y\\y (0) =\fracπ{4}\end{cases}$ Since \(\tan y→∞\) as \(y→\fracπ{2}\) must have \(k < \fracπ{4}\).<br>
 For this \(R\), \(M = \tan \left( \fracπ{4} + k \right)\) is a bound on \(f\).<br>Also since \(f_y = \sec^2 y\) is bounded on \(R\), \(f\) is Lipschitz, by Mean value theorem.<br>
 Now \(M h ⩽ k ⇒ h ⩽ \frac{k}{\tan \left(\fracπ{4} + k\right)}≕ g (k)\)
