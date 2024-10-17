@@ -1,3 +1,8 @@
+---
+mathjax: true
+tag: Linear Algebra
+---
 <a href="https://math.stackexchange.com/questions/507157">Direct sum isomorphic to sum?</a><br>
 The direct sum of two subspaces of $E$ is an abstract vector space that has a canonical map to $E$, but that map can fail to be injective, and it will precisely when the two subspaces have non-zero intersection. So your mistake is in assuming that the direct sum is a subspace of $E$.<br>
+<!--more-->
 More precisely, if $W_1,W_2$ are subspaces of $E$, then there is $W_1+W_2$, the sum of the two subspaces, which is by definition the subset of $E$ consisting of all sums $w_1+w_2$ with $w_1\in W_1$ and $w_2\in W_2$. This is a subspace of $E$. Then there is the direct sum, $W_1\oplus W_2$, which is, by definition, the set $W_1\times W_2$ with scalar multiplication done component-wise. There is a linear map $W_1\oplus W_2\rightarrow E$ given by $(w_1,w_2)\mapsto w_1+w_2$, so the image is $W_1+W_2\subseteq E$, but there could be a kernel. Namely, if $w$ is a non-zero element of $W_1\cap W_2$, then $(w,-w)\in W_1\oplus W_2$ is non-zero and maps to $w-w=0$. Conversely, if $(w_1,w_2)\mapsto 0$, then $w_1=-w_2\in W_1\cap W_2$. So the induced surjective linear map $W_1\oplus W_2\rightarrow W_1+W_2$ will be an isomorphism if and only if $W_1\cap W_2=\{0\}$.
