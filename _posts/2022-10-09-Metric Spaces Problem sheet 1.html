@@ -48,7 +48,7 @@ excerpt: sheet 1 — MT 2022
     $d\left(\frac32x_1,x_1\right)=d\left(\frac12x_1,0\right)<\frac12$, so $\frac32x_1∈B(x_1,0.9)⊂B(0,1)$, so $d\left(\frac32x_1,0\right)< 1$, contradiction with previous line.
     <div class="noprint">Replace 0.9 with α and replace $\frac12$ with $\frac1C$. For the proof to remain valid, we need $\cases{Cα≥1\\d\left((C-1)x_1,0\right)< α}⇔\cases{Cα≥1\\C< 1+α}⇔α>\frac{\sqrt5-1}2≈0.618$.</div>
     <b>Proof 2.</b><br>
-    Let $v$ be the unit vector in the direction of $x_1$, then $x_1={‖x_1‖}v$. The fact that $B(x_1,0.9)⊂B(0,1)$ implies that $({‖x_1‖}+r)v∈B(0,1)$ for any $0< r< 0.9$. Thus ${\big‖({‖x_1‖}+r)v\big‖}={‖x_1‖}+r< 1$ for any $0< r< 0.9$. It follows that ${‖x_1‖}≤1-0.9=0.1$. Similarly ${‖x_2‖}≤0.1$. By triangle inequality ${‖x_1-x_2‖}≤0.2⇒x_1∈B(x_2,0.9)⇒x_1∈B(x_1,0.9)∩B(x_2,0.9)$.<br>
+    Let $v$ be the unit vector in the direction of $x_1$, then $x_1={‖x_1‖}v$. The fact that $B(x_1,0.9)⊂B(0,1)$ implies that $({‖x_1‖}+r)v∈B(0,1)$ for any $0< r< 0.9$. Thus ${\big\|({‖x_1‖}+r)v\big\|}={‖x_1‖}+r< 1$ for any $0< r< 0.9$. It follows that ${‖x_1‖}≤1-0.9=0.1$. Similarly ${‖x_2‖}≤0.1$. By triangle inequality ${‖x_1-x_2‖}≤0.2⇒x_1∈B(x_2,0.9)⇒x_1∈B(x_1,0.9)∩B(x_2,0.9)$.<br>
     This is false in a general metric space $(X, d)$, for example, when $d$ is the discrete metric, $B\left(x_1, 0.9\right)=\{x_1\}, B\left(x_2, 0.9\right)=\{x_2\}$, and $\{x_1\}∩\{x_2\}=∅$.<br>Actually we can take $d$ be the discrete metric times a constant $α ∈(0.9,1]$, then we also have $B\left(x_1, 0.9\right)=\{x_1\}, B\left(x_2, 0.9\right)=\{x_2\}$, and $\{x_1\}∩\{x_2\}=∅$.
 </li>
 <li>
@@ -75,7 +75,7 @@ excerpt: sheet 1 — MT 2022
     >&\max\big(d(x_1, z_1), d(x_2, z_2)\big)\\=&\tilde{d}\big((x_1,x_2), (z_1,z_2)\big).
     \end{aligned}
     This is not true for an arbitrary norm $‖⋅‖$.<br>
-    Take $X=\Bbb R$ with $d(a,b)={|a-b|}$ and consider the norm ${‖(x,y)‖}={|x|}+{|x-y|}$ on $\Bbb R^2$. Then$$\tilde{d}\big((2,0),(0,0)\big)={\big‖\big(d(2,0),d(0,0)\big)\big‖}={‖(2,0)‖}=4$$is greater than$$\tilde{d}\big((2,0),(1,1)\big)+\tilde{d}\big((1,1),(0,0)\big)={\big‖\big(d(2,1),d(0,1)\big)\big‖}+{\big‖\big(d(1,0),d(1,0)\big)\big‖}={‖(1,1)‖}+{‖(1,1)‖}=2$$
+    Take $X=\Bbb R$ with $d(a,b)={|a-b|}$ and consider the norm ${‖(x,y)‖}={|x|}+{|x-y|}$ on $\Bbb R^2$. Then$$\tilde{d}\big((2,0),(0,0)\big)={\big\|\big(d(2,0),d(0,0)\big)\big\|}={‖(2,0)‖}=4$$is greater than$$\tilde{d}\big((2,0),(1,1)\big)+\tilde{d}\big((1,1),(0,0)\big)={\big\|\big(d(2,1),d(0,1)\big)\big\|}+{\big\|\big(d(1,0),d(1,0)\big)\big\|}={‖(1,1)‖}+{‖(1,1)‖}=2$$
     <div class="noprint"><a href="https://math.stackexchange.com/questions/3872795/prove-whether-norm-is-or-is-not-metric?noredirect=1">Prove whether norm is or is not metric</a></div>
 </li>
 <li>
