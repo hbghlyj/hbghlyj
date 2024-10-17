@@ -230,6 +230,7 @@ g(w)=\frac1{2πi}\int_γ\frac{zf'(z)}{f(z)-w}\d z
 \]
 where $γ(t)=a+re^{it},t∈[0,2π]$.<br>
 {% latex float:right%}\usepackage{tikz}
+\begin{tikzpicture}
 \draw[red,domain=45:405,smooth,samples=100]plot(\x:{2+.5*cos(8*\x)})node[right]{$f(\gamma(a,R))$};
 \draw(0,0)circle(1.5);
 \node at (0,1.1) {$B(f(a),m)$};
