@@ -54,12 +54,12 @@ real boxheight = -0.8;
 label("$\alpha(p,q)$",(-boxwidth/2,boxheight/2)+W*.2);
 label("$q$",(-boxwidth/2,-boxheight/2+.5));
 label("$p$",(-boxwidth/2,-1.5*boxheight+1));
-for (int i=0; i&lt;n; ++i) {
+for (int i=0; i<n; ++i) {
     filldraw(box((i*boxwidth,0),((i+1)*boxwidth,boxheight)), i%2==0 ? green : cyan);
     label("$a_"+string(i)+"$", (i*boxwidth,0) + boxwidth*(0.5,-0.5));
 }
 DefaultHead=SimpleHead;
-for (int i=1; i&lt;=n; i+=2) {
+for (int i=1; i<=n; i+=2) {
   filldraw(shift(0,.5)*box((i*boxwidth,-boxheight),((i+1)*boxwidth,0)), cyan);
   draw(((i+0.5)*boxwidth,.5)--((i+0.5)*boxwidth,0),EndArrow());
   filldraw(shift(0,1)*box(((i-1)*boxwidth,-2*boxheight),(i*boxwidth,-boxheight)), green);
@@ -72,12 +72,12 @@ real boxheight = 0.8;
 label("$p$",(-boxwidth/2,boxheight/2));
 label("$\beta(p)$",(-boxwidth/2,-boxheight/2-.5));
 label("$\gamma(p)$",(-boxwidth/2,-1.5*boxheight-1));
-for (int i=0; i&lt;n; ++i) {
+for (int i=0; i<n; ++i) {
     filldraw(box((i*boxwidth,0),((i+1)*boxwidth,boxheight)), i%2==0 ? green : cyan);
     label("$a_"+string(i)+"$", (i*boxwidth,0) + boxwidth*(0.5,0.5));
 }
 DefaultHead=SimpleHead;
-for (int i=1; i&lt;=n; i+=2) {
+for (int i=1; i<=n; i+=2) {
   filldraw(shift(0,-.5)*box((i*boxwidth,-boxheight),((i+1)*boxwidth,0)), cyan);
   draw(((i+0.5)*boxwidth,0)--((i+0.5)*boxwidth,-.5),EndArrow());
   filldraw(shift(0,-1)*box(((i-1)*boxwidth,-2*boxheight),(i*boxwidth,-boxheight)), green);
