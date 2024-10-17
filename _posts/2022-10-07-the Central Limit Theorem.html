@@ -312,10 +312,7 @@ Complex Analysis and the Central Limit Theorem</h2></div>
        \(z_n = 1/\pi n\), we see this sequence has \(0\) as a limit point, and our function is also zero at \(0\) (see Figure <a href='#x1-40511'>1.1</a>). </p><figure class='figure'> 
        <a id='x1-40511'></a>
        <div class='center'>
-       <tex>\documentclass{standalone}
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-\begin{document}
+       {% latex %}\usepackage{pgfplots}\pgfplotsset{compat=newest}
 \begin{tikzpicture}[>=latex]
   \begin{axis}[
     width=10cm,
@@ -332,7 +329,7 @@ Complex Analysis and the Central Limit Theorem</h2></div>
 \addplot[domain=-300:-30,samples=200,smooth] ({1/x},{sin(deg(x))*1/x^3});
   \end{axis}
 \end{tikzpicture}
-\end{document}</tex>
+{% endlatex %}
        <figcaption class='caption'><span class='id'>Figure 1.1: </span><span class='content'> Plot of \(x^3 \sin (1/x)\).</span></figcaption>
        </div>
           </figure>
