@@ -9,7 +9,7 @@ Don't hesitate to:
 
 📁 The `_posts` folder
 
-I write posts in HTML. The source code live in https://github.com/hbghlyj/hbghlyj/tree/main/_posts
+I write posts in HTML. The source code are in https://github.com/hbghlyj/hbghlyj/tree/main/_posts
 The file name format is `YYYY-MM-DD-title.html`.
 
 Equations are in LaTeX or MathML format. One can be converted to the other by https://pandoc.org/try/
