@@ -1,0 +1,170 @@
+<ol><li>Throughout this question let the function $f: ℝ^2 → ℝ$ be given by
+$$
+f(x, y)= \begin{cases}c x(y-x) e^{-y}, & 0&lt;x&lt;y \\ 0, & \text { otherwise }\end{cases}
+$$
+Throughout this question you may use standard properties of sums of independent random variables without proof.
+<ol type="a"><li>
+<ol type="i"><li>Determine the value of $c ∈(0, ∞)$ for which $f$ is a joint probability density function.
+Consider a pair $(X, Y)$ of random variables with joint probability density function $f$.
+</li>
+<li>Justifying briefly, are $X$ and $Y$ independent?
+</li>
+<li>Determine the marginal distributions of $X$ and $Y$, and find their means and variances.
+</li>
+<li>Determine the conditional distribution of $X$ given $Y=y$, for any $y>0$.
+</li>
+<li>Find the covariance of $X$ and $Y$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>State, without proof, the Central Limit Theorem.
+</li>
+<li>Let $\left(X_j, Y_j\right), j ⩾ 1$, be a sequence of independent pairs with joint probability density function $f$. Let $S_n=X_1+⋯+X_n$ and $T_n=Y_1+⋯+Y_n, n ⩾ 1$. Show that
+$$
+ℙ\left(S_n ⩽ 2 n\right) → \frac{1}{2}   \text { and }   ℙ\left(T_n ⩽ 4 n\right) → \frac{1}{2},   \text { as } n → ∞ .
+$$
+</li>
+<li>Find the limit as $n → ∞$ of $ℙ\left(S_n ⩽ 2 n, T_n ⩽ 4 n\right)$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>State the Strong Law of Large Numbers, without proof.
+</li>
+<li>Let $p ∈[1 / 2,1]$ and consider the simple random walk on $ℤ$ with transition probabilities $p_{i, i+1}=1-p_{i, i-1}=p$.
+<ol type="i"><li>Determine, for each $p ∈[1 / 2,1]$, the communicating classes of this Markov chain.
+</li>
+<li>Suppose that $S_0=a ∈ ℤ$. For each $p ∈[1 / 2,1]$, does the Strong Law of Large Numbers determine $\lim _{n → ∞} S_n$ ? If so, find this limit, justifying your answer.
+</li>
+<li>Suppose that $S_0=a ∈ ℤ$. For each $p ∈[1 / 2,1]$, find $h:=ℙ\left(S_n=a\text{ for some }n ⩾ 1\right)$.</li></ol>
+</li>
+<li>Now let $p ∈(0,1 / 2]$ and consider the Markov chain on $\{0,1,2, …\}$ with transition probabilities $q_{i, i+1}=1-q_{i, i-1}=p$ for $i ⩾ 1$ and $q_{0,1}=1$.
+<ol type="i"><li>Show that this Markov chain is recurrent.
+</li>
+<li>Calculate all stationary distributions.</li></ol>
+</li>
+<li>Now let $p^{+} ∈(0,1 / 2)$ and $p^{-} ∈(1 / 2,1)$. Consider the Markov chain with transition probabilities $r_{i, i+1}=1-r_{i, i-1}=p^{+}, i ⩾ 1, r_{i, i+1}=1-r_{i, i-1}=p^{-}, i ⩽-1$, and $r_{0,1}=r_{0,-1}=1 / 2$. Calculate the stationary distribution.</li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Let $r, λ ∈(0, ∞)$. Determine the moment generating function of the Gamma distribution with probability density function
+$$
+f(x)= \begin{cases}\frac{1}{Γ(r)} λ^r x^{r-1} e^{-λ x}, & x>0 \\ 0, & \text { otherwise. }\end{cases}
+$$
+</li>
+<li>Let $E_1, …, E_n$ be independent exponentially distributed with parameter $λ ∈(0, ∞)$. Determine the distribution of $E_1+⋯+E_n$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Define what is meant by a Poisson process $\left(N_t, t ⩾ 0\right)$ of rate $λ ∈(0, ∞)$.
+</li>
+<li>Suppose that arrivals of buses are modelled by a Poisson process with rate $λ$. Based on the definition you provided in (i), derive the distribution of the number of arrivals to time $t>0$, and determine the distribution of the $n$th arrival time $T_n, n ⩾ 1$.</li></ol>
+</li>
+<li>State, without proof, the theorem about superposition of Poisson processes.
+</li>
+<li>Let $\left(L_t, t ⩾ 0\right)$ be a random process starting from $L_0=0$ with independent increments and $L_t ∼ \operatorname{Poisson}\left(α t^m\right)$ for some $α ∈(0, ∞)$ and $m>1$. We refer to such a process as an inhomogeneous Poisson process with rate function $μ(t)=α m t^{m-1}, t ⩾ 0$.
+<ol type="i"><li>Determine the distribution of the first arrival time $S_1$ of $\left(L_t, t ⩾ 0\right)$.
+</li>
+<li>By considering events of the form $\left\{S_1 ⩽ t, S_2>u\right\}$, or otherwise, determine the joint distribution of $S_1$ and $S_2-S_1$, where $S_2$ is the second arrival time of $\left(L_t, t ⩾ 0\right)$. Comment on your findings.
+</li>
+<li>Let $\left(N_t, t ⩾ 0\right)$ be a Poisson process of rate $λ ∈(0, ∞)$ independent of $\left(L_t, t ⩾ 0\right)$. With brief justification, find a superposition theorem for $\left(L_t, t ⩾ 0\right)$ and $\left(N_t, t ⩾ 0\right)$.</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>$∫_x^{∞} f(x, y) d y=∫_0^{∞} c x z e^{-x-z} d z=c x e^{-x}$ recognising the integral for the mean of a standard exponential distribution. Similarly, integrating over $x ∈(0, ∞)$, we obtain integral $c$, so we need $c=1$.
+</li>
+<li>$X$ and $Y$ are not independent since the probability density function does not factorise into a function of $x$ and a function of $y$.
+</li>
+<li>From (i), $f_X(x)=∫_x^{∞} f(x, y) d y=x e^{-x}, x>0$. So, $X ∼ \operatorname{Gamma}(2,1)$. Similarly, $f_Y(x)=∫_0^y x(y-x) e^{-y} d x=e^{-y}\left[\frac{1}{2} x^2 y-\frac{1}{3} x^3\right]_0^y=\frac{1}{6} y^3 e^{-y}, y>0$, so $Y$ is Gamma$(4,1)$. Hence, as sums of independent exponential variables with mean and variance 1, we have $𝔼(X)=\operatorname{Var}(X)=2, 𝔼(Y)=\operatorname{Var}(Y)=4$, by independence.
+</li>
+<li>$f_{X ∣ Y=y}(x)=f(x, y) / f_Y(y)=6 x(y-x) / y^3, x ∈(0, y)$.
+</li>
+<li>$𝔼(X Y)=∫_0^{∞} ∫_0^y x^2 y(y-x) e^{-y} d x d y=∫_0^{∞}\left(\frac{1}{3} y^5-\frac{1}{4} y^5\right) e^{-y} d y=10$ integral of Gamma$(6,1)$ density, noting that $Γ(6)=5 !=120$. Hence $\operatorname{Cov}(X, Y)=𝔼(X Y)-𝔼(X) 𝔼(Y)=2$. Students may also represent $Y=X+X'$ for $X' ∼\operatorname{Gamma}(2,1)$ independent of $X$ and $\operatorname{Cov}(X, Y)=\operatorname{Var}(X)=2$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $\left(X_j, j ≥ 1\right)$ be a sequence of independent identically distributed random variables with mean $μ$ and variance $σ^2 ∈(0, ∞)$. Let $S_n=X_1+⋯+X_n$, $n ≥ 1$. Then
+$$
+ℙ\left(\frac{S_n-n μ}{\sqrt{n σ^2}} ≤ x\right) → ∫_{-∞}^x \frac{1}{\sqrt{2 π}} e^{-z^2 / 2} d z=ℙ(Z ≤ x) .
+$$
+</li>
+<li>The Central Limit Theorem applies since $X$ and $Y$ have positive finite variance, by (a)(iii). By symmetry $ℙ(Z ≤ 0)=1 / 2$. Hence
+$$
+\begin{aligned}
+& ℙ\left(S_n ≤ 2 n\right)=ℙ\left(\frac{S_n-n 𝔼(X)}{\sqrt{n \operatorname{Var}(X)}} ≤ 0\right) → \frac{1}{2} \\
+& ℙ\left(T_n ≤ 4 n\right)=ℙ\left(\frac{T_n-n 𝔼(Y)}{\sqrt{n \operatorname{Var}(Y)}} ≤ 0\right) → \frac{1}{2} .
+\end{aligned}
+$$
+</li>
+<li>$S_n$ and $T_n$ are not independent, but writing $T_n=S_n+S_n'$ for independent $S_n$ and $S_n'$, we have that $\left(S_n-2 n\right) / \sqrt{2 n}$ and $\left(S_n'-2 n\right) / \sqrt{2 n}$ converge in distribution to independent normals $Z$ and $Z'$, say, and hence
+$$
+\begin{aligned}
+ℙ\left(S_n ≤ 2 n, T_n ≤ 4 n\right) & =ℙ\left(\frac{S_n-2 n}{\sqrt{2 n}} ≤ 0, \frac{S_n-2 n}{\sqrt{2 n}}+\frac{S_n'-2 n}{\sqrt{2 n}} ≤ 0\right) \\
+& → ℙ\left(Z&lt;0, Z+Z'&lt;0\right)=ℙ\left(Θ ∈\left(π, \frac{7}{4} π\right)\right)=3 / 8,
+\end{aligned}
+$$
+by spherical symmetry of the standard bivariate normal distribution, which makes the angular part $Θ ∼ \operatorname{Unif}(0,2 π)$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $\left(X_j, j ≥ 1\right)$ be a sequence of independent identically distributed random variables with finite mean $μ$ and $S_n=X_1+⋯+X_n, n ≥ 1$. Then $ℙ\left(S_n / n → μ\right)=1$.
+</li>
+<li>
+<ol type="i"><li>For $p ∈[1 / 2,1)$, the only communicating class is $ℤ$, while for $p=1$, all $\{n\}$, $n ∈ ℤ$ are singleton classes.
+</li>
+<li>We can write $S_n=a+X_1+⋯+X_n$ for $ℙ\left(X_j=1\right)=1-ℙ\left(X_j=-1\right)=p$, with $𝔼\left(X_j\right)=2 p-1$. For $p>1 / 2$, SLLN yields $\left(S_n-a\right) / n →2p-1>0$ hence $S_n → ∞$ a.s. For $p=1 / 2$ the SLLN does not determine the limiting behaviour.
+</li>
+<li>By translation invariance we may assume $a=0$. Let
+$$
+h_m=ℙ_m\left(S_n=0 \text { for some } n ≥ 0\right),   m ∈ ℤ .
+$$
+Then $\left(h_m, m ∈ ℤ\right)$ is the minimal solution of $h_0=1, h_m=p h_{m+1}+(1-p) h_{m-1}$. Let $p=1 / 2$. Then, $h_1&lt;1$ would imply $h_{-1}>1$, which is absurd, so $h_1=1$. Inductively, $h_m=1$ for all $m ∈ ℤ$.
+Let $p>1 / 2$. Then, $h_m=1$ for all $m&lt;0$ by (ii). For $m>0$, try $h_m=β^m$. Then $β=p β^2+(1-p)$, factorising $β^2-β / p+(1-p) / p=(β-1)(β-(1-p) / p)$, we see that $β=(1-p) / p$ yields the minimal solution $h_m=((1-p) / p)^m, m ≥ 0$. Conditioning on the first step and applying the Markov property, we find
+$$
+h=p h_1+(1-p) h_{-1}=1-p+1-p=2-2 p .
+$$</li></ol>
+</li>
+<li>
+<ol type="i"><li>By irreducibility, we only need to check that 0 is recurrent. By symmetry, (b) (iii) for $p ∈(0,1 / 2]$, yields $h_m=1$ for all $m ≥ 1$. Here, conditioning on the first step and applying the Markov property, we find that the return probability to 0 is $h'=h_1=1$, so 0 is recurrent.
+</li>
+<li>$ξ Q=ξ$ is equivalent to $ξ_m=ξ_{m-1} p+ξ_{m+1}(1-p)$. Try $ξ_m=A γ^m$, then, as above $γ ∈\{p /(1-p), 1\}$. Only $h_m=A(p /(1-p))^m$ can be normalised, and only for $p&lt;1 / 2$, to satisfy $\sum_{m ≥ 0} ξ_m=1$, and $A=1-p /(1-p)$ yields a geometric distribution with parameter $A=(1-2 p) /(1-p)$. For $p=1 / 2$ there is no solution satisfying $\sum_{m ≥ 0} ξ_m=1$, so there is no stationary distribution.</li></ol>
+</li>
+<li>In (c)(ii), the mean return time to 0 is $1 / ξ_0=(1-p) /(1-2 p)$. For (d), denote the stationary distribution by $η$. Conditioning on the first step, the mean return time to 0 here is $m_0=1+\frac{1}{2}\left(a^{+}+a^{-}\right)$ where $a^{+}=\left(1-p^{+}\right) /\left(1-2 p^{+}\right)-1=p^{+} /\left(1-2 p^{+}\right)$ and $a^{-}=p^{-} /\left(2 p^{-}-1\right)-1=\left(1-p^{-}\right) /\left(2 p^{-}-1\right)$, and $η_0=1 / m_0$. By the Ergodic Theorem, this is also the long-term proportion of time spent in 0. Of the time not spent at 0, a proportion $a^{+} /\left(a^{+}+a^{-}\right)$ is spent positive since each return from 1 takes $a^{+}$ on average, each return from $-1$ takes $a^{-}$. By (c)(ii), these proportions further split into proportions $ξ_m /\left(1-ξ_0\right)$ spent in $m$. Hence
+$$
+η_m=\left(1-η_0\right) \frac{a^{+}}{a^{+}+a^{-}} \frac{1-2 p^{+}}{1-p^{+}}\left(\frac{p^{+}}{1-p^{+}}\right)^{m-1}=\frac{1}{2+a^{+}+a^{-}}\left(\frac{p^{+}}{1-p^{+}}\right)^m
+$$
+for $m ≥ 1$, and by symmetry, $η_m=\left(1 /\left(2+a^{+}+a^{-}\right)\right)\left(\left(1-p^{-}\right) / p^{-}\right)^{|m|}$ for $m ≤-1$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>$M(t)=∫_0^{∞} e^{t x} f(x) d x=∫_0^{∞} \frac{1}{Γ(r)} λ^r x^{r-1} e^{-(λ-t) x} d x=\left(\frac{λ}{λ-t}\right)^r$, for $t&lt;λ$, as the Gamma$(r, λ-t)$ density integrates to 1.
+</li>
+<li>$\operatorname{Exp}(λ)=\operatorname{Gamma}(1, λ)$. By independence, for all $t&lt;λ$,
+$$
+𝔼\left(e^{t\left(E_1+⋯+E_n\right)}\right)=𝔼\left(e^{t E_1}\right) ⋯ 𝔼\left(e^{t E_n}\right)=\left(\frac{λ}{λ-t}\right)^n .
+$$
+By the uniqueness theorem for moment generating functions, $E_1+⋯+E_n ∼\operatorname{Gamma}(n, λ)$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>$N_0=0$, increments $N_{t_j}-N_{t_{j-1}}, 1 ≤ j ≤ n$, are independent for all $0=t_0&lt;t_1&lt;⋯&lt;t_n$, and $N_{s+t}-N_s ∼\operatorname{Poisson}(λ t)$ for all $s, t ≥ 0$.
+</li>
+<li>By definition, for $s=0$, we have $N_t=N_{0+t}-N_0 ∼ \operatorname{Poisson}(λ t)$.
+\[ℙ\left(T_n>t\right)=ℙ\left(N_t ≤ n-1\right)=\sum_{k=0}^{n-1} \frac{(λ t)^k}{k !} e^{-λ t} \]Hence, differentiation yields\[
+f_{T_n}(t)=-\frac{d}{d t} ℙ\left(T_n>t\right)=\sum_{k=0}^{n-1}\left(\frac{λ^{k+1} t^k}{k !}-\frac{k λ^k t^{k-1}}{k !}\right) e^{-λ t}=\frac{1}{Γ(n)} λ^n t^{n-1} e^{-λ t}\]
+for all $t>0$. Hence, $T_n ∼ \operatorname{Gamma}(n, λ)$.</li></ol>
+</li>
+<li>Let $\left(M_t, t ≥ 0\right)$ and $\left(N_t, t ≥ 0\right)$ be two independent Poisson processes of rates $μ$ and $λ$. Then $K_t=M_t+N_t, t ≥ 0$, is a Poisson process of rate $μ+λ$.
+</li>
+<li>
+<ol type="i"><li>$ℙ\left(T_1>t\right)=ℙ\left(L_t-L_0=0\right)=\exp \left(-α t^m\right)$.
+Hence $f_{T_1}(t)=α m t^{m-1} \exp \left(-α t^m\right), t>0$.
+</li>
+<li>First note that $N_u-N_t ∼ \operatorname{Poisson}\left(α\left(u^m-t^m\right)\right)$, by independence of increments.
+$$
+\begin{aligned}
+ℙ\left(S_1 ≤ t, S_2>u\right) & =ℙ\left(L_t=1, L_u-L_t=0\right)=α t^m e^{-α t^m} e^{-α\left(u^m-t^m\right)} \\
+& =α t^m e^{-α u^m},
+\end{aligned}
+$$
+for $0&lt;t&lt;u$.
+By differentiation, $f_{S_1, S_2}(t, u)=α m t^{m-1} α m u^{m-1} e^{-α u^m}, 0&lt;t&lt;u$.
+By the transformation formula, $f_{S_1, S_2-S_1}(t, s)=α^2 m^2 t^{m-1}(s+t)^{m-1} e^{-α(s+t)^m}$, $t>0, s>0$.
+As $m>1$, this does not factorise, so $S_1$ and $S_2-S_1$ are not independent, in contrast to the case $m=1$ of a (homogeneous) Poisson process.
+</li>
+<li>$J_t=L_t+N_t, t ≥ 0$, is an inhomogeneous Poisson process with rate function $α m t^{m-1}+λ$. This is because independent increments are preserved as for the standard superposition theorem. Clearly $J_0=0$, and the rate function, which is the derivative of the parameter of the Poisson distribution of $J_t$ is identified from $J_t=L_t+N_t ∼ \operatorname{Poisson}\left(α t^m+λ t\right)$.</li></ol></li></ol>
+</li></ol>

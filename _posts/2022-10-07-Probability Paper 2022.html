@@ -1,0 +1,153 @@
+---
+mathjax: true
+tag: Probability
+excerpt: A8 Probability Paper 2022
+---
+<ol><li>
+<ol type="a"><li>Let $Z_n,n≥1$, be random variables and $c∈ℝ$. Show that $Z_n→c$ in probability if and only if $Z_n→c$ in distribution.</li><li>Fix $λ∈(0,∞)$. For each $r∈(0,∞)$, consider a random variable $X_r$ with probability density function
+$$
+f_{r,λ}(x)=\begin{cases}\frac{1}{Γ(r)}x^{r-1}λ^r e^{-λ x},&x∈(0,∞),\\0,&\text { otherwise. }\end{cases}
+$$
+Recall that this means that $X_r$ has the Gamma distribution with shape parameter $r$ and rate parameter $λ$.
+<ol type="i">
+<li>Carefully derive the moment generating function of $X_r$.</li>
+<li>
+Show that $X_r/r$ converges in distribution as $r→∞$. Does this convergence hold in probability?<br>
+[You may use standard theorems about moment generating functions without proof.]
+</li></ol></li>
+<li><ol type="i"><li>Define the Poisson process $\left(N_t,t≥0\right)$ of rate $λ∈(0,∞)$ in terms of properties of its increments over disjoint time intervals.</li><li>Show that the first arrival time $T_1=\inf\left\{t≥0:N_t=1\right\}$ is exponentially distributed with parameter $λ∈(0,∞)$.</li><li>Show that $T_n=\inf\left\{t≥0:N_t=n\right\}$ has a Gamma distribution for all $n≥1$.<br>
+[If you use the inter-arrival time definition of the Poisson process, you are expected to prove that it is equivalent to the definition given in (i).]</li><li>Let $R_n,n≥1$, be independent Gamma$(n,λ)$ random variables.<br>
+Let $Y_t=\#\left\{n≥1:R_n≤t\right\},t≥0$. Show that $Y_t$ is not a Poisson process with rate $λ$, but does satisfy $ℙ\left(Y_t&lt;∞\text{ for all }t≥0\right)=1$.<br>
+[Hint: Let $B_n=1_{\left\{R_n≤t\right\}}$ and write $Y_t=\sum_{n≥1}B_n$.]</li>
+</ol></li></ol></li>
+<li><ol type="a">
+<li>State the Central Limit Theorem.</li>
+<li>Let $(R,S)$ be a pair of random variables with joint probability density function
+$$
+f(r,s)=\begin{cases}\frac{1}{4}e^{-{|s|}},&(r,s)∈[-1,1]×ℝ\\0,&\text { otherwise. }\end{cases}
+$$
+Also consider independent identically distributed random variables $\left(R_n,S_n\right),n≥1$, with the same joint distribution as $(R,S)$.<ol type="i"><li>Find the marginal probability density functions of $R$ and $S$.</li><li>For any $s∈ℝ$, determine
+$$
+\lim _{n→∞}ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n≤s\right)
+$$</li><li>For any $r,s∈ℝ$, show that
+$$
+\lim _{n→∞}ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(R)}}\sum_{k=1}^n R_n≤r,\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n≤s\right)=ℙ(W≤r,Z≤s)
+$$
+for a pair of random variables $(W,Z)$ whose joint distribution you should determine.</li></ol>
+</li><li>Consider the transformation $T:ℝ^2→ℝ^2$ given by $T(x,y)=(x-y,x+y)$. Let $(R,S)$ be as in (b) and $(X,Y)$ such that $(R,S)=T(X,Y)$.<ol type="i"><li>Derive the joint probability density function of $(X,Y)$.</li><li>Find the marginal probability density functions of $X$ and $Y$.</li><li>Find the correlation of $X$ and $Y$.</li></ol></li></ol></li>
+<li><ol type="a"><li>Consider a Markov chain on a countable state space $S$ and let $i ∈ S$.
+<ol type="i"><li>Define the notions of recurrence and positive recurrence of $i$.
+</li>
+<li>Suppose that $i$ is positive recurrent. State, without proof, the ergodic theorem for the long-term proportion of time the Markov chain spends in state $i$.</li></ol>
+</li>
+<li>An urn contains a total of $N ≥ 2$ balls, some white and the others black. Each step consists of two parts. A first ball is chosen at random and removed. A second ball is then chosen at random from those remaining. It is returned to the urn along with a further ball of the same colour. Denote by $Y_n$ the number of white balls after $n ≥ 0$ steps.
+<ol type="i"><li>Explain briefly why $\left(Y_n, n ≥ 0\right)$ is a Markov chain and determine its state space and transition matrix.
+</li>
+<li>Determine the communicating classes of this Markov chain and say whether their states are recurrent, and whether they are aperiodic. Justify your answers.
+</li>
+<li>Find all stationary distributions of this Markov chain.</li></ol>
+</li>
+<li>Now consider a Markov chain $\left(Z_n, n ≥ 0\right)$, on $I=\{0,1,2, …, N\}$ with the transition matrix $P$ whose non-zero entries are
+$$
+p_{k, j}= \begin{cases}\frac{N-k}{N} \frac{k+1}{N+1} & \text { if } j=k+1, \\ \frac{N-k}{N} \frac{N-k}{N+1}+\frac{k}{N} \frac{k}{N+1} & \text { if } j=k, \\ \frac{k}{N} \frac{N-k+1}{N+1} & \text { if } j=k-1 .\end{cases}
+$$
+<ol type="i"><li>Show that the uniform distribution is stationary for this Markov chain. Hence, or otherwise, determine all stationary distributions of this Markov chain.
+</li>
+<li>For a state $k ∈ I$, consider the successive visits
+$$
+V_1^{(k)}=\inf \left\{n ≥ 1: Z_n=k\right\}   \text { and }   V_{m+1}^{(k)}=\inf \left\{n ≥ V_m^{(k)}+1: Z_n=k\right\},   m ≥ 1 .
+$$
+Explain why visits to $k$ occur in groups of independent geometrically distributed consecutive visits, and determine the parameter of this geometric distribution.
+</li>
+<li>Determine the expected time between two groups of visits to state $k$.
+</li>
+<li>Is the following statement true or false? ‘For any two states $k_1 ≠ k_2$, there is, on average, one visit to $k_2$ between the first and second visits to $k_1$.’ Provide a proof or counterexample.</li></ol></li></ol></li></ol>
+<h1>Solution</h1>
+<ol><li><ol type="a"><li>[Sheet 1 Q6] If $Z_n\overset d→c$, since $F_c$ is continuous on $ℝ∖\{c\}$, for any $ϵ>0$,
+\begin{align*}
+ℙ\left(\left|Z_n-c\right|≥ϵ\right) &=ℙ\left(Z_n≤c-ϵ\right) +ℙ\left(Z_n≥c+ϵ\right)\\
+&= F_{Z_n}(c-ϵ)+1-F_{Z_n}(c+ϵ)\\&→0+1-1=0.\text{ So }Z_n\overset P→c.\end{align*}If $Z_n\overset P→c$, we need to prove for any $ϵ>0$, $F_{Z_n}(c-ϵ)→0,F_{Z_n}(c+ϵ)→1$.\[ℙ(Z_n≤c-ϵ)≤ℙ(\left|Z_n-c\right|>ϵ)→0\]So $F_{Z_n}(c-ϵ)→0$\[ℙ(Z_n≥c+ϵ)≤ℙ(\left|Z_n-c\right|>ϵ)→0\]So $F_{Z_n}(c+ϵ)→1$</li>
+<li><ol type="i"><li>[Sheet 2 Q2] for $t&lt;λ$,\begin{align*}M_{X_r}(t)&=∫_0^∞e^{tx}\frac1{Γ(r)} λ^r x^{r-1} e^{-λ x}dx\\
+&=\frac{λ^r}{(λ-t)^r}∫_0^∞\underbrace{\frac1{Γ(r)}(λ-t)^r x^{r-1} e^{-(λ-t)x}}_{\text{p.d.f for }Γ(r, λ-t)}dx\\
+&=\left(1-\frac tλ\right)^{-r}\end{align*}</li><li>For $t&lt;rλ:M_{X_r/r}(t)=M_{X_r}\left(t\over r\right)=\left(1-\frac t{rλ}\right)^{-r}→e^{t/λ}$<br>
+By convergence theorem $X_r/r\overset d→1/λ$.<br>
+By (a), $X_r/r\overset p→1/λ$.
+</li></ol></li><li><ol type="i"><li>The counting process $N_t, t ≥ 0$ is a Poisson process of rate $λ$ if:<ol style="padding:0"><li>$N_0=0$.</li><li>If $\left(s_1, t_1\right),\left(s_2, t_2\right), …,\left(s_k, t_k\right)$ are disjoint intervals in $ℝ_{+}$, then the increments $N\left(s_1, t_1\right]$, $N\left(s_2, t_2\right], …, N\left(s_k, t_k\right]$ are independent, where $N\left(s_i, t_i\right]=N_{t_i}-N_{s_i}$.</li><li>For any $s&lt;t$, the increment $N(s, t]$ has Poisson distribution with mean $λ(t-s)$.</li></ol></li>
+<li>$0=N_0≤N_1≤⋯≤N_t$, so $T_1>t⇔N_0=⋯=N_t=0⇔N_t=0$<br>
+$N_t∼\operatorname{Poisson}(λt)⇒ℙ(T_1>t)=ℙ(N_t=0)=e^{-λt}⇒T_1∼\operatorname{Exp}(λ)$.</li>
+<li>Let $X_n∼\operatorname{Gamma}(n,λ)$. By <a href="https://www2.math.upenn.edu/~kazdan/361F15/Notes/Taylor-integral.pdf">Taylor's formula with integral remainder</a>,
+\[e^{λt}=\sum_{k=0}^{n-1}\frac{(λt)^k}{k!}+∫_0^t\frac{1}{(n-1)!}x^{n-1}λ^n e^{λ(t-x)}dx\]Therefore
+\begin{split}ℙ(X_n≤t)&=∫_0^t\frac{1}{(n-1)!}x^{n-1}λ^n e^{-λx}dx\\&=1-e^{-λt}\sum_{k=0}^{n-1}\frac{(λt)^k}{k!}\end{split}
+On the other hand, $ℙ(T_n≤t)=ℙ(N_t≥n)=1-e^{-λt}\sum_{k=0}^{n-1}\frac{(λt)^k}{k!}$. So $T_n=X_n$.
+</li>
+<li>In Poisson process $ℙ(T_1>T_2)=0$ so $T_1,T_2$ are not independent, but $R_1,R_2$ are independent, so $Y_t$ is not a Poisson process.<br>Let $B_n=1_{\left\{R_n≤t\right\}}$ and write $Y_t=\sum_{n≥1}B_n$
+\begin{split}𝔼[Y_t]&=\sum_{n≥1}𝔼[B_n]\\&=\sum_{n≥1}ℙ(R_n≤t)\\&=\sum_{n≥1}∫_0^t\frac{1}{(n-1)!}x^{n-1}λ^n e^{-λx}dx\\&=∫_0^t\sum_{n≥1}\frac{1}{(n-1)!}x^{n-1}λ^n e^{-λx}dx\\&=∫_0^tλdx=λt&lt;∞\end{split}So $ℙ\left(Y_t&lt;∞\text{ for all }t≥0\right)=1$
+</li></ol></li></ol></li><li><ol type="a"><li>Let $X_1,X_2,…$ be i.i.d. random variables with mean $μ$ and variance $σ^2∈(0,∞)$.<br>Let $S_n=X_1+X_2+⋯+X_n$. Then ${S_n-nμ\over\sqrt nσ}\stackrel d→N(0,1)$ as $n→∞$.</li><li><ol type="i"><li>$f_R(r)=∫ f(r,s)\mathrm{~d}s=2∫_0^∞\frac14e^{-s}\mathrm{~d}s=\frac12$ for $r∈[-1,1]$; otherwise $f_R(r)=0$<br>$f_S(s)=∫f(r,s)\mathrm{~d}r=∫_{-1}^1\frac14e^{-{|s|}}\mathrm{~d}r=\frac12e^{-{|s|}}$</li><li>$𝔼[S]=∫_{-∞}^∞s\frac12e^{-{|s|}}\mathrm{~d}s=0$, by symmetry$$\operatorname{var}(S)=𝔼\left[S^2\right]=2∫_0^∞s^2\frac{1}{2}e^{-s}d s=2&lt;∞$$$S_n$ are iid with mean 0, and variance 2, by CLT $\frac1{\sqrt{2n}}\sum_{k=1}^n S_n\stackrel d→Z$. For all $s∈ℝ$$$ℙ\left(\frac1{\sqrt{2n}}\sum_{k=1}^n S_n≤s\right)→ℙ(Z≤s),\text{ where $Z∼N(0,1)$.}$$</li><li>$R∼U[-1,1]⇒𝔼(R)=0$, $\operatorname{var}(R)=\frac13&lt;∞$. $R_n$ are iid, by CLT\[ℙ\left(\sqrt{\frac3n}\sum_{k=1}^n R_n≤r\right)→ℙ(W≤r),\text{ where $W∼N(0,1)$.}\]$\operatorname{cov}(R,S)=𝔼[RS]=∫rsf(r,s)=2∫_{-∞}^∞\frac14se^{-{|s|}}\mathrm{~d}s=0$, so $R,S$ are independent.\begin{multline*}
+ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(R)}}\sum_{k=1}^n R_n≤r,\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n≤s\right)\\=ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(R)}}\sum_{k=1}^n R_n≤r\right)ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n≤s\right)\\→ℙ(W≤r)ℙ(Z≤s)=ℙ(W≤r,Z≤s)\text{, where }W,Z\stackrel{\text{iid}}∼N(0,1)
+\end{multline*}</li></ol></li><li><ol type="i"><li>$\left|\frac{∂(R,S)}{∂(X,Y)}\right|=\begin{vmatrix}1&-1\\1&1\end{vmatrix}=2$. By the transformation formula, $(X,Y)$ has joint pdf\[f_{X,Y}(x,y)=2f_{R,S}(T(X,Y))=\begin{cases}\frac{1}{2} e^{-{|x+y|}} & \text { if }{|x-y|}≤1 \\ 0 & \text { otherwise. }\end{cases}\]</li><li>Fix $y$ then $f_{X,Y}(x,y)>0⇔x∈[y-1, y+1]$. (horizontal section of the region)<br>
+If ${|y|}≥\frac12$, $x+y≥0$ for $x∈[y-1, y+1]$,\begin{aligned}
+f_Y(y) & =\int_{y-1}^{y+1} \frac{1}{2} e^{-{|x+y|}} d x\\
+& =\frac{1}{2}\left(e-e^{-1}\right) e^{-2{|y|}}
+\end{aligned}If ${|y|}≤\frac12$, $x+y$ changes sign at $x=-y$,\begin{aligned}
+f_Y(y) &=\int_{y-1}^{-y}\frac{1}{2} e^{x+y} d x+\int_{-y}^{y+1}\frac{1}{2} e^{-x-y} d x\\
+& =1-e^{-1}\cosh (2 y)
+\end{aligned}{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=2,font=\footnotesize]
+    \fill[gray!20] (-3,-2) -- (-1,-2) -- (3,2) -- (1,2) -- cycle;
+    \draw (-3,0) -- (3,0) node[right] {$x$}(0,-2) -- (0,2) node[above] {$y$};
+    \draw[dashed] (-2,2)--(2,-2)(1.5,-1.2)node[right,red]{$x+y>0$}(1.2,-1.5)node[left,red]{$x+y&lt;0$};
+    \foreach \y in {.7,.5,.3}\draw[red,thick](\y-1,\y)--(\y+1,\y)node[right]{$0\y$};
+    \foreach \x in {-3,-2,-1,1,2,3}
+      \draw (\x,-0.05) -- (\x,0.05) (\x,0)node[above] {$\x$};
+    \foreach \y in {-2,-1,1,2}
+      \draw (-0.05,\y) -- (0.05,\y) (0,\y)node[right] {$\y$};
+  \end{tikzpicture}{% endlatex %}
+</li><li>In b(iii) we found cov$(R,S)=0$,$$\operatorname{cov}(X, Y)=\operatorname{cov}\left(\frac{R+S}2, \frac{S-R}2\right)=\frac{1}{4}(\operatorname{var}S-\operatorname{var}R)=\frac14(2-\frac13)=\frac{5}{12}$$correlation coefficient\[\frac{\operatorname{cov}(X, Y)}{\sqrt{\operatorname{var}(X)\operatorname{var}(Y)}}=\frac{\frac5{12}}{\sqrt{\frac7{12}\frac7{12}}}=\frac57\]</li></ol></li></ol></li><li><ol type="a"><li><ol type="i"><li>$i$ is recurrent$⇔ℙ_i(X_n=i\text{ for some }n≥1)=1⇔ℙ_i(\inf\{n≥1:X_n=i\}&lt;∞)=1$<br>$i$ is positive recurrent$⇔m_i=𝔼_i(\inf\{n≥1:X_n=i\})&lt;∞$</li><li>Let $V_i(n)$ be the number of visits to state $i$ before time $n$. Then for any initial distribution, ${V_i(n)\over n}→\frac1{m_i}$ almost surely.</li></ol></li><li><ol type="i"><li>$(Y_n,n≥0)$ satisfy Markov property: For any $t_0$, the distribution of $(Y_n, n>n_0)$ is independent of $(Y_n, n ≤ n_0)$.<br>Total number of balls is $N$, so $Y_n$ has $N+1$ states $0,…,N$. If $Y_n=k$, four cases
+<style>
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-style:solid;border-width:1px;}
+</style>
+<table class="tg">
+    <tr>
+    <td>WW→WW</td>
+    <td>$Y_{n+1}=k$</td>
+    <td>$\frac kN\frac{k-1}{N-1}$</td>
+    </tr>
+    <tr>
+    <td>WB→BB</td>
+    <td>$Y_{n+1}=k-1$</td>
+    <td>$\frac kN\frac{N-k}{N-1}$</td>
+    </tr>
+    <tr>
+    <td>BW→WW</td>
+    <td>$Y_{n+1}=k+1$</td>
+    <td>$\frac{N-k}N\frac{k}{N-1}$<br></td>
+    </tr>
+    <tr>
+    <td>BB→BB</td>
+    <td>$Y_{n+1}=k$</td>
+    <td>$\frac{N-k}N\frac{N-k-1}{N-1}$</td>
+    </tr>
+</table>
+So the non-zero entries of the transition matrix are
+$$
+p_{k, j}= \begin{cases}\frac{k}{N} \frac{N-k}{N-1} & \text { if } j=k-1,k>0\\\frac{k}{N} \frac{k-1}{N-1} +\frac{N-k}{N} \frac{N-k-1}{N-1}& \text { if } j=k\\\frac{N-k}{N} \frac{k}{N-1} & \text { if } j=k+1,k&lt;N\end{cases}
+$$</li><li>$0,N$ are absorbing states (aperiodic, recurrent)<br>The rest form a communicating class, since $p_{i, i-1}=p_{i, i+1}>0$ for $1 ≤ i ≤ N-1$<br>This is transient, since it has positive probability to escape to $0,N$</li>
+<li>For π to be stationary, we need\begin{eqnarray*}π_0&=&π_0+\frac1Nπ_1⇒π_1=0\\π_N&=&π_N+\frac1Nπ_{N-1}⇒π_{N-1}=0\\π_i&=&p_{i-1,i}π_{i-1}+p_{i,i}π_i+p_{i+1,i}π_{i+1}⇒π_i=0\text{ for }0&lt;i&lt;N\end{eqnarray*}So $(λ, 0,0, …, 0,1-λ), 0 ≤ λ ≤ 1$ are stationary distributions.</li></ol></li>
+<li><ol type="i"><li>For π to be stationary, we need\begin{split}
+π_0&=π_0p_{0,0}+π_1p_{1,0}\\
+π_N&=π_{N-1}p_{N-1,N}+π_Np_{N,N}\\
+π_j&=π_{j-1} p_{j-1, j}+π_j p_{j, j}+π_{j+1} p_{j+1, j}\text{ for }0 ≤ j ≤ N
+\end{split}
+We check the uniform distribution $π_i=1 /(N+1), 0 ≤ i ≤ N$ is a solution.\begin{array}l
+\frac1{N+1}=\frac1{N+1}\frac{N}{N+1}+\frac1{N+1}\frac1{N+1}\\
+\frac1{N+1}=\frac1{N+1}\frac1{N+1}+\frac1{N+1}\frac{N}{N+1}\\
+\frac1{N+1}=\frac1{N+1}\frac{k}{N} \frac{N-k+1}{N+1}+\frac1{N+1}\left(\frac{N-k}{N} \frac{N-k}{N+1}+\frac{k}{N} \frac{k}{N+1}\right)+\frac1{N+1} \frac{N-k}{N} \frac{k+1}{N+1}\text{ for }0 ≤ j ≤ N\end{array}
+This chain is irreducible: $p_{0,1}>0;p_{N,N-1}>0;p_{i, i-1}=p_{i, i+1}>0\text{ for }1 ≤ i ≤ N-1$.<br>By uniqueness theorem, uniform distribution is the only stationary distribution.</li>
+<li>Let $i$ be the number of consecutive visits to $k$. By the Markov property,\begin{split}&ℙ(Z_{n+i}≠k,Z_{n+i-1}=k,…,Z_{n+1}=k|Z_n=k)\\&=ℙ(Z_{n+i}≠k|Z_{n+i-1}=k)…ℙ(Z_{n+1}=k|Z_n=k)\\&=(1-p_{k,k})p_{k,k}^{i-1}\end{split}so $i$ has geometric distribution with success probability $1-p_{k,k}$</li>
+<li>By Theorem 6.3(b) $1/π_k=m_k$, $m_k$ is the mean return time to state $k$.<br>By the Law of Total Probability,
+\begin{split}
+N+1&=𝔼_k\left[V_1^{(k)} ∣ Z_1≠k\right] ℙ(Z_1≠k)+𝔼_k\left[V_1^{(k)} ∣ Z_1=k\right] ℙ\left(Z_1=k\right)\\&=x (1-p_{k,k})+p_{k,k}\\&⇒x=1+\frac N{1-p_{k,k}}
+\end{split}
+</li>
+<li>I don't understand</li></ol></li></ol></li></ol>

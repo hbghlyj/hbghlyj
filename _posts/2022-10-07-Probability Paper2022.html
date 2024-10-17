@@ -1,0 +1,153 @@
+---
+mathjax: true
+tag: Probability
+excerpt: A8 Probability Paper 2022
+---
+<style>.q{width: fit-content;padding: 6px;border-width: 2px;border-style: solid;border-color: #0073CF;background-color: #F5FFFA;}</style>
+<div class="q">
+<ol type="a"><li>Let $Z_n,n⩾1$, be random variables and $c∈ℝ$. Show that $Z_n→c$ in probability if and only if $Z_n→c$ in distribution.</li><li>Fix $λ∈(0,∞)$. For each $r∈(0,∞)$, consider a random variable $X_r$ with probability density function
+$$
+f_{r,λ}(x)=\begin{cases}\frac{1}{Γ(r)}x^{r-1}λ^r e^{-λ x},&x∈(0,∞),\\0,&\text { otherwise. }\end{cases}
+$$
+Recall that this means that $X_r$ has the Gamma distribution with shape parameter $r$ and rate parameter $λ$.
+<ol type="i">
+<li>Carefully derive the moment generating function of $X_r$.</li>
+<li>
+Show that $X_r/r$ converges in distribution as $r→∞$. Does this convergence hold in probability?<br>
+[You may use standard theorems about moment generating functions without proof.]
+</li></ol></li>
+<li><ol type="i"><li>Define the Poisson process $\left(N_t,t⩾0\right)$ of rate $λ∈(0,∞)$ in terms of properties of its increments over disjoint time intervals.</li><li>Show that the first arrival time $T_1=\inf\left\{t⩾0:N_t=1\right\}$ is exponentially distributed with parameter $λ∈(0,∞)$.</li><li>Show that $T_n=\inf\left\{t⩾0:N_t=n\right\}$ has a Gamma distribution for all $n⩾1$.<br>
+[If you use the inter-arrival time definition of the Poisson process, you are expected to prove that it is equivalent to the definition given in (i).]</li><li>Let $R_n,n⩾1$, be independent Gamma-distributed random variables. Let $R_n$ have shape parameter $n$ and rate parameter $λ$.<br>
+Let $Y_t=\#\left\{n⩾1:R_n⩽t\right\},t⩾0$. Show that $Y_t$ is not a Poisson process with rate $λ$, but does satisfy $ℙ\left(Y_t&lt;∞\right.$ for all $\left.t⩾0\right)=1$.<br>
+[Hint: Let $B_n=1_{\left\{R_n⩽t\right\}}$ and write $Y_t=\sum_{n⩾1}B_n$.]</li>
+</ol></li></ol></div>
+<ol type="a"><li>"⇒": Let $x&lt;c$. Then $ℙ\left(Z_n≤x\right)≤ℙ\left(\left|Z_n-c\right|≥c-x\right)→0$. Let $x&gt;c$. Then $ℙ\left(Z_n≤x\right)=1-ℙ\left(Z_n&gt;x\right)≥1-ℙ\left(\left|Z_n-c\right|&gt;x-c\right)→1$. As the limit is the cdf of the constant $c$, which is discontinuous at $x=c$, convergence in distribution holds.<br>"⇐": Let $ε&gt;0$. Then $ℙ\left(\left|Z_n-c\right|&gt;ε\right)≤ℙ\left(Z_n≤c-ε\right)+1-ℙ\left(Z_n≤c+ε\right)→0+1-1=0$. Hence convergence in probability holds.</li>
+<li><ol type="i"><li>For all $t&lt;λ$, the pdf $f_{r,λ}$ integrates to 1, hence\begin{aligned} M_{X_{r}}(t)=𝔼\left[e^{t X_{r}}\right] &=∫_{0}^∞e^{t x} \frac{1}{Γ(r)} x^{r-1} λ^{r} e^{-λ x} d x \\ &=\frac{λ^{r}}{(λ-t)^{r}} ∫_{0}^∞f_{r, λ-t}(x) d x=\left(\frac{λ}{λ-t}\right)^{r}\end{aligned}</li><li>For all $t&lt;rλ$, we have$$M_{X_{r}/r}(t)=M_{X_{r}}(t/r)=\left(\frac{λ}{λ-\frac{t}{r}}\right)^{r}=\frac{1}{\left(1-\frac{t/λ}{r}\right)^{r}}→e^{t/λ}$$In particular, this holds for all $t∈ℝ$ and $r$ sufficiently large. Since the limit is the mgf of the constant $c=1/λ$, the convergence theorem for mgfs yields $X_r/r→c=1/λ$ in distribution, and by (a) also in probability. <i>Alternatively, convergence in probability can be established directly using Chebyshev's inequality, but require also the calculation of the mean and variance of $X_r$.</i>
+</li></ol></li><li><ol type="i"><li>$\left(N_t,t≥0\right)$ is called $\operatorname{PP}(λ)$ if (1) $N_0=0,(2)N_t-N_s∼\operatorname{Poi}((t-s)λ)$ for all $0≤s&lt;t$, and (3) for all $n≥2$ and $0≤s_1&lt;t_1≤s_2&lt;t_2≤⋯≤s_n&lt;t_n$, the variables $N_{t_j}-N_{s_j},1≤j≤n$, are independent.</li>
+<li>$ℙ\left(T_1&gt;t\right)=ℙ\left(N_t-N_0=0\right)=e^{-λ t}$ by (1)-(2), for all $t≥0$. Hence $T_1$ is exponentially distributed with parameter $λ$.</li>
+<li>Similarly, for all $t≥0$
+$$
+ℙ\left(T_n&gt;t\right)=ℙ\left(N_t≤n-1\right)=e^{-λ t}\sum_{k=0}^{n-1}\frac{(λ t)^k}{k !}.
+$$
+Differentiation yields $-f_{T_n}(t)$, hence
+$$
+f_{T_n}(t)=λ e^{-λ t}\sum_{j=0}^{n-1}\frac{(λ t)^j}{j !}-e^{-λ t}\sum_{k=1}^{n-1}\frac{λ^k t^{k-1}}{(k-1)!}=e^{-λ t}λ^n t^{n-1}\frac{1}{(n-1)!}=f_{n,λ}(t),
+$$
+the pdf of a Gamma distribution with shape parameter $n$ and rate parameter $λ$.</li>
+<li>First note that the first arrival time of $\left(Y_t,t≥0\right)$ is $\inf\left\{R_n,n≥1\right\}≤R_1$, and this is strictly smaller than $R_1$ with positive probability since $ℙ\left(R_2&lt;R_1\right)&gt;0$. Hence the first arrival time is not exponentially distributed with parameter $λ$, so $\left(Y_t,t≥0\right)$ not a $\mathrm{PP}(λ)$.<br>
+Following the hint, we have for all $t≥0$
+$$
+𝔼\left[Y_t\right]=𝔼\left[\sum_{n≥1}B_n\right]=\sum_{n≥1}ℙ\left(R_n≤t\right)=\sum_{n≥1}ℙ\left(T_n≤t\right)=λ t .
+$$
+In particular, $ℙ\left(Y_k&lt;∞\right)=1$ for all $k≥1$ and so $ℙ\left(Y_k&lt;∞\right.$ for all $\left.k≥1\right)=1$. Since $t↦Y_t$ is (weakly) increasing, this already implies that on the same event $\left\{Y_k&lt;∞\right.$ for all $\left.k≥1\right\}$, also $Y_t&lt;∞$ for all $t≥0$
+</li>
+</ol></li></ol>
+<div class="q">
+    <ol type="a">
+    <li>State the Central Limit Theorem.</li>
+    <li>Let $(R,S)$ be a pair of random variables with joint probability density function
+    $$
+    f(r,s)=\begin{cases}\frac{1}{4}e^{-{|s|}},&(r,s)∈[-1,1]×ℝ\\0,&\text { otherwise. }\end{cases}
+    $$
+    Also consider independent identically distributed random variables $\left(R_n,S_n\right),n⩾1$, with the same joint distribution as $(R,S)$.<ol type="i"><li>Find the marginal probability density functions of $R$ and $S$.</li><li>For any $s∈ℝ$, determine
+    $$
+\lim _{n→∞}ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n⩽s\right)
+    $$</li><li>For any $r,s∈ℝ$, show that
+    $$
+\lim _{n→∞}ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(R)}}\sum_{k=1}^n R_n⩽r,\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n⩽s\right)=ℙ(W⩽r,Z⩽s)
+    $$
+    for a pair of random variables $(W,Z)$ whose joint distribution you should determine.</li></ol>
+    </li><li>Consider the transformation $T:ℝ^2→ℝ^2$ given by $T(x,y)=(x-y,x+y)$. Let $(R,S)$ be as in (b) and $(X,Y)$ such that $(R,S)=T(X,Y)$.<ol type="i"><li>Derive the joint probability density function of $(X,Y)$.</li><li>Find the marginal probability density functions of $X$ and $Y$.</li><li>Find the correlation of $X$ and $Y$.</li></ol></li></ol>
+</div>
+<ol type="a"><li>If $V_n,n≥1$, are iid with mean $μ$ and variance $σ^2∈(0,∞)$, for all $v∈ℝ$$$ℙ\left(\frac{1}{\sqrt{n σ^2}}\sum_{k=1}^n\left(V_n-μ\right)≤v\right)→ℙ(Z≤v) \text{ as }n→∞$$where $Z∼N(0,1)$.</li>
+<li><ol type="i">
+<li>Joint pdf factorises, so read off $f_R(r)=\frac{1}{2},r∈[-1,1],f_S(s)=\frac{1}{2}e^{-{|s|}},s∈ℝ$.</li>
+<li>Clearly $S_n,n≥1$, are iid with zero mean, by symmetry, and variance $\operatorname{var}(S)=𝔼\left[S^2\right]=2∫_0^∞s^2\frac{1}{2}e^{-s}d s=2∈(0,∞)$. Hence the CLT of (a) yields$$ℙ\left(\frac{1}{\sqrt{n\operatorname{var}(S)}}\sum_{k=1}^n S_n≤s\right)→ℙ(Z≤s),\text{ for all $s∈ℝ$, where $Z∼N(0,1)$.}$$</li><li>$R_n,n≥1$, are also iid with zero mean and $\operatorname{var}(R)=\frac{1}{3}∈(0,∞)$. As $f$ factorises, $R$ and $S$, and hence their partial sums are independent and by CLT
+\begin{aligned}
+& ℙ\left(\frac{1}{\sqrt{n \operatorname{var}(R)}} \sum_{k=1}^n R_n≤r, \frac{1}{\sqrt{n \operatorname{var}(S)}} \sum_{k=1}^n S_n≤s\right) \\
+&=ℙ\left(\frac{1}{\sqrt{n \operatorname{var}(R)}} \sum_{k=1}^n R_n≤r\right) ℙ\left(\frac{1}{\sqrt{n \operatorname{var}(S)}} \sum_{k=1}^n S_n≤s\right) \\
+&→ℙ(W≤r) ℙ(Z≤s)=ℙ(W≤r, Z≤s)
+\end{aligned}
+where the joint distribution of $(W,Z)$ is determined by independence and marginal distributions $W,Z∼N(0,1)$</li></ol></li><li><ol type="i"><li>Linear transformation $T$, bijective with Jacobian determinant $J(x, y)=1 × 1-(-1) × 1=2$. By the transformation formula for pdfs, $(X, Y)$ has joint pdf
+$$
+f_{X, Y}(x, y)={|J(x, y)|} f_{R, S}(T(x, y))= \begin{cases}\frac{1}{2} e^{-{|x+y|}} & \text { if }{|x-y|} ≤ 1 \\ 0 & \text { otherwise. }\end{cases}
+$$</li>
+<li>By symmetry $X$ and $Y$ are identically distributed. Also, for ${|y|} ≥ \frac{1}{2}$,
+\begin{aligned}
+f_Y(y)=f_Y({|y|}) & =∫_{{|y|}-1}^{{|y|}+1} \frac{1}{2} e^{-x-{|y|}} d x=\frac{1}{2} e^{-{|y|}}\left(e^{-{|y|}+1}-e^{-{|y|}-1}\right) \\
+& =\frac{1}{2}\left(e-\frac{1}{e}\right) e^{-2{|y|}}
+\end{aligned}
+and for ${|y|} ≤ \frac{1}{2}$, <a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=10759">we split into two integrals</a> over $({|y|}-1,-{|y|})$ and $(-{|y|},{|y|}+1)$ :
+\begin{aligned}
+f_Y(y)=f_Y({|y|}) & =\left(\frac{1}{2}-\frac{1}{2} e^{2{|y|}-1}\right)+\left(-\frac{1}{2} e^{-2{|y|}-1}+\frac{1}{2}\right) \\
+& =1-\frac{1}{e} \cosh (2 y) .
+\end{aligned}</li>
+<li>$\operatorname{var}(Y)=\operatorname{var}(X)=\operatorname{var}\left(\frac{1}{2} S+\frac{1}{2} R\right)=\frac{1}{4} \operatorname{var}(S)+\frac{1}{4} \operatorname{var}(R)=\frac{7}{12}$ by independence. $\operatorname{cov}(X, Y)=\operatorname{cov}\left(\frac{1}{2}(S+R), \frac{1}{2}(S-R)\right)=\frac{1}{4}(\operatorname{var}(S)-\operatorname{var}(R))=\frac{5}{12}$, so $ρ=\frac{5}{7}$.</li></ol></li></ol>
+<div class="q">
+<ol type="a"><li>Consider a Markov chain on a countable state space $S$ and let $i ∈ S$.
+<ol type="i"><li>Define the notions of recurrence and positive recurrence of $i$.
+</li>
+<li>Suppose that $i$ is positive recurrent. State, without proof, the ergodic theorem for the long-term proportion of time the Markov chain spends in state $i$.</li></ol>
+</li>
+<li>An urn contains a total of $N ⩾ 2$ balls, some white and the others black. Each step consists of two parts. A first ball is chosen at random and removed. A second ball is then chosen at random from those remaining. It is returned to the urn along with a further ball of the same colour. Denote by $Y_n$ the number of white balls after $n ⩾ 0$ steps.
+<ol type="i"><li>Explain briefly why $\left(Y_n, n ⩾ 0\right)$ is a Markov chain and determine its state space and transition matrix.
+</li>
+<li>Determine the communicating classes of this Markov chain and say whether their states are recurrent, and whether they are aperiodic. Justify your answers.
+</li>
+<li>Find all stationary distributions of this Markov chain.</li></ol>
+</li>
+<li>Now consider a Markov chain $\left(Z_n, n ⩾ 0\right)$, on $I=\{0,1,2, …, N\}$ with the transition matrix $P$ whose non-zero entries are
+$$
+p_{k, j}= \begin{cases}\frac{N-k}{N} \frac{k+1}{N+1} & \text { if } j=k+1, \\ \frac{N-k}{N} \frac{N-k}{N+1}+\frac{k}{N} \frac{k}{N+1} & \text { if } j=k, \\ \frac{k}{N} \frac{N-k+1}{N+1} & \text { if } j=k-1 .\end{cases}
+$$
+<ol type="i"><li>Show that the uniform distribution is stationary for this Markov chain. Hence, or otherwise, determine all stationary distributions of this Markov chain.
+</li>
+<li>For a state $k ∈ I$, consider the successive visits
+$$
+V_1^{(k)}=\inf \left\{n ⩾ 1: Z_n=k\right\}   \text { and }   V_{m+1}^{(k)}=\inf \left\{n ⩾ V_m^{(k)}+1: Z_n=k\right\},   m ⩾ 1 .
+$$
+Explain why visits to $k$ occur in groups of independent geometrically distributed consecutive visits, and determine the parameter of this geometric distribution.
+</li>
+<li>Determine the expected time between two groups of visits to state $k$.
+</li>
+<li>Is the following statement true or false? "For any two states $k_1 ≠ k_2$, there is, on average, one visit to $k_2$ between the first and second visits to $k_1$. " Provide a proof or counterexample.</li></ol></li></ol>
+</div>
+<ol type="a"><li>
+<ol type="i"><li>Denote the MC by $\left(X_n\right)$. Let $H^{(i)}=\inf \left\{n ≥ 1: X_n=i\right\}$. Then $i$ is recurrent, resp. positive recurrent, if $ℙ_i\left(H^{(i)}<∞\right)=1$, resp. $m_i:=𝔼\left[H^{(i)}\right]<∞$.
+</li>
+<li>In the given setting, for all $j ∈ S$ with $ℙ_j\left(H^{(i)}<∞\right)=1$, we have
+$$
+ℙ_j\left(n^{-1} \#\left\{1 ≤ k ≤ n: X_k=i\right\} → 1 / m_i\right)=1 .
+$$</li></ol>
+</li>
+<li>S: (i)-(ii) standard, (iii) new but similar to other examples.
+<ol type="i"><li>Only the numbers $Y_n$ of white and $N-Y_n$ of black balls in the urn at time $n$ are relevant for the future evolution of the urn, not how we got to this composition. The state space is $I=\{0,1,2, …, N\}$ and the non-zero entries of the transition matrix are
+$$
+p_{k, j}= \begin{cases}\frac{N-k}{N} \frac{k}{N-1} & \text { if } j=k+1, \\ \frac{N-k}{N} \frac{N-k-1}{N-1}+\frac{k}{N} \frac{k-1}{N-1} & \text { if } j=k, \\ \frac{k}{N} \frac{N-k}{N-1} & \text { if } j=k-1 .\end{cases}
+$$
+</li>
+<li>$\{0\}$ and $\{N\}$ are recurrent aperiodic singleton classes as $p_{0,0}=p_{N, N}=1$, while $\{1, …, N-1\}$ is a transient class since $p_{i, i-1}=p_{i, i+1}>0$ for all $1 ≤ i ≤ N-1$. It is aperiodic since also $p_{i, i}>0$ for all $1 ≤ i ≤ N-1$.
+</li>
+<li>Stationary distributions vanish on transient classes. On the other hand, all distributions with this property, $(λ, 0,0, …, 0,1-λ), 0 ≤ λ ≤ 1$, are stationary.</li></ol>
+</li>
+<li>(i) is standard, (ii) is new, but an elementary observation, (iii) is similar to other questions where return times are split up. (iv) is new.
+<ol type="i"><li>Let $π_i=1 /(N+1), 0 ≤ i ≤ N$, be the uniform distribution on $I$. We need to check $π P=π$. Indeed, we have
+\begin{aligned}
+(π P)_j & =π_{j-1} p_{j-1, j}+π_j p_{j, j}+π_{j+1} p_{j+1, j} \\
+& =\frac{1}{N+1}\left(\frac{N-(j-1)}{N} \frac{(j-1)+1}{N+1}+\frac{N-j}{N} \frac{N-j}{N+1}+\frac{j}{N} \frac{j}{N+1}+\frac{j+1}{N} \frac{N-(j+1)+1}{N+1}\right)=\frac{1}{N+1}=π_j,
+\end{aligned}
+for all $0 ≤ j ≤ N$, with the conventions $p_{-1,0}=p_{N+1, N}=0$ that are appropriately included above. $π$ is unique since this Markov chain is irreducible, by the same argument as in (b)(ii) here also including $p_{0,1}=p_{N, N-1}>0$.
+</li>
+<li>By the Markov property, the first step away from $k$ is like the first success in a sequence of Bernoulli trials with success probability $q_k:=1-p_{k, k}$.
+</li>
+<li>From (i) and lectures, the expected return time is $𝔼_k\left[V_1^{(k)}\right]=m_k=1 / π_k=N+1$. Denote by $A$ the event that the first step is away from $k$. We want to find $x=𝔼_k\left[V_1^{(k)} ∣ A\right]$. Clearly $𝔼_k\left[V_1^{(k)} ∣ A^c\right]=1$. By the Law of Total Probability,
+$$
+N+1=m_k=𝔼_k\left[V_1^{(k)} ∣ A\right] ℙ(A)+𝔼_k\left[V_1^{(k)} ∣ A^c\right] ℙ\left(A^c\right)=x q_k+\left(1-q_k\right)
+$$
+Hence $x=\left(N+q_k\right) / q_k=1+N / q_k$.
+</li>
+<li>This statement is true. Assume there are $k_1$ and $k_2$ with $r ≠ 1$ visits to $k_2$ between two consecutive visits to $k_1$, on average. By the strong Markov property, the numbers $W_k$ of visits are iid. Since $V_m^{\left(k_1\right)} → ∞$ a.s., the ergodic theorem says the asymptotic proportion of time in $k_2$ up to $V_m^{\left(k_1\right)}$ is $1 /(N+1)$. But SLLN says
+$$
+\frac{W_1+⋯+W_m}{V_m^{\left(k_1\right)}}=\frac{W_1+⋯+W_m}{m} \frac{m}{V_m^{\left(k_1\right)}} → r \frac{1}{m_{k_1}}=\frac{r}{N+1}   \text { a.s., as } m → ∞ .
+$$
+This contradicts the uniqueness of limits.</li></ol></li></ol>

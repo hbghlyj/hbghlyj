@@ -1,0 +1,78 @@
+---
+mathjax: true
+tag: Probability
+excerpt: College exam questions
+---
+<ol><li>
+<ol type="a"><li>Explain what it means for a sequence of random variables $Y_1, Y_2, \ldots$ to converge to a random variable $Y$
+<ol type="i"><li>in probability;
+</li>
+<li>in distribution.</li></ol>
+</li>
+<li> Prove that convergence in probability implies convergence in distribution.</li></ol>
+<b>Proof.</b> <a href="https://en.wikipedia.org/wiki/Proofs_of_convergence_of_random_variables#Proof_for_the_case_of_scalar_random_variables">Wikipedia</a>
+Recall that in order to prove convergence in distribution, one must show that the sequence of cumulative distribution functions converges to the $F_X$ at every point where $F_X$ is continuous. Let $a$ be such a point. For every ε > 0, due to the preceding lemma, we have:
+\begin{aligned}\Pr(X_n\leq a)&\leq \Pr(X\leq a+ε)+\Pr(\left|X_n-X\right|>ε)\\\Pr(X\leq a-ε)&\leq \Pr(X_n\leq a)+\Pr(\left|X_n-X\right|>ε)\end{aligned}
+So, we have
+$$ \Pr(X\leq a-ε)-\Pr\left(\left|X_n-X\right|>ε\right)\leq \Pr(X_n\leq a)\leq \Pr(X\leq a+ε)+\Pr\left(\left|X_n-X\right|>ε\right). $$
+Taking the limit as $n → ∞$, we obtain:
+$$ F_{X}(a-ε)\leq \lim _{n\to \infty }\Pr (X_n\leq a)\leq F_{X}(a+ε), $$
+where $F_X(a) =\Pr(X ≤ a)$ is the cumulative distribution function of $X$. This function is continuous at $a$ by assumption, and therefore both $F_X(a-ε)$ and $F_X(a+ε)$ converge to $F_X(a)$ as $ε → 0^+$. Taking this limit, we obtain
+$$ \lim _{n\to \infty }\Pr(X_n\leq a)=\Pr(X\leq a), $$
+which means that $\{X_n\}$ converges to $X$ in distribution. 
+</li>
+<li>Let $\left(α_k, k=1,2,3, \ldots\right)$ be a probability distribution on the positive integers (that is, $α_k⩾0$ for all $k$, and $\sum α_k=1$).
+Consider a Markov chain $X=\left(X_n, n⩾0\right)$ with state space $\{1,2,3, \ldots\}$ whose transition probabilities are given by
+$$
+\begin{aligned}
+p_{i, i-1} & =1 \text { for } i>1, \\
+p_{1, k} & =α_k \text { for } k=1,2,3, \ldots .
+\end{aligned}
+$$
+That is, the chain always steps down by 1 unless it is in state 1; when it is in state 1, it chooses its next state according to the distribution $\left(α_k\right)$.
+<ol type="a"><li>What does it mean for a Markov chain to be irreducible?<p>It has only 1 communicating class i.e. ∀state $i,j$ both $i→j$ and $j→i$ hold.</p>
+</li>
+<li>Under what condition on the distribution $\left(α_k\right)$ is the chain $X$ described above irreducible?<p>∃ infinitely many $k$ such $α_k>0$ i.e. $∀n,∃k>n$ such that $α_k>0$.</p>
+</li>
+<li>Suppose the chain is irreducible. Under what condition on the distribution $\left(α_k\right)$ is the chain aperiodic?<p>$1=\gcd\{k|α_k>0,k=1,2,…\}$</p>
+</li>
+<li>Suppose the chain is irreducible. By considering the mean return time to 1, or otherwise, determine under what condition on the distribution $\left(α_k\right)$ the chain is positive recurrent. Give an interpretation of this condition in terms of a well-known function of the distribution $\left(α_k\right)$.<p>$m_1=α_1⋅m_1+α_2⋅m_2+α_3⋅m_3+⋯=α_1⋅0+α_2⋅1+α_3⋅2+⋯&lt;∞$</p><p>interpretation: mean of $(α_k)$ is finite</p>
+</li>
+<li>Find the stationary distribution of the chain if $M⩾2$ and
+$$
+α_k= \begin{cases}\frac1M & \text { for } k=1,2, \ldots, M, \\ 0 & \text { for } k>M .\end{cases}
+$$
+[You may assume that the stationary distribution is unique. Note that if $\left(π_i, i⩾1\right)$ is the stationary distribution then $π_i=0$ for all $i>M$.]<p>\[A=\pmatrix{0&\frac1m&\frac1m&⋯&\frac1m\\1&0\\&1&0\\&&1&0\\&&&⋱}\]π is stationary if $πA=π⇒\cases{π_M=\frac1Mπ_1\\π_{M-1}=\frac1Mπ_1+π_M\\π_{M-2}=\frac1Mπ_1+π_{M-1}\\⋮\\π_2=\frac1Mπ_1+π_2}⇒π_{M-k}=\frac{k+1}Mπ_1$</p><p>$∑π_k=1⇒\frac{π_1}M∑(k+1)=1⇒π_1=\frac2{M+1},π_{M-k}=\frac{k+1}M⋅\frac2{M+1}$</p>
+</li>
+<li>Now let
+$$
+α_k= \begin{cases}\left(\frac{1}{2}\right)^{k / 2} & \text { for } k \text { even } \\ 0 & \text { for } k \text { odd }\end{cases}
+$$
+i.e. $\left(α_k, k⩾1\right)=\left(0, \frac{1}{2}, 0, \frac{1}{4}, 0, \frac{1}{8}, \ldots\right)$.
+By considering the mean return time to 1, or otherwise, find the limit points of the sequence $\Pr\left(X_n=1 \mid X_0=1\right)$ as $n→∞$.<p>Mean return time$$\sum_{k≥1}kα_k=2×\text{mean Geometric}(\frac12)=4$$</p><p>limit points: odd times at an even number\[\Pr(X_n=1|X_0=1,n\text{ odd})=0\]$Y_k=X_{2k}$ lives on $\{1,3,5,7,…\}$ mean return time to 1 for $y$ is 2\[\lim_{n→∞}\Pr(Y_n=X_{2n}=1|X_0=1)=\frac1{\text{mean return time }y→1}=\frac12\]</p></li></ol>
+</li>
+<li>
+<ol type="a"><li>Define the moment generating function of a random variable. If $X_i, i⩾1$ are i.i.d. with moment generating function $M(t)$, find the moment generating function of the random variable $S_n=X_1+\cdots+X_n$ in terms of $M(t)$.<p>$𝔼(e^{tX})=M_X(t)$</p><p>$S_n=\sum_{i=1}^nX_i$</p>\begin{align*}M_{S_n}(t)&=𝔼(e^{t\sum_{i=1}^nX_i})\\&=𝔼(\prod_{i=1}^ne^{tX_i})\\&=\prod_{i=1}^n𝔼(e^{tX_i})\\&=M_{X_1}(t)^n\end{align*}</li>
+For the rest of the question, let $X_i, i⩾1$ be i.i.d. with distribution given by
+$$
+\Pr\left(X_i=1\right)=\Pr\left(X_i=-1\right)=1 / 2
+$$
+and let $S_n=X_1+\cdots+X_n$ as above.
+<li>State Chebyshev's inequality, for a general random variable with mean $\mu$ and variance $\sigma^2$. Use it to give an upper bound on the quantity $\Pr\left(\left|S_n\right|⩾a n\right)$ where $a>0$.<p>Putting $𝔼[X_i]=0,\operatorname{Var}(X_i)=1$ into Chebyshev $\Pr(|Y-𝔼(Y)|≥ϵ)≤\frac{\operatorname{Var}(Y)}{ϵ^2}$</p><p>$𝔼(S_n)=∑𝔼(X_i)=0,\operatorname{Var}(S_n)=n$</p><p>$\Pr(|S_n|≥an)≤\frac{\operatorname{Var}(S_n)}{a^2n^2}=\frac1{a^2n}$</p>
+</li>
+<li>Find the moment generating function $M(t)$ of $X_i$.<p>$M(t)=\frac12e^{-t}+\frac12e^t$</p>By comparing the Taylor expansions of $M(t)$ and $\exp \left(t^2 / 2\right)$ or otherwise, show that
+$$
+M(t) ⩽ \exp \left(t^2 / 2\right) \text { for all } t .
+$$
+<p>Since $\frac1{(2k)!}≤\frac1{k!2^k}$</p>
+Use part (a) to deduce a corresponding bound on the moment generating function of $S_n$.\[M_{S_n}(t)=M(t)^n≤\exp \left(nt^2 / 2\right)\]
+</li>
+<li>Let $a>0$. By applying Markov's inequality to an appropriate random variable, use the bound in (b)(ii) to show that for any $t$
+$$
+\Pr\left(S_n⩾a n\right) ⩽ \exp \left(n\left\{\frac{t^2}{2}-a t\right\}\right) .
+$$
+Deduce that
+$$
+\Pr\left(\left|S_n\right|⩾a n\right) ⩽ 2 \exp \left(-\frac{n a^2}{2}\right)
+$$<p>$\Pr\left(S_n⩾a n\right)⩽\exp(n(\frac{t^2}2-at))$</p><p>Markov's inequality $\Pr\left(S_n⩾a n\right)=\Pr\left(e^{tS_n}⩾e^{ta n}\right)≤\frac{𝔼(e^{tS_n})}{e^{tan}}≤\frac{e^{{n\over2}t^2}}{e^{tan}}$</p><p>$X$ symmetric about 0 ⇒ $S$ symmetric about 0 ⇒ $\Pr(S_n≥an)=\Pr(S_n≤-an)$</p></li></ol>
+</li></ol>

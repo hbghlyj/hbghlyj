@@ -1,0 +1,149 @@
+---
+mathjax: true
+tag: Probability
+excerpt: A8 Probability Paper 2020
+---
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>Let $V$ be a random variable. Define its moment generating function $M_V$.
+</li>
+<li>Derive the moment generating functions of random variables $Y$ and $Z$, where
+<ul><li>$Y$ is Poisson distributed with parameter $λ ∈(0, ∞)$,</li>
+<li>and $Z$ is normally distributed with zero mean and variance $σ^2 ∈(0, ∞)$.</li></ul></li></ol>
+</li>
+<li>Consider a random variable $Y$ taking values in the non-negative integers, that is independent of a sequence $Z_n, n ⩾ 1$, of independent identically distributed random variables. Let
+$$
+R=\sum_{n=1}^Y Z_n
+$$
+with the convention that $R=0$ if $Y=0$.
+<ol type="i"><li>Show that $M_R(t)=G_Y\left(M_{Z_1}(t)\right)$, where $G_Y(s)=M_Y(\log (s))$.
+</li>
+<li>Suppose further that $Z_n$ is normally distributed with zero mean and variance $σ^2 ∈(0, ∞)$ and that $Y$ is Poisson distributed with parameter $λ ∈(0, ∞)$. Determine the moment generating function of $R$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Define the notion of convergence in distribution for real-valued random variables.
+</li>
+<li>State the convergence theorem for moment generating functions.
+</li>
+<li>Consider a sequence $R_n, n ⩾ 1$, of independent random variables with the same distribution as $R$ in (b)(ii) and consider $S_n=R_1+⋯+R_n, n ⩾ 1$. Show that $S_n / \sqrt{n}$ converges in distribution. Determine the limiting distribution. If you use the Central Limit Theorem, you are expected to prove it.</li></ol>
+</li>
+<li>Let $Y$ be Poisson distributed with parameter $λ ∈(0, ∞)$. Let $q ∈(0,1)$. Show that there is $c ∈(0, ∞)$ such that $ℙ(Y ⩾ m) ⩽ c e^{-q m \log (m)}$ for all $m ⩾ 1$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>State, without proof, the Strong Law of Large Numbers.
+</li>
+<li>State carefully, without proof, the transformation formula for bivariate probability density functions.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $X$ and $Y$ be independent exponentially distributed with parameter $λ ∈(0, ∞)$. Show that $W=X+Y$ and $U=X /(X+Y)$ are independent, and determine their marginal distributions.
+</li>
+<li>Let $Z$ be Gamma distributed with probability density function $z e^{-z}$ for $z>0$. Calculate $ℙ(Z>z)$ and $𝔼(1 / Z)$.
+</li>
+<li>Let $Z$ be as in (ii) and $X_0$ independent exponentially distributed with parameter 1 . By evaluating $ℙ\left(X_0 / Z>v\right)$, or otherwise, find the probability density function of $V=X_0 / Z$.</li></ol>
+</li>
+<li>Consider a sequence $\left(X_n, n ⩾ 0\right)$ of independent exponentially distributed random variables with parameter 1 . Let
+$$
+R_n=X_{n-1} /\left(X_n+X_{n+1}\right),   n ⩾ 1 .
+$$
+<ol type="i"><li>For $n ⩾ 1$, calculate the covariance of $R_n$ and $R_{n+2}$.
+</li>
+<li>Show that
+$$
+\frac{1}{n} \sum_{k=1}^n R_k → 1   \text { almost surely, as } n → ∞ \text {. }
+$$</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>$M_V: ℝ →[0, ∞]$ is given by $M_V(t)=𝔼\left(e^{t V}\right)$.
+</li>
+<li>$M_Y(t)=\sum_{n=0}^{∞} e^{t n} \frac{λ^n}{n !} e^{-λ}=\exp \left(λ\left(e^t-1\right)\right)$ by the exponential series. Also,
+\begin{aligned}
+M_Z(t) &=∫_{-∞}^{∞} e^{t z} \frac{1}{\sqrt{2 π σ^2}} e^{-z^2 / 2 σ^2} d z \\
+&=e^{σ^2 t^2 / 2} ∫_{-∞}^{∞} \frac{1}{\sqrt{2 π σ^2}} e^{-\left(z-t σ^2\right)^2 / 2 σ^2}=e^{σ^2 t^2 / 2}
+\end{aligned}
+as the pdf of the normal distribution with parameters $t σ^2$ and $σ^2$ integrates to 1.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Conditioning on $Y$, we get
+\begin{aligned}
+𝔼\left(e^{t R}\right) &=\sum_{n=0}^{∞} 𝔼\left(\exp \left(t \sum_{k=1}^n Z_k\right)\right) ℙ(Y=n) \\
+&=\sum_{n=0}^{∞}\left(M_{Z_1}(t)\right)^n ℙ(Y=n)=G_Y\left(M_{Z_1}(t)\right)
+\end{aligned}
+by independence of $Z_1, …, Z_{\mathrm{n}}$ for each $n ≥ 1$, and where
+$$
+G_Y(s)=𝔼\left(s^Y\right)=𝔼\left(e^{Y \log (s)}\right)=M_Y(\log (s))
+$$
+</li>
+<li>By (i) and (a)(ii), $M_R(t)=\exp \left(λ\left(e^{σ^2 t^2 / 2}-1\right)\right)$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>$W_n → W$ in distribution if $ℙ\left(W_n ≤ w\right) → ℙ(W ≤ w)$ for all $w ∈ ℝ$ with $ℙ(W=w)=0$.
+</li>
+<li>If there is $t_0>0$ such that $M_{W_n}(t), n ≥ 1$, and $M_W(t)$ are finite for all $t ∈\left(-t_0, t_0\right)$, and if $M_{W_n}(t) → M_W(t)$ for all $t ∈\left(-t_0, t_0\right)$, then $W_n → W$ in distribution.
+</li>
+<li>By (b)(ii) and by independence, we have for all $t ∈ ℝ$
+$$
+\log \left(M_{S_n / \sqrt{n}}(t)\right)=\log \left(\left(M_R(t / \sqrt{n})\right)^n\right)=n λ\left(e^{σ^2 t^2 / 2 n}-1\right)
+$$
+and Taylor expansion yields
+$$
+\log \left(M_{S_n / \sqrt{n}}(t)\right)=λ σ^2 t^2 / 2+o(1) → λ σ^2 t^2 / 2
+$$
+which is the logarithm of the moment generating function of the normal distribution with zero mean and variance $λ σ^2$, by (a)(ii). By the convergence theorem in (ii), we conclude that $S_n / \sqrt{n}$ converges in distribution to this normal distribution.</li></ol>
+</li>
+<li>This is new. Students have seen bounds for SRW based on the same technique. We apply Markov's inequality and the moment generating function of $Y$ from (a)(ii):
+$$
+ℙ(Y ≥ m)=ℙ\left(e^{t Y} ≥ e^{t m}\right) ≤ e^{-t m+λ\left(e^t-1\right)}   \text { for all } t ≥ 0
+$$
+Optimising the exponent over $t ≥ 0$, we find the (minimal) bound when
+$$
+m=λ e^t ⟺ e^t=m / λ ⟺ t=\log (m / λ)=\log (m)-\log (λ) .
+$$
+Hence $ℙ(Y ≥ m) ≤ e^{-m \log (m)+m \log (λ)+m-λ} ≤ e^{-q m \log (m)}$ for $m$ sufficiently large, and a suitable factor $c ∈[1, ∞)$ suffices to also upper bound for the finitely many smaller $m$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Let $X_n, n ≥ 1$, be independent identically distributed with mean $μ=𝔼\left(X_1\right)$. Then $ℙ\left(n^{-1} \sum_{1 ≤ k ≤ n} X_k → μ\right)=1$.
+</li>
+<li>Let $D, R ⊆ ℝ^2$ and $T: D → R$ a bijective transformation whose inverse is continuously differentiable with
+$$
+J(u, v)=\frac{∂ x}{∂ u} \frac{∂ y}{∂ v}-\frac{∂ x}{∂ v} \frac{∂ y}{∂ u}
+$$
+If $(X, Y)$ has joint pdf $f_{X, Y}: D →[0, ∞)$, then $(U, V)=T(X, Y)$ is jointly continuous with pdf $f_{U, V}(u, v)=f_{X, Y}(x(u, v), y(u, v)){|J(u, v)|},(u, v) ∈ R$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>The transformation formula of (a)(ii) applies with $D=(0, ∞)^2, R=(0, ∞) ×(0,1), f_{X, Y}(x, y)=λ^2 e^{-λ(x+y)}$. The inverse of $T(x, y)=(x+y, x /(x+y))$ is $T^{-1}(w, u)=(w u, w(1-u))$ with Jacobian $J(w, u)=-u w-w(1-u)=-w$, so
+$$
+f_{W, U}(w, u)=λ^2 e^{-λ w} w,   w ∈(0, ∞), u ∈(0,1)
+$$
+This factorises into $f_W(w)=λ^2 w e^{-λ w}$ and $f_U(u)=1$, i.e. $W$ and $U$ are independent with $W∼\operatorname{Gamma}(2, λ)$ and $U∼\operatorname{Uniform}(0,1)$.
+</li>
+<li>$ℙ(Z>z)=∫_z^{∞} w e^{-w} d w=\left[-w e^{-w}\right]_z^{∞}+∫_z^{∞} e^{-w} d w=e^{-z}(1+z), z ≥ 0$. $𝔼(1 / Z)=∫_0^{∞}(1 / z) z e^{-z} d z=1$
+</li>
+<li>$ℙ\left(X_0 / Z>v\right)=∫_0^{∞} ∫_{v z}^{∞} e^{-x} z e^{-z} d x d z=∫_0^{∞} z e^{-z(1+v)} d z=(1+v)^{-2}$, $v>0$, by comparison with the Gamma$(2,1+v)$ pdf. By differentiation, $V=X_0 / Z$ has pdf $f_V(v)=2(1+v)^{-3}, v>0$.</li></ol>
+</li>
+<li><ol type="i"><li>By (b)(i), $X_1+X_2$ has the distribution of $Z$ for $λ=1$. By (b)(ii), $𝔼(1 / Z)=1$. By independence,
+$$
+𝔼\left(R_1\right)=𝔼\left(\frac{X_0}{X_1+X_2}\right)=𝔼\left(X_0\right) 𝔼\left(\frac{1}{Z}\right)=1
+$$
+By (b)(i), $X_2 /\left(X_1+X_2\right)$ has the uniform distribution of $U$ with mean $1 / 2$. Hence
+$$
+\operatorname{Cov}\left(R_n, R_{n+2}\right)=𝔼\left(\frac{X_0 X_2}{\left(X_1+X_2\right)\left(X_3+X_4\right)}\right)-1=𝔼\left(X_0\right) 𝔼(U) 𝔼(1 / Z)-1=-1 / 2 \text {. }
+$$
+</li>
+<li>Note that $R_{3 n}$ depends on $X_{3 n-1}, X_{3 n}, X_{3 n+1}$, so $R_{3 n}, n ≥ 1$, are independent with $𝔼\left(R_{3 n}\right)=1$, by (i). By the SLLN of (a)(i),
+$$
+\frac{1}{n} \sum_{k=1}^n R_{3 k} → 1   \text { with probability } 1
+$$
+Similarly, we have
+$$
+\frac{1}{n} \sum_{k=1}^n R_{3 k-1} → 1 \text { and } \frac{1}{n} \sum_{k=1}^n R_{3 k-2} → 1   \text { with probability } 1
+$$
+By Algebra of Limits for almost sure convergence, we have, with probability 1 ,
+$$
+\frac{1}{3 n} \sum_{k=1}^{3 n} R_k=\frac{1}{3 n} \sum_{k=1}^n R_{3 k-2}+\frac{1}{3 n} \sum_{k=1}^n R_{3 k-1}+\frac{1}{3 n} \sum_{k=1}^n R_{3 k} → 1 .
+$$
+A simple sandwiching argument allows us to replace $3 n$ by $n$.</li></ol></li></ol>
+</li></ol>
