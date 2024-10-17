@@ -47,6 +47,7 @@ $$k-\frac1n<\frac{⌊nk⌋}n≤k\text{ so the limit is }\begin{cases}0&k< 0\\k&0
 <li>$ℙ\left(n(1-M_n)≤k\right)=1-ℙ\left(M_n< 1-\frac kn\right)=\begin{cases}1&k>n\\1-\left(1-\frac kn\right)^n&0≤k≤n\\0&k< 0\end{cases} $ converges to $ \begin{cases}1-e^{-k}&k≥0\\0&k< 0\end{cases} $ so $n\left(1-M_n\right)\overset d→\operatorname{Exp}(1)$.
 <center>
 {% latex %}\usepackage{tikz}
+\begin{tikzpicture}
 \draw(0,-0.15)node[below]{0}--(0,0.15)(0,0)--(4,0)(4,0.15)--(4,-0.15)node[below]{1};
 \draw[<->](0.6,0.25)--(1.4,0.25);
 \draw[<->](2.2,0.25)--(2.9,0.25);
