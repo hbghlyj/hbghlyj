@@ -1,0 +1,139 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: sheet 4 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style><ol>
+<li>
+    Use the Gram-Schmidt process to obtain an orthogonal basis for $V$, the vector space of polynomials of degree ≤2 with inner product $⟨f,g⟩=∫_0^1f(x)g(x)\,\mathrm dx$ and basis $\{f_0,f_1,f_2\}$ where $f_0(x)=1,f_1(x)=x,f_2(x)=x^2$.<br>
+    <b>Solution.</b><br>
+    $g_0=f_0=1$<br>
+    $g_1=f_1-{⟨g_0,f_1⟩\over⟨g_0,g_0⟩}g_0=x-\frac12$<br>
+    $g_2=f_2-{⟨g_0,f_2⟩\over⟨g_0,g_0⟩}g_0-{⟨g_1,f_2⟩\over⟨g_1,g_1⟩}g_1=x^2-\frac13-\left(x-\frac12\right)=x^2-x+\frac16$<br>
+    Then $\{g_0,g_1,g_2\}$ is an orthogonal basis for $V$.
+</li>
+<li>
+    (a) Let $\{e_1, …, e_k\}$ be an orthonormal set in a finite dimensional real inner product space. If $v ∈ V$, show that
+    $$
+    \sum_{i=1}^k\left|\left< v, e_i\right>\right|^2 \leq{‖v‖}^2
+    $$
+    (b) Deduce the Cauchy-Schwarz inequality
+    $$
+    {|⟨v, w⟩|}\leq{‖v‖}{‖w‖} .
+    $$
+    When does equality hold?<br>
+    (c) Deduce the triangle inequality
+    $$
+    {‖v+w‖} \leq{‖v‖}+{‖w‖}
+    $$
+    <b>Solution.</b><br>
+    (a)\begin{align*}0&≤{\bigg‖v-\sum_{i=1}^k\left< v, e_i\right> e_i\bigg‖}^2\\&={‖v‖}^2-2\bigg< v,\sum_{i=1}^k\left< v, e_i\right> e_i\bigg>+{\bigg‖\sum_{i=1}^k\left< v, e_i\right> e_i\bigg‖}^2\\&={‖v‖}^2-2\sum_{i=1}^k\left< v, e_i\right>^2+\sum_{i=1}^k\left< v, e_i\right>^2\\&={‖v‖}^2-\sum_{i=1}^k\left< v, e_i\right>^2
+    \end{align*}
+    where equality holds iff $v∈\operatorname{span}\{e_1, \ldots, e_k\}$.<br>
+    (b) Applying (a) to $v$ and orthonormal set $\left\{\frac{w}{‖w‖}\right\}$, we get $\left|\left< v, \frac{w}{‖w‖}\right>\right|^2≤{‖v‖}^2⇒\left|\left< v, \frac{w}{‖w‖}\right>\right|≤{‖v‖}⇒{|⟨v, w⟩|}≤{‖v‖}{‖w‖}$ where equality holds iff $v=λw,\ λ∈ℝ$.<br>
+    (c) ${‖v + w‖}^2= ⟨v + w, v + w ⟩= {‖v‖}^2 + 2⟨v,w⟩ + {‖w‖}^2⇒({‖v‖} + {‖w‖})^2-{‖v + w‖}^2=2({‖v‖}{‖w‖}-⟨v, w ⟩)≥0$ by (b), where equality holds iff $v=λw,\ λ≥0$.
+</li>
+<li>
+    Let $V$ be the set of all real sequences $(a_n)$ such that $\sum_{n=1}^∞ a_n^2$ converges.<br>
+    (a) Prove that $V$ is a vector space under component-wise addition and scalar multiplication.<br>
+    (b) Define a suitable inner product on $V$ and prove that it is an inner product.<br>
+    (c) Deduce that for all $(a_n)$ and $(b_n)$ in $V$
+    $$
+    \Bigg(\sum_{n=1}^∞\left(a_n+b_n\right)^2\Bigg)^{1 / 2} \leq\Bigg(\sum_{n=1}^∞ a_n^2\Bigg)^{1 / 2}+\Bigg(\sum_{n=1}^∞ b_n^2\Bigg)^{1 / 2}
+    $$
+    (d) Let $U$ be the subspace of all finite (that is, zero after some point) sequences. Show that $U^⟂=0$, and deduce that $\left(U^⟂\right)^⟂=V≠U$.<div class="noprint">$ℓ^2$ is a separable Hilbert space.<br>
+        <a href="https://math.mit.edu/~rbm/18-102-S14/Chapter3.pdf">Proposition 21.</a> Any infinite-dimensional separable Hilbert space (over the complex numbers) is isomorphic to $ℓ^2$, that is there exists a linear map $T : H→ ℓ^2$ which is 1-1, onto and satisfies $(Tu,Tv)_{ℓ^2}=(u,v)_H$ and ${‖Tu‖}_{ℓ^2}={‖u‖}_H$ for all $u,
+        v ∈ H$.</div>
+    <b>Solution.</b><br>
+    (a) Let $(a_n),(b_n)∈V$. Then $\sum_{n=1}^∞ a_n^2$ and $\sum_{n=1}^∞ b_n^2$ converges. We have $(ka_n)^2=k^2a_n^2$ and $(a_n+b_n)^2≤2a_n^2+2b_n^2$. Therefore $\sum_{n=1}^∞ (a_n+b_n)^2$ and $\sum_{n=1}^∞ (ka_n)^2$ converges.<br>
+    (b) We have $a_nb_n≤\frac{a_n^2+b_n^2}2$, so $\sum_{n=1}^∞a_nb_n$ converges. Define $\left<(a_n),(b_n)\right>=\sum_{n=1}^∞a_nb_n$.<br>
+    Symmetric: $\left<(a_n),(b_n)\right>=\sum_{n=1}^∞a_nb_n=\sum_{n=1}^∞b_na_n=\left<(b_n),(a_n)\right>$<br>
+    Bilinear: $\left<λ(a_n),(b_n)\right>=\sum_{n=1}^∞λa_nb_n=λ\left<(a_n),(b_n)\right>\quad\left<(a_n)+(c_n),(b_n)\right>=\sum_{n=1}^∞(a_n+c_n)b_n=\left<(a_n),(b_n)\right>+\left<(c_n),(b_n)\right>$<br>
+    Positive definite: $(a_n)≠0⇒∃i∈ℕ,a_i≠0⇒a_i^2>0⇒\left<(a_n),(a_n)\right>>0$.<br>
+    (c) By the triangle inequality ${‖(a_n)+(b_n)‖}≤{‖(a_n)‖}+{‖(b_n)‖}$<br>
+    (d) Let $(a_n)∈U^⟂$. For $i=1,2,…$ construct a sequence $(b_n)$: $b_i=1;∀j≠i,b_j=0$.<br>
+    $(b_n)∈U⇒\left<(a_n),(b_n)\right>=0⇒a_i=0$. Therefore $U^⟂=0$ and $\left(U^⟂\right)^⟂=V≠U$.
+</li>
+<li>
+    Let $T:ℂ^2 →ℂ^2$ be defined by
+    $$
+    T:(x, y)↦(2 i x+y, x)
+    $$
+    Write down the matrix $A$ of $T$ with respect to the usual basis of $ℂ^2$. Is $A$ symmetric? Is it conjugate symmetric?<br>
+    Find the eigenvectors of $A$ and decide if it is diagonalisable.<br>
+    <b>Solution.</b><br>
+    $A=\pmatrix{2i&1\\1&0}$ is symmetric but not conjugate symmetric.<br>
+    $\det(A-xI)=(2i-x)(-x)-1=(x-i)^2⇒$eigenvalue of $A$ is $i$ with multiplicity 2.<br>
+    $\ker(A-iI)=\ker\pmatrix{i&1\\1&-i}=\operatorname{span}\left\{\pmatrix{i\\1}\right\}⇒A$ is not diagonalisable.
+</li>
+<li>
+    Let $(V,⟨,⟩)$ be a <i>complex</i> inner product space.<br>
+    Suppose that $⟨Tv,v⟩=0$ for all $v∈V$. Show that $T=0$.<br>
+    Is this still true over a <i>real</i> inner product space?<br>
+    <b>Solution.</b><br>
+    Let $λ$ be an eigenvalue of $T$. Then $∃v∈V∖\{0\},Tv=λv⇒⟨Tv,v⟩=\bar λ⟨v,v⟩=0⇒λ=0$. Therefore $T=0$.<br>
+    This is false over a <i>real</i> inner product space. Let $V=ℝ^2,T(x,y)=(-y,x)$ is a rotation. Then $T≠0$ but $⟨Tv,v⟩=0$ for all $v∈V$.
+</li>
+<li>
+    Let $T$ be a linear transformation of a finite dimensional complex inner product space $V$. Show that $T^* T$ is self-adjoint and has only real, non-negative eigenvalues. Let $λ_{\min}$ be the minimum and $λ_{\max}$ be the maximum of these eigenvalues. Show that for $v \in V$,
+    $$
+    λ_{\min}^{1 / 2}{‖v‖} \leq{‖T v‖} \leq λ_{\max}^{1 / 2}{‖v‖}
+    $$
+    <b>Proof.</b><br>
+    $(T^* T)^*=T^*(T^*)^*=T^*T⇒T^*T$ is self-adjoint. Let $λ$ be an eigenvalue of $T^*T$ then $∃v∈V∖\{0\},\ T^*Tv=λv⇒⟨Tv,Tv⟩＝⟨v,T^*Tv⟩=λ⟨v,v⟩⇒{‖Tv‖}^2=λ{‖v‖}^2⇒λ∈ℝ^{≥0}.$<br>
+    By spectral theorem for self-adjoint maps, there exists an orthonormal basis $\{v_1,…,v_n\}$ for $V$ consisting of eigenvectors of $T^*T$, so any $v∈V$ can be written as $v=a_1v_1+⋯+a_nv_n$ for some $a_1,…,a_n∈ℂ$.<br>
+    Let $λ_1,…,λ_n∈ℝ^{≥0}$ be the corresponding eigenvectors, then
+    $${‖Tv‖}^2=⟨v,T^*Tv⟩＝⟨a_1v_1+⋯+a_nv_n,λ_1a_1v_1+⋯+λ_na_nv_n⟩=λ_1{‖a_1‖}^2+⋯+λ_n{‖a_n‖}^2$$
+    $$λ_\min^{1/2}\sqrt{{‖a_1‖}^2+⋯+{‖a_n‖}^2}≤\sqrt{λ_1{‖a_1‖}^2+⋯+λ_n{‖a_n‖}^2}≤λ_\max^{1/2}\sqrt{{‖a_1‖}^2+⋯+{‖a_n‖}^2}$$
+    $$⟺λ_\min^{1 / 2}{‖v‖}≤{‖T v‖}≤λ_\max^{1 / 2}{‖v‖}$$
+    <div class="noprint"><a href="https://en.wikipedia.org/wiki/Min-max_theorem">Min-max theorem</a><br><b>alternate proof for real vector space.</b><br>
+    Let $A=T^* T$. To maximize or minimize $θ(v)=\bar v^{\sf T}Av$ subject to ${‖v‖}=1$, form the Lagrange function\[L(v;μ)=θ(v)-μ\left({‖v‖}^2-1\right)=\sum_{i, j=1}^m A_{i j}\bar v_i v_j-μ \sum_{i=1}^m\left(\bar v_i v_i-1\right)\]Compute partial derivatives\begin{aligned}\frac{\partial L}{\partial v_l}(v ; μ)&=\sum_{i, j=1}^m A_{i j} \frac{\partial}{\partial v_l}\left(v_i v_j\right)-μ \frac{\partial}{\partial v_l}\left(v_i v_i\right)=\sum_{i, j=1}^m A_{i j}\left(\delta_l^i v_j+v_i \delta_l^j\right)+\sum_{i=1}^m 2 μ \delta_l^i v_i \\&=\sum_{j=1}^m A_{l j} v_j+\sum_{i=1}^m A_{i l} v_i-2μ v_l=2 \sum_{j=1}^m A_{l j} v_j-2μ v_l \end{aligned}where $δ_l^i$ is Kronecker symbol. The critical points of $L$ are$$2 \sum_{j=1}^m A_{l j} v_j-2μ v_l=0, \quad l=1, \cdots, m$$This is equivalent to $Av=μv$. So $v$ is an eigenvector for $A$.<br>
+    谢锡麟 - 微积分讲稿. 高维微积分-复旦大学出版社 (2017) page 211</div>
+</li>
+<li>
+    Let $(V,⟨,⟩)$ be a real inner product space.<br>
+    Let a self-adjoint transformation $T:V→V$ be <i>positive definite</i>, that is $⟨Tv,v⟩>0$ for all $v≠0$.<br>
+    Show that all eigenvalues of $T$ are positive. Deduce that there is a positive definite self-adjoint $S:V→V$ with $S^2=T$.<br>
+    <b>Solution.</b><br>
+    Let $λ$ be an eigenvalue of $T$ then $∃v≠0:Tv=λv⇒⟨Tv,v⟩=λ⟨v,v⟩>0⇒λ>0$.<br>
+    By the spectral theorem, ∃ orthogonal matrix $P$ such that $T=P^{-1}\operatorname{diag}(λ_1,…,λ_n)P$. Let $S$ be the linear transformation with matrix representation $P^{-1}\operatorname{diag}(\sqrt{λ_1},…,\sqrt{λ_n})P$, then $T=S^2$.<br>
+    $S$ is self-adjoint: Since $P$ is orthogonal, we have $S^{\sf T}=P^{\sf T}\operatorname{diag}(\sqrt{λ_1},…,\sqrt{λ_n})(P^{\sf T})^{-1}=P^{-1}\operatorname{diag}(\sqrt{λ_1},…,\sqrt{λ_n})P=S$<br>
+    $S$ is positive definite: $S$ is similar to a positive definite matrix $\operatorname{diag}(\sqrt{λ_1},…,\sqrt{λ_n})$.
+</li>
+<li>
+    (a) Show that the unitary matrices $U(n)$ form a group and that the determinant is a group homomorphism from $U(n)$ onto $S^1$, the multiplicative group of complex numbers of modulus 1.
+    Show that $U(n)$ is not isomorphic to $S U(n) \times S^1$ as a group.<br>
+    (b) Show that the elements of the group $S U(2)$ are of the form
+    $$
+    \left(\begin{array}{cc}
+    \alpha & -\bar{\beta} \\
+    \beta & \bar{\alpha}
+    \end{array}\right): \alpha \bar{\alpha}+\beta \bar{\beta}=1 .
+    $$
+    Deduce that $SU(2)$ can be identified with the 3-sphere $S^3$, i.e. the elements of length 1 in $ℂ^2=ℝ^4$.<br>
+    <b>Solution.</b>
+    <ol type="a">
+        <li>
+            To show that $U(n)$ is a subgroup of $GL_n(ℂ)$ I need to prove that $U(n)$ is closed under group operations:<br>
+            $U(n)$ is closed under multiplication: $∀A,B∈U(n),\ (AB)^*(AB)=B^*A^*AB=B^*B=I⇒AB∈U(n)$<br>
+            $U(n)$ is closed under inverse: $∀A∈U(n),A^{-1}=A^*⇒(A^{-1})^*A^{-1}=(A^*)^*A^{-1}=AA^{-1}=I⇒A^{-1}∈U(n)$<br>
+            $∀A,B∈U(n),\left|\det(A)\right|=1,\det(AB)=\det(A)\det(B),$ so $\det:U(n)→S^1$ is a group homomorphism.<br>
+            If $A$ lies in the center then $∀P∈U(n),A=P A P^{-1}$.<br>
+            (1)By the Spectral Theorem $∃P∈U(n),P A P^{-1}$ is diagonal, it follows that $A$ must be diagonal.<br>
+            (2)Let $P$ be the matrix that rotates $j^\text{th}$ and $k^\text{th}$ basis vector, so $P_{j,k;j,k}=\pmatrix{0&1\\-1&0}$, it follows that $P∈SU(n)$, then $A_{j, j}=A_{k, k}$.<br>Therefore $A$ has the form $c I$ and $\left|\det(A)\right|={|c|}^n=1⇒{|c|}=1$.<br>Therefore $Z(U(n))=\{cI:{|c|}=1\}≅S^1$.<br><br>If $A$ lies in the center of $SU(n)$ then $A$ lies in the center of $U(n)$, by the above, $A=cI$ and $\det A=c^n=1$.<br>$Z(SU(n))=\{cI:c^n=1\}≅ℤ_n$.<br><br>Suppose $U(n)$ is isomorphic to $SU(n)×S^1$, then the center of $U(n)$ is isomorphic to the center of $SU(n)×S^1$, so $S^1$ is isomorphic to $ℤ_n×S^1$, but the elements of order $n$ in $S^1$ are $e^{\frac{2πi}n},i=0,1,⋯,n-1$, but at least $n+1$ elements of order $n$ in $ℤ_n×S^1$ are of order $n$: $(1\bmod n,1)$ and $(0\bmod n,e^{\frac{2πi}n}),i=0,1,⋯,n-1$, a contradiction.
+        </li>
+        <li>
+            Let $A=\pmatrix{α&A_{12}\\β&A_{22}}∈SU(2)$<br>
+            $I=AA^*=\pmatrix{α&A_{12}\\β&A_{22}}\pmatrix{\barα&\barβ\\\bar{A_{12}}&\bar{A_{22}}}=\pmatrix{α\barα+A_{12}\bar{A_{12}}&α\barβ+A_{12}\bar{A_{22}}\\\barαβ+\bar{A_{12}}A_{22}&β\barβ+A_{22}\bar{A_{22}}}⇒A_{12}\bar{A_{22}}=-α\barβ…(1)$<br>
+            $I=A^*A=\pmatrix{\barα&\barβ\\\bar{A_{12}}&\bar{A_{22}}}\pmatrix{α&A_{12}\\β&A_{22}}=\pmatrix{α\barα+β\barβ&\barαA_{12}+\barβA_{22}\\α\bar{A_{12}}+β\bar{A_{22}}&A_{12}\bar{A_{12}}+A_{22}\bar{A_{22}}}⇒\barαA_{12}+\barβA_{22}=0…(2)$<br>
+            $\det(A)=1⇒αA_{22}-βA_{12}=1…(3)$<br>
+            Solving the linear equations (2) and (3), we get $\cases{A_{12}=-\frac{\barβ}{α\barα+β\barβ}\\A_{22}=\frac{\barα}{α\barα+β\barβ}}$<br>
+            Substituting $A_{12}$ and $A_{22}$ in (1), we get $-\frac{α\barβ}{(α\barα+β\barβ)^2}=-α\barβ$, so $α\barα+β\barβ=±1$, but $α\barα+β\barβ≥0$, so $α\barα+β\barβ=1$, so $A=\left(\begin{array}{cc}
+            \alpha & -\bar{\beta} \\
+            \beta & \bar{\alpha}
+            \end{array}\right)$.<br>
+            Let $α=x_1+x_2i,β=x_3+x_4i$, then $x_1^2+x_2^2+x_3^2+x_4^2=1$, so $(x_1,x_2,x_3,x_4)∈S^3$.
+        </li>
+    </ol>
+</li>
+</ol>

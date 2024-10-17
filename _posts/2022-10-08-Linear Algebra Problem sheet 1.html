@@ -1,0 +1,146 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: sheet 1 — MT 2022
+---
+<ol>In Q1-7 you can assume the vector spaces are finite-dimensional.
+<li>Let $F$ be a field and $f(x)$ an <i>irreducible</i> polynomial in $F[x]$. Show that the quotient ring $F[x]/⟨f(x)⟩$ is a field.<br>
+        <b>Proof.</b><br>
+        Since $F[x]$ is a commutative ring with identity, so is $F[x]/⟨f(x)⟩$. To show $F[x]/⟨f(x)⟩$ is a field only needs to show that nonzero elements are invertible.<br>A nonzero element of $F[x]/⟨f(x)⟩$ has the form $a(x) + \langle f(x) \rangle$ for $a(x) \in F[x]∖⟨f(x)⟩$, so $f(x)∤a(x)$, by irreducibility of $f(x)$, $\gcd(a(x),f(x))=1$, then $∃m(x),n(x) ∈ F[x]$ , such that $a(x) m(x) + f(x) n(x) = 1$. Then\begin{aligned} a(x) \cdot m(x)+ f(x) \cdot n(x)+ \langle f(x) \rangle & = 1 + \langle f(x) \rangle \\ a(x) \cdot m(x) + \langle f(x) \rangle & = 1 + \langle f(x) \rangle \\ \left(a(x) + \langle f(x) \rangle\right) \left(m(x) + \langle f(x) \rangle\right) & = 1 + \langle f(x) \rangle \end{aligned}This shows that $m(x) + \langle f(x) \rangle$ is the multiplicative inverse of $a(x) + \langle f(x) \rangle$.
+    </li>
+<li>A <i>rational function</i> over a field $F$ is a quotient $\frac{f(t)}{g(t)}$ where $f, g$ are polynomials over $F$ and $g$ is not identically zero. (Obviously we identify $\frac{f_1}{g_1}$ and $\frac{f_2}{g_2}$ if $f_1g_2=f_2g_1$ as polynomials).<br>
+        Show that the set $F(t)$ of rational functions form a field and use this to produce an example of an infinite field of positive characteristic.<br>
+        <b>Solution.</b><br>
+        For $\frac{f_1}{g_1}$ and $\frac{f_2}{g_2}$, define $\frac{f_1}{g_1}+\frac{f_2}{g_2}=\frac{f_1g_2+f_2g_1}{g_1g_2},\frac{f_1}{g_1}⋅\frac{f_2}{g_2}=\frac{f_1f_2}{g_1g_2}$.<br>
+        (1) Addition and multiplication are well-defined.<br>
+        Suppose $\frac{a}{b} = \frac{a'}{ b'}$ and $\frac{c}{d} = \frac{c'}{ d'}$. Then $\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{ b d}$ and $\frac{a'}{ b'} + \frac{c'}{ d'} = \frac{a' d' + b' c'}{ b' d'}$ and $\frac{a}{b} \frac{c}{d} = \frac{a c}{ b d}$ and $\frac{a'}{ b'} \frac{c'}{ d'} = \frac{a' c'}{ b' d'}$<br>
+        $(a d + b c) b' d' = a b' d d' + b b' c d' = a' b d d' + b b' c' d = (a' d' + b' c') b d ⇒ \frac{a d + b c}{ b d} = \frac{a' d' + b' c'}{ b' d'}$<br>
+        $(a c)(b' d') = a b' c d' = a' b c' d = (a' c')(b d) ⇒ \frac{a c}{ b d} = \frac{a' c'}{ b' d'}$<br><br>
+        (2) Addition is associative.
+        $$\left(\frac{a}{b} + \frac{c}{d}\right) + \frac{e}{f} = \frac{a d + b c}{ b d} + \frac{e}{f} = \frac{a d f + b c f + b d e}{ b d f},$$
+        $$\frac{a}{b} + \left(\frac{c}{d} + \frac{e}{f}\right) = \frac{a}{b} + \frac{c f + d e}{ d f} = \frac{a d f + b c f + b d e}{ b d f}.$$
+        (3) Addition is commutative.
+        $$\frac{a}{b} + \frac{c}{d} = \frac{a d + b c}{ b d} \quad\hbox{and}\quad \frac{c}{d} + \frac{a}{b} = \frac{b c + a d}{ b d}.$$
+        (4) $\frac{0}{1}$ is the additive identity.
+        $$\frac{a}{b} + \frac{0}{1} = \frac{a \cdot 1 + b \cdot 0}{ b} = \frac{a}{b}.$$
+        (5) $-\frac{a}{b} = \frac{-a}{ b}$ .
+        $$\frac{a}{b} + \frac{-a}{ b} = \frac{a b - a b}{ b^2} = \frac{0}{ b^2}.$$
+        Finally, $\frac{0}{ b^2} = \frac{0}{1}$ , since $0\cdot 1 = b^2\cdot 0$ .
+        <br><br>
+        (6) Multiplication is associative.
+        $$\left(\frac{a}{b} \frac{c}{d}\right) \frac{e}{f} = \frac{a c e}{ b d f} = \frac{a}{b} \left(\frac{c}{d} \frac{e}{f}\right).$$
+        (7) Multiplication is commutative.
+        $$\frac{a}{b} \frac{c}{d} = \frac{a c}{ b d} = \frac{c}{d} \frac{a}{b}.$$
+        (8) $\frac{1}{1}$ is the multiplicative identity.
+        $$\frac{a}{b} \frac{1}{1} = \frac{a}{b}.$$
+        (9) Multiplication distributes over addition.
+        By commutativity of multiplication, it suffices to check this on one side.
+        $$\frac{a}{b}\left(\frac{c}{d} + \frac{e}{f}\right) = \frac{a}{b} \frac{c f + d e}{ d f} = \frac{a c f + a d e}{ b d f},$$
+        $$\frac{a}{b} \frac{c}{d} + \frac{a}{b} \frac{e}{f} = \frac{a c}{ b d} + \frac{a e}{ b f} = \frac{a b c f + a b d e}{ b^2 d f}.$$
+        Finally,
+        $$(a c f + a d e) b^2 d f = a b^2 c d f^2 + a b^2 d^2 e f \quad\hbox{and}\quad (a b c f + a b d e) b d f = a b^2 c d f^2 + a b^2 d^2 e f.$$
+        Therefore, $\frac{a c f + a d e}{ b d f} = \frac{a b c f +a b d e}{ b^2 d f}$.
+        <br><br>
+        (10) Nonzero elements have multiplicative inverses.<br>
+        Suppose $\frac{a}{b} \ne \frac{0}{1}$ , so $a \ne 0$ . Then using $a b \cdot 1 = 1 \cdot a b$ , I have $\frac{a}{b} \frac{b}{a} = \frac{a b}{ a b} = \frac{1}{1}$. Hence, $\frac{b}{a} $ is the inverse of $ \frac{a}{b}$ .<br>
+        This completes the verification that $F(t)$ is a field.<br>
+        When $F=𝔽_p,F(t)$ is an infinite field of characteristic $p$.<hr>
+        The field of rational functions on $F(t)$, that is $(F(t))(t')$, is isomorphic to the field of rational functions of two variables $t,t'$. By symmetry, this is isomorphic to $(F(t'))(t)$.
+    </li>
+<li>Show that $\mathbb{Z}$ is a principal ideal domain, ie. every ideal is of the form $\langle m\rangle=m \mathbb{Z}$ for some $m \in \mathbb{Z}$.<br>
+        Discuss how to prove this result for $F[x]$, the ring of polynomials with coefficients in a field $F$.
+        <br><b>Proof for ℤ.</b><br>
+        Let $I$ be an ideal of $\mathbb Z$. If $I=\{0\}$ then $I=⟨0⟩$ and we are done.<br>
+        Suppose $I\neq\{0\}$, let $I^+=I∩ℤ^+$ and $a=\min I^+$. We will prove $⟨a⟩=I$.<br>Since $I$ is an ideal, $∀r∈ℤ, ar\in I$, so $⟨a⟩⊂I$.<br>
+        Clearly $0∈⟨a⟩$. For any $b∈I∖\{0\}$, by Division Algorithm we have $b=aq+r$ for some $q,r∈ℤ$ and $0≤r< a$.<br>
+        Since $b,aq \in I$, $r=b-aq \in I$. This implies $r=0$ since $a$ is the smallest element in $I^+$. So $b∈⟨a⟩$. So $⟨a⟩⊃I$. So $⟨a⟩=I$.<br>
+        <b>Proof for $F[x]$.</b><br>
+        Let $I$ be an ideal of $F[x]$. If $I=\{0\}$ then $I=⟨0⟩$ and we are done.<br>
+        Suppose $I\neq\{0\}$, let $a$ be a polynomial of the lowest degree in $I∖\{0\} $. We will prove $⟨a⟩=I$.<br>Since $I$ is an ideal, $∀r∈F[x], ar\in I$, so $⟨a⟩⊂I$.<br>
+        Clearly $0∈⟨a⟩$. For any $b∈I∖\{0\}$, by Division Algorithm we have $b=aq+r$ for some $q,r∈F[x]$ and $\deg r<\deg a$.<br>
+        Since $b,aq \in I$, $r=b-aq \in I$. This implies $r=0$ since $a$ has the lowest degree in $I∖\{0\}$. So $b∈⟨a⟩$. So $⟨a⟩⊃I$. So $⟨a⟩=I$.
+    </li>
+<li>Let $P: V → V$ be a projection, that is, $P^2=P$.
+        Show that $V=\operatorname{im}P ⊕ \ker P$, and deduce that there is a basis in which $P$ is a block matrix
+        $$
+        P=\left(\begin{array}c
+        I_r & 0 \\
+        0 & 0
+        \end{array}\right)
+        $$
+        where $r$ is the rank of $P$.<br>
+        What are the minimum and characteristic polynomials of $P$ ?
+        <br><b>Solution.</b><br>
+        For any $v∈V$, $v=P(v)+(v-P(v))$, since $P(v)∈\operatorname{im}P$ and $P(v-P(v))=P(v)-P^2(v)=0⇒v-P(v)∈\ker P$, we have $V=\operatorname{im}P + \ker P$.<br>
+        Suppose $w∈\operatorname{im}P ∩ \ker P$, we have $w=P(v)$ for some $v∈V$, then $0=P(w)=P^2(v)=P(v)=w⇒\operatorname{im}P ∩ \ker P=\{0\}⇒V=\operatorname{im}P ⊕ \ker P$.<br>
+        Suppose $w∈\operatorname{im}P$, we have $w=P(v)$ for some $v∈V$, then $P(w)=P^2(v)=P(v)=w$. So the matrix of $P|_{\operatorname{im}P}$ is identity matrix. Also $P|_{\operatorname{im}P}$ is zero matrix.<br>
+        Since $V=\operatorname{im}P ⊕ \ker P$, the union of a basis of $\operatorname{im}P$ and a basis of $\operatorname{im}P$ is a basis for $V$. In this basis $P$ is a block matrix $
+        \left(\begin{array}c
+        I_r & 0 \\
+        0 & 0
+        \end{array}\right)
+        $, where $r$ is the rank of $P$.<br>
+        Let $n=\dim V$, then $m_P(t)=t^2-t,χ_P(t)=|P-tI_n|=\begin{vmatrix}
+        (1-t)I_r & 0 \\
+        0 & -tI_{n-r}
+        \end{vmatrix}=(1-t)^r(-t)^{n-r}$.
+    </li>
+<li>Show that a block triangular matrix
+        $$
+        X=\left(\begin{array}{cc}
+        A & B \\
+        0 & D
+        \end{array}\right)
+        $$
+        has determinant $\det X=\det A \det D$.
+        (One way to do this is to look for a factorisation $X=X_1X_2X_3$ where $X_2$ is block triangular and $X_1,X_3$ are block diagonal, and some of the diagonal blocks are the identity).<br>
+        Deduce the equality of characteristic polynomials $χ_X(t)=χ_A(t)χ_D(t)$.
+        <br><b>Proof.</b><br>
+        If $\det A=0$, columns of $A$ are linearly dependent, hence the columns of $X$ are linearly dependent, hence $\det X=0$.
+        If $\det A≠0$, we have\begin{align*}
+        &\det\pmatrix{A&B\\0&D}\\
+        =&\det\pmatrix{A&0\\0&D}⋅\det\pmatrix{I&A^{-1}B\\0&I}\\
+        =&\hskip3.47px\det A\det D\hskip3.47px⋅\hskip47.3px1&\text{by Laplace expansion}
+        \end{align*}
+        $χ_X(t)=\det\pmatrix{A-tI&B\\0&D-tI}=\det(A-tI)⋅\det(D-tI)=χ_A(t)χ_D(t)$<hr>
+We proved the same question using <a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_determinants">Leibniz formula for determinants</a> in <a href="https://cjhb.site/index.php?dir=238%2F1.html">Q3 sheet 1 in M1: Linear Algebra Ⅱ</a>.
+    </li>
+<li>Prove that $T: V → V$ is invertible if and only if $x$ does not divide the minimal polynomial $m_T(x)$.
+    <br><b>Solution.</b><br>
+    $T$ is invertible ⇔ $\ker T=\{0\}$ ⇔ 0 is not an eigenvalue of $T$ ⇔ 0 is not a root of $m_T(x)$ ⇔ $x$ does not divide $m_T(x)$.
+    </li>
+<li>Let $T: V → V$ be a linear transformation. Assume that $v, T v, T^2 v, …$ span $V$ for some $v \in V$. Show that<br>
+    (i) there exists a $k$ such that $v, T v, \ldots, T^{k-1} v$ are linearly independent and for some $a_i$$$T^kv=a_0v+a_1T v+\ldots+a_{k-1} T^{k-1} v$$
+    (ii) the set $v, T v, \ldots, T^{k-1} v$ forms a basis for $V$;<br>
+    (iii) its minimal polynomial is given by $m_T(x)=x^k-a_{k-1} x^{k-1}-\ldots-a_0$;<br>
+    (iv) What is the characteristic polynomial $χ_T(x)$?<br>
+    <a href="https://en.wikipedia.org/wiki/Minimal_polynomial_(linear_algebra)#Computation">Computation of minimal polynomial</a> by <a href="https://en.wikipedia.org/wiki/Cyclic_vector">Cyclic vector</a><br>
+    <a href="https://en.wikipedia.org/wiki/Companion_matrix">Companion matrix of a polynomial</a>
+    <br><b>Solution.</b><br>
+    (i) Let $n=\dim V$, for $k=0$, the single element $v$ is linearly independent; for $k>n$, $v, T v, \ldots, T^{k-1} v$ are linearly dependent. So there exists $0< k≤n$ such that $v, T v, \ldots, T^{k-1} v$ are linearly independent but $v, T v, \ldots, T^k v$ are linearly dependent, so $T^kv$ can be written as linear combination of the rest.<br>
+    (ii) Since $v, T v, \ldots$ span $V$ and $T^mv(m≥k)$ can be written as linear combination of $v, T v, \ldots, T^{k-1} v$, we have $v, T v, …, T^{k-1} v$ span $V$. Also they are linearly independent, so they form a basis.<br>
+    (iii) Proof 1: $x^k-a_{k-1} x^{k-1}-…-a_0$ is the minimal polynomial of $T$ in $⟨v⟩$, so $x^k-a_{k-1} x^{k-1}-…-a_0∣m_T(x)$.<br>By Cayley-Hamilton, $\deg m_T(x)≤\deg V=k$, so they are equal.<br>
+    Proof 2: In general if any polynomial in $T$ annihilates a vector $v$, then it also annihilates $T^iv$ (just apply $T^i$ to the equation $p(T)v=0$).<br>$V=⟨v,Tv,⋯,T^{k-1}v⟩⇒T^k-a_{k-1} T^{k-1}-…-a_0=0_V⇒m_T(x)∣x^k-a_{k-1}x^{k-1}-…-a_0$.<br>But $v,Tv,⋯,T^{k-1}v$ are linearly independent$⇒\deg m_T(x)≥k⇒m_T(x)=x^k-a_{k-1}x^{k-1}-…-a_0$.<br>
+    (iv) The matrix of $T$ in the basis $v, T v, …, T^{k-1} v$ is $\pmatrix{0&0&0&⋯&0&a_0\\1 & 0 & 0&⋯&0&a_1\\ 0 & 1 & 0&⋯&0&a_2\\ 0 & 0 &1&⋯&0&a_3\\⋮&⋮&⋮&\ddots&⋮&⋮\\0&0&0&⋯&1&a_{k-1}}⇒χ_T(x)=\left|T-xI\right|=\begin{vmatrix}-x&0&0&⋯&0&a_0\\1 & -x & 0&⋯&0&a_1\\ 0 & 1 & -x&⋯&0&a_2\\ 0 & 0 &1&⋯&0&a_3\\⋮&⋮&⋮&\ddots&⋮&⋮\\0&0&0&⋯&1&a_{k-1}-x\end{vmatrix}$<br>
+    <a href="https://en.wikipedia.org/wiki/Laplace_expansion">Laplace expansion</a> along last column $χ_T(x)=(-1)^{k-1}\sum_{i=0}^ka_i(-x)^i$.<br>
+    Alternatively, since $m_T(x)∣χ_T(x)$ and $\deg m_T(x)=\deg χ_T(x)$, they are same up to a constant. Comparing coefficients of $x^k$ we find $χ_T(x)=(-1)^km_T(x)$.<hr>
+    $T$ is singular$⇔\det T=0⇔a_0=0$. Including the case that $T$ is nilpotent, $m_T(x)=x^k$.
+</li>
+<li>Let $𝒫=F[x]$ be the vector space of polynomials over the field $F$. Determine whether or not $𝒫 / ℳ$ is finite dimensional when $ℳ$ is<br>
+    (i) the subspace $𝒫_n$ of polynomial of degree less or equal $n$;<br>
+    (ii) the subspace $ℰ$ of even polynomials;<br>
+    (iii) the subspace $x^n 𝒫$ of all polynomials divisible by $x^n$.
+    <br><b>Solution.</b><br>
+    (i) $1,x,…,x^n$ is a basis for $𝒫_n$ which extends to a basis $1,x,…,x^n,x^{n+1},…$ for $𝒫$. So $x^{n+1}+𝒫_n,…$ is a basis for $𝒫 /𝒫_n$. So $𝒫 /𝒫_n$ is infinite dimensional.<br>
+    (ii) $1,x^2,…$ is a basis for $ℰ$ which extends to a basis $1,x,x^2,x^3,…$ for $𝒫$. So $x+ℰ,x^3+ℰ,…$ is a basis for $𝒫 /ℰ$. So $𝒫 /ℰ$ is infinite dimensional.<br>
+    (iii) $x^n,x^{n+1}…$ is a basis for $x^n 𝒫$ which extends to a basis $1,x,…,x^{n-1},x^n,x^{n+1}…$ for $𝒫$. So $1+x^n 𝒫,x+x^n 𝒫,…,x^{n-1}+x^n 𝒫$ is a basis for $𝒫 /x^n 𝒫$. So $𝒫 /x^n 𝒫$ is finite dimensional.
+</li>
+<li>
+    Let $L: 𝒫 → 𝒫$ be given by$$L: f(x) ↦ x^2 f(x)$$
+    In each of the examples of the preceding question, decide whether $L$ induces a map of quotients $\bar{L}: 𝒫 / ℳ → 𝒫 / ℳ$. When it does, find a matrix representation of $\bar{L}$ with respect to a convenient basis of the quotient space.
+    <br><b>Solution.</b><br>
+    (i) $L(x^n)=x^{n+2}∉ℳ$, so ℳ is not invariant under $L$, so $L$ does not induce a map of quotients.<br>
+    (ii) a matrix representation of $\bar{L}$ with the basis $x+ℰ,x^3+ℰ,…$ is$$\pmatrix{0&0&0\\1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 &⋱}$$
+    (iii) a matrix representation of $\bar{L}$ with the basis $1+x^n 𝒫,x+x^n 𝒫,…,x^{n-1}+x^n 𝒫$ is$$\pmatrix{0&0&0&⋯&0&0&0\\0&0&0&⋯&0&0&0\\1 & 0 & 0&⋯&0&0&0\\ 0 & 1 & 0&⋯&0&0&0\\ 0 & 0 &1&⋯&0&0&0\\⋮&⋮&⋮&\ddots&⋮&⋮&⋮\\0&0&0&⋯&1&0&0}$$
+</li>
+</ol>

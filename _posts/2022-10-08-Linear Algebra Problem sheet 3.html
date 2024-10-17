@@ -1,0 +1,187 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: sheet 3 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>
+<ol>
+<li>
+    Consider the matrix
+    $$
+    A=\pmatrix{
+    0 & 2 & -1 \\
+    -2 & 3 & -2 \\
+    -3 & 2 & -2
+   }$$
+   <ol type="i">
+    <li>Find the characteristic polynomial $\chi_A(x)$ and show it is of the form $-\left(x-λ_1\right)\left(x-λ_2\right)^2$ for some $λ_1 \neq λ_2$.</li>
+    <li>Find basis vectors $u$ of $\ker\left(A-λ_1 I\right), v_1$ of $\ker\left(A-λ_2 I\right)$ and $v_1, v_2$ of $\ker\left(A-λ_2 I\right)^2$</li>
+    <li>Explain why $\left(A-λ_2 I\right)v_2$ is a scalar multiple of $v_1$.</li>
+    <li>Find the matrix of the linear transformation $A$ with respect to the new basis $v_1, v_2, u$.</li></ol>
+    <b>Solution.</b><ol type="i">
+    <li>$\chi_A(x)=\det(xI-A)=-(x+1)(x-1)^2⇒λ_1=-1,λ_2=1$</li>
+    <li>$A-λ_1I=A+I=\pmatrix{
+             1 & 2 & -1 \\
+             -2 & 4 & -2 \\
+             -3 & 2 & -1
+            }⇒\ker\left(A-λ_1 I\right)=⟨u⟩,u=\pmatrix{0\\1\\2}$<br>
+    $A-λ_2I=A-I=\pmatrix{
+         -1 & 2 & -1 \\
+         -2 & 2 & -2 \\
+         -3 & 2 & -3}⇒\ker\left(A-λ_2 I\right)=⟨v_1⟩,v_1=\pmatrix{1\\0\\-1}$<br>
+    $(A-λ_2I)^2=\pmatrix{
+         0 & 0 & 0 \\
+         4 & -4 & 4 \\
+         8 & -8 & 8}⇒\ker\left(A-λ_2 I\right)^2=⟨v_1,v_2⟩,v_2=\pmatrix{1\\1\\0}$</li>
+    <li>$v_2∈\ker\left(A-λ_2 I\right)^2⇒\left(A-λ_2 I\right)\big(\left(A-λ_2 I\right)v_2\big)=0⇒\left(A-λ_2 I\right)v_2∈\ker\left(A-λ_2 I\right)⇒\left(A-λ_2 I\right)v_2$ is a scalar multiple of $v_1$.</li>
+<li>$Av_1=v_1,Av_2=v_1+v_2,Au=-u$, so the matrix of $A$ with respect to the basis $v_1,v_2,u$ is $\pmatrix{1&1&0\\0&1&0\\0&0&-1}$<br>Calculate inverse matrix: $P=(v_1,v_2,u)=\pmatrix{1&1&0\\0&1&1\\-1&0&2},P^{-1}AP=\pmatrix{1&1&0\\0&1&0\\0&0&-1}$</li></ol>
+</li>
+<li>Write down all possible Jordan normal forms for matrices with characteristic polynomial $(x-λ)^5$. In each case, calculate the minimal polynomial and the geometric multiplicity of the eigenvalue $λ$. Verify that this information determines the Jordan normal form for this choice of characteristic polynomial.<br>
+    <b>Solution.</b><br>
+    There are 7 partitions of 5 into positive integers, up to permutation.
+    <style>
+        .demo {
+            border:1px solid #C0C0C0;
+            border-collapse:collapse;
+            padding:5px;
+        }
+        .demo th {
+            border:1px solid #C0C0C0;
+            padding:5px;
+            background:#F0F0F0;
+        }
+        .demo td {
+            border:1px solid #C0C0C0;
+            padding:5px;
+        }
+    </style>
+    <table class="demo">
+        <thead>
+        <tr>
+            <th>size of Jordan blocks<br></th>
+            <th>minimal polynomial</th>
+            <th>geometric multiplicity of λ</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>5<br></td>
+            <td>$(x-λ)^5$</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>4+1<br></td>
+            <td>$(x-λ)^4$</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3+2+1<br></td>
+            <td>$(x-λ)^3$</td>
+            <td>3<br></td>
+        </tr>
+        <tr>
+            <td>3+1+1+1<br></td>
+            <td>$(x-λ)^3$</td>
+            <td>4<br></td>
+        </tr>
+        <tr>
+            <td>2+2+1<br></td>
+            <td>$(x-λ)^2$</td>
+            <td>3<br></td>
+        </tr>
+        <tr>
+            <td>2+1+1+1<br></td>
+            <td>$(x-λ)^2$</td>
+            <td>4<br></td>
+        </tr>
+        <tr>
+            <td>1+1+1+1+1<br></td>
+            <td>$x-λ$</td>
+            <td>5<br></td>
+        </tr>
+        <tbody>
+    </table>
+    No two rows have identical entries in both the second and the third column, so this information determines the Jordan normal form for this choice of characteristic polynomial.
+</li>
+<li>
+    Prove that every square matrix over the complex numbers is conjugate to its transpose, i.e. prove that given any $(n × n)$-matrix $A$ there exists an $(n × n)$-matrix $P$ such that $P^{-1} A P=A^{\sf T}$ where $A^{\sf T}$ is the transpose of $A$.<br>
+    <b>Proof.</b><br>
+    Let the Jordan form of $A$ be $J$, then $A$ is conjugate to $J$. Let the Jordan blocks of $J$ be $J_1,…,J_ℓ$. For each $i=1,…,l$, let
+$$B_i = \begin{bmatrix}&&&1 \\&&1\\&⋰\\1\end{bmatrix} \qquad \text{and} \qquad J_i = \begin{bmatrix}λ&1\\&⋱&⋱\\&&λ&1\\&&&λ\end{bmatrix}$$
+Conjugation by $B_i$ is flipping the matrix vertically and horizontally, which is equivalent to rotating the matrix 180°. Rotate $J_i^{\sf T}$ we get $J_i$, so $B_i^{-1}J_i^{\sf T}B_i=J_i$. Let $B=\operatorname{diag}(B_1,B_2,…,B_ℓ)$. Then $B^{-1}J^{\sf T}B=J$. Therefore, $J$ is conjugate to $J^{\sf T}$. Also $J^{\sf T}$ is conjugate to $A^{\sf T}$, by transitivity $A$ is conjugate to $A^{\sf T}$.
+</li>
+<li>Let $\left\{e_1, e_2, e_3\right\}$ be the usual basis $\left\{(1,0,0)^{\sf T},(0,1,0)^{\sf T},(0,0,1)^{\sf T}\right\}$ of $\mathbb{R}^3$. Express the dual basis to $\left\{(1,0,0)^{\sf T},(1,-1,1)^{\sf T},(2,-4,7)^{\sf T}\right\}$ in terms of $e_1', e_2', e_3'$.<br>
+    <b>Proof.</b><br>
+    Let $\{v_1,v_2,v_3\}$ be a basis. To find the dual basis $\{v_1',v_2',v_3'\}$, we need $v_i'(v_j)=δ_{ij}⇔\pmatrix{v_1'\\v_2'\\v_3'}\pmatrix{v_1&v_2&v_3}=I$. So we invert the matrix $\pmatrix{v_1&v_2&v_3}$ and read by row.
+$$\pmatrix{1 & 1 & 2 \\0 & -1 & -4 \\0 & 1 & 7}^{-1}=\pmatrix{
+ 1 & \frac{5}{3} & \frac{2}{3} \\
+ 0 & -\frac{7}{3} & -\frac{4}{3} \\
+ 0 & \frac{1}{3} & \frac{1}{3}}$$So the dual basis to $\left\{(1,0,0)^{\sf T},(1,-1,1)^{\sf T},(2,-4,7)^{\sf T}\right\}$ is $\left\{e_1'+\frac53e_2'+\frac23e_3',-\frac73e_2'-\frac43e_3',\frac13e_2'+\frac13e_3'\right\}$.
+ <div class="noprint"><a href="Examples">biorthogonal</a><br>
+ In 3-dimensional Euclidean space, for a given basis $\{e_1, e_2, e_3\}$, you can find the biorthogonal (dual) basis $\{e_1, e_2, e_3\}$ by formulas below: 
+ \begin{align*}
+ \mathbf{e}^1 = \left(\frac{\mathbf{e}_2 \times \mathbf{e}_3}{V}\right)^\mathsf{T}\\ 
+ \mathbf{e}^2 = \left(\frac{\mathbf{e}_3 \times \mathbf{e}_1}{V}\right)^\mathsf{T}\\ 
+ \mathbf{e}^3 = \left(\frac{\mathbf{e}_1 \times \mathbf{e}_2}{V}\right)^\mathsf{T}
+ \end{align*}</div>
+</li>
+<li>
+    Let $T:V→W$ be a linear map between finite-dimensional vector spaces. Prove that
+    $$
+    \operatorname{Im}\left(T'\right)=(\ker T)^0.
+    $$
+    <b>Proof.</b>
+    <div class="noprint">
+        <a href="https://en.wikipedia.org/wiki/Fredholm%27s_theorem">Fredholm's theorem</a> in linear algebra is as follows: if $M$ is a matrix, then the orthogonal complement of the row space of $M$ is the null space of $M$:
+\[(\operatorname{row } M)^\bot = \ker M.\]
+Similarly, the orthogonal complement of the column space of $M$ is the null space of the adjoint:
+\[(\operatorname{col } M)^\bot = \ker M^*.\]
+<hr><a href="https://pillowmath.github.io/Math%20255A%27/Lec14.pdf">Math 255A</a><br>
+Proposition 1.5. Let $A \in \mathcal{B}(X, Y)$. Then $\ker A^*=(\operatorname{ran} A)^⟂$, and $\ker A={}^⟂\left(\operatorname{ran} A^*\right)$.<br>
+Proof. We prove the second one; the first is similar. We have
+\begin{aligned}
+x∈\ker A&⇔A x=0 \\
+&⇔\left< A x, y^*\right>=0 \quad ∀y^* \in Y^* \\
+&⇔\left< x, A^* y^*\right>=0 \quad ∀y^* \in Y^* \\
+&⇔ x ∈{}^⟂\left(\operatorname{ran} A^*\right) .
+\end{aligned}
+    </div>
+    $∀f∈W',\ v ∈\ker T:Tv=0⇒T'(f)(v)=f(Tv)=f(0)=0 ⇒T'(f)∈(\ker T)^0$. Therefore $\operatorname{Im}\left(T'\right)⊂(\ker T)^0$.<br>
+    $∀f∈(\ker T)^0$, the quotient map $\bar f∈(V/\ker T)'$ is given by $\bar f(v+\ker T)=f(v)$. By first isomorphism theorem, we have an isomorphism $g:\operatorname{Im}T→V/\ker T$.<br>Then $\bar f(g(T(v)))=f(v)⇒f=T'(\bar f∘g)∈\operatorname{Im}\left(T'\right)$. Therefore $\operatorname{Im}\left(T'\right)⊃(\ker T)^0$.
+</li>
+<li>Let $U$ be a subspace of $V$. Show that restriction $f↦\left.f\right|_U$ defines a linear map $V' → U'$. Deduce that there is a natural injection $V' / U^0 → U'$ which is an isomorphism when $V$ is finite-dimensional.<div class="noprint"><a href="Bath MA20216 Fran Burstall/M216.09.html#qu:M216.09:6">restriction map is dual to inclusion map</a></div>
+    <b>Proof.</b><br>
+    $∀f,g ∈ V',\ u∈U,\ \left.(f+λg)\right|_U(u)=f(u)+λg(u)=\left(\left.f\right|_U+λ\left.g\right|_U\right)(u)⇒\left.(f+λg)\right|_U=\left.f\right|_U+λ\left.g\right|_U$, so $f↦\left.f\right|_U$ is a linear map. By definition the kernel is $U^0$. By the first isomorphism theorem, the image is isomorphic to  $V'/U^0$, thus giving us an injection $V'/U^0\to U'$.<br>Let $V$ be finite dimensional. For any $ψ∈U'$, define $f∈V'$ as $f(v)=ψ(\text{proj}_Uv)$, then $\left.f\right|_U=ψ$. We conclude that the restriction is surjective.
+</li>
+<li>
+    (i) Let $V$ be a finite dimensional vector space over $𝔽$. For a linear transformation $T: V → V$ define the trace $\operatorname{tr}(T)$ to be the trace of the matrix representing $T$ with respect to some basis of $V$. Show that $\operatorname{tr}(T)$ is well-defined, i.e. show that it is independent of choice of basis.<br>
+    (ii) As usual let $\operatorname{Hom}(V, V)$ denote the space of linear maps from $V$ to itself. For $S∈\operatorname{Hom}(V, V)$ define $f_S:\operatorname{Hom}(V, V)→𝔽$ by
+    $$
+    f_S: T↦\operatorname{tr}(S∘T)
+    $$
+    Show that $S↦f_S$ defines a linear isomorphism between $\operatorname{Hom}(V, V)$ and its dual that does not depend on a choice of basis.<div class="noprint"><a href="https://en.wikipedia.org/wiki/Character_theory">Character theory</a></div>
+    <b>Solution.</b><br>
+    (i) Let $M$ be the matrix of $T$ with respect to some basis of $V$. Then the matrix of $T$ with respect to any basis of $V$ is of the form $P^{-1}MP$. By the cyclic property of trace, $\operatorname{tr}(P^{-1}MP)=\operatorname{tr}(PP^{-1}M)=\operatorname{tr}M$. So  it is independent of choice of basis.<br>
+    (ii) $∀S,S',T,T'∈\operatorname{Hom}(V, V),\ f_S(T+λT')=\operatorname{tr}\big(S∘(T+λT')\big)=\operatorname{tr}(S∘T+λS∘T')=\operatorname{tr}(S∘T)+λ\operatorname{tr}(S∘T')=f_S(T)+λf_S(T')⇒f_S$ is linear.<br>
+    $f_{S+λS'}(T)=\operatorname{tr}\big((S+λS')∘T\big)=\operatorname{tr}(S∘T+λS'∘T)=\operatorname{tr}(S∘T)+λ\operatorname{tr}(S'∘T)=(f_S+λf_{S'})(T)⇒f_{S+λS'}=f_S+λf_{S'}⇒$the map $S ↦ f_S$ is linear.<br>
+    Suppose $f_S=0$. Let $M$ be the matrix for $S$. Let $E_{ji}$ be the matrix (of same dimension as $M$) whose only non-zero entry is 1 at position $(j,i)$. $∀i,j:M_{ij}=\operatorname{tr}(ME_{ji})=0⇒M=0⇒S=0$. Therefore $S↦f_S$ is injective. Since the dimension of $\operatorname{Hom}(V, V)$ is equal to the dimension of its dual, $S↦f_S$ is an isomorphism.<br>
+    By (i), $S↦f_S$ does not depend on a choice of basis.
+</li>
+<li>
+    Let $T: V → W$ be a map between finite-dimensional vector spaces and let $T'': V'' → W''$ be the associated map between double duals.
+    Show that under the natural identifications between spaces and their double duals, $T''$ is identified with $T$. That is, if $E^{(V)}:V≅V''$ and $E^{(W)}:W≅W''$ are the natural isomorphisms, then we have
+    $$
+    T''∘E^{(V)}=E^{(W)}∘T.
+    $$
+    <b>Proof.</b><div class="noprint"><a href="https://en.wikipedia.org/wiki/Natural_transformation#Double_dual_of_a_vector_space">Natural transformation#Double dual of a vector space</a><br><a href="https://en.wikipedia.org/wiki/Natural_transformation#Example:_dual_of_a_finite-dimensional_vector_space">Example: dual of a finite-dimensional vector space</a><br>Take $W=V$ and $T$ be a change of basis, this question implies $E^{(V)}$ is independent of a choice of basis</div>
+    $∀v∈V,f∈V',\ (T''∘E^{(V)})(v)(f)=E^{(V)}(v)\big(T'(f)\big)=(f∘T)(v)$<br>
+    $(E^{(W)}∘T)(v)(f)=E^{(W)}\big(T(v)\big)(f)=(f∘T)(v)$<br>
+    Therefore $T''∘E^{(V)}=E^{(W)}∘T$.
+</li>
+<li>Let $V$ be finite dimensional. A hyperplane in $V$ is defined as the kernel of a linear functional.<br>Show that every subspace of $V$ is the intersection of hyperplanes.<br>
+    <b>Proof.</b><br>
+    Let $W$ be a subspace of $V$. $∀x∈V∖W,∃Φ(x)∈V'$ such that $Φ(x)|_W= 0$ and $Φ(x)(x)=1$. Then $W = \bigcap_{x∉W} \ker Φ(x)$.<br><br>
+    Show that every subspace of $V$ is the <i>finite</i> intersection of hyperplanes.<br>
+    <b>Proof.</b><br>
+    Let ℬ be a basis of $W^0$. Then $W = \bigcap_{f∈ℬ} \ker f$.
+</li></ol>

@@ -1,0 +1,174 @@
+---
+mathjax: true
+tag: Linear Algebra
+excerpt: sheet 2 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style><ol>
+<li>Let $A$ be an $n \times n$ matrix over $\mathbb{C}$. Use triangular form to show that the trace of $A$ equals the sum of the eigenvalues, where a multiplicity $m$ eigenvalue is counted $m$ times. Show also that an analogous statement holds for the determinant and the product of the eigenvalues.
+    <br><i>Solution.</i><br>
+    By Corollary 4.6. and ℂ is an algebraically closed field, $A$ is conjugate to an upper triangular matrix $B$. Let the eigenvalues of $A$ be $x_1,…,x_n$. Then $x_1,…,x_n$ are the diagonal entries of $B$. So $\operatorname{tr}A=\operatorname{tr}B=x_1+⋯+x_n$ and $\det A=\det B=x_1⋯x_n$.
+</li>
+<li>
+    Calculate the minimum and characteristic polynomials of the following matrices
+    $$
+    A=\pmatrix{
+    1 & 1 & 0 \\
+    -9 & -4 & 1 \\
+    -3 & 3 & 2
+    },\pmatrix{
+    -2 & -3 & -3 \\
+    -1 & 0 & -1 \\
+    0 & 1 & -1
+    },\pmatrix{
+    2 & 1 & 0 \\
+    0 & 2 & 0 \\
+    0 & 0 & 2
+    }
+    $$
+    <i>Solution.</i> [Proposition 5.3 in notes]
+    <ol type="a">
+        <li>$χ_A(x)=-(-2 + x) (1 + x) (2 + x)$. All roots are simple roots, so $m_A(x)=(-2 + x) (1 + x) (2 + x)$.</li>
+        <li>$χ_A(x)=-(-1 + x) (2 + x)^2$. Possible values of $m_A(x)$ are $(-1 + x) (2 + x)$ or $(-1 + x) (2 + x)^2$.<br>
+            $$(-I+A)(2+A)=\pmatrix{3&0&9\\1&0&3\\-1&0&-3}$$
+            So $m_A(x)=(-1 + x) (2 + x)^2$.
+        </li>
+        <li>$A$ is already in Jordan normal form, it has 1 block of size 2 and 1 block of size 1. So $χ_A(x)=(2-x)^3$ and $m_A(x)=(x-2)^2$.
+        </li>
+    </ol>
+</li>
+<li>
+    (a) Find two $2 \times 2$ matrices over $\mathbb{R}$ which have the same characteristic polynomial but which are not conjugate.<br>
+    (b) Find two $3 \times 3$ matrices over $\mathbb{R}$ which have the same minimal polynomial but which are not conjugate.<br>
+    (c) Find two $4 \times 4$ matrices over $\mathbb{R}$ which have the same minimal polynomial and the same characteristic polynomial, but which are not conjugate.<br>
+    (d) What is the smallest value of $n$ for which there are two non-conjugate $n \times n$ matrices which have the same minimum and characteristic polynomials and eigenspaces of equal dimension?
+    <br><i>Solution.</i>
+    <ol type="a">
+        <li>Consider the matrices $\begin{pmatrix}0&1\\0&0\end{pmatrix}$ and $\begin{pmatrix}0&0\\0&0\end{pmatrix}$<br>Each has charateristic polynomial $x^2$, but they are not conjugate. (The only matrix conjugate to the zero matrix is itself.)</li>
+        <li>$A=\left(
+            \begin{array}{ccc}
+             -1 & 0 & 0 \\
+             0 & 1 & 0 \\
+             0 & 0 & 1 \\
+            \end{array}
+            \right)$ and $B=\left(
+                \begin{array}{ccc}
+                 -1 & 0 & 0 \\
+                 0 & -1 & 0 \\
+                 0 & 0 & 1 \\
+                \end{array}
+                \right)$ have the same minimal polynomial $x^2-1$, but $\det A=-1≠1=\det B$, so they are not conjugate.
+                <div class="noprint">Also see <a href="https://math.stackexchange.com/questions/1229184/">here</a></div>
+        </li>
+        <li>$A=\left(
+            \begin{array}{cccc}
+             0 & 1 & 0 & 0 \\
+             0 & 0 & 0 & 0 \\
+             0 & 0 & 0 & 1 \\
+             0 & 0 & 0 & 0 \\
+            \end{array}
+            \right)$ and $B=\left(
+            \begin{array}{cccc}
+             0 & 0 & 0 & 0 \\
+             0 & 0 & 0 & 0 \\
+             0 & 0 & 0 & 1 \\
+             0 & 0 & 0 & 0 \\
+            \end{array}
+            \right)$ have the same characteristic polynomial $x^4$ and the same minimal polynomial $x^2$.<br>$\operatorname{rank}A=2≠1=\operatorname{rank}B$, so they are not conjugate.</li>
+        <li><div class="noprint">See <a href="https://math.stackexchange.com/questions/4284012/">this post</a></div>
+        Let $M$ be a matrix with coefficients in ℂ. Then $M$ is conjugate to a block-diagonal matrix where each block is a Jordan block. These blocks, up to permutation, uniquely determine the conjugacy classes. Moreover, let $λ$ be an eigenvalue of $M$. Then
+<ul>
+<li>the number of Jordan blocks corresponding to $λ$ is the dimension of the eigenspace;<br>
+The columns of change-of-basis matrix corresponding to first column of each Jordan block are eigenvectors.</li>
+<li>the size of the largest block corresponding to $λ$ is the multiplicity of $λ$ in the minimal polynomial;</li>
+<li>the sum of the sizes of the blocks corresponding to $λ$ is the multiplicity of $λ$ in the characteristic polynomial.</li>
+</ul>
+The problem is equivalent to find the smallest integer $N$ such that there are an integer $k$, and two different $k$-tuples of integers $(n_1,\cdots,n_k)$ and $(m_1,\cdots,m_k)$ such that:
+<ul>
+<li>$n_1\geq \cdots \geq n_k \geq 1$ and $m_1\geq \cdots \geq m_k \geq 1$;</li>
+<li>$\sum^k_{i=1} n_i = \sum^k_{i=1} m_i = N$;</li>
+<li>$n_1 = m_1$;</li>
+</ul>
+If $k=2$, since $n_1+n_2=m_1+m_2$ and $n_1=m_1$, we have $n_2=m_2$, so they are same tuple. So $k≥3$.<br>
+Since $n_1+n_2+n_3=m_1+m_2+m_3$ and $n_1=m_1$, we have $n_2+n_3=m_2+m_3$, the smallest pair is 3+1=2+2, so $n_1≥3$ and smallest tuples are (3,3,1) and (3,2,2), so $n≥7$.<br>
+An example:<br>
+$\left(\begin{array}{ccc:ccc:c}
+0&1&0&0&0&0&0\\
+0&0&1&0&0&0&0\\
+0&0&0&0&0&0&0\\\hdashline
+0&0&0&0&1&0&0\\
+0&0&0&0&0&1&0\\
+0&0&0&0&0&0&0\\\hdashline
+0&0&0&0&0&0&0
+\end{array}\right)$ and $\left(\begin{array}{ccc:cc:cc}
+0&1&0&0&0&0&0\\
+0&0&1&0&0&0&0\\
+0&0&0&0&0&0&0\\\hdashline
+0&0&0&0&1&0&0\\
+0&0&0&0&0&0&0\\\hdashline
+0&0&0&0&0&0&1\\
+0&0&0&0&0&0&0
+\end{array}\right).$
+    </li>
+    </ol>
+</li>
+<li>
+    Let $T: V → V$ be a nilpotent linear map. Show that we have <i>strict</i> inclusions
+    $$
+    \{0\}<\ker T<\ker\left(T^2\right)<…
+    $$
+    <div class="noprint">MA20216: Algebra 2A <a href="https://people.bath.ac.uk/feb/ma20216/notes/node-15.html#M216-notes-autopage-223">4.3.1 Powers of operators and Fitting’s Lemma</a><br><a href="https://en.wikipedia.org/wiki/Fitting_lemma">Fitting lemma</a></div>
+    <i>Proof.</i><br>
+    Since $T$ is nilpotent, the minimal polynomial of $T$ is $T^m$ for some $m∈ℕ$, then $\ker(T^k)=V$ iff $k≥m$.<br>
+    If \(v\in \ker T^k\) then \(T^k(v)=0\) so that \(T^{k+1}(v)=T(T^k(v))=T(0)=0\). Thus \(v\in \ker T^{k+1}\). Therefore $\ker T^k≤\ker T^{k+1}$.<hr style="border-style: dashed;">
+    Now suppose that \(\ker T^k=\ker T^{k+1}\) and induct to prove that \(\ker T^k=\ker T^{k+n}\), for \(n∈ℕ\).<br>We already have the \(n=1\) case by assumption, so suppose \(\ker T^k=\ker T^{k+n}\), for some \(n\) and let \(v\in\ker T^{k+n+1}\).<br>Then $0=T^{k+n+1}(v)=T^{k+1}(T^n(v))$, so that \(T^n(v)\in \ker T^{k+1}=\ker T^k\). Thus \(T^{n+k}(v)=0\) and \(v\in \ker T^{n+k}=\ker T^k\) by the induction hypothesis.<br>Induction now tells us that \(\ker T^k=\ker T^{k+n},∀n∈ℕ\). Then $\ker T^k=V$. So $k≥m$ by minimality of $m$.<hr style="border-style: dashed;">Alternate Proof: In <a href="https://courses.maths.ox.ac.uk/pluginfile.php/30064/mod_resource/content/2/A0.pdf#page=25&zoom=130,-63,445">notes</a> we proved \[\dim(\ker(T^{i+1}))-\dim(\ker(T^i))≤\dim(\ker(T^i))-\dim(\ker(T^{i-1}))\]
+</li>
+<li>
+    Decide whether or not the matrix
+    $$B=\pmatrix{1 & 6 \\3 & 5}$$
+    can be diagonalised over the field<br>
+    (i) ℝ<br>
+    (ii) ℂ<br>
+    (iii) ℚ<br>
+    (iv) a field of characteristic 2 (i.e. $1+1=0$)<br>
+    (v) the field 𝔽<sub>7</sub> of integers modulo 7.
+    <br><i>Solution.</i><br>
+    $χ_B(x)=-13 - 6 x + x^2$. By Proposition 5.3, $m_B(x)=-13-6x+x^2=(3+\sqrt{22}-x)(3-\sqrt{22}-x)$.<br>
+    (i)(ii) $B$ has 2 distinct eigenvalues, so is diagonalisable.<br>
+    (iii) $-13-6x+x^2$ is irreducible, so $m_B(x)$ doesn't split, so $B$ is not even triangularisable.<br>
+    (iv) $B=\pmatrix{1&0\\1&1}$, so $B-I=\pmatrix{0&0\\1&0}$. Eigenspace $⟨(0,1)⟩$ is of dimension 1, so $B$ is not diagonalisable.<br>
+    (v) $χ_B(x)=15+8x+x^2⇒B$ has 2 distinct eigenvalues $-3,-5$, so is diagonalisable.
+    <div class="noprint">
+        <a href="https://www.wolframalpha.com/input?i=factor+-13-6x%2Bx%5E2+over+GF%287%29">WolframAlpha</a><br>
+        Wolfram Language code: <code>Factor[-13 - 6 x + x^2, Modulus -> 7]</code><br>
+        <a href="./No finite field is algebraically closed.html">No finite field is algebraically closed</a>
+    </div>
+</li>
+<li>
+    Is the matrix
+    $$
+    B=\left(\begin{array}{ccc}
+    0 & 0 & -1 \\
+    0 & -1 & 0 \\
+    1 & 0 & 1
+    \end{array}\right)
+    $$
+    diagonalisable over $ℂ,ℝ$ or $𝔽_3$ ?
+    <br><i>Solution.</i><br>
+    $χ_B(x)=-1-x^3$. By Proposition 5.3, $m_B(x)=1+x^3=(1+x)\big((-1)^{1/3} - x\big)\big((-1)^{2/3} - x\big)$.<br>
+    Over ℂ, $B$ has 3 distinct eigenvalues, so it is diagonalisable.<br>
+    Over ℝ, $1-x+x^2$ is irreducible, so $m_B(x)$ doesn't split, so $B$ is not even triangularisable.<br>
+    Over $𝔽_3$, $m_B(x)=(1+x)^3$, so $B$ is triangularisable but not diagonalisable.
+$$P=\begin{pmatrix}1&0&0\\0&1&0\\1&0&1\end{pmatrix}\qquad P^{-1}BP=\begin{pmatrix}-1&0&-1\\0&-1&0\\0&0&-1\end{pmatrix}$$
+</li>
+</ol>
+<div class="noprint">
+    Some matrices with real entries which are not diagonalizable over ℝ are diagonalizable over the complex numbers ℂ. For instance $\left(\begin{smallmatrix}1&0\\0&1\end{smallmatrix}\right)$ has $λ^2+1$ as characteristic polynomial. This polynomial doesn’t factor over the reals, but over ℂ it does. Its roots are $λ=±i$. Interpreting the matrix as a linear transformation $ℂ^2→ℂ^2$, it has eigenvalues $i$ and $-i$ and linearly independent eigenvectors $(1,-i),(-i,1)$. So we can diagonalize $A$:$$A=\left(\begin{array}{cc}0 & -1 \\ 1 & 0\end{array}\right)=\left(\begin{array}{cc}1 & -i \\ -i & 1\end{array}\right)\left(\begin{array}{cc}i & 0 \\ 0 & -i\end{array}\right)\left(\begin{array}{cc}\frac12 & \frac i2 \\ \frac i2 & \frac12\end{array}\right)$$
+    But there exist real matrices which aren’t diagonalizable even if complex eigenvectors and eigenvalues are allowed. For example $\pmatrix{0&1\\0&0}$. In fact, the characteristic polynomial is $λ^2$ and it has only one double root $λ=0$. However the eigenspace corresponding to the 0 eigenvalue has dimension 1.\[B\pmatrix{v_1\\v_2}=\pmatrix{0\\0}⇔v_2=0\]
+    and thus the eigenspace is $\ker(B)=\operatorname{span}_ℂ\{(1,0)^{\sf T}\}$, with only one dimension.
+    <br>
+    <a href="https://www.planetmath.org/exampleofnondiagonalizablematrices">PlanetMath</a>
+</div>
+<div class="noprint">
+    Let $A∈M_n,A^k = 0,A^{k-1}≠0$. Prove that $k≤\operatorname{rank}(A)+1$. <a href="https://artofproblemsolving.com/community/c7h2002483p14002963">aops</a><br>
+    Assume $A$ is in Jordan form, so $A=S_{m_1}⊕S_{m_2}⋯⊕S_{m_t}$, where $S_{m_i}$ is a Jordan block of size $m_i$ with zeros along diagonal, and $m_1 + m_2 +⋯+ m_t = n$. Each $S_{m_i}$ contributes $m_i - 1$ to the rank, so $\operatorname{rank}(A) = (m_1 - 1) + (m_2 - 1) + ⋯ + (m_t - 1)$. Now since the index of nilpotency is $k$, we know that at least one $m_i = k$, so $\operatorname{rank}(A)≥k-1$. Equality holds when $t=1$, i.e., when $n=k$.
+</div>

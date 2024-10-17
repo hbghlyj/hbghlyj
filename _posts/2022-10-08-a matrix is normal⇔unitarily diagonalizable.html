@@ -1,0 +1,15 @@
+---
+mathjax: true
+tag: Linear Algebra
+---
+For finite dimensions one has the theorem that a matrix is normal if and only if <i>unitarily</i> diagonalizable.
+<!--more-->
+<h2>To prove unitarily diagonalizable implies normal:</h2>
+If linear map $A:ℂ^N\toℂ^N$ has a matrix that is unitarily diagonalizable, then by definition we have $𝐀=𝐔𝚲𝐔^†$ with $𝐔𝐔^†=\mathrm{id}$, where $𝐀$ is the matrix of $A$ and $𝚲$ is diagonal. A straightforward calculation then shows that an entity of this kind commutes with its Hermitian conjugate and is therefore normal.
+<h2>To prove normal implies unitarily diagonalizable:</h2>
+To prove the other way, you need to (or at least this is the proof I recall) make use of one of the zillions of versions of the famous <a href="https://en.wikipedia.org/wiki/Schur_decomposition">Schur's lemma</a> that graze on the Great Mathematical Plains. The version I have in mind is that every complex square matrix is unitarily similar to an upper triangular matrix. An elementary proof of this version of the lemma runs as follows: a matrix $𝐀$ has at least one eigenvector $X$ - let's make it a unit vector $\hat{X}$ - with eigenvalue $\lambda$ and, by the Gram-Schmidt procedure, build an orthonormal matrix of the form $𝐏_X=[\hat{X}\hat{Y}_2⋯\hat{Y}_N]$ with columns $\hat{X}$,$\hat{Y}_2⋯\hat{Y}_N$. Now work out $𝐏_X^{-1}𝐀𝐏_X=𝐏_X^†𝐀𝐏_X$ and you find it is a matrix of the form:
+$$\left(\begin{array}{c|c}\lambda & ⋯\\\hline O&𝐀_1\end{array}\right)$$
+where $𝐀_1$ is an $N-1×N-1$ matrix. So now repeat the procedure with the matrix $𝐀_1$ and iterate, each iteration leaving a lower right square matrix of dimension one fewer than the one from the former iteration. When we reach the lower right corner, we have an upper triangular matrix, similar to the original by the product of all the unitary transformations at each step.<br>
+So now, by dint of the lemma, write your general $N×N$ matrix as:
+$$𝐀=𝐏\tilde{𝐀}𝐏^†$$
+with $\tilde{𝐀}$ upper triangular and 𝐏 unitary. Given $𝐀𝐀^†=𝐀^†𝐀$, show that $\tilde{𝐀}\tilde{𝐀}^†=\tilde{𝐀}^†\tilde{𝐀}$, then $𝐀^†$ is <a href="./normal and upper triangular⇒diagonal.html">normal and upper triangular</a> so it is diagonal.
