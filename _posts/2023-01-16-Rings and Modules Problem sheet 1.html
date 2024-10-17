@@ -1,0 +1,100 @@
+---
+mathjax: true
+tag: Rings and Modules
+excerpt: sheet 1 — HT 2023
+---
+<style>
+p{margin:0;margin-bottom:-15pt;text-indent:-18.8pt;}
+p::after{display: block;content:"Answer.";font-style: italic;}
+p:not(:first-child){margin-top:7pt;}</style>
+<p>I.1. Show that the additive group of the vector space <i>C</i>(ℝ) of continuous functions ℝ → ℝ equipped with pointwise multiplication is a ring, and show that its units are the <i>f</i> ∈ <i>C</i>(ℝ) with <i>f</i>(<i>x</i>) > 0 for all <i>x</i> ∈ ℝ, or <i>f</i>(<i>x</i>) &lt; 0 for all <i>x</i> ∈ ℝ. Is there a ring whose additive group is the additive group of <i>C</i>(ℝ) and whose multiplication is composition of functions?</p>
+If $f,g∈C(ℝ)$, then $f+g,fg∈C(ℝ)$, proved in Analysis Ⅱ <a href="https://courses.maths.ox.ac.uk/pluginfile.php/31075/mod_resource/content/5/Analysis%20II%20Lecture%20Notes.pdf#page=27&zoom=auto,-86,253">Theorem 3.7</a>
+(<i>C</i>(ℝ), +) is a commutative group with identity 0 the constant function. × is commutative, associative and distributes over +, since ℝ is a field. So <i>C</i>(ℝ) is a commutative ring.
+<i>f</i> is a unit ⇔ <i>f</i>(<i>x</i>) ≠ 0 ∀<i>x</i> ∈ ℝ ⇔ <i>f</i>(<i>x</i>) > 0 ∀<i>x</i> ∈ ℝ, or <i>f</i>(<i>x</i>) &lt; 0 ∀<i>x</i> ∈ ℝ, by intermediate value theorem
+Suppose <i>C</i>(ℝ) with composition as multiplication is a ring. ∃ zero $f$ such that $gf=f\,∀g∈C(ℝ)$. Take the constant function $g(x)=1\,∀x∈ℝ$, then $gf=g≠f$, contradiction.
+<div style="text-indent:-18.8pt;">Remark.</div>Linear functions $x↦ax$ form a ring with composition.
+<p>I.2. Show that the set of rationals with odd denominator, denoted ℤ<sub>⟨2⟩</sub>, is a subring of ℚ. What are the units of ℤ<sub>⟨2⟩</sub>? What are the ideals of ℤ<sub>⟨2⟩</sub>?</p>
+$1=\frac11∈$ℤ<sub>⟨2⟩</sub>.
+For any $\frac pq,\frac rs∈$ℤ<sub>⟨2⟩</sub>, where $p,q,r,s∈ℤ$, and $q,s$ are odd.
+$\frac pq-\frac rs=\frac{ps-qr}{qs}$ and $\frac pq×\frac rs=\frac{pr}{qs}$ has odd denominator $qs$, so $\frac pq-\frac rs,\frac pq×\frac rs∈$ℤ<sub>⟨2⟩</sub>.
+By the subring test, ℤ<sub>⟨2⟩</sub> is a subring of ℚ.
+$\frac pq∈$ℤ<sub>⟨2⟩</sub> is a unit, iff <i>p</i> is odd.<hr>Let <i>I</i> be an ideal of ℤ<sub>⟨2⟩</sub>, then <i>I</i> ∩ ℤ is an ideal of ℤ.
+<span style="margin-left: 4em;"></span>For all $\frac rs∈$<i>I</i> (<i>r</i>, <i>s</i> ∈ ℤ) we have $r=s×\frac rs∈I$.<span style="margin-left: 4em;">(1)</span>
+If <i>I</i> ∩ ℤ = {0}, by (1), numerator of any element of <i>I</i> is 0, so <i>I</i> = {0}.
+If <i>I</i> ∩ ℤ = <i>n</i>ℤ (<i>n</i> ∈ ℕ*). Let <i>m</i> be any odd divisor of <i>n</i>, then $\frac1m∈ℤ_{⟨2⟩}⇒n×\frac1m=\frac nm∈I∩ℤ=nℤ$,
+so <i>m</i> = 1, so <i>n</i> = $2^k$ (<i>k</i> ∈ ℕ*), by (1), numerator of any element of <i>I</i> is in <i>n</i>ℤ, so <i>I</i> ⊂ 2<sup><i>k</i></sup>ℤ<sub>⟨2⟩</sub>. On the other hand, $2^k∈I$ ⇒ 2<sup><i>k</i></sup>ℤ<sub>⟨2⟩</sub> ⊂ <i>I</i>. So <i>I</i> = 2<sup><i>k</i></sup>ℤ<sub>⟨2⟩</sub>.
+So the ideals of </sup>ℤ<sub>⟨2⟩</sub> are {0} and 2<sup><i>k</i></sup>ℤ<sub>⟨2⟩</sub> (<i>k</i> ∈ ℕ*).
+<p>I.3. Show that there is no ring homomorphism ℂ → ℝ, ℝ → ℚ, or ℚ → ℤ. Show that any ring homomorphism ℝ → ℝ is increasing and deduce that there is only one such homomorphism.</p>
+Let $f:ℂ→ℝ$ be a ring homomorphism. $-1=f(-1)=f(\mathrm i^2)=f(\mathrm i)^2$ contradicts $f(\mathrm i)∈ℝ$.
+Let $f:ℝ→ℚ$ be a ring homomorphism. $2=f(2)=f\left((\sqrt2)^2\right)=f(\sqrt2)^2$ contradicts $f(\sqrt2)∈ℚ$.
+Let $f:ℚ→ℤ$ be a ring homomorphism. $1=f(1)=f\left(2×\frac12\right)=2f\left(\frac12\right)$ contradicts $f\left(\frac12\right)∈ℤ$.
+Let $f:ℝ→ℝ$ be a ring homomorphism, then <i>f</i> is <a href="https://en.wikipedia.org/wiki/Cauchy%27s_functional_equation#Solutions_over_the_rational_numbers">additive</a> and <i>f</i>(1) = 1, so <i>f</i>|<sub>ℚ</sub> = id<sub>ℚ</sub>.
+<i>x</i> ≥ <i>y</i> ⇔ ∃<i>z</i>: <i>x</i> − <i>y</i> = <i>z</i><sup>2</sup> ⇔ ∃<i>z</i>: <i>f</i>(<i>x</i>) − <i>f</i>(<i>y</i>) = <i>f</i>(<i>z</i>)<sup>2</sup> ⇔ <i>f</i>(<i>x</i>) ≥ <i>f</i>(<i>y</i>). So <i>f</i> is increasing.
+∀<i>x</i>, <i>y</i> ∈ ℝ, if ${|x-y|}≤\frac1n$ then <i>f</i>(<i>x</i>) − <i>f</i>(<i>y</i>) = <i>f</i>(<i>x</i> − <i>y</i>)<math><mo>≤</mo><mi>f</mi><mrow><mo>(</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac></math>, similarly <i>f</i>(<i>y</i>) − <i>f</i>(<i>x</i>)<math><mo>≤</mo><mfrac><mn>1</mn><mi>n</mi></mfrac></math>, so <i>f</i> is continuous. Since ℚ is dense in ℝ, <i>f</i> = id<sub>ℝ</sub>.
+<p>I.4. Show that if <i>R</i> is a ring with ideals <i>I</i>, <i>J</i>, and <i>K</i> then <i>I</i> ∩ <i>J</i> + <i>I</i> ∩ <i>K</i> ⊂ <i>I</i> ∩ (<i>J</i> + <i>K</i>); and if <i>R</i> = 𝔽[<i>X</i>, <i>Y</i>], and <i>I</i> = ⟨<i>Y</i>⟩, <i>J</i> = ⟨<i>X</i>⟩, and <i>K</i> = ⟨<i>X</i> + <i>Y</i>⟩, that <i>I</i> ∩ <i>J</i> + <i>I</i> ∩ <i>K</i> ≠ <i>I</i> ∩ (<i>J</i> + <i>K</i>).</p>        <a href="https://math.stackexchange.com/questions/14109">MSE</a>  <a href="https://math.stackexchange.com/questions/138954">MSE</a>
+∀<i>j</i> ∈ <i>I</i> ∩ <i>J</i>, <i>k</i> ∈ <i>I</i> ∩ <i>K</i>: <i>j</i> + <i>k</i> ∈ <i>J</i> + <i>K</i>, also <i>j</i> + <i>k</i> ∈ <i>I</i> by closure of <i>I</i>, so <i>j</i> + <i>k</i> ∈ <i>I</i> ∩ (<i>J</i> + <i>K</i>).
+So <i>I</i> ∩ <i>J</i> + <i>I</i> ∩ <i>K</i> ⊂ <i>I</i> ∩ (<i>J</i> + <i>K</i>).
+If <i>R</i> = 𝔽[<i>X</i>, <i>Y</i>], and <i>I</i> = ⟨<i>Y</i>⟩, <i>J</i> = ⟨<i>X</i>⟩, and <i>K</i> = ⟨<i>X</i> + <i>Y</i>⟩, then <i>I</i> ∩ <i>J</i> = ⟨<i>YX</i>⟩, <i>I</i> ∩ <i>K</i> = ⟨<i>Y</i>(<i>X</i> + <i>Y</i>)⟩.
+<i>Y</i> = (<i>X</i> + <i>Y</i>) − <i>X</i> ∈ <i>I</i> ∩ (<i>J</i> + <i>K</i>).<br>Suppose <i>Y</i> ∈ <i>I</i> ∩ <i>J</i> + <i>I</i> ∩ <i>K</i>, then <i>Y</i> = <i>YX</i> <i>p</i>(<i>X</i>, <i>Y</i>) + <i>Y</i>(<i>X</i> + <i>Y</i>) <i>q</i>(<i>X</i>, <i>Y</i>).
+Dividing by <i>Y</i>, 1 = <i>X</i> <i>p</i>(<i>X</i>, <i>Y</i>) + (<i>X</i> + <i>Y</i>) <i>q</i>(<i>X</i>, <i>Y</i>).
+Evaluating at (0, 0) we get 1 = 0, contradiction.
+So <i>I</i> ∩ <i>J</i> + <i>I</i> ∩ <i>K</i> ≠ <i>I</i> ∩ (<i>J</i> + <i>K</i>).
+<p>I.5. Let <i>E</i> be the ring of group homomorphisms from the additive group of ℚ[<i>X</i>] to itself. Show that α: ℚ[<i>X</i>] → ℚ[<i>X</i>]; <i>p</i>(<i>X</i>) ↦ <i>Xp</i>(<i>X</i>) is an element of <i>E</i>, and that there is β ∈ <i>E</i> such that βα = 1<sub><i>E</i></sub>, but no γ ∈ <i>E</i> such that <i>αγ</i> = 1<sub><i>E</i></sub>. Hence give an example of <i>A</i> ∉ U(M<sub>2</sub>(<i>E</i>)) with det <i>A</i> ∈ U(<i>E</i>), and show that$$B=\begin{pmatrix}α&1-αβ\\0&β\end{pmatrix}$$has <i>B</i> ∈ U(M<sub>2</sub>(<i>E</i>)) and det <i>B</i> ∉ U(<i>E</i>).</p>
+For <i>p</i>, <i>q</i> ∈ ℚ[<i>X</i>], α(<i>p</i> + <i>q</i>) = <i>X</i>(<i>p</i> + <i>q</i>) = <i>Xp</i> + <i>Xq</i> = α(<i>p</i>) + α(<i>q</i>), α(−<i>p</i>)= −<i>Xp</i> = −α(<i>p</i>), so α ∈ <i>E</i>.
+<i>E</i> is injective but not surjective, so ∃β ∈ <i>E</i> such that βα = 1<sub><i>E</i></sub>, but no γ ∈ <i>E</i> such that <i>αγ</i> = 1<sub><i>E</i></sub>.
+For $A=\begin{pmatrix}β&0\\0&α\end{pmatrix}$, det <i>A</i> = βα = 1<sub><i>E</i></sub> ∈ U(<i>E</i>).
+If ∃<i>M</i> ∈ M<sub>2</sub>(<i>E</i>): <i>AM</i> = <i>I</i><sub>2</sub>, then <i>α M</i><sub>2,2</sub> = 1<sub><i>E</i></sub>, contradiction. So <i>A</i> ∉ U(M<sub>2</sub>(<i>E</i>)).
+Using βα = 1<sub><i>E</i></sub> we calculate\[\pmatrix{α&1-αβ\\0&β}\pmatrix{β&0\\1-αβ&α}=\pmatrix{β&0\\1-αβ&α}\pmatrix{α&1-αβ\\0&β}=\pmatrix{1&0\\0&1}\]So <i>B</i> ∈ U(M<sub>2</sub>(<i>E</i>))
+Suppose ∃δ ∈ <i>E</i> such that (αβ)δ = 1<sub><i>E</i></sub>, then α(βδ) = 1<sub><i>E</i></sub>, contradiction. So det <i>B</i> = αβ ∉ U(<i>E</i>).
+<p>I.6. Show that if <i>x</i>, <i>y</i> ∈ ℤ<sub><i>N</i></sub> have ⟨<i>x</i>⟩ = ⟨<i>y</i>⟩ then there is <i>u</i> ∈ U(ℤ<sub><i>N</i></sub>) such that <i>x</i> = <i>uy</i>.
+Give examples of <i>f</i>, <i>g</i> ∈ <i>C</i>(ℝ) (with pointwise addition and multiplication) such that ⟨<i>f</i>⟩ = ⟨<i>g</i>⟩ but for which there is no <i>h</i> ∈ U(<i>C</i>(ℝ)) with <i>f</i> = <i>hg</i>.</p>        <a href="https://math.stackexchange.com/questions/901617/">MSE</a>
+Let $R = ℤ/(n)$, and let $n = p_1^{k_1} p_2^{k_2}⋯p_m^{k_m}$ be the prime factorization of $n$. For each $1 \leq i \leq m$, let $I_i = (p_i^{k_i})$, the principal ideal generated by $p_i^{k_i}$. If $i \neq j$, then the gcd of $p_i^{k_i}$ and $p_j^{k_j}$ is $1$, so $I_i + I_j = R$ and the Chinese remainder theorem applies. Note also that $K = I_1 \cap I_2 \cap … \cap I_m = (n)$, which is the &quot;zero&quot; element in $R$, so $R/K$ is simply $R$, and the map $ϕ$ described in the CRT statement is an isomorphism.
+<mark>Claim 1</mark>: $(a) = (b)$ in $R$ if and only if $(a) = (b)$ in each $R/I_j$.
+Proof: Suppose $(a) ⊂ (b)$ in $R$. Then $a = bx$ for some $x∈R$, so $ϕ(a) = ϕ(b)ϕ(x)$ (since $ϕ$ is an isomorphism), which means that $a = bx$ in each $R/I_j$, and therefore $(a) ⊂ (b)$ in $R/I_j$.
+Conversely, suppose that $(a) ⊂ (b)$ in each $R/I_j$. Then in $R/I_j$ we have $a = bx_j$ for some $x_j$. Therefore, in $(R/I_1) × (R/I_2) ×⋯× (R/I_m)$ we have $(a,a,…,a) = (b,b,…,b)(x_1,x_2,…,x_m)$. Applying $ϕ^{-1}$ to this equation, we get $a = bx$ for some unique $x∈R$. Therefore, $(a) ⊂ (b)$ in $R$.
+Reversing the roles of $a$ and $b$ gives the proof for the opposite containment. $\square$
+<mark>Claim 2</mark>: $a$ and $b$ are associates in $R$ if and only if $a$ and $b$ are associates in each $R/I_j$.
+Proof: Suppose that $a = ub$ for some unit $u$ in $R$. Then $ϕ(a) = ϕ(u)ϕ(b)$, so $a = ub$ in each $R/I_j$. Moreover, $ϕ$ maps units to units, so $u$ is a unit in each $R/I_j$.
+Conversely, suppose that in each $R/I_j$, we have $a = u_jb$, where $u_j$ is a unit. Therefore, in  $(R/I_1) × (R/I_2) ×⋯× (R/I_m)$ we have $(a,a,…,a) = (u_1,u_2,…,u_m)(b,b,…,b)$. Applying $ϕ^{-1}$, we get $a = ub$ in $R$, for some unique unit $u∈R$. $\square$
+Because of the two claims, it suffices to solve the problem for $R/(p^k)$, where $p^k$ is any prime power. Note that $R = ℤ/(n)$, but $p^k$ divides $n$, so $R/(p^k)$ is really (isomorphic to) $ℤ/(p^k)$.
+<strong>Proof for $R = ℤ/(p^k)$</strong>
+Let $I = (p^k)$, and suppose that $(a) = (b) = J$ in $R$. Then $J = (x + I) = (x + (p^k))$ for some $x∈ℤ$. As $J$ is an additive subgroup of $R$, $|J|$ must divide ${|R|}=p^k$. Thus ${|J|}=p^{k-j}$ for some $0≤j≤k$. This forces $J = (p^j + (p^k))$.
+We have established that $(a) = (b) = (p^j + (p^k))$. Thus, working modulo $p^k$, we have:<ul style="margin:0"><li>$a = rp^j$ for some $r$.</li><li>$r$ cannot be divisible by $p$, for if it were, say $r = sp^m$ where $m≥1$, then $a = sp^{m+j}$, so $p^{k-m-j}a = 0$, which means that the size of $(a)$ is strictly smaller than $p^{k-j}={|J|}$.</li><li>$u$ is a unit in $R$ if and only if it is not divisible by $p$.</li><li>Therefore, $r$ is a unit.</li><li>By the same argument, $b = sp^j$ for some unit $s$.</li><li>Therefore, $b = r^{-1}sa$, and $a$ and $b$ are associates.</li></ul><hr>Consider $f,g∈C(ℝ)$ given by
+$$ f(x)=\begin{cases} x+1 & x<-1 \\ 0 & -1 \leq x \leq 1 \\ x-1 & x>1 \end{cases}, \qquad g(x)=\begin{cases} -x-1 & x<-1 \\ 0 & -1\leq x \leq 1 \\ x-1 & x>1. \end{cases} $$Let
+$$ h(x)=\begin{cases} -1 & x&lt;-1 \\ x & -1 \leq x≤1 \\ 1 & x>1 \end{cases} $$Note that $g=fh$ and $f=gh$, and so $⟨f⟩=⟨g⟩$.
+Let $w∈C(ℝ)$ such that $g=fw$, then $w(-2)=-1&lt;0&lt;w(2)=1$, by Q1, $w$ is not a unit.
+<p>I.7. Show that if <i>R</i> is an integral domain of non-zero characteristic <i>p</i> then <i>p</i> is prime, and <i>R</i> can be given the structure of an 𝔽<sub><i>p</i></sub>-vector space in such a way that left (and right) multiplication is linear. Deduce that every finite integral domain is a field and every finite field has size <i>p<sup>n</sup></i> for some prime <i>p</i>.</p>
+Suppose $p = rs$ for $r,s&lt;p$, then $r1_R⋅s1_R=0$ in $R$, so $s1_R$ is a zero divisor, contradiction.<hr>For <i>R</i> a finite integral domain, to show <i>R</i> is a field, we need to show that any <i>a</i> ∈ <i>R</i>* is a unit.
+Consider <i>a</i>, <i>a</i><sup>2</sup>, <i>a</i><sup>3</sup>, ... Since <i>R</i> finite, for some <i>m</i> &lt; <i>n</i>, <i>a</i><sup><i>m</i></sup> = <i>a</i><sup><i>n</i></sup>.
+Then 0 = <i>a</i><sup><i>m</i></sup> − <i>a</i><sup><i>n</i></sup> = <i>a</i><sup><i>m</i></sup>(1 − <i>a</i><sup><i>n</i>−<i>m</i></sup>). Since there are no zero divisors and <i>a</i><sup><i>m</i></sup> ≠ 0, hence 1 − <i>a</i><sup><i>n</i>−<i>m</i></sup> = 0 and so 1 = <i>a</i>(<i>a</i><sup><i>n</i>−<i>m</i>−1</sup>) = (<i>a</i><sup><i>n</i>−<i>m</i>−1</sup>)<i>a</i>, so <i>a</i> is a unit.
+Alternatively, $∀r∈R$, since there are no zero divisors, the map <i>f</i>: <i>R</i>→ <i>R</i>; <i>x</i> ↦ <i>rx</i> is injective, and <i>R</i> is finite, so <i>f</i> is surjective, so $∃s∈R$ such that $rs=f(s)=1$, and thus <i>r</i> is a unit.<hr><a href="https://www.ma.imperial.ac.uk/~anskor/notesM2P4.pdf">Proposition 5.14.</a>
+If char(<i>R</i>) = <i>p</i>, then {0, 1, …, <i>p</i> − 1} is closed under subtraction and multiplication. Thus it is a subring of <i>R</i>. Hence it is a finite integral domain and hence a field isomorphic to 𝔽<sub><i>p</i></sub>.
+If <i>R</i> is finite, let $e_1,…,e_n$ be a basis of <i>R</i> over 𝔽<sub><i>p</i></sub>, then
+$$R=\left\{a_1 e_1+⋯+a_n e_n \middle| a_i∈𝔽_p\right\}$$Hence ${|R|}=p^n$.
+<p>I.8. Show that if α<sub>0</sub>, …, α<sub><i>d</i></sub> ∈ 𝔽 are distinct then for any <i>c</i><sub>0</sub>, …, <i>c</i><sub><i>d</i></sub> ∈ 𝔽 there is <i>p</i> ∈ 𝔽[<i>X</i>] such that <i>p</i>(α<sub>0</sub>) = <i>c</i><sub>0</sub>, …, <i>p</i>(α<sub><i>d</i></sub>) = <i>c</i><sub><i>d</i></sub>. Show that there are α<sub>0</sub>, α<sub>1</sub> ∈ ℤ with α<sub>0</sub> ≠ α<sub>1</sub> and <i>c</i><sub>0</sub>, <i>c</i><sub>1</sub> ∈ ℤ such that there is no <i>p</i> ∈ ℤ[<i>X</i>] with <i>p</i>(α<sub>0</sub>) = <i>c</i><sub>0</sub> and <i>p</i>(α<sub>1</sub>) = <i>c</i><sub>1</sub>.</p>
+Check the condition for CRT: $α_i-α_j∈⟨x-α_i⟩+⟨x-α_j⟩⇒⟨x-α_i⟩+⟨x-α_j⟩=𝔽[X]$
+Using the construction in the proof of CRT:
+Lagrange interpolation formula: $f(x)=∑_{j=0}^dc_jδ_j(x)$ where $δ_j(x)=\frac{\prod_{i=0;i≠j}^N\left(x-α_i\right)}{\prod_{i=0;i≠j}^N\left(α_j-α_i\right)}∈𝔽[X]$.
+Take α<sub>0</sub> = 0, α<sub>1</sub> = 2, <i>c</i><sub>0</sub> = 1, <i>c</i><sub>1</sub> = 0. For <i>p</i> = <i>a</i><sub>0</sub> +<i>a</i><sub>1</sub><i>X</i> + ⋯ + <i>a<sub>n</sub>X<sup>n</sup></i> ∈ ℤ[<i>X</i>],
+<i>p</i>(0) = 1 ⇒ <i>a</i><sub>0</sub> = 1
+<i>p</i>(2) = 0 ⇒ <i>a</i><sub>0</sub> +<i>a</i><sub>1</sub>⋅2 + ⋯ + <i>a<sub>n</sub>⋅</i>2<sup><i>n</sup></i> = 0, so <i>a</i><sub>0</sub> is even, contradiction. So there is no such <i>p</i>.
+<p>I.9. Show that if there is <i>u</i> ∈ <i>R</i> with 2<i>u</i> = 1<sub><i>R</i></sub> then <i>R</i> has no element of order 2 in its additive group. Hence deduce that the quotient group ℝ/ℤ is not the additive group of a ring. Is the quotient group ℝ/ℚ the additive group of a ring?</p>
+If 2<i>x</i> = 0, then <i>x</i> = <i>x</i>1 = <i>x</i>(2<i>u</i>) = 2<i>xu</i> = 0<i>u</i> = 0, so (<i>R</i>, +) has no element of order 2.
+$(\frac12+ℤ)+(\frac12+ℤ)=ℤ⇒\frac12+ℤ$ has order 2 in ℝ/ℤ.
+Let $R$ be a ring with additive group ℝ/ℤ and 1<sub><i>R</i></sub> = <i>e</i> + ℤ, then 2($\frac e2$+ ℤ) = <i>e</i> + ℤ, contradiction.
+ℝ and ℝ/ℚ are ℚ-vector spaces of same cardinality so ℝ ≅ ℝ/ℚ is a ring.
+<p>I.10. Suppose that <i>p</i> ∈ ℚ[<i>X</i>] maps integers to integers and is such that for all <i>z</i> ∈ ℤ either 2 divides <i>p</i>(<i>z</i>) or 3 divides <i>p</i>(<i>z</i>). Show that the quantifiers may be reversed <i>i.e.</i> that either for all <i>z</i> ∈ ℤ we have 2 divides <i>p</i>(<i>z</i>), or for all <i>z</i> ∈ ℤ we have 3 divides <i>p</i>(<i>z</i>).</p><style>.quote::before{position:absolute;top:0;left:0;width:4px;bottom:0;border-radius:7px ; content: "";background-color: hsl(210,8%,80%);}.quote{color: hsl(210,8%,35%);position: relative;padding: .4em 0 .4em 1em;margin: 0 0 .2em 1em;}</style>  <a href="https://math.stackexchange.com/q/4042224 ">MSE</a>
+Let $n=\deg p(x)$, we know $p(x)$ is a linear combination of $\binom xn,…,\binom x0$, so $g(x)=n!p(x)∈ℤ[X]$.
+Let $ν_2(n!)=r,ν_3(n!)=s$.
+Assume that there exists $a,b∈ℤ$ such that $2∤f(a)$ and $3∤f(b)$. So $2^{r+1}∤g(a)$ and $3^{s+1}∤g(b)$.
+By Chinese remainder theorem, there exists $c∈ℤ$ such that\begin{align*}c&≡a\pmod{2^{r+1}}\\c&≡b\pmod{3^{s+1}}\end{align*}hence\begin{align*}
+g(c)&≡g(a)≢0\pmod{2^{r+1}}\\
+g(c)&≡g(b)≢0\pmod{3^{s+1}}
+\end{align*}consequently, $2∤f(c)$ and $3∤f(c)$—a contradiction.
+<hr>Alternative method:
+Take $D>1$ such that $\deg p&lt;2^D$ then $\deg p&lt;3^D$. Write <i>p</i>-adic valuation of <i>n</i> as ν<sub><i>p</i></sub>(<i>n</i>).
+Let $a_1$ be any integer. Consider $a_1 + k2^D$. Let $a = a_1$ and $b = a_1 + k2^D$ in the lemma. We get :$$ν_2(f(a_1+k2^D) - f(a_1))≥ν_2(k2^D)-D+1≥1$$Therefore, $f(a_1+k2^D)-f(a_1)$ is a multiple of $2$ for all integers $k$.
+Similarly, for all $a_2$, we know that $f(a_2 + l3^D) - f(a_2)$ is a multiple of $3$ for all integers $l$.
+<div class="quote">Lemma: Let $f$ be an integer-valued polynomial, $\deg(f) < p^h$ for some positive integer $h$. Then$$ν_p(f(b)-f(a))≥ν_p(b-a)-h+1$$for all integers $a,b$.</div>Proof: Replacing $f(x)$ by $x \to f(a+x) - f(a)$ we can assume that $a=0$ and $f(0) = 0$. Thus it is enough to show that $ν_p(f(b)) \geq ν_p(b) - h+1$. We know that $f_n(x) = \binom xn$ forms a basis of integer-valued polynomials, so we can verify that this holds for $f_n$ with $n&lt;p^h$. 
+For $n=0,1$ it is obvious. For $n≥2$, write$$f_n(x) = \frac xn g(x)$$where $g(x)=\binom{x-1}{n-1}$ is integer-valued, so $ν_p(b)≥0$. For any $b$ we get $nf_n(b) = bg(b)$, therefore$$ν_p(f_n(b)) = ν_p(b) + ν_p(g(b)) - ν_p(n)$$Since $n&lt;p^h$ we have $ν_p(n)≤h-1$.
+\[ν_p(f_n(b))≥ ν_p(b) - h+1\]
