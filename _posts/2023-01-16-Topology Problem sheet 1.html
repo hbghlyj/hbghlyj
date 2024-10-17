@@ -1,0 +1,93 @@
+<style>
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}
+div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+</style>
+<div class="q">
+    Let $𝒯_\text{left}$ be the family of subsets $U$ of ℝ with the property that $∀x∈U∃ε>0$ such that $(x-ε,x]⊂U$.<br>Prove that $𝒯_\text{left}$ is a topology on ℝ.<br>
+    What is the closure of $(0,1)$ with respect to this topology?
+</div>
+(T1) is trivial.<br>
+(T2) Let $U,V∈𝒯_\text{left}$. Consider an arbitrary $x∈U∩V$.<br>
+As $U∈𝒯_\text{left},∃α_x>0$ such that $(x-α_x,x]⊂U$. As $V∈𝒯_\text{left},∃β_x>0$ such that $(x-β_x,x]⊂V$.<br>
+Then $(x-δ_x,x]⊂U∩V$ for $δ_x=\min(α_x,β_x)$. So $U∩V∈𝒯_\text{left}$.<br>
+(T3) Let $U_i∈𝒯_\text{left}$. Consider an arbitrary $x∈⋃_{i∈I}U_i,∃k∈I:x∈U_k$.<br>As $U_k∈𝒯_\text{left}$, $∃ε_x>0:(x-ε_x,x]⊆U_k⊆⋃_{i∈I}U_i$. So $⋃_{i∈I}U_i∈𝒯_\text{left}$.<br>Therefore $𝒯_\text{left}$ is a topology on ℝ.<hr  style="border-style: dashed">
+If $1∈ℝ∖\overline{(0,1)}$, then $∃ε>0:(1-ε,1]⊂ℝ∖\overline{(0,1)}$, but $1-\fracε2∈(1-ε,1]∩(0,1)$, contradiction.<br>So $1∈\overline{(0,1)}⇒(0,1]⊂\overline{(0,1)}$.<br>Also $ℝ∖(0,1]∈𝒯_\text{left}$, so $\overline{(0,1)}⊂(0,1]$. Therefore $\overline{(0,1)}=(0,1]$.
+<h1>Closure, interior, accumulation points</h1>
+<div class="q">
+    Let $(X, d)$ be a metric space and $A$ a non-empty subset of $X$.<br>For every $x∈X$, define the distance from $x$ to $A, \operatorname{dist}(x, A)$, by
+    \[
+    \operatorname{dist}(x, A)=\inf_{a∈A} d(x, a) .
+    \]
+    Prove that $x∈\bar{A}$ iff $\operatorname{dist}(x, A)=0$.
+</div>
+<div class="noprint">See <a href="?dir=285%2F2.html">A2 sheet 2 Q5</a></div>
+$x∈\bar{A}⇒∀ε>0,∃a∈A:d(x,a)&lt;ε⇒∀ε>0:\operatorname{dist}(x, A)≤ε⇒\operatorname{dist}(x, A)=0$.<br>
+Conversely, $\operatorname{dist}(x, A)=0⇒∀ε>0:\operatorname{dist}(x, A)&lt;ε⇒∃a∈A:d(x,a)&lt;ε⇒x∈\bar A$.
+<div class="q">
+    Let $(X, d)$ be a metric space.
+    <ol>
+        <li>Prove that a closed ball is a closed set in $\left(X, 𝒯_d\right)$, where $𝒯_d$ is the topology defined by the metric $d$. Prove that the closure of an open ball is contained in the closed ball.</li>
+        <li>Draw the picture of the closed ball with centre $\left(\frac12, 0\right)$ and of radius $\frac12$ in $\left(ℝ^2,{‖⋅‖}_∞\right)$.</li>
+        <li>Consider the subset $E=([0,1]×\{0\})∪(\{0\}×[0,1])$ of $ℝ^2$ endowed with the metric induced from $\left(ℝ^2,{‖⋅‖}_∞\right)$. What are the open and the closed ball of centre $\left(\frac12, 0\right)$ and of radius $\frac12$ in this new metric space? Show that the closure of the open ball is a proper subset of the closed ball.</li>
+        <li>Let $(V,{‖⋅‖})$ be a normed real vector space. Show that in this case the closure of any open ball is a closed ball.</li>
+    </ol>
+</div>
+<ol>
+<li><div class="noprint">A2 metric spaces Lemma 4.1.4</div>Let the ball be $\bar{B}(a, ε)$. We will show that the complement $\bar{B}(a, ε)^c$ is open. Let $x∈\bar{B}(a, ε)^c$. Then $d(x, a)>ε$, so there is $ε'>0$ so that $d(x, a)>ε+ε'$. We claim that the open ball $B\left(x, ε'\right)$ is contained in $\bar{B}(a, ε)^c$. To see this, suppose that $z∈B\left(x, ε'\right)$. Then $d(z, x)< ε'$. By triangle inequality $d(z, a) ≥ d(x, a)-d(z, x)>\left(ε+ε'\right)-ε'=ε$.<br>
+Since $B(a,ε)⊂\bar{B}(a, ε)$ and we proved $\bar{B}(a, ε)$ is closed, by definition of closure, $\overline{B(a,ε)}⊂\bar{B}(a, ε)$.
+</li>
+<li>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[domain=0:4]
+\fill[red!20](0,-1)rectangle(2,1);
+\draw[-latex] (0,-2) -- (0,2);
+\draw[-latex] (-1,0) -- (3,0);
+\fill(1,0)circle(.05)node[below]{$1\over2$}(2,0)circle(.05)node[below,xshift=4]{1}(0,1)circle(.05)node[left]{$1\over2$};
+\end{tikzpicture}{% endlatex %}</li>
+<li>Let $x=\left(\frac12,0\right)$, then $B\left(x,\frac12\right)=(0,1)×\{0\},\overline{B\left(x,\frac12\right)}=[0,1]×\{0\},\bar B\left(x,\frac12\right)=([0,1]×\{0\})∪\left(\{0\}×\left[0,\frac12\right]\right)$.</li>
+<li><div class="noprint"><a href="https://math.stackexchange.com/questions/108010">When is the closure of an open ball equal to the closed ball?</a></div>
+For any open ball $B(a, r)$ and $a+v∈\bar B(a,r)$, we have ${|v|}≤r$. Let $0&lt;ϵ&lt;1$, then $a+ϵv∈B(a,r)$ and $a+ϵv→a+v$ as $ϵ→1$, so $a+v∈\overline{B(a,r)}$, so $\bar B(a,r)⊂\overline{B(a,r)}$, but we proved $\bar B(a,r)⊃\overline{B(a,r)}$, so $\bar B(a,r)=\overline{B(a,r)}$.
+</li>
+</ol>
+<div class="q">Let $f: X → Y$ be a continuous map between topological spaces, and let $A$ and $B$ be subsets of $X$ such that $\bar{A}=\bar{B}$. Prove that $\overline{f(A)}=\overline{f(B)}$.</div>
+By Proposition 1.36, $\overline{f(A)}⊃f(\bar A)$.<br>
+Since $\overline{f(A)}$ is closed, we have $\overline{f(A)}⊃\overline{f(\bar A)}$.<br>
+Also $\overline{f(A)}⊂\overline{f(\bar A)}$, so $\overline{f(A)}=\overline{f(\bar A)}$.<br>
+Similarly $\overline{f(B)}=\overline{f(\bar B)}$, since $\bar{A}=\bar{B}$, we have $\overline{f(A)}=\overline{f(B)}$.
+<div class="q">
+    Give examples of subsets $A_1, A_2$ and $A_3$ of $ℝ^2$ (with its standard topology) such that
+    <ol>
+    <li>$A_1'=ℝ^2$ and $\left(ℝ^2∖A_1\right)'=ℝ^2$;</li>
+    <li>$A_2'⊄A_2$ and $A_2⊄A_2'$;</li>
+    <li>$A_3'''≠A_3''≠A_3'≠A_3$</li>
+    </ol>
+</div>
+<ol>
+<li>$A_1=ℚ^2$. Since ℚ is dense in ℝ, $A_1'=ℝ^2$. Similarly $\left(ℝ^2∖A_1\right)'=ℝ^2$.</li>
+<li>$A_2=(0,1)^2∪\{(2,2)\}$, then $A_2'=[0,1]^2$, so $A_2'⊄A_2$ and $(2,2)∉A_2'$ so $A_2⊄A_2'$.</li>
+<li>Let $a_i(i∈ℕ)$ be a sequence in ℝ. There exist balls $B_i$ centred at $a_i$ such that they are all disjoint.<br>Let $a_{i,j}(j∈ℕ)$ be sequence in $B_i∖\{a_i\}$ converging to $a_i$. There exist balls $B_{i,j}$ centred at $a_{i,j}$ such that they are all disjoint.<br>Let $a_{i,j,k}(k∈ℕ)$ be a sequence in $B_{i,j}∖\{a_{i,j}\}$ converging to $a_{i,j}$. There exist balls $B_{i,j,k}$ centred at $a_{i,j,k}$ such that they are all disjoint.<br>Let $a_{i,j,k,l}(l∈ℕ)$ be a sequence in $B_{i,j,k}∖\{a_{i,j,k}\}$ converging to $a_{i,j,k}$.<br>Then $A_3=\{a_{i,j,k,l}:i,j,k,l∈ℕ\},A_3'=\{a_{i,j,k}:i,j,k∈ℕ\},A_3''=\{a_{i,j}:i,j∈ℕ\},A_3'''=\{a_i:i∈ℕ\}$ are distinct.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/990065">Iteration of derived sets</a></div>
+</li></ol>
+<div class="q">Give an example of an infinite topological space $X$ and a subset $A⊆X$, such that for any convergent sequence in $A$ any limit of it is in $A$, but $A$ is not closed.</div>
+Let $X=ℝ$ with co-countable topology, i.e. $A$ is open iff $A=∅$ or $ℝ∖A$ is at most countable. Then $A≔(-∞,0]$ contains all its limit points because for any sequence $x_n$ in $A$ and point $y>0$, the set $ℝ∖\{x_n∣n∈ℕ\}$ is an open neighbourhood of $y$ not containing any $x_n$, so any $y∉A$ is not a limit point of $A$. But $A$ is not closed because $ℝ∖A=(0,+∞)$ is not countable.
+<div class="noprint"><a href="https://proofwiki.org/wiki/Limit_Points_of_Countable_Complement_Space">Limit Points of Countable Complement Space</a><br><a href="https://math.stackexchange.com/questions/235714">If a set contains all its limit points must it be closed?</a><br>
+<a href="https://math.stackexchange.com/a/765447/745350">Convergent sequence in co-finite topology iff there is at most one value occurs ∞ times.</a><br>
+<a href="https://math.stackexchange.com/questions/1768552">Convergent sequence in co-countable topology iff sequence is eventually constant</a></div>
+<h1>Hausdorff spaces</h1>
+<div class="q">
+Let $(X, 𝒯)$ be a <i>Hausdorff</i> topological space and let $A$ be a non-empty subset of $X$.<ol>
+<li>Prove that an open set $U∈𝒯$ has non-empty intersection with $A$ iff $U$ has non-empty intersection with $\bar{A}$.</li>
+<li>Prove that $x∈A'$ iff $x∈\overline{A∖\{x\}}$.</li>
+<li>Prove that $A'$ is closed in $X$.</li>
+<li>Prove that $(\bar{A})'=A'$. Deduce that $\left(A'\right)'⊂A'$.</li></ol>
+</div>
+<ol>
+<li>Suppose $A∩U≠∅$, since $A∩U⊂\bar A∩U$, we have $\bar A∩U≠∅$.<br>Suppose $\bar A∩U≠∅$, let $x∈\bar A∩U$. Since open set $U$ contains $x∈\bar A$, by Proposition 1.30, $U∩A≠∅$.<br>
+<li>$x∈\overline{A∖\{x\}}⇔$for any open $U∋x,U∩(A∖\{x\})≠∅⇔x∈A'$.</li>
+<li>$∀x∉A'$, by (2) the open set $X∖\overline{A∖\{x\}}$ contains $x$, so $A'$ is closed.</li>
+<li>$A⊂\bar A⇒A'⊂(\bar{A})'$. In the other direction, $∀x∈(\bar{A})'$, for any open set $U∋x:\bar A∩U∖\{x\}≠∅$.<br>$X$ is T1$⇒\{x\}$ is closed$⇒U∖\{x\}$ is open. By (1), $A∩U∖\{x\}≠∅⇒x∈A'⇒(\bar A)'⊂A'$. Therefore $(\bar A)'=A'$.<br>
+$A'⊂\bar A⇒\left(A'\right)'⊂(\bar A)'=A'$</li>
+</ol>
+<div class="q">Let $(X,𝒯)$ be a <i>Hausdorff</i> topological space and let $f: X→X$ be continuous.<br>
+Show that the set$\DeclareMathOperator{\fix}{Fix}$$$\fix(f)=\{x:f(x)=x\}$$is closed.</div>
+$F:X→X×X;x↦(x,f(x))$ is continuous.<br>Since $X$ is Hausdorff, $\Delta=\{(x,x):x∈X\}$ is a closed set in $X×X$.<br>So $\fix(f)=F^{-1}(\Delta)$ is closed.<hr>Alternate method:<br>To prove $X∖\fix(f)$ is open, for any $x∉\fix(f)$ we need to find open $U∋x$ such that $U∩\fix(f)=∅$.<br>By Hausdorff, we can find disjoint open sets $U_x∋x$ and $U_{f(x)}∋f(x)$. By continuity, $f^{-1}(U_{f(x)})$ is open, so $U_x∩f^{-1}(U_{f(x)})$ is open. Clearly $x∈U_x∩f^{-1}(U_{f(x)})$. It remains to prove $\fix(f)∩U_x∩f^{-1}(U_{f(x)})=∅$.<br>Let $y∈\fix(f)∩U_x∩f^{-1}(U_{f(x)})$, then $y∈U_x$ and $y=f(y)∈U_{f(x)}$, contradicting $U_x,U_{f(x)}$ are disjoint.

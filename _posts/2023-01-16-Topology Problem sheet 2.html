@@ -1,0 +1,134 @@
+<style>
+h1{font-size: large; text-align: center;}h1:not(:first-child){page-break-before: always;}
+body{width: 205mm; margin: 0 auto; padding-left: 1.4em;}
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}ul{margin: 0;}@media print {div.noprint {display:none}}div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}hr{border-style: dashed;}
+</style>
+<h1>Product topology, basis</h1>
+<div class="q">Consider $ℝ^n$ endowed with the norm ‖ ‖$_∞$.
+<ol>
+    <li>Prove that for any $𝐱∈ℝ^n$ and $ε>0$, there is a $𝐲∈ℚ^n$ and $δ∈ℚ, δ>0$, such that
+    \[
+    𝐱∈B(𝐲, δ)⊂B(𝐱, ε) \text {. }
+    \]
+    </li>
+    <li>Prove that the family $\{B(𝐲, δ): 𝐲∈ℚ^n$ and $δ∈ℚ, δ>0\}$ is a countable basis for the Euclidean topology on $ℝ^n$.</li>
+</ol>
+</div>
+<ol>
+<li>
+<div class="noprint"><i>Mathematical Analysis</i>, Apostol, 2nd Ed, pp57, Theorem 3.27</div>
+Pick $δ∈ℚ∩(0,ε/2)$. Since $ℚ^n$ is dense in $ℝ^n,∃𝐲∈ℚ^n$ such that $𝐱∈B(𝐲, δ)$.<br>
+$∀𝐳∈B(𝐲, δ):{‖𝐱-𝐳‖}_∞≤{‖𝐱-𝐲‖}_∞+{‖𝐲-𝐳‖}_∞&lt;2δ&lt;ε$. So $B(𝐲, δ)⊂B(𝐱, ε)$.</li>
+<li>For any open set $B$ in $ℝ^n$, $∀𝐱∈B,∃ε:B(𝐱,ε)⊂B$.<br>By (1), $∃𝐲∈ℚ^n$ and $δ∈ℚ^+$ such that $𝐱∈B(𝐲, δ)⊂B(𝐱, ε)$, therefore $B$ is the union of all $B(𝐲, δ)⊂B$.<br>
+So $\{B(𝐲, δ): 𝐲∈ℚ^n$ and $δ∈ℚ, δ>0\}$ is a basis for the Euclidean topology on $ℝ^n$.<br>It is countable because $B(𝐲,δ)↦(𝐲,δ)$ is a bijection to $ℚ^n×ℚ^+$.</li>
+</ol>
+<div class="q">
+    Prove that if $f: X→Y$ is a continuous map of a space $X$ to a Hausdorff space $Y$, then its graph\[G=\set{(x, f(x))∈X×Y: x∈X}\]is a closed subset of $X×Y$.
+</div>
+<div class="noprint"><a href="https://en.wikipedia.org/wiki/Closed_graph_theorem">Closed graph theorem</a><br><a href="https://math.stackexchange.com/questions/367155">Why is the graph of a continuous function to a Hausdorff space closed?</a></div>
+Let $(x,y)∈(X×Y)∖G$. Since $y$ and $f(x)$ are distinct points in $Y$, and $Y$ is Hausdorff, ∃ disjoint open sets $U∋y$ and $V∋f(x)$ in $Y$. Since $f$ is continuous, $W=f^{-1}(V)$ is an open neighborhood of $x$.<br>
+$W×U$ is an open neighborhood of $(x,y)$ in  the product topology. We will show it is disjoint from $G$.<br>
+Let $(z,f(z))$ be any point of $G$. If $z∉W$, then clearly $(z,f(z))∉W×U$. If $z∈W$, then $f(z)∈V$, so $f(z)∉U$, and therefore $(z,f(z))∉W×U$. Thus, in all cases $(z,f(z))∉W×U$, and it follows that $(W×U)∩G=∅$. Thus, each point of $(X×Y)∖G$ has an open neighborhood disjoint from $G$, and $G$ is therefore closed.
+<h1>Connectedness</h1>
+<div class="q">
+<ol>
+<li>Let $A$ and $B$ be connected subsets of a topological space $X$ such that $A∩\bar{B}≠∅$. Prove that $A∪B$ is connected.</li>
+<li>Which of the following subsets of $ℝ^2$ are connected?
+<ul>
+<li>$B((1,0),1)∪B((-1,0),1)$;</li>
+<li>$\overline{B((1,0),1)}∪B((-1,0),1)$;</li>
+<li>the set of all points with at least one rational coordinate.</li>
+</ul>
+</li>
+</ol>
+</div>
+<ol>
+<li>Suppose $A∪B$ is disconnected, then $A∩B=∅$ and ∃ disjoint open sets $Y,Z$ such that $A∪B⊂Y∪Z$ and $(A∪B)∩Y∩Z=∅$ and $(A∪B)∩Y,(A∪B)∩Z≠∅$.<br>
+Since $(A∪B)∩Y∩Z=∅$, we have $A∩Y∩Z=∅$, also $A⊂Y∪Z$, but $A$ is connected, say $A⊂Y$, then $A∩Z=∅$ and $B∩Z=(A∪B)∩Z≠∅$, but $B$ is connected, we have $B⊂Z$.<br>
+Since $B⊂X∖Y$ and $X∖Y$ is closed, we have $\bar B⊂X∖Y$, but $A⊂Y$, so $A∩\bar{B}=∅$, contradiction.
+<li><ul><li>$B((1,0),1),B((-1,0),1)$ are disjoint open sets, so $B((1,0),1)∪B((-1,0),1)$ is disconnected.</li>
+<li>$\overline{B((1,0),1)}∩\overline{B((-1,0),1)}≠∅$, by (1) $\overline{B((1,0),1)}∪B((-1,0),1)$ is connected.</li>
+<li>Denote the set by $A$. For any $(x,y)∈A$, wlog let $x$ be rational. Consider the polyline Γ from $(0,0)$ to $(x,0)$ to $(x,y)$. Any point on Γ has a rational coordinate, so Γ$⊂A$, so $A$ is path connected, so $A$ is connected.</li>
+</ul></li></ol>
+<div class="q">
+Let $X$ be a topological space.<ol>
+<li>Let $a$ be an arbitrary point in $X$. Prove that there exists a largest connected subset of $X$ containing $a$, i.e. a set $C_a$ such that:
+<ul>
+<li>$a∈C_a$ and $C_a$ is connected;</li>
+<li>for any connected subset $S$ of $X$ containing $a, S⊂C_a$.</li></ol>
+We call such a set $C_a$ the <i>connected component of $X$ containing $a$</i>, or simply a <i>connected component</i> of $X$.</li>
+<li>Prove that $C_a$ is closed for every $a∈X$.</li>
+<li>Prove that the relation $x∼y⇔y∈C_x$ is an equivalence relation.</li>
+<li>Prove that connected components of $X$ are either disjoint or they coincide.</li>
+<li>Find the connected components of $X=\set{(x, y)∈ℝ^2: x≠y}$ with the topology induced from $ℝ^2$.<br>
+Same question for $X=\set{(z, w)∈ℂ^2: z≠w}$ with the topology induced from $ℂ^2$.</li>
+<li>Let $A$ be a subset of ℝ such that $\mathring A=∅$. Prove that the connected components of $A$ are the singletons.<br>
+What are the connected components of ℚ with the topology induced from ℝ ?</li>
+</ul>
+</div>
+<ol><li>Consider all connected subsets of $X$ containing $a$. Since they intersect in $a$, the union is connected, so it is the largest connected subset of $X$ containing $a$.</li>
+<li>$C_a$ is connected, by Theorem 1.85, $\overline{C_a}$ is a connected subset of $X$ containing $a$, so $\overline{C_a}⊂C_a$, so $C_a$ is closed.</li>
+<li>If $y∈C_x$, then $C_x$ is a connected subset of $X$ containing $y$, by definition $C_x⊂C_y$, so $x∈C_y$.<br>Now $C_y$ is a connected subset of $X$ containing $x$, by definition $C_y⊂C_x$, so $C_x=C_y$.<br>$x∼y⇔C_x=C_y$ is clearly an equivalence relation.</li>
+<li>By (3), connected components are equivalence classes, so they are disjoint.</li>
+<li>$X=X_1∪X_2$ where $X_1=\set{(x, y)∈ℝ^2: x&lt;y},X_2=\set{(x, y)∈ℝ^2: x>y}$ are disjoint, open and connected. So they are the connected components of $X$.<hr>$X=\set{(z, w)∈ℂ^2: z≠w}=ℂ^2∖\set{(z, z):z∈ℂ}$ is the complement of a 2D space in a 4D space, we guess $X$ is connected. Let $(z_1,w_1),(z_2,w_2)∈X$, we have $z_1≠w_1$ and $z_2≠w_2$.<br><b>Case 1. $z_2≠w_1$</b><br>In $ℂ∖\{w_1\}$ there exist path $γ_1$ from $z_1$ to $z_2$, then $Γ_1(t)=(γ_1(t),w_1)$ is a path from $(z_1,w_1)$ to $(z_2,w_1)$ in $X$.<br>In $ℂ∖\{z_2\}$ there exist path $γ_2$ from $w_1$ to $w_2$, then $Γ_2(t)=(z_2,γ_2(t))$ is a path from $(z_2,w_1)$ to $(z_2,w_2)$ in $X$.<br>Hence $Γ_1∗Γ_2$ is a path from $(z_1,w_1)$ to $(z_2,w_2)$ in $X$.<br><b>Case 2. $z_2=w_1$</b><br>Take $w∈ℂ∖\{z_1,w_1\}$.<br>In $ℂ∖\{z_1\}$ there exist path $γ_1$ from $w_1$ to $w$, then $Γ_1(t)=(z_1,γ_1(t))$ is a path from $(z_1,w_1)$ to $(z_1,w)$ in $X$.<br>By Case 1, there exist path $Γ_2$ from $(z_1,w)$ to $(z_2,w_2)$ in $X$.<br>Hence $Γ_1∗Γ_2$ is a path from $(z_1,w_1)$ to $(z_2,w_2)$ in $X$.<div class="noprint"><a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=9996">$ℂ^2$去掉对角线的连通分支</a></div>有一种做法, 不需要分情况, 容易推广到证明“$ℝ^n(n≥4)$去掉2维子空间仍连通”:<br>$Y=\{(a,b,a,b):a,b∈ℝ\}$ is a linear subspace of $ℝ^4$, we have $Y^⟂=\{(a,b,-a,-b):a,b∈ℝ\}$.<br>For $(a_1,b_1,c_1,d_1),(a_2,b_2,c_2,d_2)∈X=ℝ^4∖Y$, let $y_1=\left(-\frac{a_1+c_1}2,-\frac{b_1+d_1}2,-\frac{a_1+c_1}2,-\frac{b_1+d_1}2\right)$, $y_2=\left(-\frac{a_1+a_2}2,-\frac{b_2+d_2}2,-\frac{a_2+c_2}2,-\frac{b_2+d_2}2\right)$, $x_1=(a_1,b_1,c_1,d_1)+y_1=\left(\frac{a_1-c_1}2,\frac{b_1-d_1}2,\frac{c_1-a_1}2,\frac{d_1-b_1}2\right)$ and $x_2=(a_2,b_2,c_2,d_2)+y_2=\left(\frac{a_2-c_2}2,\frac{b_2-d_2}2,\frac{c_2-a_2}2,\frac{d_2-b_2}2\right)$, then $x_1,x_2∈Y^⟂$, and $(a_1,b_1,c_1,d_1)+ty_1,t∈[0,1]$ is a path in $X$ from $(a_1,b_1,c_1,d_1)$ to $x_1$, $(a_2,b_2,c_2,d_2)+ty_2,t∈[0,1]$ is a path in $X$ from $(a_2,b_2,c_2,d_2)$ to $x_2$. Finally, since $Y∩Y^⟂=\{0\}$ and $Y^⟂≅ℝ^2$ and $ℝ^2∖\{0\}$ is connected, there is a path connecting $x_1,x_2$ in $Y^⟂∖\{0\}⊂X$.</li>
+<li>Let $X$ be any connected component of $A$. Since $X$ is connected in ℝ, it is an interval.<br>Since $X⊂A,\mathring A=∅$, we have $\mathring X=∅$, so $X$ is a singleton.
+<br>In particular, $\mathring ℚ=∅$, so any connected component of ℚ is singleton.</li>
+</ol>The set of path connected components of $X$ is $π_0 (X) = [S^0, X]_+$<br>
+[ ] up to homotopy<br>
+$π_1 (X) = [S^1, X]_+$ is the fundamental group.<br>$π_n (X, X_0) = [S^n, X]_+$ are Abelian groups, called higher homotopy groups.
+<div class="q">
+Let $I$ be an open interval in ℝ and let $f: I→ℝ$ be a differentiable function.
+<ol>
+    <li>Prove that the set $T=\{(x, y)∈I×I: x&lt;y\}$ is a connected subset of $ℝ^2$ with the standard topology.</li>
+    <li>
+        Let $g: T→ℝ$ be the function defined by
+        \[
+        g(x, y)=\frac{f(x)-f(y)}{x-y} .
+        \]
+        Prove that $g(T)⊂f'(I)⊂\overline{g(T)}$.
+    </li>
+    <li>Show that $f'(I)$ is an interval.</li>
+</ol>
+<i>Thus the derivative $f'$ of any differentiable function $f: I→ℝ$ always has the intermediate value property (without necessarily being continuous).</i><br>
+This is <i>Darboux's theorem</i>.
+</div>
+<i>Remark.</i> intermediate value property ⇔ preserve connectedness.
+<ol>
+    <li>Any 2 points in $T$, $(x_1,y_1),(x_2,y_2),x_1&lt;y_1,x_2&lt;y_2$ can be connected by a line $t(x_1,y_1)+(1-t)(x_2,y_2),t∈[0,1]$, since $tx_1+(1-t)x_1&lt;ty_2+(1-t)y_2$. So $T$ is path connected. So $T$ is connected.</li>
+    <li>Let $(x,y)∈T$. By the Mean-Value Theorem, $∃c∈(x,y)⊂I$ such that
+        $$
+        g(x,y) = \frac{f(x) - f(y)}{x - y} = f'(c)∈f'(I).
+        $$
+        As $(x,y)∈T$ is arbitrary, $g(T)⊂f'(I)$.<br>
+        Next, since $I$ is open, $∀x∈I,∃$ a sequence $(y_n)_{n∈ℕ}$ in $I$ such that $x&lt;y_n∀n∈ℕ$ and $\lim_{n→∞}y_n=x$.
+        $$
+        f'(x) = \lim_{n→∞} \frac{f(x) - f(y_n)}{x - y_n} = \lim_{n→∞} g(x,y_n)∈\overline{g(T)}
+        $$As $x∈I$ is arbitrary, $f'(I)⊂\overline{g(T)}$.
+    </li>
+    <li>By (1), $T$ is connected, since $g$ is continuous on $T$, $g(T)$ is connected. By (2), $g(T)⊂f'(I)⊂\overline{g(T)}$, by Theorem 1.85, $f'(I)$ is connected.</li>
+</ol>
+<h1>Compactness</h1>
+<div class="q">
+<ol>
+    <li>Let $X$ be a compact space, and let $\left(V_n\right)_{n∈ℕ}$ be a nested sequence of non-empty closed subsets of $X$ (<i>nested</i> means that $V_{n+1}⊂V_n$ for every $\left.n∈ℕ\right)$. Prove that $⋂_{n=1}^∞ V_n≠∅$.</li>
+    <li>Now suppose that $X$ is Hausdorff as well as compact, and let $f: X→X$ be a continuous map. Let $X_0=X, X_1=f\left(X_0\right)$ and inductively define $X_{n+1}=f\left(X_n\right)$ for $n \geq 1$. Show that $A=⋂_n X_n$ is non-empty.</li>
+    <li>Prove that $f(A)=A$. [Hint: the proof that $f(A)⊂A$ is straightforward. To show that any $a∈A$ is in $f(A)$, apply (1) to the sets $V_n=f^{-1}(a) ∩X_n$.]</li>
+</ol>
+</div>
+<ol>
+<li>For any finite $J⊆ℕ$, $⋂_{n∈J}V_n=V_{\max J}≠∅$. Since $X$ is compact, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20%281%29.pdf#page=20&zoom=100,47,709">Proposition 2.4.</a> $⋂_{n=1}^∞ V_n≠∅$</li>
+<li>Let $x∈X$, since $f^{∘n}(x)∈X_n$, $X_n≠∅$.<br>$f(X)⊂X⇒X_{n+1}=f^{∘n}(f(X))⊂f^{∘n}(X)=X_n$.<br>
+By continuity of $f$, $X_n$ closed ⇒ $X_{n+1}=f(X_n)$ closed.<br>
+$\left(X_n\right)_{n∈ℕ}$ is a nested sequence of non-empty closed subsets of $X$, by (1), $A≠∅$.</li>
+<li>$A$ is an intersection of closed sets, so it is closed. By (2), $A≠∅$.<br>To prove $f(A)⊂A:A=\bigcap_{n≥1} X_n = \bigcap_{n≥0}f(X_n)⊃f(\bigcap_{n≥0} X_n) = f(A)$<br>To prove $A⊂f(A)$: Let $a∈A,V_n≔X_n∩f^{-1}(\{a\})$.<br>
+By Hausdorff, $\{a\}$ is closed, by continuity $f^{-1}(\{a\})$ is closed, so $V_n$ is closed.<br>
+$∀n:a∈X_{n+1}⇒∃y:y∈X_n,a=f(y)⇒y∈V_n⇒V_n≠∅$.<br>$\left(V_n\right)_{n∈ℕ}$ is a nested sequence of non-empty closed set, by (1), $∃p∈\bigcap_{n∈ℕ} V_n$<br>$f(p)=a,p∈A⇒a∈f(A)⇒A⊂f(A).$</li></ol>
+Summary: any (continuous) self-map of a compact Hausdorff space has fixed subset.<br>
+“have fixed subset” doesn't imply “have fixed point” e.g. rotation of a circle<br>
+Note: rotation of a sphere has fixed points (2 poles)<br>
+Fact: Any map $f:𝔻^n→𝔻^n$ has a fixed point.
+[Brouwer's fixed point theorem]
+<div class="q">Let $X$ be a Hausdorff space and let $A, B$ be disjoint compact subsets of $X$. Show that there exist disjoint open subsets $U,V$ of $X$ such that $A⊂U$ and $B⊂V$.</div>
+For any $b∈B$, Applying <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20%281%29.pdf#page=21&zoom=100,47,240">Proposition 2.13.</a> to $A$ and $b$, ∃ disjoint open sets $U_b,V_b$ such that $A⊂U_b,b∈V_b$<br>$(V_b)_{b∈B}$ is an open cover of $B$, so ∃ finite subcover $V_{b_1},…,V_{b_n}$, so $V≔V_{b_1}∪⋯∪V_{b_n}$ is open and $B⊂V$.<br>$U≔U_{b_1}∩⋯∩U_{b_n}$ is open and $A⊂U$ since $∀b:A⊂U_b$.<br>
+For $i=1,…,n$ we have $U⊂U_{b_i},U_{b_i}∩V_{b_i}=∅⇒U∩V_{b_i}=∅⇒U∩V=∅$.

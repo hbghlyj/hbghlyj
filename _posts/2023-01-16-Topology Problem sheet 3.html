@@ -1,0 +1,61 @@
+<style>
+h1{font-size: large; text-align: center;margin-top:0;}h1:not(:first-of-type){page-break-before: always;}
+body{width: 205mm; margin: 0 auto; padding-left: 1.4em;}dl{margin:0}
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}ul{margin: 0;}@media print {div.noprint {display:none}}div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+</style>
+<h1>Compactness</h1>
+<div class="q">
+    Let $\def\d{\mathrm{d}}\d$ be one of the metrics $\d_1,\d_2,\d_∞$ on $ℝ^n$.
+    Let $K$ be a non-empty compact subset of $ℝ^n$, and let $F$ be a non-empty closed subset of $ℝ^n$. We define
+    $$\DeclareMathOperator{\dist}{dist}
+    \dist(K, F)=\inf\{\d(x, y): x∈K,y∈F\}.$$
+    Prove that there exists $a∈K$ and $b∈F$ such that $\d(a, b)=\dist(K, F)$.
+</div>There is a sequence $(a_n,b_n)∈K×F,\d(a_n,b_n)&lt;\dist(K,F)+\frac1n$. Since $K$ is compact, there is a subsequence $a_{n_k}$ converging to some $a∈K$ with $\d(a_{n_k},a)&lt;\frac1{n_k}$.<br>Let $F_k=B(a,\dist(K,F)+\frac2{n_k})∩F$. Then $F_k⊂B(a,\dist(K,F)+\frac2{n_k})$ and $F_k$ is closed, [A closed subset of compact set is compact] $F_k$ is compact.<br>By triangle inequality, $\d(a,b_{n_k})&lt;\d(a_{n_k},a)+\d(a_{n_k},b_{n_k})&lt;\dist(K,F)+\frac2{n_k}$, so $b_{n_k}∈F_k$.<br>$F_k$ is a sequence of nested non-empty compact sets, so $∃b∈⋂_kF_k$, but $F_k⊆F$, so $b∈F$, so $\d(a,b)≥\dist(K,F)$.<br>$∀k:b∈F_k⇒∀k:\d(a,b)&lt;\dist(K,F)+\frac2{n_k}⇒\d(a,b)≤\dist(K,F)⇒\d(a,b)=\dist(K,F)$
+<div class="q">
+    Let $(X,𝒯)$ be a topological space and let $C=X∪\{∞\}$ where $∞$ denotes some extra point not in $X$. Let $𝒯'$ denote the union of $𝒯$ with all subsets of $C$ of the form $V∪\{∞\}$ where $V⊆X$ and $X∖V$ is compact and closed in $X$.<br>Prove that $(C,𝒯')$ is a compact topological space containing $(X,𝒯)$ as a subspace.<br>This is called the <i>one-point (or the Alexandrov) compactification</i> of $X$.
+    Prove that the one-point compactification of $ℝ^2$ is homeomorphic to the 2-sphere.
+</div><div class="noprint"><cite>General Topology</cite> by Jacques Dixmier, page 47 §4.5.8</div>$∅∈𝒯⊂𝒯',C=(X∖∅)∪\{∞\}∈𝒯'.$
+<dl><dt>For $U_i∈𝒯'$, we prove $U≔⋃_{i∈I}U_i∈𝒯'$.</dt><dd>$I≕J∪K$ where $∀i∈J:U_i∈𝒯;∀i∈K:U_i=(X∖V_i)∪\{∞\}$, $V_i$ is closed and compact in $X$, so $V=⋂_{i∈K}V_i$ is compact in $X$. If $K=∅$ then $U∈𝒯⊂𝒯'$. Suppose $K≠∅$, then $∞∈U$. Also $X∖U=V∩⋂_{j∈J}(X∖U_j)$ is a closed subset of $V$ so it is compact in $X$, thus compact in $C$. Hence $U∈𝒯'$.</dd></dl>
+<dl><dt>For $U_1,U_2∈𝒯'$, we prove $U_1∩U_2∈𝒯'$.</dt><dd>If $∞∉U_1,U_2$ then $U_1,U_2∈𝒯⇒U_1∩U_2∈𝒯⊂𝒯'$.</dd><dd>If $∞∈U_1,∞∉U_2$ then $∞∉U_1∩U_2$ and $U_1∖\{∞\},U_2∈𝒯$, so $U_1∩U_2=(U_1∖\{∞\})∩U_2∈𝒯⊂𝒯'$.</dd><dd>If $∞∈U_1,U_2$ then $∞∈U_1∩U_2$ and $X∖U_1,X∖U_2$ are compact$⇒(X∖U_1)∪(X∖U_2)=X∖(U_1∩U_2)$ is compact$⇒U_1∩U_2∈𝒯'$.</dd></dl>
+So $(C,𝒯')$ is a topological space, we prove it is compact: Let $\left(U_i\right)_{i∈I}$ be an open covering of $C$. There exists $i_0∈I$ such that $∞∈U_{i_0}$. Then
+$$
+U_{i_0}=(X-G)∪\{∞\},
+$$
+where $G$ is compact. The $U_i$ cover $G$, therefore there exists a finite subset $J$ of $I$ such that $\left(U_i\right)_{i∈J}$ covers $G$ Then$$C=U_{i_0}∪\left(\bigcup_{i∈J} U_i\right) .
+$$The steorographic projection is a homeomorphism from the 2-sphere to the one-point compactification of $ℝ^2$.
+<div class="q">
+    Let $l^∞$ be the space of bounded real sequences, with the norm ${‖𝐱‖}_∞=\sup _{n∈ℕ}\left|x_n\right|$, where $𝐱=\left(x_n\right)_{n∈ℕ}$.<br>Prove that the closed unit ball of $l^∞$, $B'(𝟎, 1)=\set{‖𝐱‖∈l^∞:{‖𝐱‖}_∞≤1}$, is not compact.<br>
+    Thus, $B'(𝟎, 1)$ is a closed bounded subset in a complete normed vector space which is not compact.
+</div>
+Let the $n$th term of $𝐱_n$ be 1 and others be 0. For any $n$, ${‖𝐱_n‖}=1⇒𝐱_n∈B'(𝟎, 1)$. Also ${‖𝐱_i-𝐱_j‖}=1$ for any $i,j$. So the sequence $(𝐱_n)$ doesn't contain Cauchy sequence. So $B'(𝟎, 1)$ is not sequentially compact, thus not compact.
+<h1>Quotient spaces</h1>
+<div class="q">
+    The <i>integer part</i> of a real number $x$ is the unique integer $n∈ℤ$ such that $n≤x&lt;n+1$. Denote it by $I(x)$.<br>On ℝ we define the relation $xℛy⇔I(x)=I(y)$.<ol type="a"><li>Prove that ℛ is an equivalence relation.</li><li>Let $p: ℝ→ℝ/ℛ$ be the quotient map, let $ℝ/ℛ$ be endowed with the quotient topology, and let $U$ be an open set in $ℝ/ℛ$. Prove that if $n∈ℤ$ is such that $p(n)∈U$ then $p(n-1)∈U$.</li><li>Deduce that the open sets in $ℝ/ℛ$ are ∅, $ℝ/ℛ$ and the image sets $p(-∞, n]$, where $n∈ℤ$.</li><li>Is the map $I: ℝ→ℤ, x↦I(x)$ continuous (when ℤ is endowed with the subspace topology)?<br>Prove that $I$ defines a bijection $\tilde{I}: ℝ/ℛ→ℤ$. What is the topology on ℤ making $\tilde{I}$ a homeomorphism?</li></ol>
+</div>
+<ol type="a">
+<li>$I(x)=I(x)⇒xℛx$<br>$xℛy⇒I(x)=I(y)⇒I(y)=I(x)⇒yℛx$<br>$xℛy,yℛz⇒I(x)=I(y)=I(z)⇒xℛz$</li>
+<li> $U⊂ℝ/ℛ$ is open, by definition of quotient topology, $p^{-1}(U)⊂ℝ$ is open, but $n∈p^{-1}(U)$,<br>so $∃ε&lt;1:B(n,2ε)⊂p^{-1}(U)⇒n-ε∈p^{-1}(U)⇒p(n-ε)=p(n-1)∈U$.</li>
+<li>∅ is open by definition. If $U⊂ℝ/ℛ$ is open, $p(n)∈U$, by (b) $p[n-1,n)⊂U$, by induction $p(-∞,n]⊂U$.<br>Therefore $U=ℝ/ℛ$ if $\sup p^{-1}U=∞$; $U=p(-∞, n]$ if $\sup p^{-1} U=n$.<br>On the other hand, $p^{-1}(-∞,n]=(-∞,n+1)$ is open, so $(-∞,n]$ is indeed open in ℝ/ℛ.</li>
+<li>The subspace topology on ℤ is discrete, <i>I</i> isn't constant, so not continuous. Direct proof: $I^{-1}(\{0\})=[0,1)$ isn't open in ℝ, so <i>I</i> isn't continuous.<br>
+$∀y∈ℤ$, since $I$ is surjective $∃x∈ℝ,I(x)=y⇒\tilde I([x])=y⇒\tilde I$ is surjective<br>If $\tilde I([x])=\tilde I([y])$, then $I(x)=I(y)$, so $[x]=[y]$, so $\tilde I$ is injective.<br>
+Suppose $\tilde{I}: ℝ/ℛ→ℤ$ is a homeomorphism when ℤ is endowed with topology 𝒯.<br>
+Since $\tilde I^{-1}$ is continuous, $\tilde I(p(-∞,n])=ℤ∩(-∞,n+1)∈𝒯$. So $𝒯=\{∅,ℤ\}∪\{ℤ∩(-∞,n+1):n∈ℤ\}$.<br>On the other hand, $\tilde I^{-1}(ℤ∩(-∞,n+1))=p(-∞,n]$ is open in $ℝ/ℛ⇒\tilde I$ is continuous.</li>
+</ol>
+<div class="q">
+<ol><li>Let $X$ be a topological space and $A⊂X$. On $X×\{0,1\}$ define the partition composed of the pairs $\{(a,0),(a,1)\}$ for $a∈A$, and of the singletons $\{(x,i)\}$ if $x∈X∖A$ and $i ∈\{0,1\}$. Let ℛ be the equivalence relation defined by this partition, let $Y$ be the quotient space $[X×\{0,1\}]/ℛ$ and let $p:X×\{0,1\}→Y$ be the quotient map.
+<ol type="a"><li>Prove that there exists a continuous map $f:Y→X$ such that $f∘p(x, i)=x$ for every $x∈X$ and $i∈\{0,1\}$.<li>Prove that $Y$ is Hausdorff if and only if $X$ is Hausdorff and $A$ is a closed subset of $X$.</ol></li>
+<li>Consider the above construction for $X=[0,1]$ and $A$ an arbitrary subset of $[0,1]$.<br>
+Prove that $Y,K=p(X×\{0\})$ and $L=p(X×\{1\})$ are compact, and that $K ∩L$ is homeomorphic to $A$.<br><i>We have thus shown that the intersection of two compact subsets in a space that is not Hausdorff may be non-compact and not closed.</i></li></ol></div>
+<ol><li><ol type="a"><li>For a class $c$ of the form $c = \{(x,i)\}$, define $f(c) = x$, and for $c$ of the form $c = \{(a,0),(a,1)\}$, define $f(c) = a$<br>By definition of product topology, the projection map $f∘p$ is continuous, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20(1).pdf#page=29&zoom=auto,-78,563">Prop 3.9</a> <i>f</i> is continuous.</li><li>If <i>X</i> is Hausdorff and <i>A</i> closed, let $p(x,i)≠p(y,j)∈Y$. If $x≠y∈X$, ∃open sets $U∋x,V∋y$ such that $U∩V=∅$, then $f^{-1}U∋(x,i),f^{-1}V∋(y,j)$, so $f^{-1}U∩f^{-1}V=f^{-1}(U∩V)=∅$. If $x=y$, then $i≠j,x≠A$, take $(X∖A)×\{0\},(X∖A)×\{1\}$. So $Y$ is Hausdorff.<br>Conversely, if <i>Y</i> is Hausdorff, for any $x_1≠x_2∈X$, since $g:X→Y,x↦p(x,0)$ is a continuous injection, ∃disjoint open sets $U_1∋g(x_1),U_2∋g(x_2)$, so $g^{-1}(U_1)∋x_1,g^{-1}(U_2)∋x_2$ are disjoint open sets, and $g^{-1}(U_1)∩g^{-1}(U_2)=g^{-1}(U_1∩U_2)=g^{-1}(∅)=∅$ so <i>X</i> is Hausdorff.<br>
+Suppose $A$ isn't closed. Take $x∈\bar A∖A$, then $p(x,0)=\{(x,0)\}≠p(x,1)=\{(x,1)\}$, ∃disjoint open sets $U_0∋p(x,0),U_1∋p(x,1)$, then $f(U_0),f(U_1)$ are open neighborhoods of $x$ in $X$, so $f(U_0)∩f(U_1)$ is an open neighborhoods of $x$, but $x∈\bar A$, so $∃a∈A∩f(U_0)∩f(U_1)$, so $\{(a,0),(a,1)\}∈U_0∩U_1=∅$, contradiction.</li></ol></li><li>$[0,1],\{0,1\}$ are compact, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20(1).pdf#page=23&zoom=auto,-78,529">Thm 2.23</a> $[0,1]×\{0,1\}$ is compact, since $p$ is continuous, $Y=p([0,1]×\{0,1\})$ is compact, similar for <i>K</i>, <i>L</i>. The only equivalence classes in <i>Y</i> that have both points of the form $(x,0)$ and $(x,1)$ are those with first coordinate in <i>A</i>, so $\{(x,0),(x,1)\}↦x$ is a homeomorphism.</li></ol>
+<div class="q" style="page-break-before: always;">
+    The goal of this exercise is to show there exists an embedding of the real projective plane $ℝP^2$ in $ℝ^4$.<br>Let $𝕊^2$ denote the unit sphere in $ℝ^3$ given by $𝕊^2=\left\{(x, y, z)∈ℝ^3: x^2+y^2+z^2=1\right\}$, and let $f: 𝕊^2→ℝ^4$ be defined by $f(x, y, z)=\left(x^2-y^2, x y, y z, z x\right)$.
+    Prove that<ol>
+    <li>$f$ determines a continuous map $\tilde{f}:ℝP^2→ℝ^4$ where $ℝP^2$ is the real projective plane</li><li>$\tilde{f}$ is a homeomorphism onto a topological subspace of $ℝ^4$.</li></ol>
+</div>
+<ol>
+<li>Define an equivalence relation on $𝕊^2$: $\left(x_1,y_1,z_1\right)∼\left(x_2,y_2,z_2\right)$ iff $\left(x_2, y_2, z_2\right)=±\left(x_1, y_1, z_1\right)$.<br>$f$ is continuous. $f(x,y,z)=f(-x,-y,-z)$. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20(1).pdf#page=29&zoom=auto,-78,563">Prop 3.9</a>, $\tilde{f}$ is continuous.</li>
+<li>$𝕊^2$ is compact, $ℝ^4$ is Hausdorff, we'll show $f$ is injective. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20(1).pdf#page=29&zoom=auto,-78,275">Prop 3.11</a>, $\tilde{f}$ is a homeomorphism to its image.<br>
+Suppose $(x_1^2-y_1^2, x_1 y_1, y_1 z_1, z_1 x_1)=(x_2^2-y_2^2, x_2 y_2, y_2 z_2, z_2 x_2)$ for $(x_1, y_1, z_1),(x_2, y_2, z_2)∈𝕊^2$,<br>
+$$\left(x_1^2-y_1^2, x_1 y_1\right)=\left(x_2^2-y_2^2, x_2 y_2\right)⇒(x_1+y_1i)^2=(x_2+y_2i)^2⇒(x_1,y_1)=±(x_2,y_2)$$Since $x_1^2+y_1^2+z_1^2=x_2^2+y_2^2+z_2^2$ we get $z_1^2=z_2^2$.<br>If $(x_1,y_1)≠(0,0)$, since $z_1(x_1,y_1)=z_2(x_2,y_2)$, we get $\left(x_2, y_2, z_2\right)=±\left(x_1, y_1, z_1\right)$.<br>If $(x_1,y_1)=(0,0)$, since $z_1^2=z_2^2=1$, we get $\left(x_2, y_2, z_2\right)=±\left(x_1, y_1, z_1\right)$.</li></ol>

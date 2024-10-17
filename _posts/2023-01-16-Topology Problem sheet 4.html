@@ -1,0 +1,141 @@
+<style>
+h1{font-size: large; text-align: center;margin-top:0;}h1:not(:first-of-type){page-break-before: always;}hr{border: dashed 1pt;margin:2pt 0;border-top: 0;}
+body{width: 205mm; margin: 0 auto; padding-left: 1.4em;}dl{margin:0}
+div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}
+div.q::marker{content: counter(q)". ";}ul{margin: 0;}@media print {div.noprint {display:none}}div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+</style>
+<h1>Simplicial complexes</h1>
+<div class="q">(1) Show that the following space (the ‘Dunce hat’) can be triangulated.<br>
+{% asy %}
+size(3cm);pair A = (0,0);pair B = (2,0);pair C = (1,sqrt(3));draw(C--A, MidArrow);draw(A--B, MidArrow);draw(C--B, MidArrow);
+{% endasy %}<br>
+(2) Show that the following subspace of ℝ<sup>2</sup> cannot be triangulated:$$X=\{(x, y): 0≤y≤1, \text { and } x=0\text { or } 1/n, \text { for some } n∈ℕ\}∪([0,1]×\{0\})$$
+</div>
+(1) it has the following triangulation. The vertices with the same label are identified.
+{% asy %}size(150);
+pair A1 = (5.16, -3.07);pair A2 = (7.94, -3.07);pair A3 = A1 + rotate(60)*(A2 - A1);label("1",A3,N);label("1",A1,SW);label("1",A2,SE);draw(A1--A2--A3--cycle);pair D3=A1+(A2-A1)/3;pair D2=A2-(A2-A1)/3;pair E2=A2+(A3-A2)/3;pair E3=A3-(A3-A2)/3;pair F3=A3-(A3-A1)/3;pair F2=A1+(A3-A1)/3;pair A4 = (6.36, -2.68);pair A8 = A4 + (0.41, 0);pair A7 = A8 + rotate(72)*(A8-A4);pair A6 = A7 + rotate(72)*(A7-A8);pair A5 = A6 + rotate(72)*(A6-A7);label("3",D3,S);label("2",D2,S);label("4",A4,SW);label("8",A8,SE);label("7",A7,S);label("6",A6,NW);label("5",A5,SW);label("3",F3,W);label("2",F2,W);label("3",E3,E);label("2",E2,E);draw(A4--A8--A7--A6--A5--cycle);draw(A5--F2--A4--A6--A8);draw(F3--A5--A3--A6);draw(A1--A4--D3--A8--D2);draw(A8--A2--A7--E2);draw(A7--E3--A6);
+{% endasy %}<br>
+We check that the 2-simplices {1,2,4},{1,2,7},{1,2,8},{1,3,4},{1,3,5},{1,3,6},{1,5,6},{1,7,8},{2,3,5},{2,3,7},{2,3,8},{2,4,5},{3,4,8},{3,6,7},{4,5,6},{4,6,8},{6,7,8} are distinct.<br>The following two are not triangulation
+{% asy %}size(5cm);
+pair A,B,C,D,E,F,G;A = (0,0);B = (1,0);C = (0.5,sqrt(3)/2);draw(A--B--C--cycle);D = (A+B)/2;E = (B+C)/2;F = (C+A)/2;G = (A+B+C)/3;label("1",A,SW);label("1",B,SE);label("1",C,N);label("2",D,S);label("2",D,S);label("2",E,E);label("2",F,W);label("3",G,dir(60));draw(C--D);draw(A--E);draw(B--F);dot(A);dot(B);dot(C);dot(D);dot(E);dot(F);dot(G);
+{% endasy %}
+{% asy %}size(7cm);
+pair A,B,C,D,E,F,G,a,b,c,ad,bd,be,ce,cf,af,d,e,f,AD,BD,BE,CE,CF,AF;A = (0,0);B = (1,0);C = (0.5,sqrt(3)/2);draw(A--B--C--cycle);D = (A+B)/2;E = (B+C)/2;F = (C+A)/2;G = (A+B+C)/3;a=(A+G)/2;b=(B+G)/2;c=(C+G)/2;ad=(A+D)/2;bd=(B+D)/2;be=(B+E)/2;ce=(C+E)/2;cf=(C+F)/2;af=(A+F)/2;d=(D+G)/2;e=(E+G)/2;f=(F+G)/2;AD=(2ad+G)/3;BD=(2bd+G)/3;BE=(2be+G)/3;CE=(2ce+G)/3;CF=(2cf+G)/3;AF=(2af+G)/3;label("1",A,SW);label("1",B,SE);label("1",C,N);label("2",D,S);label("2",D,S);label("2",E,E);label("2",F,W);label("3",G,dir(60));label("6",a,W);label("6",b,W);label("6",c,W);label("4",ad,S);label("5",bd,S);label("5",be,E);label("4",ce,E);label("4",cf,W);label("5",af,W);label("7",d,E);label("7",e,E);label("7",f,E);label("8",AD,E);label("8",BD,W);label("8",BE,W);label("8",CE,E);label("8",CF,W);label("8",AF,E);draw(C--D);draw(A--E);draw(B--F);draw(a--D--b--E--c--F--cycle);draw(G--ad);draw(G--bd);draw(G--be);draw(G--ce);draw(G--cf);draw(G--af);draw(A--f--C--e--B--d--cycle);dot(A);dot(B);dot(C);dot(D);dot(E);dot(F);dot(G);dot(a);dot(b);dot(c);dot(d);dot(e);dot(f);dot(ad);dot(bd);dot(be);dot(ce);dot(cf);dot(af);dot(AD);dot(BD);dot(BE);dot(CE);dot(CF);dot(AF);
+{% endasy %}
+<div class="noprint">
+<a href="http://infoshako.sk.tsukuba.ac.jp/~hachi/math/library/dunce_hat_eng.html">単体的複体ライブラリー</a><br><a href="https://doc.sagemath.org/html/en/reference/topology/sage/topology/simplicial_complex_examples.html#sage.topology.simplicial_complex_examples.DunceHat">Minimal triangulation of the dunce hat</a><br>
+<a href="https://arxiv.org/ftp/arxiv/papers/0912/0912.3723.pdf">The dunce hat in a minimal non-extendably collapsible 3-ball</a><br><a href="https://math.stackexchange.com/questions/675145/">Simplicial Complexes, Triangulation general question.</a><br><a href="https://core.ac.uk/download/pdf/81112833.pdf">On the dunce hat</a> Zeeman<br>
+<a href="https://www.researchgate.net/publication/282270744_Random_collapsibility_and_3-sphere_recognition/figures?lo=1">Random collapsibility and 3-sphere recognition</a> Figure 4.1: A classification of minimal triangulations of the Dunce hat.<br><img src="https://www.researchgate.net/profile/Jonathan-Spreer/publication/282270744/figure/fig1/AS:360981332021261@1463076064611/A-classification-of-minimal-triangulations-of-the-Dunce-hat_W640.jpg"/><br><a href="https://www.researchgate.net/publication/268524931_Recursive_Betti_numbers_of_Cohen-Macaulay_balanced_clutters_arising_from_posets/figures?lo=1"></a>Figure 3. Hachimori's example.
+{% asy %}size(5cm);
+pair A, B, C, AB3, AB2, AC, BC,D, E, F, G;A = (-1/4,0);B = (3/4,0);C = (1/4,sqrt(3)/2);D = (1/8,1/8);E = (1/8,3/8);F = (3/8,3/8);G = (3/8,1/8);AC=(A+C)/2;BC=(B+C)/2;AB3=A+(B-A)/3;AB2=B+(A-B)/3;draw(AC--E--A--D--AB3);draw(D--AB2--G--B--F--BC);draw(E--C--F);draw(A--B--C--cycle);draw(D--E--F--G--cycle);draw(E--G);label("1", A, SW);label("1", B, SE);label("3", C, N);label("3",AB3,S);label("2",AB2,S);label("2",AC,W);label("2",BC,-W);label("4", D, SW);label("5", E, dir(110));label("6", F, dir(70));label("7", G, SE);
+{% endasy %}<br><a href="http://ibykus.sdf.org/website/algtop/41072jun16.pdf">B6. Consider the triangulation K of the dunce hat given by the following picture</a><br><a href="https://math.stackexchange.com/questions/838919/">Triangulate the triangle with edges identified</a><br><a href="https://math.stackexchange.com/questions/3178262">Triangulation of a quotient space</a>
+</div><br>
+(2) We prove for any finite simplicial complex $K$, $|K|$ is locally connected[any point <i>x</i> ∈ |<i>K</i>| and any open set <i>U</i> containing <i>x</i>, there is a connected open set <i>V</i> such that <i>x</i> ∈ <i>V</i> ⊆ <i>U</i>].<br>Let $x∈{|K|}$ and suppose that $U$ is an open set containing $x$. Let $D$ be the disjoint union of simplices from which $|K|$ is obtained, and let $q:D→{|K|}$ be the quotient map.
+The restriction of $q$ to the insides of the simplices in $D$ is a bijection, so there is exactly one simplex $σ$ in $D$ such that $x∈q(\operatorname{inside}(σ))$.<br>
+$q^{-1}(x)∈q^{-1}(U)∩\operatorname{inside}(σ)$ is open in $σ⇒q(q^{-1}(U)∩\operatorname{inside}(σ))∋x$ is connected, open in $|K|$.<hr>
+We prove the comb space $X$ is not locally connected. (0,1) ∈ <i>X</i>. Suppose the open set $B((0,1),1)$ contains an open set $U$, let $p_xU$ be the <i>x</i>-projection of $U$. Let $n$ such that $\frac1n∈p_xU$, then $p_xU$ is disconnected by $\Set{x∈p_xU:x≤\frac1{n+1}}$ and $\Set{x∈p_xU:x≥\frac1n}$, so $U$ is disconnected.<br><b>Note.</b> $X$ is path connected but not locally connected. After $\{0\}×[0,1]$ removed, the space$$\{(x, y): 0≤y≤1, \text { and } x=1/n, \text { for some } n∈ℕ\}∪([0,1]×\{0\})$$is locally connected[as $p_xB\left((\frac1n,1),\frac1n-\frac1{n+1}\right)=\Set{\frac1n}$] and path connected.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/2241515">A finite simplicial complex is locally connected</a><br><a href="https://math.stackexchange.com/questions/3112710">Finite Simplicial Complexes: Show that open sets have open connected subsets containing any point</a><br><a href="https://math.stackexchange.com/questions/1018403">How to prove that a simplicial complex is path-connected if connected?</a>simplicial complex is locally homeomorphic to $ℝ^k×[0,∞)^{n-k}$</div>
+<div class="q">
+Let $K$ be a simplicial complex (that need not be finite). Prove that $|K|$ is Hausdorff.</div>
+The $N$-simplex spanned by $a_0,…,a_n$ is the set of all $x∈ℝ^N$ such that $x=\sum_{i=0}^n λ_ia_i$, where $\sum_{i=0}^n λ_i=1,λ_i≥0∀i$. The numbers $λ_i$ are uniquely determined by $x$.<br>Define a function $t_{a_i}:{|K|}→[0,1]$ by $t_{a_i}(x)=λ_i$ if $x∈τ$ and 0 if $x∉τ$. Then $t_{a_i}$ is continuous.<br>
+<b>$|K|$ is Hausdorff:</b>
+Let $x,y∈{|K|},x≠y$, so ∃ vertex $v:t_v(x)≠t_v(y)$. Take $r∈ℝ$ between $t_v(x),t_v(y)$. Then $t_v^{-1}[0,r),t_v^{-1}(r,1]$ are disjoint open neighborhood of $x,y$.<div class="noprint"><a href="https://math.stackexchange.com/questions/705473/">Show simplicial complex is Hausdorff</a></div>
+<h1>Surfaces</h1>
+<div class="q">Let $X_1, X_2$ be disjoint copies of $ℝ^2$. We define an equivalence relation ∼ on $Y=X_1⊔X_2$ by: $\left(x_1, y_1\right) \in X_1$ is equivalent to $\left(x_2, y_2\right) \in X_2$ if and only if $x_1=x_2, y_1=y_2$ and $\left(x_1, y_1\right),\left(x_2, y_2\right)$ are not equal to $(0,0)$. Show that every point in $Y/\mmlToken{mi}∼$ is contained in an open set homeomorphic to an open subset of ℝ<sup>2</sup> but $Y/\mmlToken{mi}∼$ is not a surface.</div>
+$ℝ^2∖\{0\}$ is not closed, by <a href="3.html">sheet3</a> Q5, $Y/\mmlToken{mi}∼$ is not Hausdorff.<hr>The map $f:X_1→X_2,f((x,y)_1)=(x,y)_2$ is a homeomorphism.<br>For any $x∈X_1$ [including $(0,0)_1$], let $U∋x$ open in $X_1$ [$U$ possibly contains $(0,0)_1$], then $U≅q(U)∋q(x)$ and $q^{-1}(q(U))=U∪f(U∖\{(0,0)_1\})$ is open in $Y$, so $q(U)$ is open in $Y/\mmlToken{mi}∼$.<br>Similarly, for any $x∈X_2$, $q(x)$ is contained in an open set $q(U)$ homeomorphic to $U$ an open set of $X_2$.
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/4117674">MSE</a>
+You may want to check <a href="https://ncatlab.org/nlab/show/line+with+two+origins">line with two origins</a> as this example. It is a nice example of a locally Euclidean space (every point admits a neighbourhood homeomorphic to the real line) that fails to be Hausdorff. Hence, when one defines a topological manifold, the requirement to be Hausdorff is not redundant.
+</div>
+<div class="q">
+Find an example of a connected, finite, simplicial complex $K$ that is <i>not</i> a closed combinatorial surface, but that satisfies the following three conditions:
+<ol>
+<li>It contains only 0-simplices, 1-simplices and 2-simplices.</li>
+<li>Every 1-simplex is a face of precisely two 2-simplices.</li>
+<li>Every point of $|K|$ lies in a 2-simplex.</li>
+</ol>
+</div>
+Take a triangulation of the sphere. Then glue two of the vertices together in such a way that the result is still a simplicial complex. This can't be done for the tetrahedron since every pair of vertices share an edge, but is possible for larger triangulations.<br>
+Any sufficiently small neighborhood can be disconnected by removing the point, whereas in a disk no point can be removed to make it disconnected. So the result is not a closed combinatorial surface.<br>It clearly satisfies (1)(3). Every 1-simplex is a 1-simplex of the original triangulation, so is a face of precisely two 2-simplices, so (2) is satisfied.<br>
+{% asy %}
+size(3cm);path g=(-2,0){dir(60)}..(0,0);g=g--yscale(-1)*reverse(g)--cycle;filldraw(circle((0,0),2)^^g,gray(.7));draw(yscale(.3)*arc((1,0),1,180,0),dashed);draw(yscale(-.3)*arc((1,0),1,0,180));dot((-2,0));
+{% endasy %}
+<div class="q">A <i>simple closed curve</i> $C$ in a space $X$ is the image of a continuous injection $S^1→X$. Find simple closed curves $C_1, C_2$ and $C_3$ in the Klein bottle $K$ such that
+<ol>
+<li>$K∖C_1$ has one component, which is homeomorphic to an open annulus $S^1×(0,1)$.</li>
+<li>$K∖C_2$ has one component, which is homeomorphic to an open Möbius band.</li>
+<li>$K∖C_3$ has two components, each of which is homeomorphic to an open Möbius band.</li></ol></div>
+<ol type="a">
+<li>Let $C_1$ be the horizontal line $\{\{(y,0),(1-y,1)\}:y∈(0,1)\}$. Then $K∖C_1=${% asy margin-top:1ex;%}
+size(2cm);pair A = (0,0);pair B = (1,0);pair C = (1,1);pair D = (0,1);fill(box(A,C),lightgray);draw(A--B);draw(C--D);draw(C--B,red,MidArrow);draw(D--A,red,MidArrow);
+{% endasy %}</li>
+<li>Let $C_2$ be the vertical line $\{\{(0,y),(1,y)\}:y∈(0,1)\}$. Then $K∖C_2=${% asy margin-top:1ex%}
+size(2cm);pair A = (0,0);pair B = (1,0);pair C = (1,1);pair D = (0,1);fill(box(A,C),lightgray);draw(A--B,blue,MidArrow);draw(C--D,blue,MidArrow);draw(C--B);draw(D--A);
+{% endasy %}</li>
+<li>Let $C_3$ be the dashed line
+{% asy %}
+size(4cm);pair A = (0,0);pair B = (1,0);pair C = (1,1);pair D = (0,1);fill(box(A,C),lightgray);draw(A--B,blue,MidArrow);draw(C--D,blue,MidArrow);draw(C--B,red,MidArrow);draw(D--A,red,MidArrow);draw(B/2--D,dashed);draw(B/2+D--B,dashed);
+{% endasy %}<br>
+$K∖C_3=${% asy margin:1ex 0%}
+size(0,4cm);pair A = (0,0);pair B = (1/2,0);pair C = (1/2,1);pair D = (0,1);fill(A--B--D--cycle,lightgray);fill(shift(.2)*(C--2B--B--D--cycle),lightgray);fill(shift(.9,0)*(B--C--D--cycle),lightgray);draw(shift(.2)*(B--2B),blue,MidArrow);draw(shift(.2)*(C--2B));draw(shift(.2)*(D--B));draw(shift(.2)*(C--D),blue,MidArrow);draw(A--B,blue,MidArrow);draw(shift(.9,0)*(C--D),blue,MidArrow);draw(shift(.9,0)*(C--B),red,MidArrow);draw(D--A,red,MidArrow);draw(B--D);draw(shift(.9,0)*(B--D));
+{% endasy %}
+<span style="position: relative;
+margin-right:-30px">We have to glue the red arrows</span>
+{% asy %}
+size(0,4cm);pair A = (0,0);pair B = (1/2,0);pair C = (1/2,1);pair D = (0,1);fill(A--B--D--D-B--cycle,lightgray);fill(shift(.2)*(C--2B--B--D--cycle),lightgray);draw(shift(.2)*(B--2B),blue,MidArrow);draw(shift(.2)*(C--2B));draw(shift(.2)*(D--B));draw(shift(.2)*(C--D),blue,MidArrow);draw(A--B,blue,MidArrow);draw(shift(-.5,0)*(C--D),blue,MidArrow);draw(B--D);draw(shift(-.5)*(B--D));
+{% endasy %}
+</li>
+</ol>
+<div class="q">The following polygon with side identifications is homeomorphic to which surface?</div>
+[regular hexagon can tessellate $ℝ^2$ by translation in 2 directions, so this torus is a quotient of $ℝ^2$ by translation in 2 directions]<br>
+It's homeomorphic to a torus, we can see it directly<br><img  style="vertical-align: middle;" src="torus.svg"><br>
+Alternatively, label the edges by $x,y,z$, represent the surface by $yzx^{-1}y^{-1}z^{-1}x$ and use <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20%281%29.pdf#page=51&zoom=auto,-78,626">Lemma 5.23</a>
+\[y{\color{red}\underbrace{zx^{-1}}_\text{swap}}y^{-1}z^{-1}x=yx^{-1}zy^{-1}z^{-1}x=yx^{-1}zy^{-1}(x^{-1}z)^{-1}\text{ is a torus}\]
+<div class="q">Suppose that the sphere 𝕊<sup>2</sup> is given the structure of a closed combinatorial surface. Let $C$ be a subcomplex that is a simplicial circle. Suppose that $𝕊^2∖C$ has two components. Indeed, suppose that this is true for every simplicial circle in 𝕊<sup>2</sup>. Let $E$ be one of these components. [In fact, $𝕊^2∖C$ must have 2 components, but we will not attempt to prove this.]<br>
+Our aim is to show that $\bar{E}$ is homeomorphic to a disc. This is a version of the <i>Jordan curve theorem</i>.<br>
+We'll prove this by induction on the number of 2-simplices in $\bar{E}$. Our actual inductive hypothesis is: <i>There is a homeomorphism from $\bar{E}$ to $𝔻^2$, which takes $C$ to the boundary circle $∂𝔻^2$.</i>
+<ol>
+<li>Let $σ_1$ be a 1-simplex in $C$. Since 𝕊<sup>2</sup> is a closed combinatorial surface, $σ_1$ is adjacent to two 2-simplices. Show that precisely one of these 2-simplices lies in $\bar{E}$. Call this 2-simplex $σ_2$.</li>
+<li>Start the induction by showing that if $\bar{E}$ contains at most one 2-simplex, then $\bar{E}=σ_2$.</li>
+<li>Let $v$ be the vertex of $σ_2$ not lying in $σ_1$. Let's suppose that $v$ does not lie in $C$. Show how to construct a subcomplex $C'$ of 𝕊<sup>2</sup>, that is a simplicial circle, and that has the following properties:
+<ul style="list-style-type:disc"><li>$𝕊^2∖C'$ has two components;</li>
+<li>one of these components $F$ is a subset of $E$;</li>
+<li>$\bar{F}$ contains fewer 2-simplices than $\bar{E}$.</li></ol></li>
+Show in this case that there is a homeomorphism from $\bar{E}$ to $𝔻^2$, which takes $C$ to the boundary circle $∂𝔻^2$.
+<li>Suppose now that $v$ lies in $C$. How do we complete the proof in this case?</li>
+[The actual Jordan curve theorem is rather stronger than this. It deals with simple closed curves $C$ in 𝕊<sup>2</sup>, which need to be simplicial. It states that $𝕊^2∖C$ has two components, and that, for each component $E$ of $𝕊^2∖C$, the closure of $E$ is homeomorphic to $𝔻^2$, with the homeomorphism taking $C$ to $∂𝔻^2$.]
+</ol>
+</div>
+We assumed $𝕊^2∖C$ have two components so it is a disjoint union $𝕊^2∖C=E⊔E'$ where $E,E'$ are connected.
+<ol>
+<li>Since the interior of every 2-simplex $σ_2$ is connected, either $\mathring{σ_2}⊂E$ or $\mathring{σ_2}⊂E'$. If $\mathring{σ_2}⊂E$ then $σ_2⊂\bar E$ [since $σ_2$ is closed].</li>
+<li>$σ_2$ is the only 2-simplex in $\bar{E}$. If $\bar E$ contain other vertices, then it lies in $C$ (otherwise $\bar E$ would have other 2-simplices) so $σ_2=\bar{E}$.</li>
+<li>Let $v_1,v_2$ be vertices of $σ_1$. Replacing $σ_1$ with two 1-simplices $v_1,v$ and $v,v_2$,  we get a simplicial circle $C'$, and $\bar{F}$ contains fewer 2-simplices (all 2-simplices of $\bar E$ except $σ_2$), apply induction hypothesis to $\bar F$: There is a homeomorphism from $\bar{F}$ to $𝔻^2$, which takes $C'$ to the boundary circle $∂𝔻^2$.<hr>$\bar E=\bar F∪σ_2$.
+Since gluing two disks along an edge gives a disk, $\bar E$ is homeomorphic to $𝔻^2$.</li>
+<li>WLOG one of edges $(v,v_1)$ of $σ_2$ is not on $C$ (if both lie on $C$ ⇒ part 2)<br>
+Since $C$ is a simplicial
+circle, we can list its 1-simplices in order $σ^1_1,…,σ^m_1$ where $σ_1=\{v_1,v_2\}$ and $∃i$ such that $σ^i_1$ ends at $v$. We get two simplicial circles $C_1=\{v,v_1\}∪σ^1_1∪⋯∪σ^i_1$ and $C_2=σ^{i+1}_1∪⋯∪σ^m_1∪\{v_1,v\}$. They have the following properties:
+<ul style="list-style-type:disc">
+<li>$𝕊^2∖C_k$ has two components $F_k$</li>
+<li>one of $F_k$ is a subset of $E$</li>
+<li>$\bar{F}_k$ has fewer 2-simplices than $\bar{E}$</li>
+</ol>
+By induction hypothesis, $\bar{F}_k\,(k=1,2)$ are homeomorphic to $𝔻^2$ and we have $\bar{F}_1∪\bar{F}_2=\bar{E}$.<br>$\bar{F}_1∩\bar{F}_2=\{v,v_1\}$, so $\bar{F}_1∪\bar{F}_2≅𝔻^2$, since gluing two disks along an edge is homeomorphic to a disk.<br>
+{% asy %}
+size(7cm);
+path v = polygon(7);
+pair v1=point(v,6),v2=point(v,7),v5=point(v,2);
+label("$v_1$",v1,v1);
+label("$v_2$",v2,v2);
+label("$v$",v5,v5);
+for (int i = -1; i&lt;6; ++i) {
+    draw(point(v,i)--point(v,i+1),Arrow);
+    pair mid=(point(v,i)+point(v,i+1))/2;
+    label("$\sigma_1^"+string(i+2)+"$",mid,mid);
+}
+draw(v1--v5);
+draw(v5--v2);
+{% endasy %}</li>
+</ol>
+<div class="noprint"><a href="https://math.stackexchange.com/questions/1221495">An exercise on components of 𝕊<sup>2</sup> as a closed combinatorial surface.</a><br><a href="https://math.stackexchange.com/questions/3173783">Components of 𝕊<sup>2</sup> as a closed combinatorial surface.</a><br>
+<a href="https://math.stackexchange.com/questions/3174964">Proving a weaker version of the Jordan Curve Theorem (by induction)</a></div>
