@@ -1,0 +1,176 @@
+---
+mathjax: true
+tag: Rings and Modules
+excerpt: A3 paper 2020
+---
+<ol>
+<li>Suppose that $R$ is a commutative unital ring.
+<ol type="a"><li>Show that the following are equivalent:
+<ol type="i"><li>$R$ is an integral domain;
+</li>
+<li>$R[X]$ is an integral domain;
+</li>
+<li>if $p, q ∈ R[X]^*$ then $p q ∈ R[X]^*$ and $\deg p q=\deg p+\deg q$.
+</li></ol>
+</li>
+<li>Let $R$ be an integral domain which contains a field $K$ such that $R$ is a finite dimensional vector space over $K$. Prove that $R$ itself is a field.
+</li>
+<li>Show that the finite dimension requirement in part (b) cannot be dropped.
+</li>
+<li>State and prove the Tower Law.
+</li>
+<li>Give an example of a field extension of $ℂ$ that is not equal to $ℂ$.
+</li>
+<li>Show that your example is not an extension of finite degree.</li></ol>
+</li>
+<li>
+<ol type="a"><li>Define what it means for a ring to be a Euclidean domain.
+</li>
+<li>Show that if $𝔽$ is a field then $𝔽[X]$ is a Euclidean domain.
+</li>
+<li>Show that $𝔽[X, Y]$ is not a Euclidean domain.
+</li>
+<li>Show that if $R$ is an infinite PID with finitely many units then it has infinitely many maximal ideals.
+[You may assume that every proper ideal is contained in a maximal ideal.]
+</li>
+<li>The set $R:=\{q / r: q, r ∈ ℤ\text{ and $r$ is odd}\}$ is an infinite subring of $ℚ$. Show, with proof, that it is a PID with only one maximal ideal, namely $⟨2⟩$.</li></ol>
+</li>
+<li>Suppose that $R$ is a unital ring which need not be commutative.
+<ol type="a"><li>Explain how the quotient of $R$ by a left ideal has the structure of a left $R$-module, and how the direct sum of two left $R$-modules has the structure of a left $R$-module.
+</li>
+<li>Suppose that $J_1$ and $J_2$ are left ideals of $R$ with $J_1+J_2=R$. Show that the map
+$$
+R →\left(R / J_1\right) ⊕\left(R / J_2\right) ;   r ↦\left(r+J_1, r+J_2\right)
+$$
+is a surjective left $R$-module homomorphism.
+For the remainder of the question let $𝔽$ be a field, $V$ a vector space over $𝔽$, and $R=\operatorname{End}_𝔽(V)$.
+</li>
+<li>Explain briefly how and why $R$ is a unital ring.</li><li>Suppose that $V$ is 2-dimensional. Show that there are vectors $e_1, e_2$, $e_3$ such that any two of these is a basis for $V$.<br>
+For the remainder of the question assume that $e_1, e_2$, and $e_3$ are three vectors such that any two are a basis for $V$, but they are not necessarily those found in part (d).
+</li>
+<li>Show that $J_i:=\left\{A ∈ R: A e_i=0\right\}$ is a left ideal in $R$ and also a 2-dimensional $𝔽$-vector space for each $1 ⩽ i ⩽ 3$.
+</li>
+<li>Show that $J_i+J_j=R$ for all $1 ⩽ i&lt;j ⩽ 3$.
+</li>
+<li>Show that the map
+$$
+R →\left(R / J_1\right) ⊕\left(R / J_2\right) ⊕\left(R / J_3\right) ;   r ↦\left(r+J_1, r+J_2, r+J_3\right)
+$$
+is not surjective.</li></ol>
+</li></ol>
+<h1>Solution</h1>
+<ol><li>
+<ol type="a"><li>
+(iii) implies (ii), since (ii) is just (iii) with the second part forgotten.
+<br>
+(ii) implies (i), since if $a, b ∈ R^*$ then $a, b ∈ R[X]^*$ and hence $a b ∈ R[X]^*$ so $a b ∈ R^*$.
+Finally, to see (i) implies (iii) suppose that $p, q ∈ R[X]^*$ so we can write
+$$
+p(X)=a_n X^n+⋯+a_0 \text { and } q(X)=b_m X^m+⋯+b_0
+$$
+where $a_n, …, a_0, b_m, …, b_0 ∈ R, a_n, b_m ∈ R^*$ and $n=\deg p$ and $m=\deg q$. Then
+$$
+(p q)(X)=p(X) q(X)=\sum_{r=0}^{n+m} \sum_{\substack{i+j=r \\ i ⩽ n \\ j ⩽ m}} a_i b_j X^{i+j} .
+$$
+Thus the coefficient of $X^{n+m}$ is $a_n b_m$ which is non-zero since $R$ is an integral domain. We conclude that $p q ∈ R[X]^*$ and $\deg p q=n+m=\deg p+\deg q$.
+</li>
+<li>[Exercise sheets]
+The map $x ↦ a x$ is linear and if $a ∈ R^*$ then $x ↦ a x$ it is injective since $R$ is an integral domain.
+Since $R$ is finite dimensional, the Rank-Nullity theorem tells us it is surjective, and so there is some $x ∈ R$ such that $a x=1$.
+Since $R$ is commutative it follows that $R$ is a field.
+</li>
+<li>$𝔽[X]$ is an integral domain since $𝔽$ is an integral domain, but $𝔽[X]$ is not a field since $X$ is non-zero and does not have an inverse.
+</li>
+<li>[Tower Law] Suppose that $𝕃$ is a field extension of $𝕂$ and $𝕂$ is a field extension of $𝔽$. Then $|𝕃: 𝔽|=|𝕃: 𝕂||𝕂: 𝔽|$.<br>
+Let $e_1, … e_n$ be a basis for $𝕂$ as a vector space over $𝔽$ and $f_1, …, f_m$ be a basis for $𝕃$ as a vector space over $𝕂$. We shall show that $\left(e_i f_j: 1 ⩽ i ⩽ n, 1 ⩽ j ⩽ m\right)$ is a basis for $𝕃$ as a vector space over $𝔽$. There are two things to check:<br>
+<b>Independence.</b> Suppose that $\sum_{i, j} λ_{i, j} e_i f_j=0$ for some $λ_{i, j} ∈ 𝔽$. Then
+$$
+\sum_{j=1}^m\left(\sum_{i=1}^n λ_{i, j} e_i\right) f_j=0
+$$
+but each coefficient of $f_j$ is an element of $𝕂$, and so by linear independence of $\left(f_1, …, f_m\right)$ we see that $\sum_{i=1}^n λ_{i, j} e_i=0$ for all $1 ⩽ j ⩽ m$. But then by linear independence of $\left(e_1, …, e_n\right)$ we see that $λ_{i, j}=0$ for all $1 ⩽ i ⩽ n$ and $1 ⩽ j ⩽ m$.<br>
+<b>Spanning.</b> If $x ∈ 𝕃$ then since $\left(f_1, …, f_m\right)$ is a basis for $𝕃$ over $𝕂$ we have elements $μ_1, …, μ_m ∈ 𝕂$ such that $x=μ_1 f_1+⋯+μ_m f_m$. Since $\left(e_1, …, e_n\right)$ is a basis for $𝕂$ over $𝔽$, for each $1 ⩽ i ⩽ m$ we have $λ_{i, 1}, …, λ_{i, n}$ such that $μ_i=λ_{i, 1} e_1+⋯+λ_{i, n} e_n$ and hence
+$$
+x=\sum_{i=1}^m μ_i f_i=\sum_{i, j} λ_{i, j} e_i f_j
+$$
+as required.
+</li>
+<li>Consider $ℂ(t)$, the set $\left\{p(t) / q(t): p ∈ ℂ[X], q ∈ ℂ[X]^*\right\}$. This is a field under addition and multiplication defined by
+$$
+\frac{p(t)}{q(t)}+\frac{p'(t)}{q'(t)}:=\frac{p(t) q'(t)+q(t) p'(t)}{q(t) q'(t)} \text { and } \frac{p(t)}{q(t)} × \frac{p'(t)}{q'(t)}:=\frac{p(t) p'(t)}{q(t) q'(t)}
+$$
+</li>
+<li>The set $\{1 /(t-λ): λ ∈ ℂ\}$ is infinite and linearly independent in $ℂ(t)$ : suppose that $λ_1, …, λ_d$ are distinct and $α_1, …, α_d ∈ ℂ$ are such that
+$$
+α_1 \frac1{t-λ_1}+⋯+α_d \frac1{t-λ_d}=0
+$$
+Multiplying up we get
+$$
+p(t):=\sum_{i=1}^d α_i \prod_{j ≠ i}\left(t-λ_j\right)=0 .
+$$
+However $\prod_{j ≠ i}\left(λ_i-λ_j\right) ≠ 0$ since the $λ_i$ s are distinct and $0=p\left(λ_i\right)=α_i \prod_{j ≠ i}\left(λ_i-λ_j\right)$, so $α_i=0$ for all $1 ⩽ i ⩽ d$. The claim follows.</li></ol>
+</li>
+<li>
+<ol type="a"><li>A Euclidean function on $R$ is a function $f: R^* → ℕ_0$ such that $f(a)⩽f(b)$ whenever $a|b$ (both non-zero);<br>
+if $a, b ∈ R$ with $b ≠ 0$ then there are $q, r ∈ R$ such that $a=b q+r$ and either $r=0$ or $f(r)&lt;f(b)$. We say that $R$ is a Euclidean domain if $R$ supports at least one Euclidean function.
+</li>
+<li>Take $f(p)=\deg p$ for $p ∈ 𝔽[X]^*$. Suppose that $a, b ∈ 𝔽[X]$ and $b ≠ 0$. If $b ∣ a$ then we take $r=0$ and let $q$ be such that $a=b q$; we are done. If not then $P:=\{a+b q: q ∈ 𝔽[X]\}$ does not contain 0; take $r=a+b q$ such that the degree is minimal for polynomials in $P$.
+Suppose that $\deg r ⩾ \deg b$. Then write $λ$ for the lead coefficient of $r$ divided by the lead coefficient of $b$. Note that $r':=r-b λ X^{\deg r-\deg b}$ has $r' ∈ P$ and $\deg r'&lt;\deg r$, a contradiction. It follows that $\deg r&lt;\deg b$ as required.
+</li>
+<li>First we note that if $R$ is an ED then it is a PID.<blockquote>Let $f$ be a Euclidean function on $R$ and suppose that $I$ is an ideal of $R$. Let $x ∈ I$ be non-zero such that $f(x)$ is minimal over all non-zero elements of $I$. Suppose that $y ∈ I$. Either $x ∣ y$ or else $y=q x+r$ for some $q, r ∈ R$ with $f(r)&lt;f(x)$. However $r=y-q x ∈ I$ since $I$ is an ideal, contradicting minimality. It follows that $x ∣ y$ and hence $I=⟨x⟩$.</blockquote>Now, the ideal generated by $X$ and $Y$ is not principal and so $𝔽[X, Y]$ is not an ED.
+</li>
+<li>Consider <a href="https://en.wikipedia.org/wiki/Jacobson_radical">Jacobson radical</a> $I:=⋂_{M ∈ ℳ} M$, $ℳ$ is the set of maximal ideals.<br>$I$ is an ideal and since $R$ is not a field (seeing as it is infinite with finitely many units so there is a non-zero non-unit element), there is a non-zero maximal ideal and so $I ≠ R$.<br>
+Suppose that $x ∈ I$ is such that $1-x$ is not a unit. Then $⟨1-x⟩$ is a proper ideal and so $⟨1-x⟩ ⊂ M_i$ for some $M_i∈ℳ$ (using the hint). By design $x ∈ M_i$ and so $1=(1-x)+x ∈ M_i+M_i=M_i$ contradicting $M_i≠R$. We conclude that $1-x$ is a unit for all $x ∈ I$.<br>
+Since there are finitely many units we conclude that $I$ is finite. However, $R$ is infinite and an integral domain and so for $I$ to be finite we must have $I=\{0\}$. However, if $ℳ$ is finite then we can enumerate $ℳ$ as $M_1, …, M_k$. Each of these is ideals is non-zero and so we can take non-zero elements $x_i ∈ M_i$. But then $x_1 ⋯ x_k ∈ I$ is non-zero, a contradiction.<br>
+Alternative argument:<br>
+In a PID, $x$ is irreducible if and only if $⟨x⟩$ is maximal.<br>$⇒$ : suppose that $⟨x⟩ ⊂ I$ for some ideal $I$. Since $R$ is a PID, $I=⟨y⟩$ and so $x=a y$ for some $a ∈ R$, meaning that either $y$ is a unit and $I=R$ or $a$ is a unit meaning $⟨x⟩=⟨y⟩$<br>
+$⇐$ : if $⟨x⟩$ is maximal and $x=a y$ then $⟨x⟩ ⊂⟨y⟩$, so either $⟨y⟩=R$ and $y$ is a unit or $⟨y⟩=⟨x⟩$ and so there is $b$ such that $y=b x$ and hence $1=a b=b a$ and $a$ is a unit. We conclude that $x$ is irreducible.<br>
+In a PID every non-unit has an irreducible factor: suppose $x$ is not a unit. Then $⟨x⟩$ is proper and so contained in a maximal ideal, say $⟨y⟩$ by the hint. We conclude that $x=a y$ and $y$ is irreducible by the first part of the answer.<br>
+We conclude that if there are finitely many maximal ideals (and finitely many units) then there are finitely many irreducibles, say $q_1, …, q_k$.<br>
+For each $a ∈ R$ if the element $a q_1 ⋯ q_k+1$ is not a unit then it has an irreducible factor which must be one of $q_1, …, q_k$, a contradiction. Hence it is a unit, but the map $a ↦ a q_1 ⋯ q_k+1$ is injective since $R$ is a domain. $R$ is infinite giving a contradiction.
+</li>
+<li>The ideal $⟨2⟩$ is maximal since every element of $R \backslash⟨2⟩$ has the form $q / r$ where $q$ and $r$ are both odd, and such elements are units in $R$ and so cannot be added to $⟨2⟩$ without generating the whole of $R$.
+On the other hand, suppose that $I$ is an ideal in $R$, let $t ∈ ℕ_0$ be minimal such that $2^t q / r ∈ I$ for $q$ and $r$ both odd. Then $\left⟨2^t\right⟩ ⊂ I$ since $q / r$ is a unit. Moreover, if $x ∈ I$ then there is some $s ⩾ r$ such that $x=2^s q / r$ for $q$ and $r$ odd and hence $x ∈\left⟨2^t\right⟩$ and we have $I=\left⟨2^t\right⟩$, so $I$ is principal and contained in $⟨2⟩$ if it is proper. It follows that $R$ is a PID and the only maximal ideal is $⟨2⟩$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>The map $R → \operatorname{End}(R / J) ; r ↦(x J ↦ r x J)$ is a unital ring homomorphism giving the commutative group $R / J$ the structure of a left $R$-module. Given left $R$-modules $M$ and $N$ we have unital ring homomorphisms $ϕ: R → \operatorname{End}(M)$ and $ψ: R → \operatorname{End}(N)$. The map
+$$
+R → \operatorname{End}(M ⊕ N) ; r ↦((m, n) ↦(ϕ(r) m, ψ(r) n))
+$$
+is then a unital ring homomorphism giving the commutative group $M ⊕ N$ the structure of a left $R$-module.
+</li>
+<li>Call the map $π$. First, it is a homomorphism of commutative groups:
+$$
+\begin{aligned}
+π(r+s) &amp; =\left(r+s+J_1, r+s+J_2\right) \\
+&amp; =\left(\left(r+J_1\right)+\left(s+J_1\right),\left(r+J_2\right)+\left(s+J_2\right)\right) \\
+&amp; =\left(r+J_1, r+J_2\right)+\left(s+J_1, s+J_2\right)=π(r)+π(s)
+\end{aligned}
+$$
+for all $r, s ∈ R$. Moreover,
+$π(r s)=\left(r s+J_1, r s+J_2\right)=\left(r\left(s+J_1\right), r\left(s+J_2\right)\right)=r\left(s+J_1, s+J_2\right)=r π(s)$
+for all $r, s ∈ R$ and so $π$ is a left $R$-module homomorphism.
+To show that the map is surjective, suppose that $\left(x+J_1, y+J_2\right) ∈\left(R / J_1\right) ⊕$ $\left(R / J_2\right)$. By hypothesis $J_1+J_2=R$ and since $R$ is unital there are elements $α ∈ J_1$ and $β ∈ J_2$ such that $α+β=1$. Consider $z:=x β+y α$. We have
+$$
+z+J_1=x β+y α=x+(y-x) α+J_1,
+$$
+but $y-x ∈ R$ and $α ∈ J_1$ and so $(y-x) α ∈ J_1$ since $J_1$ is a left ideal. We conclude that $z+J_1=x+J_1$. Similarly $z+J_2=y+J_2$ and hence the map is surjective.
+</li>
+<li>Ring addition is pointwise; ring multiplication is composition of endomorphisms. The fact that $\operatorname{End}_𝔽(V)$ is a commutative group under this addition is inherited from the fact that $V$ is a commutative group; the fact that $\operatorname{End}_𝔽(V)$ is a semi-group under composition follows from the associativity of functional composition, and that the composition of two endomorphisms is again an endomorphism. The unit is the identity map, which is linear. Finally, distributivity follows from linearity of endomorphisms: if $S, T, U ∈ \operatorname{End}_𝔽(V)$ then for all $v ∈ V$ we have
+$$
+\begin{aligned}
+(S(T+U))(v) &amp; =S((T+U)(v)) \\
+&amp; =S(T(v)+U(v)) \\
+&amp; =S(T(v))+S(U(v))=(S T)(v)+(S U)(v) .
+\end{aligned}
+$$
+Hence $S(T+U)=S T+S U$ and similarly $(T+U) S=T S+U S$.
+</li>
+<li>Since $𝔽$ is a field $0 ≠ 1$ and so we can consider the vectors $e_1=(1,0), e_2=(0,1)$ and $e_3=(1,1)$ which have the required property. (And in fact this is the only choice if $𝔽=𝔽_2$.)
+</li>
+<li>First note that if $A e_i=0$ and $A' e_i=0$ then $\left(A+A'\right) e_i=0+0=0$ and so $A+A' ∈ J_i$ if $A, A' ∈ J_i$. Secondly, if $A e_i=0$ and $A' ∈ R$ then $A' A e_i=A' 0=0$ and so $A' A ∈ J_i$ and hence $J_i$ is a left ideal.
+Each $J_i$ is an $𝔽$-vector space via the map $𝔽 → \operatorname{End}\left(J_i\right) ; λ ↦(A ↦ λ A)$ which is a unital ring homomorphism. Let $e_i'$ be such that $\left\{e_i, e_i'\right\}$ is a basis for $V$. $J_i$ is 2-dimensional since $V$ is 2-dimensional and each element of $J_i$ is completely determined by what it does to $e_i'$.
+</li>
+<li>Any pair $\left\{e_i, e_j\right\}$ with $i&lt;j$ is a basis for $V$ and so $A ∈ J_i ∩ J_j$ implies that $A x=$ 0 for all $x ∈ V$ whence $A ≡ 0$. As $𝔽$-vector spaces the $J_i$ s are 2-dimensional We conclude that $\dim J_i+J_j=\dim J_i+\dim J_j-\dim J_i ∩ J_j=2+2-0=4$. Since $R$ is a 4-dimensional $𝔽$-vector space and $J_i+J_j ⊂ R$ we conclude that $J_i+J_j=R$.
+</li>
+<li>The map is certainly $𝔽$-linear and the left hand side is a 4-dimensional vector space, while the right hand side is a 6-dimensional vector space over $𝔽$ so it cannot be surjective.</li></ol>
+</li></ol>
