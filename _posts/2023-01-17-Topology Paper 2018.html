@@ -1,0 +1,113 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, Paper 2018
+---
+<ol><li>
+<ol type="a"><li>What does it mean to say that a topological space is <i>connected</i>?
+Show that if the subsets $B, A_i ⊆ X, i ∈ I$ of a topological space $X$ are connected and $A_i ∩ B ≠ ∅$ for every $i ∈ I$ then
+$$
+\bigcup_{i ∈ I} A_i ∪ B
+$$
+is connected.<br>
+Let $X$ and $Y$ be non-empty topological spaces.<br>
+How is the <i>product topology</i> on $X × Y$ defined?<br>
+Show that $X × Y$ is connected if and only if $X$ and $Y$ are connected.
+</li>
+<li>Let $X$ be a topological space which has the property that $X∖\{p\}$ is connected and not a single point for every $p ∈ X$. Let $D$ be the subset of $X × X$ defined by:
+$$
+D=\{(x, x): x ∈ X\}
+$$
+<ol type="i"><li>Show that if $p ≠ q$ then the set
+$$
+C=((X∖\{p\}) ×\{p\}) ∪(\{q\} ×(X∖\{q\}))
+$$
+is connected.
+</li>
+<li>Show that $(X × X)∖D$ is connected.</li></ol>
+</li>
+<li>Is $ℝ$ (with the standard topology) homeomorphic to a product $X × Y$, where $X, Y$ are non-empty topological spaces containing more than one point? Justify your answer.</li></ol>
+</li>
+<li>
+<ol type="a"><li>What does it mean to say that a topological space $X$ is <i>compact</i>? What does it mean to say that it is <i>sequentially compact</i>? Show that a compact metric space is sequentially compact.<br>
+Let $ℝ$ be the set of real numbers equipped with the standard topology and let $ℚ$ be the subset of rational numbers equipped with the subspace topology.<br>
+Show that if $K$ is a compact subset of $ℚ$ then $K$ does not contain any non-empty open set of $ℚ$.<br>
+[<i>You may assume that every interval of $ℝ$ contains both rational and irrational numbers</i>]
+</li>
+<li>Let $(X, 𝒯)$ be a topological space. We define the <i>one point compactification</i> $\widehat{X}$ of $X$ as follows:<br>
+Let $\widehat{X}=X ∪\{∞\}$ where $∞$ is not an element of $X$. Let $𝒯'$ denote the union of $𝒯$ with all subsets of $\widehat{X}$ of the form $V ∪\{∞\}$ where $V ⊆ X$ and $X∖V$ is compact and closed in $X$. Prove that $\left(\widehat{X}, 𝒯'\right)$ is a compact topological space containing $(X, 𝒯)$ as a subspace.<br>[<i>You may assume that $𝒯'$ is a topology for $\widehat{X}$</i>]
+</li>
+<li>Is $\widehat{ℝ}$ sequentially compact? Is $\widehat{ℚ}$ Hausdorff? Is $\widehat{ℚ}$ sequentially compact? In each case justify your answer.</li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>A topological space $X$ is disconnected if there are disjoint open nonempty subsets $U$ and $V$ such that $U ∪ V=X$. If $X$ is not disconnected, it is called connected.<br>
+Let $X_j, j ∈ J$ be a collection of connected sets such that
+$$
+\bigcap_{j ∈ J} X_j ≠ ∅
+$$
+We claim that
+$$
+\bigcup_{j ∈ J} X_j
+$$
+is connected.<br>
+We argue by contradiction. Let $U, V$ be open subsets of $X$ such that
+$$
+\left(\bigcup_{j ∈ J} X_j\right) ⊆ U ∪ V
+$$
+and
+$$
+\left(\bigcup_{j ∈ J} X_j\right) ∩ U ≠ ∅,\left(\bigcup_{j ∈ J} X_j\right) ∩ V ≠ ∅,\left(\bigcup_{j ∈ J} X_j\right) ∩ U ∩ V=∅
+$$
+Let $x ∈ \bigcap_{j ∈ J} X_j$. Then $x ∈ U$ or $x ∈ V$. Say $x ∈ U$. Since $X_j$ is connected $X_j ⊂ U$ for all $j$. It follows that $\left(\bigcup_{j ∈ J} X_j\right) ∩ V=∅$, a contradiction.<br>
+It follows by this claim that $A_i ∪ B$ is connected and by applying the claim again to $X_i=A_i ∪ B$ we deduce that
+$$
+\bigcup_{i ∈ I} A_i ∪ B
+$$
+is connected.<br>
+A basis for the topology of $X × Y$ is given by $ℬ=\left\{U × V: U ∈ 𝒯_X, V ∈𝒯_Y\right\}$<br>
+Suppose that $X, Y$ are connected. Then if $x ∈ X,\{x\} × Y$ is connected by the definition of the product topology and $X ×\{y\} ∩\{x\} × Y=\{(x, y)\}$. Since
+$$
+X × Y=\bigcup_{y ∈ Y}(X ×\{y\}) ∪(\{x\} × Y)
+$$
+it follows by the first part of the problem that $X × Y$ is connected.<br>
+Conversely if, say, $X=U ∪ V$ with $U, V$ open, non-empty and disjoint, then $X × Y=(U × Y) ∪(V × Y)$ with $U × Y, V × Y$ open, disjoint, so $X × Y$ is disconnected.
+</li>
+<li>
+<ol type="i"><li>We note that $(X∖\{p\}) ×\{p\}$ is homeomorphic to $(X∖\{p\})$ so it is connected and the same applies to $\{q\} ×(X∖\{q\})$. Since $((X∖\{p\}) ×\{p\}) ∩(\{q\} ×(X∖\{q\}))=\{(p, q)\}$ by applying part a we see that $C$ is connected.
+</li>
+<li>For $p ∈ X$ consider $B_p=(X∖\{p\}) ×\{p\}$. Similarly for any $q ≠ p ∈ X$ let $A_q=\{q\} ×(X∖\{q\})$. By part a and b.i for a fixed $p$ we have that
+$$
+B=\bigcup_{q ∈ X, q ≠ p} A_q ∪ B_p
+$$
+is connected. Note that for any $s ∈ X$, $B_s ∩ B ≠ ∅$ so $B_s ∪ B$ is connected. However
+$$
+X × X∖D=\bigcup_{s ∈ X} B_s ∪ B
+$$
+so by part a $X × X∖D$ is connected.</li></ol>
+</li>
+<li>Since $ℝ$ is connected if it is homeomorphic to product $X × Y$ then $X, Y$ are connected, by part a. Let $a ∈ X, b ∈ Y$. Consider $X × Y∖\{(a, b)\}$. We fix $x_0 ∈ X, y_0 ∈ Y$ with $x_0 ≠ a, y_0 ≠ b$. Then for any $x ∈ X, x ≠ a,\{x\} × Y$ is a connected subset of $X × Y∖\{(a, b)\}$ which intersects non-trivially $X ×\left\{y_0\right\}$. So the set
+$$
+Z_1=\left(\bigcup_{x ∈ X∖\{a\}}\{x\} × Y\right) ∪ X ×\left\{y_0\right\}
+$$
+is connected by part a. Similarly
+$$
+Z_2=\left(\bigcup_{y ∈ Y∖\{b\}} X ×\{y\}\right) ∪\left\{x_0\right\} × Y
+$$
+is connected, $Z_1 ∩ Z_2 ≠ ∅$ and $Z_1 ∪ Z_2=X × Y∖\{(a, b)\}$. If $X × Y$ is homeomorphic to $ℝ$ then $X × Y∖\{(a, b)\}$ is homeomorphic to $ℝ∖\{c\}$ for some $c ∈ ℝ$. However $ℝ∖\{c\}$ is disconnected for any $c$. So $ℝ$ is not homomorphic to $X × Y$.</li></ol>
+</li>
+<li>
+<ol type="a"><li>A family $𝒰=\left\{U_i: i ∈ I\right\}$ of subsets of a space $X$ is called a cover if $X=\bigcup_{i ∈ I} U_i$. If each $U_i$ is open in $X$ then $𝒰$ is called an open cover for $X$. A subcover of a cover $\left\{U_i: i ∈ I\right\}$ for a space $X$ is a subfamily $\left\{U_j: j ∈ J\right\}$ for some subset $J ⊂ I$ such that $\left\{U_j: j ∈ J\right\}$ is still a cover for $X$. We call it a finite subcover if $J$ is finite. A topological space $X$ is compact if any open cover of $X$ has a finite subcover.<br>
+$X$ is sequentially compact if any sequence in $X$ has a convergent subsequence.<br>
+Assume now that $X$ is a compact metric space and let $\left(x_n\right)$ be a sequence in $X$. If $\left\{x_n: n ∈ ℕ\right\}$ is finite then clearly $\left(x_n\right)$ has a constant (hence convergent) subsequence. Assume that for some $a ∈ X$, $B(a, 1 / k) ∩\{x_n: n ∈ℕ\}$ is infinite for every $k ∈ ℕ$. Then we pick inductively $x_{n_k} ∈ B(a, 1 / k) ∩\left\{x_n: n ∈ ℕ\right\}$ so that $n_{k+1}&gt;n_k$. Clearly then $x_{n_k} → a$. Otherwise for any $a ∈ X$ there is some $k$ so that $B(a, 1 / k) ∩\left\{x_n: n ∈ ℕ\right\}$ is finite. Let $U_a=B(a, 1 / k)$. Then $X=\bigcup_{a ∈ X} U_a$ and clearly this open cover has no finite subcover, contradicting our hypothesis.<br>
+Let $K$ be a compact subset of $ℚ$. If $K$ contains an open set then it contains an open interval $(a, b)$ of $ℚ$. Let $\left(x_n\right)$ be a sequence in $(a, b)$ converging to an irrational $x ∈(a, b)$. Then $x ∉ K$, a contradiction as $K$ is sequentially compact.</li><li>Let $U_i, i ∈ I$ be an open cover of $\widehat{X}$. Then $∞ ∈ U_j$ for some $j ∈ I$ and $U_j=\{∞\}∪ V$ with $K=X∖V$ compact and closed. Since $U_i ∩ X, i ∈ I$ is an open cover of $K$ and $K$ is compact there are $i_1, …, i_n$ such that $K ⊆ U_{i_1} ∪ … ∪ U_{i_n}$. It follows that
+$$
+\widehat{X}=U_{i_1} ∪ … ∪ U_{i_n} ∪ U_j
+$$
+hence $\widehat{X}$ is compact.<br>
+Clearly if $U ∈ 𝒯'$ then $U ∩ X ∈ 𝒯$ and any $U ∈ 𝒯$ lies in $𝒯'$. So $(X, 𝒯)$ is a subspace of $\widehat{X}$. (exercise 1 PS4)
+</li>
+<li>If $\left(x_n\right)$ is a bounded sequence in $ℝ$ then it has a subsequence converging to a point in $ℝ$ so it converges in $\widehat{ℝ}$. If $x_n$ is not bounded let $x_{n_k}$ be a subsequence with $x_{n_k} ∉[-k, k]$. We claim that $x_{n_k} → ∞$. Indeed if $U$ is an open set containing $∞$ then $X∖(X ∩ U)$ is compact hence it is contained in an interval $[-m, m], m ∈ ℕ$. It follows that $x_{n_k} ∈ U$ for all $k&gt;m$. Therefore $\widehat{ℝ}$ is sequentially compact.<br>
+Alternatively one could show that $\widehat{ℝ}$ is homeomorphic to $S^1$ and use the previous part.<br>
+Let $b ∈ ℚ$. If $U$ is an open set in $ℚ$ containing $∞$ then its complement is compact so by part a $U$ intersects every open set containing $b$. So $\widehat{ℚ}$ is not Hausdorff.<br>
+A closed compact subset $A$ of $ℚ$ is bounded and contains its limit points. If $\left(x_n\right)$ has a subsequence converging to a point of $ℚ$ then this subsequence converges in $\widehat{ℚ}$ as well. Otherwise it has a subsequence $x_{n_k}$ that converges to $± ∞$ or to a point in $ℝ∖ℚ$. We claim that this subsequence converges to $∞$ in $\widehat{ℚ}$. Indeed let $U$ be an open set containing $∞$. Then its complement is a closed compact set $A$ in $ℚ$. If infinitely many terms of $x_{n_k}$ are contained in $A$ then $x_{n_k}$ converges to a point in $A$ so its limit lies in $ℚ$, a contradiction. Hence only finitely many terms of $x_{n_k}$ lie in $A$. Therefore there is an $N$ such that for all $k&gt;N, x_{n_k} ∈ U$ hence $x_{n_k}$ converges to $∞$.</li></ol>
+</li></ol>

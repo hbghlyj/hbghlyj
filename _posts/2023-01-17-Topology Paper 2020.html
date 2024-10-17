@@ -1,0 +1,231 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, Paper 2020
+---
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>Let $X$ and $Y$ be topological spaces. Provide two equivalent definitions for what it means for a function $f: X → Y$ to be continuous. You don't need to prove the equivalence between the two definitions.
+</li>
+<li>Provide two equivalent definitions for what it means for a subset $A ⊆ X$ of a topological space $X$ to be connected. You don't need to prove the equivalence between the two definitions.
+</li>
+<li>State what it means for a subset $A ⊆ X$ to be path-connected. Prove that every path-connected subspace is connected. [You may use without proof the fact that the interval $[0,1]$ is connected.]
+</li>
+<li>Prove that if $A ⊆ X$ is connected and $A ⊆ B ⊆ \bar{A}$, then $B$ is connected.</li></ol>
+</li>
+<li>Let
+$$
+X=\left\{\left(\frac{\cos (x)}{1-\frac{1}{x}}, \frac{\sin (x)}{1-\frac{1}{x}}\right) ∈ ℝ^2: x&gt;1\right\} ∪\left\{(x, y) ∈ ℝ^2: x^2+y^2=1\right\}
+$$
+viewed as a subspace of $ℝ^2$.
+<ol type="i"><li>Is $X$ connected? Justify your answer carefully. [You may use without proof the fact that intervals are connected.]
+</li>
+<li>Prove that $X$ is not path connected. Justify your answer carefully.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $X$ be a topological space, and let $∼$ be an equivalence relation on $X$. Denote by $X/\mmlToken{mi}∼$ the quotient set, and by
+\begin{aligned}
+π: X &amp; → X/\mmlToken{mi}∼ \\
+x &amp; ↦[x]
+\end{aligned}
+the quotient map.
+<ol type="i"><li>Define the quotient topology on $X/\mmlToken{mi}∼$. Show that it is indeed a topology.
+</li>
+<li>Prove that the quotient topology is the finest topology (the topology with the most open sets) on $X/\mmlToken{mi}∼$ for which $π$ is continuous.
+</li>
+<li>What is the coarsest topology (the topology with the smallest number of open sets) on $X/\mmlToken{mi}∼$ for which the map $π$ is continuous? Justify your answer.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Define what it means for a topological space to be compact. Make sure to explain all the terms that you use. Prove that a set $X$ equipped with the discrete topology is compact if and only if it is finite.
+</li>
+<li>Prove that if $X$ is compact, then so is $X/\mmlToken{mi}∼$. If you use the result according to which the image of a compact space under a continuous map is compact, then also prove that result.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Now let $X$ be the unit interval $[0,1]$ equipped with its usual topology, and let $∼$ be the equivalence relation defined by
+$$
+(x ∼ y) \stackrel{\text{def}}{⟺}(x=y  \text{ or }  (0&lt;x&lt;1\text{ and } x+y=1)) .
+$$
+Show that the quotient space $X/\mmlToken{mi}∼$ is not Hausdorff. Justify your answer carefully.
+</li>
+<li>Which topologies on the two point set can one realise as quotient topologies of $[0,1]$ with respect to some equivalence relation? Justify your answer.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>What is an <i>abstract simplicial complex</i> $K$ ?
+</li>
+<li>Provide an example of an abstract simplicial complex whose topological realisation is the two-dimensional torus $T^2$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>What is a <i>closed combinatorial surface</i>? Make sure to explain all the terms that you introduce.
+</li>
+<li>State the classification theorem for closed combinatorial surfaces. Once again, make sure to explain all the terms that you introduce.
+</li>
+<li>Let $P_1$ be a regular pentagon with edges $a, b, c, d, e$, listed in clockwise order, and oriented clockwise. Let $P_2$ be another pentagon with edges $α, β, γ, δ, ε$, again listed in clockwise order, and oriented clockwise:
+<center>{% asy %}size(100);
+string[] edgeLabels = {"a", "b", "c", "d", "e"};
+pair vertex=dir(-54);
+for (int i = 0; i < 5; ++i) {
+pair newvertex = dir(-72*i-126);
+draw(italic(edgeLabels[i]),vertex--newvertex,Relative(W),MidArrow);
+vertex=newvertex;
+}
+label("$P_1$", (0,0));{% endasy %} and {% asy %}size(100);
+string[] edgeLabels = {'alpha', 'beta', 'gamma', 'delta', 'epsilon'};
+pair vertex=dir(-54);
+for (int i = 0; i < 5; ++i) {
+pair newvertex = dir(-72*i-126);
+draw('$\\'+edgeLabels[i]+'$',vertex--newvertex,Relative(W),MidArrow);
+vertex=newvertex;
+}
+label("$P_2$", (0,0));{% endasy %}</center>
+Consider the surface $Σ$ obtained by taking the disjoint union of $P_1$ and $P_2$, and identifying $a$ to $α, b$ to $γ, c$ to $ε, d$ to $β$, and $e$ to $δ$. To which surface in the classification is $S$ homeomorphic? Justify your answer.
+</li>
+<li>Describe an explicit identification (homeomorphism) of the surface $Σ$ mentioned above with one of the surfaces listed in (b,ii).</li></ol>
+</li>
+<li>Show that there exists a continuous map
+$$
+T^2 → K B
+$$
+from the torus to the Klein Bottle, such that each point of the Klein Bottle admits exactly two preimages in $T^2$.</li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>
+<ol type="i"><li>The function $f: X → Y$ is continuous if for every open set $U ⊆ Y$, its preimage $f^{-1}(U)$ is open in $X$. Equivalently, if for every closed set $V ⊆ Y$, its preimage $f^{-1}(V)$ is closed in $X$.
+</li>
+<li>The subspace $A$ is connected if its only non-empty clopen subset (in the subspace topology) is $A$ itself. Equivalently, $A$ is connected if there do not exist surjective continuous maps $A →\{*, *\}_{\text{discrete }}$.
+</li>
+<li>The space $A$ is path connected if $∀ a, b ∈ A$ there exists a continuous map $[0,1] → A$ which maps 0 to $a$, and 1 to $b$.<br>
+If $A$ is not connected, then we may write it as a disjoint union of non-empty clopen subsets $A=V ⊔ W$. Pick $a ∈ V$ and $b ∈ W$, and a path $f:[0,1] → A$ which maps 0 to $a$, and 1 to $b$. The preimages $f^{-1}(V)$ and $f^{-1}(W)$ are clopen in $[0,1]$ and contain 0 and 1, respectively. This contradicts the connectedness of $[0,1]$.
+</li>
+<li>Assume that $A$ is connected and let $V ⊆ B$ be a non-empty clopen subset of $B$. We wish to show that $V=B$. Write $V$ as $V=U ∩ B$ for some $U ⊆ X$ open in $X$. Let $x ∈ V$ be point. Since $x ∈ \bar{A}$ and $U$ is open, the intersection $U ∩ A=V ∩ A$ is non-empty. Since $V$ is clopen in $B, V ∩ A$ is clopen in $A$, so we have $V ∩ A=A$ (by the connectedness assumption of $A$ ). In other words, $A ⊆ V$. Since $V$ is closed in $B$, we may write it as $V=B ∩ F$ for some $F ⊆ X$ closed in $X$. Since $A ⊆ F$ and $F$ is closed, we have $\bar{A} ⊆ F$. In particular $B ⊆ F$. So $V=B$.</li></ol>
+</li>
+<li><ol type="i"><li>Let $p:=(0,0) ∈ X$. The subspace $X':=\left\{\left(\frac{\cos (x)}{1-1 / x}, \frac{\sin (x)}{1-1 / x}\right)\right\}$ is homeomorphic to the half-open interval $[1, ∞)$, and thus connected. And the circle $X'':=\left\{(x, y): x^2+y^2=1\right\}$ is path-connected and hence connected. Therefore, any clopen subspace of $X$ must either contain $X'$ or be disjoint from $X'$, and the same for $X''$. The only subsets with that property are $∅, X, X'$, and $X''$. The latter two are not clopen: $X'$ is not closed, and $X''$ is not open. So the only clopen subset of of $X$ are $∅$ and $X$. In other words, $X$ is connected.<br>{% asy %}import graph;
+size(200);
+real r(real theta) {
+    return 1 - 1 / theta;
+}
+draw(unitcircle,red);
+draw(polargraph(r, 1, 25,join=operator..), red);
+xaxis(Ticks(" ", ticklabel=new string(real x) {return format("%.1f", x);}));
+yaxis("$r=1-\frac1\theta$");{% endasy %}
+</li>
+<li>If $X$ was path connected there would, in particular, exist a non-constant path $f:[0,1] → X$ with $f(0)=(0,0)$ and $f(1)=(1,0)$. Assume by contradiction that $f$ is such a path, and let $t=\sup \{x:{‖f(x)‖}&lt;1\}$. By continuity, we have ${‖f(t)‖}=1$ (If $t=1$ this is obvious; otherwise this follows by the following argument: ${‖f(t)‖}=\left\|f\left(\lim _{n → ∞} t+\frac{1}{n}\right)\right\|=\lim _{n → ∞}\left‖f\left(t+\frac{1}{n}\right)\right‖=\lim _{n → ∞} 1=1$, using that the norm function is continuous). In particular, $t&gt;0$ (because $f(0)=(0,0)$ and ${‖f(t)‖}=1$). Let $p:=f(t)$. Consider the open subset $U:=X∖\left\{-x p: x ∈ ℝ_{⩾ 0}\right\}$ of $X$, and note that it can be written as $U=\left(⋃_{n ∈ ℕ} U_n\right) ∪\left(X''∖\{-p\}\right)$, with $U_n=\left\{\left(\frac{\cos (x)}{1-1 / x}, \frac{\sin (x)}{1-1 / x}\right): x ∈\left(a_n, a_{n+1}\right)\right\} ⊂ X'$ for an appropriate sequence $\left\{a_n\right\}_{n ∈ ℕ}$. Each $U_n$ is clopen in $U$, as it can be written as both $U_n=U ∩\left\{\left(y \frac{\cos (x)}{1-1 / x}, y \frac{\sin (x)}{1-1 / x}\right): x ∈\left(a_n, a_{n+1}\right), y ∈(1-ϵ, 1+ϵ)\right\}$ for suitably small $ϵ&gt;0$, and $U_n=U ∩\left\{\left(\frac{\cos (x)}{1-1 / x}, \frac{\sin (x)}{1-1 / x}\right): x ∈\left[a_n, a_{n+1}\right]\right\}$. Since $U$ is open in $X$ and $f(t)=p ∈ U$, by continuity, $∃ ϵ&gt;0$ such that $f((t-ϵ, t]) ⊂ U$. Let $y ∈(t-ϵ, t]$ be such that ${‖f(y)‖}&lt;1$. Then $f(y)$ lies in one of the clopen subset $U_n$. Consider the preimage of $U_n$ under the map $f:(t-ϵ, t] → U$. It is clopen in $(t-ϵ, t]$ because $f$ is continuous. It is non-empty because $f(y) ∈ U_n$. It is not the whole of $(t-ϵ, t]$ because $f(t)=p$. This contradicts the connectedness of the interval $(t-ϵ, t]$. We have reached a contradiction. The points $(0,0)$ and $(1,0)$ cannot be connected by a continuous path, and $X$ is not path connected.
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li><ol type="i"><li>A subset $U ⊆ X/\mmlToken{mi}∼$ is open in the quotient topology if its preimage $π^{-1}(U)$ is open in $X$. We check that $∅$ and $X/\mmlToken{mi}∼$ are open in the quotient topology: indeed $π^{-1}(∅)=∅$ and $π^{-1}(X/\mmlToken{mi}∼)=X$ are open in $X$. We check that the intersection of two opens $U, V ⊆ X/\mmlToken{mi}∼$ is again open: indeed $π^{-1}(U ∩ V)=π^{-1}(U) ∩ π^{-1}(V)$ is open in $X$. We check that the union of a family of opens $U_i ⊆ X/\mmlToken{mi}∼$ is again open: indeed $π^{-1}\left(⋃ U_i\right)=⋃ π^{-1}\left(U_i\right)$ is open in $X$.
+</li>
+<li>Let $𝒯_\text{quot}$ be the quotient topology $X/\mmlToken{mi}∼$, and let $𝒯$ be a topology on $X/\mmlToken{mi}∼$ with respect to which the map $π$ is continuous. Then, for every open $U ⊂ X$, its preimage $π^{-1}(U)$ is open in $𝒯$. So the quotient topology is finer (or equal) than the topology $𝒯$. That is, $𝒯 ⊆ 𝒯_\text{quot}$. The quotient topology $𝒯_\text{quot}$ makes $π$ continuous. So $𝒯_\text{quot}$ is the finest topology which makes $π$ continuous.
+</li>
+<li>The coarsest topology on $X/\mmlToken{mi}∼$ is the indiscrete topology: the topology for which only the empty set and the whole set are open. Any map to a space equipped with the indiscrete topology is continuous, in particular $π: X →(X/\mmlToken{mi}∼)_{\text{indiscrete }}$ is continuous. Any other topology on $X/\mmlToken{mi}∼$ has more open sets (whether or not it makes $π$ continuous).</li></ol>
+</li>
+<li>
+<ol type="i"><li>A topological space $X$ is said to be compact if every open cover (collection of open subsets whose union is $X$) admits a finite subcover (sub-collection whose union is still $X$). If the space $X$ is finite, then any cover is finite as there are only finitely many subsets of $X$. So there is nothing to prove. If the space $X$ is infinite, then the collection of all singletons $\{x\}$ (indexed by the points of $X$) is an open cover which does not admit a finite subcover.
+</li>
+<li>Let $X$ be compact and let $\left\{U_i\right\}_{i ⊆ I}$ be an open cover of $X/\mmlToken{mi}∼$. Then $\left\{π^{-1}\left(U_i\right)\right\}_{i ∈ I}$ is an open cover of $X$. Since $X$ is compact, there exists a finite subcover $\left\{π^{-1}\left(U_i\right)\right\}_{i ⊂ I'}$ (for some finite subset $I' ⊆ I$ ). Then $\left\{U_i\right\}_{i ⊂ I'}$ is the desired subcover of $X/\mmlToken{mi}∼$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>The quotient is the interval $[0,1 / 2]$ with the points 0 "doubled". Let us call $0_1 ∈ X/\mmlToken{mi}∼$ the image of $0 ∈[0,1]$, and $0_2 ∈ X/\mmlToken{mi}∼$ the image of $1 ∈[0,1]$. If $U$ is a neighbourhood of $0_1$, then $π^{-1}(U)$ is a neighbourhood of 0 and thus contains an interval $\left[0, ϵ_1\right)$. So $U$ contains $\left(0, ϵ_1\right) ⊂ X/\mmlToken{mi}∼$. If $V$ is a neighbourhood of $0_2$, then $π^{-1}(V)$ is a neighbourhood of 1 and thus contains an interval $\left(1-ϵ_2, 1\right]$. So $V$ contains $\left(0, ϵ_2\right) ⊂ X/\mmlToken{mi}∼$. It follows that $U ∩ V$ contains $\left(0, \min \left\{ϵ_1, ϵ_2\right\}\right) ⊂ X/\mmlToken{mi}∼$, so $U ∩ V ≠ ∅$.
+</li>
+<li>There are exactly three topological spaces (up to homeomorphism) whose underlying set has two points: the set $\{0,1\}$ with the discrete topology; the set $\{0,1\}$ with the indiscrete topology; and the set $\{0,1\}$ with the Sierpinski topology. The first one is not connected and so cannot be the image of a connected space (such as $[0,1]$) under a continuous map. So $\{0,1\}$ with the discrete topology cannot the written as a quotient of $[0,1]$. The two other topologies can be obtained as quotients of $[0,1]$.<br>For the indiscrete topology, neither of $\{0\},\{1\}$ is open, one can pick e.g. the equivalence relation on $[0,1]$ whose two equivalence classes are $ℚ ∩[0,1]$ and $(ℝ∖ ℚ) ∩[0,1]$.<br>For the Sierpinski topology, only one of $\{0\},\{1\}$ is open, one can take e.g. the equivalence relation on $[0,1]$ whose two equivalence classes are $\{0\}$ and $(0,1]$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>An abstract simplicial complex is a set $K$ together with a collection of non-empty finite subsets $F ⊆ 𝒫(K)∖ ∅$ (called simplices of $K$) such that every singleton is in $F$, and $\left(f ∈ F\right.$ and $\left.f' ⊂ f\right) ⇒ f' ∈ F$.
+</li>
+<li>Consider the following triangulation of the torus:{% latex %}\usepackage{tikz}
+\usetikzlibrary{calc,decorations.markings}
+\begin{tikzpicture}[scale=3,>=stealth,inner sep=2pt,font=\it]
+    \node (a) at (0,0) {g};
+    \node (b) at (1,0) {};
+    \node (c) at (1,1) {};
+    \node (d) at (0,1) {};
+    \node (ab1) at ($(a)!1/3!(b)$){h};
+    \node (ab2) at ($(a)!2/3!(b)$){i};
+    \node (bc1) at ($(b)!1/3!(c)$){};
+    \node (bc2) at ($(b)!2/3!(c)$){};
+    \node (cd1) at ($(c)!1/3!(d)$){};
+    \node (cd2) at ($(c)!2/3!(d)$){};
+    \node (ad1) at ($(a)!1/3!(d)$){d};
+    \node (ad2) at ($(a)!2/3!(d)$){a};
+    \node(ad11bc1)at ($(ad1)!1/3!(bc1)$){e};
+    \node(ad12bc1)at ($(ad1)!2/3!(bc1)$){f};
+    \node(ad22bc2) at ($(ad2)!2/3!(bc2)$){c};
+    \node(ad21bc2) at ($(ad2)!1/3!(bc2)$){b};
+    %horizontal
+    \draw (bc1.center)--(ad12bc1)--(ad11bc1)--(ad1);
+    \draw (bc2.center)--(ad22bc2)--(ad21bc2)--(ad2);
+    %vertical
+    \draw (ab1) --(ad11bc1)--(ad21bc2)-- (cd2.center);
+    \draw (ab2) --(ad12bc1)--(ad22bc2)-- (cd1.center);
+    %diagonal
+    \draw (ad2) -- (cd2.center);
+    \draw (ad1) --(ad21bc2)-- (cd1.center);
+    \draw (a)   --(ad11bc1)--(ad22bc2)-- (c.center);
+    \draw (ab1) --(ad12bc1)-- (bc2.center);
+    \draw (ab2) -- (bc1.center);
+    \begin{scope}[decoration={
+        markings,
+        mark=at position 0.55 with {\arrow{>>}}}
+    ]
+        \draw (a)--(ab1)(ab2)--(b.center);
+        \draw[postaction={decorate}] (ab1)--(ab2);
+        \draw[postaction={decorate}] (d.center) -- (c.center);
+    \end{scope}
+
+    \begin{scope}[decoration={
+        markings,
+        mark=at position 0.55 with {\arrow{>}}}
+    ]
+        \draw[postaction={decorate}] (b.center) -- (c.center);
+        \draw(a)--(ad1)(ad2)-- (d.center);
+        \draw[postaction={decorate}] (ad1)--(ad2);
+    \end{scope}
+\end{tikzpicture}
+{% endlatex %}
+where the vertices of the triangulation are named $a, b, c, d, e, f, g, h, i$. The desired abstract simplicial complex has underlying set $K=\{a, b, c, d, e, f, g, h, i\}$ and set of simplices consisting of all the singletons $\{a\},\{b\}, …,\{i\}$, the 27 2-element subsets $\{a, b\},\{a, c\},\{a, d\}, …$ that correspond to edges in the above picture, and the 18 3-element subsets $\{a, b, d\},\{a, b, h\}, …$ which appear as triangles in the above picture.</li></ol>
+</li>
+<li>
+<ol type="i"><li>A closed combinatorial surface is a connected finite simplicial complex $K$ (alternatively, the geometric realisation of a finite simplicial complex $K$ ) such that for every vertex $v ∈ K$ the link of $v$ is a simplicial circle. Here, the link $\DeclareMathOperator{\lk}{lk}\lk(v)$ of a vertex $v ∈ K$ is the set of $\lk(v)=\{w ∈ K$ : $\{v, w\}$ is a simplex of $K\}$, where a subset $f ⊂ \lk(v)$ is declared to be a simplex of $\lk(v)$ if $f ∪\{v\}$ is a simplex of $K$. Finally, a simplicial circle is a simplicial complex whose topological realisation is $S^1$.
+</li>
+<li>The classification theorem says that (the topological realisation of) any closed combinatorial surface is homeomorphic to either the 2-sphere $S^2$, or $S^2$ with $n$ handles attached for $n ⩾ 1$, or $S^2$ with $n$ crosscaps attached for $n ⩾ 1$, and that these surfaces are all pairwise non-homeomorphic. Here, $S^2$ with $n$ handles attached is the quotient of a $(4 n)$-gon by identifying its sides according to the word $x_1 y_1 x_1^{-1} y_1^{-1} x_2 y_2 x_2^{-1} y_2^{-1} … x_n y_n x_n^{-1} y_n^{-1}$, and $S^2$ with $n$ crosscaps attached is the quotient of a $(2 n)$-gon by identifying its sides according to the word $x_1 x_1 x_2 x_2 x_3 x_3 … x_n x_n$.
+</li>
+<li>One possible answer is to observe that $S$ is orientable with Euler characteristic $χ(S)=1-5+2=-2$ (this requires noting that all the vertices of $P_1$ and of $P_2$ get identified in $S$ ). It is therefore homeomorphic to a sphere with two handles by the classification theorem.
+</li>
+<li>Glue $P_1$ and $P_2$ along $a ∼ α$ to get an 8-gon whose sides are identified according to the word $b c d e c^{-1} e^{-1} b^{-1} d^{-1}$. Cutting along the dotted line, and re-gluing the cyan triangle as indicated{% asy %}size(200);
+fill(E--NE--I--cycle,cyan);
+fill(S--1.5SSE--SE--cycle,cyan);
+draw(italic("x"),I--E,dashed);
+string[] edgeLabels = {"b", "c", "d", "e"};
+pair vertex=W;
+for (int i = 0; i < 4; ++i) {
+pair newvertex = dir(-45*i+135);
+draw(italic(edgeLabels[i]),vertex--newvertex,Relative(W),MidArrow);
+vertex=newvertex;
+}
+string[] edgeLabels2 = {"d", "b", "e", "c"};
+vertex=W;
+for (int i = 0; i < 4; ++i) {
+pair newvertex = dir(45*i-135);
+draw(italic(edgeLabels2[i]),vertex--newvertex,Relative(E),MidArrow);
+vertex=newvertex;
+}
+draw(italic("d"),S--1.5SSE,dashed);
+draw(italic("x"),1.5SSE--SE,dashed);{% endasy %}
+yields an 8-gon whose sides are identified according to the word $c x c^{-1} x^{-1} d b^{-1}$ Upon replacing $b$ by $b^{-1}$, this is exactly the presentation of a sphere with two handles.</li></ol>
+</li>
+<li>Let us write $T^2=${% asy %}size(40);
+draw((0,0)--(1,0),red,MidArrow);
+draw((0,1)--(1,1),red,MidArrow);
+draw((0,0)--(0,1),blue,MidArrow);
+draw((1,0)--(1,1),blue,MidArrow);{% endasy %} and $K B=${% asy %}size(40);
+draw((0,0)--(1,0),red,MidArrow);
+draw((1,1)--(0,1),red,MidArrow);
+draw((0,0)--(0,1),blue,MidArrow);
+draw((1,0)--(1,1),blue,MidArrow);{% endasy %} as quotients of $[0,1]^2$ by the usual identifications of opposite edges. Then the map $[0,1]^2 →[0,1]^2$ given by $(x, y) ↦(x, 2 y)$ if $y ⩽ 1 / 2$ and $(x, y) ↦(1-x, 2 y-1)$ if $y ⩾ 1 / 2$ descends to a map $T^2 → K B$ with all the desired properties.<br>{% asy %}size(40,0);
+draw((0,0)--(1,0),red,MidArrow);
+draw((0,2)--(1,2),red,MidArrow);
+draw((0,0)--(0,2),blue,MidArrow);
+draw((1,0)--(1,2),blue,MidArrow);
+draw((1,1)--(0,1),red+dashed,MidArrow);{% endasy %}</li></ol>
+</li></ol>

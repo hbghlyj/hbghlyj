@@ -1,0 +1,68 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, college exam
+---
+<style>p{color:red;white-space:pre-wrap;}</style>
+<ol><li>Let $X$ be a compact Hausdorff space.
+Let $Y_1 \supseteq Y_2 \supseteq Y_3 \supseteq \cdots$ be a sequence of non-empty closed subsets of $X$.
+<ol type="a">
+<li>Show that the intersection
+$$
+Y_∞=\bigcap_{n=1}^∞ Y_n
+$$
+is non-empty.
+</li>
+<li>Suppose that $W$ is an open subset of $X$ such that $Y_∞⊆W$. Prove that $Y_n⊆W$ for some $n$.
+<p>The sequence of sets: $Z_n=Y_n \cap(X \backslash W), n=1,2,3, \ldots$ are closed.
+If $Y_n⊈W$ for all $n$, then $Z_n≠∅$ for all $n$. By (a) $Z_∞=Y_∞∖W≠∅$</p>
+</li>
+<li>Deduce that $Y_∞$ is connected if each $Y_n, n=1,2,3, \ldots$, is connected.
+[You may assume that if $A$ and $B$ are disjoint compact subsets of $X$ then there exist disjoint open subsets $U_A$ and $U_B$ of $X$ such that $A⊆U_A$ and $B⊆U_B$.]
+<p>Assume $Y_∞$ is disconnected by $U,V$.
+$Y_∞∩U∩V=∅$
+$Y_∞∩U≠∅$
+$Y_∞∩V≠∅$
+By (b) $Y_n⊂U∪V$ for some $n$.
+wlog $Y_n⊂U$
+$Y_∞⊂Y_n⊂U$</p></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>What is the <i>topological product</i> $X×Y$ of topological spaces $X$ and $Y$ ?
+</li>
+<li>Prove that the projection maps $p_X: X×Y \rightarrow X$ and $p_Y: X×Y \rightarrow Y$ are continuous, where $p_X(x, y)=x$ and $p_Y(x, y)=y$ for $(x, y)∈X×Y$.
+</li>
+<li>Prove that a map $Z \rightarrow X×Y$ from a topological space $Z$ is continuous if and only if the compositions $p_X∘f: Z \rightarrow X$ and $p_Y∘f: Z \rightarrow Y$ are both continuous.
+<p>⇒ is obvious (composition of continuous functions)
+⇐ It suffices to check that $f^{-1}(U×V)$ is open for $U$ open in $X$, $V$ open in $Y$ as $U×V$ is a basis for topology of $X×Y$.
+Note $U×V=(U×Y)∩(X×V)=p_X^{-1}(U)∩p_Y^{-1}(V)$
+$f^{-1}(U×V)=(p_X∘f)^{-1}(U)∩(p_Y∘f)^{-1}(V)$ is open</p>
+</li>
+<li>Hence or otherwise prove that if $X$ and $Y$ are path-connected then so is $X×Y$.
+<p>Take $[0,1]→X×Y,t↦(γ^x,γ^y)$</p></li></ol>
+</li>
+<li>Now suppose that $K, L$ are compact subsets of $X, Y$ respectively, and that $K×L⊆W$, where $W$ is open in $X×Y$.
+<ol type="i"><li>Prove that for each $x$ in $K$ there exist sets $U_x, V_x$ open in $X, Y$ respectively and such that $x∈U_x, L⊆V_x$ and $U_x×V_x⊆W$.<p>Pick $y∈L$, $(x,y)∈K×L$, so ∃ neighborhood $U_x^y×V_x^y$ of $(x,y)⊂W$ [as $W$ open & products of open sets form a basis]
+$\{V_x^y\}_{y∈L}$ covers $L$.
+∃ finite $I$
+$\{V_x^{y_i}\}_{i∈I}$ covers $L$.
+Set $U_x=\bigcap_{i∈I}U_x^{y_i},V_x=\bigcup_{i∈I}V_x^{y_i}$</p>
+</li>
+<li>Hence or otherwise prove that there exist sets $U, V$ open in $X, Y$ respectively and such that $K×L⊆U×V⊆W$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>What is an <i>abstract simplicial complex</i> and what is its <i>topological realisation</i>? What is a <i>triangulation</i> of a topological space?<p>A triangulation of a space $X$ is a simplicial complex $K$ together with a choice of homeomorphism $|K| → X$.</p>
+</li>
+<li>Describe a triangulation of the Möbius band.<p>Triangulation: Main pitfall: Need to make sure that each simplex is uniquely determined by its vertices.</p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/5-vertex_polyhedral_M%C3%B6bius_strip.svg/284px-5-vertex_polyhedral_M%C3%B6bius_strip.svg.png"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Pentagonal_M%C3%B6bius_strip.svg/293px-Pentagonal_M%C3%B6bius_strip.svg.png">
+</li>
+<li>Show that the topological realisation of a finite simplicial complex is a compact Hausdorff topological space.<p><a href="4.html">sheet 4 Q2</a></p></li></ol>
+</li>
+<li>Let $P_1$ and $P_2$ be disjoint convex polygons in $\mathbb{R}^2$. Assume that $P_1, P_2$ have both $n$-sides and that $f$ is a 1-1 function from the sides of $P_1$ to the sides of $P_2$. We identify each side $e$ of $P_1$ to the side $f(e)$ of $P_2$. Precisely if $\left(x_1, y_1\right),\left(x_2, y_2\right)$ are the endpoints of $e,\left(x_1', y_1'\right),\left(x_2', y_2'\right)$ are the endpoints of $f(e)$ and $t \in[0,1]$ we identify the point $t\left(x_1, y_1\right)+(1-t)\left(x_2, y_2\right)$ of $e$ to the point $t\left(x_1', y_1'\right)+(1-t)\left(x_2', y_2'\right)$ of $f(e)$.<br>
+Show carefully that the quotient space obtained by this procedure is a surface.<p><a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20%281%29.pdf#page=43&zoom=auto,-78,652">Proposition 5.6.</a></p>
+Explain how we can obtain the sphere $S^2$ and the projective plane $\mathbb{R P}^2$ by identifying two triangles.<p>5.2. in Lecture notes</p>
+Let $N_3$ be the surface obtained from the word $x x y y z z$ (that is we label the boundary of a hexagon by this word and we identify the sides with the same label). Show that we may obtain $N_3$ by identifying the sides of two squares $P_1, P_2$ as described above.<p>Corollary 5.14. The surface $N_h$ is obtained from a 2-sphere by adding $h$ crosscaps.
+$xxyy$ is the Klein bottle.
+</p></li></ol>
+</li></ol>

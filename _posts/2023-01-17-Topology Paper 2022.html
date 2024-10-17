@@ -1,0 +1,157 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, Paper 2022
+---
+<style>p{color:red}</style>
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>Define the operation of <i>connected sum</i> of surfaces.
+<p>The connected sum of $X$ and $Y$ is the surface$$X \# Y:=(X \backslash\mathring D) ⊔\left(Y \backslash\mathring{D'}\right) / ∼$$    where $D ⊂X$ and $D' ⊂Y$ are embedded discs, and the equivalence relation ∼ identifies $∂ D$ and $∂ D'$ via some homeomorphism $φ: ∂ D → ∂ D'$ [Not required: <i>If $X$ and $Y$ are surfaces with boundary, then $D$ and $D'$ should not meet the boundary</i>].</p>
+</li>
+<li>State the classification theorem of surfaces in terms of connected sums of known surfaces.
+<p>Every closed surface is homeomorphic to either $S^2$, a connected sum of copies of the torus $T^2$, or a connected sum of copies of the projective plane $ℝP^2$. Moreover, the surfaces in the above list are pairwise non-homeomorphic.</p></li></ol>
+</li>
+<li>Prove that these two spaces are homeomorphic:
+{% asy %}unitsize(1cm);
+path p=(0,0)..(-2,2)..(0,4)..(2,2)..(0,0)..(-2,-1)..(-3,-2)..(-2,-4)..(-1,-2)..(-2,-1)..(-5,2)..(1,6.5)..(5.5,2.0)..(3.0,-4.0)..cycle;
+path q=(-2.45,-3.9)..(0.85,-4.65)..(4.2,-3.95);
+fill(subpath(p,5,7)--q--subpath(p,13,9)--cycle^^subpath(p,0,4)--cycle,gray(.8));
+draw(subpath(p,0,4)^^subpath(p,5,7)^^subpath(p,9,13));
+draw(subpath(p,7,9)^^subpath(p,13,length(p)),dashed);
+draw((0,0)..(-1,-1)..(-2,-1));
+draw((0,0)..(-1,-.75)..(-2,-1),dashed);
+draw(q);
+draw((-2.45,-3.9)..(1.85,-3.4)..(4.2,-3.95),dashed);
+//for(int i=1;i< length(p);++i){label(string(i),point(p,i));}
+filldraw(circle((3.5,-.7),.5),white);
+filldraw(circle((5,-1),.5),white);{% endasy %}
+(the connected sum of two Möbius bands, and the Klein bottle with two discs removed). [Hint: describe (and prove) how the Möbius band is related to $ℝP^2$, then describe (and prove) how two copies of $ℝP^2$ are related to the Klein bottle.]
+<p>The Möbius band is homeomorphic to $ℝP^2$ with one disc removed: <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20(1).pdf#page=47&zoom=auto,-78,569">Lemma 5.12</a><br>To see this, consider the following construction of $ℝP^2$:
+{% asy %}
+size(2cm);pair A = (0,0);pair B = (1,0);pair C = (1,1);pair D = (0,1);fill(box(A,C),lightgray);draw(B--A,blue,MidArrow);draw(D--C,blue,MidArrow);draw(C--B,red,MidArrow);draw(A--D,red,MidArrow);
+{% endasy %}
+and remove this disc:
+{% asy %}
+size(2cm);pair A = (0,0);pair B = (1,0);pair C = (1,1);pair D = (0,1);path p=yscale(.5)*arc((.5,0),.5,0,180),q=shift(0,1)*yscale(-1)*p;fill(p--cycle,lightgray);fill(q--cycle,lightgray);draw(p);draw(q);draw(B--A,blue,MidArrow);draw(D--C,blue,MidArrow);draw(C--B,red,MidArrow);draw(A--D,red,MidArrow);
+{% endasy %}<br>
+So the connected sum of two Möbius bands is homeomorphic to $ℝP^2 \# ℝP^2$ with two discs removed.<br>It remains to show that $ℝP^2 \# ℝP^2$ is homeomorphic to a Klein bottle: <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29949/mod_resource/content/1/toplectnotes17%20(1).pdf#page=51&zoom=auto,-78,656">Example 5.22</a> The boundary words xy<sup>−1</sup>xy and xxyy represent homeomorphic surfaces.</p>
+</li>
+<li>Let $S^1 ⊂ℝ^2$ be the unit circle.
+<ol type="i"><li>Is ℝ homeomorphic to a subspace of $S^1$ ?
+If yes:<br>
+α) is it homeomorphic to an open subspace of $S^1$ ?
+<p>Yes: $S^1$ minus a point is homeomorphic to an open interval. The latter is homeomorphic to ℝ.</p>
+β) is it homeomorphic to a closed subspace of $S^1$ ?
+<p>No: Any closed subset of $S^1$ is compact, but ℝ is not compact.</p>
+</li>
+<li>Is $S^1$ homeomorphic to a subspace of ℝ ?<br>
+If yes:
+α) is it homeomorphic to an open subspace of ℝ ?
+β) is it homeomorphic to a closed subspace of ℝ ?<p>No: Any subset of ℝ (with at least three points) has the property that it becomes disconnected after removing some point. But $S^1$ is connected and remains connected after removing any point.</p></li></ol>
+</li>
+<li>
+<ol type="i"><li>Prove that $U ⊂ℝ$ is open in ℝ if and only if $U ∩[a, b]$ is open in $[a, b]$ for all $a, b∈ ℝ$.
+<p>If $U$ is open, then $U ∩[a, b]$ is open in $[a, b]$ by definition of the subspace topology. Assume that $U ∩[a, b]$ is open in $[a, b]$ for all $a, b∈ ℝ$. We need to show that for every point $x∈ U$ there exists $ε>0$ such that $(x-ε, x+ε) ⊂U$. Pick any interval $[a, b]$ containing $x$ in its interior. Since $U ∩[a, b]$ is open in $[a, b]$, there exists $ε>0$ such that $(x-ε, x+ε) ⊂U ∩[a, b]$. In particular, $(x-ε, x+ε) ⊂U$.</p>
+</li>
+<li>Let $X$ be a topological space.
+Is it true that a subset $U ⊂X$ is open in $X$ if and only if $U ∩ V$ is open in $V$ for all closed subsets $V ⊊ X$ ?<br>
+α) Prove that the answer is "yes" when $X$ is Hausdorff.
+<p>(If $U$ is open, then $U ∩ V$ is open in $V$ by definition of the subspace topology.) Assume $U ∩ V$ is open in $V$ for all closed subsets $V ⊊ X$. We'll show that $U$ is open by proving that every point $x∈ U$ admits an open neighbourhood contained in $U$. Pick $y∈ X$ distinct from $x$ (if $X$ has only one point, then $U$ is trivially open). Since $X$ is Hausdorff, there exist disjoint open subsets $A, B ⊂X$ with $x∈ A$ and $y∈ B$. Let $V:=X \backslash B$, so that$$x∈ A ⊂V ⊊ X$$By assumption, $U ∩ V$ is open in $V$. Therefore $U ∩ A$ is open in $A$. Since $A$ is open in $X, U ∩ A$ is also open in $X$. $U ∩ A$ is the desired neighbourhood of $x$.</p>
+β) Prove that the answer is "no" in general.
+<p>Let $X$ be the two point space equipped with the indiscrete topology, and let $U$ be a subspace consisting of just one of the two points. $U$ is not open, but $U ∩ ∅$ is open in $∅$ (and $∅$ is the only closed subset of $X$ which is not the whole space).</p></li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Define what it means for a topological space to be <i>compact</i>. [If you use words such as "cover" and "subcover", you must also define these words.]
+<p>A topological space $X$ is compact if every open cover $\left\{U_i\right\}_{i∈ I}$ (an open cover is a collection of open sets whose union is $X$) admits a subcover $\left\{U_i\right\}_{i∈ J}$ (a subcover is a sub-collection whose union is still $X$) where $J ⊂I$ is finite.</p>
+</li>
+<li>A topological space $X$ is called <i>locally compact</i> if for every point $x∈ X$ there exists $U ⊂X$ open and $K ⊂X$ compact such that $x∈ U ⊂K$.<br>
+α) Prove that ℝ with its usual topology is locally compact.
+<p>Given $x∈ ℝ$, we have $x∈(x-1, x+1) ⊂[x-1, x+1]$. In other words, $[x-1, x+1]$ is a compact neighbourhood of $x$.</p>
+β) Is ℚ (equipped with the subspace topology from ℝ) locally compact? Justify.
+<p>No point $x∈ℚ$ admits a compact neighbourhood. If $V ⊂ℚ$ is a neighbourhood of $x$, then $[x-ε, x+ε]∩ℚ⊂V$ for some $ε>0$. Since $[x-ε, x+ε]∩ℚ$ is not complete, it is not compact, but $[x-ε, x+ε]∩ℚ$ is closed in $V$, so $V$ is not compact.</p></li></ol>
+</li>
+<li>Let $D^2 ⊂ℝ^2$ be the closed unit disc.
+<ol type="i"><li>Prove that any bounded convex polygon $V ⊂ℝ^2$ is homeomorphic to $D^2$.
+<p>We may assume without loss of generality (by performing a translation) that $V$ contains 0 in its interior. Let $ρ_θ∈ ℝ⩾ 0$ be defined by the requirement that $\left[0, ρ_θ ⋅ θ\right]=V ∩\left(ℝ_{⩾ 0} ⋅ θ\right)$. Note that this is well-defined: since $V$ is convex, the intersection $V ∩\left(ℝ_{⩾ 0} ⋅ θ\right)$ is also convex, in particular connected. The function $θ ↦ ρ_θ$ is clearly continuous (it is piecewise algebraic). The map $D^2 → V$ given, in polar coordinates, by $(r, θ) ↦\left(ρ_θ r, θ\right)$ is the desired homeomorphism. It is continuous at non-zero points because $ρ_θ$ is continuous. It is continuous at zero because $ρ_θ$ is bounded. Finally, it maps bijectively $D^2$ onto $V$, and is thus a homeomorphism (a continuous bijection between compact Hausdorff spaces is a homeomorphism).</p>
+</li>
+<li>Consider the equivalence relation $∼$ on the unit square $[0,1]^2$ given by $(x, y) ∼\left(x', y'\right)$ if $(x, y)=\left(x', y'\right)$ or if $x=x'=0$. Prove that the quotient space $[0,1]^2 / ∼$ is homeomorphic to $D^2$.
+<p>Let $T ⊂ℝ^2$ be the triangle with vertices $(0,0),(1,0)$ and $(1,1)$. The map $f:[0,1]^2 →T$ given by $f(x, y)=(x, x y)$ is continuous and surjective. It satisfies $f(x, y)=f\left(x', y'\right)$ iff $(x, y) ∼\left(x', y'\right)$ therefore it descends to a continuous map (indeed a continuous bijection) $\bar{f}:[0,1]^2 /\mmlToken{mi}∼ → T$. The $\operatorname{map} \bar{f}$ is a homeomorphism (because a continuous bijection from a compact space to a Hausdorff space is a homeomorphism: $[0,1]^2/\mmlToken{mi}∼$ is compact because it's the image of $[0,1]^2$ under a continuous map; $T$ is Hausdorff because it's a subspace of $ℝ^2$ ). Finally, $T$ is homeomorphic to $D^2$ by (b.i).</p></li></ol>
+</li>
+<li>Let $D^2 ⊂ℝ^2$ be the closed unit disc, and let $H=ℝ× ℝ_{⩾ 0} ⊂ℝ^2$ be the closed upper half plane. Consider the following four topological spaces:
+<table width="100%">
+<tr><td>$X_1:=D^2 \backslash\{(1,0)\}$</td>
+<td>$X_2:=\stackrel{∘}{D}^2 ∪\left(D^2 ∩ H\right)$</td>
+<td>$X_3:=\stackrel{∘}{D}^2 ∪\left(D^2 ∩ \stackrel{∘}{H}\right)$</td>
+<td>$X_4:=\stackrel{∘}{D}^2 ∪\{(1,0)\}$</td></tr>
+<tr><td>{% asy %}unitsize(40);dotfactor=12;
+filldraw(unitcircle,lightgray);
+dot((1,0),Fill(white));{% endasy %}</td>
+<td>{% asy %}unitsize(40);dotfactor=10;
+fill(unitcircle,lightgray);draw(arc((0,0),1,0,180));dot((1,0));dot((-1,0));{% endasy %}</td>
+<td>{% asy %}unitsize(40);dotfactor=10;
+fill(unitcircle,lightgray);
+path a=arc((1,0),0.5*dotfactor/2/40,0,180);
+pair p=intersectionpoint(a,arc((0,0),1,0,90));
+draw(arc((0,0),p,xscale(-1)*p));draw(a);draw(xscale(-1)*a);{% endasy %}</td>
+<td>{% asy %}unitsize(40);dotfactor=10;
+fill(unitcircle,lightgray);
+dot((1,0));{% endasy %}</td>
+</tr>
+</table>
+all of them equipped with the subspace topology from $ℝ^2$.
+
+<ol type="i"><li>Which two of the above four spaces are homeomorphic? Prove that they are indeed homeomorphic. [Hint: Use (b) (ii) to construct the desired homeomorphism.]
+<p>Let $\bar{f}:[0,1]^2 /\mmlToken{mi}∼ → T$ be the homeomorphism constructed in part (b), and let $p∈[0,1]^2 /\mmlToken{mi}∼$ be the point corresponding to the subset $A:=\{0\} ×[0,1] ⊂[0,1]^2$ (note that $A$ is an equivalence class for the equivalence relation ∼). By (b.i), we have the following two homeomorphisms: $X_1≅T \backslash\{(0,0)\}$ and $X_3≅[0,1]^2 \backslash A$. The map $\bar{f}$ induces a homeomorphism $\left([0,1]^2 /\mmlToken{mi}∼\right) \backslash\{p\}≅T \backslash\{(0,0)\}$. The composite map $[0,1]^2 \backslash A ↪[0,1]^2↠[0,1]^2 /\mmlToken{mi}∼$ induces a homeomorphism $[0,1]^2 \backslash A≅([0,1]^2 /\mmlToken{mi}∼)\backslash\{p\}$. Assembling all these maps, we get a homeomorphism$$X_3 \stackrel{≅}{⟶}[0,1]^2 \backslash A \stackrel{≅}{⟶}\left([0,1]^2 /\mmlToken{mi}∼\right) \backslash\{p\} \stackrel{≅}{⟶} T \backslash\{(0,0)\} \stackrel{≅}{⟶} X_1 .$$</p>
+</li>
+<li>Prove that no other two of the above four spaces are homeomorphic. [Hint: Which ones are locally compact?]
+<p>We count the number of points that do not admit compact neighbourhoods: $X_1$ and $X_3$ admit no such points (they are locally compact). $X_2$ has two such points. $X_4$ has one such point.</p></li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Provide an example of an abstract simplicial complex whose topological realisation is homeomorphic to ℝ.
+<p>Take $ℤ$ as the vertex set, and $\{\{n\}: n∈ ℤ\} ∪\{\{n, n+1\}: n∈ ℤ\}$ as the set of simplices.</p>
+</li>
+<li>
+<ol type="i"><li>Let $X$ be a topological space. Let $Q$ be a set, and let $f: X ↠ Q$ be a surjective function.<br>
+α) The map $f$ induces a bijection $\bar{f}: X / ∼ → Q$, for a certain equivalence relation ∼ on $X$. Describe the equivalence relation ∼.
+<p>The equivalence relation ∼ is given by declaring $x ∼ y$ when $f(x)=f(y)$.</p>
+β) Describe the unique topology on $Q$ which makes $\bar{f}$ into a homeomorphism (where $X / ∼$ is equipped with the quotient topology).
+<p>A subspace $U ⊂Q$ is open in this topology iff $f^{-1}(U)$ is open in $X$.</p>
+</li>
+<li>Define what it means for a continuous map $f: X → Y$ between topological spaces to be a quotient map.
+<p>$f$ is a quotient map if $\left\{\begin{aligned}&f\text{ is surjective}\\&U\text{ is open in $Y$ iff $f^{-1}(U)$ is open in $X$}\end{aligned}\right.$</td></tr></span></p>
+</li>
+<li>Let $S^1$ be the set of complex numbers of norm one, topologised as a subset of $ℂ$. Fix $b ⩾ 1$ a real number, and consider the half-open interval $[0, b) ⊂ℝ$. Is the map
+\begin{aligned}
+f:[0, b) & ⟶ S^1 \\
+x & ↦ e^{2 π i x}
+\end{aligned}
+a quotient map? Justify your answer. [<i>If the answer depends on the choice of $b$, treat the different cases separately.</i>]
+<ul style="color:red">
+<li>This is not true when $b=1$ as, in that case, the map $f:[0,1) → S^1$ is a bijection. A bijective quotient map is a homeomorphism. But $S^1$ is compact whereas $[0,1)$ is not. So $f$ is not a quotient map.</li>
+<li>This is true when $b>1$. Given a subset $U ⊂S^1$ whose preimage is open in $[0, b)$, we must show that $U$ is open in $S^1$. Pick a point $z∈ U$. We will show that there exists an open arc containing $z$, entirely contained inside $U$. Let $x$ be the unique preimage of $z$ under $f$ such that $x∈(0,1]$. Since $x$ lies in the interior of $[0, b)$ and $f^{-1}(U)$ is open in $[0, b)$, there exists $ε>0$ such that $(x-ε, x+ε) ⊂f^{-1}(U)$. It follows that $f((x-ε, x+ε)) ⊂U$.</li></ol></li></ol>
+</li>
+<li>Let $X$ be a topological space.<br>
+Let $∼$ be an equivalence relation on $X$, and let $Y:=X / ∼$ be the quotient space.<br>
+Let $≈$ be an equivalence relation on $Y$, and let $Z:=Y / ≈$ be the quotient space.<br>
+Construct an equivalence relation ≡ on $X$ and a homeomorphism between $Z$ and $X /\mmlToken{mi}≡$. Prove that this is indeed a homeomorphism.
+<p>Declare $x≡ x'$ if their images in $Z$ are equal. The composite $X → Y → Z$ induces a continuous bijection$$f: X /\mmlToken{mi}≡ → Z$$that fits into a commutative triangle
+{% latex %}\usepackage{tikz-cd}
+\color{red}
+\begin{tikzcd}
+ & X \arrow[dr]\arrow[dl] \\
+X/≡ \arrow[rr] && Z
+\end{tikzcd}
+{% endlatex %}
+A subspace $U ⊂Z$ is open iff its preimage in $Y$ is open (by definition of the quotient topology on $Y /\mmlToken{mi}≈$) iff its preimage in $X$ is open (by definition of the quotient topology on $X /\mmlToken{mi}∼)$. Similarly, a subspace $U' ⊂X /\mmlToken{mi}≡$ is open iff its preimage in $X$ is open. The bijective map $f$ induces a bijection between the open subsets of $X /\mmlToken{mi}≡$ and the open subsets of $Z$. So $f$ is a homeomorphism.</p>
+</li>
+<li>Let $S^2 ⊂ℝ^3$ be the 2-sphere. Prove that the following two quotients of $S^2$ are homeomorphic:
+\begin{aligned}
+S^2 /(x, y, z) ∼(-x,-y,-z)   \text { and }   S^2\left/ \begin{array}{c}
+(x, y, z) ∼(x, y,-z) \\
+(x, y, 0) ∼(-x,-y, 0)
+\end{array}\right.
+\end{aligned}
+<p>The first space $S^2 / ∼$ is the standard definition of $ℝP^2$. The second space can be viewed as an iterated quotient$$\left(S^2 /(x, y, z) ∼(x, y,-z)\right) /(x, y, 0) ∼(-x,-y, 0)$$as in (c). The first quotient $S^2 /(x, y, z) ∼(x, y,-z)$ is homeomorphic to $D^2$ via the quotient map $S^2 → D^2:(x, y, z)↦(x, y)$ (a bijective continuous map between compact Hausdorff spaces is a homeomorphism). The equivalence relation $(x, y, 0) ∼(-x,-y, 0)$ on points of $S^2$ induces the equivalence relation $≈$ on $D^2$ that identifies antipodal points of the boundary. The quotient of $D^2 / ≈$ is another standard definition of $ℝP^2$. Explicitly, the embedding $D^2↪S^2:(x, y) ↦\left(x, y, \sqrt{1-x^2-y^2}\right)$ induces a homeomorphism $S^2 / ∼ → D^2 / ≈$ (a bijective continuous map between compact Hausdorff spaces is a homeomorphism).<br>$S^2 /(x, y, z) ∼(-x,-y,z)$ is isomorphic to the Klein bottle $N_2$.</p></li></ol>
+</li></ol>

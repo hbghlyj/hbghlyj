@@ -1,0 +1,92 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, Paper 2019
+---
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>What does it mean to say that a subset of a topological space $X$ is compact? What does it mean to say that a topological space is path-connected?
+</li>
+<li>Let $X, Y, Z$ be non-empty topological spaces.<br>
+How is the product topology defined on $X × Y$?<br>
+Let $p_X, p_Y$ be the projection maps $p_X: X × Y → X$ and $p_Y: X × Y → Y$. Show that a function $f: Z → X × Y$ is continuous if and only if the functions $p_X ∘ f, p_Y ∘ f$ are continuous.
+</li>
+<li>Deduce that $X × Y$ is path-connected if and only if $X$ and $Y$ are path-connected.</li></ol>
+</li>
+<li>Let $Y=\{0,1\}$ be equipped with the indiscrete topology $𝒯=\{∅, Y\}$.
+<ol type="i"><li>Show that any function $f: X → Y$ is continuous. Deduce that $ℝ × Y$ is path-connected.<br>
+Show that if $f: ℝ × Y → ℝ$ is continuous then $f(x, 0)=f(x, 1)$ for any $x ∈ ℝ$.
+</li>
+<li>Let $a, b ∈ ℝ$ and let $A=(a, b) ×\{0\} ∪\{(a, 1),(b, 1)\}$ be a subset of $ℝ × Y$. Is $A$ compact? Justify your answer.
+</li>
+<li>Show that for any bounded $B ⊆ ℝ$ there are compact subsets $K_1, K_2 ⊆ ℝ × Y$ such that $B ×\{0\}=K_1 ∩ K_2$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>What does it mean to say that a topological space is connected? What does it mean to say that a subset of a topological space is connected?<br>
+Let $X, Y$ be topological spaces. Show that if $A ⊆ X$ is connected and $f: X → Y$ is continuous then $f(A)$ is connected.
+</li>
+<li>Let $X$ be a topological space and let $ℛ$ be an equivalence relation on $X$.<br>
+Let $p: X → X / ℛ$ be the map sending each $x ∈ X$ to its equivalence class $[x]$.<br>
+What is the quotient topology on $X / ℛ$ ? Show that it is indeed a topology.</li></ol>
+</li>
+<li>Let $(X, 𝒯)$ be a topological space and let $A ⊆ X$. We define an equivalence relation $ℛ_A$ on $X$ with equivalence classes defined by
+$$
+[x]=\{x\} \text { if } x ∉ A \text { and }[x]=A \text { if } x ∈ A .
+$$
+We denote the quotient space $X / ℛ_A$ by $X / A$.
+<ol type="i"><li>Show that if $K, C ⊆ X$ are closed and $p$ is the quotient map $p: X → X / C$ then $p(K)$ is closed.
+</li>
+<li>Consider the plane $ℝ^2$ with the standard topology and let $A$ be the open unit disc, $A=\left\{(x, y): x^2+y^2&lt;1\right\}$. Is $ℝ^2 / A$ Hausdorff? Justify your answer.
+</li>
+<li>Let $Y$ be the $y$-axis: $Y=\{(0, y): y ∈ ℝ\}$. Is $ℝ^2 / Y$ homeomorphic to $ℝ^2$ ? Justify your answer.<br>
+Show that the sequence $[(1 / n, 1)]$ in $ℝ^2 / Y$ converges to $Y$.<br>
+Does the sequence $[(1 / n, n)]$ in $ℝ^2 / Y$ converge to $Y$ ? Justify your answer.</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>
+<ol type="i"><li>A family $𝒰=\left\{U_{i}: i ∈ I\right\}$ of subsets of a space $X$ is called a cover if $X=\bigcup_{i ∈ I} U_{i}$. If each $U_{i}$ is open in $X$ then $𝒰$ is called an open cover for $X$. A subcover of a cover $\left\{U_{i}: i ∈ I\right\}$ for a space $X$ is a subfamily $\left\{U_{j}: j ∈ J\right\}$ for some subset $J ⊂ I$ such that $\left\{U_{j}: j ∈ J\right\}$ is still a cover for X. We call it a finite subcover if $J$ is finite. A topological space $X$ is compact if any open cover of $X$ has a finite subcover. $K ⊂ X$ is compact if it is a compact topological space with respect to the subspace topology.<br>
+A topological space $X$ is path-connected if for any $a, b ∈ X$ there is $f:[0,1] → X$ continuous such that $f(0)=a, f(1)=b$.
+</li>
+<li>A basis for the topology of $X × Y$ is given by $ℬ=\{U × V: U ∈𝒯_{X}, V ∈ 𝒯_{Y}\}$. More explicitly $U ⊂ X × Y$ is open if it can be written as union of elements of $B$.<br>
+If $U ⊂ X$ is open then $p_{X}^{-1}(U)=U × Y$ which is clearly open in $X × Y$. So $p_{X}$ is continuous. Similarly $p_{Y}$ is continuous. If $f$ is continuous $p_{X} ∘ f, p_{Y} ∘ f$ are continuous as compositions of continuous functions.<br>
+Assume now the functions $p_{X} ∘ f, p_{Y} ∘ f$ are continuous. Let $U$ be open in $X$ and $V$ be open in $Y$. Then
+$$
+f^{-1}(U × V)=\left(p_{X} ∘ f\right)^{-1}(U) ∩\left(p_{Y} ∘ f\right)^{-1}(V)
+$$
+so $f^{-1}(U × V)$ is open. Since the sets $U × V$ form a basis of $X × Y$, $f$ is continuous.
+</li>
+<li>Suppose $X × Y$ is path-connected. Let $a, b ∈ X$ and $c ∈ Y$. There is a continuous $f:[0,1] → X × Y$ continuous with $f(0)=(a, c), f(1)=(b, c)$. Then $p_{X} ∘ f$ is a path joining $a, b$ in $X$ so $X$ is path-connected.<br>
+Conversely if $\left(a_1, b_1\right),\left(a_2, b_2\right)$ are points in $X × Y$ and $h, g$ are paths joining $a_1, a_2$ in $X$ and $b_1, b_2$ in $Y$ respectively then $F:[0,1] → X × Y$ given by $F(x)=(h(x), g(x))$ is a continuous path joining $\left(a_1, b_1\right),\left(a_2, b_2\right)$ since $h, g$ are continuous.
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>The only open sets of $Y$ are $∅, Y$ and $f^{-1}(∅), f^{-1}(Y)$ are open so $f$ is continuous. Define $f:[0,1] → Y$ by $f(0)=0, f(x)=1$ for $x&gt;0$. Clearly $f$ is a path joining $0,1$ so $Y$ is path-connected. Since $ℝ$ is path-connected by part (a ii) $ℝ × Y$ is path-connected. By contradiction: say $f(x, 0)=a, f(x, 1)=b,a≠b$. Then there is an open set $U$ which contains $a$ but does not contain $b$. Then $f^{-1}(U)$ is open so it is of the form $O × Y$ with $O ⊆ ℝ$ open. Since $(x, 0) ∈ O × Y$ we have $(x, 1) ∈ O × Y$ so $b ∈ U$ which is a contradiction.
+</li>
+<li>$A$ is compact. Let $𝒰=\left\{U_{i}: i ∈ I\right\}$ be an open cover of $A$. Then each $U_{i}$ is of the form $V_{i} × Y$ where $V_{i}$ is open in $ℝ$. Since $[a, b]$ is compact there is a finite subcover $\left\{V_{j}: j ∈ J\right\}$. Then $\left\{V_{j} × Y: j ∈ J\right\}$ is a finite subcover of $𝒰$.
+</li>
+<li>Since $B$ is bounded $B ⊆[a, b]$ for some interval in $ℝ$. Let $C=[a, b] \backslash B$ and
+$$
+K_1=B ×\{0\} ∪ C ×\{1\} K_2=[a, b] ×\{0\}
+$$
+As in b ii) $K_1, K_2$ are compact in $ℝ × Y$ and clearly $K_1 ∩ K_2=B ×\{0\}$.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>A topological space $X$ is disconnected if there are disjoint open nonempty subsets $U$ and $V$ such that $U ∪ V=X$. If $X$ is not disconnected, it is called connected.<br>A subset $A$ of $X$ is connected if it is a connected topological space with respect to the subspace topology.<br>
+Let $U$ and $V$ be open sets in $Y$ such that $f(A) ⊆ U ∪ V$ and $f(A) ∩ U ∩ V=∅$. Then $f^{-1}(U)$ and $f^{-1}(V)$ are open in $X$. So, $f^{-1}(U) ∩ A$ and $f^{-1}(V) ∩ A$ are disjoint and open in $A$. Since $A$ is connected, one of $f^{-1}(U) ∩ A, f^{-1}(V) ∩ A$ is empty. Hence, one of $U ∩ f(A)$ and $V ∩ f(A)$ is empty. So, $f(A)$ is connected.
+</li>
+<li>Let $X / ℛ$ be the set of equivalence classes of $ℛ$. The quotient topology $𝒯$ of $X / ℛ$ consists of the sets $U$ such that $p^{-1}(U)$ is open in $X$. Clearly $∅, X / ℛ$ lie in $𝒯$. Let $U_1, U_2 ∈ 𝒯$. Then $p^{-1}\left(U_1 ∩ U_2\right)=p^{-1}\left(U_1\right) ∩ p^{-1}\left(U_2\right)$ so $U_1 ∩ U_2 ∈ 𝒯$. Also if $\left\{U_{i}: i ∈ I\right\} ⊂ 𝒯$ then
+$$
+p^{-1}\left(\bigcup U_{i}\right)=\bigcup p^{-1}\left(U_{i}\right)
+$$
+so $\bigcup U_{i}∈𝒯$
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>It follows by the definition of the quotient topology $p(K)$ is closed in $X / C$ if $p^{-1}(p(K))$ is closed in $X$. We note that if $K ∩ C=∅, p^{-1}(p(K))=K$ while if $K ∩ C ≠ ∅, p^{-1}(p(K))=K ∪ C$, so in both cases $p^{-1}(p(K))$ is closed.</li><li>$ℝ^2 / A$ is not Hausdorff since any open set in $X / A$ containing $[(1,0)]$ intersects $A$ by the definition of the quotient topology on $X / A$. So there do not exist open disjoint $U, V$ in $X / A$ containing $[(1,0)], A$ respectively.
+</li>
+<li>Clearly $ℝ^2 / Y \backslash\{Y\}$ is not connected. However $ℝ^2 \backslash\{q\}$ is connected (as it is path-connected) for any $q ∈ ℝ^2$. Therefore $ℝ^2 / Y$ and $ℝ^2$ are not homeomorphic.<br>
+Let $U$ be an open set in $ℝ^2 / Y$ containing $Y$. Then $p^{-1}(U)$ contains $(1 / n, 1)$ for sufficiently large $n$. So $[(1 / n, 1)]$ lies in $U$ for sufficiently large $n$ and $[(1 / n, 1)]$ converges to $Y$.<br>
+$\{(1 / n, n): n ∈ ℕ\}$ is a closed subset of $ℝ^2$ that does not intersect $Y$. Therefore by b i) $\{[(1 / n, n)]: n ∈ ℕ\}$ is a closed subset of $ℝ^2 / Y$ that does not intersect $Y$, so it does not converge to $Y$.</li></ol></li></ol>
+</li></ol>

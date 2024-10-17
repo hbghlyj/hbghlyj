@@ -1,0 +1,141 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, Paper 2015
+---
+<ol><li>
+<ol type="a"><li>
+<ol type="i"><li>What does it mean to say that a topological space is <i>connected</i>? What does it mean to say that a subset of a topological space is <i>connected</i>?
+</li>
+<li>Show that if $A, B$ are connected subsets of a topological space $X$ and $A ∩ B ≠ ∅$ then $A ∪ B$ is connected.
+</li>
+<li>Show that if $A ⊆ X$ is connected and $f: X → Y$ is continuous then $f(A)$ is connected.
+</li></ol>
+</li>
+<li>Let $\left(X, 𝒯_{X}\right),\left(Y, 𝒯_{Y}\right)$ be non-empty topological spaces.
+<ol type="i"><li>Give a basis $ℬ$ for the <i>product topology</i> on $X × Y$. Show that the collection of sets $ℬ$ is a basis for a topology on $X × Y$.
+</li>
+<li>Show that $X × Y$ is Hausdorff if and only if $X, Y$ are Hausdorff.
+</li>
+<li>Assume now that $X, Y$ are connected. Let $A ⊆ X, B ⊆ Y$ be such that $A ≠ X, B ≠ Y$. Show that
+$$
+(X × Y)∖(A × B)
+$$
+is connected.
+<br>[<i>Hint: Note that if $(x, y) ∉ A × B$ then at least one of $\{x\} × Y, X ×\{y\}$ is contained in $(X × Y)∖(A × B)$.</i>]
+</li>
+<li>Assume that $X$ is infinite and $𝒯_{X}$ is the cofinite topology, i.e. $U ∈ 𝒯_{X}$ if and only if $X∖ U$ is finite. Which subsets of $X$ are connected? Are there any infinite subsets of $X × X$ which are not connected? Justify your answer.
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>What does it mean to say that a topological space $(X, 𝒯)$ is <i>compact</i>?
+</li>
+<li>Show that if $X$ is compact and $f: X → Y$ is a continuous onto map then $Y$ is compact.
+</li></ol>
+</li>
+<li>Let $(X, 𝒯)$ be a topological space and let $ℛ$ be an equivalence relation on $X$.
+Let $p: X → X / ℛ$ be the map sending each $x ∈ X$ to its equivalence class $[x]$.
+<ol type="i"><li>What is the <i>quotient topology</i> on $X / ℛ$ ? Show that it is indeed a topology.
+</li>
+<li>Let $Z$ be a topological space and let $g: X / ℛ → Z$ be a function. Show that $g$ is continuous if and only if $g ∘ p: X → Z$ is continuous.
+</li></ol>
+</li>
+<li>Let $(X, 𝒯)$ be a topological space and let $A ⊆ X$. We define an equivalence relation $ℛ_{A}$ on $X$ with equivalence classes defined such that $[x]=\{x\}$ if $x ∉ A$ and $[x]=A$ if $x ∈ A$. We denote the quotient space $X / ℛ_{A}$ by $X_{A}$.
+<ol type="i"><li>Let $K$ be a closed subset of $X$ with $K ∩ A=∅$. Show that $p(X∖ K)$ is an open subset of $X_{A}$.
+</li>
+<li>Let $X=[0,1]$ with the standard topology and let $A=\{0,1\}$. Show that $X_{A}$ is homeomorphic to $S^{1}$.
+</li>
+<li>Let $X=ℝ$ with the standard topology and let $A=(-∞, 0] ∪[1, ∞)$. Show that $X_{A}$ is compact. Show that $X_{A}$ is homeomorphic to $S^{1}$.
+</li>
+<li>Let $X=ℝ$ with the standard topology. Is the space $X_{ℤ}$ Hausdorff? Is the space $X_{ℚ}$ Hausdorff? Justify your answer in each case.
+</li>
+<li>Let $X=ℝ$ with the standard topology. Is there a <i>countable</i> subset $A$ of $X$ such that $X_{A}$ is compact? Justify your answer.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>Describe the <i>standard n-simplex</i>. What is an <i>abstract simplicial complex</i>? What is its <i>topological realization</i>?
+</li>
+<li>Show that if $K=(V, Σ)$ is a finite simplicial complex then there is a continuous injection $f:|K| → ℝ^{n}$ for some $n ∈ ℕ$, where $|K|$ is the geometric realization of $K$. Deduce that $|K|$ is Hausdorff.
+</li>
+<li>What is an <i>n-dimensional manifold</i>? What is a <i>surface</i>?
+</li>
+<li>Give a simplicial complex $K$ such that $|K|$ is the projective plane.
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>What do we mean by <i>a polygon with a complete set of side identifications</i>?
+</li>
+<li>State the classification theorem of closed combinatorial surfaces. Describe the surfaces appearing in the statement as polygons with a complete set of side identifications.
+</li>
+<li>Describe all the surfaces that we may construct as squares with a complete set of side identifications. Carefully justify your answer and identify each surface that you obtain with one in the list given in part (ii).</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>
+<ol type="i"><li>A topological space $X$ is disconnected if there are disjoint open non-empty subsets $U$ and $V$ such that $U ∪ V=X$. If $X$ is not disconnected, it is called connected.<br>
+A (non-empty) subset $A$ of a topological space $X$ is connected if $A$ with the subspace topology is connected.
+</li>
+<li>Assume that $A ∪ B$ is disconnected. Then there are open subsets of $X, U, V$, such that
+$$
+(A ∪ B) ∩ U ≠ ∅,(A ∪ B) ∩ V ≠ ∅,(A ∪ B) ∩ U ∩ V=∅
+$$
+Let $x ∈ A ∩ B$. Then $x ∈ U$ or $x ∈ V$. Say $x ∈ U$. Since $A$ is connected $A ⊂ U$. For the same reason $B ⊂ U$. So $(A ∪ B) ∩ V=∅$, a contradiction.
+</li>
+<li>Assume that $f(A)$ is not connected. Let $U$ and $V$ be open sets such that
+$$
+f(A) ∩ V ≠ ∅, f(A) ∩ U ≠ ∅, f(A) ∩ V ∩ U=∅
+$$
+Then $f^{-1} 1(U)$ and $f^{-1}(V)$ are open in $X$. So, $f^{-1}(U) ∩ A$ and $f^{-1}(V) ∩ A$ are disjoint and open in $A$. Since $A$ is connected, one of $f^{-1}(U) ∩ A$ and $f^{-1}(V) ∩ A$ is empty. Hence, one of $f(A) ∩ U$ and $f(A) ∩ V$ is empty. So, $f(A)$ is connected.
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $ℬ=\left\{U × V: U ⊂ 𝒯_{X}, V ⊂ 𝒯_{Y}\right\}$. Clearly $X × Y ⊂ ℬ$. Also
+$$
+\left(U_{1} × V_{1}\right) ∩\left(U_{2} × V_{2}\right)=\left(U_{1} ∩ U_{2} × V_{1} ∩ V_{2}\right)
+$$
+hence $\left(U_{1} × V_{1}\right) ∩\left(U_{2} × V_{2}\right)$ lies in $ℬ$. So $ℬ$ is a basis for a topology.</li>
+<li>Assume that $X, Y$ are Hausdorff. Let $(x, y) ≠\left(x' y'\right)$. Then either $x ≠ x'$ or $y ≠ y'$. Without loss of generality we assume that $x ≠ x'$. Then there exist $U, V$ open disjoint in $X$ with $x ∈ U, x' ∈ V$. It follows that $(x, y) ∈ U × Y,\left(x' y'\right) ∈ V × Y$ and $U × Y ∩ V × Y=∅$. So $X × Y$ is Hausdorff.<br>
+Conversely we show that $X$ is Hausdorff: Let $x, x' ∈ X$ with $x ≠ x'$. Given $y ∈ Y$ there are open sets $U_{1}, U_{2}$ in $X, V_{1}, V_{2}$ in $Y$ such that
+$$
+(x, y) ∈ U_{1} × V_{1},\left(x', y\right) ∈ U_{2} × V_{2}, U_{1} × V_{1} ∩ U_{2} × V_{2}=∅
+$$
+Then $x ∈ U_{1}, x' ∈ U_{2}$ and $U_{1} ∩ U_{2}=∅$. The same argument applies to $Y$.
+</li>
+<li>We show first a lemma: If $C$ and $A_{i}, i ∈ I$ are connected sets in a topological space $Z$ and $A_{i} ∩ B ≠ ∅$ for all $i$ then $F=C ∪ \bigcup_{i ∈ I} A_{i}$ is connected. Indeed let $U, V$ be open subsets of $Z$ such that $U ∩ V ∩ F=∅$ and $F ⊂ U ∪ V$. If $C ∩ U ≠ ∅$ then $C ⊂ U$ since $C$ is connected. For the same reason $A_{i} ⊂ U$ for all $i$. It follows that $F ⊂ U$. We argue similarly if $C ∩ V ≠ ∅$. It follows that either $F ∩ U$ or $F ∩ V$ is empty. So $F$ is connected.<br>
+Let $x_{0} ∈ X-A, y_{0} ∈ Y-B$.
+$$
+X × Y∖ A × B=X ×(Y-B) ∪ Y ×(X-A)
+$$
+Each set $X ×\{y\}$ with $y ∈ Y-B$ is connected and intersects $\left\{x_{0}\right\} × Y$. So by the lemma $X ×(Y-B) ∪\left\{x_{0}\right\} × Y$ is connected. By the same argument $Y ×(X-A) ∪ X ×\left\{y_{0}\right\}$ is connected. $\left(x_{0}, y_{0}\right)$ lies in both these sets so their union which is equal to $X ×(Y-B) ∪ Y ×(X-A)$ is connected by part (a ii).
+</li>
+<li>Let $A ⊂ X$ be finite and let let $a ∈ A$. If $A=\{a\}$ clearly $A$ is connected. Otherwise if $B=A∖\{a\}$, then $X∖ B, X∖\{a\}$ are open sets, $A ⊂(X∖ B) ∪(X∖\{a\})$ and $(X∖ B) ∩(X∖\{a\}) ∩ A=∅$ so $A$ is not connected. If $A$ is infinite and $U, V$ are open non-empty then $A ∩ U ∩ V ≠ ∅$ so $A$ is connected.<br>
+Let $A=\{a, b\} × X$. Then $U=X∖\{a\}, V=X∖\{b\}$ are open in $X$ so $U × X, V × X$ are open in $X × X, A ∩(U × X) ∩(V × X)=∅$ and $A ⊂(U × X) ∪(V × X)$. So $A$ is not connected.
+</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>
+<ol type="i"><li>A family $𝒰=\left\{U_{i}: i ∈ I\right\}$ of subsets of a space $X$ is called a cover if $X=\bigcup_{i ∈ I} U_{i}$ If each $U_{i}$ is open in $X$ then $𝒰$ is called an open cover for $X$. A subcover of a cover $\left\{U_{i}: i ∈ I\right\}$ for a space $X$ is a subfamily $\left\{U_{j}: j ∈ J\right\}$ for some subset $J ⊂ I$ such that $\left\{U_{j}: j ∈ J\right\}$ is still a cover for $X$. We call it a finite subcover if $J$ is finite. A topological space $X$ is compact if any open cover of $X$ has a finite subcover.</li><li>Let $\left\{U_{i}: i ∈ I\right\}$ be an open cover of $Y$. Then $\left\{f^{-1}\left(U_{i}\right): i ∈ I\right\}$ is an open cover of $\mathrm{X}$. The compactness of $X$ implies that there exists a finite subcover $\left\{f^{-1}\left(U_{j}\right): j ∈ J\right\}$ Since $f$ is onto, $\left\{U_{j}: j ∈ J\right\}$ is a finite subcover for $Y$.
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $X / ℛ$ be the set of equivalence classes of $ℛ$. The quotient topology $𝒯'$ of $X / ℛ$ consists of the sets $U$ such that $p^{-1}(U)$ is open in $X$. Clearly $∅, X / ℛ$ lie in $𝒯'$. Let $U_{1}, U_{2} ∈ 𝒯'$. Then $p^{-1}\left(U_{1} ∩ U_{2}\right)=p^{-1}\left(U_{1}\right) ∩ p^{-1}\left(U_{2}\right)$ so $U_{1} ∩ U_{2} ∈ 𝒯'$. Also if $\left\{U_{i}: i ∈ I\right\} ⊂ 𝒯'$ then
+$$
+p^{-1}\left(\bigcup U_{i}\right)=\bigcup p^{-1}\left(U_{i}\right)
+$$
+so $\bigcup U_{i}$ lies in $𝒯'$.</li>
+<li>Suppose that $g$ is continuous. By the definition of the quotient topology $p$ is continuous. So, $g ∘ p$ is continuous.<br>
+Suppose that $g ∘ p$ is continuous. Let $U$ be an open subset of $Z$. Then, by assumption, $(g ∘ p)^{-1}(U)$ is open in $X$. This is $p^{-1} \left(g^{-1}(U)\right)$. By the definition of the quotient topology, $g^{-1}(U)$ is therefore open in $X / ℛ$. So, $g$ is continuous.
+</li></ol>
+</li>
+<li>
+<ol type="i"><li>We note that $p$ is injective on $K$. So $p^{-1}(p(X-K))=X-K$. It follows that $p(X-K)$ is open.
+</li>
+<li>Let $f:[0,1] → S^{1}$ where $f(t)=e^{2 π i t}$. Since $f(0)=f(1)$, this gives a well-defined function $g: X_{A} → S^{1}$ where $g([x])=f(x)$. So $f=g ∘ p$ and $g$ is continuous by (b,ii). Since $X=[0,1]$ is compact $X_{A}$ is compact as well. As $S^{1}$ is Hausdorff and $g 1-1, g$ is a homeomorphism.
+</li>
+<li>Let $f:[0,1] → X_{A}$ where $f(x)=[x]$. Then $f$ is the restriction of $p$ to $[0,1]$ so it is continuous. As $[0,1]$ is compact and $f$ is onto $X_{A}$ is compact. Let $h:[0,1] → S^{1}$ where $h(t)=e^{2 π i t}$. This gives a well-defined 1-1 and onto function $g: X_{A} → S^{1}$ where $g([x])=h(x)$ if $x ∉ A$ and $g([x])=h(0)=h(1)$ if $x ∈ A$. So $h$ is the restriction of $g ∘ p$ to $[0,1]$ and $g$ is continuous by (b,ii). Since $X_{A}$ is compact and $S^{1}$ is Hausdorff $g$ is a homeomorphism.
+</li>
+<li>Let $[a],[b] ∈ X_{ℤ}$. If $a, b ∉ ℤ$ pick open neighborhoods $U, V$ of $a, b$ in $ℝ$ such that $U ∩ V=∅$ and $U ∩ ℤ=∅, V ∩ ℤ=∅$. Then by (i) $p(U), p(V)$ are disjoint open containing respectively $[a], [b]$. If, say $a ∈ ℤ$, let $m=\min \{∣ n-b ∣ ; b ∈ ℤ\}$. If $ϵ=m / 3$ then the sets $U=\bigcup_{n}(n-ϵ, n+ϵ), V=(b-ϵ, b+ϵ)$ are an open saturated sets $[a] ∈ p(U),[b] ∈ p(V)$ and $p(U) ∩ p(V)=∅$. So $X_{ℤ}$ is Hausdorff.<br>
+Let $a, b$ be distinct irrational numbers. Then if $U, V$ are open sets containing $[a],[b]$ respectively, $p^{-1}(U), p^{-1}(V)$ both intersect $ℚ$. It follows that $U ∩ V ≠ ∅$ so $X_{ℚ}$ is not Hausdorff.
+</li>
+<li>Let $S$ be a countable subset of $ℝ$. For each $n ∈ ℕ$ we pick $x_{n} ∈(n, n+1)$ with $x_{n} ∉ S$. The sets $K_{r}=\left\{x_{n}: n ∈ ℕ, n ≥ r\right\}$ are all closed disjoint from $S$. So by (c, i) $p\left(X-K_{r}\right)$ is open in $X_{S}$. Clearly $X_{S}=\bigcup_{r} p\left(X-K_{r}\right)$ and this open cover has no finite subcover, so $X_{S}$ is not compact.</li></ol></li></ol>
+</li></ol>

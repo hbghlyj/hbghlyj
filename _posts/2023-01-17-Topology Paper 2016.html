@@ -1,0 +1,117 @@
+---
+mathjax: true
+tag: Topology
+excerpt: A5: Topology, Paper 2016
+---
+<ol><li>
+<ol type="a"><li>Let $(X, 𝒯)$ be a topological space.
+<ol type="i"><li>What does it mean to say that a subset $A$ of $X$ is connected?
+</li>
+<li>Prove that if $A_i, i ∈ I$, is a collection of connected subsets of $X$ such that $A_i ∩ A_j ≠ ∅$ for every $i ≠ j$ then $\bigcup_{i ∈ I} A_i$ is connected.
+</li>
+<li>Prove that if $f: X → Y$ is a continuous map to a topological space $Y$, and $A$ is a connected subset of $X$, then $f(A)$ is a connected subset of $Y$.
+</li>
+<li>What does it mean to say that a subset $A$ of $X$ is path-connected? Prove that any path-connected set is connected.
+[You may assume any property of $ℝ$ with the standard topology, provided that you clearly state the theorems that you are using.]</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $a$ be an arbitrary point in $X$. Prove that there exists a largest connected subset of $X$ containing $a$, i.e. a set $C_a$ such that:
+- $a ∈ C_a$ and $C_a$ is connected;
+- for any connected subset $S$ of $X$ containing $a$, the subset $S$ is contained in $C_a$.
+We call such a set $C_a$ the connected component of $X$ containing $a$, or simply a connected component of $X$.
+</li>
+<li>Prove that the connected components of $X$ compose a partition of $X$, that is their union is the entire space, and any two distinct connected components are disjoint.
+</li>
+<li>Let $A$ be a subset of $X$ that is both open and closed. Prove that $A$ is a union of connected components.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Define the closure $\bar{A}$ of a subset $A$. Prove that an open set intersects $A$ if and only if it intersects $\bar{A}$.
+</li>
+<li>Is $\bar{A}$ connected when $A$ is connected? Is $\bar{A}$ path-connected when $A$ is pathconnected?
+</li>
+<li>Let $A$ be a general subset of $X$. Is the closure of every connected component of $A$ contained, strictly contained, or not contained, in a connected component of $\bar{A}$ ? Let $C$ be a connected component of $\bar{A}$, and let $\left\{A_i\right\}$ be the collection of connected components of $A$ contained in $C$. Is $\bigcup_i \overline{A_i}$ contained, strictly contained, equal or not contained in $C$ ?
+[Justify all your statements carefully, with arguments or counter-examples. The counter-examples need only be clearly described, and the relevant properties stated, without proofs.]</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $(X, 𝒯)$ be a topological space.
+<ol type="i"><li>Let $\left(Y, 𝒯'\right)$ be another topological space. What does it mean to say that a map $f: X → Y$ is continuous?
+</li>
+<li>Let $f: X → ℝ$ be a continuous function, where $ℝ$ is endowed with the standard topology. Show that if $f\left(x_0\right)&gt;0$ for some $x_0$ in $X$ then there is an open subset $U$ of $X$ such that $x_0 ∈ U$ and $f(x)&gt;\frac{1}{2} f\left(x_0\right)$ for all $x ∈ U$.
+[You may assume without proof the definition and all the needed properties of the standard topology on $ℝ$.]</li></ol>
+</li>
+<li>
+<ol type="i"><li>What does it mean to say that a subset $K$ of a topological space $(X, 𝒯)$ is compact? Provide two equivalent definitions of compactness, one in terms of open sets and one in terms of closed sets and prove their equivalence.
+</li>
+<li>Prove that if $(X, 𝒯)$ is Hausdorff, $K$ is a compact subset of $X$ and $x ∈ X \backslash K$ then there exist disjoint open sets $U, V$ such that $K ⊆ U$ and $x ∈ V$.
+Prove that a compact subset of a Hausdorff topological space is closed.
+</li>
+<li>Let $f: X → ℝ$ be a continuous real-valued function, and assume that $X$ is compact. Prove that if $f(x)&gt;0$ for all $x ∈ X$ then there is a real number $c&gt;0$ such that $f(x)&gt;c$ for all $x ∈ X$.</li></ol>
+</li>
+<li>Suppose that $ℱ$ is a family of real-valued continuous functions on a compact space $X$ with the following properties:
+<ul><li>$f(x) ⩾ 0$ for all $x ∈ X$ and all $f ∈ ℱ$;</li>
+<li>if $f, g ∈ ℱ$ then $f+g ∈ ℱ$;</li>
+<li>for each $f ∈ ℱ$ there is some point $x_f$ in $X$ such that $f\left(x_f\right)=0$.</li></ul>
+<ol type="i"><li>Prove that for any finite subset $A=\left\{f_1, f_2, …, f_n\right\}$ of $ℱ$, there exists a point $x_A$ such that $f_i\left(x_A\right)=0$ for every $i ∈\{1, …, n\}$.
+</li>
+<li>Prove that there is some point $x_0$ in $X$ such that $f\left(x_0\right)=0$ for all $f ∈ ℱ$.</li></ol></li></ol>
+</li></ol>
+<h1>Solution</h1><ol><li>
+<ol type="a"><li>
+<ol type="i"><li>$A$ is connected if and only if, whenever $U$ and $V$ are open subsets of $X$ such that $A \subseteq(U \cup V)$ and $U \cap V \cap A=\emptyset$, either $U \cap A=\emptyset$ or $V \cap A=\emptyset$. Equivalently, any continuous map from $A$ (with the induced topology) to $\{0,1\}$ (with the discrete topology) is constant.
+</li>
+<li>Let $f: \bigcup_{i \in I} A_i \rightarrow\{0,1\}$ be a continuous map. Its restriction to $A_i$, $\left.f\right|_{A_i}$, is also continuous. Since $A_i$ is connected it follows that $\left.f\right|_{A_i}$ is constant equal to $c_i \in\{0,1\}$.
+</li>
+<li>Let $g: f(A) \rightarrow\{0,1\}$ be a continuous map. Then $\left.g \circ f\right|_A: A \rightarrow\{0,1\}$ is a continuous map, and it must be constant, by the connectedness if $A$.
+
+For each pair $i, j \in I$ there exists a point $x$ in $A_i \cap A_j$, and $f(x)=c_i=c_j$. Therefore all the constants $c_i$ are equal, and $f$ is constant.
+</li>
+<li>A path connecting two points $x, y$ in a topological space $X$ is a continuous map $p:[0,1] \rightarrow X$ with $\mathfrak{p}(0)=x, \mathfrak{p}(1)=y$
+A space is path-connected if every two points in it can be connected by a path.
+Let $A$ be a path-connected space and let $a$ be a fixed point in $A$. For every $x \in A$ there exists a path $p_x:[0,1] \rightarrow X$ with image in $A$ such that $p_x(0)=a$ and $p_x(1)=x$. The set $\mathcal{P}_x=\mathfrak{p}_x[0,1]$ is a connected set, because it is the image of a connected set by a continuous map.
+
+We apply the previous question to the collection of connected sets $\left\{\mathcal{P}_x: x \in A\right\}$, and conclude that $\bigcup_{x \in A} \mathcal{P}_x=A$ is connected.</li></ol>
+</li>
+<li>
+<ol type="i"><li>Let $C_a=\bigcup_{a \in K . K \infty n n e c t e d} K$. This set is connected, by the previous question, contains $a$, and every connected set containing $a$.
+</li>
+<li>It suffices to prove that two connected components are either disjoint or coincide. If $C_a$ and $C_b$ are not disjoint, then $C_a \cup C_b$ is connected, and since it contains $a$, respectively $b$, it must equal $C_a$, respectively $C_b$.
+</li>
+<li>Clearly $A \subset \bigcup_{a \in A} C_a$. For every $a \in A, C_a \subset A \cup(X \backslash A)$, both $A$ and $X \backslash A$ are open, they are disjoint, and $A \cap C_a \neq \emptyset$, hence $(X \backslash A) \cap C_a=\emptyset$. It follows that $C_a \subseteq A$. Therefore $\bigcup_{a \in A} C_a \subset A$, whence $\bigcup_{a \in A} C_a=A$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>The closure can be defined as
+$$
+\bar{A}=\{x \in X \mid \text { for every open set } U \text { containing } x, U \cap A \neq \emptyset\} .
+$$
+From the above definition it is clear that $A \subset \bar{A}$, therefore an open set intersecting $A$ intersects $\bar{A}$. Conversely, if an open set $U$ contains a point $x \in \bar{A}$ then by the definition of $\bar{A}, U$ intersects $A$.
+</li>
+<li>The closure of a connected set is connected. Indeed if $\{U, V\}$ is an open cover of $\bar{A}$ such that $U \cap V \cap \bar{A}=\emptyset$ then the same thing is true about $A$. As $A$ is connected, either $U \cap A=\emptyset$ or $V \cap A=\emptyset$. This and the previous question imply that either $U \cap \bar{A}=\emptyset$ or $V \cap \bar{A}=\emptyset$.
+From the previous question it follows that if $A$ is path-connected then $\bar{A}$ is connected. It is nevertheless not true that $\bar{A}$ is path-connected. This can be seen for instance by taking $A$ to be the graph $\{(x, \sin 1 / x) \mid x \in(0,1 / \pi]\}$, path-connected, therefore connected. Its closure $\bar{A}$ is equal to $A \cup[\{0\} \times[-1,1]]$. It is not path-connected, as seen in the Metric Spaces course and recalled in the Topology course.
+</li>
+<li>The closure of every connected component of $A$ is contained in a connected component of $\bar{A}$.
+The inclusion is nevertheless strict: several connected components of $A$ can be contained in the same connected component of $\bar{A}$. Example: $A=\mathbb{Q}$. Its connected components are points while $\bar{A}=\mathbb{R}$ has only one connected component. The same example also shows that a connected component of $\bar{A}$ can be strictly larger than the union of the closures of all the connected components contained in it.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Let $(X, \mathcal{T})$ be a topological space.
+<ol type="i"><li>$f: X \rightarrow Y$ is continuous if for every $U$ open in $Y, f^{-1}(U)$ is open in $X$.
+</li>
+<li>$V=\left(\frac{f\left(x_0\right)}{2}, \infty\right)$ is open in $\mathbb{R}$ with the standard topology and $f$ continuous, therefore $U=f^{-1}(V)$ is open and contains $x_0$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>(a) A subset $A$ of $X$ is compact if any open cover of $A$ has a finite subcover.&lt;br&gt;(b) Equivalently, if $\left\{V_i: i \in I\right\}$ is an indexed family of closed subsets of $X$ such that $\bigcap_{j \in J} V_j \cap A \neq \emptyset$ for any finite subset $J \subseteq I$ then $\bigcap_{i \in I} V_i \cap A \neq \emptyset$.&lt;br&gt;(a) $\Rightarrow$ (b) Assume that $\left\{V_i: i \in I\right\}$ is a family of closed subsets of $X$ such that $\bigcap_{j \in J} V_j \cap A \neq \emptyset$ for any finite subset $J \subseteq I$, while $\bigcap_{i \in I} V_i \cap A=\emptyset$. Then $\bigcup_{i \in I}\left(X \backslash V_i\right)$ is an open cover of $A$.
+
+According to (a) there exists $J$ finite subset in $I$ such that $A \subset \bigcup_{j \in J}\left(X \backslash V_j\right)$. This is equivalent to $\bigcap_{j \in J} V_j \cap A=\emptyset$, contradicting the hypothesis.&lt;br&gt;(b) $\Rightarrow$ (a) Let $\left\{U_i: i \in I\right\}$ be an open cover of $A$. Then $A \subset \bigcup_{i \in I} U_i$, whence $\bigcap_{i \in I}\left(X \backslash U_i\right) \cap A=\emptyset$.
+
+According to property (b) applied to the family of closed sets $\left\{X \backslash U_i: i \in I\right\}$ there exists some finite subset $J$ of $I$ such that $\bigcap_{j \in J}\left(X \backslash U_j\right) \cap A=\emptyset$. Equivalently $\bigcup_{j \in J} U_j$ contains $A$.
+</li>
+<li>For every $y \in K$, according to the Hausdorff property, there exists a pair of disjoint open sets $U_y$ and $V_y, y \in U_y, x \in V_y$. The collection $\left\{U_y: y \in K\right\}$ is an open cover for $K$. Therefore there exist $y_1, \ldots, y_m$ such that $K \subseteq U_{y 1} \cup \cdots \cup U_{y_m}$. Let $U=U_{y_1} \cup \cdots \cup U_{y_m}$.
+
+The set $V=V_{y_1} \cap \cdots \cap V_{y_m}$ is open, it contains $x$, and $V \cap U=V \cap \bigcup_{j=1}^m U_{y_j}=\emptyset$. Thus, for every $x \in X \backslash K$, there exists $V$ open such that $x \in V \subseteq X \backslash K$. This implies that $X \backslash K$ is open.
+</li>
+<li>According to the second question of the exercise, every $x \in X$ is contained in an open set $U_x$ such that for every $y \in U_x, f(y)&gt;f(x) / 2$. Since $\bigcup_{x \in X} U_x$ is an open cover of $X$ and $X$ is compact, there exists an open subcover $U_{x_1} \cup U_{x_2} \cup \cdots \cup U_{x_n}$. We can take $c=\inf _{i \in\{1, \ldots, n\}} \frac{f\left(x_i\right)}{2}$.</li></ol>
+</li>
+<li>
+<ol type="i"><li>The sum $S=f_1+f_2+\cdots+f_n$ is in $\mathcal{F}$, therefore there exists a point $x_A$ such that $S\left(x_A\right)=0$. This and the fact that $f_i\left(x_A\right) \geqslant 0$ for every $i \in\{1, \ldots, n\}$ implies that $f_i\left(x_A\right)=0$ for every $i \in\{1, \ldots, n\}$.
+</li>
+<li>The closed subsets $V_f=\{x \in X \mid f(x)=0\}$ have the property that every finite collection has a non-empty intersection. This and the fact that $X$ is compact implies that $\bigcap_{f \in \mathcal{F}} V_f$ is non-empty.</li></ol></li></ol>
+</li></ol>
