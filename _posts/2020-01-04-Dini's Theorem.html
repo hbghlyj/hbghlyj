@@ -20,39 +20,27 @@ are each necessary.<br>
 <strong>Example (a)</strong> The set $K=(0,1)$ is not compact. As $n \rightarrow \infty$, the sequence $f_{n}(x)=x^{n}$ of continuous functions decreases pointwise to zero. But the convergence is not uniform because$$\sup \left\{f_{n}(x) \mid x \in \mathbb{R}\right\}=1$$for all $n \in \mathbb{N}$.<br>
 <br>
 <strong>Example (a')</strong> The set $K=\mathbb{R}$ is not compact. As $n \rightarrow \infty$, the sequence<br>
-<div align="center">$f_{n}(x)=$<tex>\documentclass[tikz]{standalone}<br>
-\begin{document}<br>
-\begin{tikzpicture}<br>
-\draw[-&gt;](0,0)--(0,-0.1)node[below]{0}(1,0)--(1,-0.1)node[below]{$n$}(2,0)--(2,-0.1)node[below]{$2n$}(-1,0)--(3,0);\draw[very thick](-1,0)--(1,0)--(2,.5)--(3,.5);<br>
-\end{tikzpicture}<br>
-\end{document}</tex></div>( the right hand plateau is at height 1 ) of continuous functions decreases pointwise to zero. But the convergence is not uniform because$$<br>
+<div align="center">$f_{n}(x)=${% latex %}\usepackage{tikz}
+\draw[->](0,0)--(0,-0.1)node[below]{0}(1,0)--(1,-0.1)node[below]{$n$}(2,0)--(2,-0.1)node[below]{$2n$}(-1,0)--(3,0);\draw[very thick](-1,0)--(1,0)--(2,.5)--(3,.5);
+\end{tikzpicture}{% endlatex %}</div>( the right hand plateau is at height 1 ) of continuous functions decreases pointwise to zero. But the convergence is not uniform because$$<br>
 \sup \left\{f_{n}(x) \mid x \in \mathbb{R}\right\}=1<br>
 $$for all $n \in \mathbb{N}$.<br>
 <br>
-<strong>Example (b)</strong> The set $K=[0,1]$ is compact. As $n \rightarrow \infty$, the sequence<div align="center">$f(x)=$<tex>\documentclass[tikz]{standalone}<br>
-\begin{document}<br>
-\begin{tikzpicture}<br>
-\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,.5)--(.3,0)node[below]{$\frac1n$}--(1,0);\filldraw(0,.5)circle(1.5pt);<br>
-\end{tikzpicture}<br>
-\end{document}</tex></div>of continuous functions (the dot is at height 1) decreases pointwise to the discontinuous function<div align="center">$f(x)=$<tex>\documentclass[tikz]{standalone}<br>
-\begin{document}<br>
-\begin{tikzpicture}<br>
-\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,0)--(1,0);\filldraw(0,.5)circle(1.5pt);<br>
-\end{tikzpicture}<br>
-\end{document}</tex></div><br>
-But the convergence is not uniform because<div align="center">$\displaystyle\sup \left\{x^{n} \mid 0&lt;x&lt;1\right\}=\sup$<tex>\documentclass[tikz]{standalone}<br>
-\begin{document}<br>
-\begin{tikzpicture}<br>
-\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,.5)--(.3,0)node[below]{$\frac1n$}--(1,0);\filldraw(0,0)circle(1.5pt);<br>
-\end{tikzpicture}<br>
-\end{document}</tex>$=1$</div>for all $n \in \mathbb{N}$.<br>
+<strong>Example (b)</strong> The set $K=[0,1]$ is compact. As $n \rightarrow \infty$, the sequence<div align="center">$f(x)=${% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,.5)--(.3,0)node[below]{$\frac1n$}--(1,0);\filldraw(0,.5)circle(1.5pt);
+\end{tikzpicture}{% endlatex %}</div>of continuous functions (the dot is at height 1) decreases pointwise to the discontinuous function<div align="center">$f(x)=${% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,0)--(1,0);\filldraw(0,.5)circle(1.5pt);
+\end{tikzpicture}{% endlatex %}</div>But the convergence is not uniform because<div align="center">$\displaystyle\sup \left\{x^{n} \mid 0&lt;x&lt;1\right\}=\sup${% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,.5)--(.3,0)node[below]{$\frac1n$}--(1,0);\filldraw(0,0)circle(1.5pt);
+\end{tikzpicture}{% endlatex %}</div>for all $n \in \mathbb{N}$.<br>
 <br>
 <strong>Example (c)</strong> The set $K=[0,1]$ is compact. As $n \rightarrow \infty$, the sequence<br>
-<div align="center">$f_n(x)=$<tex>\documentclass[tikz]{standalone}<br>
-\begin{document}<br>
-\begin{tikzpicture}<br>
-\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(2,0)--(2,-.1)node[below]{1}(-.2,0)--(2.2,0);\draw(.3,0)node[below,yshift=-2]{$\frac1n$}--+(0,-0.1)(.6,0)node[below,yshift=-2]{$\frac2n$}--+(0,-0.1);\draw[very thick](0,0)--(.3,0)--(.45,.5)--(.6,0)--(2,0);<br>
-\end{tikzpicture}<br>
-\end{document}</tex></div>of continuous functions (the triangle has height 1) converges pointwise to zero. But the convergence is not uniform because$$<br>
+<div align="center">$f_n(x)=${% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->](0,0)--(0,-.1)node[below]{0}(2,0)--(2,-.1)node[below]{1}(-.2,0)--(2.2,0);\draw(.3,0)node[below,yshift=-2]{$\frac1n$}--+(0,-0.1)(.6,0)node[below,yshift=-2]{$\frac2n$}--+(0,-0.1);\draw[very thick](0,0)--(.3,0)--(.45,.5)--(.6,0)--(2,0);
+\end{tikzpicture}{% endlatex %}</div>of continuous functions (the triangle has height 1) converges pointwise to zero. But the convergence is not uniform because$$<br>
 \sup \left\{f_{n}(x) \mid x \in \mathbb{R}\right\}=1<br>
 $$for all $n \in \mathbb{N}$.
