@@ -1,0 +1,251 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: A1 paper 2020
+---
+<ol>
+<li><ol type="a"><li>Consider the plane autonomous system of ODEs of the form
+\begin{equation}
+\frac{d x}{d t}=X(x, y),   \frac{d y}{d t}=Y(x, y) .
+\end{equation}
+<ol type="i">
+<li>Explain what is meant by <i>autonomous</i>. What is a <i>critical point</i> of the system (1)? What are the <i>nullclines</i> of (1)?</li>
+<li>Consider the example
+\begin{equation}
+\frac{d x}{d t}=y,   \frac{d y}{d t}=a x,
+\end{equation}
+where $a$ is a real constant different from zero. Find and classify the critical points for $a>0$ and $a&lt;0$.</li>
+<li>Find the general solution to the system of part (ii). What does the linearised analysis say about the solution far away from the critical point?</li></ol>
+<li>Consider the second order differential equation
+$$
+\frac{d^2 x}{d t^2}=a x+\left(a-x^2\right) \frac{d x}{d t}-x^3,
+$$
+where $a$ is a real parameter.
+<ol type="i"><li>Write this equation as a plane autonomous system of ODEs.</li>
+<li>Find and classify the critical points of this system.</li>
+<li>Can the system have closed orbits for all values of $a$? Give reasons for your answer.</li></ol>
+<li>Show that the system
+    $$
+    \frac{d x}{d t}=x(2-x-y),   \frac{d y}{d t}=y\left(4 x-x^2-3\right),
+    $$
+    does not admit closed orbits in the region $y>0$.
+</li></ol>
+<b>Solution.</b>
+<ol type="a">
+<li><ol type="i"><li>Here 'autonomous' means there is no explicit $t$-dependence in $X$ or $Y$. A critical point is a point in the phase plane where $X=Y=0$. A nullcline is a curve where either $X=0$ or $Y=0$.</li>
+<li>This can be written in $\pmatrix{&1\\a}$. The critical point is simply $(0,0)$. We can then solve for the eigenvalues of the matrix problem, and find $λ_1=\sqrt{a}, λ_2=-\sqrt{a}$. Now there are two possibilities. For $a>0$ the two eigenvalues are real, and with opposite sign. In this case the critical point is a saddle. For $a&lt;0$ the two eigenvalues are purely imaginary (and of course complex conjugate of each other). In this case the critical point is a centre.</li>
+<li>The equations can be solved in different ways. Taking a time derivative of one of the equations and plugging this into the other we find
+$$
+\frac{d^2 x}{d t^2}=a x .
+$$
+For either sign of $a$ the general solution can be written as
+$$
+x(t)=A e^{\sqrt{a} t}+B e^{-\sqrt{a} t}
+$$
+for some constants $A, B$. The solution for $y$ is then fixed
+$$
+y(t)=\frac{d x}{d t}=\sqrt{a} A e^{\sqrt{a} t}-\sqrt{a} B e^{-\sqrt{a} t} .
+$$In this example the linearised equations are actually exact, so they describe the system well, even far away from the critical point.
+</li></ol></li>
+<li><ol type="i"><li>We introduce a new function $y=\frac{dx}{dt}$, then the system becomes\begin{align*}\frac{d x}{d t} & =y \\ \frac{d y}{d t} & =a x+\left(a-x^2\right) y-x^{3}\end{align*}</li><li>The critical points are clearly at $y=0$. Then the other equation becomes $x(a-x^2)=0$, hence $x=0$ and $x=±\sqrt a$. Hence we have two possibilities:<br>For $a≤0$ we only have $(0,0)$.<br>For $a>0$ we have $(0,0)$ and $(±\sqrt a,0)$.<br>Let’s now classify them. The matrix of derivatives is given by\[M=\pmatrix{0 & 1 \\a-2 x y-3 x^2 & a-x^2}\]
+Since all the critical points are at $y=0$ this simplifies to
+\[M=\pmatrix{0 & 1 \\a-3 x^2 & a-x^2}\]
+For the critical point at the origin, which always exists, the eigenvalues are $λ_{±}=\frac12\left(a ± \sqrt{4 a+a^2}\right)$. Now we have several possibilities.<ul><li>If $a=0$ the critical point is degenerate, and we don't consider this possibility.</li>
+<li>If $a>0$ then so is $4 a+a^2$, so we have a positive eigenvalue and a negative one. This is a saddle.</li>
+<li>If $a&lt;0$ we have two possibilities.<ul style="list-style-type: circle;"><li>If $4 a+a^2>0$. In this case again we have two negative eigenvalues and hence this is a stable node.</li><li>If $4 a+a^2&lt;0$ then we get a stable spiral.</li></ul></li></ul></li></div>
+Finally, for $(± \sqrt{a}, 0)$, which exist only for positive $a$, the eigenvalues of $\pmatrix{&1\\-2a}$ are $λ_{±}=± i \sqrt{2 a}$. In this case the critical point, if it exists, is a centre.</li><li>Use the Bendixson-Dulac Theorem $φ=1$ we obtain
+$$
+∂_x X+∂_y Y=a-x^2 .
+$$
+If $a$ is negative, this has a definite sign, and hence we cannot have closed trajectories.</li></ol>
+<li>Again, use Bendixson-Dulac but in this case $φ=1$, or other simple choices, do not work. Other choices may work, but a nice choice is $φ=1 /(x y)$. In this case
+$$
+∂_x(φ X)+∂_y(φ Y)=-\frac1{y}
+$$
+In the region $y>0$ this has a definite sign.
+</li></li>
+</ol>
+</li>
+</li>
+</ol>
+<li>Consider the differential equation
+\begin{equation}
+x^2 z_x+α x y z_y=z^2
+\end{equation}
+for α a real parameter and with $z=1$ on the data curve $x^2+y^2=1$.
+<ol type="a">
+<li>Explain what is meant by a <i>characteristic curve</i> and a <i>characteristic projection</i>. Write down the characteristic equations for (3).</li>
+<li>Consider the case $α=1$. Describe the characteristic projections in the $(x, y)$-plane. Find the explicit solution for $z(x, y)$ and identify the domain on which the solution is defined and uniquely determined by the data curve.</li>
+<li>Consider the case $α=-1$ and restrict the data curve to the positive quadrant. Describe the characteristic projections in the $(x, y)$-plane. Show that the boundary curve can be split into two parts, such that each part determines a solution. For each of the two parts, determine the domain in which the solution is uniquely determined by the corresponding data curve.</li>
+</ol>
+<b>Solution.</b>
+<ol type="a">
+<li>Given a first order differential equation of the form $P z_x+Q z_y=R$, a characteristic curve is a curve on $ℝ^3$, such that at each point it is tangent to $(P,Q,R)$. One can show that such a curve is tangent to the solutions surface.<br>Given a characteristic $(x(t), y(t), z(t))$, the characteristic projection is simply $(x(t), y(t), 0)$. The characteristic equations for (3) are\begin{aligned} \frac{d x}{d t} & =x^2 \\ \frac{d y}{d t} & =α x y \\ \frac{d z}{d t} & =z^2\end{aligned}</li><li>We can directly solve the equations for $x$ and $z$ as they are separable:$$
+\frac{d x}{x^2}=d t ⇒-\frac1x=t+c_1 ⇒ x(t)=\frac1{-c_1-t}
+$$
+with a very similar result for $z$
+$$
+z(t)=\frac1{-c_2-t}
+$$
+To find the solution for $y$ we note the following
+$$
+\frac{d y}{y}=\frac1{-c_1-t} d t
+$$
+Integrating
+$$
+\log y=-\log \left(t+c_1\right)+\log c_3 ⇒ y(t)=\frac{c_3}{c_1+t}
+$$
+The characteristic projections $x=-c_3y$ are straight lines through the origin.<br>Now consider the data curve given by $γ(s)=(\cos s, \sin s, 1)$, for $s ∈[0,2 π)$. We then get the parametric solution
+\begin{aligned}
+& x=\frac{\cos s}{1-t \cos s} \\
+& y=\frac{\sin s}{1-t \cos s} \\
+& z=\frac1{1-t}
+\end{aligned}
+Now we need to solve for $z(x, y)$. First we note
+$$
+x^2+y^2=\frac1{(1-t \cos s)^2}
+$$
+Since the data curve corresponds to $t=0$ we can assume $1-t \cos s>0$ (for $t&lt;1$) close to the data curve and
+$$
+\sqrt{x^2+y^2}=\frac1{1-t \cos s}
+$$
+Now consider
+$$
+\sqrt{x^2+y^2}-1=\frac{t \cos s}{1-t \cos s}
+$$
+Hence
+$$
+t=\frac{\sqrt{x^2+y^2}-1}{x}
+$$
+from where we can find $z$
+$$
+z=\frac{x}{-\sqrt{x^2+y^2}+x+1}
+$$
+What is the domain of definition? Let's first compute the Jacobian $\frac{∂(x, y)}{∂(t, s)}$
+$$
+\frac{∂(x, y)}{∂(t, s)}=-\frac{\cos (s)}{(t \cos (s)-1)^3}
+$$
+and this needs to be different from zero or infinity. Note that $\cos(s)=0$ at $x=0$, so this is excluded. The denominator becomes divergent for $x, y$ tending to infinity, so this is not a problem. Furthermore, the solution should not blow up, so that we need $-\sqrt{x^2+y^2}+x+1≠0⇒y^2≠2x+1$. Finally, note that each ray from the origin intersects the circle once and only once, so that the solution is uniquely determined by the data curve for all $x$ and $y$, outside the excluded regions mentioned above.<br>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[->] (-2,0)--(2,0) node[right] {$x$};
+\draw[->] (0,-2)--(0,2) node[above] {$y$};
+\draw[domain=-2:2,dashed]plot ({((\x)^2-1)/2},\x) node[right] {$y^2=2x+1$};
+\draw(0,0)circle(1);
+\foreach\a in{0,30,60,90,120,150}\draw[thick,blue](\a:1.6)--(\a:-1.6);
+\end{tikzpicture}{% endlatex %}
+</li>
+<li>
+The equations for $x$ and $z$ are exactly as before, and we get
+$$
+x=\frac1{-c_1-t},   z=\frac1{-c_2-t}
+$$
+However, now the equation for $y$ is different and reads
+$$
+\frac{d y}{y}=\frac1{c_1+t} d t
+$$
+So that $y=c_3\left(c_1+t\right)$. The characteristic projections are now hyperbolas of the form $xy=-c_3$.<br>
+Consider now the hyperbola $xy=c$. It is clear that in the positive quadrant the hyperbolas cross the unit circle either twice or never (except for the hyperbolas $xy=±1/2$). Hence, the characteristics cross the data curve - generically - more than once, and the solution does not exist. For the solution to exist we can restrict the boundary data to one octant. Let us consider one of the two octants in the positive quadrant: in this case the solution will be defined for all $x,y$ with $x,y≥0$ and $xy&lt;1/2$. Similar for other octant.{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=2]
+\draw[->] (0,0)--(2,0) node[right] {$x$};
+\draw[->] (0,0)--(0,2) node[above] {$y$};
+\foreach\a in{.1,.2,.3,.4,.5}\draw[blue,domain=\a/2:2]plot ({\a/\x},\x);
+\draw[dashed](45:2)--(0,0);\draw(1,0)arc(0:45:1);
+\end{tikzpicture}{% endlatex %}
+</li>
+</ol>
+</li>
+<li>Let $D=\left\{x>0, y>0: x^2+y^2&lt;1\right\}$ be the intersection of the positive quadrant with the open unit disk, and $u(x, y)$ be a twice continuously differentiable function on $\bar{D}=\{x ⩾ 0, y ⩾\left.0: x^2+y^2 ⩽ 1\right\}$<br>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[domain=0:2]
+\draw[->] (-0.2,0)--(1.5,0) node[right] {$x$};
+\draw[->] (0,-0.2)--(0,1.5) node[above] {$y$};\node at(45:.6){$D$};
+\draw[thick,red](1,0)node[below]{1}arc(0:90:1)node[left]{1}--(0,0)--cycle;
+\end{tikzpicture}{% endlatex %}
+<ol type="a"><li>Suppose $u$ satisfies the equation
+\begin{equation}
+u_{x x}+u_{y y}=f \text { in } D .
+\end{equation}
+State and prove the <i>Maximum Principle Theorem</i> for this equation.</li>
+<li>Consider the following second-order, linear partial differential equation for $u(x, y)$:
+\begin{equation}
+y^2 u_{x x}+x^2 u_{y y}+2 x y u_{x y}+(x-y) u_x+(y-x) u_y=1 \text { in } D .
+\end{equation}
+<ol type="i"><li>Determine the characteristic variables of (5) and reduce the equation to its canonical form. [Use $ψ=x+y$ as one of the characteristic variables.]</li>
+<li>Show that the general solution to the equation (5) takes the form:$$u(x, y)=-\log (x+y)+f\left(x^2-y^2\right)+(x+y) g\left(x^2-y^2\right)$$for differentiable functions $f(x)$ and $g(x)$.</li>
+<li>Find $f(x)$ and $g(x)$ such that $u(x, y)=1$ along the three segments $x=0, y ∈(0,1)$; $y=0, x ∈(0,1)$; and $x+y=1$ with $0&lt;x, y&lt;1$.</li></ol>
+<li>Generalise the proof of the Maximum Principle Theorem for the equation:\begin{equation}y^2 u_{x x}+x^2 u_{y y}+2 x y u_{x y}=1 \text { in } D .\end{equation}</li></li></ol>
+<b>Solution.</b>
+<ol type="a"><li>Maximum principle for Poisson’s equation states: suppose $u$ satisfies Poisson’s equation everywhere within a bounded domain $D$, $u_{xx} + u_{yy} = f$ in $D$ where we have $f≥0$ in $D$. Then $u$ attains its maximum value on $∂D$.<br>
+The proof goes as follows: As $\bar D = D ∪ ∂D$ is a closed bounded set, $u$ must attain its maximum somewhere in $D$ or its boundary. Now we proceed in two steps.<br>
+Suppose first that $f>0$ in $D$. If $u$ has an interior maximum at some point $(x_0, y_0)$ inside $D$, then the following conditions must be satisfied at $(x_0, y_0)$:$$u_x=u_y=0,\;u_{xx}&lt;0,u_{yy}&lt;0$$But if $f$ is strictly positive this contradicts with Poisson’s equation. Hence $u$ cannot have an interior maximum within $D$, so it must attain its maximum value on the boundary $∂D$.<br>
+Suppose now we only have $f≥0$ in $D$. We consider the new function$$v(x, y)=u(x, y)+\frac{ϵ}{4}\left(x^2+y^2\right)$$where ϵ is a positive constant. Then $v_{xx}+v_{yy}=f+ϵ> 0$. So, as we have just proved, $v$ attains its maximum value on $∂D$.<br>
+Now suppose the maximum value of $u$ on $∂D$ is $M$, and the maximum of $x^2+y^2$ on $∂D$ is $R^2$ (which is actually 1 for the problem at hand).<br>
+Then the maximum value of $v$ on $∂D$ (which is also the maximum value on the whole $D$) is less than $M+\fracϵ4R^2$. In other words
+\[u+\fracϵ4(x^2 + y^2) = v ≤ M + \fracϵ4R^2\]
+holds for all $(x,y)∈D$. Letting $ϵ→0$ we obtain the desired result.</li>
+<li><ol type="i"><li>In order to determine the characteristic variables we look at the following quadratic polynomial$$
+y^2 λ^2-2 x y λ+x^2=0
+$$
+This has <a href="https://courses.maths.ox.ac.uk/pluginfile.php/30048/mod_resource/content/16/DE1notes22-11-09.pdf#equation.4.11">repeated roots</a> $λ=\frac{x}{y}$. In order to choose one of the new variables we solve
+$$
+y'(x)=\frac{x}{y} ⇒ x^2-y^2=c=φ
+$$
+We are also told to use $ψ=x+y$. The equation reduces to
+$$
+ψ^2 ∂_{ψ ψ} u(φ, ψ)=1
+$$
+</li>
+<li>Solving this equation we find the most general solution$$u(φ, ψ)=-\log (ψ)+f(φ)+ψ g(φ)$$So that the general solution in terms of $(x,y)$ is given by$$
+u(x, y)=-\log (x+y)+f\left(x^2-y^2\right)+(x+y) g\left(x^2-y^2\right)
+$$
+Where $f, g$ are arbitrary (differentiable) functions, as required.</li>
+<li>Now we use the boundary conditions to try to fix $f$ and $g$.<br>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[domain=0:2]
+\draw[->] (-0.2,0)--(1.5,0) node[right] {$x$};
+\draw[->] (0,-0.2)--(0,1.5) node[above] {$y$};
+\draw[thick,red](1,0)node[below]{1}--(0,1)node[left]{1}--(0,0)--cycle;
+\end{tikzpicture}{% endlatex %}<br>The ones in the first two segments read:
+\begin{array}l
+u(x, 0)=1=-\log (x)+f\left(x^2\right)+x g\left(x^2\right) \\
+u(0, y)=1=-\log (y)+f\left(-y^2\right)+y g\left(-y^2\right)
+\end{array}
+Now writing $\log x=\frac12 \log x^2 ≡ \frac12 \log ζ$ and $x=ζ^{1 / 2}$ (which we can, because $x$ is positive), and doing the same for the second equation, we obtain
+\begin{array}l
+1=-\frac12 \log (ζ)+f(ζ)+ζ^{1 / 2} g(ζ) \\
+1=-\frac12 \log (ζ)+f(-ζ)+ζ^{1 / 2} g(-ζ)
+\end{array}
+where $ζ ∈(0,1)$ in both equations. This imposes
+$$
+f(ζ)=1-|ζ|^{1 / 2} g(ζ)+\frac12 \log (|ζ|)
+$$
+In the range $ζ ∈(-1,0) ∪(0,1)$. Now let's look at the third condition. It imposes
+$$
+f\left(x^2-y^2\right)+g\left(x^2-y^2\right)=1
+$$
+As we move along the segment $x+y=1$, with $0&lt;x, y&lt;1$, the argument of $f$ and $g$ go between $-1$ and 1, so that we can say
+$$
+f(ζ)+g(ζ)=1
+$$
+This allows to find $f$ and $g$
+\begin{align*}
+f(ζ)&=\frac{2|ζ|^{1 / 2}-2-\log |ζ|}{2\left(|ζ|^{1 / 2}-1\right)} \\
+g(ζ)&=\frac{\log |ζ|}{2\left(|ζ|^{1 / 2}-1\right)}
+\end{align*}
+</li>
+</ol>
+<li>Let us consider the required generalisation. The equation under consideration now takes the form$$
+y^2 u_{x x}+x^2 u_{y y}+2 x y u_{x y}=f \text { in } D
+$$
+The proof in this case goes as follows. Assume first $f>0$ and $u$ has an interior maximum at some point $\left(x_0, y_0\right)$ inside $D$. In this case, at $\left(x_0, y_0\right)$ we have
+$$
+u_{x x}&lt;0,   u_{y y}&lt;0,   u_{x y}^2&lt;u_{x x} u_{y y}
+$$
+So$$y^2 u_{x x}+x^2 u_{y y}+2 x y u_{x y}&lt;y^2 u_{x x}+x^2 u_{y y}+2 x y \sqrt{u_{x x} u_{y y}}=-(y\sqrt{-u_{xx}}-x\sqrt{-u_{yy}})^2≤0$$This contradicts with $f>0$ so that the maximum must be in the boundary. Now, for $f ≥ 0$ we can do as before, and consider $v(x, y)=u(x, y)+\frac{ϵ}{4}\left(x^2+y^2\right)$. In this case
+$$
+y^2 v_{x x}+x^2 v_{y y}+2 x y v_{x y}=f+ϵ
+$$
+and we can proceed exactly as before.
+</li>
+</li>
+</ol>
+</li>
+</ol>
