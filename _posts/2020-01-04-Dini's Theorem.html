@@ -1,0 +1,58 @@
+---
+mathjax: true
+tag: real-analysis
+excerpt: <a href="https://personal.math.ubc.ca/~feldman/m321/dini.pdf" target="_blank">Dini's Theorem(Joel Feldman)</a>
+---
+<strong>Theorem (Dini's Theorem)</strong> Let $K$ be a compact metric space. Let $f: K \rightarrow \mathbb{R}$ be a continuous function and $f_{n}: K \rightarrow \mathbb{R}, n \in \mathbb{N}$, be a sequence of continuous functions. If $\left\{f_{n}\right\}_{n \in \mathbb{N}}$ converges pointwise to $f$ and if$$<br>
+f_{n}(x) \geq f_{n+1}(x) \quad \text { for all } x \in K \text { and all } n \in \mathbb{N}<br>
+$$then $\left\{f_{n}\right\}_{n \in \mathbb{N}}$ converges uniformly to $f$.<br>
+<br>
+<strong>Proof.</strong> Set, for each $n \in \mathbb{N}, g_{n}(x)=f_{n}(x)-f(x)$. Then $\left\{g_{n}\right\}_{n \in \mathbb{N}}$ is a sequence of continuous functions on the compact metric space $K$ that converges pointwise to 0 . Furthermore $g_{n}(x) \geq g_{n+1}(x) \geq 0$ for all $x \in K$ and $n \in \mathbb{N}$. Set $M_{n}=\sup \left\{g_{n}(x) \mid x \in K\right\}$. We must prove that $\lim _{n \rightarrow \infty} M_{n}=0$.<br>
+<br>
+We use the finite open subcover property of $K$. Let $\varepsilon&gt;0$ and define $\mathcal{O}_{n}=$ $g_{n}^{-1}((-\infty, \varepsilon))$. Since $g_{n}$ is continuous, this is an open set. Since $g_{n}(x) \geq g_{n+1}(x)$, $\mathcal{O}_{n} \subset \mathcal{O}_{n+1}$. For each $x \in K, \lim _{n \rightarrow \infty} g_{n}(x)=0$ so that there is an $n \in \mathbb{N}$ with $g_{n}(x)&lt;\varepsilon$ so that $x \in \mathcal{O}_{n}$. Thus $\bigcup_{n=1}^{\infty} \mathcal{O}_{n}=K$. Since $K$ is compact, there is a finite collection of $\mathcal{O}_{n}$ 's that also covers $K$. Since $\mathcal{O}_{n} \subset \mathcal{O}_{n+1}$, the $\mathcal{O}_{n}$ in that finite collection with the largest index covers $K$. Thus there is an $N \in \mathbb{N}$ with $\mathcal{O}_{N}=K$. That is $g_{N}(x)&lt;\varepsilon$ for all $x \in K$. Thus $M_{N} \leq \varepsilon$. Since $M_{n}$ decreases with $n$ and every $M_{n} \geq 0$, this forces $\lim _{n \rightarrow \infty} M_{n}=0$.&nbsp; &nbsp;$\blacksquare$<br>
+<br>
+Here are examples that show that the hypotheses<br>
+&nbsp; &nbsp; (a) $K$ is compact<br>
+&nbsp; &nbsp; (b) $f$ is continuous<br>
+&nbsp; &nbsp; (c) $f_{n}(x)$ decreases as $n$ increases<br>
+are each necessary.<br>
+<br>
+<strong>Example (a)</strong> The set $K=(0,1)$ is not compact. As $n \rightarrow \infty$, the sequence $f_{n}(x)=x^{n}$ of continuous functions decreases pointwise to zero. But the convergence is not uniform because$$\sup \left\{f_{n}(x) \mid x \in \mathbb{R}\right\}=1$$for all $n \in \mathbb{N}$.<br>
+<br>
+<strong>Example (a')</strong> The set $K=\mathbb{R}$ is not compact. As $n \rightarrow \infty$, the sequence<br>
+<div align="center">$f_{n}(x)=$<tex>\documentclass[tikz]{standalone}<br>
+\begin{document}<br>
+\begin{tikzpicture}<br>
+\draw[-&gt;](0,0)--(0,-0.1)node[below]{0}(1,0)--(1,-0.1)node[below]{$n$}(2,0)--(2,-0.1)node[below]{$2n$}(-1,0)--(3,0);\draw[very thick](-1,0)--(1,0)--(2,.5)--(3,.5);<br>
+\end{tikzpicture}<br>
+\end{document}</tex></div>( the right hand plateau is at height 1 ) of continuous functions decreases pointwise to zero. But the convergence is not uniform because$$<br>
+\sup \left\{f_{n}(x) \mid x \in \mathbb{R}\right\}=1<br>
+$$for all $n \in \mathbb{N}$.<br>
+<br>
+<strong>Example (b)</strong> The set $K=[0,1]$ is compact. As $n \rightarrow \infty$, the sequence<div align="center">$f(x)=$<tex>\documentclass[tikz]{standalone}<br>
+\begin{document}<br>
+\begin{tikzpicture}<br>
+\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,.5)--(.3,0)node[below]{$\frac1n$}--(1,0);\filldraw(0,.5)circle(1.5pt);<br>
+\end{tikzpicture}<br>
+\end{document}</tex></div>of continuous functions (the dot is at height 1) decreases pointwise to the discontinuous function<div align="center">$f(x)=$<tex>\documentclass[tikz]{standalone}<br>
+\begin{document}<br>
+\begin{tikzpicture}<br>
+\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,0)--(1,0);\filldraw(0,.5)circle(1.5pt);<br>
+\end{tikzpicture}<br>
+\end{document}</tex></div><br>
+But the convergence is not uniform because<div align="center">$\displaystyle\sup \left\{x^{n} \mid 0&lt;x&lt;1\right\}=\sup$<tex>\documentclass[tikz]{standalone}<br>
+\begin{document}<br>
+\begin{tikzpicture}<br>
+\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(1,0)--(1,-.1)node[below]{1}(-.2,0)--(1.2,0);\draw[very thick](0,.5)--(.3,0)node[below]{$\frac1n$}--(1,0);\filldraw(0,0)circle(1.5pt);<br>
+\end{tikzpicture}<br>
+\end{document}</tex>$=1$</div>for all $n \in \mathbb{N}$.<br>
+<br>
+<strong>Example (c)</strong> The set $K=[0,1]$ is compact. As $n \rightarrow \infty$, the sequence<br>
+<div align="center">$f_n(x)=$<tex>\documentclass[tikz]{standalone}<br>
+\begin{document}<br>
+\begin{tikzpicture}<br>
+\draw[-&gt;](0,0)--(0,-.1)node[below]{0}(2,0)--(2,-.1)node[below]{1}(-.2,0)--(2.2,0);\draw(.3,0)node[below,yshift=-2]{$\frac1n$}--+(0,-0.1)(.6,0)node[below,yshift=-2]{$\frac2n$}--+(0,-0.1);\draw[very thick](0,0)--(.3,0)--(.45,.5)--(.6,0)--(2,0);<br>
+\end{tikzpicture}<br>
+\end{document}</tex></div>of continuous functions (the triangle has height 1) converges pointwise to zero. But the convergence is not uniform because$$<br>
+\sup \left\{f_{n}(x) \mid x \in \mathbb{R}\right\}=1<br>
+$$for all $n \in \mathbb{N}$.
