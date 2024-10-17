@@ -1,0 +1,154 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: A1 paper 2018
+---
+$\newcommand{\abs}[1]{\left|#1\right|}$
+<ol>
+<li>
+<ol type="a"><li><ol type="i"><li>State <i>Picard’s Theorem</i> on the existence of a unique solution of the differential equation system$$y'(x)=f(x, y),   y(a)=b$$where prime denotes differentiation with respect to $x$.</li><li>Let $f(x, y)=x \sqrt{y+1}$. Show that $f$ is not Lipshitz continuous in $y$ on any interval $\abs{y+1}&lt;k$. For $a=0, b=-1$, demonstrate non-uniqueness by constructing two different solutions.</li></ol></li><li>Consider now the differential equation\begin{align}
+y'(x)&=\tan (y), \\
+y(0)&=\fracπ{4}
+\end{align}<ol type="i"><li>Show that the largest possible value of $h$ for which Picard's Theorem guarantees a unique solution for $\abs{x}&lt;h$ satisfies
+$$
+h=\left[\cos \left(k^*+\fracπ{4}\right)\right]^2,
+$$
+where $k^* ∈(0, π / 4)$ satisfies
+$$
+2 k^*=\sin \left(2 k^*+\fracπ{2}\right) .
+$$
+</li><li>By solving (1) analytically, show that in fact a solution can be constructed up to the larger value $h=\ln \sqrt{2}$.
+</li></ol></ol>
+<b>Solution.</b>
+<ol type="a"><li>
+<ol type="i">
+<li>Picard's theorem states that there exists a unique solution to $y'=f,y(a)=b$ on $R=\{\abs{x-a}⩽h,\abs{y-b}⩽k\}$ if
+<ul>
+<li>$\abs{f(x,y)}&lt;M$ finite on $R$ and $f$ is continuous.</li>
+<li>$f$ satisfies a Lipschitz condition in $y$ which holds in $R$</li>
+<li>$Mh⩽k$</li>
+</ul></li>
+<li>\(f = x \sqrt{y + 1}\). \(f\) Lipschitz on \(\abs{y + 1} < k\) would imply
+\(∃ L\) such that \(\abs{f (x, y) - f (x, z) } < L \abs{y - z}   ∀ y, z\) such that \(\abs{y + 1} < k, \abs{ z + 1 } < k\).<br>Let \(z = - 1\). The statement reads \(\abs{x \sqrt{y + 1} } < L \abs{y + 1}  ∀ \abs{y + 1} < k\), which would require \(\frac{\abs{x}}{\sqrt{y + 1}} < L\)<br>but then left side blows up as \(y→- 1^+\), so there does not exist such an \(L\). &there4;\(f\) not Lipschitz.
+\begin{cases}y' = x \sqrt{y + 1}\\y (0) = - 1\end{cases}
+One solution is \(y = - 1\). Can construct a second solution by separating variables:
+\[\frac{{\text{d}} y}{\sqrt{y + 1}} = x \text{d} x ⇒ 2 \sqrt{y + 1}= \frac{1}{2} x^2 + C, C = 0 \text{ by boundary condition }y (0) = - 1\]
+\(⇒ y = \frac{1}{16} x^4 - 1\) is a second solution.</li></ol></li><li><ol type="i"><li>$\begin{cases}y' = \tan y\\y (0) =\fracπ{4}\end{cases}$ Since \(\tan y→∞\) as \(y→\fracπ{2}\) must have \(k < \fracπ{4}\).<br>
+For this \(R\), \(M = \tan \left( \fracπ{4} + k \right)\) is a bound on \(f\).<br>Also since \(f_y = \sec^2 y\) is bounded on \(R\), \(f\) is Lipschitz, by Mean value theorem.<br>
+Now \(M h ⩽ k ⇒ h ⩽ \frac{k}{\tan \left(\fracπ{4} + k\right)}≕ g (k)\)
+<br>The maximum region is found by seeking a maximum of \(g\) for \(k ∈ \left(0, \fracπ{4} \right)\)
+<br>Since \(g (0) = g \left( \fracπ{4} \right) = 0\), such a maximum does exist.
+\[g' = \frac{1}{\tan \left( \fracπ{4} + k \right)} - \frac{k}{\tan^2 \left(\fracπ{4} + k \right)} \sec^2 \left( \fracπ{4} + k \right) = 0⇒ k^∗= \sin \left( \fracπ{4} + k^∗\right)\cos\left( \fracπ{4} + k^∗\right)→2 k^∗= \sin\left(\fracπ{2} + 2 k^∗\right)\]
+And \(h_{\max} = \frac{k^∗}{\tan \left( \fracπ{4} + k^∗\right)} =\left( \cos \left( \fracπ{4} + k^∗\right) \right)^2≈0.163194\)</li>
+<li>\[\frac{1}{\tan y} \mathrm{d} y = \frac{\cos y}{\sin y} \mathrm{d} y=\mathrm{d} x⇒\ln \sin y = x + \tilde{c}⇒\sin y =ce^x,   y (0) = \frac{π}{4}⇒\frac{1}{\sqrt{2}} = c\]So we have the solution \(y = \arcsin \left( \frac{e^x}{\sqrt{2}} \right)\) which is valid when \(\frac{e^x}{\sqrt{2}}≤1⇒x≤\ln \sqrt{2}≈0.346574\)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><ol type="a"><li>Consider the system of equations for $x(t), y(t)$ :
+\begin{aligned}
+& \dot{x}=x+α y^2, \\
+& \dot{y}=y+α x^2,
+\end{aligned}
+where $α$ is a constant and overdot denotes differentiation with respect to $t$.
+<ol type="i">
+<li>Let $α=0$. Classify the critical point at the origin. Does your analysis tell you anything about trajectories for large $x$ and $y$ ? Why or why not?</li>
+<li>For $α>0$, show that a second critical point exists on the line $y=x$ for $x&lt;0$. Does this affect stability at the origin?</li>
+<li>Determine stability of the second critical point and sketch the phase plane for $x&lt;0, y&lt;0$.</li>
+</ol></li>
+<li>
+Now consider the first order PDE for $u(x, y)$
+$$
+x u_x+y u_y=u,
+$$
+where subscript denotes partial differentiation, along with boundary data $u=\sin (x)$ on the polar curve $r=4+\cos (4 θ)$ for $0<θ<\fracπ{2}$.<br>
+Determine the domain of definition of the solution.
+</li>
+</ol>
+<b>Solution.</b>
+<ol type="a"><li><ol type="i"><li>$α=0$ gives $\cases{\dot x=x\\\dot y=y}$ this has critical point $(0,0)$ with Jacobian $J=\pmatrix{1&0\\0&1}$ eigenvalues are $λ=1$, a repeated root, since $J=I$, $(0,0)$ is an unstable star.<br>As this required no linearization, the entire phase plane has trajectories straight lines leaving the origin.</li><li>$α>0$ Nullclines are $\dot x=0$ or $x=-αy^2$, $\dot y=0$ or $y=-αx^2$. By symmetry, they will intersect at $x^∗=y^∗&lt;0$, where $y^∗=-α(-αy^{∗2})^2⇒y^∗=-1/α${% latex %}\usepackage{tikz}
+\begin{tikzpicture}[>=stealth,scale=.5]
+\draw[->](-3,0)--(3,0)node[right]{$x$};
+\draw[->](0,-3)--(0,3)node[above]{$y$};
+\draw[domain=-2.5:2.5]plot({-(\x)^2/2},\x)node[left]{$\dot x=0$}plot(\x,{-(\x)^2/2})node[below]{$\dot y=0$};
+\fill[red](0,0)circle(3pt)(-2,-2)circle(3pt);
+\end{tikzpicture}{% endlatex %}
+<br>At $(0,0)$, $J=\pmatrix{1&0\\0&1}$ is unchanged, so it remains an unstable star.</li><li>At $(x^∗,y^∗)$, $J=\pmatrix{1&2αy^*\\2αx^*&1}=\pmatrix{1&2\\2&1}$ ∴ It is a saddle point.{% latex %}\usepackage{tikz}
+\begin{document}\begin{tikzpicture}[scale=.5]
+\draw[->](-4,0)--(3,0)node[right]{$x$};
+\draw[->](0,-4)--(0,3)node[above]{$y$};
+\draw[domain=-2.5:2.5]plot({-(\x)^2/2},\x)node[left]{$\dot x=0$}plot(\x,{-(\x)^2/2})node[below]{$\dot y=0$};
+\tikzset{every path/.style={draw=blue}}
+\def\a{\draw[->]plot[smooth]coordinates{(0,0)(-0.15,-0.09)(-0.4,-0.2)(-0.64,-0.25)(-0.78,-0.25)(-1.04,-0.19)(-1.15,-0.15)(-1.27,-0.09)(-1.4,0.)(-1.8,0.36)};
+\draw[->]plot[smooth]coordinates{(-0.09,-0.08)(-0.34,-0.32)(-0.52,-0.47)(-0.76,-0.64)(-1.08,-0.79)(-1.46,-0.8)(-2.05,-0.46)(-2.76,0.36)};
+\draw(-3,-1)--(-2.5,-1.5);
+\draw[->]plot[smooth]coordinates{(-3.57,-3.52)(-3.34,-3.27)(-3.17,-3.05)(-3.04,-2.87)(-2.95,-2.7)(-2.9,-2.53)(-2.89,-2.36)(-2.92,-2.17)(-3.01,-1.94)(-3.15,-1.64)(-3.37,-1.26)};
+}
+\a
+\draw[->](-1.5,-1.5)--(-2.5,-2.5)(0,0)--(-1.5,-1.5);\draw[->](-3.57,-3.57)--(-2.5,-2.5);\draw[<->](-2.5,-1.5)--(-1.5,-2.5);
+\fill[red](0,0)circle(3pt)(-2,-2)circle(3pt);
+\tikzset{cm={0,1,1,0,(0,0)}}
+\a
+\end{tikzpicture}{% endlatex %}
+</li></ol></li><li>Characteristic projections satisfy $\cases{\dot x=x\\\dot y=y}$ which are straight lines through the origin as shown in (a). Since the data is given on a polar curve for which $r≠0$, the radial characteristic lines will not hit the data curve tangentially, ie. it is Cauchy data. Moreover, $\dot u=u⇒u=u(s,0)e^t$ will remain bounded. Hence the domain of definition is bounded by the origin and the characteristics through the end points of the data ie. it is $x>0,y>0$.
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\draw[<->](0,5.5)node[above]{$y$}--(0,0)--(5.5,0)node[right]{$x$};
+\draw[blue](0,0)--(15:5)(0,0)--(30:4)(0,0)--(45:3.5)(0,0)--(60:4)(0,0)--(75:5);
+\draw plot[domain=0:90](\x:{4+cos(4*\x)});
+\end{tikzpicture}{% endlatex %}</li></ol>
+</li>
+<li>
+<ol type="a"><li>Consider the Dirichlet problem
+\begin{align}
+& u_{x x}+u_{y y}=f(x, y),   x, y∈Ω, \\
+& u=g(x, y) \text { on }∂Ω,
+\end{align}
+where subscript denotes partial differentiation, and Ω is a simply connected closed region with boundary ∂Ω.
+<ol type="i">
+<li>Show that if a solution exists, it is unique. [You may use without proof the Maximum Principle if stated clearly.]</li>
+<li>Consider two solutions $u_1$ and $u_2$, both satisfying (3) and with $u_i=g_i(x, y)$ on ∂Ω. If $g_2>g_1$ pointwise on ∂Ω, show that $u_2(x, y)>u_1(x, y) ∀(x, y)∈Ω$.</li>
+</ol></li>
+<li>Consider the partial differential equation system
+\begin{aligned}
+& u_{x x}+u_{y y}=0,   y>0 \\
+& u(x, 0)=0 \\
+& u_y(x, 0)=g(x)=e^{-\sqrt{n}} \cos (n x)
+\end{aligned}
+where $n$ is a constant.
+<ol type="i">
+<li>Verify that for fixed $n$,$$u(x, y)=\frac{1}{n} e^{-\sqrt{n}} \cos (n x) \sinh(n y)$$is a solution.</li>
+<li>By considering the behaviour as $n→∞$, show that the system <b>does not</b> exhibit continuous dependence on data.</li></ol>
+</li>
+<li>Let $w(x,t)$ satisfy
+\begin{aligned}
+& w_t=w_{x x}+a w, \text { for } 0< x< 1, t>0 \\
+& w=0 \text { at } x=0 \\
+& w_x+α w=0 \text { at } x=1, \\
+& w=0 \text { at } t=0
+\end{aligned}
+where $a$ and α are both positive constants.
+<ol type="i">
+<li>Derive the relation$$\frac{d}{d t} ∫_0^1 \frac12 w^2 d x-∫_0^1 a w^2 d x≤0 .$$</li>
+<li>Hence or otherwise show that $w ≡ 0$.</li>
+</ol>
+</li>
+</ol>
+<b>Solution.</b>
+<ol type="a">
+<li><ol type="i">
+<li>The difference of two solutions $w$ satisfies $∇^2w=0$ on Ω, $w=0$ on ∂Ω.<br>
+Maximum principle: $∇^2u≥0⇒u$ attains maximum on ∂Ω; $∇^2u≤0⇒u$ attains minimum on ∂Ω.<br>
+Since $∇^2w≡0$, $w$ attains max and min on ∂Ω, which is $0⇒w≡0$.</li>
+<li>$\cases{∇^2u_1=f\\∇^2u_2=f}$ on Ω and $\cases{u_1=g_1\\u_2=g_2}$ on ∂Ω.<br>
+$w=u_2-u_1$ satisfies $\cases{∇^2w=0\text{ on }Ω\\w=g_2-g_1>0\text{ on }∂Ω}$<br>
+By maximum principle, $w$ attains a minimum on $∂Ω⇒w>0$ on $Ω⇒u_2>u_1$ on Ω</li>
+</ol>
+</li>
+<li><ol type="i"><li>immediate, just plug in.</li><li>Let $g_1=0,g_2=e^{-\sqrt n}\cos(nx)$ for which we have solutions $u_1=0,u_2=\frac1ne^{-\sqrt n}\cos(nx)\sinh(ny)$<br>
+As $n→∞$, $g_2→0\;∀x$, so $‖g_1-g_2‖$ can be made arbitrarily small<br>But $u_2=\frac1ne^{-\sqrt n}\cos(nx){e^{ny}-e^{-ny}\over2}$ does not go to 0 if $y>0$ and $\cos(nx)≠0$ due to $e^{ny}$ term.<br>Hence $‖u_1-u_2‖$ cannot be made arbitrarily small as $n→∞$.<br>∴ no continuous dependence for data.</li></ol></li>
+<li>$\begin{aligned}[t]∂_x(ww_x)&=ww_{xx}+w_x^2\\&=w(w_t-aw)+w_x^2\\&=\frac12∂_t(w^2)-aw^2+w_x^2\end{aligned}$<br>
+Integrating $x$ on $(0,1)$,$$∫_0^1\frac{∂}{∂t}\frac12w^2d x-∫_0^1a w^2d x+∫_0^1w_x^2d x=ww_x|^1_0=-αw(1)^2≤0$$
+Hence$$\frac{d}{d t}\frac12∫_0^1w^2d x-a∫_0^1w^2d x≤0$$</li>
+<li>Let $I(t)=∫_0^1w^2dx$. Then $I'(t)-2aI(t)≤0$ and $I(0)=0$. Let $ℐ(t)=I(t)e^{-2at}$. Then $ℐ'(t)≤0$ and $ℐ(0)=0⇒ℐ(t)≤0⇒I(t)≤0$<br>But $I(t)=∫_0^1w^2dx≥0$, so $I≡0$, so $w≡0$.</li>
+</ol></li></ol>
