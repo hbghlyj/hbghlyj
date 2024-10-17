@@ -1,0 +1,89 @@
+---
+mathjax: true
+tag: Rings and Modules
+excerpt: sheet 2 — HT 2023
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}.c3{background:#f8f9fa;
+border: 1px solid #aaa;margin-left:20.9pt;text-indent:-20.9pt;border-radius: 10px;}</style>
+<p class="c3">II.1. Show that α ∈ ℂ is algebraic if and only if |ℚ(α)∶ℚ|$&lt;∞$. Deduce that 𝔸, the set of algebraic numbers in ℂ, is a subfield of ℂ. Assuming that the algebraic integers, $\barℤ$, form a ring, show that the field of fractions of $\barℤ$ is 𝔸.</p>If <i>k</i> = |ℚ(α)∶ℚ|$&lt;∞$, then 1, α, …, α<sup><i>k</i></sup> ∈ ℚ(α) are linearly dependent, so α is algebraic.<br>If α is algebraic, there exists irreducible $f(x)∈ℚ[x]:f(α)=α^n+a_{n-1}α^{n-1}+⋯+a_0=0$.<br>
+[See <a href="https://web.williams.edu/Mathematics/lg5/394/Rings.pdf#subsection.5.1">Example 5.1</a>] $⟨f(x)⟩$ is a maximal ideal, so $ℚ[x]/⟨f(x)⟩$ is a field, so $ℚ[α]=ℚ(α)$.
+By division algorithm {1, α, …, α<sup><i>n</i>−1</sup>} span $ℚ[α]$. So |ℚ(α)∶ℚ|$=n&lt;∞$.<hr>Since 𝔸 is a field that contains $\barℤ$, we have $𝔸⊃\operatorname{Frac}(\barℤ)$.<br>If α ∈ 𝔸, there is <i>a</i><sub>0</sub>, …, <i>a<sub>n</sub></i> ∈ ℤ such that$$a_nα^n+a_{n-1}α^{n-1}+⋯+a_0=0$$Multiplying through by $a^{n-1}_n$ gives a monic polynomial in $ℤ[a_nα]$$$(a_nα)^n+a_{n-1}(a_nα)^{n-1}+⋯+a_n^{n-1}a_0=0$$so $a_nα∈\barℤ$, so $α∈\operatorname{Frac}(\barℤ)$. Since α is arbitrary, $𝔸⊂\operatorname{Frac}(\barℤ)$, so $𝔸=\operatorname{Frac}(\barℤ)$.
+<p class="c3">II.2. Show that 2 is irreducible but not prime in $ℤ[\sqrt{-5}]$, and that 1 is a greatest common divisor of 2 and $1+\sqrt{-5}$. Do we have $⟨2⟩+⟨1+\sqrt{-5}⟩=ℤ[\sqrt{-5}]$? Is $2+2\sqrt{-5}$ a least common multiple of 2 and $1+\sqrt{-5}$? Does 6 have a unique factorisation into irreducibles? Does 2 have a unique factorisation into irreducibles?</p>If $a,b∈ℤ[\sqrt{-5}]$ satisfy $2=ab$, then $4=N(a)N(b)$ where $N(a),N(b)∈ℤ^+$, so $N(a),N(b)&lt;5$, so $a,b∈ℤ$, so $a∼1$ or $b∼1$. So 2 is irreducible in $ℤ[\sqrt{-5}]$.<br>$2|m+n\sqrt{-5}$ iff $2|m,n$. So $2∤(1-\sqrt{-5})$ and $2∤(1+\sqrt{-5})$.<br>But $2|(1-\sqrt{-5})(1+\sqrt{-5})=6$. So 2 is not prime in $ℤ[\sqrt{-5}]$.<hr>
+<div class="noprint"><a href="https://math.stackexchange.com/questions/1157461">MSE</a></div>
+Let $a=\gcd(2,1+\sqrt{-5})$. Since $a|2$, $N(a)|N(2)=4$. Similarly $N(a)|N(1+\sqrt{-5})=6$, thus $N(a)|\gcd(4,6)=2$. There is no element with norm 2, hence $N(a)=1⇒a∼1$.<br>If $1=2r+(1+\sqrt{-5})s,r=a_1+b_1\sqrt{-5},s=a_2+b_2\sqrt{-5},a_1,b_1,a_2,b_2∈ℤ$, we compute
+\begin{align*}1=N(2r+s+s\sqrt{-5})&=(2a_1+a_2-5b_2)^2+5(2b_1+b_2+a_2)^2\\&≡(a_2+b_2)^2+(b_2+a_2)^2\\&≡0\pmod2\end{align*}contradiction$⇒1∉⟨2⟩+⟨1+\sqrt{-5}⟩⇒⟨2⟩+⟨1+\sqrt{-5}⟩≠ℤ[\sqrt{-5}]$.<hr>$6=2⋅3=(1+\sqrt{-5})(1-\sqrt{-5})$ is a common multiple of 2 and $1+\sqrt{-5}$<br>
+But $N(2+2\sqrt{-5})=24$, so $2+2\sqrt{-5}∤6$, so $2+2\sqrt{-5}$ is not a LCM of 2 and $1+\sqrt{-5}$.<hr>$6=2⋅3=(1+\sqrt{-5})(1-\sqrt{-5})$. It remains to prove $2,3,1±\sqrt{-5}$ are irreducible.<br>Let $x=a+b\sqrt{-5}|2$ and $x≁1$ then $N(x)|N(2)=4⇒b=0⇒a^2|4⇒a=2$, so 2 is irreducible, so 2 has a unique factorisation into irreducibles.<br>Let $x=a+b\sqrt{-5}|3$ and $x≁1$ then $N(x)|N(3)=9$, if $b=0$ then $a^2|9⇒a=3$; if $b=1$ then $a^2+5|9⇒a=2$ but $2+\sqrt{-5}∤3$ so 3 is irreducible.<br>Let $x=a+b\sqrt{-5}|1±\sqrt{-5}$ and $x≁1$ then $N(x)|N(1±\sqrt{-5})=6$, if $b=0$ then $a^2|6$ contradiction; if $b=1$ then $a^2+5|6⇒a=±1$ but $1±\sqrt{-5}$ doesn't divide each other, so $1±\sqrt{-5}$ are irreducible.<br>So 6 has non-unique factorisation into irreducibles.
+<p class="c3">II.3. Suppose that <i>R</i> is an infinite integral domain with finitely many units in which every non-unit has an irreducible factor. By emulating Euclid’s proof that there are infinitely many primes show that <i>R</i> contains infinitely many irreducible elements. Apply this to $𝔽_2[X]$ to deduce that there are arbitrarily large fields of characteristic 2.</p>
+Since \(R\) is not a field, it has at least one irreducible element, say \(p_1\). Suppose now that the set of associate classes of irreducible elements is finite, say with representatives \(p_1,p_2,…,p_r\) for the associate classes. Let \(a=p_1p_2…p_r\). Consider the set $S = \{ 1 + a, 1 + a^2, 1 + a^3, …\}$<br>
+Since $a$ is not a unit, \(a^n≠±1\) for any \(n\).<br>Since \(a≠0,1 - a^{n-m}≠0\) and <i>R</i> is an integral domain,\[(1 + a^m) - (1 + a^n) = a^m(1 - a^{n-m})≠0\]Thus, all the \(1 + a^n\) are distinct.  Thus, \(S\) is an infinite set of distinct nonzero elements.<br>Since there are only finitely many units in \(R\), there exists \(n\) such that \(1 + a^n\) is not a unit.<br>Since every non-unit has an irreducible factor, \(1 + a^n\) has an irreducible factor, say $p_i$.<br>But \(p_i | a^n\) and \(p_i | 1 + a^n\), so \(p_i | 1\), a contradiction.<hr>
+Applying this to $𝔽_2[X]$, we deduce that there are infinitely many irreducible elements.<br>
+Since elements of degree &lt; <i>n</i> are finite, ∃ irreducible $f(X)∈𝔽_2[X]$ of degree > <i>n</i>.<br>[See <a href="https://web.williams.edu/Mathematics/lg5/394/Rings.pdf#subsection.5.1">Example 5.1</a>] $⟨f(X)⟩$ is a <b>maximal</b> ideal, so $𝔽_2[X]/⟨f(X)⟩$ is a <b>field</b> of characteristic 2 and cardinality > 2<sup><i>n</i></sup>.
+<p class="c3">II.4. Show that if <i>R</i> is an integral domain in which every ideal is finitely generated then <i>R</i> has the ACCP. Assuming that the algebraic integers, $\barℤ$, form a ring, show that it has no irreducible elements and deduce that not every ideal in $\barℤ$ is finitely generated.</p><div class="noprint"><a href="http://ramanujan.math.trinity.edu/rdaileda/teach/f19/m4363/factor_lecture.pdf">Factorization in Domains - factor_lecture.pdf</a><br><a href="https://math.stackexchange.com/questions/218485/integral-domains-are-pid-iff-bezout-accp/218516">Integral domains are PID ⟺
+Bezout & ACCP</a></div>
+Consider a chain $I_1⊂I_2⊂I_3⊂⋯$ of ideals in <i>R</i> and let $I=⋃_{k∈ℕ}I_k$, also an ideal in <i>R</i>, so $I$ is finitely generated: $I=⟨a_1, a_2, …, a_m⟩$. Since each $a_i$ must belong to some $I_k$, the right-most of these, $I_n$, contains all of the $a_i$, and hence $I$.
+That is
+$$
+I⊂I_n⊂I_{n+1}⊂I_{n+2}⊂⋯⊂I,
+$$
+proving that each of these inclusions is an equality, and that the chain stabilizes.<hr>For non-unit $α∈\barℤ$, wlog α > 0. As $α=\sqrtα⋅\sqrtα$, we show $\sqrtα∈\barℤ$ then α is not irreducible.<br>
+$α∈\barℤ⇒∃a_i∈ℤ:α^n+a_{n-1}α^{n-1}+⋯+a_0=0$<br>
+$⇒{\sqrtα}^{2n}+a_{n-1}{\sqrtα}^{2(n-1)}+⋯+a_0=0⇒\sqrtα∈\barℤ$<hr>
+Suppose every ideal in $\barℤ$ is finitely generated, by first part, $\barℤ$ has the ACCP, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/37186/mod_resource/content/4/ringsandmodulespartsIandII.pdf#subsection.3.32">Prop 3.32<a >, every <i>x</i> ∈ $\barℤ$* has a factorisation into irreducibles, contradicting that it has no irreducibles.
+<p class="c3">II.5. Draw a picture to explain why for every <i>z</i> ∈ ℂ there is <i>w</i> ∈ ℤ[i] with |<i>z</i> − <i>w</i>|$≤1/\sqrt2$. Hence show that the function <i>f</i>(<i>a</i> + <i>b</i>i) ≔ |<i>a</i> + <i>b</i>i|<sup>2</sup> is a Euclidean function on ℤ[i], and use this to find <i>z</i>, <i>w</i> ∈ ℤ[i] such that <i>d</i> ≔ 2<i>z</i> + (3 − 5i)<i>w</i> has $d|2$ and $d|3-5i$ in ℤ[i]. Is the function $f(a+b\sqrt{-5})≔\left|a + b\sqrt{-5}\right|^2$ a Euclidean function on $ℤ[\sqrt{-5}]$? Is the function $f(a+b\sqrt{-2})≔\left|a+b\sqrt{-2}\right|^2$ a Euclidean function on $ℤ[\sqrt{-2}]$?</p>
+<tex style="margin-left:auto;margin-right:0;display: block;">\documentclass[tikz]{standalone}\begin{document}\begin{tikzpicture}[scale=.65]
+\filldraw(167.855pt,-173.545pt)circle(2pt)node[right]{$z$} -- (155pt, -216pt)node[below left]{$w$};
+\draw(155pt, -272pt)node[below]{$m$} -- (155pt,0);
+\draw(267pt, -272pt)node[below]{$m{+}1$}-- (267pt,0);
+\draw[dashed](155pt, -216pt)--node[midway,sloped,yshift=-5,font=\tiny]{$1/\sqrt2$} (211pt, -160pt)(42pt, -160pt)node[left]{$n{+}\frac12$}-- (330pt, -160pt)(211pt,0) -- (211pt, -272pt)node[below]{$m{+}\frac12$};
+\draw[latex-latex](42pt,0)node[left]{Im}|- (330pt, -272pt)node[below]{Re};
+\draw(42pt, -216pt)node[left]{$n$}-- (330pt, -216pt);
+\draw(42pt, -104pt)node[left]{$n{+}1$}-- (330pt, -104pt);
+\end{tikzpicture}\end{document}</tex>
+Clearly <i>f</i> ≥ 0. If $a|b$, $\frac ba∈$ℤ[i]*$⇒f(a)⩽f(a)f\left(\frac ba\right)=f(b)$<br>
+If <i>a</i>, <i>b</i> ∈ ℤ[i]*, ∃<i>q</i> ∈ ℤ[i]: $f\left(\frac ab-q\right)≤2\left(\frac12\right)^2=\frac12$$$f(a-bq)≤\frac{f(b)}2&lt;f(b)$$Hence <i>f</i> is a Euclidean function on ℤ[i].\begin{array}l(3-5i)/2=1.5-2.5i\\3-5i=2×(1-3i)+1+i\\2=(1+i)×(1-i)\\⇒d=1+i=2×(-1+3i)+(3-5i)\end{array}<hr>Let $a,b∈ℤ[\sqrt{-2}]$*, we'll find $q∈ℤ[\sqrt{-2}]$ such that ${|a-bq|}&lt;b$.<br>Let $ab^{-1}=c+di,\,c,d∈ℝ$. Let $c',d'$ be the closest integer to $c,d$. Let $q=c+d\sqrt{-2}$.\begin{align*}f(a-bq)&=f(b)f(ab^{-1}-q)=f(b)f\left((c-c')+(d-d')\sqrt{-2}\right)\\&=f(b)[(c-c')^2+2(d-d')^2]\\&≤f(b)[(1/2)^2+2(1/2)^2]&lt;f(b)\end{align*}(…the rest is same as ℤ[i] proof). Hence <i>f</i> is a Euclidean function on $ℤ[\sqrt{-2}]$.<hr>By II.2 $ℤ[\sqrt{-5}]$ is not UFD, so it is not ED. Alternatively, the ideal $⟨3,2+\sqrt{-5}⟩$ is not principal [Suppose $⟨3,2+\sqrt{-5}⟩=⟨a⟩$, then $a≁1$ and $a|3⇒a=±3$, but $a∤2+\sqrt{-5}$], so $ℤ[\sqrt{-5}]$ is not PID, so it is not ED.
+<div class="noprint">
+    <a href="https://math.stackexchange.com/questions/70976">Why is $ℤ[\sqrt{-n}],n≥3$ not a UFD?</a><br><a href="https://math.stackexchange.com/questions/3442893">Prove that $ℤ[\sqrt{-2}]$ is a Euclidean domain and $ℤ[\sqrt{-10}]$ is not</a><br><a href="https://math.stackexchange.com/questions/318543">For which $d&lt;0$ is $ℤ[\sqrt{d}]$ an Euclidean Domain?</a><br><a href="https://math.stackexchange.com/questions/607536">Specific way of showing $ℤ[\sqrt{-d}]$ is not a Euclidean Domain when $d>2$</a></div>
+<p class="c3">II.6. Suppose <i>p</i> is prime in ℤ. Show that if there are <i>a</i>, <i>b</i> ∈ ℤ such that <i>p</i> = <i>a</i><sup>2</sup> + <i>b</i><sup>2</sup> then <i>a</i> + <i>b</i>i is prime in ℤ[i], and if there are no such <i>a</i> and <i>b</i> then <i>p</i> is prime in ℤ[i].</p>
+Suppose $a+bi=uv,u,v∈$ℤ[i]. Taking norm in ℂ, $p=N(u)N(v)$ is prime in ℤ, so $N(u)$ or $N(v)$ is 1, so $u$ or $v$ is a unit, so $a+bi$ is irreducible in ℤ[i], by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/37186/mod_resource/content/5/ringsandmodulespartsIandII.pdf#subsection.3.21">Prop 3.21</a> it is prime in ℤ[i].<hr>If ∃<i>u</i>, <i>v</i> not units, $p=uv$, taking norm, $p^2=N(u)N(v)$, but $N(u),N(v)>1$, so $N(u)=p$.<br>Writing <i>u</i> = <i>a</i> + i<i>b</i>, <i>a</i>, <i>b</i> ∈ ℤ, then this says $a^2+b^2=p$.<div class="noprint"><a href="https://dec41.user.srcf.net/notes/IB_L/groups_rings_and_modules.pdf#page=57">Part IB — Groups, Rings and Modules</a></div>
+<p class="c3">II.7. Use the fact that every irreducible element of ℚ[<i>X</i>] is prime in ℚ[<i>X</i>] to show that every irreducible element of ℤ[<i>X</i>] is prime in ℤ[<i>X</i>].</p>ℚ[<i>X</i>] is a Bezout domain, so every irreducible in ℚ[<i>X</i>] is prime.<br>Let <i>f</i> be non-constant, irreducible in ℤ[<i>X</i>], by <a href="https://en.wikipedia.org/wiki/Primitive_part_and_content">Gauss' lemma</a>, <i>f</i> is irreducible and primitive ℚ[<i>X</i>], but ℚ[<i>X</i>] is Bezout domain, so <i>f</i> is prime in ℚ[<i>X</i>].<br>
+Suppose <i>g</i>, <i>h</i> ∈ ℤ[<i>X</i>], $f|gh$, since <i>f</i> is prime in ℚ[<i>X</i>], wlog $f|g$ in ℚ[<i>X</i>]. Since <i>f</i> is primitive, $f|g$ in ℤ[<i>X</i>].
+<p class="c3">II.8. Show that ℤ[<i>X</i>] has the ACCP, and combine this with the previous exercise to deduce that ℤ[<i>X</i>] is a unique factorisation domain.</p>Let $f_{n+1}|f_n\,∀n≥1$ in ℤ[<i>X</i>] and $a_n$ be the lead coefficient of $f_n$.<br>
+$a_{n+1}|a_n$, since ℤ has ACCP, $∃N,∀n≥N:a_n∼a_N$<br>
+$(\deg f_n)$ is a decreasing sequence in ℕ, so $∃N'≥N,∀n≥N':\deg f_n=\deg f_{N'}⇒f_n∼f_N$<hr>ℤ[<i>X</i>] has the ACCP, <a href="https://courses.maths.ox.ac.uk/pluginfile.php/37186/mod_resource/content/5/ringsandmodulespartsIandII.pdf#subsection.3.32">Prop 3.32</a> tells us that every element of ℤ[<i>X</i>]* has a factorisation into irreducibles. By II.7 every irreducible in ℤ[<i>X</i>]* is prime, the result follows from <a href="https://courses.maths.ox.ac.uk/pluginfile.php/37186/mod_resource/content/5/ringsandmodulespartsIandII.pdf#subsection.3.14">Prop 3.14</a>.
+<p class="c3">II.9. Suppose that <i>R</i> is an integral domain. Show that <i>R</i> is a PID if and only if there is a function <i>f</i> : <i>R</i>* → ℕ<sub>0</sub> with $f(a)≤f(b)$ whenever $a|b$; and such that if <i>a</i>, <i>b</i> ∈ <i>R</i>* then either $b|a$, or there are <i>x</i>, <i>y</i> ∈ <i>R</i> and <i>r</i> ∈ <i>R</i>* with $ax=by+r$ and $f(r)&lt;f(b)$.</p>
+Suppose $I$ is a non-zero ideal. Let $b∈I$ have $f(x)$ minimal, and suppose that $a∈I$.<br>If $a∉⟨b⟩$ then there is <i>x</i>, <i>y</i> ∈ <i>R</i> and <i>r</i> ∈ <i>R</i>* with $ax=by+r$ and $f(r)&lt;f(b)$, so $r∈I$, contradicting minimality of $f(b)$.
+<p class="c3" style="margin-left:36px;text-indent:-36px;">II.10. Suppose that <i>R</i> is an integral domain with the ACCP in which every maximal ideal is principal. Show that <i>R</i> is a PID.</p>
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/1818783">A local Noetherian ring with principal maximal ideal implies PIR?</a><br>
+<a href="https://math.stackexchange.com/questions/424551">Every maximal ideal is principal. Is <i>R</i> principal?<a><br>
+<a href="https://www.maths.tcd.ie/~dwilkins/Courses/MA3412/MA3412Hil2012.pdf">Integral Domains, Modules and Algebraic Integers Hilary Term 2012<a><br>
+<a href="https://www.jmilne.org/math/CourseNotes/ANTc.pdf">Algebraic Number Theory</a><br>
+<a href="https://kconrad.math.uconn.edu/blurbs/ugradnumthy/Zinotes.pdf">THE GAUSSIAN INTEGERS, Keith Conrad<a >
+</div>
+Since the union of a nested chain of non-principal ideals is a non-principal ideal, let $I$ be maximal among all non-principal ideals, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/22178/mod_resource/content/17/rings.pdf#subsection.3.50">Krull's Theorem<a > ∃ maximal ideal $J$ such that $I⊂J$, then $J$ is principal, let $J=⟨a⟩$. Let $x_1∈I$, since $x_1∈J$, $∃x_2∈J:x_1=ax_2$, by lemma $I$ is prime ideal, $a∉I$, so $x_2∈I$, ⋯we get $x_{i+1}|x_i$ and $x_{i+1}≁x_i$, contradiction ACCP.<hr>Lemma. 
+<i>R</i> is a commutative ring. If <i>U</i> is maximal among non-principal ideals, <i>U</i> is prime.<br>
+<i>Proof.</i> Let $U$ be maximal among all non-principal ideals of $R$. Suppose $∃a,b∉U:ab∈U$.<br>Since $U⊂U+⟨a⟩$ and $a∈U+⟨a⟩$, we have $U⊊U+⟨a⟩$, so $U+⟨a⟩=⟨c⟩$, for some $c∈R$.\begin{array}{rll}
+c∈U+⟨a⟩\mmlToken{mo}[rspace=0]⟹&c=u+ra&\text{for some $u∈U$ and $r∈R$}\\
+⟹&bc=b(u+ra)=bu+r(ab)∈U&\text{since $ab∈U$}\\
+⟹&b∈\{x∈R|cx∈U\}≕V
+\end{array}
+Since $U⊂V$, and $b∈V∖U$, we have $U⊊V$, so $V=⟨d⟩$ for some $d∈R$.<br>
+For any $u∈U$,
+\begin{array}{rll}U⊂U+⟨a⟩=⟨c⟩\mmlToken{mo}[rspace=0]⟹&u=cy&\text{for some $y∈R$}\\
+⟹&cy∈U\\
+⟹&y∈V=⟨d⟩&\text{by definition of $V$}\\
+⟹&y = dz&\text{for some }z∈R\\
+⟹&u=c(dz)\\
+⟹&u∈⟨cd⟩\\
+\end{array}
+Thus, $U⊂⟨cd⟩$.<br>
+Also, since $d∈V$, by definition of $V$, we get $cd∈U$, hence $⟨cd⟩⊂U$.<br>
+But then $U=⟨cd⟩$, contrary to the assumption that $U$ is not principal.<br>
+It follows that $U$ is prime.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/2674507">exercise 10 from chapter 1, section 1, Kaplansky−Commutative Rings, Rev Ed (1974)</a><br><a href="https://math.stackexchange.com/questions/723150">Maximal (among non-principal ideals) Ideal Must be Prime<a ></div>
+Alternate proof:<br>
+Let $I_0$ be a non-principal ideal, since $\{0\}$ is a principal ideal, $I≠\{0\}$, let $x_0∈I_0∖\{ 0\}$. Suppose we have non-principal ideals $I_0⊂…⊂I_n$ with non-zero $x_i∈I_i∖\{0\}$ with $x_i|x_{i-1}$ and $x_i≁x_{i-1}$. Since $R$ is a principal ideal in $R$, $I_n≠R$, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/22178/mod_resource/content/17/rings.pdf#subsection.3.50">Krull's Theorem</a> ∃ maximal ideal $⟨d_n⟩$ such that $I_n⊂⟨d_n⟩$, define $f_n(x)=d_nx$, then $∀x∈I_n:x∈⟨d_n⟩⇒f_n^{-1}(x)≠∅$, also $f_n$ is 1-1 since <i>R</i> is integral domain. Let $I_{n+1}=f_n^{-1}(I_n)$.<br>
+Then $I_{n+1}$ is an ideal containing $I_n$ [since $∀x∈I_n:x∈f^{-1}(d_nx)$ where $d_nx∈I_n$].<br>
+Since $x_n∈⟨d_n⟩$, $∃x_{n+1}∈I_{n+1}$ such that $x_n=x_{n+1}d_n$<br>
+$I_{n+1}$ not principal, [suppose $I_{n+1}=⟨w⟩$, then $I_n=d_n(I_{n+1})=⟨d_nw⟩$ is principal]<br>
+By induction on <i>n</i>, we have $⋯|x_1|x_0$ and $x_i≁x_{i-1}$, contradicting ACCP.
