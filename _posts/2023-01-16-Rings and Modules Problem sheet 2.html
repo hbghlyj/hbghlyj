@@ -61,7 +61,7 @@ Suppose $I$ is a non-zero ideal. Let $b∈I$ have $f(x)$ minimal, and suppose th
 <a href="https://www.jmilne.org/math/CourseNotes/ANTc.pdf">Algebraic Number Theory</a><br>
 <a href="https://kconrad.math.uconn.edu/blurbs/ugradnumthy/Zinotes.pdf">THE GAUSSIAN INTEGERS, Keith Conrad</a>
 </div>
-Since the union of a nested chain of non-principal ideals is a non-principal ideal, let $I$ be maximal among all non-principal ideals, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/22178/mod_resource/content/17/rings.pdf#subsection.3.50">Krull's Theorem<a > ∃ maximal ideal $J$ such that $I⊂J$, then $J$ is principal, let $J=⟨a⟩$. Let $x_1∈I$, since $x_1∈J$, $∃x_2∈J:x_1=ax_2$, by lemma $I$ is prime ideal, $a∉I$, so $x_2∈I$, ⋯we get $x_{i+1}|x_i$ and $x_{i+1}≁x_i$, contradiction ACCP.<hr>Lemma. 
+Since the union of a nested chain of non-principal ideals is a non-principal ideal, let $I$ be maximal among all non-principal ideals, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/22178/mod_resource/content/17/rings.pdf#subsection.3.50">Krull's Theorem</a> ∃ maximal ideal $J$ such that $I⊂J$, then $J$ is principal, let $J=⟨a⟩$. Let $x_1∈I$, since $x_1∈J$, $∃x_2∈J:x_1=ax_2$, by lemma $I$ is prime ideal, $a∉I$, so $x_2∈I$, ⋯we get $x_{i+1}|x_i$ and $x_{i+1}≁x_i$, contradiction ACCP.<hr>Lemma. 
 <i>R</i> is a commutative ring. If <i>U</i> is maximal among non-principal ideals, <i>U</i> is prime.<br>
 <i>Proof.</i> Let $U$ be maximal among all non-principal ideals of $R$. Suppose $∃a,b∉U:ab∈U$.<br>Since $U⊂U+⟨a⟩$ and $a∈U+⟨a⟩$, we have $U⊊U+⟨a⟩$, so $U+⟨a⟩=⟨c⟩$, for some $c∈R$.\begin{array}{rll}
 c∈U+⟨a⟩\mmlToken{mo}[rspace=0]⟹&c=u+ra&\text{for some $u∈U$ and $r∈R$}\\
@@ -81,7 +81,7 @@ Thus, $U⊂⟨cd⟩$.<br>
 Also, since $d∈V$, by definition of $V$, we get $cd∈U$, hence $⟨cd⟩⊂U$.<br>
 But then $U=⟨cd⟩$, contrary to the assumption that $U$ is not principal.<br>
 It follows that $U$ is prime.
-<div class="noprint"><a href="https://math.stackexchange.com/questions/2674507">exercise 10 from chapter 1, section 1, Kaplansky−Commutative Rings, Rev Ed (1974)</a><br><a href="https://math.stackexchange.com/questions/723150">Maximal (among non-principal ideals) Ideal Must be Prime<a ></div>
+<div class="noprint"><a href="https://math.stackexchange.com/questions/2674507">exercise 10 from chapter 1, section 1, Kaplansky−Commutative Rings, Rev Ed (1974)</a><br><a href="https://math.stackexchange.com/questions/723150">Maximal (among non-principal ideals) Ideal Must be Prime</a></div>
 Alternate proof:<br>
 Let $I_0$ be a non-principal ideal, since $\{0\}$ is a principal ideal, $I≠\{0\}$, let $x_0∈I_0∖\{ 0\}$. Suppose we have non-principal ideals $I_0⊂…⊂I_n$ with non-zero $x_i∈I_i∖\{0\}$ with $x_i|x_{i-1}$ and $x_i≁x_{i-1}$. Since $R$ is a principal ideal in $R$, $I_n≠R$, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/22178/mod_resource/content/17/rings.pdf#subsection.3.50">Krull's Theorem</a> ∃ maximal ideal $⟨d_n⟩$ such that $I_n⊂⟨d_n⟩$, define $f_n(x)=d_nx$, then $∀x∈I_n:x∈⟨d_n⟩⇒f_n^{-1}(x)≠∅$, also $f_n$ is 1-1 since <i>R</i> is integral domain. Let $I_{n+1}=f_n^{-1}(I_n)$.<br>
 Then $I_{n+1}$ is an ideal containing $I_n$ [since $∀x∈I_n:x∈f^{-1}(d_nx)$ where $d_nx∈I_n$].<br>
