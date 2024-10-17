@@ -175,7 +175,8 @@ $$
 $$
 L\left(z^2-1\right)=\log \left(r_1 r_2\right)+i\left(θ_1+θ_2\right)
 $$
-As we cross the real axis along the segment $[-1,1]$, e.g. across $z=1 / 2$ or $z=-1 / 2$, both $θ_1$ and $θ_2$ change continuously.<pre>FunctionSingularities[Log[1 - z] + Log[z + 1] + Pi I, z, Complexes]</pre>{% latex %}\usepackage{tikz}\begin{tikzpicture}
+As we cross the real axis along the segment $[-1,1]$, e.g. across $z=1 / 2$ or $z=-1 / 2$, both $θ_1$ and $θ_2$ change continuously.<pre>FunctionSingularities[Log[1 - z] + Log[z + 1] + Pi I, z, Complexes]</pre>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
 \draw[->] (-2,0)--(2,0) node[right] {$x$};
 \draw[->] (0,-2)--(0,2) node[above] {$y$};
 \draw[red,thick](1,0)circle(1pt)node[below]{1}--(1.9,0)(-1,0)circle(1pt)node[below]{-1}--(-1.9,0);
@@ -185,7 +186,8 @@ As we cross the real axis along the segment $[-1,1]$, e.g. across $z=1 / 2$ or $
 $$
 L\left(\frac{z-1}{z+1}\right)=\log \left(r_1 / r_2\right)+i\left(θ_1-θ_2\right)
 $$
-As we cross the $x&gt;1$ part of the real axis, both arguments change continuously. As we cross the part $x&lt;-1$, both arguments change by $2 π$, but this change cancels in the above combination.<pre>Reduce@FunctionSingularities[Log[(z - 1)/(z + 1)], z, Complexes]</pre>{% latex %}\usepackage{tikz}\begin{tikzpicture}
+As we cross the $x&gt;1$ part of the real axis, both arguments change continuously. As we cross the part $x&lt;-1$, both arguments change by $2 π$, but this change cancels in the above combination.<pre>Reduce@FunctionSingularities[Log[(z - 1)/(z + 1)], z, Complexes]</pre>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
 \draw[->] (-2,0)--(2,0) node[right] {$x$};
 \draw[->] (0,-2)--(0,2) node[above] {$y$};
 \draw[red,thick](1,0)circle(1pt)node[below]{1}--(-1,0)circle(1pt)node[below]{-1};
@@ -264,7 +266,8 @@ taking $R → ∞$ the result follows.
 $$
 ∫_{Γ} \frac{f(z)}{z-x'} d z=0
 $$
-where $x'$ is located in the real axis, and the contour consists of the real axis, with a hump over the pole at $z=x'$ and a large semicircle in the upper half plane. The integral over the large semicircle vanishes.<center>{% latex %}\usepackage{tikz}\begin{tikzpicture}[line width=1pt]
+where $x'$ is located in the real axis, and the contour consists of the real axis, with a hump over the pole at $z=x'$ and a large semicircle in the upper half plane. The integral over the large semicircle vanishes.<center>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[line width=1pt]
 \draw(-3,0)--(1,0)arc(180:0:.5)--(3,0)arc(0:180:3);\fill(1.5,0)circle(1pt)node[below]{$x'$};
 \draw[red,->,transform canvas={rotate=50}](3,0);
 \draw[red,->,transform canvas={rotate around={90:(1.5,0)},yscale=-1}](2,0);
