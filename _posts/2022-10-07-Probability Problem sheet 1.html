@@ -1,0 +1,231 @@
+---
+mathjax: true
+tag: Probability
+excerpt: sheet 1 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}ol[type="a"]{padding-left: 20px;}ol[type="a"]>li{counter-increment: a;}ol[type="a"]>li::marker{content:"("counter(a,lower-alpha)") "}</style>$\DeclareMathOperator{\var}{Var}\newcommand{\abs}[1]{\left|#1\right|}$
+<ol type="1"><li>A company sells lottery scratch-cards for £1 each. 1% of cards win the grand prize of £50, a further 20% win a small prize of £2, and the rest win no prize at all. Estimate how many cards the company needs to sell to be 99% sure of making an overall profit. $[Φ(2.3263)=0.99]$<br>
+    <b>Solution.</b><br>
+    Let $X_i$ be the profit on a single ticket, $n$ be the number of cards, so the overall profit $S_n=X_1+⋯+X_n$.
+    \begin{array}l
+    ℙ(X_i=x)=\begin{cases}79\%&x=1\\20\%&x=-1\\1\%&x=-49\\0&\text{else}\end{cases}\\
+    𝔼X_i=1-1\%⋅50-20\%⋅2=0.1\\
+    \var X_i=79\%(1-0.1)^2+1\%(-49-0.1)^2+20\%(-1-0.1)^2=24.99
+    \end{array}
+    By Central Limit Theorem, $\frac{S_n-0.1n}{\sqrt{24.99n}}∼N(0,1)$.
+    $$ℙ(S_n>0)=0.99⇔\frac{0-0.1n}{\sqrt{24.99n}}=-2.3263⇔n=13523.8$$
+</li><li>A list consists of 1000 non-negative numbers. The sum of the entries is 9000 and the sum of the squares of the entries is 91000. Let $X$ represent an entry picked at random from the list. Find the mean of $X$, the mean of $X^2$, and the variance of $X$. Using Markov's inequality, show that the number of entries in the list greater than or equal to 50 is at most 180. What is the corresponding bound from applying Markov's inequality to the random variable $X^2$? What is the corresponding bound using Chebyshev's inequality?<br>
+<b>Solution.</b><br>
+$𝔼(X)=\frac{9000}{1000}=9,𝔼(X^2)=\frac{91000}{1000}=91,\var(X)=𝔼(X^2)-𝔼(X)^2=10$. By Markov's inequality $ℙ(X≥50)≤\frac{𝔼(X)}{50}=0.18$, so $1000×0.18=180$.<br>
+$ℙ(X^2≥50^2)≤\frac{𝔼(X^2)}{50^2}=0.0364$, so $1000×0.0364=36$.<br>
+By Chebyshev, $ℙ(\left|X-𝔼(X)\right|>41)≤\frac{\var(X)}{41^2}=0.006$, so $1000×0.006=6$.
+<div class="noprint"><a href="https://www.stat.berkeley.edu/~stark/SticiGui/Text/location.htm">https://www.stat.berkeley.edu/~stark/SticiGui/Text/location.htm</a></div>
+</li><li>For $n≥1$, let $Y_n$ be uniform on $\{1,2,…,n\}$ (i.e. taking each value with probability $1/n$). Draw the distribution function of $Y_n / n$. Show that the sequence $Y_n / n$ converges in distribution as $n→∞$. What is the limit?
+<center>
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=4]
+\draw[<->,very thin](0,1.1)--(0,0)--(1.1,0);
+\fill(0,.1)circle(.01)(.1,0)circle(.01)(0,1)circle(.01)(1,0)circle(.01);
+\node at(.1,0)[below]{$\frac1n$};
+\node at(0,.1)[left]{$\frac1n$};
+\node at(1,0)[below]{1};
+\node at(0,1)[left]{1};
+\draw[red](1,1)--(1.1,1);
+\draw[dashed,very thin](0,1)--(1,1)--(1,0);
+\foreach\i in{0,.1,...,1}\draw[red](\i,\i)--(\i+.1,\i)node[circle,fill=white,draw,inner sep=1]{};
+\end{tikzpicture}{% endlatex %}
+</center>$$ℙ\left(\frac{Y_n}n≤k\right)=\begin{cases}0&k< 0\\\frac{⌊nk⌋}n&0≤k≤1\\1&k>1\end{cases}$$
+$$k-\frac1n<\frac{⌊nk⌋}n≤k\text{ so the limit is }\begin{cases}0&k< 0\\k&0≤k≤1\\1&k>1\end{cases}$$
+</li><li>Let $X_i, i≥1$, be i.i.d. uniform on $[0,1]$. Let $M_n=\max\left\{X_1,…, X_n\right\}$.
+<ol type="a">
+<li>Show that $M_n→1$ in probability as $n→∞$.</li>
+<li>Show that $n\left(1-M_n\right)$ converges in distribution as $n→∞$. What is the limit?</li>
+</ol>
+<b>Proof.</b>
+<ol type="a">
+<li>$ℙ\left(\left|M_n-1\right|>ϵ\right)=ℙ\left(M_n≤1-ϵ\right)=(1-ϵ)^n→0$ as $n→∞$.</li>
+<li>$ℙ\left(n(1-M_n)≤k\right)=1-ℙ\left(M_n< 1-\frac kn\right)=\begin{cases}1&k>n\\1-\left(1-\frac kn\right)^n&0≤k≤n\\0&k< 0\end{cases} $ converges to $ \begin{cases}1-e^{-k}&k≥0\\0&k< 0\end{cases} $ so $n\left(1-M_n\right)\overset d→\operatorname{Exp}(1)$.
+<center>
+{% latex %}\usepackage{tikz}
+\draw(0,-0.15)node[below]{0}--(0,0.15)(0,0)--(4,0)(4,0.15)--(4,-0.15)node[below]{1};
+\draw[<->](0.6,0.25)--(1.4,0.25);
+\draw[<->](2.2,0.25)--(2.9,0.25);
+\draw[<->](3.2,0.25)--node[above]{\footnotesize$1-M_n$}(4,0.25);
+\def\cross{\tikz[scale=0.1]{\draw(-1,-1)--(1,1)(-1,1)--(1,-1);}}
+\foreach\t in{0.2,0.6,1.4,2.2,2.9,3.2}\node at(\t,0){\cross};
+\draw node at(0,0)[left]{\footnotesize$n$ many uniform points};
+\draw[-stealth](-2,-1)--node[below]{\footnotesize$n\to\infty$}node[above]{\footnotesize Scale $n\times$}(-0.5,-1);
+\draw[->](0,-1.15)node[below]{0}--+(0,0.3)(0,-1)--(5.2,-1)node[right]{$\infty$};
+\foreach\t in{0.4,1,1.7,2.7,3.3,4.2,4.6}\node at(\t,-1){\cross};
+\draw[<->](1.7,-1.25)--node[below]{\footnotesize Exp(1)}(2.7,-1.25);
+\draw[<->](3.3,-1.25)--node[below]{\footnotesize Exp(1)}(4.2,-1.25);
+\end{tikzpicture}{% endlatex %}
+</center>
+<div class="noprint"><a href="https://en.wikipedia.org/wiki/Poisson_point_process#Poisson_distribution_of_point_counts">Poisson point process</a><br>
+    <a href="https://math.stackexchange.com/questions/3231470">Transforming sum of n exponential distribution to a Poisson distribution</a></div>
+</li>
+</ol>
+</li><li><ol type="a">
+<li>
+    What is the distribution of the sum of $n$ independent Poisson random variables each of mean 1? Use the central limit theorem to deduce that
+    \[
+    e^{-n}\left(1+n+\frac{n^2}{2 !}+⋯+\frac{n^n}{n !}\right)→\frac12\text{ as } n→∞ .
+    \]
+</li>
+<li>
+    Let $p∈(0,1)$. What is the distribution of the sum of $n$ independent Bernoulli random variables with parameter $p$? Let $0≤a< b≤1$. Use appropriate limit theorems to determine how the value of
+    \[
+    \lim _{n→∞} \sum_{r∈ℕ:an≤r< bn}\binom nr p^r(1-p)^{n-r}
+    \]
+    depends on $a$ and $b$.
+</li></ol>
+<b>Proof.</b><ol type="a">
+    <li>
+        Let $X_1,…,X_n\overset{\text{i.i.d}}∼\operatorname{Po}(1)$, then $S_n=∑_{i=1}^nX_i∼\operatorname{Po}(n)$.<br>
+        By Central Limit Theorem, $e^{-n}\left(1+n+\frac{n^2}{2!}+⋯+\frac{n^n}{n!}\right)=ℙ(S_n≤n)=ℙ\left(\frac{S_n}n-1≤0\right)→Φ(0)=\frac12$ as $n→∞$.
+    </li>
+    <li>We proved some parts of this question by Weak Law of Large Numbers in <a href="https://cjhb.site/index.php?dir=116%2F8.html">Prelims</a>:<br>When $p∈[a,b]$, there exists $ϵ$ such that $[p-ϵ,p+ϵ]⊂[a,b]$, so $ℙ(an≤r< bn)≥ℙ(\abs{r-pn}≤ϵ)→1$ as $n→∞$.<br>When $p∈[0,n]∖[a,b]$, there exists $ϵ$ such that $[p-ϵ,p+ϵ]⊂[0,n]∖[a,b]$, so $ℙ(an≤r< bn)≤ℙ(\abs{r-pn}>ϵ)→0$ as $n→∞$.<br>The cases not included in Prelims is $a< b=p$ or $a=p< b$. For the first case: (can do the second case similarly)<br>
+    $X_i\overset{\text{i.i.d}}∼\operatorname{Ber}(p)$, then $S_n=\sum_{i=1}^n X_i∼\operatorname{Bin}(n,p)$, so
+    \begin{align*}\sum_{r∈ℕ:pn≤r≤bn}\binom nr p^r(1-p)^{n-r}&=ℙ\left(pn≤\operatorname{Bin}(n,p)≤bn\right)\\
+    &=ℙ\left(pn≤S_n≤bn\right)\\
+    &=ℙ\left(0≤\frac{S_n}n-p≤b-p\right)\\
+    &=\frac12ℙ\left(\abs{\frac{S_n}n-p}≤b-p\right)\\
+    &→\frac12⋅1=\frac12
+    \end{align*}
+    Summing up all the cases, $\limℙ\left(an≤r≤bn\right)=\cases{0&if $a< b< p$ or $p< a< b$\\1/2&if $a< b=p$ or $a=p< b$\\1&if $a< p< b$}$
+</li>
+</ol>
+</li><li><ol type="a">
+<li>Let $X_n, n≥1$, be a sequence of random variables defined on the same probability space. Show that if $X_n→c$ in distribution, where $c$ is a constant, then also $X_n→c$ in probability.</li>
+<li>Show that if $𝔼\left|X_n-X\right|→0$ as $n→∞$, then $X_n→X$ in probability. Is the converse true?</li>
+</ol>
+<b>Proof.</b>
+<ol type="a">
+<li>Since $X_n\overset d→c$ and $F_c$ is continuous on $ ℝ∖\{c\}$ we have $∀ϵ>0,\lim_{n→∞}F_{X_n}(c-ϵ)=F_c(c-ϵ)=0,\lim_{n→∞}F_{X_n}\left(c+ϵ\right)=F_c\left(c+ϵ\right)=1$.
+\begin{align*}
+\lim_{n→∞} ℙ\left(\abs{X_n-c}≥ϵ\right) &=\lim_{n→∞} ℙ\left(X_n≤c-ϵ\right) + \lim_{n→∞}ℙ\left(X_n≥c+ϵ\right)\\
+&=\lim_{n→∞} F_{X_n}(c-ϵ)+1-\lim_{n→∞}F_{X_n}(c+ϵ)\\
+&=0\implies X_n\overset P→c
+\end{align*}
+{% latex %}\usepackage{tikz}\usepackage{amsfonts}
+\begin{tikzpicture}[every node/.append style={align=left}]
+\node(Lp)at(-2,1.5){$L^p$ convergence\\$\mathbb E[|X_n-X|^p]^{1/p}\to0$};
+\node(L1)at(2,1.5){$L^1$ convergence\\$\mathbb E[|X_n-X|]\to0$};
+\draw[-stealth](Lp)--(L1);
+\node(as)at(-2,-1.5){almost sure\\convergence};
+\node(pr)at(2,-1.5){convergence\\in probability};
+\node(di)at(5.5,-1.5){convergence\\in distribution};
+\draw[-stealth](as)--(pr);
+\draw[-stealth](pr)--(di);
+\draw[-stealth](1.5,1)--(1.5,-1);
+\draw[stealth-,dashed](2.5,1)--node[right]{uniform\\integrability}(2.5,-1);
+\draw[-stealth,thick,dashed](5.25,-2.0311) arc(-60:-120:3.5);
+\node at (3.5,-2.25) {$X_n\to c$};
+\end{tikzpicture}{% endlatex %}
+</li>
+<li>$∀ϵ>0,∃N,∀n>N,𝔼\abs{X_n-X}< ϵ^2$, by Markov's inequality, $ℙ(\abs{X_n-X}≥ϵ)≤\frac{𝔼\abs{X_n-X}}ϵ< ϵ$, so $X_n\overset{P}→X$.<br>
+The converse is false. $ℙ(X_n=n)=\frac1n,ℙ(X_n=0)=\frac{n-1}n$, then $X_n\overset{P}→0$ but $𝔼X_n→1≠0$.
+</li>
+</ol>
+</li><li>A gambler makes a long sequence of bets against a rich friend. The gambler has initial capital $C$. On each round, a coin is tossed; if the coin comes up tails, he loses 30% of his current capital, but if the coin comes up heads, he instead wins 35% of his current capital.
+<ol type="a">
+<li>Let $C_n$ be the gambler's capital after $n$ rounds. Write $C_n$ as a product $CY_1Y_2…Y_n$ where $Y_i$ are i.i.d. random variables. Find $𝔼C_n$.</li>
+<li>Find the median of the distribution of $C_{10}$ and compare it to $𝔼C_{10}$.</li>
+<li>Consider $\log C_n$. What does the law of large numbers tell us about the behaviour of $C_n$ as $n→∞$ ? How is this consistent with the behaviour of $𝔼C_n$ ?</li>
+</ol>
+<b>Solution.</b><br>
+<ol type="a">
+<li>$C_n=CY_1Y_2…Y_n$ where $Y_i$ is defined by $ℙ(Y_i=0.7)=ℙ(Y_i=1.35)=\frac12$.<br>
+$𝔼Y_i=0.7×1/2+1.35×1/2=1.025$ and $Y_i$ are independent, so $𝔼C_n=𝔼C⋅𝔼Y_1⋅𝔼Y_2⋅⋯⋅𝔼Y_n=1.025^nC$.</li>
+<li>The median of $C_n$ is $C⋅0.7^5⋅1.35^5=0.753631C$, less than $𝔼C_{10}=1.28008C$.</li>
+<li>$\log C_n=\log C+∑_{i=1}^n\log Y_i$. By the law of large numbers, $\frac{∑_{i=1}^n\log Y_i}n→𝔼[\log Y_i]=(\log0.7+\log1.35)×1/2=\log0.972$, so $\log C_n→\log C+n\log0.972$, so $\exp 𝔼[\log C_n]=0.972^nC$.<br>
+This is less than $𝔼[C_n]$ obtained in (a) by Jensen's inequality (because log is concave function, $𝔼[\log X]≤\log 𝔼[X]$).<br>
+To prove $C_n→0$ rigorously, by Strong Law of Large numbers $\frac{∑_{i=1}^n\log Y_i}n\overset{a.s.}⟶\log0.972$, so $∃N,∀n>N:\frac{∑_{i=1}^n\log Y_i}n≤\log0.99⇒C_n< C0.99^n→0$ as $n→∞$. Applying the same argument to $𝔼[C_n]$ is useless: we can only get $C_n$ less than ∞.
+<div class="noprint"><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox#Expected_utility_theory">Expected utility theory</a><br><a href="https://en.wikipedia.org/wiki/Kelly_criterion">Kelly criterion</a></div>
+</li></ol>
+</li><li>Let $ℍ_n$ be the $n$-dimensional cube $[-1,1]^n$. For fixed $x \in ℝ$, show that the proportion of the volume of $ℍ_n$ within distance $(n/3)^{1/2}+x$ of the origin converges as $n→∞$, and find the limit.<br>
+[<i>Hint: Consider a random point whose $n$ coordinates are i.i.d. with Uniform $[-1,1]$ distribution. If $A⊂ℍ_n$, then $\operatorname{vol}(A) / \operatorname{vol}\left(ℍ_n\right)$ is the probability that such a point falls in the set $A$. Let $D_n$ represent the distance of such a point from the origin; apply an appropriate limit theorem to $D_n^2$.</i>]<br>
+<b>Solution.</b><br>
+Take a random point $(X_1,X_2,…,X_n)∈[0,1]^n$. Its distance to the origin is $\sqrt{∑X_i^2}$. We want to compute probability of $S_n=∑X_i^2≤\big((n/3)^{1/2}+x\big)^2$.
+\begin{align*}
+𝔼(X_i^2)&=\int_0^1x^2\mathrm{d}x=\frac13\\
+𝔼(X_i^4)&=\int_0^1x^4\mathrm{d}x=\frac15\\
+⇒\operatorname{Var}(X_i^2)&=𝔼(X_i^4)-𝔼(X_i^2)^2=\frac4{45}
+\end{align*}
+Apply the central limit theorem to $X_i^2$, as $n→∞$,
+$$\frac{S_n-n/3}{\sqrt{4n/45}}\overset d→N(0,1)$$
+\begin{align*}
+ℙ\Big(S_n≤\big((n/3)^{1/2}+x\big)^2\Big)
+&= ℙ\left(\frac{S_n-n/3}{\sqrt{4n/45}}≤\frac{\big((n/3)^{1/2}+x\big)^2-n/3}{\sqrt{4n/45}}\right)
+\\&= ℙ\left(\frac{S_n-n/3}{\sqrt{4n/45}}≤\sqrt{15}x+\frac{3\sqrt{5}}{2\sqrt{n}}x^2\right)\\&→ℙ\left(Z≤\sqrt{15}x\right)=Φ\left(\sqrt{15}x\right)
+\end{align*}
+<div class="noprint"><a href="https://math.stackexchange.com/questions/2111920">Showing proportion of volume of n-dimensional cube within distance ${n/3}^{1/2} + x$ converges as $n→∞$</a></div>
+</li><li>Let $Y_1, Y_2, …$ be i.i.d. and uniformly distributed on the set $\{1,2,…, n\}$. Define $X^{(n)}=\min \left\{k≥1: Y_k=Y_j\text{ for some }j< k\right\}$, the first time that we see a repetition in the sequence $Y_i$. Interpret the case $n=365$. Prove that $X^{(n)}/\sqrt{n}$ converges in distribution to a limit with distribution function $F(x)=1-\exp \left(-x^2 / 2\right)$ for $x>0$.<br>
+<b>Proof.</b><br>
+Let $m=⌊k\sqrt n⌋-1$, then $X^{(n)}/\sqrt n>k⇔X^{(n)}>m+1⇔Y_2∉\{Y_1\}∧Y_3∉\{Y_1,Y_2\}∧⋯∧Y_{m+1}∉\{Y_1,Y_2, …,Y_m\}$,
+\begin{align*}
+ℙ\left(\frac{X^{(n)}}{\sqrt n}>k\right)&=\left(1-\frac{1}{n}\right)\left(1-\frac{2}{n}\right) ⋯\left(1-\frac{m}{n}\right)\\
+\logℙ\left(\frac{X^{(n)}}{\sqrt n}>k\right)&=\sum_{i=1}^m\log\left(1-\frac{i}{n}\right)
+\end{align*}
+Using $-h-h^2<\log (1-h)<-h$ for $h∈(0,1/2)$,
+\[-S_n-T_n<\logℙ\left(\frac{X^{(n)}}{\sqrt n}>k\right)<-S_n\]
+where\[S_n=\frac1n\sum_{i=1}^mi T_n=\frac1{n^2}\sum_{i=1}^mi^2\]
+As $n→∞$,\[S_n∼\frac{m^2}{2n} T_n∼\frac{m^3}{3n^2}\]
+Using $m∼k\sqrt n$,\[S_n∼\frac{k^2}2 T_n∼\frac{k^3}{3\sqrt n}→0\]
+Then $ℙ\left(X^{(n)}/\sqrt n>k\right)→\operatorname{Exp}(k^2/2)$. Hence $X^{(n)}/\sqrt n\overset d→X$. The case $n=365$ is the birthday problem.
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/990808">Generalization of the birthday problem with convergence in distribution</a><br>
+<a href="https://math.stackexchange.com/questions/2113354">Convergence in distribution to a limit with distribution function $F(x) = 1-\exp(-x^2/2)$ for $x>0$</a><br>
+<a href="https://math.stackexchange.com/questions/1835804">I am trying to prove the distribution function for the 'birthday problem' can anyone help?</a>
+</div>
+</li><li>Let $X_i, i≥1$, be i.i.d. random variables with $ℙ\left(X_i=0\right)=ℙ\left(X_i=1\right)=1/2$.<ol type="a">
+<li>Define $S_n=\sum_{i=1}^n X_i 2^{-i}$. What is the distribution of $S_n$? Show that the sequence $S_n$ converges almost surely as $n→∞$. What is the distribution of the limit $S$?</li>
+<li>
+    Define $R_n=\sum_{i=1}^n 2 X_i 3^{-i}$. Show again that the sequence $R_n$ converges almost surely. Is the limit a discrete random variable? Is it a continuous random variable?
+    [<i>Hint: Consider its expansion in base 3.</i>]
+</li>
+</ol>
+<b>Solution.</b>
+<ol type="a">
+<li>$S_n$ has binary expansion $0\mathbin.X_1⋯X_n$, so $S_n∼$discrete uniform distribution on $\{2^{-n}i:i=0,1,⋯,2^n-1\}$.<br>$\abs{S_n-S_{n+m}}=∑_{i=n+1}^{n+m}X_i2^{-i}<∑_{i=n+1}^∞2^{-i}=2^{-n}$, so $(S_n)_{n≥1}$ is a Cauchy sequence, so $S_n\overset{a.s.}⟶S∼U[0,1]$.</li>
+<li>$\abs{R_n-R_{n+m}}=∑_{i=n+1}^{n+m}2X_i3^{-i}<∑_{i=n+1}^∞2⋅3^{-i}=3^{-n}$, so $(R_n)_{n≥1}$ is a Cauchy sequence, so $R_n$ converges almost surely.<br>
+Suppose $X_1,⋯,X_{k-1}$ are fixed. Let $H=\sum_{i=1}^{k-1}2 X_i 3^{-i}$.<br>
+If $X_k=0$, we have$$R_∞=H+\sum_{i=k+1}^∞ 2 X_i 3^{-i}≤H+\sum_{i=k+1}^∞ 2⋅1⋅3^{-i}=H+3^{-k}$$
+If $X_k=1$, we have$$R_∞=H+2⋅3^{-k}+\sum_{i=k+1}^∞ 2 X_i 3^{-i}≥H+2⋅3^{-k}+\sum_{i=k+1}^∞ 2⋅0⋅3^{-i}=H+2⋅3^{-k}$$
+So $R_∞∉(H+3^{-k},H+2⋅3^{-k})$. Let $F$ be the distribution function of $R_∞$. Then $F$ is constant on those intervals.<br>
+$F$ is increasing and onto (any number in $[0,1]$ has a binary expansion), so it is continuous.<br>
+$R_∞$ is neither a continuous random variable nor a discrete random variable.
+<div class="noprint">
+<a href="https://math.stackexchange.com/questions/984503">Convergence of Bernoulli distributed random variables with parameter $1/2$?</a><br>
+Wikipedia – <a href="https://en.wikipedia.org/wiki/Cantor_distribution">Cantor distribution</a><br>
+<a href="https://cjhb.site/index.php?dir=264%2F1.html">Notes on Uniform Continuity</a><br>
+<a href="http://kuing.infinityfreeapp.com/forum.php?mod=viewthread&tid=8999">Cantor函数的连续性模量$ω(δ)≤δ^{\log2/\log3}$</a>
+</div>
+</li>
+</ol>
+</li><li>Consider a random variable $U: Ω→ℝ$ that is defined on a probability space $(Ω,ℱ,𝒫)$ and that is uniformly distributed on $[0,1]$. For $n≥1$, let $B_n=1$ if $⌊2^nU⌋$ is an odd integer and $B_n=0$ otherwise.
+<ol type="a">
+<li>Show that $B_n, n≥1$, is a sequence of i.i.d. random variables with $ℙ\left(B_n=0\right)=ℙ\left(B_n=1\right)=1/2$.</li>
+<li>Apply 10.(a) to suitable subsequences $\left(X_i\right)$ of $\left(B_n\right)$ to construct two independent random variables on $(Ω,ℱ,𝒫)$, each distributed like $S$.</li>
+<li>
+    Adapt your answer to (b) to construct a sequence of i.i.d. random variables on $(Ω,ℱ,𝒫)$, each distributed like $S$.<br>
+    [<i>In Prelims Probability, and also in Part A Probability, the existence of probability spaces
+    for even a single continuous random variable or for sequences of discrete random variables are assumed without proof. In Part A Integration, the Lebesgue σ-algebra and
+    Lebesgue measure on ℝ are constructed. By restricting them to $Ω:=[0,1]$, we obtain
+    a probability space $(Ω,ℱ,𝒫)$, on which the random variable $U(ω)=ω$ is uniformly
+    distributed on $[0,1]$. The present problem demonstrates that this probability space is,
+    in fact, also suitable for sequences of i.i.d. discrete or continuous random variables.
+    Problem 10 suggests an alternative approach to suitable probability spaces of the form
+    $Ω=\{0,1\}^ℕ:=\{(x_i):x_i∈\{0,1\},i∈ℕ\}$. A subtle point for both is that (assuming the
+    Axiom of Choice), ℱ cannot be chosen to be the entire power set of $Ω$ and the definition/existence of the probability measure $ℙ:ℱ→[0,1]$ is not entirely straightforward.</i>]
+</li>
+</ol>
+<b>Solution.</b>
+</li><li>Let $A_n$ be the median of $2n+1$ i.i.d. random variables which are uniform on $[0,1]$. Find the probability density function of $A_n$. Deduce a convergence in distribution result for the median (appropriately rescaled) as $n→∞$ (feel free to argue informally if you like!).<br>
+[<i>Hint: consider the probability that $A_n$ lies in a small interval $(x,x+ϵ)$. How does the density at the point $\left(\frac{1}{2}+\frac{a}{\sqrt{n}}\right)$ behave as $n→∞$ ? (Stirling's formula may be useful).</i>]<br>
+</li></ol>
+<a href="https://math.stackexchange.com/questions/236581">Convergence in distribution (weak convergence)</a><br>
+<a href="https://math.stackexchange.com/questions/402648">Let $f$ be a bounded uniformly continuous function in $R^1$. Then $X_n\to 0$ in pr. implies $E(f(X_n)) \to f(0)$.</a><br>
+<a href="https://math.stackexchange.com/questions/789282">Weak convergence: equivalence of definitions</a><br>
+<a href="https://math.stackexchange.com/questions/4145588">convergence in distribution from convergence of norm</a><br>
+<a href="https://math.stackexchange.com/questions/4139501">Prove that $\lim_{m \to \infty} (\lceil m U \rceil -mU ) \sim U(0,1)$</a><br>

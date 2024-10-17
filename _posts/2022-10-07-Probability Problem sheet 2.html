@@ -1,0 +1,250 @@
+---
+mathjax: true
+tag: Probability
+excerpt: sheet 2 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}.q{background-color: lightcyan;}</style>
+$\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\Cov}{Cov}$
+<ol>
+<li>
+    <div class="q">
+        (a) Let $X$ and $Y$ be independent standard normal random variables. Define $R$ and $Θ$ by $X=R\cosΘ, Y=R\sinΘ$. Find the joint distribution of $R$ and $Θ$.<br>
+        (b) Let 𝐙 be a vector of independent standard normal random variables $Z_1, Z_2, …, Z_n$. Let $A$ be an orthogonal $n×n$ matrix. Find the joint distribution of the vector 𝐖 with entries $W_1, W_2, …, W_n$ where $𝐖=A𝐙$. Explain the link to part (a).
+    </div>
+    (a) By independence, $f_{X,Y}(x,y)=\frac1{\sqrt{2π}}\exp\left(-\frac{x^2}2\right)⋅\frac1{\sqrt{2π}}\exp\left(-\frac{y^2}2\right)=\frac1{2π}\exp\left(-\frac{r^2}2\right)$.<br>
+    By $x=r\cosθ,y=r\sinθ$, the Jacobian $\frac{∂(x,y)}{∂(r,θ)}=r$.<br>
+    By transformation formula, $f_{R,Θ}=\frac1{2π}r\exp\left(-\frac{r^2}2\right)$.<br>
+    $f_Θ(θ)=\int f_{R,Θ}dr=\frac1{2π}⇒Θ∼U[0,2π]$<br>
+    $f_R(r)=\int f_{R,Θ}dθ=r\exp\left(-\frac{r^2}2\right)⇒R∼\text{Rayleigh}(1)$<br>
+    (b) $w_k=\sum_{i=1}^n a_{ki} z_i$ is a linear combination of independent normal random variables, so $w_k$ is normally distributed. For $1≤k,l≤n,k≠l$,
+    \begin{array}l
+    𝔼w_k=\sum_{i=1}^n a_{ki}𝔼z_i=\sum_{i=1}^n a_{ki}⋅0=0\\
+    \Var(w_k)=\sum_{i=1}^n a_{ki}^2\Var(z_i)=\sum_{i=1}^n a_{ki}^2=1\\
+    \Cov(w_k,w_l)=\sum_{i=1}^n\sum_{j=1}^n a_{ki}a_{lj}\Cov(z_i,z_j)=\sum_{i=1}^na_{ki}a_{li}=0
+    \end{array}
+    So $w_1,…,w_k$ are independent standard normal random variables.<br>
+    Link to part (a):  $Θ∼U[0,2π]$ corresponds to $n=2$ case.
+</li>
+<li>
+    <div class="q">
+        The $Γ(r, λ)$ distribution has density $f_{r, λ}(x)=\frac1{Γ(r)} λ^r x^{r-1} e^{-λ x}$ on $ℝ_+$. Here $r$ is called the shape parameter and $λ$ is called the rate parameter.<br>
+        Use moment generating functions to show that the sum of two independent Gamma-distributed random variables with the same rate parameter is also Gamma-distributed. What can you deduce about sums of exponential random variables?
+    </div>
+    \begin{align*}M_x(t)&=\int_0^∞e^{tx}\frac1{Γ(r)} λ^r x^{r-1} e^{-λ x}dx\\
+    &=\frac{λ^r}{(λ-t)^r}\int_0^∞\underbrace{\frac1{Γ(r)}(λ-t)^r x^{r-1} e^{-(λ-t)x}}_{\text{p.d.f for }Γ(r, λ-t)}dx\\
+    &=(1-t/λ)^{-r}\end{align*}
+    Suppose $X_1∼Γ(r_1, λ),X_2∼Γ(r_2, λ)$ are independent,
+    \begin{align*}
+    M_{x_1+x_2}(t)&=M_{x_1}(t)M_{x_2}(t)\\
+    &=(1-t/λ)^{-r_1}(1-t/λ)^{-r_2}\\
+    &=(1-t/λ)^{-(r_1+r_2)}
+    \end{align*}
+    ∴$X_1+X_2∼Γ(r_1+r_2, λ)$.<br>
+    Let $r_1=r_2=1$, we find that $X_1∼\operatorname{Exp}(λ),X_2∼\operatorname{Exp}(λ)$ and $X_1+X_2∼Γ(2, λ)$.
+</li>
+<li>
+    <div class="q">A student makes repeated attempts to solve a problem. Suppose the $i$ th attempt takes time $X_i$, where $X_i$ are i.i.d. exponential random variables with parameter $λ$. Each attempt is successful with probability $p$ (independently for each attempt, and independently of the durations). Use moment generating functions to show that the distribution of the total time before the problem is solved has an exponential distribution, and find its parameter.</div>
+    $N$ th attempt solved the problem, then $N∼\operatorname{Geom}(p)$.
+    m.g.f of the time to success $T=\sum_{i=1}^NX_i$ is
+    $$M_T(t)=𝔼_n\bigg[\prod_{i=1}^nM_{x_i}(t)\bigg]=𝔼\big[M_X(t)^n\big]=G_N(M_X(t))$$
+    Using $G_N(s)=\frac{ps}{1-(1-p)s}$ and $M_X(t)=\left(1-\frac tλ\right)^{-1}$,
+    $$M_T(t)=\frac{p\left(1-\frac tλ\right)^{-1}}{1-(1-p)\left(1-\frac tλ\right)^{-1}}=\left(1-\frac t{pλ}\right)^{-1}⇒T∼\operatorname{Exp}(pλ)$$
+    <div class="noprint">
+        <a href="https://math.stackexchange.com/questions/1002890/">Moment-generating functions problem, total time before success at performing a task?</a><br>
+        <a href="https://math.stackexchange.com/questions/4102406">Find the moment generating function of $S=X_1+X_2+⋯+X_N$ in terms of the moment generating functions of $N$ and $X_1$</a>
+    </div>
+</li>
+<li>
+    <div class="q">
+        (a) Let $X, Y$ and $U$ be independent random variables, where $X$ and $Y$ have moment generating functions $M_X(t)$ and $M_Y(t)$, and where $U$ has the uniform distribution on $[0,1]$. Find random variables which are functions of $X, Y$ and $U$ and which have the following moment generating functions:<br>
+        (i) $M_X(t) M_Y(t)$;<br>
+        (ii) $e^{b t} M_X(a t)$;<br>
+        (iii) $\int_0^1 M_X(t u) d u$;<br>
+        (iv) $\left[M_X(t)+M_Y(t)\right] / 2$<br>
+        (b) Using characteristic functions or otherwise, find $𝔼\cos(tX)$ and $𝔼\sin(tX)$ when $X$ has exponential distribution with parameter $λ$.<br>
+        (c) Which random variables $X$ have a real-valued characteristic function?
+    </div>
+    (a)(i) $X+Y$<br>
+    (ii) $aX+b$<br>
+    (iii) $UX$, because $\int_0^1 M_X(t u) d u=𝔼_U[M_X(tu)]=𝔼_U[𝔼_X[\exp(tux)]]=M_{UX}(t)$.<br>
+    (iv) $X⋅𝟏\{U>1/2\}+Y⋅𝟏\{U< 1/2\}$, by law of total expectation $𝔼[\exp(t(X⋅𝟏\{U>1/2\}+Y⋅𝟏\{U< 1/2\}))]=𝔼[\exp(tX)]⋅ℙ(U>1/2)+𝔼[\exp(tY)]⋅ℙ(U< 1/2)$.<br>
+    (b) $𝔼[\exp(iXt)]=λ/(λ-it)=λ(λ+it)/(λ^2+t^2)⇒\cases{𝔼\cos(tX)=λ^2/(λ^2+t^2)\\𝔼\sin(tX)=λt/(λ^2+t^2)}$<br>
+    (c) $\operatorname{Im}𝔼[\exp(iXt)]=𝔼[\sin(Xt)]=\frac{𝔼[\exp(iXt)]-𝔼[\exp(-iXt)]}2$<br>
+    If $𝔼[\exp(iXt)]∈ℝ$, then $𝔼[\exp(iXt)]=𝔼[\exp(-iXt)]$, by uniqueness theorem, $X$ and $-X$ have the same distribution.
+    <div class="noprint">
+        when $f(x)$ is even, its Fourier series consists only of the cosine terms, and we call it a cosine series<br>
+        <a href="https://math.stackexchange.com/questions/2540555">What functions can be characteristic functions of real-valued random variables?</a>
+    </div>
+    Substitute $-Y$ in (a)(i), we get $M_{X-Y}(t)=M_X(t)M_{-Y}(t)$ but $≠M_X(t)/M_Y(t)$<br>
+    Here $1/M_Y(t)=1/𝔼[e^{tY}]≠𝔼[1/e^{tY}]=M_{-Y}(t)$ because $𝔼[f(X)]=f(𝔼[X])$ only true for linear functions $f(x)=ax+b$. <a href="https://en.wikipedia.org/wiki/Algebra_of_random_variables#Expectation_algebra_for_random_variables">Expectation algebra for random variables</a>
+</li>
+<li>
+    <div class="q">
+        Suppose $X$ has $\operatorname{Gamma}(2,λ)$ distribution, and the conditional distribution of $Y$ given $X=x$ is uniform on $(0,x)$.<br>
+        Find the joint density function of $X$ and $Y$, the marginal density function of $Y$, and the conditional density function of $X$ given $Y=y$ ? How would you describe the distribution of $X$ given $Y=y$ ? Use this to describe the joint distribution of $Y$ and $X-Y$.
+    </div>
+    $X∼\operatorname{Gamma}(2,λ)⇒f_X(x)=λ^2xe^{-λx},\;x>0$<br>
+    The joint density function of $X$ and $Y$ is\[f_{X,Y}(x,y)=λ^2xe^{-λx}⋅\frac1x=λ^2e^{-λx},\;0< y< x\]
+    The marginal density function of $Y$ is
+    \[f_Y(y)=\int_y^∞λ^2e^{-λx}dx=-λe^{-λx}\big|_{x=y}^∞=λe^{-λy}⇒Y∼\operatorname{Exp}(λ)\]
+    The conditional density function of $X$ given $Y=y$ is
+    \[\frac{f_{X,Y}(x,y)}{f_Y(y)}=\frac{λ^2e^{-λx}}{λe^{-λy}}=λe^{-λ(x-y)}⇒X-Y|_{Y=y}∼\operatorname{Exp}(λ)\]
+    $X-Y|_{Y=y}$ has same distribution for all $y$, so $X-Y∼$Exp(λ) and is independent with $Y$.
+    <div class="noprint">Summary: If $A∼$Exp(λ), $B∼$Exp(λ), then $A+B∼$Gamma(2,λ) and $\frac{A}{A+B}∼$Uniform[0,1].<br>Exponential distribution is memoryless.</div>
+</li>
+<li>
+    <div class="q">
+        a) Random variables $X$ and $Y$ have joint density $f(x, y)$. Let $Z=Y / X$. Show that $Z$ has density
+        \[
+        f_Z(z)=\int_{-∞}^∞{|x|} f(x, x z)\,d x .
+        \]
+        b) Suppose now that $X$ and $Y$ are independent standard normal random variables. Show that $Z$ has density
+        \[
+        f_Z(z)=\frac1{π\left(1+z^2\right)},-∞< z< ∞.
+        \]
+    </div>
+    a) The Jacobian of transformation $(x,y)↦(x,z)$ is
+    \[\frac{∂(x,y)}{∂(x,z)}=\det\pmatrix{1&0\\z&x}=x\]
+    So $X$ and $Z$ has joint density ${|x|}f(x,xz)$. So the marginal density function of $Z$ is
+    \[f_Z(z)=\int_{-∞}^∞{|x|} f(x, x z)\,d x\]
+    b) $X∼N(0,1)$ and $Y∼N(0,1)$ are independent, so $f_{X,Y}(x, y)=\frac1{\sqrt{2π}}\exp\left(-\frac{x^2}2\right)⋅\frac1{\sqrt{2π}}\exp\left(-\frac{y^2}2\right)=\frac1{2π}\exp\left(-\frac{x^2+y^2}2\right)$
+    \begin{align*}f_Z(z)&=\int_{-∞}^∞{|x|} \frac1{2π}\exp\left(-\frac{x^2+x^2z^2}2\right)\,dx\\
+    &=\frac1{2π}\int_0^∞\left[\exp\left(-\frac{1+z^2}2\right)\right]^{x^2}2x\,dx\\
+    &=\frac1{2π}\left.\left[\exp\left(-\frac{1+z^2}2\right)\right]^{x^2}\left(-\frac{1+z^2}2\right)^{-1}\right|_{x=0}^∞\\
+    &=\frac1{π\left(1+z^2\right)}
+    \end{align*}
+</li>
+<li>
+    <div class="q">
+        The distribution of the heights of husband-wife pairs in a particular population is modelled by a bivariate normal distribution. The mean height of the women is 165 cm and the mean height of the men is 175 cm. The standard deviation is 6 cm for women and 8 cm for men. The correlation of height between husbands and wives is 0.5.<br>
+        Let $X$ be the height of a typical wife and $Y$ the height of her husband. Show how $Y$ can be represented as a sum of a term which is a multiple of $X$ and a term which is independent of $X$. Hence or otherwise:<br>
+        (a) Given that a woman has height 168 cm, find the expected height of her husband.<br>
+        (b) Given that a woman has height 168 cm, what is the probability that her husband is above average height?<br>
+        (c) What is the probability that a randomly chosen man is taller than a randomly chosen woman?<br>
+        (d) What is the probability that a randomly chosen man is taller than his wife?
+    </div>
+    Write $X$ and $Y$ as functions of independent standard normals $Z_1$ and $Z_2$.
+    \begin{array}l
+    X=σ_1Z_1+μ_1\\
+    Y=ρσ_2Z_1+\sqrt{1-ρ^2}σ_2Z_2+μ_2
+    \end{array}
+    Then we can write
+    $$Y=ρ\frac{σ_2}{σ_1}\left(X-μ_1\right)+\underbrace{\sqrt{1-ρ^2}σ_2 Z_2}_\text{noise term}+μ_2$$
+    The first term is a function of $X$ and the second term, involving only $Z_2$, is independent of $X$.<br>
+    So conditional on $X=x$, the distribution of $Y$ is the distribution of
+    \[
+    ρ \frac{σ_2}{σ_1}\left(x-μ_1\right)+\sqrt{1-ρ^2} σ_2 Z_2+μ_2,
+    \]
+    which is normal with mean $ρ \frac{σ_2}{σ_1}\left(x-μ_1\right)+μ_2$ and variance $\left(1-ρ^2\right)σ_2^2$.<br>
+    (a) $𝔼[Y∣X=168]=0.5×\frac86×(168-165)+175=177,\Var[Y|X=168]=(1-0.5^2)×8^2=48$<br>
+    (b) $ℙ[Y>175∣X=168]=Φ\left(\frac{177-175}{\sqrt{48}}\right)=Φ\left(\frac1{2\sqrt3}\right)=0.613585$<br>
+    (c) In this part, $X,Y$ are independent. $𝔼[Y-X]=𝔼[Y]-𝔼[X]=10,\Var[Y-X]=\Var[X]+\Var[Y]=100⇒Y-X>0=Φ\left(\frac{10}{\sqrt{100}}\right)=0.841345$.<br>
+    (d) $Y-X=(ρσ_2-σ_1)Z_1+\sqrt{1-ρ^2}σ_2Z_2+μ_2-μ_1∼N\left(μ_2-μ_1,(ρσ_2-σ_1)^2+(1-ρ^2)σ_2^2\right)⇒ℙ(Y-X>0)=\frac{μ_2-μ_1}{(ρσ_2-σ_1)^2+(1-ρ^2)σ_2^2}=\frac{175-165}{(0.5×8-6)^2+(1-0.5^2)×8^2}=\frac5{26}$
+</li>
+<li>
+    <div class="q">
+        (a) Let $X$ and $Y$ be independent standard normal random variables. Use question 1(a) to show that for a constant $c>0$
+        \[
+        ℙ(X>0, Y>-c X)=\frac14+\frac{\tan^{-1}(c)}{2π} .
+        \]
+        (b) Two candidates contest a close election. Each of the $n$ voters votes independently with probability $1 / 2$ each way. Fix $α∈(0,1)$. Show that, for large $n$, the probability that the candidate leading after $αn$ votes have been counted is the eventual winner is approximately
+        \[
+        \frac12+\frac{\sin^{-1}(\sqrtα)}π.
+        \]
+        [Hint: let $S_m$ be the difference between the vote totals of the two candidates when $m$ votes have been counted. What is the approximate distribution of $S_{αn}$ (when appropriately rescaled)? What is the approximate distribution of $S_n-S_{αn}$ (when appropriately rescaled)? What about their joint distribution? Finally, notice $\sin^{-1}(\sqrtα)=\tan^{-1}\sqrt{α/(1-α)}$.]
+    </div>
+{% latex float:right %}\usepackage{tikz}
+\begin{tikzpicture}[every node/.append style={font=\footnotesize}]
+\fill[cyan!20](0,0)--(-30:1.8) arc (-30:90:1.8)--cycle;
+\draw[-stealth](-2,0)--(2,0)node[right]{$x$};
+\draw[-stealth](0,-2)--(0,2)node[above]{$y$};
+\node[inner sep=1](t)at(1,1){$\theta$};
+\draw(t)--(0,0)--(-30:2);
+\node at(-30:2.3){$y=-cx$};
+\end{tikzpicture}
+{% endlatex %}
+    (a) $Θ∼$Uniform[0, 2π], therefore
+    \[
+    ℙ(X>0, Y>-c X)=ℙ\left(-\tan^{-1}(c)< θ<\frac π2\right)=\frac14+\frac{\tan^{-1}(c)}{2 \pi} .
+    \]
+    (b) $S_m>0$ or $S_m< 0$ determines which candidate is leading after $m$ votes.<br>
+    $S_m=X_1+⋯+X_m$ where $X_i\overset{\text{i.i.d}}∼\operatorname{Uniform}\{1,-1\}$. Since $𝔼[X_i]=0,\Var[X_i]=1$, we have $𝔼[S_n]=𝔼[S_{αn}]=0,\Var[S_n]=n,\Var[S_{αn}]=αn$.<br>$\Var[S_n-S_{αn}]=\Var[X_{αn+1}+⋯+X_n]=(1-α)n$.<br>
+    $\Cov[S_n-S_{αn},S_{αn}]=\Cov[X_{αn+1}+⋯+X_n,X_1+⋯+X_{αn}]=0⇒S_n-S_{αn},S_{αn}$ are independent.<br>Let $X=\frac{S_{αn}}{\sqrt{αn}},Y=\frac{S_n-S_{αn}}{\sqrt{(1-α)n}}$, then $X,Y$ are independent. By CMT, $X,Y\overset d→N(0,1)$.
+    \[ℙ(S_n>0∣S_{αn}>0)=ℙ\left(\sqrt{(1-α)n}Y>-\sqrt{αn}X\middle|X>0\right)=\frac{ℙ\left(X>0,Y>-\sqrt{α/(1-α)}X\right)}{ℙ(X>0)}\overset{\text{(a)}}=\frac{\frac14+\frac{\tan^{-1}\sqrt{α/(1-α)}}{2π}}{\frac12}=\frac12+\frac{\sin^{-1}(\sqrtα)}π\]
+    <div class="noprint">
+        <a href="https://math.stackexchange.com/questions/1837475">Probability for a leading candidate to eventually win</a>
+    </div>
+</li>
+</ol>
+<h2>Additional Problems</h2>
+<ol start="9">
+    <li>
+        <div class="q">Let $U, V$ and $W$ be i.i.d. random variables with uniform distribution on $[0,1]$. Find the distribution of $(UV)^W$.</div>
+        $U∼$Uniform(0,1)$⇒ℙ(-\ln(U)≥x)=ℙ(U≤e^{-x})=e^{-x},x≥0⇒-\ln(U)∼$Exp(1). Similarly $-\ln(V)∼$Exp(1).<br>
+        Q2$⇒-\ln(U)-\ln(V)∼$Gamma(2,1)<br>
+        Let $Z=-\ln(U)-\ln(V)$. We have $f_Z(z)=ze^{-z}, z≥0$<br>
+        Then the joint distribution $f_{Z,W}(z,w)=ze^{-z}, z≥0, 0≤w≤1$ since $W∼$Uniform[0,1] and $Z,W$ are independent.<br>
+        Let $z=\sqrt{xy},w=\sqrt{x/y}$, then $x=zw$. From $w≤1$ we deduce that $x≤y$. The Jacobian
+        \[\frac{∂(z,w)}{∂(x,y)}=\det\begin{pmatrix}\frac12\sqrt{y\over x}&\frac12\sqrt{x\over y}\\\frac1{2\sqrt{xy}}&-\frac1{2y}\sqrt{x\over y}\end{pmatrix}=-\frac1{2y} ⇒\left|\frac{∂(z,w)}{∂(x,y)}\right|=\frac1{2y}\]
+        So\[f_{X,Y}(x,y)=\frac1{2y}\sqrt{xy}e^{-\sqrt{xy}}\]
+        The marginal distribution of $X$
+        \[f_X(x)=\int_x^∞-\frac1{2y}\sqrt{xy}e^{-\sqrt{xy}}dy=e^{-\sqrt{xy}}\big|_{y=x}^∞=e^{-x}\]
+        $∴X∼$Exp(1)$⇒(UV)^W=e^{-X}∼$Uniform[0,1].
+        <div class="noprint">
+            <a href="https://math.stackexchange.com/questions/602840">Distribution of $(XY)^Z$</a><br>
+            <a href="https://math.stackexchange.com/questions/2096779">Distribution of $(XY)^Z$ for $(X,Y,Z)$ i.i.d. uniform on $(0,1)$</a><br>
+            <a href="https://math.stackexchange.com/questions/2503667">Uniformly distributed indices</a><br>
+            <a href="https://math.stackexchange.com/questions/261783">Distribution of $(XY)^Z$ if $(X,Y,Z)$ is i.i.d. uniform on $[0,1]$</a>
+        </div>
+    </li>
+<li>
+    <div class="q">
+        Use characteristic functions to prove the identity
+        \[
+        \frac{\sin t}{t}=\prod_{n=1}^∞\cos \left(\frac{t}{2^n}\right) .
+        \]
+        [Hint: consider the c.f. of a uniform distribution, and of a distribution taking only two values.]
+    </div>
+    Consider the following variable 
+    $$
+    Y=\sum_{j=1}^{∞}X_j2^{-j}
+    $$
+    where $X_j\overset{\text{i.i.d}}∼\text{Uniform}\{-1,1\}$. The characteristic function of the right hand side is
+    $$
+    \prod_{j=1}^{∞}\cos(t2^{-j})
+    $$
+    On the other hand, $Y∼\text{Uniform}(-1,1)$ by binary expansion.
+    Then the characteristic function of $Y$ is 
+    $$
+    \int_{-1}^{1}\frac{e^{itx}}{2}dx=\frac{e^{it}-e^{-it}}{2it}=\frac{\sin (t)}{t}
+    $$
+</li>
+<li>
+    <div class="q">
+        Let $X:Ω→ℝ$ be a continuous random variable. Suppose its expectation $𝔼[X]$ exists and is finite. Consider the discretisations $X_n=2^{-n}⌊2^nX⌋,\ n≥0$.<br>
+        (a) For each $n≥0$, show that $X_n$ is a discrete random variable.<br>
+        (b) Recall that definitions and properties of expectations have been established separately for discrete and continuous random variables. Working from these definitions, show that the $𝔼[X_n]$ exists and satisfies $𝔼[X]-2^{-n}≤𝔼[X_n]≤𝔼[X]$ for each $n≥0$. Deduce that $𝔼[X]=\lim_{n→∞} 𝔼[X_n]$.
+    </div>
+    (a) $X_n=2^{-n}⌊2^nX⌋∈2^{-n}ℤ$, so $X_n$ is a discrete random variable.<br>
+    (b) Let $⌊2^nX⌋=i$, then $i≤2^nX< i+1$.
+    \begin{align*}
+    𝔼[X_n]&=\sum_{i=-∞}^02^{-n}i\,ℙ\left[i≤2^nX< i+1\right]+\sum_{i=1}^∞2^{-n}i\,ℙ\left[i≤2^nX< i+1\right]\\
+    &≤\sum_{i=-∞}^0X\,ℙ\left[i≤2^nX< i+1\right]+\sum_{i=1}^∞ℙ\left[i≤2^nX< i+1\right]\\
+    &≤𝔼[X]+1
+    \end{align*}So $𝔼[X_n]$ exists.
+    What's next step?
+</li>
+<li>
+    <div class="q">
+        Let $X:Ω→[0,∞)$ be any non-negative random variable. Consider the discretisations $X_n=2^{-n}⌊2^nX⌋, n≥0$. Define\[
+        𝔼[X]:=\lim _{n→∞} \sum_{k=1}^∞k 2^{-n} ℙ\left(X_n=k 2^{-n}\right)
+        \]
+        provided that these limits exist and are finite. If $X: \Omega→ℝ$ is any (real-valued) random variable, we consider $X^+=\max \{X, 0\}$ and $X^-=\max \{-X, 0\}$ so that $X=X^+-X^-$. If both $𝔼\left[X^+\right]$and  are finite we define $𝔼[X]:=𝔼\left[X^+\right]-𝔼\left[X^-\right]$<br>
+        (a) Let $X$ and $Y$ be two random variables whose expectations exist in the sense defined above. Show that $X \leq Y$ implies $𝔼[X]≤𝔼[Y]$<br>
+        (b) If $X$ is a discrete or continuous random variable, show that the new definition of $𝔼[X]$ is consistent with the previous definitions.<br>
+        (c) Let $X$ and $Y$ be two random variables. Show that $𝔼[a X+b Y]=a 𝔼[X]+b 𝔼[Y]$ for all $a, b∈ℝ$, provided that both $𝔼[X]$ and $𝔼[Y]$ exist and are finite.<br>
+        (d) Show that $𝔼[X]=\int_0^∞ ℙ(X>x) d x$ holds for any non-negative random variable.<br>
+        [These limits of series defining $𝔼[X]$ are not very elegant compared to the more direct definition of Part B Probability, Measure and Martingales, where we will make sense of $𝔼[X]:=\int_{\Omega} X(\omega) ℙ(d \omega)$ once the notion of integration against a probability measure $ℙ$ is available (as a generalisation of the Lebesgue integral of Part A Integration). Integration theory includes powerful theorems that allow shorter proofs of the results of this problem.]
+    </div>
+</li>
+</ol>

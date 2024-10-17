@@ -1,0 +1,172 @@
+---
+mathjax: true
+tag: Probability
+excerpt: sheet 3 — MT 2022
+---
+<style>div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}.q{background-color: lightcyan;}
+    #main>li{page-break-after: always;}</style>
+<ol id="main">
+<li>
+    <div class="q">
+        Find the communicating classes of Markov chains with the following transition matrices on the state space $\{1,2,3,4,5\}$, and in each case determine which classes are closed:
+        \[\text{(i) }\begin{pmatrix}\frac12 & 0 & 0 & 0 &\frac12\\ 0 &\frac12& 0 &\frac12& 0 \\ 0 & 0 & 1 & 0 & 0 \\ 0 &\frac14&\frac14&\frac14&\frac14\\\frac12& 0 & 0 & 0 &\frac12\end{pmatrix} 
+        \text{(ii) }\begin{pmatrix}\frac14 & 0 &\frac34& 0 & 0 \\ 0 &\frac13& 0 &\frac23& 0 \\ 0 & 0 &\frac12& 0 &\frac12\\\frac12&\frac16& 0 &\frac13& 0 \\\frac14& 0 &\frac12& 0 &\frac14\end{pmatrix}\]
+        If $X$ is a chain with the transition matrix in (ii), find the distribution of $X_1$ when $X_0$ has the uniform distribution on $\{1,2,3,4,5\}$, and find $P\left(X_2=3∣X_0=1\right)$.
+    </div>
+    <div class="noprint">communicating class for markov chain ≡ connected component for directed graph</div>
+<table>
+<tr><td>(i) communicating classes: $\{1,5\},\{3\}$ are closed, $\{2,4\}$ is open.<br>
+{% latex %}\usepackage{tikz}\usetikzlibrary {arrows.meta,automata,positioning}
+\begin{tikzpicture}
+\node[state](q_1) {$1$};
+\node[state](q_5) [right=of q_1] {$5$};
+\node[state](q_4) [right=of q_5] {$4$};
+\node[state](q_2) [right=of q_4] {$2$};
+\node[state](q_3) [below=of q_4] {$3$};
+\path[->,>={Stealth[round]}] (q_5) edge[<->] (q_1) edge [loop above]()
+(q_1) edge [loop above]()
+(q_3) edge [loop below]()
+(q_4) edge[<->] (q_2) edge (q_3) edge (q_5) edge [loop above]()
+(q_2) edge [loop above]();
+\end{tikzpicture}
+{% endlatex %}
+</td></tr><tr><td>(ii) communicating class: $\{1,3,5\}$ is closed, $\{2,4\}$ is open.<br>
+{% latex %}\usepackage{tikz}
+\usetikzlibrary {arrows.meta,automata,positioning}
+\begin{tikzpicture}
+\node[state](q_1) {$1$};
+\node[state](q_4) [left=of q_1] {$4$};
+\node[state](q_3) [below right=of q_1] {$3$};
+\node[state](q_5) [above right=of q_1] {$5$};
+\node[state](q_2) [left=of q_4]{$2$};
+\path[->,>={Stealth[round]}] (q_1) edge (q_3) edge [loop above]()
+(q_2) edge[<->] (q_4) edge [loop above]()
+(q_3) edge[<->] (q_5) edge [loop right]()
+(q_4) edge (q_1) edge [loop above]()
+(q_5) edge (q_1) edge [loop right]();
+\end{tikzpicture}
+{% endlatex %}</td><td>\begin{array}lλ_1=λ_0P=\pmatrix{\frac15&\frac15&\frac15&\frac15&\frac15}\begin{pmatrix}\frac14 & 0 &\frac34& 0 & 0 \\ 0 &\frac13& 0 &\frac23& 0 \\ 0 & 0 &\frac12& 0 &\frac12\\\frac12&\frac16& 0 &\frac13& 0 \\\frac14& 0 &\frac12& 0 &\frac14\end{pmatrix}=\pmatrix{\frac15&\frac{1}{10}&\frac{7}{20}&\frac15&\frac{3}{20}}\\ℙ\left(X_2=3∣X_0=1\right)=\left(P^2\right)_{1,3}=\frac14⋅\frac34+\frac34⋅\frac12=\frac9{16}\end{array}</td></tr></table>
+</li>
+<li>
+<div class="q">$N$ black balls and $N$ white balls are distributed between two urns, numbered 1 and 2 , so that each urn contains $N$ balls. At each step, one ball is chosen at random from each urn and the two chosen balls are exchanged. Let $X_n$ be the number of white balls in urn 1 after $n$ steps. Find the transition matrix for the Markov chain $X$.</div>
+{% latex float:right %}\usepackage{tikz}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.5]
+\foreach\col in {1,2,3,4}\foreach \row in {1,...,\col}{
+    \fill[gray]($(0.5*\row,0)+\row*(0, {0.5*sqrt(3)})-(\col*1,0)$)circle(0.5);
+    \draw($(4.5+0.5*\row,0)+\row*(0, {0.5*sqrt(3)})-(\col*1,0)$)circle(0.5);
+}
+\end{tikzpicture}
+{% endlatex %}
+<style>.table td{border:1px solid #ccc;}.table{vertical-align: top;display: inline;border-collapse: collapse;}</style>
+<table class="table">
+<tr><td></td><td>urn 1</td><td>urn 2</td></tr>
+<tr><td>white</td><td>$X_n$</td><td>$N-X_n$</td></tr>
+<tr><td>black</td><td>$N-X_n$</td><td>$X_n$</td></tr>
+</table>
+<table class="table">
+<tr><td>chosen ball of urn 1</td><td>chosen ball of urn 2</td><td>probability</td><td>$X_{n+1}$</td></tr>
+<tr><td>white</td><td>white</td><td>$X_n(N-X_n)\over N^2$</td><td>$X_n$</td></tr>
+<tr><td>white</td><td>black</td><td>$X_n^2\over N^2$</td><td>$X_n-1$</td></tr>
+<tr><td>black</td><td>white</td><td>$(N-X_n)^2\over N^2$</td><td>$X_n+1$</td></tr>
+<tr><td>black</td><td>black</td><td>$X_n(N-X_n)\over N^2$</td><td>$X_n$</td></tr>
+</table>
+$\pmatrix{0&1&0&0&⋯&0&0&0\\\frac1{N^2}&\frac{2(N-1)}{N^2}&\frac{(N-1)^2}{N^2}&0&⋯&0&0&0\\0&\frac4{N^2}&\frac{4(N-2)}{N^2}&\frac{(N-2)^2}{N^2}&⋯&0&0&0\\⋮&⋮&⋮&⋮&&⋮&⋮&⋮\\0&0&0&0&⋯&\frac{(N-1)^2}{N^2}&\frac{2(N-1)}{N^2}&\frac1{N^2}\\0&0&0&0&⋯&0&1&0}$
+</li>
+<li>
+    <div class="q">A die is "fixed" so that each time it is rolled the score cannot be the same as the preceding score, all other scores having probablity $1/5$. If the first score is 6 , what are ℙ($n$th score is 6) and ℙ($n$th score is 1) ? [Hint: you can simplify things by selecting an appropriate state-space; do you really need a 6-state chain to answer the question?]</div>
+    Group the six states into the two states: "6" and "not 6".<br>
+    $P=\pmatrix{0&1\\\frac15&\frac45}$<br>
+    Eigenvalues are $1,-\frac15$, corresponding eigenvectors are $\pmatrix{1\\1},\pmatrix{-5\\1}$\[P=UDU⇒P^n=UD^nU^{-1}=\frac16\pmatrix{1+5(-5)^{-n} & 5-5(-5)^{-n}\\1-(-5)^{-n} &5+(-5)^{-n}}⇒\pmatrix{1&0}P^{n-1}=\frac16\pmatrix{1+5(-5)^{-n+1} & 5-5(-5)^{-n+1}}\]∴ ℙ($n$th score is $6)=\frac{1+5(-5)^{-n+1}}6$, ℙ($n$th score is $1)=\frac15$ℙ($n$th score is not $6)=\frac{1-(-5)^{-n+1}}6$.
+</li>
+<li>
+    <div class="q">
+        Let $X_n, n≥1$, be i.i.d. $ℙ\left(X_n=1\right)=p, ℙ\left(X_n=-1\right)=1-p$, where $p∈(0,1)$. For each of the following, decide if $\left(Y_n\right)$ is a Markov chain. If so, find its transition probabilities.<br>
+        (a) $Y_n=X_n$.<br>
+        (b) $Y_n=S_n$ where $S_n=X_1+X_2+⋯+X_n$.<br>
+        (c) $Y_n=M_n$ where $M_n=\max \left(0, S_1, S_2, \ldots, S_n\right)$.<br>
+        (d) $Y_n=M_n-S_n$.<br>
+        (e) $Y_n=X_n X_{n+1}$.<br>
+    </div>
+    <div class="noprint">By Proposition 5.4, it suffices to find $f$ such that $Y_{n+1}=f\left(Y_n, X_{n+1}\right)$</div>
+    (a) Yes. $f(Y_n,X_{n+1})=X_{n+1}$.<br>
+    (b) Yes. $f(Y_n,X_{n+1})=Y_n+X_{n+1}$.<br>
+    (c) No. $ℙ(M_4=2∣M_1=0,M_2=0,M_3=1)=ℙ(M_4=2∣X_1=-1,X_2=1,X_3=1)=ℙ(X_4=1)=p$
+{% latex %}\usepackage{tikz}\begin{document}\begin{tikzpicture}[scale=0.5]
+\draw (0,0)node[left]{0}plot[mark=*]coordinates{(0,0)(1,-1)(2,0)(3,1)(4,2)};
+\end{tikzpicture}{% endlatex %}<br>$ℙ(M_4=2∣M_1=M_2=M_3=1)=pℙ(M_4=2∣X_1=1,X_2=-1,X_3=1)+(1-p)ℙ(M_4=2∣X_1=1,X_2=-1,X_3=-1)=p×p+(1-p)×0=p^2${% latex %}\usepackage{tikz}\begin{document}\begin{tikzpicture}[scale=0.5]
+\draw(0,0)node[left]{0}plot[mark=*]coordinates{(0,0)(1,1)(2,0)(3,1)(4,2)};
+\draw[xshift=5cm](0,0)node[left]{0}plot[mark=*]coordinates{(0,0)(1,1)(2,0)(3,-1)};
+\end{tikzpicture}{% endlatex %}<br>
+    (d) Yes. Since $M_{n+1}-S_{n+1}=\max\left(M_n,S_{n+1}\right)-S_{n+1}=\max\left(M_n-S_n-X_{n+1},0\right)$,
+    \[f(Y_n,X_{n+1})=\max\left(Y_n-X_{n+1},0\right)\]
+    (e) $p=\frac12$: Yes. We'll show $Y_i$ are independent, so $(Y_n)∼\text{Markov}\pmatrix{\frac12&\frac12\\\frac12&\frac12}$<br>
+    $Y_n=X_nX_{n+1},Y_{n+k}=X_{n+k}X_{n+k+1},k>1$ are independent, since $X_i$ are independent. It remains to show $Y_n,Y_{n+1}$ are independent
+    $$ℙ(Y_n=1)=ℙ(Y_n=-1)=ℙ(Y_{n+1}=1)=ℙ(Y_{n+1}=-1)=\frac12$$
+    $$ℙ(Y_n=1\&Y_{n+1}=1)=ℙ(X_n=X_{n+1})ℙ(X_{n+2}=X_{n+1})=\frac14=ℙ(Y_n=1)ℙ(Y_{n+1}=1)$$
+    Similarly $ℙ(Y_n=1\&Y_{n+1}=-1)=ℙ(Y_n=1)ℙ(Y_{n+1}=-1)$ and $ℙ(Y_n=-1\&Y_{n+1}=-1)=ℙ(Y_n=-1)ℙ(Y_{n+1}=-1)$.<br>
+    $p≠\frac12$: No. $ℙ(X_{2n}X_{2n+1}=1∣X_{2n-1}X_{2n}=1,X_{2n-2}X_{2n-1}=1,⋯,X_2X_1=1)=ℙ(X_{2n+1}=⋯=X_1∣X_{2n}=⋯=X_1)=\frac{p^{2n+1}+(1-p)^{2n+1}}{p^{2n}+(1-p)^{2n}}→\max(p,1-p)$<br>
+    Since $ℙ(X_{2n}=-X_{2n-1}=⋯=-X_1=1)=ℙ(X_{2n}=-X_{2n-1}=⋯=-X_1=-1)$,<br>
+    $ℙ(X_{2n}X_{2n+1}=1∣X_{2n-1}X_{2n}=1,X_{2n-2}X_{2n-1}=-1,⋯,X_2X_1=-1)=ℙ(X_{2n+1}=X_{2n}∣X_{2n}=-X_{2n-1}=⋯=-X_1)=\frac{p^n(1-p)^{n+1}+p^{n+1}(1-p)^n}{2p^n(1-p)^n}=\frac12$
+</li>
+<li>
+    <div class="q">
+        Let $C$ be a communicating class of a Markov chain. Prove the following statements:<br>
+        (a) Either all states in $C$ are recurrent, or all are transient.<br>
+        (b) If $C$ is recurrent then $C$ is closed.<br>(c) If $C$ is finite and closed, then $C$ is recurrent.
+    </div>
+    (a) if $i↔j$ then $∃k,m≥0:P^k_{ij}>0,P^m_{ji}>0$. Furthermore, for any $n≥0$, one way to get from $j$ to $j$ in $m+n+k$ steps is by going from $j$ to $i$ in $m$ steps, then from $i$ to $i$ in $n$ steps, and then from $i$ to $j$ in $k$ steps, thus,$$P_{jj}^{m+n+k}≥P_{j i}^mP_{ii}^nP_{ij}^k$$If $i$ is recurrent, by Theorem 5.8, $∑^∞_{n=0} P_{ii}^n= ∞$, by comparison test, $∑^∞_{n=0}P^{m+n+k}_{jj} = ∞$, so $∑^∞_{ℓ=0}P^ℓ_{jj} = ∞$, by Theorem 5.8, $j$ is recurrent.<br>
+    (b) If $i∈C,i→j$, then $∃n_0:ℙ_i(X_{n_0}=j)>0$. By recurrence of $i$, $ℙ_i(∃n>n_0:X_n=i)=1$, so $ℙ_i(∃n>n_0:X_n=i∣X_{n_0}=j)=1$, so $j→i$, so $C$ is closed.<br>
+    (c) Start from any state from $C$. Since $C$ is closed, the chain stays in $C$ forever. If all states in $C$ are transient, then each of them is visited only finitely many times. This is impossible.
+    <div class="noprint"><a href="https://www.math.ucdavis.edu/~gravner/MAT135B/materials/ch13.pdf">Proposition 13.4</a></div>
+</li>
+<li>
+    <div class="q">
+        A gambler has £8 and wants to increase it to £10 in a hurry. He can repeatedly stake money on the toss of a fair coin; when the coin comes down tails, he loses his stake, and when the coin comes down heads, he wins an amount equal to his stake, and his stake is returned.<br>He decides to use a strategy in which he stakes all his money if he has less than £5, and otherwise stakes just enough to increase his capital to £10 if he wins. For example, he will stake £2 on the first coin toss, and afterwards will have either £6 or £10.<br>
+        (a) Let £$X_n$ be his capital after the $n$th coin toss. Show how to describe the sequence $\left(X_n, n≥0\right)$ as a Markov chain.<br>
+        (b) Find the expected number of coin tosses until he either reaches £10 or loses all his money.<br>
+        (c) Show that he reaches £10 with probability $4/5$.<br>
+        (d) Show that the probability that he wins the first coin toss, given that he eventually reaches £10, is $5/8$. Extend this to describe the distribution of the whole sequence $X_0, X_1, X_2, …$ conditional on the event that he reaches £10.<br>
+        (e) Now let $\left(X_n, n ≥ 0\right)$ be a Markov chain on ℕ with $p_{0,0}=1$ and $p_{i, i+1}=p=1-p_{i, i-1}$ for $i ≥ 1$. Let $p>1 / 2$ so that the process has an upward bias. Start at $X_0=j>0$. In lectures we showed that the probability of absorption at 0 is $\left(\frac{1-p}{p}\right)^j$. Describe the distribution of $\left(X_n, n ≥ 0\right)$ conditional on the event of being absorbed at 0 .
+    </div>
+    (a) The states are $X_n=2i,i=0,1,⋯,5$.\[P=\begin{pmatrix}1&0&0&0&0&0\\\frac12&0&\frac12&0&0&0\\\frac12&0&0&0&\frac12&0\\0&\frac12&0&0&0&\frac12\\0&0&0&\frac12&0&\frac12\\0&0&0&0&0&1\end{pmatrix}\]
+    By Chapman-Kolmogorov equations, $ℙ(X_n=2i)=(P^n)_{4,i}$<br>
+    (b) Let $e_i$ be the expected time if initial capital is $i$. Solving the linear equations\begin{cases}e_2=1+\frac12e_4\\e_4=1+\frac12e_8\\e_6=1+\frac12e_2\\e_8=1+\frac12e_6\end{cases}we get $e_2=e_4=e_6=e_8=2$, so $e_8=2$ is the answer.<br>Alternate solution: there is 1/2 chance of finishing game per turn (either hit 0 or 10)$⇒e_2,e_4,e_6,e_8∼$Geom(1/2)$⇒𝔼[e_i]=\frac1{1-1/2}=2$<br>
+    (c) Let $h_i$ be the hitting probability of 10 from $i$. Solving the linear equations
+    \begin{cases}h_0=0\\h_2=\frac12h_0+\frac12h_4\\h_4=\frac12h_0+\frac12h_8\\h_6=\frac12h_2+\frac12h_{10}\\h_8=\frac12h_6+\frac12h_{10}\\h_{10}=1\end{cases}
+    we get $h_i=\frac{i}{10}$. So $h_8=\frac45$.<br>
+    (d) Define events: $A=${wins the first coin toss}, $B=${eventually reaches £10}. By (c), $ℙ(B)=\frac45$. Since $A⊂B$,\[ℙ(A∣B)=\frac{ℙ(A)}{ℙ(B)}=\frac{1/2}{4/5}=\frac58\]Extend this to describe distribution of $X_n$:
+    \[\tilde p_{ij}=\frac{ℙ(X_1=j\&B∣X_0=i)}{h_i}=\frac{ℙ(X_1=j∣X_0=i)ℙ(B∣X_1=j)}{h_i}=\frac{p_{ij}h_j}{h_i}\]
+    (e) To find the hitting probability $h_i$ of 0 from $i$, we need the minimal non-negative solution to
+\begin{aligned}
+h_0 &=1 \\
+h_i &=p h_{i+1}+q h_{i-1} \text { for } i≥1 .
+\end{aligned}When $p>q$, has general solution$$h_i=\left(\frac{q}{p}\right)^i+\left(1-\left(\frac{q}{p}\right)^i\right)A$$
+where $A$ is a constant. $h_i→A$ as $i→∞$, for $h_i≥0\,∀i$, we need $A≥0$. For a minimal solution, we will want $A=0, B=1$, since $1-\left(\frac{q}{p}\right)^i≥0\,∀i$. Hence $h_i=\left(\frac{q}{p}\right)^i$.<br>
+\[ℙ(X_n=k∣X_∞=0)=\frac{ℙ(X_∞=0∣X_n=k)}{ℙ(X_∞=0)}ℙ(X_n=k)=\left(\frac{q}{p}\right)^{j-k}(P^n)_{j,k}\]
+</li>
+<li>
+    <div class="q">
+        A Markov chain with state space $\{0,1,2,…\}$ is called a "birth-and-death chain" if the only non-zero transition probabilities from state $i$ are to states $i-1$ and $i+1$, except when $i=0$, where the only non-zero transition probabilities are to states 0 and 1.<br>
+Consider a general birth-and-death chain and write $p_i=p_{i, i+1}$ and $q_i=p_{i, i-1}=1-p_i$. Assume that $p_i$ and $q_i$ are positive for all $i≥1$.<br>
+Let $h_i$ be the probability of reaching 0 starting from $i$, and write $u_i=h_{i-1}-h_i$.<br>
+(a) Show that $p_i h_i+q_i h_i=h_i=p_i h_{i+1}+q_i h_{i-1}$. Deduce that $u_{i+1}=\frac{q_i}{p_i} u_i$, for all $i≥1$.<br>
+(b) Define $γ_i=\frac{q_1}{p_1} \frac{q_2}{p_2}⋯\frac{q_{i-1}}{p_{i-1}}$.
+Write $u_i$ in terms of $γ_i$ and $u_1$, and then $h_i$ in terms of $γ_1, …, γ_i$ and $u_1$.<br>
+(c) The equations for $h_1, h_2, …$ may have multiple solutions. Which solution gives the true hitting probabilities? Hence find the value of $u_1$. Further assuming that $p_{0,1}>0$, deduce that the chain is transient if and only if $∑_{i=1}^∞ γ_i$ is finite.<br>
+(d) Consider the case where
+\[
+p_i=\left(\frac{i+1}i\right)^2 q_i .
+\]
+Show that if $X_0=1$, then $ℙ\left(X_n≥1\text{ for all }n≥1\right)=6/π^2$.
+    </div>
+    (a) $p_i+q_i=1⇒p_i h_i+q_i h_i=h_i$.<br>
+    $h_i=ℙ(X_1=i+1)ℙ(\text{reach 0 start from }i+1)+ℙ(X_1=i-1)ℙ(\text{reach 0 start from }i-1)=p_i h_{i+1}+q_i h_{i-1}$<br>
+    $p_i h_i+q_i h_i=h_i=p_i h_{i+1}+q_i h_{i-1}⇒p_i(h_i-h_{i+1})=q_i(h_{i-1}-h_i)⇒u_{i+1}=\frac{q_i}{p_i} u_i$<br>
+    (b) From the recurrence relation $u_{i+1}=\frac{q_i}{p_i} u_i$, we have $u_i=γ_iu_1$ for $i≥1$, so $h_i=h_0-u_1-⋯-u_i=1-(γ_1+⋯+γ_i)u_1$<br>
+    (c) The true hitting probabilities are the minimal nonnegative solutions. $h_n≥0⇒u_1≤1/∑_{i=1}^n γ_i⇒u_1=1/∑_{i=1}^∞ γ_i$<br>
+    If $∑_{i=1}^∞ γ_i=∞$ then $u_1=0⇒h_i=1∀i⇒$recurrent<br>
+    If $∑_{i=1}^∞ γ_i=C$ then $u_1=1/C⇒h_0< 1∀i⇒$transient<br>
+    (d) $γ_i=\frac{q_1}{p_1} \frac{q_2}{p_2}⋯\frac{q_{i-1}}{p_{i-1}}=\frac{1^2}{2^2}\frac{2^2}{3^2}⋯\frac{(i-1)^2}{i^2}=\frac1{i^2}⇒u_1=1/∑_{i=1}^∞\frac1{i^2}=\frac6{π^2}$
+</li>
+</ol>

@@ -1,0 +1,476 @@
+---
+mathjax: true
+tag: Probability
+excerpt: from Williams, The Probability Lifesaver
+---
+<style>.ptmr8t-x-x-172{font-size:172%}.ptmr8t-x-x-120{font-size:120%}.ptmr8t-x-x-207{font-size:207%}.ptmb8t-{font-weight:700}.ptmr8t-x-x-90{font-size:90%}.ptmri8t-{font-style:italic}.ptmbi8t-{font-weight:700;font-style:italic}p{margin-top:0;margin-bottom:0}p.indent{text-indent:0}p+p{margin-top:1em}p+div{margin-top:1em}div+p{margin-top:1em}a{overflow-wrap:break-word;word-wrap:break-word;word-break:break-word;hyphens:auto}a img{border-top:0;border-left:0;border-right:0}center{margin-top:1em;margin-bottom:1em}img.math{vertical-align:middle}.enumerate1{list-style-type:decimal}.enumerate2{list-style-type:lower-alpha}.enumerate3{list-style-type:lower-roman}.enumerate4{list-style-type:upper-alpha}div.newtheorem{margin-bottom:2em;margin-top:2em}div.newtheorem .head{font-weight:700}.overline{text-decoration:overline}.overline img{border-top:1px solid #000}.fbox{padding-left:3pt;padding-right:3pt;text-indent:0;border:solid #000 .4pt}div.fbox{display:table}div.center div.fbox{text-align:center;clear:both;padding-left:3pt;padding-right:3pt;text-indent:0;border:solid #000 .4pt}div.minipage{width:100%}div.center,div.center div.center{text-align:center;margin-left:1em;margin-right:1em}div.center div{text-align:left}div.figure{margin-left:auto;margin-right:auto}div.figure img{text-align:center}div.eqnarray{text-align:center}img.cdots{vertical-align:middle}.chapterToc,.chapterToc a{line-height:200%;font-weight:700}div.caption{text-indent:-2em;margin-left:3em;margin-right:1em;text-align:left}div.caption span.id{font-weight:700;white-space:nowrap}div.maketitle{text-align:center}h2.titleHead{text-align:center}div.maketitle{margin-bottom:2em}div.author,div.date{text-align:center}div.author{white-space:nowrap}.chapterToc{margin-left:0}.chapterToc~.sectionToc{margin-left:2em}.sectionToc{margin-left:0}div.figure{margin-left:auto;margin-right:auto}figure.figure{text-align:center}figcaption.caption{text-indent:-2em;margin-left:3em;margin-right:1em;text-align:center}figcaption.caption span.id{font-weight:700;white-space:nowrap}img+figcaption,p+figcaption{margin-top:1em}dt.enumerate{float:left;clear:left;margin-right:.2em;margin-left:2em}</style>
+<div class='maketitle'>
+<h2 class='titleHead'>Appendix D<br>
+Complex Analysis and the Central Limit Theorem</h2></div>
+<p class='indent'>
+       </p>
+          <h2 class='likechapterHead'><a id='x1-1000'></a>Contents</h2>
+          <div class='tableofcontents'>
+          <span class='chapterToc'>1 <a href='#x1-20001' id='QQ2-1-2'>Complex Analysis and the Central Limit Theorem</a></span>
+       <br>       <span class='sectionToc'>1.1 <a href='#x1-30001.1' id='QQ2-1-3'>Warnings from real analysis</a></span>
+       <br>       <span class='sectionToc'>1.2 <a href='#x1-40001.2' id='QQ2-1-4'>Complex Analysis and Topology Deﬁnitions</a></span>
+       <br>       <span class='sectionToc'>1.3 <a href='#x1-50001.3' id='QQ2-1-6'>Complex analysis and moment generating functions</a></span>
+       <br>       <span class='sectionToc'>1.4 <a href='#x1-60001.4' id='QQ2-1-7'>Exercises</a></span>
+          </div>
+       <p class='indent'>
+       </p><p class='indent'><span class='ptmr8t-x-x-207'> </span><br>
+       </p><p class='indent'>One of the greatest challenges in a course is determining what level to pitch it. This is
+       perhaps most apparent in deciding what level of detail to give for proofs. For us, the most
+       important result is, as the name suggests, the Central Limit Theorem. The purpose of this
+       chapter is to quickly introduce you to a subject which is beautiful and important in its own
+       right, Complex Analysis, and see how it connects to Probability and the Central Limit
+       Theorem.
+       </p><p class='indent'>
+       </p><p class='indent'>
+       </p>
+          <h2 class='chapterHead'><span class='titlemark'>Chapter 1</span><br><a id='x1-20001'></a>Complex Analysis and the Central Limit Theorem</h2>
+       <p class='noindent'>In Chapter <span class='ptmb8t-'>20</span> we gave a proof of the Central Limit Theorem using generating functions; unfortunately that proof isn’t complete as it assumed some results from Complex Analysis.
+       Moreover, we had to assume the moment generating function existed, which isn’t always
+       true.</p><p class='indent'>We tried again in Chapter <span class='ptmb8t-'>21</span>; we proved the Central Limit Theorem by using Fourier analysis. Instead of using the moment generating function, which can fail to even exist, this time we used the Fourier transform (also called the characteristic function), which has the very nice and useful property of actually existing! Unfortunately, here too we needed to appeal to some results from Complex Analysis.</p><p class='indent'>This leaves us in a quandary, where we have a few options.
+           </p><dl class='enumerate'><dt class='enumerate'>
+         1. </dt><dd class='enumerate'>We can just accept as true some results from Complex Analysis and move on.
+           </dd><dt class='enumerate'>
+         2. </dt><dd class='enumerate'>We can try and ﬁnd yet another proof, this time one that doesn’t need Complex
+           Analysis.
+           </dd><dt class='enumerate'>
+         3. </dt><dd class='enumerate'>We can drop everything and take a crash course in Complex Analysis.
+           </dd></dl>
+       <p class='indent'>This chapter is for those who like the third option. We’ll explain some of the
+       key ideas of complex analysis, in particular we’ll show why it’s such a diﬀerent
+       subject than real analysis. Obviously, it helps to have seen real analysis, but if
+       you’re comfortable with Taylor series and basic results on convergence you’ll be
+       ﬁne.
+       </p><p class='indent'>It turns out that assuming a function of a real variable is diﬀerentiable doesn’t mean too
+       much, but assume a function of a complex variable is diﬀerentiable and all of a sudden
+       doors are opening everywhere with additional, powerful facts that must be true. Obviously
+       this chapter can’t replace an entire course, nor is that our goal. We want to show you some
+       of the key ideas of this beautiful subject, and hopefully when you ﬁnish reading you’ll have
+       a better sense of why the black-box results from Complex Analysis (Theorems <span class='ptmb8t-'>20.5.3</span> and <span class='ptmb8t-'>20.5.4</span>)
+       are true.
+       </p><p class='indent'>This chapter is meant to supplement our discussions on moment generating functions
+       and proofs of the Central Limit Theorem. We thus assume the reader is familiar with the
+       notation and concepts from Chapters <span class='ptmb8t-'>19</span> through <span class='ptmb8t-'>21</span>.
+       </p>
+          <h3 class='sectionHead'><span class='titlemark'>1.1    </span> <a id='x1-30001.1'></a>Warnings from real analysis</h3>
+       <p class='noindent'>The following example is one of my favorites from real analysis. It indicates why real analysis is hard, almost surely much harder than you might expect. Consider the function \(g:ℝ\to ℝ\)
+       given by\begin{cases}\tag{D.1}g(x) = e^{-1/x^2}&\text{if }x≠0\\0&\text{otherwise.}\end {cases}
+       Using the deﬁnition of the derivative and L’Hopital’s rule, we can show that \(g\) is
+       inﬁnitely diﬀerentiable, and all of its derivatives at the origin vanish. For example,
+       </p>\begin {eqnarray*} g'(0) &amp; \ = \ &amp; \lim _{h\to 0} \frac {e^{-1/h^2} - 0}{h} \nonumber \\ &amp; = &amp; \lim _{h\to 0} \frac {1/h}{e^{1/h^2}} \nonumber \\ &amp;=&amp; \lim _{k \to \infty } \frac {k}{e^{k^2}} \nonumber \\ &amp;=&amp; \lim _{k\to \infty } \frac {1}{2k e^{k^2}} \ = \ 0,  \end {eqnarray*}
+       <p class='indent'>where we used <span class='ptmb8t-'>L’Hopital’s rule</span><a id='dx1-3001'></a> in the last step (\(\lim _{k\to \infty } A(k)/B(k)\) \(=\) \(\lim _{k\to \infty }\) \(A'(k)/B'(k)\) if \(\lim _{k\to \infty } A(k)\) \(=\) \(\lim _{k\to \infty } B(k) = \infty \)). (We replaced \(h\) with \(1/k\) as this
+       allows us to re-express the quantities above in a familiar form, one where we can apply
+       L’Hopital’s rule.) A similar analysis shows that the \(n\)<sup>th</sup> derivative vanishes at the origin for
+       all \(n\), i.e., \(g^{(n)}(0) = 0\) for all positive integer \(n\). If we consider the Taylor series for \(g\) about 0, we ﬁnd
+       \[ g(x) \ = \ g(0) + g'(0)x + \frac {g''(0) x^2}{2!} + \cdots \ = \ \sum _{n=0}^\infty \frac {g^{(n)}(0) x^n}{n!} \ = \ 0;  \]
+       however, clearly \(g(x) \neq 0\) if \(x \neq 0\). We are thus in the ridiculous case where the Taylor series (which
+       converges for all \(x\)!) only agrees with the function when \(x=0\). This isn’t that impressive, as the
+       Taylor series is <span class='ptmri8t-'>forced </span>to agree with the original function at 0, as both are just
+       \(g(0)\).</p><p class='indent'>We can learn a lot from the above example. The ﬁrst is that it’s possible for a Taylor
+       series to converge for all \(x\), but only agree with the function at one point! It’s not too
+       impressive to agree at just one point, as by construction the Taylor series <span class='ptmri8t-'>has </span>to
+       agree at that point of expansion. The second, which is far more important, is
+       that <span class='ptmri8t-'>a Taylor series does not uniquely determine a function! </span>For example, both \(\sin x\)
+       and \(\sin x + g(x)\) (with \(g(x)\) the function from equation (<span class='ptmb8t-'>D.1</span>)) have the same Taylor series about
+       \(x=0\).
+       </p><p class='indent'>The reason this is so important for us is that we want to understand when a moment
+       generating function uniquely determines a probability distribution. If our distribution was discrete, there was no problem (Theorem <span class='ptmb8t-'>19.6.5</span>). For continuous distributions, however, it’s much harder, as we saw in equation (<span class='ptmb8t-'>19.6.5</span>) where we met two densities that had the same
+       moments.
+       </p><p class='indent'>Apparently, we must impose some additional conditions for continuous random
+       variables. For discrete random variables, it was enough to know all the moments; this
+       doesn’t suﬃce for continuous random variables. What should those conditions
+       be?
+       </p><p class='indent'>Recall that if we have a random variable \(X\) with density \(f_X\), its \(k\)<sup>th</sup> moment, denoted by \(\mu _k'\), is
+       deﬁned by \[ \mu _k' \ = \ \int _{-\infty }^\infty x^k f_X(x) dx.  \]
+       Let’s consider again the pair of functions in equation (<span class='ptmb8t-'>19.6.5</span>). A nice calculus exercise shows
+       that \(\mu _k' = e^{k^2/2}\). This means that the moment generating function is \[ M_X(t) \ = \ \sum _{k=0}^\infty \frac {\mu _k' t^k}{k!} \ = \ \sum _{k=0}^\infty \frac {e^{k^2/2} t^k}{k!}.  \]
+       For what \(t\) does this series converge? Amazingly, this series converges <span class='ptmri8t-'>only </span>when \(t=0\)! To see
+       this, it suﬃces to show that the terms do not tend to zero. As \(k! \le k^k\), for any ﬁxed \(t\), for \(k\)
+       suﬃciently large \(t^k/k! \ge (t/k)^k\); moreover, \(e^{k^2/2} = (e^{k/2})^k\), so the \(k\)<sup>th</sup> term is at least as large as \((e^{k/2} t / k)^k\). For any \(t \neq 0\), this clearly does not tend to zero, and thus the moment generating function has a radius of convergence of zero!
+       </p><p class='indent'>This leads us to the following conjecture: <span class='ptmri8t-'>If the moment generating function converges
+       </span><span class='ptmri8t-'>for</span> \({|t|} &lt; \delta \) <span class='ptmri8t-'>for some</span> \(\delta &gt; 0\)<span class='ptmri8t-'>, then it uniquely determines a density. </span>We’ll explore this conjecture
+       below.
+       </p><p class='noindent'>
+       </p>
+          <h3 class='sectionHead'><span class='titlemark'>1.2    </span> <a id='x1-40001.2'></a>Complex Analysis and Topology Deﬁnitions</h3>
+       <p class='noindent'>Our purpose here is to give a ﬂavor of what kind of inputs are needed to ensure that
+       a moment generating function uniquely determines a probability density. We
+       ﬁrst collect some deﬁnitions, and then state some useful results from complex
+       analysis.
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Deﬁnition 1.2.1 (Complex</span><a id='dx1-4002'></a><a id='dx1-4003'></a> <span class='ptmb8t-'>variable, complex</span><a id='dx1-4004'></a><a id='dx1-4005'></a> <span class='ptmb8t-'>function)</span>  </span><span class='ptmri8t-'>Any  complex  number</span>  \(z\)
+<span class='ptmri8t-'>can be written as</span> \(z = x + iy\)<span class='ptmri8t-'>, with</span> \(x\) <span class='ptmri8t-'>and</span> \(y\) <span class='ptmri8t-'>real and</span> \(i = \sqrt {-1}\)<span class='ptmri8t-'>. We denote the set of all complex numbers by</span>
+\(ℂ\)<span class='ptmri8t-'>. A complex function is a map</span> \(f\) <span class='ptmri8t-'>from</span> \(ℂ\) <span class='ptmri8t-'>to</span> \(ℂ\)<span class='ptmri8t-'>; in other words</span> \(f(z) \in ℂ\)<span class='ptmri8t-'>. Frequently one writes</span> \(x = \Re (z)\) <span class='ptmri8t-'>for
+</span><span class='ptmri8t-'>the </span><span class='ptmbi8t-'>real part</span><a id='dx1-4006'></a><a id='dx1-4007'></a><span class='ptmri8t-'>,</span> \(y = \Im (z)\) <span class='ptmri8t-'>for the </span><span class='ptmbi8t-'>imaginary part</span><a id='dx1-4008'></a><a id='dx1-4009'></a><span class='ptmri8t-'>, and</span> \(f(z) = u(x,y) + iv(x,y)\) <span class='ptmri8t-'>with</span> \(u\) <span class='ptmri8t-'>and</span> \(v\) <span class='ptmri8t-'>functions from</span> \(ℝ^2\) <span class='ptmri8t-'>to</span> \(ℝ\)<span class='ptmri8t-'>.</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>There are many ways to write complex numbers. The most common is the deﬁnition
+       above; however, a polar coordinate approach is sometimes useful. One of the most
+       remarkable relations in all of mathematics is \begin {equation*} e^{i\theta }\ = \ \cos \theta + i \sin \theta . \end {equation*}
+       There are several ways to see this, depending on how much math you want to assume. One
+       way is to use the Taylor series expansions for the exponential, sine and cosine functions.
+       This gives another way of writing complex numbers; instead of \(1 + i\) we could write \(\sqrt {2} \exp (i\pi /4)\). A
+       particularly interesting choice of \(\theta \) is \(\pi \), which gives \(e^{i\pi } = -1\), a beautiful formula involving many of
+       the most important constants in mathematics!
+       </p><p class='indent'>Noting \(i^2=-1\), it isn’t too hard to show that </p>\begin {eqnarray*} (a+ib) + (x+iy) &amp; \ = \ &amp; (a+x) + i(b+y)\nonumber \\ (a+ib) \cdot (x+iy) &amp;=&amp; (ax-by) + i(ay+bx).  \end {eqnarray*}
+       <p class='indent'>The <span class='ptmb8t-'>complex conjugate</span><a id='dx1-4010'></a><a id='dx1-4011'></a> of \(z=x+iy\) is \(\overline {z} := x - iy\), and we deﬁne the <span class='ptmb8t-'>absolute value</span><a id='dx1-4012'></a><a id='dx1-4013'></a> (or the <span class='ptmb8t-'>modulus</span><a id='dx1-4014'></a> or
+       <span class='ptmb8t-'>magnitude</span><a id='dx1-4015'></a>) of \(z\) to be \(\sqrt {z\overline {z}}\), and denote this by \(|z|\). This is real valued, and equals \(\sqrt {x^2+y^2}\). If we were to
+       write \(z\) as a vector, it would be \(z = (x,y)\); note that in this case we see that \(|z|\) equals the length of the
+       corresponding vector.
+       </p><p class='indent'>We can write almost anything as an example of a complex function; one possible
+       function is \(f(z) = z^2 + |z|\). The question is when is such a function diﬀerentiable in \(z\), and what does that
+       diﬀerentiability entail. Actually, before we answer this we ﬁrst need to state what it means
+       for a complex function to be diﬀerentiable!
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Deﬁnition 1.2.2 (Diﬀerentiable)</span>  </span><span class='ptmri8t-'>We say a complex function</span> \(f\) <span class='ptmri8t-'>is </span><span class='ptmbi8t-'>(complex) diﬀerentiable</span><a id='dx1-4017'></a><a id='dx1-4018'></a>
+<span class='ptmri8t-'>at</span> \(z_0\) <span class='ptmri8t-'>if it’s diﬀerentiable with respect to the complex variable</span> \(z\)<span class='ptmri8t-'>, which means </span>\[\lim_{h \to 0} \frac {f(z_0+h) - f(z_0)}{h}  \]
+<span class='ptmri8t-'>exists, where</span> \(h\) <span class='ptmri8t-'>tends to zero along </span>any <span class='ptmri8t-'>path in the complex plane. If the limit exists we write</span> \(f'(z_0)\)
+<span class='ptmri8t-'>for the limit. If</span> \(f\) <span class='ptmri8t-'>is diﬀerentiable, then</span> \(f(x+iy) = u(x,y)+iv(x,y)\) <span class='ptmri8t-'>satisﬁes the </span><span class='ptmbi8t-'>Cauchy-Riemann equations</span><a id='dx1-4019'></a><span class='ptmri8t-'>:</span>
+\[ f'(z) \ = \ \frac {\partial u}{\partial x} + i \frac {\partial v}{\partial x} \ = \ -i \frac {\partial u}{\partial y} + \frac {\partial v}{\partial y}  \]
+<span class='ptmri8t-'>(one direction is easy, arising from sending</span> \(h\to 0\) <span class='ptmri8t-'>along the paths</span> \(\widetilde {h}\) <span class='ptmri8t-'>and</span> \(i\widetilde {h}\)<span class='ptmri8t-'>, with</span> \(\widetilde {h} \in ℝ\)<span class='ptmri8t-'>).</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'><br>
+       </p><p class='indent'>Here’s a quick hint to see why diﬀerentiability implies the Cauchy-Riemann equations – try and ﬁll in the details. Since the derivative exists at \(z_0\), the key limit is independent of the path we take to the point \(x_0 + iy_0\). Consider the path \(x + iy_0\) with \(x\to x_0\), and the path \(x_0 + i y\) with \(y\to y_0\), and use results from multivariable calculus on partial derivatives.
+       </p><p class='indent'>Let’s explore a bit and see which functions are complex diﬀerentiable. We let \(h = h_1+ih_2\) below, with \(h\to 0 + 0i\).
+       If \(f(z) = z\) then \begin {equation*} \lim_{h\to 0} \frac {f(z+h)-f(z)}{h} \ = \ \lim _{h\to 0} \frac {z+h-z}{h} \ = \ \lim _{h\to 0} 1 \ = \ 1; \end {equation*}
+       thus the function is complex diﬀerentiable and the derivative is 1.
+       If \(f(z) = z^2\) then </p>\begin {eqnarray*} \lim_{h\to 0} \frac {f(z+h) - f(z)}{h} &amp; \ = \ &amp; \lim _{h\to 0} \frac {(z+h)^2 - z^2}{h} \nonumber \\ &amp;=&amp; \lim _{h\to 0} \frac {z^2+2zh + h^2 - z^2}{h} \nonumber \\ &amp;=&amp; \lim _{h\to 0} \frac {2zh+h^2}{h} \nonumber \\ &amp;=&amp; \lim _{h\to 0} (2z+h) \nonumber \\ &amp; = &amp; \lim _{h\to 0} 2z + \lim _{h\to 0} h \nonumber \\ &amp;=&amp; 2z + 0 \ = \ 2z.\end {eqnarray*}
+       <p class='indent'>We’re using the following properties of complex numbers: \(h/h = 1\) and \(2zh+h^2 = (2z+h)h\). Note how similar this
+       is to the real valued analogue, \(f(x) = x^2\).
+       If \(f(z) = \overline {z}\) then \begin {equation*} \lim_{h\to 0} \frac {f(z+h)-f(z)}{h} \ = \ \lim _{h\to 0} \frac {\overline {z+h} - \overline {z}}{h}.  \end {equation*}
+       Unlike the other limits, this one isn’t immediately clear. Let’s write \(z = x+iy\), \(h = h_1 + ih_2\) (and of course \(\overline {z} = x-iy\), \(\overline {h} = h_1-ih_2\)).
+       The limit is \begin {equation*} \lim_{h\to 0} \frac {x-iy + h-ih_2 - (x - iy)}{h_1+ih_2} \ = \ \lim _{h\to 0} \frac {h_1-ih_2}{h_1+ih_2}. \end {equation*}
+       This limit does not exist; depending on how \(h\to 0\) we obtain diﬀerent answers. For example, if \(h_2 = 0\)
+       (traveling along the \(x\)-axis) the limit is just \(\lim _{h\to 0} h_1/h_1 = 1\), while if \(h_1 = 0\) (traveling along the \(y\)-axis) the limit is
+       just \(\lim _{h\to 0} -ih_2/ih_2 = -1\). Thus this function isn’t complex diﬀerentiable anywhere, even though it’s a fairly
+       straightforward function to deﬁne.
+       </p><p class='indent'>If we continue to argue along these lines, we ﬁnd that a function is complex
+       diﬀerentiable if the \(x\) and \(y\) dependence is in a very special form, namely everything is a
+       function of \(z=x+iy\). In other words, we don’t allow our function to depend on \(\overline {z} = x - iy\). If we could depend
+       on both, we could isolate out \(x\) (which is \(z+\overline {z}\)) and \(y\) (which is \((z-\overline {z})/i\)). We can begin to see why being
+       complex diﬀerentiable once implies that we’re complex diﬀerentiable inﬁnitely often,
+       namely because of the very special dependence on \(x\) and \(y\). Also, in the plane there’s really
+       only two ways to approach a point: from above, or from below. In the complex plane, the
+       situation is strikingly diﬀerent. There are so many ways we can move in two-dimensions,
+       and <span class='ptmri8t-'>each </span>path must give the same answer if we’re to be complex diﬀerentiable. This is why
+       diﬀerentiability means far more for a complex variable than for a real variable.</p><p class='indent'>To state the needed results from Complex Analysis, we also require some terminology
+       from Point Set Topology. In particular, many of the theorems below deal with open sets.
+       We brieﬂy review their deﬁnition and give some examples.
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Deﬁnition 1.2.3 (Open set, closed</span><a id='dx1-4021'></a><a id='dx1-4022'></a> <span class='ptmb8t-'>set)</span>  </span><span class='ptmri8t-'>A  subset</span>  \(U\)  <span class='ptmri8t-'>of</span>  \(ℂ\)  <span class='ptmri8t-'>is  an  </span><span class='ptmbi8t-'>open  set  </span><span class='ptmri8t-'>if  for  any</span>  \(z_0 \in U\)
+<span class='ptmri8t-'>there’s a</span> \(\delta \) <span class='ptmri8t-'>such that whenever</span> \({|z-z_0|} &lt; \delta \) <span class='ptmri8t-'>then</span> \(z\in U\) <span class='ptmri8t-'>(note</span> \(\delta \) <span class='ptmri8t-'>is allowed to depend on</span> \(z_0\)<span class='ptmri8t-'>). A set</span> \(C\) <span class='ptmri8t-'>is </span><span class='ptmbi8t-'>closed
+</span><span class='ptmri8t-'>if its </span><span class='ptmbi8t-'>complement</span><a id='dx1-4023'></a><span class='ptmri8t-'>,</span> \(ℂ\setminus C\)<span class='ptmri8t-'>, is open.</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>The following are examples of open sets in \(ℂ\). </p><p class='indent'>
+           </p><dl class='enumerate'><dt class='enumerate'>
+         1. </dt><dd class='enumerate'>\(U_1 = \{z: |z| &lt; r\}\) for any \(r &gt; 0\). This is usually called the <span class='ptmb8t-'>open ball of radius</span> \(r\)<a id='dx1-4025'></a> centered at the origin.
+           </dd><dt class='enumerate'>
+         2. </dt><dd class='enumerate'>\(U_2 = \{z: \Re (z) &gt; 0\}\). To see this is open, if \(z_0 \in U_2\) then we can write \(z_0 = x_0 + i y_0\), with \(x_0 &gt; 0\). Letting \(\delta = x_0/2\), for \(z = x+iy\) we see that if \(|z-z_0| &lt; \delta \)
+           then \(|x-x_0| &lt; x_0/2\), which implies \(x &gt; x_0/2 &gt; 0\); \(U_2\) is often called the open <span class='ptmb8t-'>right half-plane</span><a id='dx1-4027'></a>.
+           </dd></dl>
+    <p class='noindent'>For examples of closed sets, consider the following.
+       </p><p class='indent'>
+           </p><dl class='enumerate'><dt class='enumerate'>
+         1. </dt><dd class='enumerate'>\(C_1 = \{z: |z| \le r\}\). Note that if we take \(z_0\) to be any point on the boundary, then the ball of radius
+           \(\delta \) centered at \(z_0\) will contain points more than \(r\) units from the origin, and thus
+           \(C_1\) isn’t open. A little work shows, however, that \(C_1\) is closed (in fact, \(C_1\) is called
+           the <span class='ptmb8t-'>closed ball of radius</span> \(r\)<a id='dx1-4029'></a> about the origin). We prove it’s closed by showing
+           its complement is open. What we need to do is show that, given any point in
+           the complement, there’s a small ball about that point entirely contained in the
+           complement. I urge you to draw a picture for the following argument. If \(z_0 \in ℂ\setminus C_1\) then
+           \(|z_0| &gt; r\) (as otherwise it would be inside \(C_1\)). If we take \(\delta &lt; \frac {|z_0| - r}2\) then after some algebra we’ll
+           ﬁnd that if \(|z-z_0| &lt; \delta \) then \(z \in ℂ\setminus C_1\). Thus \(ℂ\setminus C_1\) is open, so \(C_1\) is closed.
+           </dd><dt class='enumerate'>
+         2. </dt><dd class='enumerate'>\(C_2 = \{z: \Re (z) \ge 0\}\). To see this set isn’t open, consider any \(z_0 = iy\) with \(y \in ℝ\). A similar calculation as the one
+           we did for \(U_2\) or \(C_1\) shows \(C_2\) is closed.
+           </dd></dl>
+    <p class='noindent'>For a set that is neither open nor closed, consider \(S = U_1 \cup C_2\).  </p><p class='indent'>We now state two of the most important properties a complex function could have. One
+       of the most important results in the subject is that these two seemingly very diﬀerent
+       properties are actually equivalent!
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Deﬁnition 1.2.4 (Holomorphic,</span><a id='dx1-4032'></a><a id='dx1-4033'></a><a id='dx1-4034'></a><a id='dx1-4035'></a> <span class='ptmb8t-'>analytic)</span>  </span><span class='ptmri8t-'>Let</span> \(U\) <span class='ptmri8t-'>be an open subset of</span> \(ℂ\)<span class='ptmri8t-'>, and let</span> \(f\) <span class='ptmri8t-'>be a
+</span><span class='ptmri8t-'>complex function. We say</span> \(f\) <span class='ptmri8t-'>is </span><span class='ptmbi8t-'>holomorphic </span><span class='ptmri8t-'>on</span> \(U\) <span class='ptmri8t-'>if</span> \(f\) <span class='ptmri8t-'>is diﬀerentiable at every point</span> \(z \in U\)<span class='ptmri8t-'>,
+</span><span class='ptmri8t-'>and we say</span> \(f\) <span class='ptmri8t-'>is </span><span class='ptmbi8t-'>analytic </span><span class='ptmri8t-'>on</span> \(U\) <span class='ptmri8t-'>if</span> \(f\) <span class='ptmri8t-'>has a series expansion that converges and agrees
+</span><span class='ptmri8t-'>with</span> \(f\) <span class='ptmri8t-'>on</span> \(U\)<span class='ptmri8t-'>. This means that for any</span> \(z_0 \in U\)<span class='ptmri8t-'>, for</span> \(z\) <span class='ptmri8t-'>close to</span> \(z_0\) <span class='ptmri8t-'>we can choose</span> \(a_n\)<span class='ptmri8t-'>’s such that </span>\[ f(z) \ = \ \sum _{n=0}^\infty a_n (z-z_0)^n.  \]
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>As alluded to above, saying a function of a complex variable is diﬀerentiable turns out
+       to imply <span class='ptmri8t-'>far </span>more than saying a function of a real variable is diﬀerentiable, as the following
+       theorem shows us.
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Theorem 1.2.5</span>  </span><span class='ptmri8t-'>Let</span> \(f\) <span class='ptmri8t-'>be a complex function and</span> \(U\) <span class='ptmri8t-'>an open set. Then</span> \(f\) <span class='ptmri8t-'>is holomorphic
+</span><span class='ptmri8t-'>on</span> \(U\) <span class='ptmri8t-'>if and only if</span> \(f\) <span class='ptmri8t-'>is analytic on</span> \(U\)<span class='ptmri8t-'>, and the series expansion for</span> \(f\) <span class='ptmri8t-'>is its Taylor series.</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>The above theorem is amazing; its result seems to good to be true. Namely,
+       as soon as we know \(f\) is diﬀerentiable once, it’s inﬁnitely (real) diﬀerentiable
+       and \(f\) agrees with its Taylor series expansion! This is very diﬀerent than what
+       happens in the case of functions of a real variable. For instance, the function
+       \begin {equation}  h(x)\ =\ x^3 \sin (1/x) \tag{D.2} \end {equation}
+       is diﬀerentiable once and only once at \(x=0\), and while the function \(g(x)\) from (<span class='ptmb8t-'>D.1</span>) is inﬁnitely
+       diﬀerentiable, the Taylor series expansion only agrees with \(g(x)\) at \(x=0\). Complex analysis is a <span class='ptmri8t-'>very</span>
+       diﬀerent subject than real analysis!
+       </p><p class='indent'>The next theorem provides a very nice condition for when a function is identically
+       zero. It involves the notion of a limit or accumulation point, which we deﬁne
+       ﬁrst.
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Deﬁnition 1.2.6 (Limit or accumulation point)</span>  </span><span class='ptmri8t-'>We   say</span>   \(z\)   <span class='ptmri8t-'>is   a   </span><span class='ptmbi8t-'>limit</span><a id='dx1-4038'></a><a id='dx1-4039'></a>   <span class='ptmri8t-'>(or   an
+</span><span class='ptmbi8t-'>accumulation</span><span class='ptmri8t-'>) </span><span class='ptmbi8t-'>point</span><a id='dx1-4040'></a><a id='dx1-4041'></a> <span class='ptmri8t-'>of a sequence</span> \(\{z_n\}_{n=0}^\infty \) <span class='ptmri8t-'>if there exists a subsequence</span> \(\{z_{n_k}\}_{k=0}^\infty \) <span class='ptmri8t-'>converging to</span> \(z\)<span class='ptmri8t-'>.</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>Let’s do some examples to clarify the deﬁnitions. </p><p class='indent'>
+           </p><dl class='enumerate'><dt class='enumerate'>
+         1. </dt><dd class='enumerate'>If \(z_n = 1/n\), then \(0\) is a limit point.
+           </dd><dt class='enumerate'>
+         2. </dt><dd class='enumerate'>If \(z_n = \cos (\pi n)\) then there are two limit points, namely \(1\) and \(-1\). (If \(z_n = \cos (n)\) then <span class='ptmri8t-'>every </span>point in \([-1,1]\) is a
+           limit point of the sequence, though this is harder to show.)
+           </dd><dt class='enumerate'>
+         3. </dt><dd class='enumerate'>If \(z_n = (1 + (-1)^n)^n + 1/n\), then \(0\) is a limit point. We can see this by taking the subsequence \(\{z_1,z_3,z_5,z_7,\dots \}\); note the
+           subsequence \(\{z_0,z_2,z_4,\dots \}\) diverges to inﬁnity.
+           </dd><dt class='enumerate'>
+         4. </dt><dd class='enumerate'>Let \(z_n\) denote the number of distinct prime factors of \(n\). Then every positive integer
+           is a limit point! For example, let’s show \(5\) is a limit point. The ﬁrst ﬁve primes
+           are 2, 3, 5, 7 and 11; consider \(N = 2 \cdot 3 \cdot 5 \cdot 7 \cdot 11 = 2310\). Consider the subsequence \(\{z_N, z_{N^2}, z_{N^3}, z_{N^4}, \dots \}\); as \(N^k\) has exactly 5
+           distinct prime factors for each \(k\), \(5\) is a limit point.
+           </dd><dt class='enumerate'>
+         5. </dt><dd class='enumerate'>If \(z_n = n^2\) then there are no limit points, as \(\lim _{n\to \infty } z_n = \infty \).
+           </dd><dt class='enumerate'>
+         6. </dt><dd class='enumerate'>Let \(z_0\) be any odd, positive integer,<a id='dx1-4048'></a> and set\[ z_{n+1} \ = \  \begin {cases} 3 z_n + 1 &amp; \text {if $z_n$ is odd}\\ z_n/2 &amp;\text {if $z_n$ is even.} \end {cases}  \]
+           It’s <span class='ptmri8t-'>conjectured </span>that 1 is always a limit point (and if some \(z_m = 1\), then the next few terms
+           have to be \(4, 2, 1, 4, 2, 1, 4, 2, 1, \dots \), and hence the sequence cycles). This is the famous \(3x+1\) <span class='ptmb8t-'>problem</span><a id='dx1-4049'></a>. Kakutani
+           called it a conspiracy to slow down American mathematics because of the amount of
+           time people spent on this; Erdös said mathematics isn’t yet ready for such problems.
+           See [<span class='ptmb8t-'>Lag1</span>, <span class='ptmb8t-'>Lag2</span>, <span class='ptmb8t-'>Lag3</span>] for some nice expositions, but be warned that this problem can be
+           addictive!
+           </dd></dl>
+    <p class='noindent'> </p><p class='indent'>We can now state the theorem which, for us, is the most important result from Complex
+       Analysis. It’s the basis of the black box results.
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Theorem 1.2.7</span>  </span><span class='ptmri8t-'>Let</span> \(f\) <span class='ptmri8t-'>be an analytic function on an open set</span> \(U\)<span class='ptmri8t-'>, with inﬁnitely many
+</span><span class='ptmri8t-'>zeros</span> \(z_1, z_2, z_3, \dots \)<span class='ptmri8t-'>. If</span> \(\lim _{n\to \infty } z_n \in U\)<span class='ptmri8t-'>, then</span> \(f\) <span class='ptmri8t-'>is identically zero on</span> \(U\)<span class='ptmri8t-'>. In other words, if a function is zero along a
+</span><span class='ptmri8t-'>sequence in</span> \(U\) <span class='ptmri8t-'>whose accumulation point is also in</span> \(U\)<span class='ptmri8t-'>, then that function is identically
+</span><span class='ptmri8t-'>zero in</span> \(U\)<span class='ptmri8t-'>.</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>Note the above is <span class='ptmri8t-'>very </span>diﬀerent than what happens in real analysis. Consider again the function from (<span class='ptmb8t-'>D.2</span>), \[ h(x) \ = \ x^3 \sin (1/x).  \]
+       This function is continuous and diﬀerentiable. It’s zero whenever \(x = 1/\pi n\) with \(n\) an integer. If we let
+       \(z_n = 1/\pi n\), we see this sequence has \(0\) as a limit point, and our function is also zero at \(0\) (see Figure <a href='#x1-40511'>1.1</a>). </p><figure class='figure'> 
+       <a id='x1-40511'></a>
+       <div class='center'>
+       <tex>\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+\begin{tikzpicture}[>=latex]
+  \begin{axis}[
+    width=10cm,
+    scaled ticks = false,
+    xmin=-0.031, xmax=0.031,
+    ymin=-0.0000152, ymax=0.0000152,
+    axis lines=middle,
+    grid=major,
+    no markers,
+    xticklabel style={/pgf/number format/fixed,/pgf/number format/precision=3},
+    yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=5}
+    ]
+\addplot[domain=30:300,samples=200,smooth] ({1/x},{sin(deg(x))*1/x^3});
+\addplot[domain=-300:-30,samples=200,smooth] ({1/x},{sin(deg(x))*1/x^3});
+  \end{axis}
+\end{tikzpicture}
+\end{document}</tex>
+       <figcaption class='caption'><span class='id'>Figure 1.1: </span><span class='content'> Plot of \(x^3 \sin (1/x)\).</span></figcaption>
+       </div>
+          </figure>
+       <p class='indent'>It’s clear, however, that this function is <span class='ptmri8t-'>not </span>identically zero. Yet again, we see a stark
+       diﬀerence between real and complex valued functions. As a nice exercise, show that \(x^3 \sin (1/x)\) is <span class='ptmri8t-'>not</span>
+       complex diﬀerentiable. It will help if you recall \(e^{i\theta } = \cos \theta + i\sin \theta \), or \(\sin \theta = (e^{i\theta } - e^{-i\theta })/2\).
+       </p>
+          <h3 class='sectionHead'><span class='titlemark'>1.3    </span> <a id='x1-50001.3'></a>Complex analysis and moment generating functions</h3>
+       <p class='noindent'>We conclude our technical digression by stating a few more very useful facts. The proof of
+       these requires properties of the <span class='ptmb8t-'>Laplace transform</span><a id='dx1-5001'></a><a id='dx1-5002'></a>, which is deﬁned by \((\mathcal {L}f)(s) = \int _0^\infty e^{-sx} f(x)dx\). The reason the
+       Laplace transform plays such an important role in the theory is apparent when we recall the
+       deﬁnition of the moment generating function of a random variable \(X\) with density \(f\):
+       \[ M_X(t) = 𝔼 [e^{tX}] = \int _{-\infty }^\infty e^{tx} f(x)dx;  \]
+       in other words, the moment generating function is the Laplace transform of the density
+       evaluated at \(s=-t\).
+       </p><p class='indent'>Remember that if \(F_X\) and \(G_Y\) are the cumulative distribution functions of the random
+       variables \(X\) and \(Y\) with densities \(f\) and \(g\), then </p>\begin {eqnarray*} F_X(x) &amp; \ = \ &amp; \int _{-\infty }^x f(t) dt \nonumber \\ G_Y(y) &amp;=&amp; \int _{-\infty }^y g(v)dv.  \end {eqnarray*}
+       <p class='indent'>We remind the reader of the two important results we assumed in the text
+       (Theorems <span class='ptmb8t-'>20.5.3</span> and <span class='ptmb8t-'>20.5.4</span>), which we restate below. After stating them we discuss their
+       proofs.
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Theorem 1.3.1</span>  </span><span class='ptmri8t-'>Assume   the   moment   generating   functions</span>   \(M_X(t)\)   <span class='ptmri8t-'>and</span>   \(M_Y(t)\)   <span class='ptmri8t-'>exist   in   a
+</span><span class='ptmri8t-'>neighborhood of zero (i.e., there’s some</span> \(\delta \) <span class='ptmri8t-'>such that both functions exist for</span> \({|t|} < \delta \)<span class='ptmri8t-'>). If</span> \(M_X(t) = M_Y(t)\) <span class='ptmri8t-'>in this
+</span><span class='ptmri8t-'>neighborhood, then</span> \(F_X(u) = F_Y(u)\) <span class='ptmri8t-'>for all</span> \(u\)<span class='ptmri8t-'>. As the densities are the derivatives of the cumulative
+</span><span class='ptmri8t-'>distribution functions, we have</span> \(f=g\)<span class='ptmri8t-'>.</span>
+</p>
+</div>
+<p class='noindent'>
+</p>
+<div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Theorem 1.3.2</span>  </span><a id='x1-50042'></a> <span class='ptmri8t-'>Let</span> \(\{X_i\}_{i \in I}\) <span class='ptmri8t-'>be a sequence of random variables with moment generating
+</span><span class='ptmri8t-'>functions</span> \(M_{X_i}(t)\)<span class='ptmri8t-'>. Assume there’s a</span> \(\delta &gt; 0\) <span class='ptmri8t-'>such that when</span> \({|t|} < \delta \) <span class='ptmri8t-'>we have</span> \(\lim _{i\to \infty } M_{X_i}(t) = M_X(t)\) <span class='ptmri8t-'>for some moment generating
+</span><span class='ptmri8t-'>function</span> \(M_X(t)\)<span class='ptmri8t-'>, and all moment generating functions converge for</span> \({|t|} < \delta \)<span class='ptmri8t-'>. Then there exists a
+</span><span class='ptmri8t-'>unique cumulative distribution function</span> \(F\) <span class='ptmri8t-'>whose moments are determined from</span> \(M_X(t)\) <span class='ptmri8t-'>and
+</span><span class='ptmri8t-'>for all</span> \(x\) <span class='ptmri8t-'>where</span> \(F_X(x)\) <span class='ptmri8t-'>is continuous,</span> \(\lim _{i\to \infty } F_{X_i}(x) = F_X(x)\)<span class='ptmri8t-'>.</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='indent'>The proof of these theorems follow from results in complex analysis, speciﬁcally the Laplace and Fourier inversion formulas. To give an example as to how the results from complex analysis allow us to prove results such as these, we give most of the details in the proof of the next theorem. We <span class='ptmri8t-'>deliberately </span>do not try and prove the following result in as great generality as possible!
+       </p>
+       <div class='center'>
+       <p class='noindent'>
+       </p>
+       <div class='fbox'><div class='minipage'><div class='newtheorem'>
+<p class='noindent'><span class='head'>
+<span class='ptmb8t-'>Theorem 1.3.3</span>  </span><a id='x1-50053'></a> <span class='ptmri8t-'>Let</span> \(X\) <span class='ptmri8t-'>and</span> \(Y\) <span class='ptmri8t-'>be two continuous random variables on</span> \([0,\infty )\) <span class='ptmri8t-'>with continuous
+</span><span class='ptmri8t-'>densities</span> \(f\) <span class='ptmri8t-'>and</span> \(g\)<span class='ptmri8t-'>, all of whose moments are ﬁnite and agree. Suppose further that:</span>
+          </p><dl class='enumerate'><dt class='enumerate'>
+     <span class='ptmri8t-'>1.</span>  </dt><dd class='enumerate'><span class='ptmri8t-'>There is some</span> \(C &gt; 0\) <span class='ptmri8t-'>such that for all</span> \(c \le C\)<span class='ptmri8t-'>,</span> \(e^{(c+1)t} f(e^t)\) <span class='ptmri8t-'>and</span> \(e^{(c+1)t} g(e^t)\) <span class='ptmri8t-'>are Schwartz functions (see Deﬁnition
+          </span><span class='ptmb8t-'>21.1.3</span><span class='ptmri8t-'>). This isn’t a terribly restrictive assumption;</span> \(f\) <span class='ptmri8t-'>and</span> \(g\) <span class='ptmri8t-'>need to have decay in
+          </span><span class='ptmri8t-'>order for all moments to exist and be ﬁnite. As we’re evaluating</span> \(f\) <span class='ptmri8t-'>and</span> \(g\) <span class='ptmri8t-'>at</span> \(e^t\) <span class='ptmri8t-'>and
+          </span><span class='ptmri8t-'>not</span> \(t\)<span class='ptmri8t-'>, there’s enormous decay here. The meat of the assumption is that</span> \(f\) <span class='ptmri8t-'>and</span> \(g\) <span class='ptmri8t-'>are
+          </span><span class='ptmri8t-'>inﬁnitely diﬀerentiable and their derivatives decay.</span>
+          </dd><dt class='enumerate'>
+     <span class='ptmri8t-'>2.</span>  </dt><dd class='enumerate'><span class='ptmri8t-'>The (not necessarily integral) moments </span>\[ \mu _{r_n}'(f) \ = \ \int _{0}^\infty x^{r_n} f(x)dx \ \ \ {\rm and} \ \ \ \mu _{r_n}'(g) \ = \ \int _0^\infty x^{r_n} g(x)dx  \]
+          <span class='ptmri8t-'>agree for some sequence of non-negative real numbers</span> \(\{r_n\}_{n=0}^\infty \) <span class='ptmri8t-'>which has a ﬁnite
+          </span><span class='ptmri8t-'>accumulation point (i.e.,</span> \(\lim _{n\to \infty } r_n = r &lt; \infty \)<span class='ptmri8t-'>).</span>
+          </dd></dl>
+<p class='noindent'><span class='ptmri8t-'>Then</span> \(f=g\) <span class='ptmri8t-'>(in other words, knowing all these moments uniquely determines the probability
+</span><span class='ptmri8t-'>density).</span>
+</p>
+</div>
+</div> </div>
+       </div>
+       <p class='noindent'><span class='ptmri8t-'>Proof: </span>We sketch the proof, which is long and sadly a bit technical. Remember the purpose
+       of this proof is to highlight why our needed results from Complex Analysis are true. Feel
+       free to skim or skip the proof, but we urge you to read the example at the end of this
+       section, where we return to the two densities that are causing us so much heartache. Let \(h(x) = f(x) - g(x)\),
+       and deﬁne \[ A(z)\ =\ \int _0^\infty x^z h(x)dx.  \]
+       Note that \(A(z)\) exists for all \(z\) with real part non-negative. To see this, let \(\Re (z)\) denote the real part of \(z\),
+       and let \(k\) be the unique non-negative integer with \(k \le \Re (z) &lt; k+1\). Then \(x^{{\Re z}} \le x^k + x^{k+1}\), and </p>\begin {eqnarray*} {|A(z)|} &amp; \ \le \ &amp; \int _0^\infty x^{{\Re (z)}} \left [{|f(x)|}+{|g(x)|}\right ]dx \\ &amp; \ \le \ &amp; \int _0^\infty (x^k + x^{k+1}) f(x)dx + \int _0^\infty (x^k+x^{k+1}) g(x)dx \ = \ 2\mu _k' + 2\mu _{k+1}'.  \end {eqnarray*}
+       <p class='indent'>Results from analysis now imply that \(A(z)\) exists for all \(z\). The key point is that \(A\) is also
+       diﬀerentiable. Interchanging the derivative and the integration (which can be justiﬁed; see
+       Theorem <span class='ptmb8t-'>??</span>), we ﬁnd \[ A'(z) \ = \ \int _0^\infty x^z (\log x) h(x) dx.  \]
+       To show that \(A'(z)\) exists, we just need to show this integral is well-deﬁned. There are only
+       two potential problems with the integral, namely when \(x\to \infty \) and when \(x\to 0\). For \(x\) large,
+       \(x^z \log x \le x^{\Re (z)+1}\) and thus the rapid decay of \(h\) gives \(\left |\int _1^\infty x^z (\log x) h(x)dx \right | &lt; \infty \). For \(x\) near \(0\), \(h(x)\) looks like \(h(0)\) plus a small error
+       (remember we’re assuming \(f\) and \(g\) are continuous); thus there’s a \(C\) so that \(|h(x)| \le C\) for \(|x| \le 1\). Note
+       </p>\begin {eqnarray*} \lim_{\epsilon \to 0} \int _{\epsilon }^1 \left |\int _0^\infty x^z (\log x) h(x)dx \right | &amp; \ \le \ &amp; \lim _{\epsilon \to 0} 1 \int _{\epsilon }^1 1 \cdot (-\log x) \cdot C dx.  \end {eqnarray*}
+       <p class='indent'>The anti-derivative of \(\log x\) is \(x\log x - x\), and \(\lim _{\epsilon \to 0} (\epsilon \log \epsilon - \epsilon ) = 0\). This is enough to prove that this integral is bounded,
+       and thus from results in analysis we get \(A'(z)\) exists.
+       </p><p class='indent'>We (ﬁnally!) use our results from complex analysis. As \(A\) is diﬀerentiable once, it’s
+       inﬁnitely diﬀerentiable and it equals its Taylor series for \(z\) with \(\Re (z) &gt; 0\). Therefore \(A\) is an analytic
+       function which is zero for a sequence of \(z_n\)’s with an accumulation point, and thus it’s
+       identically zero. This is spectacular – initially we only knew \(A(z)\) was zero if \(z\) was a
+       positive integer or if \(z\) was in the sequence \(\{r_n\}\); we now know it’s zero for all \(z\) with \(\Re (z) &gt; 0\).
+       This remarkable conclusion comes from complex analysis; it’s here that we use
+       it.
+       </p><p class='indent'>We change variables, and replace \(x\) with \(e^t\) and \(dx\) with \(e^tdt\). The range of integration is now \(-\infty \) to \(\infty \),
+       and we set \(\mathfrak {h}(t)dt = h(e^t)e^tdt\). We now have \[ A(z) \ = \ \int _{-\infty }^\infty e^{tz} \mathfrak {h}(t)dt \ = \ 0.  \]
+       Choosing \(z = c + 2\pi i y\) with \(c\) less than the \(C\) from our hypotheses gives \[ A(c+2\pi i y) \ = \ \int _{-\infty }^\infty e^{2\pi i ty} \left [e^{ct} \mathfrak {h}(t)\right ]dt \ = \ 0.  \]
+       Our assumptions imply that \(e^{ct}\mathfrak {h}(t)\) is a Schwartz function, and thus it has a unique inverse
+       Fourier transform. As we know this transform is zero, it implies that \(e^{ct} \mathfrak {h}(t) = 0\), or \(h(x) = 0\), or
+       \(f(x) = g(x)\).                                                                                                                                     \(\Box \)
+       </p><p class='indent'>We needed the analysis at the end on the inverse Fourier transform as our goal is to show that \(f(x) = g(x)\), not that \(A(z) = 0\). It seems absurd that \(A(z)\) could identically vanish without \(f=g\), but we must rigorously show this.</p><p class='indent'>What if we lessen our restrictions on \(f\) and \(g\); perhaps one of them isn’t continuous?</p><p class='indent'>
+       Perhaps there’s a unique continuous probability distribution attached to a given sequence of moments such as in the above theorem, but if we allow non-continuous distributions there could be additional possibilities. This topic is beyond the scope of this book, requiring more advanced results from analysis; however, we wanted to point out where the dangers lie, where we need to be careful. </p><p class='indent'>After proving Theorem <a href='#x1-50053'>1.3.3</a>, it’s natural to go back to the two densities that are causing so much trouble, namely (see (<span class='ptmb8t-'>??</span>)) </p>\begin {eqnarray*} f_1(x) &amp; \ = \ &amp; \frac 1{\sqrt {2\pi x^2}}\ e^{-(\log ^2 x) / 2} \nonumber \\ f_2(x) &amp; = &amp; f_1(x) \left [1 + \sin (2\pi \log x)\right ].  \end {eqnarray*}
+       <p class='indent'>We know these two densities have the same integral moments (their \(k\)<sup>th</sup> moments
+       are \(e^{k^2/2}\) for \(k\) a non-negative integer). These functions have the correct decay; note
+       \[ e^{(c+1)t} f_1(e^t) \ = \ e^{(c+1)t} \cdot \frac {e^{-t^2/2}}{\sqrt {2\pi } e^{t}},  \]
+       which decays fast enough for any \(c\) to satisfy the assumptions of Theorem <a href='#x1-50053'>1.3.3</a>. As
+       these two densities are not the same, <span class='ptmri8t-'>some </span>condition must be violated. The only
+       condition left to check is whether or not we have a sequence of numbers \(\{r_n\}_{n=0}^\infty \) with an
+       accumulation point \(r&gt;0\) such that the \(r_n\)<sup>th</sup> moments agree. Using more results from Complex
+       Analysis (speciﬁcally, contour integration), we can calculate the \((a+ib)\)<sup>th</sup> moments. We ﬁnd
+       </p>\[(a+ib)^\text{th}\ {\rm moment\ of\ } f_1\ {\rm is}\ \ \ e^{(a+ib)^2/2}\]
+       <p class='indent'>and </p>\[(a+ib)^\text{th}\ {\rm moment\ of\ } f_1\ {\rm is} \ \ \ e^{(a+ib)^2/2} +\frac {i}{2} \left (e^{(a+i(b-2\pi ))^2/2}-e^{(a+i (b+2 \pi ))^2/2}\right ).\]
+       <p class='indent'>While these moments agree for \(b=0\) and \(a\) a positive integer, there’s no sequence of real
+       moments having an accumulation point where they agree. To see this, note that when \(b=0\) the \(a\)<sup>th</sup>
+       moment of \(f_2\) is \begin {equation*}e^{a^2/2} + e^{(a - 2 i \pi )^2/2} \left (1 - e^{4 i a \pi }\right ),  \end {equation*}
+       and this is never zero unless \(a\) is a half-integer (i.e., \(a = k/2\) for some integer \(k\)). In fact, the reason
+       we wrote (<span class='ptmb8t-'>??</span>) as we did was to highlight the fact that it’s only zero when \(a\) is a half-integer.
+       Exponentials of real or complex numbers are never zero, and thus the only way this can
+       vanish is if \(1 = e^{4ia\pi }\). Recalling that \(e^{i\theta } = \cos \theta + i \sin \theta \), we see that the vanishing of the \(a\)<sup>th</sup> moment is equivalent to \(1 - \cos (4\pi a) - i \sin (4\pi a) = 0\);
+       the only way this can happen is if \(a = k/2\) for some \(k\). If this happens, the cosine term is 1 and the
+       sine term is 0.
+       </p><p class='noindent'>
+       </p>
+          <h3 class='sectionHead'><span class='titlemark'>1.4    </span> <a id='x1-60001.4'></a>Exercises</h3>
+          <div class='newtheorem'>
+       <p class='noindent'><span class='head'>
+       <span class='ptmb8t-'>Problem 1.4.1</span> </span><span class='ptmri8t-'>Let</span> \(f(x) = x^3 \sin (1/x)\) <span class='ptmri8t-'>for</span> \(x \neq 0\) <span class='ptmri8t-'>and set</span> \(f(0) = 0\)<span class='ptmri8t-'>. (a) Show that</span> \(f\) <span class='ptmri8t-'>is diﬀerentiable once when viewed
+       </span><span class='ptmri8t-'>as a function of a real variable, but that it is not diﬀerentiable twice. (b) Show that</span>
+       \(f\) <span class='ptmri8t-'>is not diﬀerentiable when viewed as a function of a complex variable</span> \(z\)<span class='ptmri8t-'>; it might be
+       </span><span class='ptmri8t-'>useful to note that</span> \(\sin u = (e^{iu} - e^{-iu})/2i\)<span class='ptmri8t-'>.</span>
+       </p>
+          </div>
+       <p class='indent'>
+       </p>
+          <div class='newtheorem'>
+       <p class='noindent'><span class='head'>
+       <span class='ptmb8t-'>Problem 1.4.2</span> </span><span class='ptmri8t-'>If  we’re  told  that  all  the  moments  of</span>  \(f\)  <span class='ptmri8t-'>are  ﬁnite  and</span>  \(f\)  <span class='ptmri8t-'>is  inﬁnitely
+       </span><span class='ptmri8t-'>diﬀerentiable, must there be some</span> \(C\) <span class='ptmri8t-'>such that for all</span> \(c &lt; C\) <span class='ptmri8t-'>we have</span> \(e^{(c+1)t} f(e^t)\) <span class='ptmri8t-'>is a Schwartz function?</span>
+       </p>
+          </div>
