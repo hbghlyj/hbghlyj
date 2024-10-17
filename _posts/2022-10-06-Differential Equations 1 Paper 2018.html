@@ -74,7 +74,7 @@ Determine the domain of definition of the solution.
 \fill[red](0,0)circle(3pt)(-2,-2)circle(3pt);
 \end{tikzpicture}{% endlatex %}
 <br>At $(0,0)$, $J=\pmatrix{1&0\\0&1}$ is unchanged, so it remains an unstable star.</li><li>At $(x^∗,y^∗)$, $J=\pmatrix{1&2αy^*\\2αx^*&1}=\pmatrix{1&2\\2&1}$ ∴ It is a saddle point.{% latex %}\usepackage{tikz}
-\begin{document}\begin{tikzpicture}[scale=.5]
+\begin{tikzpicture}[scale=.5]
 \draw[->](-4,0)--(3,0)node[right]{$x$};
 \draw[->](0,-4)--(0,3)node[above]{$y$};
 \draw[domain=-2.5:2.5]plot({-(\x)^2/2},\x)node[left]{$\dot x=0$}plot(\x,{-(\x)^2/2})node[below]{$\dot y=0$};
