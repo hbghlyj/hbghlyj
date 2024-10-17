@@ -1,0 +1,35 @@
+---
+tag: Linear Algebra
+mathjax: true
+---
+<blockquote class="statement">Show that every triangular matrix with zeros on the main diagonal is nilpotent.</blockquote>
+<!--more-->
+Its characteristic polynomial is $x^n$, so by Cayley-Hamilton, $A^n=0$.<br>
+Or you can prove this by induction. Let $A$ be an arbitrary matrix that is strictly upper triangular.<br>
+<b>Induction basis ($n = 1$):</b><br>
+$A_{ij} = 0$ for $i ≥ j$ follows from the fact that $A$ is a strictly upper triangular matrix.<br>
+<b>Induction hypothesis</b>: $A^n_{ij}=0$ for $i + n - 1 ≥ j$ for $n∈ℕ^+$<br>
+<b>Induction step ($n → n + 1$)</b>: Let $i, j ∈ \{1, ⋯, n\}$ be arbitrary such that $i  + n ≥ j$.
+$$
+A^{n+1}_{ij} = (AA^n)_{ij} = \sum_{l=1}^n A_{il} A^n_{lj}
+= \sum_{l=1}^i A_{il} A^n_{lj} + \sum_{l=i+1}^n A_{il} A^n_{lj}
+$$
+For our left sum, $A_{il} = 0$ since $i≥l$ and $A$ is a strictly upper triangular matrix.<br>
+For our right sum, we have $l≥i + 1≥j - n + 1$ (since we assumed $i + n≥j$), from which it follows that $l + n - 1≥j$. Applying the induction hypothesis, we get $A^n_{lj} = 0$.<br>
+Thus:
+$$A^{n+1}_{ij} = \sum_{l=1}^i 0⋅A^n_{lj} + \sum_{l=i+1}^n A_{il}⋅0 = 0
+$$
+from which the statement then follows.
+<p style="padding-left:5px; border-left: solid medium blue;">We will say that $A$ is "upper triangular of order $k$" if its entries are such that $a_{ij} = 0$ whenever $j < i+k$. Prove that if $A$ is upper-triangular of order $p$ and $B$ is upper-triangular of order $q$, then $AB$ is upper-triangular of order $p + q$.</p>
+This is a more precise version of the pattern observed in the solution. It is possible to prove this fairly quickly using only the definition of matrix multiplication. Once you prove this result, perhaps you'll be able to see how the full solution holds as a consequence.
+<hr>
+In a more abstract sense, what upper-triangularity tells us about the transformation associated with the matrices $A_1,…,A_d$ is that there are subspaces 
+$$
+\{0\} = V_0 \subsetneq V_1 \subsetneq⋯\subsetneq V_{n-1} \subsetneq V_n = \Bbb R^d
+$$ 
+for which $A(V_i) \subseteq V_{i-1}$ for each $i = 1,\dots, n$. That is, for every $v \in V_i$, $Av$ is an element of $V_{i-1}$.<br>
+This gives us an alternative proof. For any vector $v \in \Bbb R^d = V_n$, $A_d v$ is an element of $V_{n-1}$. Similarly, $A_{d-1}(A_d v)$ is an element of $V_{n-2}$. Continuing in this fashion, we can conclude that $A_2⋯A_d v \in V_1$, so that
+$$
+A_1 A_2⋯A_d v = A_1(A_2⋯A_d v) \in V_0 = \{0\},
+$$
+which is to say that $A_1 A_2⋯A_d v = 0$ for every vector $v$. It follows that $A_1 A_2 ⋯ A_d = 0$.

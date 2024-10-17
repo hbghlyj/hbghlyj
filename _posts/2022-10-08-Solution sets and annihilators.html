@@ -1,0 +1,282 @@
+---
+tag: Linear Algebra
+mathjax: true
+excerpt: <a href="https://people.bath.ac.uk/feb/ma20216/M216-notes.pdf#section.5.2">Bath MA20216 notes §5.2</a> by Fran Burstall<br>Exercise sheet 9 with solutions as <a href="https://people.bath.ac.uk/feb/ma20216/M216.09.pdf">PDF</a>
+---
+\(\newcommand {\intertext }[1]{\text {#1}\notag \\}
+\newcommand {\id }{\operatorname {id}}
+\newcommand {\GL }{\operatorname {GL}}
+\newcommand {\im }{\operatorname {im}}
+\newcommand {\rank }{\operatorname {rank}}
+\newcommand {\sol }{\operatorname {sol}}
+\newcommand {\ann }{\operatorname {ann}}
+\newcommand {\rO }{\operatorname {O}}
+\newcommand {\rU }{\operatorname {U}}
+\newcommand {\rSU }{\operatorname {SU}}
+\newcommand {\ev }{\operatorname {ev}}
+\newcommand {\bil }{\operatorname {Bil}}
+\newcommand {\rad }{\operatorname {rad}}
+\newcommand {\Span }[1]{\operatorname {span}\{#1\}}
+\newcommand {\R }{\mathbb {R}}
+\newcommand {\C }{\mathbb {C}}
+\newcommand {\Z }{\mathbb {Z}}
+\newcommand {\F }{\mathbb {F}}
+\newcommand {\Q }{\mathbb {Q}}
+\newcommand {\N }{\mathbb {N}}
+\renewcommand {\P }{\mathbb {P}}
+\newcommand {\I }{\mathrm {I}}
+\newcommand {\half }{\tfrac 12}
+\newcommand {\rel }{\mathrel {\mathrm {rel}}}
+\renewcommand {\vec }[3]{(#1_{#2},\dots ,#1_{#3})}
+\newcommand {\lst }[3]{#1_{#2},\dots ,#1_{#3}}
+\newcommand {\plst }[3]{#1_{#2}+\dots +#1_{#3}}
+\newcommand {\oplst }[3]{#1_{#2}\oplus \dots \oplus #1_{#3}}
+\newcommand {\pplst }[3]{#1_{#2}\times \dots \times #1_{#3}}
+\newcommand {\dlst }[3]{\lst {#1^{*}}{#2}{#3}}
+\newcommand {\dlc }[4]{\lc #1{#2^{*}}#3#4}
+\newcommand {\hmg }[3]{[#1_{#2},\dots ,#1_{#3}]}
+\newcommand {\rng }[2]{#1,\dots ,#2}
+\newcommand {\lc }[4]{#1_{#3}#2_{#3}+\dots +#1_{#4}#2_{#4}}
+\newcommand {\plus }[2]{#1+\dots +#2}
+\newcommand {\set }[1]{\{#1\}}
+\newcommand {\abs }[1]{\lvert #1\rvert }
+\newcommand {\ip }[1]{\langle #1\rangle }
+\newcommand {\norm }[1]{\|#1\|}
+\newcommand {\bx }{\mathbf {x}}
+\newcommand {\be }{\mathbf {e}}
+\newcommand {\bq }{\mathbf {q}}
+\newcommand {\bu }{\mathbf {u}}
+\newcommand {\by }{\mathbf {y}}
+\newcommand {\bv }{\mathbf {v}}
+\newcommand {\E }{\mathbb {E}}
+\newcommand {\cI }{\mathcal {I}}
+\newcommand {\cB }{\mathcal {B}}
+\newcommand {\sub }{\subseteq }
+\newcommand {\st }{\mathrel {|}}
+\newcommand {\bw }[3]{#1\leq #2\leq #3}
+\newcommand {\col }[3]{(#1_{#2})_{#2\in #3}}
+\newcommand {\supp }{\mathrm {supp}}
+\newcommand {\restr }[1]{_{|#1}}\)
+</div>
+<a id="M216.09-autopage-1"></a>
+<p>
+<h1 class=title>M216: Exercise sheet 9</h1>
+</p>
+<ol>
+<p>
+<h2>Warmup questions</h2>
+</p>
+<li><p>Let \(\lst \alpha 1k\) span \(E\leq V^{*}\). Show that
+</p>
+\begin{equation*}
+\sol E=\bigcap _{i=1}^k\ker \alpha _i.
+\end{equation*}
+</p>
+</li>
+<li><p>Let \(U\leq V\). Show that \(\ann U\leq V^{*}\).
+</p>
+</li>
+<li><p><a id="qu:M216.09:2"></a> Let \(V\) be finite-dimensional and \(U\leq V\). Show that
+</p>
+\begin{equation*}
+\dim \ann U+\dim U=\dim V.
+\end{equation*}
+</p>
+<p>
+<h2>Homework</h2>
+</p>
+</li>
+<li><p>Prove at least one of the following assertions:
+</p>
+<ul style="list-style-type:none">
+<li>
+<p>
+(a) Let \(E,F\leq V^{*}\). Then
+</p>
+\begin{align*}
+\sol (E+F)&amp;=(\sol E)\cap (\sol F)\\ (\sol E)+(\sol F)&amp;\leq \sol (E\cap F)
+\end{align*}
+with equality if \(V\) is finite-dimensional.
+</p>
+</li>
+<li>
+<p>
+(b) Let \(U,W\leq V\). Then
+</p>
+\begin{align*}
+\ann (U+W)&amp;=(\ann U)\cap (\ann W)\\ (\ann U)+(\ann W)&amp;\leq \ann (U\cap W)
+\end{align*}
+with equality if \(V\) is finite-dimensional.
+</p>
+</li>
+</ul>
+</li>
+<li><p><a id="qu:M216.09:1"></a> Let \(\phi \in L(V,W)\) be a linear map of vector spaces. Show that
+</p>
+\begin{align*}
+\ker \phi ^T&amp;=\ann (\im \phi )\\ \im \phi ^T&amp;\leq \ann (\ker \phi )
+\end{align*}
+with equality if \(V,W\) are finite-dimensional.
+</p>
+<p>
+<h2>Extra questions</h2>
+</p>
+</li>
+<li><p><a id="qu:M216.09:6"></a>Let \(U\leq V\) and let \(\iota :U\to V\) be the inclusion map (so that \(\iota (u)=u\), for all \(u\in U\)) and \(q:V\to V/U\) the quotient map.
+</p>
+<ul style="list-style-type:none">
+<li>
+<p>
+(a) Show that \(\iota ^T:V^{*}\to U^{*}\) is the restriction map: thus \(\iota ^T(\alpha )=\alpha _{|U}\) with kernel \(\ann U\).
+</p>
+<p>
+If \(V\) is finite-dimensional, show that \(\iota ^{T}\) is surjective and deduce that \(V^{*}/\ann U\cong U^{*}\).
+</p>
+</li>
+<li>
+<p>
+(b) Show that \(q^{T}:(V/U)^{*}\to V^{*}\) is injective with \(\im q^T\leq \ann U\). If \(V\) is finite-dimensional, show that \(q^T\) is an isomorphism \((V/U)^{*}\to \ann U\).
+</p>
+</li>
+</ul>
+</li>
+<li><p>Recall the linear injection \(\ev :V\to V^{**}\). For \(U\leq V\), show that \(\ev (U)\leq \ann (\ann U)\) with equality if \(V\) is finite-dimensional.
+</p>
+</li>
+</ol>
+<hr/><h1 class=title>M216: Exercise sheet 9—Solutions</h1>
+<ol>
+<li><p>Let \(v\in \sol E\) so that \(\alpha (v)=0\), for all \(\alpha \in E\). Then, in particular, each \(\alpha _i(v)=0\) so that \(v\in \ker \alpha _i\), for \(\bw 1ik\). That is, \(v\in \bigcap _{i=1}^k\ker \alpha _i\) and \(\sol
+E\leq \bigcap _{i=1}^k\ker \alpha _i\).
+</p>
+<p>
+Conversely, let \(v\in \bigcap _{i=1}^k\ker \alpha _i\) so that \(\alpha _i(v)=0\), for \(\bw 1ik\). Let \(\alpha \in E\). Then \(\alpha =\sum _{i=1}^k\lambda _i\alpha _i\), for some \(\lst \lambda 1k\in \F \), since the \(\alpha
+_i\) span \(E\), and
+</p>
+\begin{equation*}
+\alpha (v)=\sum _{i=1}^k\lambda _i\alpha _i(v)=0
+\end{equation*}
+</p>
+<p>
+so that \(v\in \sol E\). Thus \(\bigcap _{i=1}^k\ker \alpha _i\leq \sol E\) and we are done.
+</p>
+</li>
+<li><p>Firstly, \(0\in \ann U\) so \(\ann U\neq \emptyset \). So we just check that \(\ann U\) is closed under addition and scalar multiplication. Let \(\alpha _1,\alpha _2\in \ann U\) and \(u\in U\). Then, \(\alpha _1(u)=\alpha _2(u)=0\)
+so that \((\alpha _1+\alpha _2)(u)=0+0=0\) whence \(\alpha _1+\alpha _2\in \ann U\) also. Similarly, for \(\alpha \in \ann U\) and \(\lambda \in \F \), \((\lambda \alpha )(u)=\lambda \alpha (u)=\lambda 0=0\) so that \(\lambda
+\alpha \in \ann U\).
+</p>
+<p>
+Alternatively, note that restriction to \(U\), \(\alpha \mapsto \alpha _{|U}\) is a linear map \(V^{*}\to U^{*}\) with kernel \(\ann U\).
+</p>
+</li>
+<li><p>Let \(\lst {v}1k\) be a basis of \(U\) and extend to a basis \(\lst {v}1n\) of \(V\). Let \(\dlst {v}1n\) be the dual basis. Now observe that \(\alpha \in V^{*}\) is in \(\ann U\) if and only if \(\alpha (v_j)=0\), for \(\bw 1jk\). Thus,
+writing \(\alpha =\sum _{i=1}^n\alpha (v_i)v^{*}_i\), we see that \(\alpha \in \ann U\) if and only if \(\alpha \in \Span {v^{*}_i\st \bw {k+1}in}\). Thus \(\ann U=\Span {v^{*}_i\st \bw {k+1}in}\) so that
+</p>
+\begin{equation*}
+\dim \ann U=n-k=\dim V-\dim U.
+\end{equation*}
+</p>
+</li>
+<li>
+<p>
+(a) \(E,F\leq E+F\) so \(\sol (E+F)\leq \sol E,\sol F\) whence \(\sol (E+F)\leq (\sol E)\cap (\sol F)\). Conversely, if \(v\in (\sol E)\cap (\sol F)\) then \(\alpha (v)=\beta (v)=0\), for all \(\alpha \in E\) and \(\beta \in
+F\). Thus, for \(\alpha +\beta \in E+F\), \((\alpha +\beta )(v)=0+0=0\) so that \(v\in \sol (E+F)\). We conclude that \((\sol E)\cap (\sol F)\leq \sol (E+F)\) and so \((\sol E)\cap (\sol F)=\sol (E+F)\).
+</p>
+<p>
+For the second statement, \(E\cap F\leq E,F\) so that \(\sol E,\sol F\leq \sol (E\cap F)\) whence \((\sol E) + (\sol F)\leq \sol (E\cap F)\) by Proposition 2.1(2). For equality when \(V\) is finite-dimensional, we show that both
+subspaces have the same dimension using the first part, the formula for \(\sol E\) and the dimension formula<sup>1</sup>. The dimension formula gives
+</p>
+\begin{align*}
+\dim ((\sol E)+(\sol F))&amp;=\dim \sol E+\dim \sol F-\dim ((\sol E)\cap (\sol F))\\ &amp;=\dim \sol E+\dim \sol F-\dim \sol (E+F), \intertext {using the first part,} &amp;=\dim V-\dim E+\dim V-\dim F-(\dim V-\dim
+(E+F))\\ &amp;=\dim V-\dim (E\cap F), \intertext {by the dimension formula again,} &amp;=\dim \sol (E\cap F).
+\end{align*}
+</p>
+<p>
+(b) First we note that if \(X\leq Y\leq V\) then \(\ann Y\leq \ann X\): if \(\alpha \in \ann Y\), then \(\alpha _{|Y}=0\) and so, in particular, \(\alpha _{|X}=0\), that is \(\alpha \in \ann X\).
+</p>
+<p>
+We now put this to work: \(U,W\leq U+W\) so \(\ann (U+W)\leq \ann U,\ann W\) whence \(\ann (U+W)\leq (\ann U)\cap (\ann W)\). For the converse, if \(\alpha \in (\ann U)\cap (\ann W)\) we have \(\alpha _{|U}=0\) and \(\alpha
+_{|W}=0\). So if \(v=u+w\in U+W\) then \(\alpha (v)=\alpha (u)+\alpha (w)=0+0=0\) so that \(v\in \ann (U+W)\). Thus \(\ann (U+W)=(\ann U)\cap (\ann W)\).
+</p>
+<p>
+For the second statement, \(U\cap W\leq U,W\) so that \(\ann U,\ann W\leq \ann (U\cap W)\) and then \((\ann U)+(\ann W)\leq \ann (U\cap W)\) by Proposition 2.1(2). For equality when \(V\) is finite-dimensional, we argue as in part (a).
+The dimension formula says
+</p>
+\begin{align*}
+\dim ((\ann U)+(\ann W))&amp;=\dim \ann U+\dim \ann W-\dim ((\ann U)\cap (\ann W))\\ &amp;=\dim \ann U+\dim \ann W-\dim \ann (U+W), \intertext {using the first part,} &amp;=\dim V-\dim U+\dim V-\dim W-(\dim V-\dim
+(U+W))\\ &amp;=\dim V-\dim (U\cap W), \intertext {by the dimension formula again,} &amp;=\dim \ann (U\cap W).
+\end{align*}
+Notice that the arguments for part (b) are essentially identical to those for part (a): the key points are that \(\ann \) and \(\sol \) reverse inclusions and take subspaces to ones of complementary dimension.
+</p>
+</li>
+<li><p>Let \(\alpha \in W^{*}\). Then \(\alpha \in \ker \phi ^T\) if and only if \(\alpha \circ \phi =0\) if and only if \(\alpha (\im \phi )=\set 0\), that is \(\alpha \in \ann (\im \phi )\). Thus \(\ker \phi ^T=\ann (\im \phi )\).
+</p>
+<p>
+For the second statement, suppose that \(\beta \in \im \phi ^T\) so that \(\beta =\phi ^T(\alpha )=\alpha \circ \phi \), for some \(\alpha \in W^{*}\). Then if \(v\in \ker \phi \), \(\beta (v)=\alpha (\phi (v))=0\) so that
+\(\beta \in \ann (\ker \phi )\). Thus \(\im \phi ^T\leq \ann (\ker \phi )\).
+</p>
+<p>
+For equality when \(V\) is finite-dimensional, recall that we already know from lectures that \(\rank \phi =\rank \phi ^T\) from which we see from rank-nullity that
+</p>
+\begin{equation*}
+\dim \im \phi ^T=\rank \phi =\dim V-\dim \ker \phi =\dim \ann (\ker \phi ),
+\end{equation*}
+</p>
+<p>
+where the last equality comes from <a href="#qu:M216.09:2">3</a>.
+</p>
+</li>
+<li>
+<p>
+(a) For \(\alpha \in V^{*}\) and \(u\in U\), \(\iota ^T(\alpha )(u)=\alpha (\iota (u))=\alpha (u)=\alpha _{|U}(u)\). Thus \(\iota ^T(\alpha )=\alpha _{|U}\) and \(\iota ^T\) is the restriction map. Now \(\ker \iota ^T=\set
+{\alpha \in V^{*}\st \alpha _{|U}=0}=\ann U\).
+</p>
+<p>
+Proposition 2.11 tells us<sup>2</sup> that any \(\beta \in U^{*}\) is the restriction of some \(\alpha \in V^{*}\) so that \(\iota ^T\) surjects: \(\im \iota ^{T}=U^{*}\). Thus, the First Isomorphism Theorem, applied to \(\iota ^{T}\),
+tells us that
+</p>
+\begin{equation*}
+V^{*}/\ann U=V^{*}/\ker \iota ^{T}\cong \im \iota ^T=U^{*}.
+\end{equation*}
+</p>
+<p>
+This gives us another approach to Question&nbsp;<a href="#qu:M216.09:2">3</a>.
+</p>
+<p>
+(b) All we need to know about \(q\) is that it is a linear surjection with kernel \(U\). Then, by Question&nbsp;<a href="#qu:M216.09:1">5</a>, \(\ker q^T=\ann (\im q)=\ann V/U=\set 0\) (any \(\alpha \in (V/U)^{*}\) that
+vanishes on \(V/U\) is zero by definition!) so that \(q^T\) injects. Moreover, Question <a href="#qu:M216.09:1">5</a> tells us that \(\im q^T\leq \ann (\ker q)=\ann U\) with equality when \(V\) is finite-dimensional. Thus, in
+that case, \(q^T\) is a linear bijection \((V/U)^{*}\to \ann U\) and so an isomorphism.
+</p>
+</li>
+<li><p>This is just a matter of not panicking! Let \(f\in \ev (U)\) so that \(f=\ev (u)\), for some \(u\in U\). Let \(\alpha \in \ann U\). We need \(f(\alpha )=0\). But
+</p>
+\begin{equation*}
+f(\alpha )=\ev (u)(\alpha )=\alpha (u)=0,
+\end{equation*}
+</p>
+<p>
+since \(\alpha \in \ann U\).
+</p>
+<p>
+When \(V\) is finite-dimensional, we know that \(\ev \) is an isomorphism so that \(\dim \ev (U)=\dim U\). Meanwhile
+</p>
+\begin{equation*}
+\dim (\ann (\ann U))=\dim V^{*}-\dim \ann U=\dim V-(\dim V-\dim U)=\dim U
+\end{equation*}
+</p>
+<p>
+so that \(\ev (U)\) and \(\ann (\ann U)\) have the same dimension and so coincide.
+</p>
+<p>
+</p>
+</li>
+</ul>
+<div style="border-top: 1px solid silver;">
+<a id="M216.09-autopage-2"></a>
+<p>
+<sup>1</sup>&nbsp;If \(X,Y\leq W\) then \(\dim (X+Y)+\dim (X\cap Y)=\dim X+\dim Y\).
+</p>
+<p>
+<sup>2</sup>&nbsp;This is where we use that \(V\) is finite-dimensional.
+</p>
+</div>

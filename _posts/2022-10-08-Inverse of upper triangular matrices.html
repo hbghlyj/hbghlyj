@@ -1,0 +1,51 @@
+---
+tag: Linear Algebra
+mathjax: true
+---
+<a href="https://math.stackexchange.com/questions/1003801">Inverse of an invertible upper triangular matrix of order 3</a><br>
+There is a nice trick for calculating the inverse of any invertible upper triangular matrix, one which avoids the computation of complicated determinants.
+<!--more-->
+Since it works for any such upper (or lower) triangular matrix $T$ of any size $n$, I'll explain it in that context.<br>
+The first thing one needs to remember is the determinant of a triangular matrix is the product of its diagonal entries
+\[\det T=\prod_{i=1}^nt_{ii}.\tag7\]
+It follows that the characteristic polynomial $p_T(λ)$ of $T$ is
+$$p_T(λ) = \det(T - λ I) = \prod_{i=1}^n (t_{ii} - λ), \tag{8}$$
+and from (8) that the eigenvalues of $T$ are precisely its diagonal entries, i.e. the $t_{ii}$, $1 \le i \le n$<br>
+Also follows from (7) the related fact that $T$ is nonsingular, that is, $\det(T) \ne 0$, precisely when its diagonal entries are all nonzero.<br>
+For non-singular $T$ we may compute $T^{-1}$ as follows:  write
+$$T = λ + T_u, \tag{9}$$
+where $λ$ is the diagonal matrix formed from the diagonal of $T$; <i>viz.</i>
+$$λ = [\delta_{ij} t_{ij}]; \tag{10}$$
+then $λ$ is nonsingular and $T_u = T - λ$ is the <i>strictly</i> upper triangular matrix obtained by setting the diagonal of $T$ to zero, i.e. setting $t_{ii} = 0$ for $1 \le i \le n$.   We may write
+$$T = λ (I + λ^{-1} T_u), \tag{11}$$
+whence
+$$T^{-1} = (I + λ^{-1} T_u)^{-1} λ^{-1}. \tag{12}$$
+The matrix $λ^{-1} T_u$ occurring in (12) is itself in fact strictly upper triangular as well as is $T_u$; indeed, for any diagonal $D$, $DT_u$ is strictly upper triangular, an assertion which is easily validated by direct calculation.  It follows that $λ^{-1} T_u$ is in fact <i>nilpotent</i>; that is, $(λ^{-1} T_u)^n = 0$.  We may now use the well-known algebraic identity
+$$(1 + x)\sum_{j=0}^m (-x)^j = 1 - (-x)^{m + 1}, $$
+easily seen to hold in any unital ring, applied to the matrix $x =λ^{-1} T_u$, yielding, with $m = n - 1$,
+$$(I + λ^{-1}T_u)\sum_{j=0}^m (-λ^{-1}T_u)^j = I - (-λ^{-1}T_u)^{m + 1} = I - (-λ^{-1}T_u)^n = I. \tag{13}$$
+(13) shows that the inverse of $I + λ^{-1}T_u$ is given by
+$$(I + λ^{-1} T_u)^{-1} = \sum_{j=0}^m (-λ^{-1}T_u)^j. \tag{14}$$
+It follows from (14) that $(I + λ T_u)^{-1}$ is upper triangular, since each of the matrices $(-λ^{-1}T_u)^j$, $j≥1$, is <i>strictly</i> upper triangular, and $(-λ^{-1}T_u)^0 = I$.  It further follows then that $T^{-1} = (I + λ T_u)^{-1}λ^{-1}$ is also upper triangular, being the product of the upper triangular matrix $(I + λ T_u)^{-1}$ and the diagonal matrix $λ^{-1}$.  We have thus shown that the inverse of any invertible upper triangular matrix, of any size $n$, is itself an upper triangular matrix.<br>
+The inverse of any invertible matrix is invertible, the inverse of the inverse being the original matrix.<br>
+We can apply these considerations to the calculation of $A^{-1}$, where
+$$A = \begin{bmatrix} a & b & c \\ 0 & d & e \\ 0 & 0 & f \end{bmatrix}$$
+here we have
+$$λ = \begin{bmatrix} a & 0 & 0 \\ 0 & d & 0 \\ 0 & 0 & f \end{bmatrix}$$
+and
+$$T_u = \begin{bmatrix} 0 & b & c \\ 0 & 0 & e \\ 0 & 0 & 0 \end{bmatrix}$$
+then
+\begin{align*}
+λ^{-1} T_u &= \begin{bmatrix} a^{-1} & 0 & 0 \\ 0 & d^{-1} & 0 \\ 0 & 0 & f^{-1} \end{bmatrix} \begin{bmatrix} 0 & b & c \\ 0 & 0 & e \\ 0 & 0 & 0 \end{bmatrix}  = \begin{bmatrix} 0 & ba^{-1} & ca^{-1} \\ 0 & 0 & ed^{-1} \\ 0 & 0 & 0 \end{bmatrix}\\
+(λ^{-1} T_u)^2&= \begin{bmatrix} 0 & ba^{-1} & ca^{-1} \\ 0 & 0 & ed^{-1} \\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & ba^{-1} & ca^{-1} \\ 0 & 0 & ed^{-1} \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & bea^{-1}d^{-1} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}\\
+(λ^{-1} T_u)^3&=0\\
+\sum_{j=0}^2 (-λ^{-1} T_u)^j&= \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} - \begin{bmatrix} 0 & ba^{-1} & ca^{-1} \\ 0 & 0 & ed^{-1} \\ 0 & 0 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 0 & bea^{-1}d^{-1} \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}\\
+&= \begin{bmatrix} 1 & -ba^{-1} & (be - cd)a^{-1}d^{-1} \\ 0 & 1 &- ed^{-1} \\ 0 & 0 & 1 \end{bmatrix}; \end{align*}
+finally,
+\begin{align*}T^{-1}&= (I + λ^{-1} T_u)^{-1} λ^{-1}\\&= \sum_{j=0}^2 (-λ^{-1} T_u)^j λ^{-1}\\
+&= \begin{bmatrix} 1 & -ba^{-1} & (be - cd)a^{-1}d^{-1} \\ 0 & 1 &- ed^{-1} \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} a^{-1} & 0 & 0 \\ 0 & d^{-1} & 0 \\ 0 & 0 & f^{-1} \end{bmatrix}\\
+&= \begin{bmatrix} a^{-1} & -ba^{-1}d^{-1} & (be - cd)a^{-1}d^{-1}f^{-1} \\ 0 & d^{-1} &- ed^{-1}f^{-1} \\ 0 & 0 & f^{-1} \end{bmatrix}
+\end{align*}<hr>
+Also see<br>
+<a href="https://cjhb.site/index.php?dir=283%2FRing+%24%281-ab%29%5E%7B-1%7D%24+Halmos+problem.html">Use of formal series to compute inverse in abstract rings</a><br>
+<a href="https://cjhb.site/index.php?dir=283%2FStrictly+upper+triangular+matrices+are+nilpotent.html">Strictly upper triangular matrices are nilpotent</a>

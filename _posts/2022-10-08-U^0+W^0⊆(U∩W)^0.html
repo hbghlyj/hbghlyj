@@ -1,0 +1,48 @@
+---
+tag: Linear Algebra
+mathjax: true
+---
+Let $V$ be a vector space and $U$ and $W$ subspaces. Recall that
+$$
+U^0+W^0 ⊆(U ∩ W)^0 .
+$$
+When $V$ is an inner product space we have the similar looking inclusion
+$$
+U^{⟂}+W^{⟂} ⊆(U ∩ W)^{⟂} .
+$$
+This latter inclusion may be strict outside of finite dimension.
+See <a href="https://math.stackexchange.com/questions/3720702">MSE</a><br>
+So what about the former inclusion?
+<!--more-->
+<br>Let's try and prove the reverse inclusion $(U ∩ W)^0 ⊆ U^0+W^0$ directly in the finite dimensional case (rather than appealing to a dimension argument).<br>
+So let $f ∈(U ∩ W)^0$, that is, $f: V → 𝔽$ with $\left.f\right|_{U ∩ W}=0$. We need to find $g ∈ U^0$ and $h ∈ W^0$ with $f=g+h$.
+First we find a subspace $X ⊆ U$ with
+$$
+(U ∩ W) ⊕ X=U
+$$
+We can do this by taking a basis for $U ∩ W$ and extending it to one for $U$. We call this a direct complement for $U ∩ W$ in $U$. Likewise we find $Y ⊆ W$ with
+$$
+(U ∩ W) ⊕ Y=W
+$$
+One checks that
+$$
+(U ∩ W) ⊕ X ⊕ Y=U+W
+$$
+So finally we find a subspace $Z ⊆ V$ with
+$$
+((U ∩ W) ⊕ X ⊕ Y) ⊕ Z=V
+$$
+Now we define $g, h: V → 𝔽$ by giving them on each summand in this direct sum decomposition:
+\begin{array}c
+& U ∩ W & X & Y & Z \\
+\hline g & f / 2 & 0 & f & f / 2 \\
+h & f / 2 & f & 0 & f / 2
+\end{array}
+Then indeed $g+h=f$ and $\left.g\right|_U=0$ and $\left.h\right|_W=0$ (note if 2 is not invertible in $𝔽$ this "symmetric" construction can be easily modified).
+<hr>
+<small>Our proof does not mention dimensions. But we do use finite dimensionality, extending bases for
+a subspace to the whole space (to show every subspace has a direct complement). Can this be
+done outside of finite dimension too? Well yes, if we assume something called Zorn’s Lemma: this
+is an axiom in mathematics which is (probably) not necessary for most of, for example, my own
+subject number theory (and one which many mathematicians try to avoid). But it seems to be
+unavoidable in certain contexts.</small>
