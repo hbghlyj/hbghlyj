@@ -92,9 +92,11 @@ $\pmatrix{0&1&0&0&⋯&0&0&0\\\frac1{N^2}&\frac{2(N-1)}{N^2}&\frac{(N-1)^2}{N^2}&
     (a) Yes. $f(Y_n,X_{n+1})=X_{n+1}$.<br>
     (b) Yes. $f(Y_n,X_{n+1})=Y_n+X_{n+1}$.<br>
     (c) No. $ℙ(M_4=2∣M_1=0,M_2=0,M_3=1)=ℙ(M_4=2∣X_1=-1,X_2=1,X_3=1)=ℙ(X_4=1)=p$
-{% latex %}\usepackage{tikz}\begin{document}\begin{tikzpicture}[scale=0.5]
+{% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=0.5]
 \draw (0,0)node[left]{0}plot[mark=*]coordinates{(0,0)(1,-1)(2,0)(3,1)(4,2)};
-\end{tikzpicture}{% endlatex %}<br>$ℙ(M_4=2∣M_1=M_2=M_3=1)=pℙ(M_4=2∣X_1=1,X_2=-1,X_3=1)+(1-p)ℙ(M_4=2∣X_1=1,X_2=-1,X_3=-1)=p×p+(1-p)×0=p^2${% latex %}\usepackage{tikz}\begin{document}\begin{tikzpicture}[scale=0.5]
+\end{tikzpicture}{% endlatex %}<br>$ℙ(M_4=2∣M_1=M_2=M_3=1)=pℙ(M_4=2∣X_1=1,X_2=-1,X_3=1)+(1-p)ℙ(M_4=2∣X_1=1,X_2=-1,X_3=-1)=p×p+(1-p)×0=p^2${% latex %}\usepackage{tikz}
+\begin{tikzpicture}[scale=0.5]
 \draw(0,0)node[left]{0}plot[mark=*]coordinates{(0,0)(1,1)(2,0)(3,1)(4,2)};
 \draw[xshift=5cm](0,0)node[left]{0}plot[mark=*]coordinates{(0,0)(1,1)(2,0)(3,-1)};
 \end{tikzpicture}{% endlatex %}<br>
