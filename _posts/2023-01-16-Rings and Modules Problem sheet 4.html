@@ -1,0 +1,112 @@
+---
+mathjax: true
+tag: Rings and Modules
+excerpt: sheet 4 — HT 2023
+---
+<style>sub,sup{font-size:70%}p.c21{margin:0;text-indent:-26pt;margin-top:9.2pt;text-align:justify;background: #f8f9fa;border: 1px solid #aaa;}div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}
+</style>
+$\DeclareMathOperator{lcm}{lcm}$<p class="c21">IV.1. Let$$A=\pmatrix{3&0&0\\0&2+2\sqrt{-5}&0\\0&0&4}$$Explain why <i>A</i> is in Smith normal form over ℂ, but is not in Smith normal form over $ℤ[\sqrt{-5}]$. Is <i>A</i> equivalent to a matrix in Smith normal form over $ℤ[\sqrt{-5}]$?</p>
+<i>A</i> is diagonal. Since ℂ is a field, $a|b∀a,b∈ℂ^*$, so <i>A</i> is in Smith normal form.<br>
+<i>A</i> is not in Smith normal form over $ℤ[\sqrt{-5}]$, since $3∤2+2\sqrt{-5}$.<br>$\gcd(3,4)=1,\lcm(3,4)=12⇒A$ is equivalent to $$\pmatrix{1&0&0\\0&2+2\sqrt{-5}&0\\0&0&12}$$This is in Smith normal form, since $12=(2+2\sqrt{-5})(1-\sqrt{-5})$.
+<p class="c21">IV.2. Find elements <i>a</i><sub>1</sub> ∣ <i>a</i><sub>2</sub> in ℤ[<i>i</i>], and a ℤ[<i>i</i>]-linear isomorphism<span style="display:block;text-align:center">ℤ[<i>i</i>]/⟨<i>a</i><sub>1</sub>⟩ ⊕ ℤ[<i>i</i>]/⟨<i>a</i><sub>2</sub>⟩ → ℤ[<i>i</i>]/⟨2⟩ ⊕ ℤ[<i>i</i>]/⟨3 − 5<i>i</i>⟩<i>.</i></span></p>
+Find GCD of $2,3-5i$ in $ℤ[i]$ by the extended Euclidean algorithm:
+\begin{align*}
+3-5i&=(1-3i)2+1+i\\
+2&=(1-i)(1+i)
+\end{align*}
+$∴a_1=\gcd(2,3-5i)=1+i,a_2=\lcm(2,3-5i)=2+8i$.<br>
+Using $3-5i-(1-3i)2=1+i$ to perform elementary row and column operations
+\begin{align*}\pmatrix{2\\&3-5i}&\xrightarrow[c_1↦c_1+c_2]{r_2↦r_2-(1-3i)r_1}\pmatrix{2\\1+i&3-5i}
+\xrightarrow{r_1↔r_2}\pmatrix{1+i&3-5i\\2}
+\xrightarrow[c_2↦c_2+(1+4i)c_1]{r_2↦r_2-(1-i)r_1}\pmatrix{1+i\\&2+8i}
+\end{align*}Multiplying elementary matrices
+$$\pmatrix{1+i\\&2+8i}=\pmatrix{2-2 i & -1 \\-1-4 i & -1+i}\pmatrix{2\\& 3-5 i}\pmatrix{1 & -1-4 i \\1 & -4 i}$$The inverse of the matrix on the right is$$Q=\pmatrix{1 & -1-4 i \\1 & -4 i}^{-1}=\pmatrix{-4i&1+4i\\-1&1}$$The action of $Q$ on $ℤ[i]^2$ is\[\pmatrix{r_1&r_2}Q=\pmatrix{-4 ir_1-r_2,(1+4 i)r_1+r_2}\]
+By Thm 7.1 the isomorphism is\[(r_1+⟨1+i⟩,r_2+⟨2+8i⟩)↦(-4 ir_1-r_2+⟨2⟩,(1+4 i)r_1+r_2+⟨3-5i⟩)\]
+<pre>A=ZZ[i]^1
+A.span([[2]]).direct_sum(A.span([[3-5*i]]))</pre>
+<p class="c21">IV.3. Show that if <i>A</i>, <i>B</i> ∈ <i>M</i><sub><i>n</i></sub>(𝔽) are such that 𝔽<sup><i>n</i></sup>/𝔽<sup><i>n</i></sup><i>A</i> is 𝔽-linearly isomorphic to 𝔽<sup><i>n</i></sup>/𝔽<sup><i>n</i></sup><i>B</i>, then <i>A</i> and <i>B</i> are equivalent as matrices.</p>
+𝔽 is a field, so an 𝔽-module is a vector space,<center>dim 𝔽<sup><i>n</i></sup>/𝔽<sup><i>n</i></sup><i>A</i> = dim 𝔽<sup><i>n</i></sup>/𝔽<sup><i>n</i></sup><i>B</i> ⇒ <i>n</i> − dim 𝔽<sup><i>n</i></sup><i>A</i> = <i>n</i> − dim 𝔽<sup><i>n</i></sup><i>B</i> ⇒ dim 𝔽<sup><i>n</i></sup><i>A</i> = dim 𝔽<sup><i>n</i></sup><i>B</i></center> ⇒ 𝔽<sup><i>n</i></sup><i>A</i>, 𝔽<sup><i>n</i></sup><i>B</i> are isomorphic ⇒ <i>A</i> is equivalent to <i>B</i>.
+<p class="c21">IV.4. Show that if <i>R</i> is the ring <i>C</i>(ℝ) with pointwise addition and multiplication then there are <i>A</i>, <i>B</i> ∈ <i>M</i><sub>1</sub>(<i>R</i>) with <i>A</i> ≁ <i>B</i>, and for which <i>R</i><sup>1</sup>/<i>R</i><sup>1</sup><i>A</i> is <i>R</i>-linearly isomorphic to <i>R</i><sup>1</sup>/<i>R</i><sup>1</sup><i>B</i>.</p>
+Proved in I.6.
+<p class="c21">IV.5. Determine the rational canonical form of the matrix$$A=\pmatrix{1&1&0&0\\0&1&0&0\\2&3&-1&4\\1&1&-1&3}$$</p>
+To transform a matrix on $ℚ[X]$ to SNF, we multiply it on both sides by invertible matrices. <ul style="margin-top:0"><li>The inverse operation of adding $f(x)$ times row $i$ to row $j$ is adding $-f(x)$ times row $i$ to row $j$, so $f(x)$ is allowed to be any element</li><li>The inverse operation of rescaling $i$th row/column by $f(x)$ is rescaling it by $f(x)^{-1}$, so $f(x)$ is only allowed to be units [$\deg f(x)>0$ disallowed]</li></ul>
+Perform the SNF algorithm on $xI-A$
+<pre>
+R.&lt;x> = PolynomialRing(QQ)
+A = matrix(QQ,4,4,[1,1,0,0,0,1,0,0,2,3,-1,4,1,1,-1,3])
+M = x*identity_matrix(4)-A
+print(latex(M))
+M.swap_rows(0,3)
+M.rescale_row(0,-1)
+M.add_multiple_of_row(2,0,2)
+M.add_multiple_of_row(3,0,-x+1)
+M.add_multiple_of_column(1,0,-1)
+M.add_multiple_of_column(2,0,1)
+M.add_multiple_of_column(3,0,x-3)
+print('∼',latex(M))
+M.swap_rows(1,2)
+M.rescale_row(1,-1)
+M.add_multiple_of_row(2,1,-x+1)
+M.add_multiple_of_row(3,1,x)
+M.add_multiple_of_column(2,1,x-1)
+M.add_multiple_of_column(3,1,-2*x+2)
+print('∼',latex(M))
+M.add_multiple_of_row(3,2,1)
+M.add_multiple_of_column(3,2,2)
+print('∼',latex(M))
+print('We can verify the last invariant factor is equal to',A.minpoly())
+</pre>
+\begin{multline*}\left(\begin{array}{rrrr}
+x - 1 & -1 & 0 & 0 \\
+0 & x - 1 & 0 & 0 \\
+-2 & -3 & x + 1 & -4 \\
+-1 & -1 & 1 & x - 3
+\end{array}\right)
+∼ \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & x - 1 & 0 & 0 \\
+0 & -1 & x - 1 & -2 x + 2 \\
+0 & -x & x - 1 & x^{2} - 4 x + 3
+\end{array}\right)\\
+∼ \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & x^{2} - 2 x + 1 & -2 x^{2} + 4 x - 2 \\
+0 & 0 & -x^{2} + 2 x - 1 & 3 x^{2} - 6 x + 3
+\end{array}\right)
+∼ \left(\begin{array}{rrrr}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & x^{2} - 2 x + 1 & 0 \\
+0 & 0 & 0 & x^{2} - 2 x + 1
+\end{array}\right)\end{multline*}
+We can verify the last invariant factor is equal to $m_A(x)=x^2 - 2x + 1$<br>
+$A$ have two invariant factors $x^2-2x+1$ with companion matrix $\pmatrix{
+0 & -1 \\
+1 & 2}$<br>
+So the rational canonical form of $A$ is\[\left(\begin{array}{cc|cc}
+0 & -1 & 0 & 0 \\
+1 & 2 & 0 & 0 \\
+\hline
+0 & 0 & 0 & -1 \\
+0 & 0 & 1 & 2 \\
+\end{array}\right)\]
+<div class="noprint"><a href="https://math.stackexchange.com/questions/407554">Computing the Frobenius normal form</a></div>
+<p class="c21">IV.6. Suppose that <i>G</i> is a finite commutative group. Show that there is an element <i>x</i> ∈ <i>G</i> such that the order of every <i>y</i> ∈ <i>G</i> divides the order of <i>x</i>. Assuming that every polynomial in 𝔽[<i>X</i>] of degree <i>N</i> has at most <i>N</i> roots show that <i>U</i>(𝔽) is a cyclic group when 𝔽 is a finite field.</p>By Corollary 7.2 <i>G</i> is isomorphic to $ℤ/⟨d_1⟩⊕⋯⊕ℤ/⟨d_n⟩$ for natural numbers $d_1∣⋯∣d_n$. Let <i>x</i> be the element of <i>G</i> corresponding to $(0,…,0,1)$ then <i>x</i> has the maximum order $d_n$, and the order of any element of <i>G</i> divides $d_n$.<hr>Let |<i>U</i>(𝔽)| = <i>n</i> and <i>x</i> is an element of maximum order <i>d</i>, by Lagrange's theorem $d|n$.<br>We proved all elements of <i>U</i>(𝔽) have order dividing <i>d</i>, so they are roots of the polynomial $X^d-1$, which have$≤d$ roots in <i>U</i>(𝔽), so $n≤d$, so $n=d$, so <i>U</i>(𝔽) is generated by $x$.
+<div class="noprint"><a href="https://math.stackexchange.com/questions/59903">Finite subgroups of the multiplicative group of a field are cyclic</a><br>
+<a href="https://www.ma.imperial.ac.uk/~buzzard/maths/teaching/15Aut/M3P11/exsht3.pdf" rel="nofollow noreferrer">sheet 3</a> and <a href="https://www.ma.imperial.ac.uk/~buzzard/maths/teaching/15Aut/M3P11/solns3.pdf" rel="nofollow noreferrer">solutions</a> Exercise 3</div>
+<p class="c21">IV.7. Suppose that <i>R</i> is a commutative ring and for <i>a</i><sub>1</sub>, …,  <i>a<sub>n</sub></i> ∈ <i>R<sup>n</sup></i><sub style="position:relative;right:7.5px">col</sub>write [<i>a</i><sub>1</sub>, …, <i>a<sub>n</sub></i>] for the matrix in <i>M<sub>n</sub></i>(<i>R</i>) with columns <i>a</i><sub>1</sub>, …, <i>a<sub>n</sub></i> in order. Show that the maps
+<span style="display:block;text-align:center"><i>R</i><sub>col</sub><sup><i style="position:relative;left:-13px;">n</i></sup>→ <i>R</i>; <i>a<sub>i</sub></i> ↦ det[<i>a</i><sub>1</sub>, …,  <i>a<sub>n</sub></i>]</span>
+are <i>R</i>-linear for each 1 ≤ <i>i</i> ≤ <i>n</i>; and det[<i>a</i><sub>1</sub>, …, <i>a<sub>n</sub></i>] = 0 whenever <i>a<sub>i</sub> = a<sub>j</sub></i> for some <i>i</i> ≠ <i>j</i>. By considering det[<i>Ba</i><sub>1</sub>, …, <i>Ba<sub>n</sub></i>] for <i>B</i> ∈ <i>M<sub>n</sub></i>(<i>R</i>) show that det <i>BA</i> = det <i>B</i> det <i>A</i>.</p>
+$$r\det[a_1,…,a_i,…,a_n]+s\det[a_1,…,a_i',…,a_n]=\det[a_1,…,ra_i+sa_i',…,a_n]$$So the maps <i>a<sub>i</sub></i> ↦ det[<i>a</i><sub>1</sub>, …,  <i>a<sub>n</sub></i>]</span> are <i>R</i>-linear.<hr>If <i>a</i> = <i>a<sub>i</sub> = a<sub>j</sub></i> for some <i>i</i> ≠ <i>j</i>. Since swapping columns negates the determinant<center>det[…, <i>a</i>, …,  <i>a</i>, …] =  −det[…, <i>a</i>, …, <i>a</i>, …]</center>
+So it is zero.<hr>Write $a_i$ as linear combination of basis $e_i$:$$a_i=\sum_{j=1}^na_{j,i}e_j$$In the linear expansion, using $\det[…,e_j,…,e_j,…]=0$, we get
+\[\left.\begin{aligned}\det[Ba_1,…,Ba_n]&=\det[Ba_{11}e_1,Ba_{22}e_2,…,Ba_{nn}e_n]\\&+\det[Ba_{21}e_2,Ba_{12}e_1,…,Ba_{nn}e_n]\\&+⋯\\&+\det[Ba_{n1}e_n,Ba_{n-1,2}e_{n-1},…,Ba_{1n}e_1]\end{aligned}\right\}n!\text{ terms}\]Let $B=[b_1,…,b_n]$, then $Be_j=b_j$, we get
+\[\left.\begin{aligned}\det[Ba_1,…,Ba_n]&=\det[a_{11}b_1,a_{22}b_2,…,a_{nn}b_n]\\&+\det[a_{21}b_2,a_{12}b_1,…,a_{nn}b_n]\\&+⋯\\&+\det[a_{n1}b_n,a_{n-1,2}b_{n-1},…,a_{1n}b_1]\end{aligned}\right\}n!\text{ terms}\]
+Factoring out the constants
+\[\left.\begin{aligned}\det[Ba_1,…,Ba_n]&=a_{11}a_{22}⋯a_{nn}\det B\\&-a_{21}a_{12}⋯+a_{nn}\det B\\&±⋯\\&+(-1)^{\small\frac{n(n-1)}2}a_{n1}a_{n-1,2}⋯a_{1n}\det B\end{aligned}\right\}n!\text{ terms}\]Factoring out $\det B$ we get $\det BA=\det B\det A$.
+<p class="c21">IV.8. Show that if$$A:=\pmatrix{2&0\\0&X}∈M_2(ℤ[X])\text{ and }B:=\pmatrix{2&X\\0&2}∈M_2(ℤ[X])$$then <i>A</i> is not equivalent to any matrix in Smith normal form, and <i>B</i> is not equivalent to any diagonal matrix.</p>
+Suppose $A∼A'$ in SNF, then $A'_{1,1}$divides both 2 and $X$, so $A'_{1,1}=±1$, but $±1∉⟨2,X⟩$.<hr>
+Suppose $B∼\pmatrix{p(x)\\&q(x)}⇒p(x),q(x)∈⟨2,X⟩ $.<p style="padding-left:1ex;border-left:solid .5ex;color:gray">Lemma: $A∼B$ in $M_2(ℤ[X])$ then $\det A=±\det B$</p>$p(x)⋅q(x)|\det B=4⇒p(x)=q(x)=±2$ but $X∉⟨2⟩$, contradiction.
+<p class="c21">IV.9. Suppose that <i>R</i> is a PID and <i>M</i> is a finitely generated <i>R</i>-module. Show that there are elements <i>a</i><sub>1</sub> ∣ ⋯ ∣ <i>a</i><sub><i>r</i></sub> in <i>R</i> such that <i>M</i> is <i>R</i>-linearly isomorphic to <i>R</i>/⟨<i>a</i><sub>1</sub>⟩ ⊕ ⋯ ⊕ <i>R</i>/⟨<i>a</i><sub><i>r</i></sub>⟩.</p>
+
+<p class="c21">IV.10. Suppose that <i>R</i> is commutative or <i>R</i> is a division ring. Show that if <i>φ</i> : <i>R<sup>n</sup></i> → <i>R<sup>m</sup></i> is an <i>R</i>-linear surjection and <i>m</i> > <i>n</i>, then <i>R</i> is trivial. Deduce that if <i>R</i> is non-trivial then any two bases of a finitely generated <i>R</i>-module have the same size.</p>
