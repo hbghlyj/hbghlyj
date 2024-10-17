@@ -1,0 +1,29 @@
+---
+mathjax: true
+tag: Metric Spaces and Complex Analysis
+excerpt: <a href="https://math.nyu.edu/~goodman/teaching/NumberTheory/notes/ZetaFunction.pdf">ZetaFunction</a><br><a href="https://math.stackexchange.com/questions/329701">Extended Liouville's Theorem with non-integer exponents</a>
+---
+A complex function $f(z)$ is <i>entire</i> if it is defined for all $z ∈ ℂ$ and has no poles. Actually, being defined sort of means having no poles. The basic <i>Liouville theorem</i> is that if $f$ is bounded than $f$ is constant. We suppose there is an $M$ with $|f(z)| ≤ M$ for all $z$ and we conclude that $f'(z)=0$ for all $z$. The proof is an application of the Cauchy formula for the derivative
+\begin{equation}
+	f'(z)=\frac{1}{2 π i} ∮_{|w-z|=r} \frac{f(w)}{(w-z)^2} d w
+\end{equation}
+We saw that you can apply absolute values in complex integrals as you can for real integrals. Or you can parametrize the contour integral, as in $w(t)=z+r e^{2 π i t}$ for $0 ≤ t ≤ 1$, and $d w=2 π i r e^{2 π i t} d t$. Either way, you get
+\begin{aligned}
+\left|f'(z)\right| & ≤ \frac{1}{2 π} ∫_{|w-z|=r} \frac{|f(w)|}{r^2}|d w| \\
+& ≤ \frac{1}{2 π} \frac{M}{r^2} 2 π r=\frac{M}{r} .
+\end{aligned}
+We see that $f'=0$ by taking $r → ∞$. It's good that we have to take $r → ∞$, because bounded functions don't have to be constant unless they're defined in the whole complex plane. The conclusion is that bounded entire functions are all trivial - there are no interesting examples.<br>
+There is a generalization that applies to entire functions with "polynomial growth" at infinity. Polynomial growth means that there is an $M$ and a $p$ with
+\begin{equation}
+	|f(z)| ≤ M(1+|z|)^p
+\end{equation}
+The Liouville theorem is that the only functions like that are actual polynomials. The Cauchy formula for that conclusion is (differentiate (1) with respect to $z$)
+$$
+\left|f^{(n-1)}(z)\right|=\frac{(n-1) !}{2 π i} ∮_{|w-z|=r} \frac{f(w)}{(w-z)^n} d w
+$$
+The original Liouville theorem was based on (1), which has $n=2$. Suppose, for example, $f$ has a polynomial bound with $p=1$. Then we take $n=3$ and learn that
+$$
+\left|f''(z)\right| ≤ \frac{2}{2 π} \frac{M(1+r)}{r^3} 2 π r=\frac{2 M(1+r)}{r^2}
+$$
+For any $z$, the right side goes to zero in the limit $r → ∞$. If $f''(z)=0$ for all $z$, then $f(z)=a z+b$. The conclusion is that if $f$ "looks like" a polynomial of degree $p$ in that it satisfies (2), then $f$ is actually a polynomial of degree $p$.<br>
+Here's a curious corollary that we will need. If we want to show that $f(z)$ is a linear function of $z$, we don't have to prove (2) with $p=1$. Any $p&lt;2$ will do. Suppose we have "polynomial" growth with power $p=1.5$ (say). Then we also have polynomial growth with power $p=2$ (because (2) with $p=1.5$ implies (2) with $p=2)$, and therefore the fact that $f(z)$ is (at most) a quadratic polynomial in $z$. But if $|f(z)| ≤ M(1+|z|)^{1.5}$, then the quadratic term must vanish. This means that $f(z)$ is actually a linear "polynomial". It also implies that $|f(z)| ≤ M'(1+|z|)$. That is, there exists an $M'$, but we don't know much about how $M'$ is constrained by $M$, if at all.
