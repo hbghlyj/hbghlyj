@@ -1,0 +1,156 @@
+---
+mathjax: true
+tag: Differential Equations 1
+excerpt: A1 paper 2019
+---
+<ol id="left"><li>
+<ol type="a"><li>Consider the following integral equation for $y(x)$ :
+$$
+y(x)=f(x)+∫_a^x K(x, t) y(t) d t   \text { for } x ∈[a, b]
+$$
+where $f(x)$ and $K(x, t)$ are smooth and bounded functions on $[a, b]$.
+<ol type="i"><li>Show that the solution of (1) depends continuously on $f$.
+[Gronwall's inequality may be used without proof.]
+</li>
+<li>Hence or otherwise show that the solution is unique.
+</li></ol>
+</li>
+<li>Consider now the differential equation system for $y(x)$ :
+\begin{gathered}
+y''=x^3 y, \\
+y(0)=1,   y'(0)=0 .
+\end{gathered}
+<ol type="i"><li>Show that if $y(x)$ is a solution of (2), then it is also a solution of the integral equation
+$$
+y(x)=1+∫_0^x(x-t) t^3 y(t) d t
+$$
+</li>
+<li>Show that a solution to (2) will be unique for all $x$.
+</li></ol>
+</li>
+<li>Consider the integral equation
+$$
+y(x)=f(x)+λ ∫_a^b K(x, t) y(t) d t
+$$
+where $λ$ is a constant, and $f$ and $K$ are given smooth functions satisfying $|f|&lt;M$ on $[a, b]$ and $|K|&lt;L$ on $[a, b] ×[a, b]$.
+Observe that the integral limits in (3) are independent of $x$.
+<ol type="i"><li>Formulate a sequence of Picard iterations $\left\{y_n(x)\right\}$ for (3).
+</li>
+<li>Show that
+$$
+\left|y_n-y_{n-1}\right| ⩽ M_n
+$$
+where $M_n$ is a bound depending on $λ$ which you should determine.
+</li>
+<li>Hence give a bound on $|λ|$ for which the sequence $\left\{y_n(x)\right\}$ converges.
+</li>
+<li>Let $f(x)=x^2, K(x, t)=x^2 t, a=0$ and $b=1$ in (3). Compute explicitly the first 2 Picard iterations, and show that in fact the sequence converges for a larger region of $λ$, which you should determine.</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Consider the following PDE system for $u(x, y)$ :
+$$
+\begin{aligned}
+&amp; (1+u) u_x+y u_y=u, \\
+&amp; u(x, 1)=β x,   0 ⩽ x ⩽ 1,
+\end{aligned}
+$$
+where $β$ is a constant.
+<ol type="i"><li>Show that the boundary data is Cauchy data for any value of $β$.
+</li>
+<li>Write down the differential equations satisfied along characteristics and integrate with appropriate boundary conditions to obtain a parametric solution.
+</li>
+<li>Find a sufficient and necessary condition on $β$ such that characteristic projections do not intersect.
+</li>
+<li>Sketch the region (in the x-y plane) where the solution is uniquely defined in the case $β=1$.
+</li></ol>
+</li>
+<li>Suppose that $u=u(x, y, z)$ satisfies
+$$
+u_x+u_y+u_z=u
+$$
+with boundary data $u=x$ on the surface $x+y+2 z=1$ for $x ⩾ 1$.
+<ol type="i"><li>By adapting the method of characteristics to 3 independent variables, show that the characteristic projections are given by
+$$
+x(r, s, t)=s+t,   y(r, s, t)=t+1-s-2 r,   z(r, s, t)=r+t .
+$$
+</li>
+<li>Obtain an explicit solution $u(x, y, z)$.
+</li>
+<li>What is the domain of definition for the solution?</li></ol></li></ol>
+</li>
+<li>
+<ol type="a"><li>Consider the following system for $(x(t), y(t))$ :
+$$
+\begin{aligned}
+&amp; \dot x=x\left(2-\sqrt{x^2+y^2}\right)-y \\
+&amp; \dot y=y\left(2-\sqrt{x^2+y^2}\right)+x
+\end{aligned}
+$$
+where overdot denotes derivative with respect to $t$.
+<ol type="i"><li>Explain why this is an autonomous system.
+</li>
+<li>Show that
+$$
+x^2+y^2=4
+$$
+is a solution trajectory.
+</li>
+<li>If $r^2=x^2+y^2$, show that $r(t)$ satisfies
+$$
+\dot r=r(2-r)
+$$
+</li>
+<li>Hence show that $x^2+y^2=4$ is a limit cycle.
+</li></ol>
+</li>
+<li>Consider the differential equation system for $u(t), v(t)$ :
+\begin{aligned}
+\dot u&=v \\
+\dot v&=f(u, v)
+\end{aligned}
+where $f$ is a given smooth function satisfying $f(a, 0)=0$ for some constant $a$.
+<ol type="i"><li>Derive a condition on $f$ for which $(a, 0)$ is:
+(I) a stable spiral
+(II) a centre
+(III) a stable node.
+</li>
+<li>Suppose that $\frac{∂ f}{∂ u}(a, 0)&gt;0$. Show that $(a, 0)$ is an unstable saddle.
+</li>
+<li>Consider now the second order differential equation for $y(t)$ :
+$$
+\ddot y=\left(y^3-1\right) \cos \left(\dot y^2\right)
+$$
+Find all equilibrium points and classify their stability.</li></ol></li></ol>
+</li></ol>
+<ol id="right"><li><ol type="a"><li><ol type="i"><li></li>
+<li></li></ol></li><li><ol type="i"><li></li><li></li></ol></li><li><ol type="i"><li></li><li></li><li></li><li></li></ol></li></ol></li><li><ol type="a"><li><ol type="i"><li>Parametrise boundary data as $x_0(s)=s,y_0(s)=1,0⩽s⩽1,u_0(s)=βs$.<br>$(1+u_0)y_0'-y_0x_0'=-1≠0⇒$Cauchy data for any value of $β$</li><li>characteristics satisfy
+\[\begin{aligned}
+	\dot x&=1+u\\
+	\dot y&=y\\
+	\dot u&=u
+\end{aligned} \text{with} \begin{aligned}
+	x(0)&=s\\
+	y(0)&=1\\
+	u(0)&=βs
+\end{aligned}⇒u=βse^t,y=e^t,x=t+βse^t+s(1-β)\]</li><li>characteristics intersect if $J=\begin{vmatrix}x_t&x_s\\y_t&y_s\end{vmatrix}=0⇒(βe^t+1-β)e^t=0⇒e^t={β-1\overβ}$<br>Thus we need ${β-1\overβ}≤0$ to ensure $J≠0$, which is true for $0≤β≤1$.</li><li>$β=1$ characteristics do not intersect, and $u=se^t$ is well-defined for all $s,t$. Thus, the solution is defined in region spanned by the characteristics at $s=0$ and $s=1$.<br>$s=0$: $x=t,y=e^t⇒x=\ln y$<br>$s=1$: $x=t+e^t,y=e^t⇒x=y+\ln y$<br>{% asy %}import graph;
+
+size(250);
+
+real g(real y) {
+  return y + log(y);
+}
+path p=reflect((0,0),NE)*(graph(log,2.5,.1)--graph(g,.1,2.5));
+fill(p--cycle, lightcyan);
+draw(p);
+label("$x=y+\ln y$",(2.2,1.2));
+label("$x=\ln y$",(1.2,2));
+draw((0,1)--(1,1),blue+linewidth(2));
+xaxis("$x$", Ticks('%g',1.0,NoZero), Arrow);
+yaxis("$y$", Ticks('%g',1.0,NoZero), Arrow,above=true);{% endasy %}</li></ol></li><li><ol type="i"><li>parametrised boundary data: $x_0=s,s⩾1,z_0=r,y_0=1-s-2r,u_0=s$<br>characteristics $\begin{array}l\dot x=1\\\dot y=1\\\dot z=1\\\dot u=u\end{array}⇒\begin{array}lx=t+s\\y=t+1-s-2r\\z=t+r\\u=se^t\end{array}$</li><li>Eliminate $(s,t,r):s=x-t,r=z-t⇒y=t+1-(x-t)-2(z-t)⇒t=\frac14(x+y+2z-1)⇒u(x,y,z)=\left[x-\frac14(x+y+2z-1)\right]\exp\left(\frac14(x+y+2z-1)\right)$</li><li>$u$ has no singularities and the Jacobian$$J=\begin{vmatrix}x_t&x_s&x_r\\y_t&y_s&y_r\\z_t&z_s&z_r\end{vmatrix}=\begin{vmatrix}1&1&0\\1&-1&-2\\1&0&1\end{vmatrix}=-1-3≠0$$Thus the domain of definition is bounded only by the characteristic surface passing through the boundary of data surface $x=1$ on $x+y+2z≥1$.<br>Set $s=1⇒x=t+1,y=t-2r,z=t+r$ gives $r=z-t⇒y=t-2(z-t)=3t-2z⇒3t=y+2z⇒3t=3x-3=y+2z$<br>From $s≥1$, the domain of definition is $\{(x,y,z)|3x≥3+y+2z\}$</li></ol></li></ol></li><li><ol type="a"><li><ol type="i"><li>Autonomous—no dependence on independent variable $t$ in $\dot x,\dot y$</li><li>Take $\dot xx+\dot yy$, we get$$\frac12\frac d{dt}(x^2+y^2)=\dot xx+\dot yy=(x^2+y^2)\underbrace{(2-\sqrt{x^2+y^2})}_{=0\text{ if }x^2+y^2=4}$$Thus on $x^2+y^2=4$, $\frac d{dt}(x^2+y^2)=0$, so it is a solution trajectory.</li><li>Define $r$ by $r^2=x^2+y^2$, so\[r\dot r=x\dot x+y\dot y=(x^2+y^2)(2-\sqrt{x^2+y^2})=r^2(2-r)⇒\dot r=r(2-r)\]</li><li>Trajectories with $r>2$ has $\dot r&lt;0$ so decrease to $r=2$.<br>Trajectories with $r&lt;2$ has $\dot r>0$ so increase to $r=2$.<br>And $r=2$ is a solution trajectory, and is therefore a limit cycle.<br>{% latex %}\usepackage{tikz}
+\begin{tikzpicture}
+\path[tips,>-<,blue,thick](1.5,0)--(2.3,0);\node at(2,0)[below]{2};
+\draw[->] (-0.2,0)--(3.2,0) node[right] {$r$};
+\draw[->] (0,-1)--(0,1.2) node[above] {$\dot r$};
+\draw[blue,domain=0:2.5] plot (\x,{\x*(2-\x)}) node[right] {$r(2-r)$};
+\end{tikzpicture}{% endlatex %}
+</li></ol></li><li>At $\dot u(a, 0)=\dot v(a, 0)=0$, so $(a,0)$ is a critical point.<ol type="i"><li>Define $𝐮=(u,v)$ and let $𝐮=(a,0)+𝛏(x)$<br>then $𝛏'(x)=M𝛏+O({|𝛏|}^2)$ with $M=\pmatrix{0&1\\f_u&f_v}\Bigg|_{(a,0)}$<br>$𝛏=𝐜e^{λx}⇒(M-λI)𝐜=0⇒0=\det(M-λI)=λ^2-λf_v-f_u⇒λ_{1,2}=\frac{f_v±\sqrt{f_v^2+4f_u}}2$<br>(I) a stable spiral if $f_v&lt;0$ and $f_v^2+4f_u&lt;0$<br>(II) a centre if $f_v=0$ and $f_u&lt;0$<br>(III) a stable node if $λ_{1,2}&lt;0,λ_{1,2}∈ℝ$, so $f_v&lt;0,f_u&lt;0$ and $f_v^2+4f_u>0$</li><li>$λ_1λ_2=-f_u&lt;0$, ∴point is a saddle.</li><li>Let $u=y,v=\dot y$, we can use previous formulation.<br>$f(a,0)=0$ only at $a=1$. We have $f_u(1,0)=3>0$. By part ii) saddle.</li></ol></li></ol></li></ol>
