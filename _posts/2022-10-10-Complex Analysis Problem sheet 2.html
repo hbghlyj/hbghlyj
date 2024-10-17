@@ -198,7 +198,8 @@ $$
 By Corollary 7.17 (Riemann’s removable singularity theorem) $f$ extends to a holomorphic function on all of $U$, then Cauchy's theorem for a triangle applies.<br>
 <b>Proof 2.</b><br>
 Case 1. If $p$ is a vertex of $T$, let $T=T_{pbc}$. For any $ϵ>0$, let $δ=\min\left(r,\frac ϵ{4K}\right)$. Let $B(p,δ)∩T=\{u,v\}$.<br>The circumference of $T_{puv}={|p-u|}+{|p-v|}+{|u-v|}≤δ+δ+2δ=4δ$.<br>
-{% latex float:right%}\usepackage{tikz}[every node/.style={circle,draw,color=blue,inner sep=1}]
+{% latex float:right%}\usepackage{tikz}
+\begin{tikzpicture}[every node/.style={circle,draw,color=blue,inner sep=1}]
 \draw(0,0)circle(1)node(p){$p$};
 \node at(2,-2)(c){$c$};
 \node at(-2,-2)(b){$b$};
