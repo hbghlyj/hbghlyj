@@ -1,0 +1,11 @@
+---
+mathjax: true
+tag: Rings and Modules
+excerpt: <a href="https://math.stackexchange.com/posts/344920/">ℤ-bases for ideals</a>
+---
+There is a simple criterion using norms to test if such modules are ideals. If $M = [a,b+\sqrt{d}]$ is an ideal then it contains the norm $ N(b+\sqrt{d}) = (b+\sqrt{d})(b-\sqrt{d}) = b^2-d,$ so $a|b^2-d.$  This necessary condition is also sufficient. The proof is easy:<br>
+The module $M = [a,b+\sqrt{d}]$ is an ideal of $R = \Bbb Z[\sqrt{d}]⟺M$ is closed under multiplication by elements of $R⟺\sqrt{d}M⊆M⟺a\sqrt{d}, (b+\sqrt{d})\sqrt{d} \in M.$ The first inclusion is clear since $a\sqrt{d} = a(b+\sqrt{d})-ab\in M.$ For the second inclusion\begin{eqnarray*}-(b+\sqrt{d})\sqrt{d} &=& (b+\sqrt{d})(b-\sqrt{d})-b(b+\sqrt{d})\\
+&=& b^2-d -b(b+\sqrt{d})\end{eqnarray*}
+The prior is $∈M = [a,b+\sqrt{d}]⟺a|b^2-d = N(b+\sqrt{d})$ where $N = $ the norm.<br>
+This is true for $[2,1+\sqrt{-5}],$ i.e. $2|N(1+\sqrt{-5}) = (1+\sqrt{-5})(1-\sqrt{-5}) = 1+5 = 6.$<br>
+The criterion generalizes to test idealness of the module $[a,b+cω]$ in the ring of integers of a quadratic number field, e.g. see <a href="http://www.fen.bilkent.edu.tr/~franz/ant/ant02.pdf">section 2.3</a> in  Franz Lemmermeyer's notes.<br>This is a special case of module <b>normal forms</b> that generalize to higher degree number fields, e.g. see the discussion on Hermite and Smith normal forms in Henri Cohen's <i>A Course in Computational Number Theory</i>.
