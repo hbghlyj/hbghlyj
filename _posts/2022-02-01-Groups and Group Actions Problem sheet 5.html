@@ -1,0 +1,73 @@
+---
+mathjax: true
+tag: Group Theory
+excerpt: sheet 5 — HT 2022
+---
+<ol><li>Let $G$ be a group and $H$ a subgroup of $G$. Show that $g H=H g$ for all $g \in G$ if and only if $g^{-1} h g \in H$ for all $g \in G, h \in H$.<br>
+<strong>Proof.</strong><br>
+If $gH=Hg$, for any $h∈H,gh∈Hg$, so $∃h'∈H,gh=h'g$, so $ghg^{-1}=h'∈H$.<br>
+Conversely, for any $h∈H$, $gh=(ghg^{-1})g∈Hg$, so $gH⊂Hg$, and $hg=g(g^{-1}hg)∈gH$, so $Hg⊂gH$, therefore $Hg=gH$.<li>Let $G$ be a group and $a \in G$. Show that $C_G(a)=\{g \in G: a g=g a\}$ the centralizer of $a$ in $G$, is a subgroup of $G$.<br>
+Find $C_G(a)$ when (i) $G=S_4$ and $a=(12)(34)$, (ii) $G=A_4$ and $a=(123)$. [<i>Hint: use the fact that $a g=g a$ if and only if $a=g^{-1} a g$</i>]<br>
+<strong>Solution.</strong><br>
+$∀g∈C_G:ag^{-1}=g^{-1}gag^{-1}=g^{-1}agg^{-1}=g^{-1}a⇒g^{-1}∈C_G$<br>
+$∀g_1,g_2∈G:ag_1g_2=g_1ag_2=g_1g_2a⇒g_1,g_2∈C_G$<br>
+Therefore $C_G$ is a subgroup of $G$.<br>
+(i) We find all equivalent ways to express $a$: $(12)(34),(12)(43),(21)(34),(21)(43),(34)(12),(43)(12),(43)(21),(34)(21)$, each corresponding to a conjugation by $g∈\{e, (12),(34), (12)(34),(1324),(1423),(13)(24),(14)(23) \}=C_G(a)$<br>
+(ii) We find all equivalent ways to express $a$: $(123),(231),(312)$, each corresponding to a conjugation by $g∈\{e,(123),(132)\}=C_G(a)$<li>Recall that the dihedral group $D_{2 n}$ (where $n\geqslant3$) can be defined as$$D_{2 n}=\left\langle r, s: r^{n}=e=s^{2}, s r=r^{-1} s\right\rangle$$and that as a set $D_{2 n}=\left\{e, r, \ldots, r^{n-1}, s, r s, \ldots r^{n-1} s\right\}$. (So $r$ and $s$ are generators of $D_{2 n}$ and the rules $r^{n}=e=s^{2}, s r=r^{-1} s$ are sufficient to completely determine the group table.)<br>
+Show, for any integer $i$, that $s r^{i}=r^{-i} s$. Also write down each of$$\left(r^{j}\right)^{-1} r^{i}\left(r^{j}\right), \quad\left(r^{j}\right)^{-1} r^{i} s\left(r^{j}\right), \quad\left(r^{j} s\right)^{-1} r^{i}\left(r^{j} s\right), \quad\left(r^{j} s\right)^{-1} r^{i} s\left(r^{j} s\right),$$in the form $r^{k}$ or $r^ks$ for some integer $k$. Hence determine the conjugacy classes of $D_{2 n}$. You will need to treat separately the cases when $n$ is odd and even.<br>
+<strong>Solution.</strong><br>
+To prove $s r^i=r^{-i} s$, it is true when $i=1$, and prove by induction: $sr^i=sr^{i-1}r=r^{-i+1}sr=r^{-i+1}r^{-1}s=r^{-i}s$.<br>
+$\left(r^{j}\right)^{-1} r^{i}\left(r^{j}\right)=r^{-j}r^ir^j=r^i$<br>
+$\left(r^{j}\right)^{-1} r^{i} s\left(r^{j}\right)=r^{-j}r^ir^{-j}s=r^{i-2j}s$<br>
+$\left(r^{j} s\right)^{-1} r^i\left(r^j s\right)=r^jr^{-i}r^{-j}=r^{-i}$<br>
+$\left(r^{j} s\right)^{-1} r^{i} s\left(r^{j} s\right)=r^jsr^ir^{-j}=r^{-i+2j}s$<br>
+When $n$ is even, the conjugacy classes of $D_{2 n}$ are $\{r^i,r^{n-i}\},i=1,2,⋯,\frac{n-2}2,\{r^{n/2}\}$ and $\{s,r^2s,⋯,r^{n-2}s\},\{rs,r^3s,⋯,r^{n-1}s\}$.<br>
+When $n$ is odd, the conjugacy classes of $D_{2 n}$ are $\{r^i,r^{n-i}\},i=1,2,⋯,\frac{n-1}2$ and $\{s,rs,⋯,r^{n-1}s\}$.<li>Show that the following maps are homomorphisms. In each case determine the kernel and the image of the homomorphism.<br>
+(i) $f_{1}: \mathbb{R} \rightarrow \mathbb{R}^{*}$ defined by $f_{1}(x)=2^{x}$.<br>
+(ii) $f_{2}: \mathbb{C}^* \rightarrow \mathbb{R}^{*}$ defined by $f_{2}(z)=|z|$.<br>
+(iii) $f_{3}: S_{3} \rightarrow S_{4}$ defined by $f_{3}(\sigma)=(14) \sigma(14)$.<br>
+(iv) $f_{4}: \mathbb{Z}_{n} \rightarrow \mathbb{C}^*$ defined by $f_{4}(k)=e^{2 \pi i k / n}$.<br>
+<strong>Solution.</strong><br>
+(i)$∀x_1,x_2∈\Bbb R:f_1(x_1+x_2)=2^{x_1+x_2}=2^{x_1}2^{x_2}=f_1(x_1)f_1(x_2)⇒f_1$ is a homomorphism.<br>
+$f_1^{-1}(x)=\log_2x$, so $f_1$ is bijective, $\ker f_1=\{0\},\operatorname{im}f_1=\mathbb R^*$.<br>
+(ii)$∀z_1,z_2∈\Bbb C^*:f_2(z_1z_2)=|z_1z_2|=\lvert z_1\rvert\lvert z_2\rvert=f_2(z_1)f_2(z_2)⇒f_2$ is a homomorphism.<br>
+$\ker f_2=\{z∈\Bbb C:|z|=1\}$. $f_2(a)=a,∀a∈\Bbb R^*⇒\operatorname{im}f_1=\mathbb R^*$.<br>
+(iii)$f_3(σ_1σ_2)=(14)σ_1(14)(14)σ_2(14)=(14)σ_1σ_2(14)=f_3(σ_1σ_2)⇒f_3$ is a homomorphism.<br>
+$(14)σ(14)=e⇒σ=(14)e(14)=e⇒\ker f_3=\{e\}$. $\operatorname{im}f_3=\{e,(234),(243),(23),(24),(34)\}$.<br>
+(iv)$f_4(k+l)=e^{2\pi i(k+l)/n}=e^{2 \pi i k / n}e^{2 \pi i l/ n}=f_4(k)f_4(l)⇒f_4$ is a homomorphism.<br>
+$f_4=1⇒k=\bar0$, therefore $\ker f_4=\{\bar 0\}$. $\operatorname{im}f_4=\{z∈\Bbb C:|z|=1\}$.<li>(i) Let $G$ be a group and let $\phi, \psi$ be automorphisms of $G$ (that is, isomorphisms from $G$ to $G$). Show that $\phi \circ \psi$ and $\phi^{-1}$ are automorphisms of $G$.<br>
+Deduce that the set $\operatorname{Aut}(G)$ of automorphisms of $G$ forms a group under composition.<br>
+(ii) Given $a \in G$, show that the map $\theta_{a}: G \rightarrow G$ with $\theta_{a}(g)=a g a^{-1}$ is an automorphism of $G$.<br>
+(iii) Show that the map $Θ: G \rightarrow \operatorname{Aut}(G)$ defined by $a \mapsto \theta_{a}$ is a homomorphism. What is the kernel of $Θ$?<br>
+<strong>Solution.</strong><br>
+(i)$\phi, \psi$ are bijections, so $\phi \circ \psi$ and $ϕ^{-1}$ are bijections. $\phi, \psi$ are homomorphisms, so $ϕ∘ψ(ab)=ϕ(ψ(a)ψ(b))=ϕ(ψ(a))ϕ(ψ(b))⇒ϕ∘ψ$ is a homomorphism, $ab=ϕ(ϕ^{-1}(a))ϕ(ϕ^{-1}(b))=ϕ(ϕ^{-1}(a)ϕ^{-1}(b))⇒ϕ^{-1}(ab)=ϕ^{-1}(a)ϕ^{-1}(b)⇒ϕ^{-1}$ is a homomorphism. Therefore $\phi \circ \psi$ and $\phi^{-1}$ are automorphisms of $G$. By subgroup criterion, the set $\operatorname{Aut}(G)$ is a subgroup of $\operatorname{Sym}G$.<br>
+(ii)$∀x,y∈G:θ_a(xy)=axya^{-1}=axa^{-1}aya^{-1}=θ_a(x)θ_a(y)⇒θ_a$ is a homomorphism.<br>
+$∀x∈G:x=a^{-1}(axa^{-1})a⇒x=θ_{a^{-1}}(θ_a(x))⇒θ_a^{-1}=θ_{a^{-1}}⇒θ_a$ is an isomorphism.<br>
+(iii)$∀x∈G:θ_a∘θ_b(x)=b^{-1}a^{-1}xab=(ab)^{-1}x(ab)=θ_{ab}(x)⇒θ_a∘θ_b=θ_{ab}⇒Θ(a)∘Θ(b)=Θ(ab)⇒Θ$ is a homomorphism. $Θ(a)={\rm id}⇔∀x∈G:axa^{-1}=x⇔ax=xa⇔a∈Z(G)$, therefore $\kerΘ=Z(G)$.</ul><br>
+<strong>Starter</strong><br>
+<strong>S1</strong> Verify that the determinant map $f(A)=\operatorname{det}(A)$ is a homomorphism $f:GL(n, \mathbb{R})→\mathbb{R}^*$. What is the image of $f$? What is $f(O(n, \mathbb{R}))$?<br>
+<strong>Solution.</strong><br>
+$∀A_1,A_2∈GL(n,\Bbb R):f(A_1)f(A_2)=\det A_1·\det A_2=\det(A_1·A_2)=f(A_1A_2)⇒f$ is a homomorphism.<br>
+$∀k∈\Bbb R^*:\det\operatorname{diag}(k,1,1,⋯,1)=k⇒\operatorname{im}f=\Bbb R^*.∀A∈O(n, \mathbb{R}):AA^{\sf T}=I⇒(\det A)^2=1⇒\det A=±1⇒f(O(n, \mathbb{R}))=\{1,-1\}.$<br>
+<br>
+<strong>Pudding</strong><br>
+<strong>P1</strong> (i) Let $G$ be a group and let $\phi: S_{3} \rightarrow G$ be a homomorphism. Explain why the function $\phi$ is completely determined by the values of $\phi(12)$ and $\phi(123)$.<br>
+(ii) Deduce that there are at most 6 automorphisms of $S_{3}$.<br>
+(iii) For each $a \in S_3$, determine $\theta_{a}(12)$ and $\theta_{a}(123)$.<br>
+(iv) Deduce that there are 6 automorphisms of $S_{3}$ and that $\operatorname{Aut}(S_3)$ is isomorphic to $S_3$.<br>
+<strong>Solution.</strong><br>
+(i)Because $(12),(123)$ generates $S_3$: Certainly they generate $e$ and themselves, and also<br>
+(1 3) = (1 2)(1 2 3)<br>
+(2 3) = (1 2 3)(1 2)<br>
+(1 3 2) = (1 2 3)(1 2 3).<br>
+So it’s enough to specify ϕ((1 2)) and ϕ((1 2 3)) to require that ϕ is a homomorphism.<br>
+(ii)Isomorphism must preserve the order of elements. Thus we have only 2 (at most) possible choices for what ϕ((1 2 3)) can be, and only 3 (at most) possible choices for what ϕ((1 2)) might be. This gives at most 6 (=2⋅3) possible automorphisms. Since the inner automorphisms comprise 6 distinct automorphisms, this must be all of them. Using $a$=(1 2 3) and $b$=(1 2), here are all 6:<br>
+$\phi(a) = a, \phi(b) = b$<br>
+$\phi(a) = a,\phi(b) = ab$<br>
+$\phi(a) = a,\phi(b) = a^2b$<br>
+$\phi(a) = a^2,\phi(b) = b$<br>
+$\phi(a) = a^2,\phi(b) = ab$<br>
+$\phi(a) = a^2,\phi(b) = a^2b$<br>
+(iii)$θ_e(12)=θ_{(12)}(12)=(12),θ_{(123)}(12)=θ_{(13)}(12)=(23),θ_{(132)}(12)=θ_{(23)}(12)=(13)$.<br>
+(iv)$\phi:\operatorname{Aut}S_3→S_3,\phi (f) = (f(1\,2)\,f(1\,3)\,f(2\,3))$ is an isomorphism.<br>
+In general, if the center $Z(G)$ of a group $G$ is trivial group, then $G$ is called a <a href="https://groupprops.subwiki.org/wiki/Centerless_group" target="_blank">centerless</a> group. The <a href="https://groupprops.subwiki.org/wiki/Group_acts_as_automorphisms_by_conjugation" target="_blank">natural homomorphism</a> from $G$ to its automorphism group that sends each element to the conjugation it induces, is injective (viz no two elements induce the same inner automorphism)

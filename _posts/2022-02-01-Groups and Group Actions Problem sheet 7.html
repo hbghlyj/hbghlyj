@@ -1,0 +1,61 @@
+---
+mathjax: true
+tag: Group Theory
+excerpt: sheet 7 — HT 2022
+---
+<ol><li>Consider the following actions. [You are not asked to show they are actions.] In each case describe the orbits of the action and determine the stabiliser of the given $s$.<br>
+(i) $(0,∞)$ acts on $\mathbb{C}$ by multiplication, that is, $r·z=rz ; s=i$.<br>
+(ii) $\mathbb{Z}$ acts on $\mathbb{Z}_6$ by addition, that is, $n·\bar{m}=\overline{n+m}$ where the line denotes mod 6 congruence; $s=0$.<br>
+(iii) $S_3$ acts on $S_3$ by conjugation, that is, $τ·σ=τστ^{-1} ; s=(12)$.<br>
+(iv) $O(2)$ acts on $\mathbb{R}^2$ by $A·\mathbf{v}=A \mathbf{v} ; s=\mathbf{i}$<br>
+<strong>Solution.</strong><br>
+(i) orbits are $\{0\}$ and half-lines $\{rz:r∈(0,∞)\}$ for each $|z|=1$. $\operatorname{Stab}i=\{1\}$.<br>
+(ii) only one orbit $\mathbb{Z}_6$. $\operatorname{Stab}0=6\mathbb Z$.<br>
+(iii) orbits are permutations of the same cycle type: $\{()\},\{(12),(13),(23)\},\{(123),(132)\}$. $\operatorname{Stab}(12)=\{(),(12)\}$.<br>
+(iv) orbits are $\{0\}$ and concentric circles: $\{rz:z∈S^1\}$ for each $r∈(0,∞)$. $\operatorname{Stab}{\bf i}=\left\{\left(\begin{smallmatrix}1&amp;0\\0&amp;1\end{smallmatrix}\right),\left(\begin{smallmatrix}1&amp;0\\0&amp;-1\end{smallmatrix}\right)\right\}$.<li>Let $f$ be a polynomial in the (commuting) variables $x_1,x_2,\ldots,x_n$ and let $N$ be the number of distinct polynomials, including $f$ itself, that can be obtained from $f$ by permuting the variables. Prove that $N$ divides $n!$.<br>
+Give examples to show that every divisor of $n!$ occurs when $n=3$. Verify the Orbit-Stabilizer Theorem for each of your examples.<br>
+<strong>Solution.</strong><br>
+$S_n$ acts on the set of polynomials, by the Orbit-Stabilizer Theorem, the order of the orbit of $f$ divides $|S_n|=n!$. For $n=3$,$\def\abs#1{\left|#1\right|}$<br>
+<table cellspacing="0" class="t_table" ><tr><td>$f$</td><td>$\operatorname{Orb}f$</td><td>$\abs{\operatorname{Orb}f}$</td><td>$\operatorname{Stab}f$</td><td>$\abs{\operatorname{Stab}f}$<br><br><br><br><br>
+</td></tr><tr><td>0</td><td>$\{0\}$</td><td>1</td><td>$S_3$</td><td>6<br /><br>
+</td></tr><tr><td>$(x_1-x_2)(x_1-x_3)(x_2-x_3)$</td><td>$\{f,-f\}$</td><td>2</td><td>$A_3$</td><td>3<br /><br><br><br>
+</td></tr><tr><td>$x_1x_2$</td><td>$\{x_1x_2,x_1x_3,x_2x_3\}$<br>td>3</td><td>$\{(),(12)\}$</td><td>2<br /><br>
+</td></tr><tr><td><br>/td><td>$\{x_1,x_2,⋯,x_6\}$</td><td>6</td><td>$\{()\}$</td><td>1</td></tr></table><li>Let $G$ be a group and let $S$ denote the set of subgroups of $G$. Show that $g·H=gHg^{-1},\quad$ where $g∈G,H⩽G$, defines a left action of $G$ on $S$.<br />
+Now let $G=S_{4}$. What is $\operatorname{Orb}(H)$ and $\operat<br>{Stab}(H)$ in each of the following cases?$$H=V_4,\quad H=\operatorname{Sym}\{1,2,3\}, \quad H=\langle(1234)\rangle .$$<strong>Solution.</strong><br />
+<table cellspacing="0" class<br>ble" ><tr><td>$H$</td><td>$\operatorname{Orb}H$</td><td>$\abs{\operatorname{Orb}H}$</td><td>$\operatorname{Stab}H$</td><td>$\abs{\operatorname{Stab}H}$<br />
+</td></tr><tr><td>$V_4$</td><td>$\{V_4\}$</td><td>1</td><td>$S_4$</td><td>24<br /><br>
+</td></tr><tr><td>Sym{1,2,<br>><td>{Sym{1,2,3},Sym{1,3,4},<br />
+Sym{1,2,4},Sym{2,3,4}}</td><td>4</td><td>Sym{1,2,3}</td><td>6<br /><br>
+</td></tr><tr><td>⟨(1234)⟩</td><td>{⟨(1234)⟩=⟨(1432)⟩,<br /><br>
+⟨(1243)⟩=⟨(1342)⟩,<br /><br>
+⟨(1423)⟩=⟨(1324)⟩}</td><td>3</td><td>{e,(1234),(13)(24),(1432),<br /><br>
+(24),(14)(23),(13),(12)(34)}<br /><br>
+$≌D_8$</td><td>8</td></tr></table><li>Show that $GL_3(\mathbb{R})$ (the group of invertible $3×3$ real matrices) acts on $M_{3×3}(\mathbb{R})$ (the set of $3×3$ real matrices) by $A·M=AM$.<br>M_{1}=\left(\begin{array}{ccc}1 &amp; 0 &amp; 1 \\0 &amp; 1 &amp; 2 \\0 &amp; 0 &amp; 0\end{array}\right), \quad M_{2}=\left(\begin{array}{lll}1 &amp; 0 &amp; 1 \\0 &amp; 1 &amp; 1 \\0 &amp; 0 &amp; 0\end{array}\right), \quad M_{3}=\left(\begin{array}{ccc}1 &amp; -1 &amp; 0 \\0 &amp; 2 &amp; 2 \\1 &amp; 1 &amp; 2\end{array}\right)$$Show that $M_{2}$ and $M_{3}$ lie in the same orbit; determine a matrix $A$ such that$$\operatorname{Stab}\left(M_{2}\right)=A \operatorname{Stab}\left(M_{3}\right) A^{-1} .$$Show that $M_{1}$ and $M_{2}$ lie in different orbits, but that nonetheless $\operatorname{Stab}\left(M_{1}\right)=\operatorname{Stab}\left(M_{2}\right)$.<br />
+<strong>Solution.</strong><br /><br>
+(i) It is straightforward to verify : $IM=M$. $ABM=A(BM)$. Therefore $GL_3(\mathbb{R})$ acts on $M_{3×3}(\mathbb{R})$ by $A·M=AM$.<br /><br>
+(ii) <br>=\begin{pmatrix} \frac{1}{2} &amp; 0 &amp; \frac{1}{2} \\ -\frac{1}{6} &amp; \frac{1}{3} &amp; \frac{1}{6} \\ 1 &amp; 1 &amp; -1\end{pmatrix}$ we have $\det A=-\frac12≠0$ and $M_2=AM_3$, so $∀A_3∈\operatorname{Stab}M_3$, $A_3M_3=M_3⇒AA_3A^{-1}M_2=AA_3M_3=AM_3=M_2⇒AA_3A^{-1}∈\operatorname{Stab}M_2$.<br />
+(iii) If $M_1,M_2$ lie i<br>same orbit, then $∃A∈GL_3(\Bbb R),AM_1=M_2$, let $B=\left(\begin{smallmatrix}0&amp;0&amp;-1\\0&amp;0&amp;-2\\0&amp;0&amp;1\end{smallmatrix}\right)$, we have $AM_1B=M_2B$, so $A\left(\begin{smallmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{smallmatrix}\right)=\left(\begin{smallmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 0 \end{smallmatrix}\right)$, contradiction.<br />
+(iv) Let $C=\left(\begin{smallmatrix}1&amp;0&amp;0\\0&amp;1&amp;-1\\0&amp;0&amp;1\end{smallmatrix}\right)$, then $M_1C=M_2$. Therefore $A∈\operatorname{Stab}M_1⇔AM_1=M_1⇔AM_1C=M_1C⇔AM_2=M_2⇔A∈\operatorname{Stab}M_2$. Hen<br>peratorname{Stab}\left(M_{1}\right)=\operatorname{Stab}\left(M_{2}\right)$.<li>Cayley's Theorem states that every finite group is isomorphic to a subgroup of some $S_n$. For each of the following groups, what is the smallest $n$ such that $S_n$ contains a subgroup isomorphic to that group? Justify your answers and describe such a subgroup.$$C_5,\quad D_{10}, \quad C_2×C_2×C_2, \quad S_3×S_3.$$<strong>Solution.</strong><br />
+$C_5≌⟨(12345)⟩⩽S_5$. Since<br>rphisms preserve order and order of (12345) in $C_5$ is 5, we have $5|n!$ (or, by Lagrange's theorem, $\left|C_5\right|=5|n!$), so $n=5$ is the smallest.<br />
+$D_{10}≌⟨(12)(34),(12345)⟩⩽S_5$. By the same argument, order of (12345) in $D_{10}$ is 5, we have $5|n!$ (or, by Lagrange's theorem, $\left|D_{10}\right|=10|n!$), so $n=5$ is the smallest.<br /><br>
+<br>_2×C_2≌⟨(12),(34),(56)⟩⩽S_6$. By the same argument, we have $n≥4$. By Sylow's theorem, all Sylow subgroups of a given order are conjugate, but $|D_8|=8$ and $D_8⩽S_4$, so all subgroups of $S_n(n=4,5)$ of order 8 is isomorphic to $D_8$, not isomorphic to $C_2×C_2×C_2$. Hence $n=6$ is the smallest.<br />
+$S_3×S_3≌⟨(1,2),(1,2,3),<br>(4,5,6)⟩⩽S_6$. By Lagrange's theorem, $\left|S_3×S_3\right|=36|n!=\left|S_n\right|$, so $n=6$ is the smallest.<br />
+</ul><br /><br>
+<strong>Starter</strong><br /><br>
+<strong>S1.</strong> Let $G$ be a finite group acting on a set $Ω$. Assume that the action is transitive (i.e. there is on<br> orbit). Prove that there is an element $g$ which acts on $\Omega$ without any fixed points.<br />
+<strong>Solution.</strong><br>
+For $G$ transitive, by Burnside's lemma, $1=\frac1{|G|}∑_{g∈G}\left|Ω^g\right|$, so $|G∖\{e\}|=|G|-1&gt;|G|-|Ω|=∑_{g∈G∖\{e\}}\left|Ω^g\right|$, so there exists $g∈G$ <br>hat $\left|Ω^g\right|=0$.<br />
+<br /><br>
+<strong>Pudding</strong><br /><br>
+<strong>P1.</strong> Let $n$ be a positive integer.<br /><br>
+(i) Show that the equation$$\frac{1}{a_{1}}+\frac{1}{a_{2}}+\cdots+\frac{1}{a_{n}}=1$$has finitely many solutions in positive integers $a_1\leqslant a_2\leqslant⋯\leqslant a_n$.<br /><br>
+(ii) Show that (up to an isomorphism) there are only finitely many finite groups $G$ with precisely $n$ conjugacy classes.<br /><br>
+<strong>Solution.</strong><br /><br>
+(i) Claim: $\frac{1}{a_{1}}+\frac{1}{a_{2}}+\cdots+\frac{1}{a_n}=\frac pq$ has finitely many solutions in positive integers $a_1\leqslant a_2\leqslant⋯\leqslant a_n$.<br />
+Base: $n=1$ is trivial. There can be only one or zero solutions to $\frac{1}{x_1} = \frac{p}{q}$.<br />
+Induction: Assume the claim is true for $n-1$. The smallest number among $x_i$ cannot$&gt;nq$, otherwise all summands would$&lt;\frac{1}{nq}$, and $\sum_{n=1}^{n} \frac{1}{x_n} &lt; \sum_{n=1}^{n} \frac{1}{nq} = \frac{1}{q}⩽\frac{p}{q}$<br />
+Therefore one of $x_i$ is at most $nq$ — there is a finite number of possibilities for the smallest number.$$\left\{(x_1, \dots, x_n): \frac{1}{x_1} + \dots + \frac{1}{x_n}=\frac{p}{q}\right\}=\bigcup_{i=1}^n\bigcup_{x_i=1}^{nq} \left\{(x_1, \dots, x_n): \frac{1}{x_1} + \dots + \frac{1}{x_n} = \frac{p}{q}\right\}$$By inductive hypothesis (with $\frac{p}{q} - \frac{1}{x_i}$), every set here is finite, and a finite union of finite sets is finite. The proof is finished.<br />
+(ii) $G$ acts on itself by $g·h=ghg^{-1}$ then the orbit of $g$ is its conjugacy class. Stabilizers of conjugate elements of $G$ have the same size, which we denote by $|G|,a_2,⋯,a_n$, we have $|G|=\frac{|G|}{|G|}+\frac{|G|}{a_2}+⋯+\frac{|G|}{a_n}⇔1=\frac1{|G|}+\frac1{a_2}+⋯+\frac1{a_n}$. By part (i), there is only finite possibilities for $|G|$, by Cayley’s Theorem, $G$ is isomorphic to a subgroup of $S_{|G|}$, so there is only finite possibilities for $G$.<br />
+<a href="https://math.stackexchange.com/questions/52350/finite-groups-with-exactly-n-conjugacy-classes-n-2-3" target="_blank">https://math.stackexchange.com/q ... ugacy-classes-n-2-3</a><br />
+<a href="https://kconrad.math.uconn.edu/blurbs/grouptheory/conjclass.pdf" target="_blank">https://kconrad.math.uconn.edu/blurbs/grouptheory/conjclass.pdf</a><br />
+For example, if $G$ is a group with three conjugacy classes, then $G≌C_3$ or $G≌S_3$.[Example 284 in lecture notes]

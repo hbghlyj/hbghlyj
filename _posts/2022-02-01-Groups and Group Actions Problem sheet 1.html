@@ -1,0 +1,121 @@
+---
+mathjax: true
+tag: Group Theory
+excerpt: sheet 1 — HT 2022
+---
+<ol><li>For each of the following sets $S$ and binary operations ∗ on $S$, state whether (a) ∗ is associative, (b) ∗ is commutative, (c) an identity exists, (d) inverses exist.<br>
+(i) $S=\mathbb N, m ∗ n =\max\{m,n\}$.<br>
+(ii) $S=\mathbb Z, m ∗ n = m + n + 1$.<br>
+(iii) $S=M_n(\mathbb R)$ where $n &gt; 2$ and $A ∗ B =\frac12(AB + BA)$.<br>
+(iv) $S=\{f :\mathbb R →\mathbb R\}, f ∗ g = f ◦ g$.<br>
+<i>Solution.</i><br>
+(i)associative, commutative, 0 or 1, no inverse($\max\{0,2\}=\max\{1,2\}$, so 2 doesn't have inverse).<br>
+(ii)associative, commutative, identity is -1, inverse of $n$ is $-n-2$.<br>
+(iii)not associative$\Big[A=\begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix},B=\begin{pmatrix}-1&amp;0\\0&amp;1\end{pmatrix},A(AB)=O_2\ne-B=(AA)B\Big]$, commutative, identity=$I_n$, no inverse if $A$ is singular.<br>
+(iv)associative, not commutative, identity is $f(x)=x$, non-injective functions don't have inverse.<li>There are 56 different Latin squares of size 5×5 whose first row and first column are both $(e, a, b, c, d)$. Construct one such square which is a group table, justifying your reasons for it representing a group, and one such square that does not represent a group, again saying why.<br>
+<i>Solution.</i><br>
+$\begin{array}{c|ccccc}<br>
+\mathbb Z_5^+&amp;a&amp;b&amp;c&amp;d&amp;e\\\hline<br>
+a&amp;a&amp;b&amp;c&amp;d&amp;e\\<br>
+b&amp;b&amp;c&amp;d&amp;e&amp;a\\<br>
+c&amp;c&amp;d&amp;e&amp;a&amp;b\\<br>
+d&amp;d&amp;e&amp;a&amp;b&amp;c\\<br>
+e&amp;e&amp;a&amp;b&amp;c&amp;d\end{array}$ is a group table by Proposition 130 (a).<br>
+$\begin{array}{c|ccccc}&amp;a&amp;b&amp;c&amp;d&amp;e\\\hline a&amp;a&amp;b&amp;c&amp;d&amp;e\\b&amp;b&amp;a&amp;e&amp;c&amp;d\\c&amp;c&amp;d&amp;b&amp;e&amp;a\\d&amp;d&amp;e&amp;a&amp;b&amp;c\\e&amp;e&amp;c&amp;d&amp;a&amp;b\end{array}$ is not a group table, since $(bc)d=a≠d=b(cd)$.<li>Let $A$ and $B$ be complex $n×n$ matrices. If $A=(a_{ij})$ then we define its complex conjugate as $\overline A = (\overline{a_{ij}})$. Show that $\overline{A+B}=\overline{A}+\overline{B}, \overline{AB}=\overline{A}\ \overline{B}$. Show that $U(n)$ is a group. Show further that $U(1)$ is Abelian and that $U(n)$ is non-Abelian for $n≥2$.<br>
+<i>Solution.</i><br>
+$\overline{A+B}=((A+B)^*)^{\sf T}=(A^*+B^*)^{\sf T}=(A^*)^{\sf T}+(B^*)^{\sf T}=\overline{A}+\overline{B}$,$\overline{AB}=((AB)^*)^{\sf T}=(B^*A^*)^{\sf T}=(A^*)^{\sf T}(B^*)^{\sf T}=\overline{A}\ \overline{B}$.<br>
+$I∈U(n)$. $∀A∈U(n),A^{-1}=\overline{A^T}=(\overline{(A^{-1})^T})^{-1}$, so $A^{-1}∈U(n)$.<br>
+∀$A,B∈U(n)$,$AB=(\overline{A^{\sf T}})^{-1}(\overline{B^{\sf T}})^{-1}=(\overline{B^{\sf T}}\overline{A^{\sf T}})^{-1}=(\overline{B^{\sf T}A^{\sf T}})^{-1}=(\overline{(AB)^{\sf T}})^{-1}⇒AB∈U(n)$.<br>
+Therefore $U(n)$ is a subgroup of $GL(n)$.<br>
+An element of $U(1)$ is a complex 1×1 matrix, so $U(1)$ is Abelian.<br>
+For $n≥2$, take $U=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}$ and $V=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}$. We have $\begin{pmatrix}U&amp;\\&amp;I_{n-2}\end{pmatrix}\begin{pmatrix}V&amp;\\&amp;I_{n-2}\end{pmatrix}=\begin{pmatrix}0&amp;1\\-1&amp;0\\&amp;&amp;1_{n-2}\end{pmatrix}≠\begin{pmatrix}0&amp;-1\\1&amp;0\\&amp;&amp;I_{n-2}\end{pmatrix}=\begin{pmatrix}V&amp;\\&amp;I_{n-2}\end{pmatrix}\begin{pmatrix}U&amp;\\&amp;I_{n-2}\end{pmatrix}$.<li>An <i>affine transformation</i> of $\mathbb R^2$ is one of the form $\left(\begin{array}{l}x \\ y\end{array}\right) \mapsto A\left(\begin{array}{l}x \\ y\end{array}\right)+\mathbf{b}$ where $A$ is an invertible 2×2 matrix and $\bf b$ is a 2×1 column vector. Let $g_1$ and $g_2$ be affine transformations of $\mathbb R^2$. Show that their composition $g_2◦g_1$ is an affine transformation. Show further that the affine transformations of $\mathbb R^2$ form a group $AGL(2,\mathbb R)$ under composition.<br>
+<i>Proof.</i><br>
+Let $g_1$ and $g_2$ be affine transformations on $\mathbb R^2$, their composition $g_2∘g_1$ has form $\left(\begin{array}{l}x \\ y\end{array}\right) \mapsto A_2\left(A_1\left(\begin{array}{l}x \\ y\end{array}\right)+\mathbf{b}_1\right)+\mathbf b_2=A_2A_1\left(\begin{array}{l}x \\ y\end{array}\right)+A_2\mathbf{b}_1+\mathbf b_2$, so $g_2∘g_1$ is an affine transformation.<br>
+Composition of transformation is associative. The identity is $A=I,\mathbf b=0$.<br>
+The inverse of $\left(\begin{array}{l}x \\ y\end{array}\right) \mapsto A\left(\begin{array}{l}x \\ y\end{array}\right)+\mathbf{b}$ is $\left(\begin{array}{l}x \\ y\end{array}\right) \mapsto A^{-1}\left(\begin{array}{l}x \\ y\end{array}\right)-A^{-1}\mathbf{b}$.<br>
+<i>Remark</i>. You can show geometrically that every affine transformation can be decomposed (uniquely) as a composite of a linear map fixing the origin followed by a translation. $AGL(n,\mathbb R)$ is the semi-direct product of $\mathbb R^n$ and $GL(n,\mathbb R)$. In fact, the subgroup of translations(isomorphic to $\mathbb R^n$) is a normal subgroup of $AGL(n,\mathbb R)$(see Example 225 in the lecture notes) but $GL(n,\mathbb R)$ is not normal(Let $f(x) = Ax +\mathbf b, A ∈ GL(n,\mathbb R)$ and $g(x)=Bx,B∈GL(n,\mathbb R)$, $f^{-1}gf(x)=A^{-1}(B(Ax+\mathbf b)-\mathbf b)$ is not necessarily equal to $g(x)=Bx$, so $GL(n,\mathbb R)$ is not normal subgroup of $AGL(n,\mathbb R)$ by definition)(see <a href="https://math.stackexchange.com/questions/563288/affine-group-semi-direct-product-and-linear-transformations" target="_blank">this post</a>)<li>The following Cayley table describes a group $G$. (Dihedral group $D_8$)\begin{array}{|c|c|c|c|c|c|c|c|c|}\hline ∗&amp;e&amp;a&amp;b&amp;c&amp;d&amp;f&amp;g&amp;h\\\hline e&amp;e&amp;a&amp;b&amp;c&amp;d&amp;f&amp;g&amp;h\\\hline a&amp;a&amp;e&amp;h&amp;g&amp;f&amp;d&amp;c&amp;b\\\hline b&amp;b&amp;c&amp;d&amp;f&amp;g&amp;h&amp;e&amp;a\\\hline c&amp;c&amp;b&amp;a&amp;e&amp;h&amp;g&amp;f&amp;d\\\hline d&amp;d&amp;f&amp;g&amp;h&amp;e&amp;a&amp;b&amp;c\\\hline f&amp;f&amp;d&amp;c&amp;b&amp;a&amp;e&amp;h&amp;g\\\hline g&amp;g&amp;h&amp;e&amp;a&amp;b&amp;c&amp;d&amp;f\\\hline h&amp;h&amp;g&amp;f&amp;d&amp;c&amp;b&amp;a&amp;e\\\hline \end{array}(i) Find the inverse of each element of $G$.<br>
+(ii) Are there any elements of $G$, other than $e$, which commute with every element of $G$?<br>
+(iii) Determine the order of each element of $G$.<br>
+(iv) Show that $G=\left\{e,b,b^2,b^3,a,ba,b^2a,b^3a\right\}$ and that $ab = b^3a$.<br>
+(v) In all, $G$ has ten subgroups, of orders 1, 2, 2, 2, 2, 2, 4, 4, 4, 8. List the subgroups of $G$.<br>
+<i>Solution.</i><br>
+(i) $a^{-1}=a,b^{-1}=g,c^{-1}=c,d^{-1}=d,f^{-1}=f,g^{-1}=b,h^{-1}=h$<br>
+(ii) $d$ commutes with every element of $G$.<br>
+(iii) $\DeclareMathOperator{\ord}{ord}\ord e=\ord a=\ord c=\ord d=\ord f=\ord h=2,$$\ord b=\ord g=4.$<br>
+(iv)$e,b,b^2=d,b^3=g,a,ba=c,b^2a=f,b^3a=h$ are distinct, so $G=\left\{e,b,b^2,b^3,a,ba,b^2a,b^3a\right\}$. $ab=h=b^3a$.<br>
+(v)$\{e\},\{e,a\},\{e,c\},\{e,d\},\{e,f\},\{e,h\},$$\{e,a,d,f\},\{e,b,d,g\},\{e,c,d,h\},\{e,a,b,c,d,f,g,h\}$<li>(i) Let $G, H$ be groups. Show that $G × H$ is Abelian if and only if $G, H$ are both Abelian.<br>
+(ii) Show that the map $\phi: \mathbb{C}^{*} \rightarrow(0, \infty) \times S^{1}$ given by $\phi(z)=(|z|, z /|z|)$ is an isomorphism.<br>
+(iii) Show that $S^1$ is isomorphic to $SO(2)$ but that $S^1×\{±1\}$ is not isomorphic to $O(2)$.<br>
+<i>Proof.</i><br>
+(i) ⇒:If $G×H$ is Abelian, $(g_1,e)(g_2,e)=(g_2,e)(g_1,e)$⇒$(g_1g_2,e)=(g_2g_1,e)$⇒$G$ is Abelian. Likewise, $H$ is Abelian.<br>
+⇐:If $G,H$ are both Abelian, $(g_1,h_1)(g_2,h_2)=(g_1g_2,h_1h_2)$$=(g_2g_1,h_2h_1)=(g_2,h_2)(g_1,h_1)$ for any $g_1,g_2∈G,h_1,h_2∈H$.<br>
+(ii) $∀z_1,z_2∈\mathbb C^*$, $\phi(z_1)\phi(z_2)=(|z_1|,z_1/|z_1|)(|z_2|,z_2/|z_2|)=(|z_1|·|z_2|,z_1z_2/(|z_1|·|z_2|))=(|z_1z_2|,z_1z_2/|z_1z_2|)=\phi(z_1z_2)$, so $\phi$ is a homomorphism.<br>
+$\phi^{-1}(r,u)=ru$, so $\phi$ is invertible. Hence $\phi$ is an isomorphism.<br>
+(iii) For $M∈SO(2),$ $M$ has the form $M=\begin{pmatrix}\cosθ&amp;-\sinθ\\\sinθ&amp;\cosθ\end{pmatrix}$, let $ϕ(M)=\cosθ+i\sinθ$, it is a bijection from $SO(2)$ to $S^1$, and $M_1M_2=\begin{pmatrix}\cosθ_1&amp;-\sinθ_1\\\sinθ_1&amp;\cosθ_1\end{pmatrix}\begin{pmatrix}\cosθ_2&amp;-\sinθ_2\\\sinθ_2&amp;\cosθ_2\end{pmatrix}=\begin{pmatrix}\cos(θ_1+θ_2)&amp;-\sin(θ_1+θ_2)\\\sin(θ_1+θ_2)&amp;\cos(θ_1+θ_2)\end{pmatrix}$, $ϕ(M_1)ϕ(M_2)=(\cosθ_1+i\sinθ_1)(\cosθ_2+i\sinθ_2)$$=\cosθ_1\cosθ_2-\sinθ_1\sinθ_2+i(\sinθ_1\cosθ_2+\cosθ_1\sinθ_2)=\cos(θ_1+θ_2)+i\sin(θ_1+θ_2)$, therefore $ϕ(M_1)ϕ(M_2)=ϕ(M_1M_2)$, so ϕ is an isomorphism from $SO(2)$ to $S^1$.<br>
+$S^1×\{±1\}$ is Abelian but $O(2)$ is not, so they aren't isomorphic. [Or use the fact that $O(2)$ contains infinitely many elements of order 2 (all the reflections) but $S^1×\{±1\}$ contains only 3:$((-1,0),1),((-1,0),-1),((1,0),-1)$.]<br>
+</ul><br>
+<strong>Starter</strong><br>
+<strong>S1.</strong> Show that the general linear group $GL_n(\mathbb R)$ (of invertible $n×n$ real matrices) does indeed form a group under matrix multiplication.<br>
+<i>Solution.</i><ul><li>closed under matrix multiplication: if $A$ and $B$ are invertible, then we know (from Linear Algebra I) that $A B$ is invertible.<li>identity: $I \in G L_{n}(\mathbb{R})$.<li>associativity: matrix multiplication is associative.<li>inverses: if $A \in G L_{n}(\mathbb{R})$ then $A$ is invertible. Then $A A^{-1}=I=A^{-1} A$, so also $A^{-1}$ is invertible and hence $A^{-1} \in G L_{n}(\mathbb{R})$.<br>
+</ul><strong>S2.</strong> Using the notation from the lecture notes, show that $e, r, r^{2}, r^{3}, s, r s, r^{2} s, r^{3} s$ are 8 distinct symmetries of the square.<br>
+<i>Solution.</i><br>
+As with the example for the equilateral triangle in the notes, for each symmetry we see how it permutes the vertices.\begin{align*} e &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 1 &amp; 2 &amp; 3 &amp; 4\end{array}\right) \\ r &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 2 &amp; 3 &amp; 4 &amp; 1\end{array}\right) \\ r^{2} &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 3 &amp; 4 &amp; 1 &amp; 2\end{array}\right) \\ r^{3} &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 4 &amp; 1 &amp; 2 &amp; 3\end{array}\right) \\ s &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 2 &amp; 1 &amp; 4 &amp; 3\end{array}\right) \\ r s &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 3 &amp; 2 &amp; 1 &amp; 4\end{array}\right) \\ r^{2} s &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 4 &amp; 3 &amp; 2 &amp; 1\end{array}\right) \\ r^{3} s &amp;:\left(\begin{array}{llll}1 &amp; 2 &amp; 3 &amp; 4 \\ 1 &amp; 4 &amp; 3 &amp; 2\end{array}\right) \end{align*}These are 8 distinct permutations, so the 8 symmetries are distinct.<br>
+<strong>S3.</strong> Show that the product operation ∗ on $G × H$ is associative.<br>
+<i>Solution.</i><br>
+Take $\left(g_{1}, h_{1}\right),\left(g_{2}, h_{2}\right),\left(g_{3}, h_{3}\right) \in G \times H$. Then\begin{align*}<br>
+\left(\left(g_{1}, h_{1}\right) *\left(g_{2}, h_{2}\right)\right) *\left(g_{3}, h_{3}\right) &amp;=\left(g_{1} *_{G} g_{2}, h_{1} *_{H} h_{2}\right) *\left(g_{3}, h_{3}\right) \\<br>
+&amp;\left.=\left(\left(g_{1} *_{G} g_{2}\right) *_{G} g_{3},\left(h_{1} *_{H} h_{2}\right) *_{H} h_{3}\right)\right) \\<br>
+&amp;=\left(g_{1} *_{G}\left(g_{2} *_{G} g_{3}\right), h_{1} *_{H}\left(h_{2} *_{H} h_{3}\right)\right)\quad \text { as } *_{G} \text { and } *_{H} \text { associative } \\<br>
+&amp;=\left(g_{1}, h_{1}\right) *\left(g_{2} *_{G} g_{3}, h_{2} *_{H} h_{3}\right) \\<br>
+&amp;=\left(g_{1}, h_{1}\right) *\left(\left(g_{2}, h_{2}\right) *\left(g_{3}, h_{3}\right)\right)<br>
+\end{align*}so $*$ is associative.<br>
+<br>
+<strong>Pudding</strong><br>
+<strong>P1.</strong> Let $G$ be a finite group of even order. Must it contain an element of order 2?<br>
+<i>Solution.</i> (This is Corollary 162 in lecture notes.)<br>
+Yes. Suppose that $G$ doesn't contain an element of order 2, for any $a∈G\setminus\{e\}$, we can pair it up with $a^{-1}$, so the order of $G$ must be odd.<br>
+(In general, <a href="https://en.wikipedia.org/wiki/Cauchy%27s_theorem_(group_theory)" target="_blank">Cauchy's theorem</a> says that if a prime $p$ divides $|G|$ then $G$ has an element of order $p$. The case $p=2$ has the particularly easy proof given above.)<br>
+<strong>P2.</strong><br>
+(i) Is there a group in which no non-identity element is its own inverse?<br>
+(ii) Is there a group in which every non-identity element is its own inverse?<br>
+<i>Solution.</i><br>
+(i) Yes. For example, consider $C_5$. Here every non-identity element has order 4, and hence is not its own inverse.<br>
+(ii) Yes. For example, consider $C_2$. In fact there are many more examples. We’ll return to groups in which every non-identity element is its own inverse on a future sheet.<br>
+<strong>P3.</strong> How many ways are there to complete the following grid so that it is the Cayley table of a group?\begin{array}{c|ccc}∗&amp;e&amp;a&amp;b&amp;c\\\hline e&amp;&amp;&amp;&amp;\\a&amp;&amp;&amp;&amp;\\b&amp;&amp;&amp;&amp;\\c&amp;&amp;&amp;&amp;\end{array}<i>Solution.</i> We know what the first row and column must be, so we can fill in some entries immediately.\begin{array}{c|cccc}<br>
+* &amp; e &amp; a &amp; b &amp; c \\<br>
+\hline e &amp; e &amp; a &amp; b &amp; c \\<br>
+a &amp; a &amp; &amp; &amp; \\<br>
+b &amp; b &amp; &amp; &amp; \\<br>
+c &amp; c &amp; &amp; &amp;<br>
+\end{array}There are then three possibilities for $a * a$, namely $b, c$ and $e$ (note that it cannot be $a$, because each element must appear exactly once in each row and column).<strong><br>
+Case 1</strong>: $a * a=b$. Then we find the remaining entries are all determined (using the 'every element in every row and column' property), and we get the table\begin{array}{c|cccc}<br>
+* &amp; e &amp; a &amp; b &amp; c \\<br>
+\hline e &amp; e &amp; a &amp; b &amp; c \\<br>
+a &amp; a &amp; b &amp; c &amp; e \\<br>
+b &amp; b &amp; c &amp; e &amp; a \\<br>
+c &amp; c &amp; e &amp; a &amp; b<br>
+\end{array}This does correspond to a group table. Perhaps the easiest way to see this is to note that it's the group table of $C_{4}$ (with $a^{2}=b$ and $a^{3}=c$ ) - this is probably more convenient than checking associativity by hand.<br>
+<strong>Case 2</strong>: $a * a=c$. As in Case 1 , it turns out that there are no more decisions to make. We get the table\begin{array}{c|cccc}<br>
+* &amp; e &amp; a &amp; b &amp; c \\<br>
+\hline e &amp; e &amp; a &amp; b &amp; c \\<br>
+a &amp; a &amp; c &amp; e &amp; b \\<br>
+b &amp; b &amp; e &amp; c &amp; a \\<br>
+c &amp; c &amp; b &amp; a &amp; e<br>
+\end{array}which again corresponds to $C_{4}$, this time with $a^{2}=c$ and $a^{3}=b$.<br>
+<strong>Case 3</strong>: $a * a=e$. Then we can fill in some entries, but when we reach\begin{array}{c|cccc}* &amp; e &amp; a &amp; b &amp; c \\<br>
+\hline e &amp; e &amp; a &amp; b &amp; c \\<br>
+a &amp; a &amp; e &amp; c &amp; b \\<br>
+b &amp; b &amp; c &amp; &amp; \\<br>
+c &amp; c &amp; b &amp; &amp;\end{array}we have to make another decision.<br>
+<strong>Case 3a</strong>: $a * a=e$ and $b * b=e$. Then everything else is determined (there is no more choice), and we get\begin{array}{c|cccc}* &amp; e &amp; a &amp; b &amp; c \\<br>
+\hline e &amp; e &amp; a &amp; b &amp; c \\<br>
+a &amp; a &amp; e &amp; c &amp; b \\<br>
+b &amp; b &amp; c &amp; e &amp; a \\<br>
+c &amp; c &amp; b &amp; a &amp; e\end{array}which corresponds to $C_{2} \times C_{2}$.<br>
+<strong>Case 3b</strong>: $a * a=e$ and $b * b=a$. Then again everything else is determined, leading to\begin{array}{c|cccc}<br>
+* &amp; e &amp; a &amp; b &amp; c \\<br>
+\hline e &amp; e &amp; a &amp; b &amp; c \\<br>
+a &amp; a &amp; e &amp; c &amp; b \\<br>
+b &amp; b &amp; c &amp; a &amp; e \\<br>
+c &amp; c &amp; b &amp; e &amp; a\end{array}which is the group table of $C_{4}$, with $b$ as a generator and $b^{2}=a, b^{3}=c$.<br>
+So there are just two possible groups of order 4, up to isomorphism, and they are both Abelian.

@@ -1,0 +1,147 @@
+---
+mathjax: true
+tag: Group Theory
+excerpt: sheet 8 — HT 2022
+---
+<ol><li>Let $G$ be a finite group with $m$ conjugacy classes. Explain why$$\sum_{g∈G}\left|C_G(g)\right|=m{|G|}.$$Deduce that the probability that two randomly chosen elements of $G$ commute is $m /{|G|}$. Comment on this formula when $G$ is Abelian.<br>
+<strong>Solution.</strong><br>
+Using the Orbit-Stabilizer Theorem,$$\sum_{g∈G}\left|C_G(g)\right|=\sum_{i=1}^m\sum_{g∈C_i}\left|C_G(g)\right|=\sum_{i=1}^m\sum_{g∈C_i}\frac{|G|}{|C_i|}=\sum_{i=1}^m{|C_i|}·\frac{|G|}{|C_i|}=m{|G|}$$The probability that two randomly chosen elements of $G$ commute is $\frac1{|G|}\sum_{g∈G}\frac{C_G(g)}{|G|}=\frac m{|G|}$. When $G$ is Abelian, conjugacy classes are singletons, so $m={|G|}$, so the probability is 1.<br>
+<strong>Remark</strong><br>
+This formula appears as Theorem Ⅳ in <a href="http://combinatorica.hu/~p_erdos/1968-11.pdf#page=3" target="_blank">This Paper</a> by P. Erdos :
+<div class="quote"><blockquote>For the ‘special commutator equation’$$X Y X^{-1} Y^{-1}=E \quad(E \text { unitelement })$$the number of solutions is the number of commutable pairs in $S_{n}$. As to this we found with Vera T. Sós that this number is$$n ! p(n)$$$p(n)$ being the number of partitions of $n$. More generally we assert the<br>
+THEOREM Ⅳ. The number of coraamutable $(a, b)$ pairs ($(X, Y)$ and $(Y, X)$ are counted as different solutions if $X≠Y$.) from an arbitrary group $G$ of order $N$ is $Nk$ where $k$ stands for the number of conjugacy classes in $G$.<br>
+COROLLARY I. In an arbitrary group of order $N$ the number of commutable pairs (with the above concention) is at least $N \log_2 \log_2 N$. By other words a finite group cannot be “too non-commutative”.</blockquote></div>
+And its proof is in Appendix I:
+<div class="quote"><blockquote>Let us consider a fixed conjugacy-class $Q_j$ of $G$ containing $|Q_j|$ elements ; let $α$ be one of its elements and $C(α)$ its centraliser, containing $|C(α)|$ elements. Hence $α$ commutes in $G$ with $\left(\frac{N}{\left|Q_{j}\right|}-1\right)$ elements, different from $α$. Since the same holds for all elements of $Q_{j}$, the total number of commutable $(\alpha, \beta)$ pairs with $\alpha \in Q_{j}, \alpha \neq \beta$ is$$\left|Q_{j}\right|\left(\frac{N}{\left|Q_{j}\right|}-1\right)=N-\left|Q_{j}\right|$$Summation for $j=1,2, \ldots, k$ gives$$k N-\sum_{j=1}^{k}\left|Q_{j}\right|=k N-N .$$This gives the total number of commutable $(\alpha, \beta)$-pairs with $\alpha \neq \beta$; since we have $N$ further commutable pairs $(\alpha, \alpha)$, the proof of Theorem Ⅳ is finished.<br><br>
+In order to prove Corollary Ⅰ we appeal to the following well-known theorem (see [10]).<br>
+Let $2=\alpha_{1}<\alpha_{2}<\ldots$ be defined by the recursion$$\alpha_{v+1}=\alpha_{1} \alpha_{2} \ldots \alpha_{v}+1 .$$If for a fixed $v$ and positive integers $x_{1}, x_{2}, \ldots, x_{v}$$$\frac{1}{x_{1}}+\frac{1}{x_{2}}+\ldots+\frac{1}{x_{v}}<1$$then$$\frac{1}{x_{1}}+\frac{1}{x_{2}}+\ldots+\frac{1}{x_{v}} \leqq 1-\frac{1}{\alpha_{v+1}-1} .$$</blockquote></div>
+The generalized problem “On The Number Of Commuting k-Tuples In A Group Of Order n” appears in <a href="http://combinatorica.hu/~p_erdos/1975-16.pdf#page=3" target="_blank">This Paper</a> by P. Erdos :
+<div class="quote"><blockquote>THEOREM 2.1 The number of commuting pairs $\left(a_{1}, a_{2}\right)$ of elements of a group $G$ is$$A_{2}(G)=|G| c(G)\tag{2.2}$$where $c(G)$ is the number of conjugacy classes of $G$. Since $c(G)$ goes to infinity with $|G|$ it follows from (2.2) that, for example$$A_{2}(n)>n \log _{2} \log _{2} n .\tag{2.3}$$For the sake of completeness we include the simple proof.<br>
+Each $a \in G$ commutes with the elements of its centralizer $Z(a)$. So the number of commuting ordered pairs $(a, b)$ is $|Z(a)|$. This number clearly remains unchanged if $a$ is replaced by a conjugate element. Thus the number of commuting ordered pairs $\left(a', b'\right)$ with $a'\sim a$ is $|C(a)||Z(a)|=|G|$, where $C(a)$ is the conjugacy class of $a$. Summing over the $c(G)$ conjugacy classes gives us $|G| c(G)$ commuting ordered pairs.<br><br>
+We now first consider the number of $A_3(G)$ of commuting triples in $G$ and wish to show that for large $|G|$ that number is large compared to $A_2(G)$. For this purpose we observe that the number of conjugacy classes whose elements have centralizers of order $<\frac{1}{2} c(G)$ is certainly itself less than $\frac{1}{2} c(G)$ since each such class contains more than $2|G| / c(G)$ elements.<br><br>
+Restricting attention to those $a \in G$ with $|Z(a)| \geqslant \frac{1}{2} c(G)$ we see that each such $a$ belongs to $|Z(a)| c(Z(a))$ ordered commuting triples $(a, b, c)$ since $(b, c)$ can be any of the $|Z(a)| c(Z(a))$ commuting pairs in $Z(a)$.<br>
+Thus the number of ordered commuting triples $\left(a^{\prime}, b, c\right)$ with $a^{\prime} \equiv a$ is$$|C(a)||Z(a)| c(Z(a))=|G| c(Z(a)) \text {. }$$Summing over the conjugacy classes with centralizers of order $\geqslant \frac{1}{2} c(G)$ we get at least$$\frac{1}{2}|G| c(G) c(Z(a))>c_{2} A_{2}(G) \log \log c(G)$$ordered commuting triples.<br>
+THEOREM 2.4 Let $c(n)$ denote the minimal number of conjugacy classes in a group of order $\geqslant n$. Then the number of commuting ordered triples of elements of $G$ is$$A_{3}(G)>\frac{1}{2}|G| c(G) c\left(\frac{1}{2} c(G)\right)$$We can now iterate this process to obtain lower bounds for ordered commuting $k$-tuples of elements of a group $G$.<br><br>
+THEOREM 2.5 Let $c_l(n)$ be defined by $c_{1}(n)=c(n)$ and $c_{l+1}(n)=c\left(\frac{1}{2} c_{t}(n)\right)$. Then the number of commuting ordered $k$-tuples in a group $G$ satisfies$$A_{k}(G)>\frac{1}{2^{k-2}}|G| c(G) c_{2}(|G|) \ldots c_{k-1}(|G|)$$for all sufficiently large $|G|$. In particular if $A_{k}(n)$ is the minimal number of commuting ordered $k$-tuples in any group of order $\geqslant n$ we have$$A_{k}(n) \geqslant \frac{1}{2^{k-2}} n c_{1}(n) c_{2}(n) \ldots c_{k-1}(n) .$$Further we have$$A_{k}(G) / A_{k-1}(G) \rightarrow \infty \quad \text { as } \quad|G| \rightarrow \infty .$$</blockquote></div><li>Show that a regular hexagon's edges may be coloured red, white or blue in 92 essentially different ways.<br>
+How many ways are possible if an equal number of red, white and blue edges must appear?<br>
+<strong>Solution.</strong><br>
+The symmetry group of a regular hexagon is $D_{12}=⟨r,s⟩$, where $r$ is 60° rotation and $s$ is reflection through a longest diagonal.<br>
+(i) There are $3^6$ ways of colouring whilst labelled. Applying the orbit counting formula we arrive at the table
+<style type="text/css">.tg  {border-collapse:collapse;border-spacing:0;}.tg td, .tg th{text-align:center;vertical-align:middle;border-color:black;border-style:solid;border-width:1px;padding:0 5px;}.tg th{border-bottom-width:2px; border-top: 0;}.tg tr:last-child td {border-bottom: 0;}.tg tr td:first-child,.tg tr th:first-child {  border-left: 0;}.tg tr td:last-child,.tg tr th:last-child {border-right: 0;}
+.console{white-space:pre-wrap;display: inline;font: 12px 'lucida console';}</style>
+<table class="tg" align="center"><thead><tr><th>$g$</th><th>conjugates</th><th>$\operatorname{fix}(g)$</th></tr></thead><tbody><tr><td>$e$</td><td>1</td><td>$3^6$</td></tr><tr><td>$r^3$</td><td>1</td><td>$3^3$</td></tr><tr><td>$r^{±1}$</td><td>2</td><td>3</td></tr><tr><td>$r^{±2}$</td><td>2</td><td>$3^2$</td></tr><tr><td>$r^{\text{odd}}s$</td><td>3</td><td>$3^3$</td></tr><tr><td>$r^{\text{even}}s$</td><td>3</td><td>$3^4$</td></tr></tbody></table>$$\frac{1}{12} \left(3^6+3^3+2 \left(3+3^2\right)+3\left(3^3+3^4\right)\right)=92$$
+(ii) There are $\binom6{2,2,2}=90$ ways of colouring whilst labelled. Applying the orbit counting formula we arrive at the table
+<table class="tg" align="center"><thead><tr><th>$g$</th><th>conjugates</th><th>$\operatorname{fix}(g)$</th></tr></thead><tbody><tr><td>$e$</td><td>1</td><td>90</td></tr><tr><td>$r^3$</td><td>1</td><td>$3!$</td></tr><tr><td>$r^{±1}$</td><td>2</td><td>0</td></tr><tr><td>$r^{±2}$</td><td>2</td><td>0</td></tr><tr><td>$r^{\text{odd}}s$</td><td>3</td><td>6</td></tr><tr><td>$r^{\text{even}}s$</td><td>3</td><td>6</td></tr></tbody></table>$$\frac{1}{12} (90+6+3 (6+6))=11$$<li>Let $n$ be an integer such that $n \geqslant 3$ and let $S$ be the set of all ordered triples of strictly positive integers $(x,y,z)$ whose sum is $n$. Show that $S$ has $\frac12(n-1)(n-2)$ elements.<br>
+Distinguishing cases, find the number of integer triples $(x, y, z)$ such that$$x+y+z=n \quad \text { and } \quad x⩾y⩾z>0.$$<strong>Solution.</strong><br>
+(i) Consider the map $f((x, y, z))=\{x,x+y\}$ from $S$ to the set of 2-subsets of $\{1,2,⋯,n-1\}$, then $f^{-1}(\{x,y\})=(|x-y|,\max\{x,y\},n-x-y)$, so $f$ is bijective, so $|S|=\binom{n-1}2$<br>
+(ii) $S_3$ acts naturally on $S$ and in each orbit of this action there is a unique $(x,y,z)$ such that $x⩾y⩾z$. So the question is equivalent to finding the number of orbits of this action. Applying the orbit counting formula we arrive at the table
+<table class="tg" align="center"><thead><tr><th>$g$</th><th>conjugates</th><th>$\operatorname{fix}(g)$</th></tr></thead><tbody><tr><td>$e$</td><td>1</td><td>$\binom{n-1}2$</td></tr><tr><td>(12)</td><td>3</td><td>\begin{cases}\frac{n-2}2&2|n\\\frac{n-1}2&2\nmid n\end{cases}</td></tr><tr><td>(123)</td><td>2</td><td>\begin{cases}1&3|n\\0&3\nmid n\end{cases}</td></tr></tbody></table>Therefore the number of triples is $\frac16\binom{n-1}2+\frac12×\begin{cases}\frac{n-2}2&2|n\\\frac{n-1}2&2\nmid n\end{cases}+\frac13×\begin{cases}1&3|n\\0&3\nmid n\end{cases}$<br>
+C program:<br>
+<span class="console">#include &lt;stdio.h&gt;
+int count(int N){
+    int count = 0;
+    for(int x = N - 2; x > 0; x--){
+        for(int y = x; y > 0; y--){
+            int z = N - x - y;
+            if(z <= y && z > 0){count++;}
+        }
+    }
+  return count;
+}
+int main() {
+    for(int N = 3; N <= 10; N++){
+        printf("When n = %i, number of triples is %i\n", N, count(N));
+    }
+    return 0;
+}</span><br>Output:<br>
+<span class="console">When n = 3, number of triples is 1
+When n = 4, number of triples is 1
+When n = 5, number of triples is 2
+When n = 6, number of triples is 3
+When n = 7, number of triples is 4
+When n = 8, number of triples is 5
+When n = 9, number of triples is 7
+When n = 10, number of triples is 8</span><li>(i) Prove that the group of all symmetries of a regular tetrahedron is isomorphic to $S_4$.<br>
+(ii) In lectures, it was shown that the group of rotations of a cube is also isomorphic to $S_4$. Prove that these two groups are not conjugate when considered as subgroups of the group of isometries of 3d space.<br>
+<strong>Solution.</strong><br>
+(i) The symmetries of a regular tetrahedron permute the 4 vertices, which defines a homomorphism from the full tetrahedral group to $S_4$. For injectivity, the kernel comprises isometry of $\Bbb R^3$ that fix all 4 vertices of the tetrahedron which can only be identity map since every point of $\Bbb R^3$ is expressible as a linear combination of the 4 vertices. For surjectivity, we can use that <q>transpositions generate the finitary symmetric group</q>: let the vertices be $A,B,C,D$, for any two vertices $A,B$, let $E$ be the midpoint of $AB$, then reflection about the plane $CDE$ will transpose $A,B$ and fix $C,D$.<br>
+(ii) Because conjugation preserves parity of a permutation, and all even permutations in $S_4$ are in $A_4$.
+<br><li><svg style="float:right" width="202.667" height="198.667"><path d="m853.59 1484.41 654.65-1053.859" style="fill:none;stroke:red;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(.13333 0 0 -.13333 0 198.667)"/><path d="M8.281 228.52 1508.24 430.551" style="fill:none;stroke:#0f0;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(.13333 0 0 -.13333 0 198.667)"/><path d="m1221.68 16.84 286.56 413.711" style="fill:none;stroke:#00f;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(.13333 0 0 -.13333 0 198.667)"/><path d="M8.281 228.52 853.59 1484.41" style="fill:none;stroke:#ff0;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(.13333 0 0 -.13333 0 198.667)"/><path d="M1221.68 16.84 853.59 1484.41" style="fill:none;stroke:#f0f;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(.13333 0 0 -.13333 0 198.667)"/><path d="M1221.68 16.84 8.281 228.52" style="fill:none;stroke:#0ff;stroke-width:20;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" transform="matrix(.13333 0 0 -.13333 0 198.667)"/></svg>
+<!--PostScript source code below
+300 300 translate
+30 rotate
+0.5 0.5 scale
+4 setlinewidth
+/a{117 -204}def
+/b{109 44}def
+/c{-163 -89}def
+/d{26 -247}def
+/s{setrgbcolor moveto lineto stroke}def
+a b 1 0 0 s
+a c 0 1 0 s
+a d 0 0 1 s
+b c 1 1 0 s
+b d 1 0 1 s
+c d 0 1 1 s
+-->
+(i) A frame is made in the shape of a regular tetrahedron and its edges are each coloured with one of $n$ colours. Show that there are$$\frac{n^6+3 n^4+8 n^2}{12}$$essentially different colourings of this frame.<br>
+(ii) Show that the number of different (labelled) colourings of the frame that contain one or more monochromatic triangles is $4 n^4-6 n^2+3 n$.<br>
+(iii) Explain why these lead to$$\frac{n^{2}\left(n^{2}+2\right)}{3}$$essentially different tetrahedra with one or more monochromatic triangles.<br>
+<strong>Solution.</strong><br>
+(i) The rotational symmetry group of a regular tetrahedron is $A_4$. $A_4$ acts on the set of colourings of 6 edges of the tetrahedron. Applying the orbit counting formula we arrive at the table<table class="tg" align="center"><thead><tr><th>$g$</th><th>conjugates</th><th>$\operatorname{fix}(g)$</th></tr></thead><tbody><tr><td>(1)(2)(3)(4)(5)(6)</td><td>1</td><td>$n^6$</td></tr><tr><td>(12)(34)(5)(6)</td><td>3</td><td>$n^4$</td></tr><tr><td>(123)(456)</td><td>4</td><td>$n^2$</td></tr><tr><td>(132)(465)</td><td>4</td><td>$n^2$</td></tr></tbody></table>$$\frac1{12}(n^6+3n^4+4n^2+4n^2)=\frac{n^6+3 n^4+8 n^2}{12}$$
+(ii) There are 6 edges, given 1 monochromatic triangle, 3 edges left, so $n^4$ colourings; given 2 monochromatic triangle, 1 edges left, so $n^2$ colourings; given 3 or 4 monochromatic triangle, then all edges are of the same colour, so $n$ colourings. Use the inclusion-exclusion principle, the number of colourings of the frame that contain one or more monochromatic triangles is $\left|⋃_{1≤i≤4}T_i\right|=∑_{1≤i≤4}|T_i|-∑_{1≤i< j≤4}|T_i∩T_j|+∑_{1≤i< j< k≤4}|T_i∩T_j∩T_k|-|T_1∩T_2∩T_3∩T_4|=\binom41n^4-\binom42n^2+\binom43n-\binom44n=4 n^4-6 n^2+3 n$, where $T_i\,(i=1,2,3,4)$ is the set of colorings such that the $i$th triangle is monochromatic.<br>
+(iii) $A_4$ acts on the set of colourings of 6 edges of the tetrahedron with at least 1 monochromatic triangle. Applying the orbit counting formula we arrive at the table<table class="tg" align="center"><thead><tr><th>$g$</th><th>conjugates</th><th>$\operatorname{fix}(g)$</th></tr></thead><tbody><tr><td>(1)(2)(3)(4)(5)(6)</td><td>1</td><td>$4n^4-6n^2+3n$</td></tr><tr><td>(12)(34)(5)(6)</td><td>3</td><td>$2n^2-n$</td></tr><tr><td>(123)(456)</td><td>4</td><td>$n^2$</td></tr><tr><td>(132)(465)</td><td>4</td><td>$n^2$</td></tr></tbody></table>$$\frac1{12}(4n^4-6n^2+3n+3(2n^2-n)+4n^2+4n^2)=\frac{1}{3} \left(n^4+2 n^2\right)$$
+Another solution (I doubt whether it is correct):<br>
+Given one monochromatic triangle, consider the symmetries of the tetrahedra that fix this triangle, they are the identity and two 120° rotations about the axis through the center of this triangle, forming a group isomorphic to $C_3$. For the identity there are $n^4$ colourings (3 edges and the triangle), for each of the two rotations there are $n^2$ colourings (3 edges of the same color and the triangle), so the number of orbits is  $\frac{1}{3} \left(n^4+2 n^2\right)$.
+</ul><br>
+<strong>Starter</strong><br>
+<strong>S1.</strong> What is the probability that two randomly chosen elements of $D_8$ commute?<br>
+<b>Solution.</b><br>
+$D_8$ has 5 conjugacy classes, by Q1, the probability that two randomly chosen elements commute is 5/8.<br><br>
+<strong>Pudding</strong><br>
+<strong>P1.</strong> Let $G$ be a group of size $n$ and let $p$ be a prime number. Assume that $p^{k}$ divides $n$ but $p^{k+1}$ does not divide $n$ for some $k∈\mathbb{N}$. The aim of this exercise is to prove one of Sylow's theorems: <span style="background-color:#fcf3cf">$G$ contains a subgroup of size $p^k$.</span><br>
+Let $Ω$ be the set of all subsets of $G$ of size $p^k$ and consider the left action of $G$ on $Ω$ defined by $g·A≔g A=\{g a \mid a∈A\}$ for each $g∈G$ and $A∈Ω$.<br>
+(i) Show that $p$ does not divide $|Ω|$.<br>
+(ii) Show that there is some orbit $O$ of $G$ on $Ω$ such that $p$ does not divide $|O|$. Let $A∈Ω$ and let $H=\operatorname{Stab}_G(A)$. Prove that $p^k$ divides $|H|$.<br>
+(iii) Prove that if $H$ is as in (ii) above then $|H|⩽p^k$ and conclude that $|H|=p^k$.<br>
+<strong>Proof.</strong><br>
+(i) Define $ν_p(a)≔\max\{v∈\Bbb N:p^v|a\}$ for $a∈\Bbb Z$ and extend it to $\frac ab∈\Bbb Q$ by $ν_p\left(\frac ab\right)≔ν_p(a)-ν_p(b)$. It is easy to see that (1) $ν_p(ab)=ν_p(a)+ν_p(b)$; (2) if $ν_p(a)< ν_p(b)$ then $ν_p(a±b)=ν_p(a)$. Now return to our problem:<br>
+For all $i∈\{1,⋯,p^k-1\}$, we have $p^k-i< p^k$, so $ν_p(p^k-i)< k$, but $ν_p(n-p^k)=k$, so apply (2) to get $ν_p(p^k-i)=ν_p\left((p^k-i)+(n-p^k)\right)=ν_p(n-i)$, so $ν_p\left(n-i\over p^k-i\right)=0$, apply (1) to get $ν_p\left(\prod\limits_{i=1}^{p^k-1}\frac{n-i}{p^k-i}\right)=0$, but $ν_p\left(n\over p^k\right)=0$, apply (1) to get $ν_p\left(\prod\limits_{i=0}^{p^k-1}\frac{n-i}{p^k-i}\right)=0$, but $|Ω|=\prod\limits_{i=0}^{p^k-1}\frac{n-i}{p^k-i}$ is an integer, therefore $p\nmid|Ω|$.<br>
+(ii) Since the sum of sizes of all orbits is $|Ω|$ which is indivisible by $p$, there must be an orbit $O$ whose size is indivisible by $p$. By Orbit-Stabilizer theorem, $|G|=|O|·|H|$, consequently $|H|$ is divisible by $p^k$.<br>
+(iii) By definition of stabilizer, $∀g∈H,gA=A$, so if $a∈A$ then $ga∈A$, so $Ha⊂A$, so $|H|=|Ha|⩽|A|=p^k$. By (ii), $|H|$ is a multiple of $p^k$, we conclude that $|H|=p^k$.<br><br>
+<h3>Official Solution</h3>
+<strong>P1.</strong> (i) Let $n=p^{k} m$ where $m$ is not divisible by $p$. We have
+$$
+|\Omega|=\left(\begin{array}{c}
+n \\
+p^{k}
+\end{array}\right)=m \prod_{i=1}^{p^{k}-1} \frac{n-i}{p^{k}-i}
+$$
+We claim that each fraction $\frac{n-i}{p^k-i}\left(1 \leqslant i \leqslant p^k-1\right)$ is equal to a reduced fraction with numerator coprime to $p$. Suppose that $p^{s}$ divides the numerator $n-i=p^{k} m-i$. Since $i< p^{k}$ it follows that $s< m$ and $p^s$ divides $i$. Therefore $p^s$ divides the denominator $p^k-i$. This proves the claim. It follows that $|\Omega|=A / B$ for integers $A, B \in \mathbb{N}$ where $p$ does not divide $A$. From $A=|\Omega| B$ it follows that $p$ does not divide $|\Omega|$.<br>
+(ii) Since $p$ does not divide $|\Omega|$ and $\Omega$ is partitioned into the orbits of $G$ it follows that there is some orbit, call it $O$ such that $p$ does not divide $|O|$. Let $H=\operatorname{Stab}_{G}(A)$ for some $A \in O$. By the Orbit-Stabilizer theorem $|G|=|H||O|$. Since $p^{k} /|G|$ and $\gcd(p,|O|)=1$ it follows that $p^{k} /|H|$. In particular $|H| \geqslant p^{k}$.<br>
+(iii) By the definition of $H$ and $A$ in (ii) we have $h A=A$ for all $h \in H$. Choose and fix $a \in A$. From $h a \in A$ for all $h \in H$ we obtain $H a \subseteq A$ and in particular
+$$
+p^{k}=|A| \geqslant|H a|=|H|
+$$
+Therefore $|H| \leqslant p^{k}$. From (ii) we have $|H| \geqslant p^{k}$ and hence $|H|=p^{k}$. So $G$ has a subgroup of size $p^{k}$.
+<br><br>
+<b>Supplement 1</b><br>
+Prove or disprove: If $H$ is a normal subgroup of $G$ such that $H$ and $G/H$ are abelian, then $G$ is abelian.<br>
+<b>Counterexample:</b><br>
+Let $T$ be the group of nonsingular upper triangular 2 × 2 matrices with entries in $\Bbb R$; that is, matrices of the form $\pmatrix{a&b\\0&c}$ where $a,b,c∈\Bbb R$ and $ac≠0$. Let $U$ consist of matrices of the form $\pmatrix{1&x\\0&1}$, where $x∈\Bbb R$.<br>
+Claim: $U$ is a subgroup of $T$.<br>
+Proof: Taking $x=0$, we see that the identity matrix is in $U$. The inverse of $\pmatrix{1&x\\0&1}$ is $\pmatrix{1&−x\\0&1}$, which is also in $U$. Finally,  $\left(\begin{array}{ll}1 & x \\ 0 & 1\end{array}\right)\left(\begin{array}{ll}1 & y \\ 0 & 1\end{array}\right)=\left(\begin{array}{cc}1 & x+y \\ 0 & 1\end{array}\right)$, which is in $U$.  $\Box$<br>
+Claim: $U$ is Abelian.<br>
+Proof: This follows from the formula for multiplication of elements of $U$ given above, together with the commutativity of addition in $\Bbb R$.<br>
+Claim: $U$ is normal in $T$.<br>Proof:
+\begin{aligned}\left(\begin{array}{ll}a & b \\ 0 & c\end{array}\right)\left(\begin{array}{ll}1 & x \\ 0 & 1\end{array}\right)\left(\begin{array}{ll}a & b \\ 0 & c\end{array}\right)^{-1} &=\left(\begin{array}{cc}a & a x+b \\ 0 & c\end{array}\right)\left(\begin{array}{cc}1 / a & -b /(a c) \\ 0 & 1 / c\end{array}\right) \\ &=\left(\begin{array}{cc}1 & a x / c \\ 0 & 1\end{array}\right) \end{aligned}
+Claim: $T/U$ is Abelian.<br>
+Proof: Note that $\left(\begin{array}{ll}a & b \\ 0 & c\end{array}\right)=\left(\begin{array}{ll}a & 0 \\ 0 & c\end{array}\right)\left(\begin{array}{cc}1 & b / a \\ 0 & 1\end{array}\right)$<br>
+so every coset in $T/U$ has a representative that is a diagonal matrices. Since diagonal matrices commute with each other, $T/U$ is commutative. Alternatively, note that
+\begin{aligned}\left(\begin{array}{ll}a & b \\ 0 & c\end{array}\right)\left(\begin{array}{cc}a^{\prime} & b^{\prime} \\ 0 & c^{\prime}\end{array}\right)\left(\begin{array}{ll}a & b \\ 0 & c\end{array}\right)^{-1}\left(\begin{array}{cc}a^{\prime} & b^{\prime} \\ 0 & c^{\prime}\end{array}\right)^{-1} &=\left(\begin{array}{cc}a a^{\prime} & a b^{\prime}+b c^{\prime} \\ 0 & c c^{\prime}\end{array}\right)\left(\begin{array}{cc}1 /\left(a a^{\prime}\right) & -\left(b^{\prime} c+b c^{\prime}\right) /\left(a c a^{\prime} c^{\prime}\right) \\ 0 & 1 /\left(c c^{\prime}\right)\end{array}\right) \\ &=\left(\begin{array}{cc}1 & \left(a b^{\prime}-b^{\prime} c\right) /\left(c c^{\prime}\right) \\ 0 & 1\end{array}\right) \end{aligned}
+Since $U$ contains the commutator subgroup of $T$, $T/U$ is abelian.
+<br><br>
+<b>Supplement 2</b><br>
+Let $G$ and $H$ be groups. Let $N_1⊲G$ and $N_2⊲H$. Then$$(G×H)/(N_1×N_2)≅ G/N_1×H/N_2$$ 
+<b>Proof.</b><br>
+Just apply the first isomorphism theorem to the homomorphism $$(g,h)\in G×H\mapsto (gN_1,hN_2)\in G/N_1×H/N_2.$$

@@ -1,0 +1,120 @@
+---
+mathjax: true
+tag: Group Theory
+excerpt: sheet 6 — HT 2022
+---
+<ol><li>(i) Explain why there is only one homomorphism from $\mathbb{Z}_{5}$ to $D_{8}$ but five homomorphisms from $\mathbb{Z}_{5}$ to $D_{10}$.<br>
+(ii) What are the normal subgroups $N$ of $S_{3}$ ? For each $N$, identify the quotient group $S_3 / N$.<br>
+(iii) Hence, or otherwise, explain why there are two homomorphisms from $S_3$ to $\mathbb{Z}_6$ and six homomorphisms from $S_3$ to $D_8$.<br>
+<strong>Solution.</strong><br>
+(i)Let $\phi$ be a homomorphism from $\Bbb{Z}_5$ to $D_8$. By first isomorphism theorem, $\Bbb{Z}_5/\kerϕ≌\operatorname{im}\phi$, so $5=\lvert\ker \phi\rvert\lvert\operatorname{im}\phi\rvert$. Since $|\operatorname{im}\phi|$ divides $5$ and $8$, $|\operatorname{im}\phi|=1$. Hence $\phi$ is the trivial map which sends every elements of $\Bbb{Z}_5$ to identity of $D_8$.&nbsp;&nbsp;<br>
+For the second part, write $\Bbb{Z}_5=\langle x\rangle$ and $D_{10}=\langle r,s|r^5=s^2=(rs)^2=1\rangle$.&nbsp;&nbsp;<br>
+$o(ϕ(x))|o(x)=5$, so $\operatorname{im}ϕ=⟨r⟩,ϕ(x)=r^i,i=0,1,2,3,4$, so we have five homomorphisms.<br>
+(ii)Conjugacy classes of $S_3$ have size 1,2,3 and a subgroup should contain $e$, we have $1|6,1+2|6,1+3\nmid6,1+2+3|6$, so the normal subgroups of $S_3$ are $\{e\},A_3,S_3$, and $S_3/\{e\}≌S_3,S_3/A_3≌C_2,S_3/S_3≌\{e\}$.<br>
+(iii)A homomorphism $ϕ$ from $S_3$ to $\Bbb Z_6$ has kernel $\{e\},A_3,$ or $S_3$.<br>
+If $\kerϕ=\{e\}$, then $|\operatorname{im}ϕ|=6$, so $\operatorname{im}ϕ=\Bbb Z_6$ is abelian but $S_3$ is non-abelian, so no such $ϕ$.<br>
+If $\kerϕ=A_3$, then $|\operatorname{im}ϕ|=2$, so $\operatorname{im}ϕ=\{\bar0,\bar3\}$, so $\phi$ sends even permutations to $\bar0$ and odd ones to $\bar3$.<br>
+If $\kerϕ=\Bbb Z_6$, then $|\operatorname{im}ϕ|=1$, so $ϕ$ is the trivial homomorphism.<br>
+For the second part, a homomorphism $ϕ$ from $S_3$ to $D_8$ has kernel $\{e\},A_3,$ or $S_3$.<br>
+If $\kerϕ=\{e\}$, then $|\operatorname{im}ϕ|=6\nmid8$, so no such $ϕ$.<br>
+If $\kerϕ=A_3$, then $|\operatorname{im}ϕ|=2$. Let $D_8=\{e,r,r^2,r^3,s,rs,r^2s,r^3s\}$, so $\operatorname{im}ϕ$ can be $\{e,r^2\},\{e,rs\},\{e,r^2s\},\{e,r^3s\}$, so $\phi$ sends even permutations to $\operatorname{im}ϕ$ and odd ones to $D_8∖\operatorname{im}ϕ$.<br>
+If $\kerϕ=\Bbb Z_6$, then $|\operatorname{im}ϕ|=1$, so $ϕ$ is the trivial homomorphism.<li>Let $G$ be a group and let $N$ be a normal subgroup of $G$. Let $H$ be a subgroup of $G$ with $H \geqslant N$.<br>
+(i) Show that $H / N=\{h N \mid h \in H\}$ is a subgroup of $G / N$.<br>
+(ii) Assume further that $H$ is a normal subgroup of $G$. Show that $H / N$ is a normal subgroup of $G$.<br>
+<strong>Solution.</strong><br>
+(i)Clearly, $H/N⊂G/N$. For any $h_1,h_2∈H,(h_1^{-1} N)(h_2N)=(h_1^{-1}h_2)N∈H/N$. Therefore $H/N≤G/N$.<br>
+(ii)For any $g∈G$, because $H⊲G$, we have $ghg^{-1}=h'∈H$; because $N⊲G$, we have $gNg^{-1}=N$.$$g(H/N)g^{-1}=\{ghNg^{-1}:h∈H\}=\{(ghg^{-1})(gNg^{-1}):h∈H\}=\{h'N:h∈H\}⊂H/N$$Therefore $H/N⊲G$.<li>Show that the group $S_n$ (right) acts on the set of subsets of $\{1,2, \ldots, n\}$ by $\rho(S, \sigma)=S \sigma$.<br>
+Show that there are $n+1$ orbits, one for each possible value of $|S|$. Show that if $|S|=k$ then $\operatorname{Stab}(S) \cong S_{k} \times S_{n-k}$.<br>
+<strong>Solution.</strong><br>
+For all $S⊂\{1,2,⋯,n\}$, $ρ(S,{\rm id})=S\,{\rm id}=S$, $ρ(ρ(S,σ_1),σ_2)=(Sσ_1)σ_2=S(σ_1σ_2)=ρ(S,σ_1σ_2)$.<br>
+$|S|=|Sσ|$. Conversely, for two subsets $\{a_i\},\{b_i\}$ of the same size $k∈\{0,1,⋯,n\}$, the permutation $σ=\pmatrix{a_1&amp;⋯&amp;a_k\\b_1&amp;⋯&amp;b_k}$ satisfies $ρ(\{a_i\},σ)=\{b_i\}$, so there are $n+1$ orbits.<br>
+If $|S|=k$ and $σ∈S_n$ such that $Sσ=S$, then $σ=σ_1σ_2$ where $σ_1∈\operatorname{Sym}S≌S_k$ and $σ_2∈\operatorname{Sym}(\{1,⋯,n\}∖S)≌S_{n-k}$. Conversely, for $σ_1∈\operatorname{Sym}S$ and $σ_2∈\operatorname{Sym}(\{1,⋯,n\}∖S)$, we have $Sσ_1σ_2=S$. Therefore $\operatorname{Stab}(S) \cong S_{k} \times S_{n-k}$.<li>Let $S$ denote the set of possible black-or-white colourings of the edges of an equilateral triangle. Explain why $|S|=8$.<br>
+The triangle's symmetry group $D_6$ acts naturally on $S$. How many orbits are there?<br>
+By listing an element from each orbit, show that there are 10 orbits if three colours are used.<br>
+<strong>Solution.</strong><br>
+Because each edge is black or white, number of colorings$=2^3=8$.<br>
+There are 4 orbits: each consists of colorings of $k$ white edges and $3-k$ black ones, $k=0,1,2,3$.<br>
+Denote three colors A,B,C, then a list of an element from each orbit is AAA,BBB,CCC,ABB,ACC,BAA,BCC,CAA,CBB,ABC.<li>(i) Show that $V_4=\{e,(12)(34),(13)(24),(14)(23)\}$ is a normal subgroup of $S_4$.<br>
+(ii) Let $H=\operatorname{Sym}\{1,2,3\}=\left\{σ∈S_4:4σ=4\right\}$. How many left cosets of $H$ are there?<br>
+Show that if $h_1,h_2∈H$ and $h_1V_4=h_2V_4$ then $h_1=h_2$.<br>
+(iii) Deduce that $S_4/V_4$ is isomorphic to $S_3$.<br>
+(iv) With the aid of diagrams, determine the number of essentially different ways there are of labelling the vertices of a rectangle as $1,2,3,4$. How do these diagrams relate to the cosets of $V_4$ in $S_4$?<br>
+<strong>Solution.</strong><br>
+(i) First, $V_4=⟨(12)(34),(13)(24)⟩$ is a subgroup of $S_4$. $V_4$ is a union of conjugacy classes $\{e\},\{(12)(34),(13)(24),(14)(23)\}$, so $V_4$ is a normal subgroup of $S_4$.<br>
+(ii) The number of left cosets of $H$ is $|S_4|/|H|=4!/3!=4$.<br>
+$h_1V_4=h_2V_4⇒∃v∈V_4:h_2=h_1v$. Therefore $4=4h_2=4h_1v=4v$. But the only element $v∈V_4$ that fixes $4$ is $v = e$, so $h_2=h_1e=h_1$.<br>
+(iii) Since $\lvert S_4/V_4\rvert=4!/4=6$, by (ii) six cosets $hV_4,h∈H$ are all distinct, so $S_4/V_4≌H≌S_3$.<br>
+(iv) $S_4$ generates all possible labelings. $V_4$ is symmetries of the rectangle, orbits are essentially different labeling. $S_4/V_4$ identifies not essentially different labelings. $H$ is relabellings of 123. Every essentially different labelling by permuting 123 in rectangle, and every permutation gives essentially different labeling, as in the figures below.</ul><br>
+&nbsp; &nbsp;&nbsp; &nbsp;{% latex %}\usepackage{tikz}
+\newcounter{i}
+\let\a1
+\let\b2
+\let\c3
+\def\swap#1#2{
+    \let\d#1
+    \let#1#2
+    \let#2\d
+}
+\def\rect#1#2#3{
+    \draw[xshift=3cm*\thei](-1,.5)node[label=135:#1]{}--(-1,-.5)node[label=-135:#2]{}--(1,-.5)node[label=-45:#3]{}--(1,.5)node[label=45:4]{}--cycle;
+}
+\begin{tikzpicture}[every node/.style={inner sep=0}]
+\loop
+\ifnum\thei<6
+\rect\a\b\c
+\ifodd\thei
+\swap{\a}{\c}
+\else
+\swap{\b}{\c}
+\fi
+\stepcounter{i}
+\repeat
+\end{tikzpicture}
+{% endlatex %}<br>
+<br>
+<strong>Starter</strong><br>
+<strong>S1.</strong> By constructing a homomorphism with the appropriate kernel and image and then applying the Isomorphism Theorem, demonstrate the following isomorphisms:<br>
+(i) $\mathbb{R}^*/\{±1\}≌(0,∞)$.<br>
+(ii) $\mathbb{C}^*/\{±1\}≌\mathbb{C}^*$.<br>
+(iii) $\mathbb{C}^*/S^1≌(0,∞)$.<br>
+(iv) $\mathbb{R}/\mathbb{Z}≌S^1$.<br>
+<strong>Solution.</strong><br>
+(i) $ϕ:\mathbb{R}^{*}→(0,∞),ϕ(x)=x^2$ is a homomorphism, $\kerϕ=\{±1\}$.<br>
+(ii) $ϕ:\mathbb{C}^{*}→\mathbb{C}^*,ϕ(x)=x^2$ is a homomorphism, $\kerϕ=\{±1\}$.<br>
+(iii) $ϕ:\mathbb{C}^{*}→(0,∞),ϕ(x)=|x|$ is a homomorphism, $\kerϕ=S^1$.<br>
+(iv) $ϕ:\mathbb{R}→S^1,ϕ(x)=e^{2πix}$ is a homomorphism, $\kerϕ=\mathbb Z$.<br>
+<br>
+<strong>Pudding</strong><br>
+<strong>P1.</strong> (i) Let $G$ be a group and $H$ a normal subgroup of $G$ with $|H|=n$. Further let $g∈G$ be such that $gH$ has order $m$ in $G/H$.<br>
+Show that $⟨g⟩H=\left\{g^kh:k∈\mathbb{Z},h∈H\right\}$ is a subgroup of $G$ of order $mn$.<br>
+(ii) Use this method to construct subgroups of $S_4$ of orders 8 and 12.<br>
+<strong>Solution.</strong><br>
+(i) Clearly $e∈⟨g⟩H$. For $k_1,k_2∈\mathbb{Z},h_1,h_2∈H$, $(g^{k_1}h_1)^{-1}g^{k_2}h_2=h_1^{-1}g^{-k_1+k_2}h_2=g^{-k_1+k_2}(h_3h_2)∈⟨g⟩H$ where $h_3=g^{k_1-k_2}h_1^{-1}g^{-k_1+k_2}∈H$ because $H⊲G$. By subgroup criterion, $⟨g⟩H≤G$.<br>
+What is the order of $⟨g⟩H$?<br>
+Have that $g H$ has order $m$ in $G / H$, so $(g H)^{m}$ is the identity in $G / H$, so $g^{m} \in H$, and moreover $g^{k} \notin H$ for $1 \leqslant k \leqslant m-1$ (or $g H$ would have smaller order in $G/H$).<br>
+Consider $\left\{g^k h: 0 \leqslant k \leqslant m-1, h \in H\right\}$. This must be $\langle g\rangle H$.<br>
+Can two of its elements be the same?<br>
+If $g^{k} h=g^{\ell} h^{\prime}$, WLOG $k \leqslant \ell$,<br>
+then $h=g^{\ell-k} h^{\prime} \in H$<br>
+so $g^{\ell-k} \in H$, so $k=\ell$.<br>
+So $\langle g\rangle H=\left\{g^{k} h: 0 \leqslant k \leqslant m-1, h \in H\right\}$, and this contains $m n$ distinct elements.<br>
+(ii) Consider $G=S_{4}$.<br>
+We have $V_{4} \unlhd S_{4}$ (see Q5), and $\left|V_{4}\right|=4$.<br>
+What is the order of $(12) V_{4}$ in $S_{4} / V_{4}$ ?<br>
+Well, clearly at most 2 , and $(12) V_{4} \neq V_{4}$ (as $(12)((12)(34)) \notin V_{4}$), so it has order 2 in $S_{4} / V_{4}$. So, by (i), $\langle(12)\rangle V_{4}$ is a subgroup of $S_{4}$ of order 8 .<br>
+What is the order of $(123) V_{4}$ in $S_{4} / V_{4}$ ?<br>
+A quick check shows that it's 3 .<br>
+So, by (i), $\langle(123)\rangle V_{4}$ is a subgroup of $S_{4}$ of order 12 .<br>
+<br>
+<strong>Supplement</strong><br>
+Show that not all 5 cycles are conjugate in $A_5$.<br>
+<strong>Solution.</strong> <a href="https://math.stackexchange.com/questions/464582/show-that-not-all-5-cycles-in-a-5-are-conjugate-in-a-5" target="_blank">https://math.stackexchange.com/q ... re-conjugate-in-a-5</a><br>
+The direct approach is to find two non-conjugate 5-cycles in $A_5$, so we need to:<br>
+• Start with a 5-cycle $(a\,b\,c\,d\,e)$<br>
+• Show that there exists another 5-cycle $(f\,g\,h\,i\,j)$ such that for all $ρ∈A_5$ we have $(aρ\,bρ\,cρ\,dρ\,eρ)≠(f\,g\,h\,i\,j)$<br>
+This is a rather cumbersome approach, though, especially since there are 5 equivalent but distinct ways to represent a given 5-cycle with this notation.<br>
+If you know that the order of a conjugacy class must divide the order of the group, then we can proceed much more simply. How many 5-cycles are there? 4!=24 (keep 1 fixed, and permute 4 others). What is the order of $A_5$? 5!/2=60 (half of permutations are even). And since 24 is bigger than 20, the largest proper divisor of 60, then it follows that there exist non-conjugate 5-cycles—with no need to mention any specifically. Incidentally, there are exactly 2 conjugacy classes of 5-cycles in $A_5$, those conjugate to (1 2 3 4 5) and those conjugate to (2 1 3 4 5).<br>
+<i>Remark.</i> By orbit-stabilizer theorem, the size of conjugacy class $[g]$ of the element $g$ in a finite group is$$|[g]|={|G|\over|C_G(g)|}\tag⋆$$where $C_G(g)$ is the centralizer of $g$ in $G$. Our knowledge about conjugacy classes in $S_5$ tells us that a 5-cycles has 24 conjugates in $S_5$. Let $\sigma\in S_5$ be a fixed 5-cycle. Formula (⋆) tells us that $C_{S_5}(\sigma)$ is of order five. As any element commutes with its powers, we can conclude that$$C_{S_5}(\sigma)=\langle \sigma\rangle.$$As this subgroup is contained in $A_5$, we can conclude that $$C_{A_5}(\sigma)=C_{S_5}(\sigma).$$Another application of Formula (⋆) then tells us that the conjugacy class of any 5-cycle in $A_5$ has exactly 12 elements. In other words, the $S_5$ conjugacy class splits in two.<hr class="l" />More detailed information can be obtained by studying the normalizer of a Sylow $5$-subgroup in $S_5$. There are six such Sylow subgroups, so their normalizers have order $20$. If we specify $\sigma=(12345), P_5=\langle\sigma\rangle$ we see that the 4-cycle $\beta=(2354)$ satisfies the relation$$\beta\sigma\beta^{-1}=[1\mapsto\beta(2)\mapsto\beta(3)\mapsto\beta(4)\mapsto\beta(5)\mapsto1]=(13524)=\sigma^2.$$Therefore $N_{S_5}(P_5)=\langle\sigma,\beta$ as the latter clearly normalizes $P_5$ and it has the correct order 20.<br>
+<br>
+The problem comes from the fact that $\beta\notin A_5$. Any element $\tau\in S_5$<br>
+with the property $\tau\sigma\tau^{-1}=\sigma^2$ has the property that $\tau\beta^{-1}$ must commute with $\sigma$. In other words we must have $\tau=\beta\sigma^k$ for some $k$. But all these permutations are odd and thus not available in $A_5$.

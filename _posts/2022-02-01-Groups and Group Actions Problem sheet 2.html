@@ -1,0 +1,103 @@
+---
+mathjax: true
+tag: Group Theory
+excerpt: sheet 2 — HT 2022
+---
+<ol><li>Three permutations $\alpha, \beta, \gamma$ of $\{1,2, \ldots, 11,12\}$ are given below. In each case express the permutation as a product of disjoint cycles.\begin{align*}<br>
+\alpha &amp;=\left(\begin{array}c<br>
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\<br>
+12 &amp; 6 &amp; 5 &amp; 7 &amp; 4 &amp; 8 &amp; 11 &amp; 2 &amp; 3 &amp; 9 &amp; 10 &amp; 1<br>
+\end{array}\right) \\<br>
+\beta &amp;=\left(\begin{array}c<br>
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\<br>
+12 &amp; 11 &amp; 10 &amp; 9 &amp; 8 &amp; 7 &amp; 6 &amp; 5 &amp; 4 &amp; 3 &amp; 2 &amp; 1<br>
+\end{array}\right) \\<br>
+\gamma &amp;=\left(\begin{array}c<br>
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 &amp; 11 &amp; 12 \\<br>
+2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 1 &amp; 9 &amp; 10 &amp; 8 &amp; 12 &amp; 7 &amp; 11<br>
+\end{array}\right)<br>
+\end{align*}What is the order of each permutation? Which are even and which are odd permutations? Write $\alpha^2, \alpha \beta, \gamma^{-1}$ as products of disjoint cycles.<br>
+<i>Solution.</i><br>
+$\alpha=(1\ 12)(2\ 6\ 8)(3\ 5\ 4\ 7\ 11\ 10\ 9),\beta=(1\ 12)(2\ 11)(3\ 10)(4\ 9)(5\ 8)(6\ 7),\gamma=(1\ 2\ 3\ 4\ 5\ 6)(7\ 9\ 8\ 10\ 12\ 11)$.<br>
+Order of $\alpha,\beta,\gamma$ is 21,2,6. $\alpha$ has 1 even cycles, so is odd. $\beta$ has 6 even cycles, so is even. $\gamma$ has 2 even cycles, so is even.<br>
+$\alpha^2=(2\ 8\ 6)(3\ 4\ 11\ 9\ 5\ 7\ 10),\alpha\beta=(2\ 7)(3\ 8\ 11)(4\ 6\ 5\ 9\ 10)$,$\gamma^{-1}=(6\ 5\ 4\ 3\ 2\ 1)(11\ 12\ 10\ 8,9,7)$.<li>There are five different types of cycle decomposition of {1,2,3,4}: the identity permutation, 2-cycles (e.g. (1 2)), 3-cycles (e.g. (1 2 3)), 4-cycles (e.g. (1 2 3 4)) and double transpositions (e.g. (1 2)(3 4)). How many are there of each type in $S_4$ ? (You should have 4!=24 permutations in all.)<br>
+What types of cycle decomposition arise among even permutations of {1,2,3,4,5} and how many are there of each type? (Note that $|A_5|=60$.)<br>
+<i>Solution.</i><br>
+In $S_4$ there are $\frac{4·3}2=6$ 2-cycles, $\frac{4·3·2}3=8$ 3-cycles, ${4!\over4}=6$ 4-cycles, $\frac{4!}{2·2·2}=3$ double transpositions.<br>
+In $A_5$ there are $\frac{5·4·3}3=20$ 3-cycles, ${5!\over5}=24$ 5-cycles, $\frac{5·4·3·2}{2·2·2}=15$ double transpositions.<li><div id="s2q3"></div>Let $\sigma$ be a permutation of $\{1, \ldots, n\}$ and let $k \in\{1, \ldots, n\}$. Show that$$\sigma^{-1}(123 \ldots k) \sigma=(1 \sigma 2 \sigma \ldots k \sigma).$$<i>Solution.</i><br>
+For $j\notin\{1\sigma,2\sigma,\ldots,k\sigma\}$, we have $j\sigma^{-1}\notin\{1,2,\ldots,k\}$, therefore $j\sigma^{-1}(123\ldots k)\sigma=j\sigma^{-1}\sigma=j$;<br>
+For $j\in\{1\sigma,2\sigma,\ldots,k\sigma\}$, we have $j=i\sigma,i\in\{1,2,\ldots,k\}$, therefore $j\sigma^{-1}(123\ldots k)\sigma=i(123\ldots k)\sigma=\begin{cases}(i+1)\sigma&amp;i≠k\\1\sigma&amp;i=k\end{cases}=j(1 \sigma 2 \sigma \ldots k \sigma)$.<hr class="l" />The permutations $\alpha,\beta,\gamma\in S_5$ are given by$$\alpha=(123)(45),\quad\beta=(1234),\quad\gamma=(23).$$Find $\left(\alpha\beta^5\gamma^3\alpha^2\gamma \beta^3\alpha^5\right)^3$.<br>
+<i>Solution.</i><br>
+Since $\alpha,\beta,\gamma$ has order 6,4,2 respectively, so we can simplify:<br>
+$\left(\alpha\beta^5\gamma^3\alpha^2\gamma \beta^3\alpha^5\right)^3=\left(\alpha\beta\gamma\alpha^2\gamma^{-1} \beta^{-1}\alpha^{-1}\right)^3=\alpha\beta\gamma(\alpha^2)^3\gamma^{-1} \beta^{-1}\alpha^{-1}=\alpha\beta\gamma\gamma^{-1} \beta^{-1}\alpha^{-1}=e$<li>(i) Let $\operatorname{sgn}(\sigma)$ denote the sign of a permutation $\sigma \in S_{n}$ (that is, $\operatorname{sgn}(\sigma)=1$ if $\sigma$ is even and $-1$ if $\sigma$ is odd). Show for $\sigma, \tau \in S_{n}$ that$$\operatorname{sgn}(\sigma \tau)=\operatorname{sgn}(\sigma) \operatorname{sgn}(\tau)$$(ii) Show that a permutation with odd order must be even. Does the converse hold?<br>
+(iii) The vertices of a regular pentagon are labelled clockwise 1 to 5. Show that every symmetry of the pentagon corresponds to an even permutation. How will the situation vary if the vertices are now arbitrarily labelled with the numbers 1 to 5 ?<br>
+<i>Solution.</i><br>
+(i)Take a decomposition of $\sigma$ into $m$ decompositions, a decomposition of $\tau$ into $n$ decompositions. $\operatorname{sgn}\sigma=(-1)^m,\operatorname{sgn}\tau=(-1)^n$. $\sigma\tau$ has decomposition into $m+n$ transpositions, so $\operatorname{sgn}(\sigma\tau)=(-1)^{m+n}=(-1)^m(-1)^n=\operatorname{sgn}\sigma\operatorname{sgn}\tau$.<br>
+(ii)When a permutation is decomposed into disjoint cycles, the least common multiple of the length of disjoint cycles in its decomposition equals the permutation's order. Therefore the decomposition of a permutation with odd order consists of cycles with odd order(=even cycles), by (i) the permutation is even.<br>
+The converse does not hold. The even permutation (1 2)(3 4) has order 2.<br>
+(iii)$ D_{10} = \{e, \rho, \rho^2, \rho^2, \rho^4, \sigma\rho, \sigma\rho^2, \sigma\rho^3, \sigma\rho^4 \} $ where $\rho = (1 \ 2 \ 3 \ 4 \ 5) = (1 \ 2)(1 \ 3)(1 \ 4)(1 \ 5)$ and $\sigma = (2 \ 5)(3 \ 4)$<br>
+So since both of them are even, every elements in the set are even.<br>
+If the vertices are arbitrarily labelled with the numbers 1 to 5, the labelling can be considered as a conjugation by Q3, therefore every symmetry of the pentagon corresponds to an even permutation.<li>(i) Show that $V_4=\{e,(12)(34),(13)(24),(14)(23)\}$ is an Abelian group.<br>
+(ii) Show that $V_4$ is isomorphic to $C_2\times C_2$.<br>
+(iii) How many isomorphisms are there from $V_4$ to $C_2\times C_2$?<br>
+<i>Solution.</i><br>
+(i)$(12)(34)(13)(24)=(14)(23)=(13)(24)(12)(34)$,$(13)(24)(14)(23)=(12)(34)=(14)(23)(13)(24)$,$(12)(34)(14)(23)=(13)(24)=(14)(23)(12)(34)$, and $e$ commutes with every element, so $V_4$ is an Abelian group.<br>
+(ii)Consider a bijection $f:V_4→C_2×C_2$ by $f(e)=(e,e),f((12)(34))=(e,g),f((13)(24))=(g,e),f((14)(23))=(g,g)$.<br>
+From $f((12)(34)(13)(24))=(e,g)(g,e)=(g,g)=f((14)(23)),f((12)(34)(14)(23))=(e,g)(g,g)=(g,e)=f((13)(24)),f((13)(24)(14)(23))=(g,e)(g,g)=(e,g)=f((12)(34))$<br>
+$f((13)(24)(12)(34))=(g,e)(e,g)=(g,g)=f((14)(23)),f((14)(23)(12)(34))=(g,g)(e,g)=(g,e)=f((13)(24)),f((14)(23)(13)(24))=(g,g)(g,e)=(e,g)=f((12)(34))$<br>
+we see that $f$ is an isomorphism.<br>
+(iii)There are 3!=6 bijections from $V_4$ to $C_2\times C_2$ that maps $e$ to $(e,e)$. We can check that each of them is an isomorphism.<li>(i) Find a permutation $\alpha\in S_7$ such that $\alpha^4=(2143567)$. Is $\alpha$ unique?<br>
+(ii) Find all permutations $\alpha\in S_7$ such that $\alpha^3=(1234)$.<br>
+(iii) Find permutations $\alpha,\beta\in S_5$ both with order 3 such that $\alpha\beta$ has order 5 .<br>
+(iv) Let $n \geqslant 3$. Find permutations $\alpha,\beta\in S_n$ both with order 2 such that $\alpha\beta$ has order $n$.<br>
+<i>Solution.</i><br>
+(i) Write $α$ as a product of disjoint cycles. Because disjoint cycles commute, we can consider their powers separately. The 4th power of 2-cycle, or 4-cycle is $e$. The 4th power of 3-cycle is 3-cycle but $α^4$ doesn't contain any 3-cycles, so $α$ doesn't contain any 3-cycles, similarly it doesn't contain any 5-cycles or 6-cycles. Therefore $α$ must be a 7-cycle. So $α=α^8=(α^4)^2=(2\ 1\ 4\ 3\ 5\ 6\ 7)^2=(1\ 3\ 6\ 2\ 4\ 5\ 7)$ and is unique.<br>
+(ii) The cube of 2-cycle is a 2-cycle, so $α$ contains no 2-cycles, similarly it contains no 5-cycles, 6-cycles, 7-cycles. The cube of 3-cycle is $e$. The cube of 4-cycle is its inverse, so $α$ contains a 4-cycle $(1\ 4\ 3\ 2)$. Therefore $α=(1\ 4\ 3\ 2)$ or $α=(1\ 4\ 3\ 2)(5\ 6\ 7)$ or $α=(1\ 4\ 3\ 2)(5\ 7\ 6)$.<br>
+(iii) $(1\ 2\ 3)(3\ 4\ 5)=(1\ 2\ 4\ 5\ 3)$.<br>
+(iv) $⟨\alpha,\beta⟩=D_{2n}$. For even $n$ take $α=(1\ n)(2\ n-1)⋯\left(\frac{n}2\ \frac{n+2}2\right),β=(2\ n)(3\ n\!-\!1)⋯\left(\frac{n}2\ \frac{n+4}2\right)$, then $αβ=(1\ 2⋯n)$.<br>
+For odd $n$ take $α=(1\ n)(2\ n\!-\!1)⋯\left(\frac{n-1}2\ \frac{n+3}2\right),β=(2\ n)(3\ n\!-\!1)⋯\left(\frac{n+1}2\ \frac{n+3}2\right)$, then $αβ=(1\ 2⋯n)$.<br>
+</ul><br>
+<strong>S1.</strong> Here are two permutations in $S_{10}$. Write each as a product of disjoint cycles.$$\alpha=\left(\begin{array}c1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\ 1 &amp; 3 &amp; 6 &amp; 10 &amp; 2 &amp; 7 &amp; 8 &amp; 9 &amp; 4 &amp; 5\end{array}\right)$$$$\beta=\left(\begin{array}l1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 10 \\ 4 &amp; 8 &amp; 5 &amp; 3 &amp; 2 &amp; 9 &amp; 6 &amp; 1 &amp; 7 &amp; 10\end{array}\right)$$What is the order of each?<br>
+Find each of the following products (using disjoint cycle notation): $\alpha \beta, \beta \alpha, \alpha^{2} \beta, \alpha^{-7} \beta^{-5}$, $\alpha \beta^{3}$.<br>
+<i>Solution.</i><br>
+We have $\alpha=\left(\begin{array}{llllll}2 &amp; 3 &amp; 6 &amp; 7 &amp; 8 &amp; 9 &amp; 4 &amp; 10 &amp; 5\end{array}\right)$ and $\beta=\left(\begin{array}{llll}1 &amp; 4 &amp; 3 &amp; 5 &amp; 2 &amp; 8\end{array}\right)\left(\begin{array}{ll}6 &amp; 9 &amp; 7\end{array}\right)$.<br>
+This shows that $\alpha$ has order 9, and $\beta$ has order 6 (the least common multiple of 6,3 and 1).<br>
+We have\begin{align*} \alpha \beta &amp;=\left(\begin{array}{llllll}1 &amp; 4 &amp; 10 &amp; 2 &amp; 5 &amp; 8 &amp; 7\end{array}\right)\left(\begin{array}{ll}3 &amp; 9\end{array}\right) \\ \beta \alpha &amp;=\left(\begin{array}{lllll}1 &amp; 10 &amp; 5 &amp; 3 &amp; 2 &amp; 8\end{array}\right)\left(\begin{array}{ll}4 &amp; 6\end{array}\right) \\ \alpha^{2} \beta &amp;=\alpha(\alpha \beta)=\left(\begin{array}{llll}1 &amp; 4 &amp; 2 &amp; 9 &amp; 10 &amp; 8 &amp; 3 &amp; 6\end{array}\right) \\ \alpha^{-7} \beta^{-5} &amp;=\alpha^{2} \beta\quad\text { since } \alpha^{9}=e=\beta^{6} \\ \alpha \beta^{3} &amp;=\left(\begin{array}l2 &amp; 3 &amp; 6 &amp; 7&amp;8 &amp; 9 &amp; 4 &amp; 10 &amp; 5\end{array}\right)\left(\begin{array}{lll}1 &amp; 4 &amp; 3 &amp; 5 &amp; 2 &amp; 8\end{array}\right)^{3} \quad\text { since disjoint cycles commute and }(697)^{3}=e \\ &amp;=\left(\begin{array}{llll}1 &amp; 5 &amp; 4 &amp; 10\end{array}\right)\left(\begin{array}{ll}2 &amp; 8 &amp; 9\end{array}\right)(\begin{array}l3&amp;6&amp;7\end{array}) \end{align*}<strong>S2.</strong> Which permutations in $S_4$ are even?<br>
+<i>Solution.</i><br>
+The possible cycle types in $S_4$ are listed in Q2 of the main course of this sheet. A $k$-cycle is even if and only if $k$ is odd, and we need an even number of odd cycles in the cycle type. (“A permutation is even if and only if its cycle type has an even number of cycles of even length.”)<br>
+So we see that the cycle types in $S_4$ corresponding to even permutations are the identity, the 3-cycles, and the double transpositions.<br>
+<strong>S3.</strong> How many permutations in $S_{6}$ have order 6 ?<br>
+<i>Solution.</i><br>
+A permutation in $S_{6}$ has order 6 if it has cycle type 6 (a single 6-cycle) or 3, 2, 1.<br>
+There are $5 !=120$ 6-cycles in $S_{6}$ : we may assume that 1 appears first, since cycling the elements within a cycle doesn't change it, and then there are $5 !$ ways to arrange the remaining elements.<br>
+Now we count the elements with cycle type 3,2,1. There are 6 possible elements to go in the 1-cycle. Then we can choose the two elements for the transposition in $\left(\begin{array}{l}5 \\ 2\end{array}\right)=10$ ways. Finally, there are 2 possible 3-cycles made up of the remaining elements (for example $\left(\begin{array}{lll}1 &amp; 2 &amp; 3\end{array}\right)$ and $\left(\begin{array}{lll}1 &amp; 3 &amp; 2\end{array}\right)$ ). So there are $6 \times 10 \times 2=120$ elements of this cycle type.<br>
+This gives a total of $120+120=240$ elements in $S_6$ with order 6.<br>
+<br>
+<strong>P1.</strong> What is the largest possible order of an element in $S_5$? In $S_9$? What is the smallest $n$ for which an element of largest order in $S_n$ must have three cycles (in disjoint cycle<br>
+notation)?<br>
+<i>Solution.</i><br>
+We use disjoint cycle notation, because the order of a permutation written in disjoint cycle notation is the least common multiple of the lengths of the cycles.<br>
+In $S_5$, we can have an element of order 6, for example (1 2 3)(4 5). By thinking about the possible cycle types, we find that this is the largest possible order.<br>
+In $S_9$, we can have an element of order 20, for example (1 2 3 4 5)(6 7 8 9). This is the largest possible.<br>
+In $S_9$, an element of largest order can have two cycles. We can check values up to 8. It is clear that if $n≤4$ then an element of largest order in $S_n$ does not have three cycles, and we have seen that in $S_5$ there is an element of largest order with two cycles, so we concentrate on checking $6≤n≤8$.<br>
+$n = 6$: the largest possible order is 6, which can be obtained with (1 2 3 4 5 6).<br>
+$n = 7$: the largest possible order is 12, which can be obtained with (1 2 3 4)(5 6 7).<br>
+$n = 8$: the largest possible order is 15, which can be obtained with (1 2 3 4 5)(6 7 8).<br>
+So the smallest $n$ for which an element of largest order in $S_n$ must have three cycles is at least 10.<br>
+Checking $n = 10$, we find that the largest order of an element of $S_{10}$ is 30, which is achieved only with three cycles (for example (1 2 3 4 5)(6 7 8)(9 10)).<br>
+<strong>P2.</strong> For each of the following sets $X_i$, determine whether every permutation in $S_n$ can be written as a product of elements of $X_i$.<br>
+(i) $X_{1}=\{(j\ j+1): 1 \leqslant j&lt;n\}$<br>
+(ii) $X_{2}=\{(1\ k): 1&lt;k \leqslant n\}$<br>
+(iii) $X_{3}=\{(1\ 2),(1\ 2\ \ldots\ n)\}$.<br>
+<i>Solution.</i><br>
+(i) Every permutation in $S_n$ can be written as a product of elements of $X_1$.<br>
+We already know that every permutation can be written as a product of transpositions, so it suffices to show that every transposition can be written as a product of elements of $X_1$.<br>
+We can build up, for example we can obtain transpositions of the form $(j\ j+2)$ via $(j\ j+1)(j+1\ j+2)(j\ j+1)$.<br>
+One nice way to think about this is as conjugation, see <a href="#s2q3">Q3 of the main course on this sheet</a>.<br>
+(ii) Again, every permutation in $S_n$ can be written as a product of elements of $X_2$.<br>
+Again it is enough to show that every transposition can be written as a product of elements of $X_2$, and $(j\ k) = (1\ j)(1\ k)(1\ j)$. (This is another instance of conjugation as in Q3.)<br>
+(iii) Perhaps surprisingly, every permutation in $S_n$ can be written as a product of elements of $X_3$.<br>
+Conjugating (1 2) by a suitable power of $(1\ 2\ \ldots\ n)$ allows us to write every element of $X_1$ as a product of elements of $X_3$, and then we are done by (i).<br>
+<strong>P3.</strong> If we choose a permutation in $S_n$ at random, with all permutations being equally likely, what is the probability that our chosen permutation has exactly one 1-cycle?<br>
+To find the probability, we can find the number of permutations in $S_n$ that have exactly one 1-cycle, and then divide by the number of permutations in $S_n$, that is, divide by $n!$.<br>
+There are $n$ possible elements that could be in the 1-cycle. We then want permutations of the remaining $n − 1$ elements that do not fix any elements. These are called <i>derangements</i>. One elegant way to count derangements is called the <i>inclusion-exclusion</i> principle, which you might have seen on <a href="/?dir=116/1.html" target="_blank">Sheet 1</a> of the Probability course last term.
