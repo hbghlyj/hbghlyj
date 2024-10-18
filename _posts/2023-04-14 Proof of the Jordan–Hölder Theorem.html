@@ -1,0 +1,43 @@
+---
+tag: Group Theory
+mathjax: true
+excerpt: P.J.Cameron MTHM024 QMUL <a href="https://webspace.maths.qmul.ac.uk/p.j.cameron/MTHM024/gn3.pdf">Note 3</a> Proof of the Jordan–Hölder Theorem
+---
+<p>Recall that we are proving that any two composition series for a group $G$ have the same length and give rise to the same list of composition factors.</p>
+The proof is by induction on the order of $G$. We suppose the theorem true for groups smaller than $G$. Let
+\[G = G_0⊲G_1⊲G_2⊲⋯⊲G_r=\{1\}\]
+and
+\[G = H_0⊲H_1⊲H_2⊲· · ·⊲H_s=\{1\}\]
+be two composition series for $G$.
+<h4>Case 1: $G_1=H_1$.</h4> Then the parts of the series below this term are composition series for $G_1$ and so have the same length and composition factors. Adding in the composition factor $G / G_1$ gives the result for $G$.
+<h4>Case 2: $G_1 ≠ H_1$.</h4> Let $K_2=G_1 ∩ H_1$, a normal subgroup of $G$, and take a composition series
+$$
+K_2 ▹ K_3 ▹ ⋯ ▹ K_t=\{1\}
+$$
+for $K_2$.
+We claim that $G_1 / K_2 ≅ G / H_1$ and $H_1 / K_2 ≅ G / G_1$. If we can prove this, then the two composition series
+$$
+G_1▹G_2▹⋯▹\{1\}
+$$
+and
+$$
+G_1▹K_2▹K_3▹⋯▹\{1\}
+$$
+for $G_1$ have the same length and composition factors; the composition factors of $G$ using the first series are these together with $G / G_1$. A similar remark holds for $H_1$. So each of the given composition series for $G$ has the composition factors in the series for $K_2$ together with $G / G_1$ and $G / H_1$, and the theorem is proved. So it only remains to establish the claim.
+<hr>
+Now $G_1 H_1$ is a normal subgroup of $G$ properly containing $G_1$; so $G_1 H_1=G$. Thus, by the Third Isomorphism Theorem,
+$$
+G / G_1=G_1 H_1 / G_1 ≅ H_1 / G_1 ∩ H_1=H_1 / K_2
+$$
+and similarly $G / H_1 ≅ G_1 / K_2$. Thus the claim is proved.
+The following picture might make this proof clearer. The last part of the proof shows that the quotient groups corresponding to opposite sides of the parallelogram at the top of the figure are isomorphic.
+{% latex display:block;margin:auto %}\usepackage{xypic}
+$\xymatrix@C=1em{
+&&G\ar[dl]\ar[dr]\\
+&G_1\ar[dl]\ar[dr]&&H_1\ar[dl]\ar[dr]\\
+G_2\ar[d]&&K_2\ar[d]&&H_2\ar[d]\\
+G_3\ar@{-->}[d]&&K_3\ar@{-->}[d]&&H_3\ar@{-->}[d]\\
+G_{r-1}\ar[drr]&&K_{t-1}\ar[d]&&H_{s-1}\ar[dll]\\
+&&\{1\}&
+}$
+{% endlatex %}
