@@ -1,0 +1,63 @@
+---
+tag: Group Theory
+mathjax: true
+excerpt: sheet 2 — TT 2023
+---
+<style>div.q{background: #f8f9fa;border: 1px solid #aaa;padding: 0.2em;display: list-item;counter-increment: q;}div.q::marker{content: counter(q)". ";}div.noprint{border: solid 1px black;padding: 5px; width: max-content;max-width: 99%;}</style>
+<div class="q">Let $A_∞$ denote the even permutations of ℕ which fix all but finitely many elements: that is $A_∞$ is the union$$A_∞=\bigcup_{n=1}^∞ A_n$$where $A_n ⊂ A_{n+1}$ in the natural way. Show that $A_∞$ is an infinite simple group.</div>Let $N$ be a nontrivial normal subgroup of $A$, so there exists $g ∈ N ∖ \{1\}$. We want to prove that $N=G$.
+Since $A_∞=⋃_{n≥ 5}A_n$, there exists $n≥5$ such that $g∈A_n$.
+By <a href="https://groupprops.subwiki.org/wiki/Normality_satisfies_transfer_condition">transfer condition</a> $N∩A_n⊴ A_n$
+Since $N∩A_n$ contains $g$, it is non-trivial.
+Since $A_n$ is simple, $N∩A_n=A_n$, that is $N⊇ A_n$. Taking $n$ arbitrarily large, $N=A_∞$.<div class="noprint"><a href="https://groupprops.subwiki.org/wiki/Finitary_alternating_groups_are_simple">Finitary alternating groups are simple</a>
+<a href="https://math.stackexchange.com/questions/1079228">An infinite alternating group is simple</a></div><h3>Alternate method</h3>Let $N$ be a nontrivial normal subgroup of $A_∞$, so there exists $g∈N ∖\{1\}$. We want to prove that $N=G$, so let $h∈G$, and we will prove that $h∈N$.
+Let Δ be the set of all points moved by either $g$ or by $h$. So Δ is finite. If |Δ|$&lt;5$, then adjoin finitely many more points to Δ to get |Δ|$≥5$.
+Let $H$ be the subgroup of $G$ consisting of elements that fix all points in $ℕ∖$Δ. So $H$ is isomorphic to the alternating group on Δ, which is simple.
+Now $N∩H⊴H$, so $N∩H=\{1\}$ or $N∩H=H$. Since $g∈N∩H$, we have $N∩H=H$, but $h∈H$, so $h∈N$.
+<div class="q">Let $G$ be a group and $[G,G]$ its commutator subgroup (derived subgroup).
+Show that $[G,G]≤H≤G$ if and only if $H⊴G$ and $G/H$ is Abelian.</div><ol type="i"><li>$G/H$ is Abelian$⇒∀x,y∈G:Hxy=Hyx⇒Hxyx^{-1}y^{-1}=H⇒[x,y]=xyx^{-1}y^{-1}∈H⇒[G,G]≤H$.</li><li>$[G,G]≤H≤G⇒∀g∈G,h∈H:ghg^{-1}=[g,h]h∈H⇒H⊴G$
+$[G,G]≤H⇒∀x,y∈G:[x,y]=xyx^{-1}y^{-1}∈H⇒Hxyx^{-1}y^{-1}=H⇒Hxy=Hyx⇒G/H$ is Abelian.
+</li></ol><div class="q">A sequence$$…\stackrel{ϕ_{i-2}}→G_{i-1}\stackrel{ϕ_{i-1}}→G_i\stackrel{ϕ_i}→…$$of groups and homomorphisms is called <i>exact</i> at $G_i$ if$$\kerϕ_i=\operatorname{im}ϕ_{i-1}$$Show that if $N⊴G$ then$$1→N→G→G / N→1$$is exact at $N, G$ and $G / N$, where the middle two maps are inclusion and the canonical quotient map.</div>exact at $N$ since inclusion map is injective
+exact at $G$ since kernel of quotient map = image of inclusion map = <i>N</i>
+exact at $G/N$ since quotient map is surjective
+<div class="q">Verify Sylow's Theorems for the following groups$$S_3,D_{12},A_4,S_4.
+$$</div>In $S_3$ there are 3 Sylow 2-subgroups ⟨(12)⟩, ⟨(13)⟩, ⟨(23)⟩ and 1 Sylow 3-subgroup ⟨(123)⟩.
+$6=2×3$. We note $n_2|3,n_2≡1\pmod2$ and $n_3|2,n_3≡1\pmod3$ as expected.<hr>In $D_{12}$ there is 3 Sylow 2-subgroups $⟨r^3,s⟩,⟨r^3,sr^2⟩,⟨r^3,sr^4⟩$ and 1 Sylow 3-subgroup $⟨r^2⟩$.
+$12=2^2×3$. We note $n_2|3,n_2≡1\pmod2$ and $n_3|2^2,n_3≡1\pmod3$ as expected.<hr>In $A_4$ there is 1 Sylow 2-subgroup {(1), (12)(34), (13)(24), (14)(23)} = ⟨(12)(34),(14)(23)⟩,
+                         4 Sylow 3-subgroups ⟨(123)⟩, ⟨(134)⟩, ⟨(124)⟩, ⟨(234)⟩.
+$12=2^2×3$. We note $n_2|3,n_2≡1\pmod2$ and $n_3|2^2,n_3≡1\pmod3$ as expected.<hr>In $S_4$ there is 4 Sylow 3-subgroups ⟨(123)⟩, ⟨(134)⟩, ⟨(124)⟩, ⟨(234)⟩ and 3 Sylow 2-subgroups (isomorphic to $D_8$)
+{1, (12), (34), (12)(34), (13)(24), (14)(23), (1324), (1423)}
+{1, (13), (24), (12)(34), (13)(24), (14)(23), (1234), (1432)}
+{1, (14), (23), (12)(34), (13)(24), (14)(23), (1342), (1243)}
+$24=2^3×3$. We note $n_2|3,n_2≡1\pmod2$ and $n_3|2^3,n_3≡1\pmod3$ as expected.<div class="noprint"><a href="https://www.math.arizona.edu/~cais/594Page/soln/soln4.pdf">Exhibit all Sylow 3-subgroups of $S_4$ and $A_4$.</a>
+<a href="https://math.stackexchange.com/questions/3080776">Sylow 2 subgroups of S4</a></div><div class="q">Let $P$ be a non-trivial group of order $p^m$ where $p$ is prime (so $P$ is a '$p$-group'). By considering the conjugation action of $P$ on itself prove that the centre$$Z(P)=\{z∈P:zx=xz\text{ for all }x∈P\}$$is nontrivial.
+Deduce, using induction on $m$, that $P$ is solvable. What can you say if $m=2$?</div><div class="noprint">UTM Armstrong  groups and symmetry, page 95 (17.4)
+<a href="http://mathonline.wikidot.com/burnside-s-theorem-for-p-groups">Burnside's Theorem for p-Groups</a>
+</div>$P$ acts on $P$ by conjugation. By Orbit-Stabilizer theorem, the size of each orbit divides $|P|$ so is either 1 or a power of $p$. If Z(<i>P</i>) is trivial, there is only 1 orbit of size 1, so ${|P|}≡1\pmod p$, contradiction.<hr>For $m=1$ our group is a cyclic group of prime order thus it is solvable by definition. Let the statement hold for all <i>m</i> ≤ <i>k</i>. Since Z(<i>P</i>) ≠ {e}. Also Z(<i>P</i>) is a normal subgroup of <i>P</i> and Z(<i>P</i>) is abelian. Thus Z(<i>P</i>) is solvable.
+If <i>P</i>/Z(<i>P</i>) is trivial then <i>G</i> = Z(<i>G</i>) thus <i>G</i> is abelian hence it is solvable.
+If <i>P</i>/Z(<i>P</i>) is nontrivial then |<i>G</i>/Z(<i>G</i>)| = <i>p<sup>m</sup></i>, <i>m</i> &lt; <i>n</i>, by hypothesis it is solvable, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29819/mod_resource/content/1/lecturesGroups17.pdf#page=31&zoom=auto,-78,682">Theorem 59(i)</a> <i>G</i> is solvable.<hr>When $m=2$, $P$ is either cyclic or isomorphic to $ℤ_p×ℤ_p$.
+Proof. Suppose $|P|$ is $p^2$. If $P$ contains an element of order $p^2$, then it is cyclic. Otherwise, all elements except $e$ have order $p$. By above $Z(P)$ is non-trivial, so choose $x≠e$ from $Z(P)$ and choose $y∉⟨x⟩$.
+The $p^2$ elements $x^i y^j,1⩽i,j⩽p$ are distinct:
+     Suppose $x^iy^j=e$, let $k$ be the inverse of $j$ in $ℤ_p$, then $e=(x^iy^j)^k=x^{ik}y$, contradicting $y∉⟨x⟩$
+Therefore, $⟨x⟩⟨y⟩=G$.
+$x∈Z(G)⇒⟨x⟩⊂Z(G)⇒$Every element of $⟨x⟩$ commutes with every element of $⟨y⟩$. So $G≅⟨x⟩×⟨y⟩≅ℤ_p×ℤ_p$.<div class="noprint"><a href="http://mathonline.wikidot.com/every-p-group-is-solvable">Every p-Group is Solvable</a></div><div class="q">Show that every group of order 350 is solvable.</div>Let $G$ be a group, ${|G|}=350=2×5^2×7$.
+Let $n_5$ be the number of 5-subgroups of $G$. $n_5|14,n_5≡1\pmod5⇒n_5=1$.
+Let $H$ be the unique Sylow 5-group, ${|H|}=25$, by last part of Q5, $H$ is solvable and ${|G/H|}=2×7$.
+A group of order $2p$ is either cyclic or dihedral, so $G/H$ is solvable. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29819/mod_resource/content/1/lecturesGroups17.pdf#page=31&zoom=auto,-78,682">Theorem 59(i)</a> $G$ is solvable.<hr>Alternate proof:
+$350≡2\pmod4$, so $G$ has a index-2 subgroup $H⇒H$ is normal, ${|H|}=175=5^2×7$.
+Let $n_7$ be the number of Sylow 7-subgroups of $H$. $n_7|25,n_7≡1\pmod7⇒n_7=1$.
+Let $P$ be the unique Sylow 7-subgroup, $P$ is cyclic, ${|H/P|}=25$.
+By Q5, a group of order $p^2$ is abelian, so $G$ is solvable.<hr>Lemma: a group of order $4n+2$ has an index-2 subgroup.
+Proof 1: Sylow first theorem
+Proof 2:
+Let $G=\{g_1,…,g_{4n+2}\}$. For any $g∈G$, define $σ_g∈S_{|G|}$ as the permutation $σ_g(g_i)=g⋅g_i$.
+The map $ϕ:G→\{±1\},ϕ(g)=\operatorname{sign}σ_g$ is a homomorphism.
+By Cauchy's theorem ∃ $g∈G$ of order 2, then $σ_g$ has order $2$ in $S_{|G|}$, but $g≠\text{id}$, $σ_g$ has no fixed points, so $σ_g$ is a product of $2n+1$ disjoint transpositions, $ϕ(g)=-1$, so $ϕ(G)=\{±1\}$, first isomorphism theorem $G/ϕ^{-1}(1)≅\{±1\}$.
+<div class="q">Let $G$ be a group of order 30.<ol type="i"><li>Show that either:<ol><li>there is a normal subgroup $N$ of order 5 and a subgroup $H$ of order 3, or</li><li>there is a normal subgroup $N$ of order 3 and a subgroup $H$ of order 5.</li></ol>Deduce that $G$ has a normal subgroup $K$ isomorphic to $C_{15}$.</li><li>Let $y$ be a generator of $K$ and let $x$ be an order 2 element. Show that$$G=\left\{x^i y^j: 0≤i≤1,0≤j≤14\right\}$$</li><li>Let $ψ∈\operatorname{Aut}(K)$ satisfy $ψ^2=\text{id}_K$. Show that $ψ:y↦y^i$ where $i∈\{1,4,11,14\}$.</li><li>Deduce that there are exactly four groups of order 30, up to isomorphism.</li></div><ol type="i"><li>Let $n_p$ be the number of $p$-Sylow subgroups of $G$. By Sylow, $n_3∈\{1,10\}$ and $n_5∈\{1,6\}$.
+If $n_3=10$ and $n_5=6$, there are 20 elements of order 3 and 24 elements of order 5, more than 30 elements.
+So either the $3$-Sylow subgroup $P_3$ or the $5$-Sylow subgroup $P_5$ is normal$⇒K=P_3P_5$ is a subgroup of $G$ of order 15. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/29819/mod_resource/content/1/lecturesGroups17.pdf#page=45&zoom=auto,-78,630">Proposition 95</a>, $3∤5-1⇒K≅C_{15}$.</li><li>$2∤15⇒x∉K⇒K∩xK=∅$ but ${|K|}={|xK|}=15$, so $G=K∪xK$, so $K⊲G$.</li><li>Let $K=\{1,a,…,a^{14}\}$, then $ψ(a)=a^i$. For any $y=a^k∈K$,\[ψ(a^k)=ψ(a)^k=(a^i)^k=(a^k)^i=y^i\]$ψ^2=\text{id}_K⇒a=ψ^2(a)=a^{i^2}⇒i^2≡1\pmod{15}⇒i∈\{1,4,11,14\}$.</li><li>$G=K⟨x⟩,K⊲G⇒G≅K⋊_φ⟨x⟩$. To find all homomorphisms $⟨x⟩→\operatorname{Aut}(K),x↦ψ$, then $1=x^2↦ψ^2=\text{id}_K$
+By (iii) $ψ:y↦y^i$ where $i∈\{1,4,11,14\}$, this shows that there are at most four groups of order $30$$$G=\left&lt;x,y|x^2,y^{15},xyx=y^i\right>$$For $i=1,φ(x^ay^b)=x^ay^b,G≅ℤ_{30}$
+For $i=4,φ(x^ay^b)=x^ay^{-b},G≅ℤ_3×D_5$
+$k=y^5⇒xkx=(y^4)^5=y^{20}=k⇒k$ commutes with $x$
+$w=y^3⇒xwx=y^{12}=w^{-1}⇒G=⟨k⟩×⟨x,w⟩≅ℤ_3×D_5$
+For $i=11,φ(x^ay^b)=x^{-a}y^b,G≅ℤ_5×D_3$
+For $i=14,φ(x^ay^b)=x^{-a}y^{-b},G≅D_{15}$<br>Check centers: $ℤ_2,ℤ_3,ℤ_5,\{e\}$ are not isomorphic, so the four groups are not isomorphic.</li></ol>
