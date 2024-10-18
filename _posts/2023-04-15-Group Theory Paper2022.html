@@ -9,7 +9,7 @@ excerpt: Group Theory 2022 Paper
 </li>
 <li>Let a group be defined as:
 $$
-D_{2 n}=\left⟨a, b ∣ a^n=b^2=1, b a b^{-1}=a^{-1}\right⟩
+D_{2 n}=\left< a, b ∣ a^n=b^2=1, b a b^{-1}=a^{-1}\right>
 $$
 where $n>1$.<br>
 Prove that $D_{2 n}$ consists of<br>
@@ -59,17 +59,17 @@ So the centre is<br>
 {\left[b a^i, b a^j\right]=b a^i b a^j a^{-i} b a^{-j} b=a^{j-2 i} a^j=a^{2(j-i)},} \\
 {\left[a^i, a^j\right]=1 .}
 \end{gathered}
-so the commutator $D_{2n}^{(2)}=\left⟨a^2\right⟩$ is Abelian and $D_{2n}^{(n)}=1$ for $n>2$.
+so the commutator $D_{2n}^{(2)}=\left< a^2\right>$ is Abelian and $D_{2n}^{(n)}=1$ for $n>2$.
 <p><a href="https://courses.maths.ox.ac.uk/pluginfile.php/29819/mod_resource/content/1/lecturesGroups17.pdf#page=33&zoom=auto,-78,604">Theorem 67</a> $G$ is solvable iff the derived length of $G$ is finite, i.e. there exists $k∈ℕ$ such that $G^{(k)}=\{e\}$;</p>
 </li>
 <li>
-<ol type="i"><li>$(D_6)_2=\left⟨a^2\right⟩=\left\{1, a, a^2\right\}$. Now further commutation with $b a^i$ sends $a ↦ a^{-1}=a^2$ and $a^2 ↦ a^{-2}=a$, so in fact we get $(D_6)_n=(D_6)_2$ for $n≥2$.
+<ol type="i"><li>$(D_6)_2=\left< a^2\right>=\left\{1, a, a^2\right\}$. Now further commutation with $b a^i$ sends $a ↦ a^{-1}=a^2$ and $a^2 ↦ a^{-2}=a$, so in fact we get $(D_6)_n=(D_6)_2$ for $n≥2$.
 </li>
 <li>\begin{align*}
 \left[a^i, a^{2 j}\right]&=1\\
 \left[b a^i, a^{2 j}\right]&=a^{-4 j}
 \end{align*}
-We know $(D_{2n})_2=\left[D_{2 n}, D_{2 n}\right]=\left⟨a^2\right⟩$ and inductively $(D_{2n})_m=\left⟨a^{2^{m-1}}\right⟩$<br>
+We know $(D_{2n})_2=\left[D_{2 n}, D_{2 n}\right]=\left< a^2\right>$ and inductively $(D_{2n})_m=\left< a^{2^{m-1}}\right>$<br>
 So $(D_{2n})_m=\{1\}$ for some $m$ iff $o(a)=n$ divides $2^{m-1}$, ie iff $n$ is a power of 2.
 </li>
 <li>We observe that
