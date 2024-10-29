@@ -1,0 +1,299 @@
+---
+tags: linear-algebra
+mathjax: true
+---
+<h3>1 <b>引言</b></h3>
+<div>
+<p>矩阵计算不仅在线性代数中, 而且在整个数学, 乃至物理及其他学科中都有重要的地位.</p>
+</div>
+<div>
+<p>刘绍学先生曾说:“1962年在颐和园龙王庙会议期间, 万哲先学兄对我说:‘搞典型群研究我们掌握一些基本手法和招数, 你们搞环论的有哪些手法和招数?’”“ (20世纪) 70年代在一次出数学竞赛题的会议中与华罗庚先生在他的房间闲谈.他对我说:‘国外把我说 (骂) 成是玩矩阵的魔鬼.……表面上你看我搞的是多复变函数、偏微分方程, 实际上骨子里还是我的矩阵技巧.’”<sup><a>[1]</a></sup></p>
+</div>
+<div>
+<p>可见矩阵技巧是在华罗庚学派的“基本手法和招数”之一.</p>
+</div>
+<div>
+<p>许以超先生说“打洞”是“矩阵计算中的最基本的技巧”.<sup><a>[2]</a></sup>数学中最基本的技巧, 也是最重要、最有用的技巧.冯克勤先生有段很有趣的回忆:“20世纪70年代, 当我成为科大的一名教员时, 曾肯成先生对当年科大的情景说过几句格言, 我只记得其中的两句.一句是‘科大是放羊, 而不是喂猪’, 另一句是‘龙生龙, 凤生凤, 华罗庚的学生会打洞’.”<sup><a>[1]</a></sup></p>
+</div>
+<div>
+<p>我们想在此谈谈对打洞技巧的一些认识, 以求大家的指导.</p>
+</div>
+<h3>2 <b>什么是打洞技巧</b></h3>
+<div>
+<p>什么是打洞技巧?我们介绍许以超先生的讲法<sup><a>[2]</a></sup>.</p>
+</div>
+<div>
+<p>以$I_k$表示域$\boldsymbol F$上的<i>k</i>阶单位矩阵.设<i>A</i>是域<b><i>F</i></b>上的<i>m</i>×<i>n</i>阶矩阵 (即<i>A</i>∈<b><i>F</i></b><sup><i>m</i>×<i>n</i></sup>) , 且</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml> (2.1) </p>
+</div>
+<div>
+<p>于是当<i>B</i>是<i>r</i>阶方阵, 且det<i>B</i>≠0时有</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>m</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>E</mi><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>,        (2.2) </p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mo>-</mo><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>.        (2.3) </p>
+</div>
+<div>
+<p>以上两式分别将 (2.1) 式中的<i>D</i>, <i>C</i>变成了0, 而0在电报语言中称为“洞”, 因此这种方法称为“打洞”.</p>
+</div>
+<div>
+<p>类似地, 当<i>E</i>是<i>k</i>阶方阵, 且det<i>E</i>≠0时有</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>m</mi><mo>-</mo><mi>k</mi></mrow></msub></mtd><mtd><mo>-</mo><mi>C</mi><mi>E</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mi>k</mi></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi><mo>-</mo><mi>C</mi><mi>E</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>D</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>,        (2.4) </p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>k</mi></mrow></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>E</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>D</mi></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mi>k</mi></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi><mo>-</mo><mi>C</mi><mi>E</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>D</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>,        (2.5) </p>
+</div>
+<div>
+<p>如果<i>A</i>是2阶方阵, 这时 (2.1) 式变为</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>.        (2.1′) </p>
+</div>
+<div>
+<p>如果<i>b</i>≠0, (2.2) 式与 (2.3) 式分别变为</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>d</mi><mi>b</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>e</mi><mo>-</mo><mi>d</mi><mi>b</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>c</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>,        (2.2′) </p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mo>-</mo><mi>b</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>c</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>d</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi><mo>-</mo><mi>d</mi><mi>b</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>c</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>,        (2.3′) </p>
+</div>
+<div>
+<p>类似地, 当<i>e</i>≠0时, (2.4) 式与 (2.5) 式分别变为</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mo>-</mo><mi>c</mi><mi>e</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi><mo>-</mo><mi>c</mi><mi>e</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>d</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>,        (2.4′) </p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mi>d</mi></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>e</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>d</mi></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>b</mi><mo>-</mo><mi>c</mi><mi>e</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>d</mi></mtd><mtd><mi>c</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>e</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>.        (2.5′) </p>
+</div>
+<div>
+<p> (2.2′) 式与 (2.4′) 式是将 (2.1′) 式中矩阵<i>A</i>进行一次初等行变换, (2.3′) 式与 (2.5′) 式是将 (2.1′) 式中矩阵<i>A</i>进行一次初等列变换.因此打洞技巧是矩阵一行减另一行的若干倍, 或一列减另一列的若干倍这两类初等变换的推广.由此可知, 若在 (2.1) 中, <i>C</i>或<i>D</i>可逆, 也可将<i>B</i>, <i>E</i>打成洞.</p>
+</div>
+<div>
+<p><b>注</b> 如果我们将域<b><i>F</i></b>改为含幺元的交换环, 将条件det<i>B</i>≠0, det<i>E</i>≠0分别换为<i>B</i>, <i>E</i>为可逆方阵, 打洞法仍然有效.条件det<i>B</i>≠0, det<i>E</i>≠0并不等价于<i>B</i>, <i>E</i>为可逆方阵.</p>
+</div>
+<h3>3 <b>打洞技巧的应用举例</b></h3>
+<div>
+<p>本节我们用一些例子来说明打洞技巧的应用.</p>
+</div>
+<h4>3.1 <b>用打洞技巧计算行列式</b></h4>
+<div>
+<p>打洞技巧的应用当首推“将高阶行列式的计算化为低阶行列式的计算”<sup><a>[2]</a></sup>.</p>
+</div>
+<div>
+<p><b>例</b>1 设<i>A</i>∈<b><i>F</i></b><sup><i>n</i>×<i>n</i></sup>, 且$A=\left(\begin{array}{ll}B & C \\ D & E\end{array}\right), B \in {\boldsymbol F}^{r \times r},\operatorname{det}B\ne0$.试证</p>
+</div>
+<div align="center">det<i>A</i>=det<i>B</i>·det (<i>E</i>-<i>DB</i><sup>-1</sup><i>C</i>) .        (3.1)</div>
+<div>
+<p>证明 因为det<i>B</i>≠0, 故<i>B</i>可逆.于是<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>E</mi><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>.</mo></mrow></math></mathml></p>
+</div>
+<div>
+<p>而<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>det</mi></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mn>1</mn></mrow></math></mathml>.所以 (3.1) 式成立.</p>
+</div>
+<div>
+<p>矩阵计算中另一个技巧是所谓 “摄动法”, 常与打洞技巧一起用.</p>
+</div>
+<div>
+<p><b>例</b>2 设<i>A</i>、<i>B</i>、<i>C</i>、<i>D</i>∈<b><i>F</i></b><sup><i>n</i>×<i>n</i></sup>, <b><i>F</i></b>的特征为0, 且<i>AC</i>=<i>CA</i>.试证</p>
+</div>
+<div align="center"><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mi>A</mi><mi>D</mi><mo>-</mo><mi>C</mi><mi>B</mi></mrow><mo>|</mo></mrow></mrow></math></mathml>.        (3.2)</div>
+<div>
+<p>证明 令$A(λ)=λI_n+A$.则$\operatorname{det}A(\lambda)$是$\lambda$的$n$次多项式,至多$n$个根.由$AC=CA$,有$A(λ)C=CA(λ)$.若$\operatorname{det}A(\lambda)≠0$,则$A(\lambda)$可逆, 且有</p>
+</div>
+<div>
+<p>于是<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>det</mi></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mi>det</mi></mrow><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo><mrow><mi>det</mi></mrow><mo stretchy="false"> (</mo><mi>D</mi><mo>-</mo><mi>C</mi><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>B</mi><mo stretchy="false">) </mo><mo>=</mo><mrow><mi>det</mi></mrow><mo stretchy="false"> (</mo><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo><mi>D</mi><mo>-</mo><mi>C</mi><mi>B</mi><mo stretchy="false">) </mo><mo>.</mo></mrow></math></mathml></p>
+</div>
+<div>
+<p>由于<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>det</mi></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mi>,</mi><mrow><mi>det</mi></mrow><mo stretchy="false"> (</mo><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo><mi>D</mi><mo>-</mo><mi>C</mi><mi>B</mi><mo stretchy="false">) </mo></mrow></math></mathml>都是$λ$的有限次多项式,且若$\operatorname{det}A(λ)≠0$, 则</p>
+</div>
+<div align="center">
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mi>det</mi></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mi>det</mi></mrow><mo stretchy="false"> (</mo><mi>A</mi><mo stretchy="false"> (</mo><mi>λ</mi><mo stretchy="false">) </mo><mi>D</mi><mo>-</mo><mi>C</mi><mi>B</mi><mo stretchy="false">) </mo></mrow></math></mathml>,        (3.3) </p>
+</div>
+<div>
+<p>故 (3.3) 对任何<i>λ</i>成立.特别地, 对<i>λ</i>=0也成立, 于是结论成立.</p>
+</div>
+<div>
+<p><b>注</b> 如果<b><i>F</i></b>的特征不是0, 用摄动法时要特别当心.如果<b><i>F</i></b>是实数域或复数域时, 在 (3.3) 中令<i>λ</i>→0, 则可知 (3.2) 成立.摄动法实际是源于此.</p>
+</div>
+<div>
+<p>矩阵乘法的结合性导致对一个矩阵的行变换和列变换的交换性, 于是行、列变换可同时进行, 在打洞技巧中要求 (2.1) 中的<i>B</i>, <i>C</i>, <i>D</i>, <i>E</i>至少有一个可逆, 对特殊情况也不一定.</p>
+</div>
+<div>
+<p><b>例</b>3 设<i>A</i>, <i>B</i>∈<b><i>F</i></b><sup><i>n</i>×<i>n</i></sup>.试证</p>
+</div>
+<div align="center"><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>B</mi></mtd><mtd><mi>A</mi></mtd></mtr></mtable></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><mo>|</mo></mrow><mo>⋅</mo><mrow><mo>|</mo><mrow><mi>A</mi><mo>-</mo><mi>B</mi></mrow><mo>|</mo></mrow></mrow></math></mathml> (3.4)</div>
+<div>
+<p>证明 注意到$\left(\begin{array}{cc}I_{n} & I_{n} \\ 0 & I_{n}\end{array}\right)\left(\begin{array}{cc}A & B \\ B & A\end{array}\right)\left(\begin{array}{cc}I_{n} & -I_{n} \\ 0 & I_{n}\end{array}\right)=\left(\begin{array}{cc}A+B & A+B \\ B & A\end{array}\right)\left(\begin{array}{cc}I_{n} & -I_{n} \\ 0 & I_{n}\end{array}\right)=\left(\begin{array}{cc}A+B & 0 \\ B & A-B\end{array}\right)$</p>
+</div>
+<div>
+<p>于是 (3.4) 成立.</p>
+</div>
+<h4>3.2 <b>用打洞技巧求逆矩阵及判断矩阵的可逆性</b></h4>
+<div>
+<p>判断矩阵是否可逆及求可逆矩阵是线性代数中的重要问题.打洞技巧也是很有用的.</p>
+</div>
+<div>
+<p><b>例</b>4 设<i>A</i>∈<b><i>F</i></b><sup><i>n</i>×<i>n</i></sup>, det<i>A</i>≠0, <i>B</i>∈<b><i>F</i></b><sup><i>r</i>×<i>r</i></sup>, det<i>B</i>≠0, 且<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mi>C</mi></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>, 试证</p>
+</div>
+<div align="center">
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mo>-</mo><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mo stretchy="false"> (</mo><mi>E</mi><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi><mo stretchy="false">) </mo><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>.        (3.5) </p>
+</div>
+<div>
+<p>证明 因为det<i>A</i>≠0, det<i>B</i>≠0, 故<i>A</i>, <i>B</i>可逆.又$\left(\begin{array}{ll}B & C \\ D & E\end{array}\right)\left(\begin{array}{cc}I_{r} & -B^{-1} C \\ 0 & I_{n-r}\end{array}\right)=\left(\begin{array}{cc}B & 0 \\ D & E-D B^{-1} C\end{array}\right)$</p>
+</div>
+<div>
+<p>故det (<i>E</i>-<i>DB</i><sup>-1</sup><i>C</i>) =det<i>A</i>/det<i>B</i>≠0.因此<i>E</i>-<i>DB</i><sup>-1</sup><i>C</i>可逆.再由</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>D</mi></mtd><mtd><mi>E</mi><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mo stretchy="false"> (</mo><mi>E</mi><mo>-</mo><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>C</mi><mo stretchy="false">) </mo><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>r</mi></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>D</mi><mi>B</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>r</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>, $\left(\begin{array}{cc}I_{r} & 0 \\ D B^{-1} & I_{n-r}\end{array}\right)\left(\begin{array}{cc}I_{r} & 0 \\ -D B^{-1} & I_{n-r}\end{array}\right)=I_{n}$</p>
+</div>
+<div>
+<p>得 (3.5) 成立.</p>
+</div>
+<div>
+<p><b>例</b>5 设<i>A</i>, <i>D</i>分别为<b><i>F</i></b>上<i>m</i>阶, <i>n</i>阶可逆方阵.则矩阵<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>Η</mi><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>为可逆矩阵当且仅当<i>A</i>-<i>BD</i><sup>-1</sup><i>C</i>与<i>D</i>-<i>CA</i><sup>-1</sup><i>B</i>都是可逆矩阵.</p>
+</div>
+<div>
+<p>证明 因为<i>A</i>, <i>D</i>可逆, 于是有$\left(\begin{array}{cc}I_{m} & 0 \\ -C A^{-1} & I_{n}\end{array}\right)\left(\begin{array}{ll}A & B \\ C & D\end{array}\right)=\left(\begin{array}{cc}A & B \\ 0 & D-C A^{-1} B\end{array}\right), \quad\left(\begin{array}{ll}A & B \\ C & D\end{array}\right)\left(\begin{array}{cc}I_{m} & 0 \\ -D^{-1} C & I_{n}\end{array}\right)=\left(\begin{array}{cc}A-B D^{-1} C & B \\ 0 & D\end{array}\right)$</p>
+</div>
+<div>
+<p>因此 det<i>H</i>=det<i>A</i>det (<i>D</i>-<i>CA</i><sup>-1</sup><i>B</i>) =det<i>D</i>det (<i>A</i>-<i>BD</i><sup>-1</sup><i>C</i>) .</p>
+</div>
+<div>
+<p>因而, <i>H</i>可逆, 当且仅当<i>D</i>-<i>CA</i><sup>-1</sup><i>B</i>可逆, 当且仅当<i>A</i>-<i>BD</i><sup>-1</sup><i>C</i>可逆.</p>
+</div>
+<div>
+<p>打洞技巧与数学归纳法结合在一起使用是很常见的情形.</p>
+</div>
+<div>
+<p><b>例</b>6 设<i>A</i>= (<i>a</i><sub><i>ij</i></sub>) <sub><i>n</i>×<i>n</i></sub>∈<b>R</b><sup><i>n</i>×<i>n</i></sup>满足条件:<i>a</i><sub><i>ij</i></sub>≤0 (<i>i</i>≠<i>j</i>) ;<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mrow><mo> (</mo><mtable columnalign="left"><mtr><mtd><mn>1</mn><mspace width="0.25em"></mspace><mn>2</mn><mspace width="0.25em"></mspace><mo>⋯</mo><mspace width="0.25em"></mspace><mi>k</mi></mtd></mtr><mtr><mtd><mn>1</mn><mspace width="0.25em"></mspace><mn>2</mn><mspace width="0.25em"></mspace><mo>⋯</mo><mspace width="0.25em"></mspace><mi>k</mi></mtd></mtr></mtable><mo>) </mo></mrow><mo>＞</mo><mn>0</mn><mo stretchy="false"> (</mo><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi><mo stretchy="false">) </mo></mrow></math></mathml>.则有:<i>A</i><sup>-1</sup>的所有元素非负;存在<i>X</i>= (<i>x</i><sub>1</sub>, …, <i>x</i><sub><i>n</i></sub>) ′, <i>x</i><sub><i>i</i></sub>&gt;0 (1≤<i>i</i>≤<i>n</i>) 使得<i>AX</i>中每个元素皆正.</p>
+</div>
+<p>证明 对<i>n</i>作归纳证明.<i>n</i>=1时, 命题显然成立.设<i>n</i>-1时命题已成立.对<i>A</i>作如下分块$$A=\left(\begin{array}{cc}A_{n-1} & \alpha \\ \beta & a_{nn}\end{array}\right)$$</p>
+<div>
+<p>于是有<i>A</i><sub><i>n</i>-1</sub>可逆, 且<i>A</i><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mrow></math></mathml>中每个元素非负.且$\left(\begin{array}{cc}I_{n-1} & 0 \\ -\beta A_{n-1}^{-1} & 1\end{array}\right)\left(\begin{array}{cc}A_{n-1} & \alpha \\ \beta & a_{nn}\end{array}\right)=\left(\begin{array}{cc}A_{n-1} & \alpha \\ 0 & a_{nn}-\beta A_{n-1}^{-1} \alpha\end{array}\right)$</p>
+</div>
+<div>
+<p>令<i>d</i>=<i>a</i><sub><i>nn</i></sub>-<i>βA</i><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mrow></math></mathml><i>α</i>.则<i>d</i>=det<i>A</i>/det<i>A</i><sub><i>n</i>-1</sub>&gt;0.又$\left(\begin{array}{cc}I_{n-1} & -\frac{1}{d} \alpha \\ 0 & 1\end{array} \right)\left(\begin{array}{cc}A_{n-1} & \alpha \\ 0 & d\end{array}\right)=\left(\begin{array}{cc}A_{n-1} & 0 \\ 0 & d\end{array}\right)$</p>
+</div>
+<div>
+<p>因而有<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><msubsup><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>d</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msub></mtd><mtd><mo>-</mo><mfrac><mn>1</mn><mi>d</mi></mfrac><mi>α</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><mi>β</mi><mi>A</mi><msubsup><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>.</mo></mrow></math></mathml></p>
+</div>
+<div>
+<p>由于<i>A</i><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mrow></math></mathml>中每个元素非负, <i>d</i>&gt;0, <i>α</i>, <i>β</i>中元素非正, 于是上式右面三个矩阵中元素都非负.因而<i>A</i><sup>-1</sup>中元素非负.记<i>A</i><sup>-1</sup>= (<i>b</i><sub><i>ij</i></sub>) .于是<i>b</i><sub><i>ij</i></sub>≥0.</p>
+</div>
+<div>
+<p>令<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>X</mi><mo>=</mo><mstyle displaystyle="true"><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mtext>c</mtext><mtext>o</mtext><mtext>l</mtext></mrow></mstyle><msub><mrow></mrow><mi>j</mi></msub><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>=</mo><mo stretchy="false"> (</mo><mi>x</mi><msub><mrow></mrow><mn>1</mn></msub><mo>, </mo><mo>⋯</mo><mo>, </mo><mi>x</mi><msub><mrow></mrow><mi>n</mi></msub><msup><mo stretchy="false">) </mo><mo>′</mo></msup></mrow></math></mathml>.则<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>x</mi><msub><mrow></mrow><mi>i</mi></msub><mo>=</mo><mstyle displaystyle="true"><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>b</mi></mstyle><msub><mrow></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow></math></mathml>.由<i>A</i><sup>-1</sup>可逆, 故<i>x</i><sub><i>i</i></sub>&gt;0, 且</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mi>X</mi><mo>=</mo><mstyle displaystyle="true"><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>A</mi></mstyle><mtext>c</mtext><mtext>o</mtext><mtext>l</mtext><msub><mrow></mrow><mi>j</mi></msub><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>=</mo><mstyle displaystyle="true"><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mtext>c</mtext></mstyle><mtext>o</mtext><mtext>l</mtext><msub><mrow></mrow><mi>j</mi></msub><mi>A</mi><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mo>=</mo><mo stretchy="false"> (</mo><mn>1</mn><mo>, </mo><mn>1</mn><mo>, </mo><mo>⋯</mo><mo>, </mo><mn>1</mn><msup><mo stretchy="false">) </mo><mo>′</mo></msup></mrow></math></mathml>.</p>
+</div>
+<div>
+<p>故<i>AX</i>中每个元素为正数.</p>
+</div>
+<div>
+<p><b>注</b> 本例中的矩阵<i>A</i>及其性质在线性不等式理论和Kac-Moody代数理论中是很重要的.</p>
+</div>
+<h4>3.3 <b>打洞技巧与二次型理论</b></h4>
+<div>
+<p>用线性代数研究二次型是将二次型化为对称矩阵.将高阶对称矩阵化为低阶对称矩阵既是基本方法也是基本任务.</p>
+</div>
+<div>
+<p><b>例</b>7 设<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i>∈<b><i>F</i></b><sup><i>n</i>×<i>n</i></sup>, <i>A</i>可逆对称, <i>B</i>′=<i>C</i>, 证明存在可逆方阵<i>T</i>, 使<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msup><mi>Τ</mi><mo>′</mo></msup><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mi>Τ</mi></mrow></math></mathml>为准对角方阵.</p>
+</div>
+<div>
+<p>证明 因为<i>A</i>可逆对称.于是<i>A</i><sup>-1</sup>对称.注意到$\left(\begin{array}{cc}I_{n} & 0 \\ -C A^{-1} & I_{n}\end{array}\right)\left(\begin{array}{cc}A & B \\ C & D\end{array}\right)\left(\begin{array}{cc}I_{n} & -\left(A^{-1}\right)^{\prime} C^{\prime} \\ 0 & I_{n}\end{array}\right)=\left(\begin{array}{cc}A & B \\ 0 & D-C A^{-1} B\end{array}\right)\left(\begin{array}{cc}I_{n} & -\left(A^{-1}\right)^{\prime} C^{\prime} \\ 0 & I_{n}\end{array}\right)=\left(\begin{array}{cc}A & 0 \\ 0 & D-C A^{-1} B\end{array}\right)$</p>
+</div>
+<div>
+<p>因此结论成立.</p>
+</div>
+<div>
+<p><b>注</b> 在此题中, 若<i>D</i>也是对称的, 则整个矩阵<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>B</mi></mtd></mtr><mtr><mtd><mi>C</mi></mtd><mtd><mi>D</mi></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>是对称的.</p>
+</div>
+<div>
+<p><b>例</b>8 设<i>Q</i>为<i>n</i>阶实正定对称矩阵, <i>X</i>为<i>n</i>维实列向量.证明</p>
+</div>
+<div align="center">
+<p>0≤<i>X</i>′ (<i>Q</i>+<i>XX</i>′) <sup>-1</sup><i>X</i>&lt;1.        (3.6) </p>
+</div>
+<div>
+<p>证明 设<i>A</i>=<i>Q</i>+<i>XX</i>′.因<i>Q</i>正定, <i>XX</i>′半正定, 故<i>A</i>正定, 因此<i>A</i><sup>-1</sup>也正定.因而</p>
+</div>
+<div align="center">
+<p>0≤<i>X</i>′ (<i>Q</i>+<i>XX</i>′) <sup>-1</sup><i>X</i>.</p>
+</div>
+<div>
+<p>再由<i>A</i>正定, 知det<i>A</i>&gt;0, 而且有可逆矩阵<i>P</i>使得<i>Q</i>=<i>P</i>′<i>P</i>.因此</p>$$\left(\begin{array}{cc}P^{\prime} & X \\ 0 & 1\end{array}\right)\left(\begin{array}{cc}P & 0 \\ X^{\prime} & 1\end{array}\right)=\left(\begin{array}{cc}P^{\prime} P+X X^{\prime} & X \\ X^{\prime} & 1\end{array}\right)=\left(\begin{array}{cc}A & X \\ X^{\prime} & 1\end{array}\right)$$
+</div>
+<div>
+<p>又<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>n</mi></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mo>-</mo><msup><mi>X</mi><mo>′</mo></msup><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>X</mi></mtd></mtr><mtr><mtd><msup><mi>X</mi><mo>′</mo></msup></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>X</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mo>-</mo><msup><mi>X</mi><mo>′</mo></msup><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>X</mi><mo>+</mo><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>.</mo></mrow></math></mathml></p>
+</div>
+<div>
+<p>于是<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mo stretchy="false"> (</mo><mo>-</mo><msup><mi>X</mi><mo>′</mo></msup><mi>A</mi><msup><mrow></mrow><mrow><mo>-</mo><mn>1</mn></mrow></msup><mi>X</mi><mo>+</mo><mn>1</mn><mo stretchy="false">) </mo><mrow><mi>det</mi></mrow><mi>A</mi><mo>=</mo><mrow><mo>|</mo><mrow><mtable><mtr><mtd><mi>A</mi></mtd><mtd><mi>X</mi></mtd></mtr><mtr><mtd><msup><mi>X</mi><mo>′</mo></msup></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>|</mo></mrow><mo>=</mo><mo stretchy="false"> (</mo><mrow><mi>det</mi></mrow><mi>Ρ</mi><mo stretchy="false">) </mo><msup><mrow></mrow><mn>2</mn></msup><mi>＞</mi><mn>0</mn><mo>.</mo></mrow></math></mathml></p>
+</div>
+<div>
+<p>因此 (3.6) 式成立.</p>
+</div>
+<h4>3.4 <b>打洞技巧的其他应用</b></h4>
+<div>
+<p>下面的例子说明用打洞法可将线性方程组中未知数个数减少, 即消元.</p>
+</div>
+<div>
+<p><b>例</b>9 设<i>A</i>∈<b><i>F</i></b><sup><i>n</i>×<i>n</i></sup>, 且<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr><mtr><mtd><mi>A</mi><msub><mrow></mrow><mn>3</mn></msub></mtd><mtd><mi>A</mi><msub><mrow></mrow><mn>4</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>.其中<i>A</i><sub>1</sub>∈<b><i>F</i></b><sup><i>k</i>×<i>k</i></sup>, <i>A</i><sub>4</sub>∈<b><i>F</i></b><sup> (<i>n</i>-<i>k</i>) × (<i>n</i>-<i>k</i>) </sup>, 且<i>A</i><sub>4</sub>可逆.又</p>
+</div>$$X=\left(\begin{array}{l}X_{1} \\ X_{2}\end{array}\right), \quad B=\left(\begin{array}{l}B_{1} \\ B_{2}\end{array}\right)$$
+<div>
+<p>其中<i>B</i><sub>1</sub>∈<b><i>F</i></b><sup><i>k</i>×1</sup>, <i>B</i><sub>2</sub>∈<b><i>F</i></b><sup> (<i>n</i>-<i>k</i>) ×1</sup>.<i>X</i><sub>1</sub>, <i>X</i><sub>2</sub>分别为<i>k</i>×1, (<i>n</i>-<i>k</i>) ×1的未知矩阵.则线性方程组</p>
+</div>
+<div align="center">
+<p><i>AX</i>=<i>B</i>        (3.7) </p>
+</div>
+<div>
+<p>中前<i>k</i>个未知数, 即<i>X</i><sub>1</sub>满足线性方程组</p>
+</div>
+<div  align="center">
+<p> (<i>A</i><sub>1</sub>-<i>A</i><sub>2</sub><i>A</i><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mrow></math></mathml><i>A</i><sub>3</sub>) <i>X</i><sub>1</sub>=<i>B</i><sub>1</sub>-<i>A</i><sub>2</sub><i>A</i><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mrow></math></mathml><i>B</i><sub>2</sub>.        (3.8) </p>
+</div>
+<div>
+<p>证明 在 (3.7) 的两边左乘<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>k</mi></msub></mtd><mtd><mo>-</mo><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub><mi>A</mi><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>k</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>, 则由</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>k</mi></msub></mtd><mtd><mo>-</mo><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub><mi>A</mi><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>k</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr><mtr><mtd><mi>A</mi><msub><mrow></mrow><mn>3</mn></msub></mtd><mtd><mi>A</mi><msub><mrow></mrow><mn>4</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>X</mi><msub><mrow></mrow><mn>1</mn></msub></mtd></mtr><mtr><mtd><mi>X</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>Ι</mi><msub><mrow></mrow><mi>k</mi></msub></mtd><mtd><mo>-</mo><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub><mi>A</mi><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi>Ι</mi><msub><mrow></mrow><mrow><mi>n</mi><mo>-</mo><mi>k</mi></mrow></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi><msub><mrow></mrow><mn>1</mn></msub></mtd></mtr><mtr><mtd><mi>B</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow></mrow></math></mathml>, </p>
+</div>
+<div>
+<p>知<mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>A</mi><msub><mrow></mrow><mn>1</mn></msub><mo>-</mo><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub><mi>A</mi><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup><mi>A</mi><msub><mrow></mrow><mn>3</mn></msub></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mi>A</mi><msub><mrow></mrow><mn>3</mn></msub></mtd><mtd><mi>A</mi><msub><mrow></mrow><mn>4</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>X</mi><msub><mrow></mrow><mn>1</mn></msub></mtd></mtr><mtr><mtd><mi>X</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mi>B</mi><msub><mrow></mrow><mn>1</mn></msub><mo>-</mo><mi>A</mi><msub><mrow></mrow><mn>2</mn></msub><mi>A</mi><msubsup><mrow></mrow><mn>4</mn><mrow><mo>-</mo><mn>1</mn></mrow></msubsup><mi>B</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr><mtr><mtd><mi>B</mi><msub><mrow></mrow><mn>2</mn></msub></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>.</mo></mrow></math></mathml></p>
+</div>
+<div>
+<p>于是<i>X</i><sub>1</sub>满足 (3.8) </p>
+</div>
+<div>
+<p>打洞技巧的要害是用“初等变换”将矩阵中的一些元素变为0.在具体处理过程中, 不必拘泥于将所研究的矩阵分为四块.</p>
+</div>
+<div>
+<p><b>例</b>10 证明Vandermonde行列式</p>
+</div>
+<div  align="center">
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo>|</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mo>⋯</mo></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mi>a</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mi>a</mi><msub><mrow></mrow><mn>2</mn></msub></mtd><mtd><mi>a</mi><msub><mrow></mrow><mn>3</mn></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><mi>a</mi><msub><mrow></mrow><mi>n</mi></msub></mtd></mtr><mtr><mtd><mi>a</mi><msubsup><mrow></mrow><mn>1</mn><mn>2</mn></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>2</mn><mn>2</mn></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>3</mn><mn>2</mn></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mi>n</mi><mn>2</mn></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋮</mo></mtd><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mi>a</mi><msubsup><mrow></mrow><mn>1</mn><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>2</mn><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>3</mn><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mi>n</mi><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd></mtr></mtable></mrow><mo>|</mo></mrow><mo>=</mo><munder><mstyle mathsize="140%" displaystyle="true"><mtext>Π</mtext></mstyle><mrow><mi>i</mi><mo>＜</mo><mi>j</mi></mrow></munder><mo stretchy="false"> (</mo><mi>a</mi><msub><mrow></mrow><mi>j</mi></msub><mo>-</mo><mi>a</mi><msub><mrow></mrow><mi>i</mi></msub><mo stretchy="false">) </mo></mrow></math></mathml>.        (3.9) </p>
+</div>
+<div>
+<p>证明 注意到</p>
+</div>
+<div>
+<p><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd><mo>-</mo><mi>a</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mn>1</mn></mtd><mtd></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd></mtd><mtd><mo>-</mo><mi>a</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mn>1</mn></mtd><mtd></mtd><mtd></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋱</mo></mtd><mtd></mtd></mtr><mtr><mtd></mtd><mtd></mtd><mtd></mtd><mtd><mo>-</mo><mi>a</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mrow><mo> (</mo><mrow><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mo>⋯</mo></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mi>a</mi><msub><mrow></mrow><mn>1</mn></msub></mtd><mtd><mi>a</mi><msub><mrow></mrow><mn>2</mn></msub></mtd><mtd><mi>a</mi><msub><mrow></mrow><mn>3</mn></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><mi>a</mi><msub><mrow></mrow><mi>n</mi></msub></mtd></mtr><mtr><mtd><mi>a</mi><msubsup><mrow></mrow><mn>1</mn><mn>2</mn></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>2</mn><mn>2</mn></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>3</mn><mn>2</mn></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mi>n</mi><mn>2</mn></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋮</mo></mtd><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mi>a</mi><msubsup><mrow></mrow><mn>1</mn><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>2</mn><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mn>3</mn><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><mi>a</mi><msubsup><mrow></mrow><mi>n</mi><mrow><mi>n</mi><mo>-</mo><mn>1</mn></mrow></msubsup></mtd></mtr></mtable></mrow><mo>) </mo></mrow><mo>=</mo></mrow></math></mathml><mathml><math xmlns="http://www.w3.org/1998/Math/MathML"></math></mathml>$\left(\begin{array}{ccccc}1 & 1 & 1 & \cdots & 1 \\ 0 & a_{2}-a_{1} & a_{3}-a_{1} & \cdots & a_{n}-a_{1} \\ 0 & a_{2}\left(a_{2}-a_{1}\right) & a_{3}\left(a_{3}-a_{1}\right) & \cdots & a_{n}\left(a_{n}-a_{1}\right) \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & a_{2}^{n-2}\left(a_{2}-a_{1}\right) & a_{3}^{n-2}\left(a_{3}-a_{1}\right) & \cdots & a_{n}^{n-2}\left(a_{n}-a_{1}\right)\end{array}\right)$</p>再用数学归纳法,就可证明(3.9)式.
+</div>
+<b>例</b>11 设$a_1,a_2,…,a_n$互不相等,试证$$a_{n}^{n-1}-\alpha A_{1}^{-1} \beta=\prod_{i=1}^{n-1}\left(a_{n}-a_{i}\right)\tag{3.10}$$
+其中$$\alpha=\left(\begin{array}{cccc}a_{1}^{n-1} & a_{2}^{n-1} & \cdots & a_{n-1}^{n-1}\end{array}\right), \beta=\left(\begin{array}{c}1 \\ a_{n} \\ a_{n}^{2} \\ \vdots \\ a_{n}^{n-2}\end{array}\right), A_{1}=\left(\begin{array}{cccc}1 & 1 & \cdots & 1 \\ a_{1} & a_{2} & \cdots & a_{n-1} \\ a_{1}^{2} & a_{2}^{2} & \cdots & a_{n-1}^{2} \\ \vdots & \vdots & \ddots & \vdots \\ a_{1}^{n-2} & a_{2}^{n-2} & \cdots & a_{n-1}^{n-2}\end{array}\right)$$证明 令$A=\left(\begin{array}{cc}A_{1} & \beta \\ \alpha & a_{n}^{n-1}\end{array}\right)$.由假设条件知$A_1$是可逆的,因此$$\left(\begin{array}{cc}I_{n-1} & 0 \\ -\alpha A_{1}^{-1} & 1\end{array}\right)\left(\begin{array}{cc}A_{1} & \beta \\ \alpha & a_{n}^{n-1}\end{array}\right)=\left(\begin{array}{cc}A_{1} & \beta \\ 0 & a_{n}^{n-1}-\alpha A_{1}^{-1} \beta\end{array}\right)$$比较等式两边的行列式知(3.10)式成立.
+<div>
+<h3>References</h3>
+<p>
+<b>[1]</b>张继平主编.新世纪代数学[M].北京:北京大学出版社, 2002:342, 355-356.
+</p>
+<p>
+<b>[2]</b>许以超.线性代数与矩阵论[M].北京:高等教育出版社, 1992:98.
+</p>
+</div>
