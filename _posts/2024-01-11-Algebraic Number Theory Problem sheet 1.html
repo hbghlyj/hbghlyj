@@ -1,0 +1,96 @@
+---
+mathjax: true
+tag: Algebraic Number Theory
+excerpt: <a href="https://people.maths.ox.ac.uk/greenbj/papers/ANT-sheet-1.pdf">sheet 1 — HT 2024</a> <a href="https://courses.maths.ox.ac.uk/pluginfile.php/102945/mod_assign/introattachment/0/sheet1-2024-solutionsAC.pdf">solutionsAC</a>
+---
+$\DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\disc}{disc}$
+<ol style="margin-left:-1em" start="3"><li>Let $K=𝐐(α)$, where $α=2^{1/3}$. Evaluate $\disc_{K/𝐐}(1, α, α^2)$.<hr>
+There are three embeddings of $K$ defined by $σ_i(α)=ω^{i-1}α\,(i=1,2,3)$
+\begin{align*}\det M&= \begin{vmatrix}
+σ_1(1) & σ_1(α) & σ_1(α^2) \\
+σ_2(1) & σ_2(α) & σ_2(α^2) \\
+σ_3(1) & σ_3(α) & σ_3(α^2)
+\end{vmatrix}= \begin{vmatrix}
+1 & α & α^2 \\
+1 & ωα & (ωα)^2 \\
+1 & ω^2α & (ω^2α)^2
+\end{vmatrix}\\
+\disc_{K/𝐐}(1, α, α^2)&=(\det M)^2\text{ by the Vandermonde determinant}
+\\&=(1-α)^2(1-ωα)^2(ωα-ω^2α)^2= -108.\end{align*}
+$-4p^3-27q^2=-4⋅0^3-27⋅(-2)^2=-108$ agrees with Q5
+</li>
+<li>Let $K=𝐐(\sqrt{d}), d&lt;0$ squarefree, be an imaginary quadratic field. Write $u(d)$ for the number of units in $𝒪_K$. What are the possible values of $u(d)$, and for which fields are these values attained?<hr>
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.2.17">2.17</a> $𝒪_K=𝐙⊕\sqrt{d}𝐙$ if $d≡2,3\pmod 4$; $𝒪_K=𝐙⊕\frac{1+\sqrt{d}}2𝐙$ if $d≡1\pmod 4$.<br>
+<u>Case 1.</u> If $d≡2,3\pmod 4$, elements of $𝒪_K$ are $a+b\sqrt{d}$ for $a,b ∈ 𝐙$. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.2.10">2.10</a> units in $𝒪_K$ have norm $±1$, but $d&lt;0$, the norms are positive, so units in $𝒪_K$ have norm $1$,
+\[N(a+b\sqrt{d})=a^2-b^2d=1\]
+If $d=-1$ then $a^2+b^2=1$, so $(a,b)=(±1,0)$ or $(0,±1)$.<br>
+If $d&lt;-1$ then $b=0$, so $(a,b)=(±1,0)$.<br>
+<u>Case 2.</u> If $d≡1\pmod 4$, elements of $𝒪_K$ are $\frac{a+b\sqrt{d}}{2}$ for $a,b ∈ 𝐙$ with $2|a-b$. Similarly
+\[N\left(\frac{a + b \sqrt{d}}{2}\right)=\frac{a^2-db^2}{4}=1\]
+noting that the condition $2|a-b$ is unnecessary because if $a-b$ is odd, $a^2-db^2$ would be odd and hence indivisible by 4.<br>
+If $-d>4$, then $a^2-db^2>4$ for $b≠0$, so only units are $±1$.<br>
+For the remaining case $d=-3$, the solutions of $a^2+3b^2=4$ are $(a,b)=(±1,±1)(±2,0)$
+\[U(𝒪_K)= \begin{cases} ⟨ \frac{1+\sqrt{-3}}{2} ⟩ &d=-3\\ ⟨ \sqrt{-1} ⟩ &d=-1\\ ⟨ -1 ⟩ &d&lt;-4\end{cases}\]
+so
+\[u(d)=\begin{cases}6&d=-3\\4&d=-1\\2&d&lt;-4\end{cases}\]
+</li>
+<li>Suppose that $β$ is a root of $X^3+p X+q=0$, where $X^3+p X+q$ is an irreducible polynomial in $𝐙[X]$, and let $K=𝐐(β)$. Compute $\tr_{K/𝐐}(β^i)$ for $i=0,1, …, 4$. Deduce that $\disc_{K/𝐐}(1, β, β^2)=-4 p^3-27 q^2$. Hence, give an example of a cubic number field $K$ such that $𝒪_K$ has a power integral basis.<hr>
+$\{1,β,β^2\}$ is a 𝐐-basis of $K$. Since $β^3=-q-pβ$<br>
+$\tr_{K/𝐐}(1)=\tr\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}=3$<br>
+$\tr_{K/𝐐}(β)=\tr\begin{pmatrix}0&1&0\\0&0&1\\-q&-p&0\end{pmatrix}=0$<br>
+$\tr_{K/𝐐}(β^2)=\tr\begin{pmatrix}0&0&1\\-q&-p&0\\0&-q&-p\end{pmatrix}=-2p$<br>
+$\tr_{K/𝐐}(β^3)=\tr\begin{pmatrix}-q&-p&0\\0&-q&-p\\pq&p^2&-q\end{pmatrix}=-3q$<br>
+$\tr_{K/𝐐}(β^4)=\tr\begin{pmatrix}0&-q&-p\\pq&p^2&-q\\q^2&2pq&p^2\end{pmatrix}=2p^2$
+\begin{align*}\disc_{K/𝐐}(1, β, β^2)&=\begin{vmatrix}\tr_{K/𝐐}(1)&\tr_{K/𝐐}(β)&\tr_{K/𝐐}(β^2)\\\tr_{K/𝐐}(β)&\tr_{K/𝐐}(β^2)&\tr_{K/𝐐}(β^3)\\\tr_{K/𝐐}(β^2)&\tr_{K/𝐐}(β^3)&\tr_{K/𝐐}(β^4)\\\end{vmatrix}\\&=\begin{vmatrix}3&0&-2p\\
+0&-2p&-3q\\-2p&-3q&2p^2\end{vmatrix}
+\\&=-4 p^3 - 27 q^2\end{align*}
+When $p=q=1$, we check $x^3+x+1$ is irreducible and $\disc_{K/𝐐}(1, β, β^2)=-31$ is squarefree. Since $m_{𝐐,β}=x^3+x+1$ we have $β∈𝒪_K$, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.2.18">2.4</a> $β^2∈𝒪_K$, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.2.18">2.18</a> $K=𝐐(β)$ is a cubic number field such that $𝒪_K$ has a power integral basis $\{1, β, β^2\}$.
+</li>
+<li>Let $f(X)=X^3-X^2-2 X-8$.
+<ol type="i"><li>Show that $f$ is irreducible over 𝐐.<hr>
+<p>Suppose $f$ is reducible in 𝐐, by Gauss’s lemma, it is product of two monic polynomials in 𝐙. As $\deg f=3$, it has a root $p∈𝐙$.
+$$p^3-p^2-2p-8=0⇒p|8$$We verify none of divisors of 8 is a root of $f$, contradiction.</p>
+</li>
+<li>Let $α$ be a root of $f$ and let $K=𝐐(α)$. Show that $\frac12α(α+1) ∈ 𝒪_K$.<hr>
+<p>First show that $4/α ∈ 𝒪_K$.
+\[0=\frac{-8}{α^3}(α^3-α^2-2α-8)=-8+2(\frac4α)+(\frac4α)^2+(\frac4α)^3\]
+so $4/α$ is a root of the monic polynomial $-8+2x+x^2+x^3$, so$$\frac12α(α+1)=\frac1{2α}(α^3+α^2)=\frac1{2α}((α^2+2α+8)+α^2)=α+1+\frac4α∈𝒪_K$$</p>
+</li>
+<li>Calculate $\disc_{K/𝐐}\left(1, α, \frac12α(α+1)\right)$, and hence <a href="https://kconrad.math.uconn.edu/blurbs/gradnumthy/nopowerbasis.pdf">conclude</a> that $e_1, e_2, e_3$ is an integral basis for $𝒪_K$, where $e_1=1, e_2=α$ and $e_3=\frac12α(α+1)$.<hr>
+From previous question $\frac4α=e_3-e_2-e_1$, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.1.23">1.23</a>
+$$\disc_{K/𝐐}(e_1,e_2,e_3)=\disc_{K/𝐐}\left(e_1,e_2,\frac4α\right)$$
+since the change of basis matrix has determinant 1. By a computation similar to Q5,
+\[\disc_{K/𝐐}\left(1, α, \frac4α\right)=\begin{vmatrix}\tr_{K/𝐐}(1)&\tr_{K/𝐐}(α)&\tr_{K/𝐐}(\frac4α)\\\tr_{K/𝐐}(α)&\tr_{K/𝐐}(α^2)&\tr_{K/𝐐}(4)\\\tr_{K/𝐐}(\frac4α)&\tr_{K/𝐐}(4)&\tr_{K/𝐐}(\frac{16}{α^2})\end{vmatrix}=-503\]
+is squarefree, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.2.18">2.18</a> $e_1, e_2, e_3$ is an integral basis for $𝒪_K$.</ol>
+</li>
+<li>Suppose that $[K: 𝐐]=n$ and that, of the $n$ embeddings $σ_i: K → 𝐂$, $r_1$ of them are real and there are $r_2$ complex conjugate pairs, where $r_1+2 r_2=n$. <a href="https://math.stackexchange.com/questions/3608886">Show</a> $\operatorname{sgn}Δ_K=(-1)^{r_2}$.<hr>
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.1.22">1.22</a>
+$$Δ_K∈𝐐$$
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/3/Algebraic-NT-2024.pdf#theorem.1.19">1.19</a>
+$$\sqrt{Δ_K}=\det[σ_i(α^j)]$$
+If we call complex conjugation $τ$, we know that it commutes with this determinant because the determinant is a polynomial in the entries of the matrix, so
+$$τ(\det[σ_i(α^j)])=\det[τσ_i(α^j)]$$
+This permutes the $σ$'s, i.e. the rows of the matrix. So whether or not the sign of the determinant is changed depends whether the permutation is odd or even. By definition, $τ$ exchanges each pair of complex-conjugate embeddings, and so $τ$ acts by swapping $r_2$ rows, which from linear algebra corresponds to changing the sign by $(-1)^{r_2}$.<br>
+When $r_2$ is even, $τ(\sqrt{Δ_K})=\sqrt{Δ_K}⇒Δ_K>0$; when $r_2$ is odd, $τ(\sqrt{Δ_K})=-\sqrt{Δ_K}⇒Δ_K&lt;0$.
+</li>
+<li>Let $K=𝐐(α)$, where $α=2^{1/3}$. Show that $1, α, α^2$ is an integral basis for $𝒪_K$, evaluate $Δ_K$.<hr>
+<p>Since $[K:𝐐]=3$, then $1, α, α^2$ are 𝐐-linearly independent, hence 𝐙-linearly independent,
+$$𝐙^3≅𝐙[α]=⟨1, α, α^2⟩_{𝐙}⊂𝒪_K≅𝐙^3$$
+we know the index ${|𝒪_K/𝐙[α]|}=r$ is finite. To show $𝒪_K=𝐙[α]$ we need to show $r=1$.</p>
+<p>By Q3 $Δ_K=-108$, so $r^2|108$, if $r>1$ then $2|r$ or $3|r$.</p>
+<p>If $2|r$ by Cauchy’s theorem $𝒪_K/𝐙[α]$ has an element of order 2, let $z=\frac a2+\frac b2α+\frac c2α^2∈𝒪_K$ for some $a,b,c∈𝐙$, by adding an integer we can assume $a,b,c∈\{0,1\}$.
+$$\tr_{K/𝐐}(α)=α+ωα+ω^2α=0$$
+$$\tr_{K/𝐐}(z)=\frac{3a}2∈𝐙⇒a=0$$
+Now $αβ=\frac{b}2α^2+\frac{c}2α^3=\frac{b}2+c∈𝒪_K$ but $c∈𝐙$, so $\frac{b}2α^2∈𝒪_K$
+$$N(α)=α⋅ωα⋅ω^2α=2$$
+$$N\left(\frac{b}2α^2\right)=\left(\frac{b}2\right)^3N(α)^3=\frac{b^3}2∈𝐙⇒b=0$$
+Now $β=\frac{c}2α^2$ by the same argument $c=0$.</p>
+<p>If $3|r$ by Cauchy’s theorem $𝒪_K/𝐙[α]$ has an element of order 3, let $z=\frac a3+\frac b3α+\frac c3α^2∈𝒪_K$ for some $a,b,c∈𝐙$, modulo 3 we can assume $a,b,c∈F_3$.</p>
+<p>Let $S=\{(a,b,c)∈F_3^3:\frac a3+\frac b3α+\frac c3α^2∈𝒪_K\}$. Observe that $S⊊F_3^3$, as $(1,0,0)∉S$.</p>
+<p>As $z,zα,zα^2$ are three non-zero elements of $S$, they must be linearly dependent
+\begin{align*}0=\begin{vmatrix}a&b&c\\2c&a&b\\2b&2c&a\end{vmatrix}≡\begin{vmatrix}a&b&c\\-c&a&b\\-b&-c&a\end{vmatrix}&=a^3 - b^3 + c^3+ 3 a b c\\&≡a^3 - b^3 + c^3≡a-b+c\pmod3\end{align*}
+but $γ=\frac{1-α+α^2}3=\frac1{1+α}∉𝒪_K$, as
+$$m_{𝐐,1+α}(x)=(x-1)^3-2=x^3-3x^2+3x-3$$
+$$⇒m_{𝐐,γ}(x)=3 x^3 - 3 x^2 + 3 x - 1\text{ is not monic.}$$</p>
+<p>See <a href="https://math.stackexchange.com/questions/2126213/">MSE</a> | <a href="https://kconrad.math.uconn.edu/blurbs/gradnumthy/Qw2.pdf">kconrad</a></p>
+</li></ol>

@@ -1,0 +1,105 @@
+---
+mathjax: true
+tag: Algebraic Number Theory
+excerpt: <a href="https://people.maths.ox.ac.uk/greenbj/papers/ANT-sheet-2.pdf">sheet 2 — HT 2024</a> <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103030/mod_assign/introattachment/0/sheet2-2024-solutionsAC.pdf">solutionsAC</a>
+---
+$\DeclareMathOperator{\disc}{disc}$
+<ol>
+<li>Suppose that $α$ is an algebraic integer of degree $n$, with monic minimal polynomial $m_α ∈ 𝐙[X]$. Let $K=𝐐(α)$. Show that
+\begin{equation}\label1
+\disc_{K/𝐐}(1, α, …, α^{n-1})=(-1)^{n(n-1) / 2} N_{K/𝐐}(m_α'(α))
+\end{equation}
+where $m_α'$ denotes the derivative. Using this, compute $\disc_{K/𝐐}(1,α,α^2)$, where $K=𝐐(α)$ with $α=2^{1 / 3}$.</li></ol>
+<p style="margin-left:-1em">Q2-Q6 discuss the cyclotomic field $K=𝐐(ζ)$, where $ζ≔e^{2 π i/p}$ and $p$ is an odd prime.</p>
+<ol start="2"><li>Show that $[K: 𝐐]=p-1$.<hr>
+In B3.1 we proved minimal polynomial of ζ is $Φ_p(x)={x^p-1\over x-1}$, so $[K: 𝐐]=\degΦ_p=p-1$.
+</li>
+<li>Evaluate $N_{K/𝐐}(1-ζ)$.<hr>
+The conjugates of $1-ζ$ are roots of the polynomial $Φ_p(1-x)$ which has degree $p-1$. Since $2|p-1$, product of roots equals its constant term $Φ_p(1)=p$,
+so $N_{K/𝐐}(1-ζ)=p$.<hr>
+<!--sage
+K.<ζ> = CyclotomicField(7); #or write NumberField((x^7 - 1)/(x-1))
+(1 - ζ).norm()
+It should output 7-->
+Generally, when $n=p^k$, $N_{K/𝐐}(1-ζ_{p^k})=\left.\frac{x^{p^k}-1}{x^{p^{k-1}}-1}\right|_{x=1}=p$, and is 1 when $n$ is not a prime power.
+<a href="https://math.stackexchange.com/questions/49956/">See here</a>
+</li>
+<li>Show that $\frac1p (ζ-1)^{p-1}∈𝒪_K$.<hr>
+Expanding ${(1+(ζ-1))^p-1\overζ-1}=0$ we get
+\[\sum_{k=1}^p\binom pk(ζ-1)^{k-1}=0\]
+so
+\[(ζ-1)^{p-1}=-\sum_{k=1}^{p-1}\binom pk(ζ-1)^{k-1}\]
+dividing by $p$
+\[\frac1p(ζ-1)^{p-1}=-\sum_{k=1}^{p-1}\frac1p\binom pk(ζ-1)^{k-1}\]
+For each $k$, $\frac1p\binom pk∈𝐙$ and $(ζ-1)^{k-1}∈𝒪_K$. Since $𝒪_K$ is a ring, $\frac1p(ζ-1)^{p-1}∈𝒪_K$.
+<!--sage
+for p in [3,5,7]:
+    print((1/p*(exp(2*pi*i/p)-1)^(p-1)).minpoly())
+It should output
+x^2 - x + 1
+x^4 - x^3 + 6*x^2 + 4*x + 1
+x^6 - x^5 + 57*x^4 + 139*x^3 + 253*x^2 - 29*x + 1-->
+</li>
+<li>Evaluate $\disc_{K/𝐐}(1, ζ, …, ζ^{p-2})$.<hr>
+Computing derivative$$Φ_p'(ζ)={pζ^{p-1}(ζ-1)-(ζ^p-1)\over(ζ-1)^2}=-{pζ^{-1}\over1-ζ}$$
+Since $N_{K/𝐐}(ζ)=1$, $N_{K/𝐐}(1-ζ)=p$ by Q3 and norm is multiplicative,
+$$N_{K/𝐐}(Φ_p'(ζ))=(-1)^{p-1}{p^{p-1}N_{K/𝐐}(ζ)^{-1}\over N_{K/𝐐}(1-ζ)}=p^{p-2}$$
+Substituting into \eqref{1}$$\disc_{K/𝐐}(1, ζ, …, ζ^{p-2})=(-1)^{(p-1)(p-2)/2} p^{p-2}$$
+Since $(-1)^{p-2}=-1$
+$$\disc_{K/𝐐}(1, ζ, …, ζ^{p-2})=(-1)^{(p-1)/2} p^{p-2}$$</li>
+<li style="page-break-before: always;"><ol type="i"><li>Suppose that $c_{0}, c_{1}, …, c_{p-2}$ are integers and that
+$$\frac{1}{p}\left(c_{0}+c_{1}(ζ-1)+⋯+c_{p-2}(ζ-1)^{p-2}\right) ∈ 𝒪_{K}$$
+Show that all the $c_{i}$ are divisible by $p$.<hr>
+Suppose not, and let $r$ be minimal such that $p ∤ c_r$. Since $p$ divides $c_0,…,c_{r-1}$
+$$\frac{1}{p}\left(c_r(ζ-1)^r+⋯+c_{p-2}(ζ-1)^{p-2}\right) ∈ 𝒪_{K}$$
+Multiply by $(ζ-1)^{p-2-r}$
+$$\frac{1}{p}c_r(ζ-1)^{p-2}+\frac{1}{p}(ζ-1)^{p-1}\left(c_{r+1}+⋯+c_{p-2}(ζ-1)^{p-3-r}\right)∈ 𝒪_{K}$$
+By Q4, $\frac1p(ζ-1)^{p-1}∈ 𝒪_{K}$, so the second term$∈𝒪_{K}$, so
+$$\frac{1}{p}c_r(ζ-1)^{p-2}∈𝒪_{K}$$
+By Q3, $N_{K/𝐐}(1-ζ)=p$, computing the norm
+$$\frac{1}{p^{p-1}}c_r^{p-1}p^{p-2}∈𝐙⇒\frac{c_r^{p-1}}p∈𝐙$$
+but $c_r∈𝐙$, so $c_r$ is divisible by $p$, contradiction.
+</li>
+<li>Show that $1, ζ, …, ζ^{p-2}$ is an integral basis for $𝒪_{K}$.<hr>
+If $1, ζ, …, ζ^{p-2}$ is not an integral basis, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103249/mod_resource/content/1/Algebraic-NT-2024.pdf#theorem.2.21">2.21</a> ∃ prime $q$, $q^2|\disc(1, ζ, …, ζ^{p-2})$ and $m_1,…,m_{p-2}∈𝐙_q$ not all zero, such that$$\frac{1}{q}(m_{0}+m_{1}ζ+⋯+m_{p-2}ζ^{p-2})∈𝒪_{K}$$
+$\disc(1, ζ, …, ζ^{p-2})=(-1)^{p-1\over2}p^{p-2}$ by Q5.<br>Since $q^2|(-1)^{p-1\over2}p^{p-2}$ and both $p,q$ are prime we have $p=q$. So
+$$\frac{1}{p}(m_{0}+m_{1}ζ+⋯+m_{p-2}ζ^{p-2})∈𝒪_{K}$$
+replacing $ζ$ by $(ζ-1)+1$ we get a polynomial $f∈𝐙_p[x]$ of degree≤$p-2$ such that$$\frac1pf(ζ-1)∈𝒪_K$$
+contradicting part (i).
+</li></ol></li>
+<li style="page-break-before: always;page-break-after: always;">Let $K$ be a number field. We say that $K$ is <i>norm-Euclidean</i> if $𝒪_{K}$ is a Euclidean domain with respect to the norm function: that is, given $a, b ∈ 𝒪_{K} ∖\{0\}$ we may find $q, r ∈ 𝒪_{K}$ such that $a=q b+r$ with ${|N_{K/𝐐}(r)|}&lt;{|N_{K/𝐐}(b)|}$.
+<ol type="i"><li>Show that a Euclidean domain is a principal ideal domain.<hr>
+Suppose $R$ is a Euclidean domain and $I$ is an ideal of $R$ and $I≠\{0\}$,
+we can take $a≠0$ in $I$ with $N(a)$ minimal. For any $b ∈ I$, write
+$b = qa + r$ with $r = 0$ or $N(r) < N(a)$; but $r=b-qa ∈ I$ and so by minimality
+of $N(a)$, $r = 0$; thus $a|b$ and $I = ⟨a⟩$.</li>
+<li>Let $K=𝐐(\sqrt{-7})$. Show that $K$ is norm-Euclidean.<hr>Since $-7≡1\pmod4,𝒪_{𝐐(\sqrt{-7})}=𝐙\left[\frac{1+\sqrt{-7}}{2}\right]$.
+For any $x + iy∈𝐂$ we must find $r,s∈𝐙$
+$$z = r + s\frac{1+\sqrt{-7}}{2}=\left(r+\frac s2\right)+ i\frac{s\sqrt{7}}2\text{ such that }N(x + yi - z)&lt;1$$
+To minimize $N(x + yi - z)$, first take $s$ as the integer closest to $2y/\sqrt{7}$
+\[
+ \left| \frac{2y}{\sqrt{7}} - s \right|⩽\frac12 ⇒ \left| y - \frac{s\sqrt7}2 \right|⩽\frac{\sqrt7}4
+\]
+Then take $r$ as the integer closest to $(x - s/2)$
+\begin{align*}
+\left|x - r - \frac s2\right| ⩽ \frac12.
+\end{align*}
+Putting both inequalities together
+\begin{align*}
+N(x + yi - z)&=\left(x - r -\frac s2\right)^2 +\left(y - s\frac{\sqrt{7}}2\right)^2
+\\&⩽ 1/4 + 7/16
+\\&< 1\end{align*}as desired. Hence, $𝒪_K$ is Euclidean domain.</li></ol></li>
+<li>Let $K=𝐐(\sqrt{-p})$, where $p$ is a prime, $p≡1\pmod 4$. By considering factorisations of 2, show that $𝒪_{K}$ is not a principal ideal domain.<hr>
+Since $-p≡3\pmod4$, we know $𝒪_{K}=𝐙[\sqrt{-p}]$.<br>
+We compute$$(2,1+\sqrt{-p})(2,1+\sqrt{-p})=(4,2(1+\sqrt{-p}),1-p+2\sqrt{-p})$$
+Since $2(1+\sqrt{-p})-(1-p+2\sqrt{-p})-4⋅\frac{p-1}4=2$
+we get $(2)⊂(2,1+\sqrt{-p})^2$<br>
+but $(2,1+\sqrt{-p})^2⊂(2,1+\sqrt{-p})⊂(2)$<br>
+so $(2)=(2,1+\sqrt{-p})^2$.<br>
+But $N((2))=4$, so $N(2,1+\sqrt{-p})=2$ is prime, so $(2,1+\sqrt{-p})$ is prime.<br>
+Since the norm of any element $a+b\sqrt{-p}$ is $a^2+pb^2$, which does not take the
+value 2.<br>
+so $(2,1+\sqrt{-p})$ is not principal.<br>
+so $𝒪_{K}$ is not a PID.
+</li>
+</ol>
