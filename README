@@ -1,16 +1,6 @@
-https://blog.cjhb.site/ is a blog that I created using Jekyll.
+https://kuing.cjhb.site is a math forum
 
-🤔 If you find an error or have suggestions:
-Don't hesitate to:
-  Open an issue: https://github.com/hbghlyj/hbghlyj/issues
-- or -
-  Open a PR: https://github.com/hbghlyj/hbghlyj/pulls
-
-
-📁 The `_posts` folder
-
-The HTML source codes are in https://github.com/hbghlyj/hbghlyj/tree/main/_posts
-The file name format is `YYYY-MM-DD-title.html`.
+https://blog.cjhb.site is a math blog
 
 Equations are in LaTeX or MathML format. One can be converted to the other by https://pandoc.org/try/
 🗨️LaTeX is easier to type since there are high-level commands.
