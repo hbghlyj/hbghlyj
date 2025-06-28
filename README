@@ -1,14 +1,1 @@
 https://kuing.cjhb.site is a math forum
-
-https://blog.cjhb.site is a math blog
-
-Equations are in LaTeX or MathML format. One can be converted to the other by https://pandoc.org/try/
-🗨️LaTeX is easier to type since there are high-level commands.
-🗨️MathML can be parsed by Math-aware search engines like https://approach0.xyz/search/ but it is more verbose
-
-The diagrams are generated in two ways: QuickLaTeX or MathJax SVG.
-🗨️For QuickLaTeX, it converts TeX file to inline SVG using https://github.com/hbghlyj/jekyll-quicklatex
-  It makes the output file size bigger but is authentic LaTeX.
-  The diagram will be produced in TeX format, e.g. by TikZ, so it cannot be edited visually but it can use high-level commands.
-🗨️For MathJax SVG, it embeds formula into SVG using a custom MathJax config https://github.com/hbghlyj/hbghlyj/blob/main/_includes/markdown-enhancements/mathjax.html (the point is to output SVG directly, instead of wrapping in mathjax typesetroot element).
-  The diagram will be visually editable in Inkscape, but it may not be as high-level as TikZ, so more verbose.
