@@ -1,10 +1,4 @@
 .DS_Store
 urlslug.py
 __pycache__
-_site
 Gemfile.lock
-.jekyll-cache
-.jekyll-metadata
-latex.cache
-assets/latex
-.sass-cache
