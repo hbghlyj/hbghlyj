@@ -1,0 +1,29 @@
+---
+mathjax: true
+tag: distribution-theory
+title: Weyl's lemma
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://math.mit.edu/~dws/boulder/weyl.pdf#page=2">Weyl's Lemma</a>. Let $\Omega \subseteq \mathbb{R}^N$ be open. If $u \in \mathfrak{D}^{\prime}(\Omega ; \mathbb{R})$ (the space of Schwartz distributions on $\Omega$) satisfies $\Delta u=f \in C^{\infty}(\Omega ; \mathbb{R})$ in the sense that
+\[
+\langle\Delta \psi, u\rangle=\langle\psi, f\rangle, \quad \psi \in C_{\mathrm{c}}^{\infty}(\Omega ; \mathbb{R}),
+\]
+then $u \in C^{\infty}(\Omega ; \mathbb{R})$.
+ 
+<em>Proof.</em> Set
+\[
+\gamma_t(x)=(4 \pi t)^{-\frac{N}{2}} \exp \left[-\frac{|x|^2}{4 t}\right] .
+\]
+Given $x_0 \in \Omega$, choose $r>0$ so that $\bar{B}\left(x_0, 3 r\right) \subset \subset \Omega$ and $\eta \in C_{\mathrm{c}}^{\infty}\left(B\left(x_0, 3 r\right) ;[0,1]\right)$ so that $\eta=1$ on $\bar{B}\left(x_0, 2 r\right)$.
+Set $v=\eta u$ and $w=\Delta v-\eta f$. Then $w$ is supported in $B\left(x_0, 3 r\right) \backslash \bar{B}\left(x_0, 2 r\right)$. Now take
+\[
+v_t(x)=\gamma_t \star v(x) \equiv\left\langle\gamma_t(\cdot-x), v\right\rangle \\ w_t(x)=\gamma_t \star w(x)\equiv\left\langle\gamma_t(\cdot-x), w\right\rangle .
+\]
+For each $t>0, v_t$ is smooth. Moreover,
+\[
+\dot{v}_t(x)=\left\langle\gamma_t(\cdot-x), \eta f\right\rangle+\left\langle\gamma_t(\cdot-x), w\right\rangle
+\]
+and so
+\[
+v_t(x)=v_1(x)-\int_t^1 \gamma_\tau \star(\eta f)(x) d \tau-\int_t^1 w_\tau(x) d \tau .
+\]</div>

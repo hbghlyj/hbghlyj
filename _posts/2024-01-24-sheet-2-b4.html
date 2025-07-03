@@ -1,0 +1,19 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X$ and $Y$ be real Banach spaces and $T ∈ ℬ(X, Y)$. Assume that $Z=T X$ is a finite-codimensional subspace of $Y$ and let $\{y_1+Z, …, y_m+Z\}$ be a basis for $Y / Z$. Define $\hat{T}: X ⊕ ℝ^m → Y$ by
+\[
+\hat{T}(x,(v_1, …, v_m))=T(x)+\sum_{j=1}^m v_j y_j .
+\]
+Show that $\hat{T}$ is a surjective bounded linear operator.
+Hence, by applying the open mapping theorem, deduce that $Z$ is closed.
+<em>Proof:</em> Clearly $\hat{T}$ is linear.
+\[
+‖\hat{T}(x,(v_1, …, v_m))‖≤‖T(x)‖+‖\sum_{j=1}^m v_j y_j‖
+≤‖T‖‖x‖+\max_j‖y_j‖\sum_{j=1}^m‖v_j‖
+\]
+so $\hat{T}$ is bounded.
+For any $y∈Y$, let $y+Z=\sum_{j=1}^m v_j(y_j+Z)$, then $y-\sum_{j=1}^m v_jy_j∈Z=TX$, so $y-\sum_{j=1}^m v_jy_j=T(x)$ for some $x$, so $y=\hat{T}(x,(v_1, …, v_m))$, so $T$ is surjective.
+By open mapping theorem, $\hat{T}$ is open, so $\hat{T}(X,ℝ^m∖\{0\})=Y∖Z$ is open, so $Z$ is closed.</div>

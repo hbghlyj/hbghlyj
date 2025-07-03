@@ -1,0 +1,30 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$\def\ker{\operatorname{Ker}}\DeclareMathOperator{\im}{Im}$Let $X$ be a real Hilbert space and assume that $A ∈ ℬ(X)$ is a projection, i.e. so that $A^2=A$. Show that $\im A=\ker(I-A)$ and prove the following are equivalent
+(1) $A=A^*$
+(2) $(\im A)^⟂=\ker A$
+(3) $‖A‖≤1$.
+Deduce that either $‖A‖=1$ or $A=0$ provided that one of the above statements is true.
+<strong>Solution.</strong>
+$∀x∈\im A,x=Ay$ for some $y∈X$, so $(I-A)Ay=0$, so $\im A⊂\ker(I-A)$.
+In the other direction, $∀x∈\ker(I-A),x=Ax∈\im A$, so $\im A⊃\ker(I-A)$.
+So $\im A=\ker(I-A)$. In particular, $\ker(I-A)$ is closed implies $\im A$ is closed.
+
+<u>Fact:</u> $X=\im A+\im(I-A)$ [since $x=Ax+(I-A)x$], we know both $\im A,\im(I-A)$ are closed.
+
+(1⇒2) Suppose $A=A^*$. Using <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#equation.1.5">1.5</a> $∀T∈ℬ(X),\ker T=(\im T^*)^⟂$ we have $\ker A=(\im A^*)^⟂=(\im A)^⟂$.
+(2⇒1) Suppose $(\im A)^⟂=\ker A$, then $∀x,y∈X$, since $(I-A)x∈\ker A,$
+\[⟨A^∗(I-A)x,y⟩=⟨(I-A)x,Ay⟩=0⇒A^∗(I-A)=0⇒A^∗=A^∗ A\]
+Taking adjoint on both sides, we also have $A=A^∗ A$. Therefore $A^∗=A$.
+(2⇒3) Suppose $(\im A)^⟂=\ker A$. We showed $\im A$ is a closed subspace, by projection theorem $X=\im A⊕\ker A$. $∀x∈X$ write $x=y+z$ for some $y∈\im A,z∈\ker A$ and $‖x‖^2=‖y‖^2+‖z‖^2$. Since $Az=0$ we have $Ax=Ay=y$.
+\[‖Ax‖=‖y‖≤‖x‖⇒‖A‖≤1\]
+(3⇒1) Suppose $‖A‖≤1$, then $∀x,y∈X$, since $A(I-A)y=0,$
+\[‖Ax‖=‖A(A x-(I-A)y)‖≤‖A x-(I-A)y‖\]
+so\[\operatorname{dist}(A x, \im(I-A))=\inf_y‖A x-(I-A)y‖=‖A x‖\]
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94340/mod_resource/content/13/B4.1LectureNotes.pdf#theorem.1.2.15">1.2.15</a> $⟨A x,(I-A)y⟩=0⇒A^∗(I-A)=0⇒A^∗=A^∗ A$. Taking adjoint on both sides, we also have $A=A^∗ A$. Therefore $A^∗=A$.
+
+Finally, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94340/mod_resource/content/13/B4.1LectureNotes.pdf#theorem.2.2.2">2.2.2</a> $‖A^2‖≤‖A‖^2$, so $‖A‖≤‖A‖^2$, so either $‖A‖≥1$ or $A=0$.
+Provided that (3) is true, $‖A‖≤1$, so either $‖A‖=1$ or $A=0$.</div>

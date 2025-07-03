@@ -1,0 +1,25 @@
+---
+mathjax: true
+tag: geometry-of-surfaces
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://gauss.math.yale.edu/~ws442/complex.pdf#page=81">page72</a> The annuli: consider $ℍ /⟨z↦λz⟩$ with $λ>1$. Then $\log z$ maps this onto
+\[
+\{w ∈ ℂ: 0<\operatorname{Im} w<π, 0 ≤ \operatorname{Re} w ≤ \log λ\}
+\]
+with the sides $\operatorname{Re} w=0, \operatorname{Re} w=\log \lambda$ identified. Next, send this via the conformal map
+\[
+w \mapsto \exp \left(2 \pi i \frac{w}{\log \lambda}\right)
+\]
+onto the annulus $\Delta_r:=\{r<|z|<1\}$ where $\log r=-\frac{2 \pi^2}{\log \lambda}$. We leave it to the reader to check that no two $\Delta_r$ are conformally equivalent (hence, the moduli space of tori $\left\{z \in \mathbb{C}^*: r_1<|z|<r_2\right\}$ with $0<r_1<r_2$ is the same as all $\frac{r_2}{r_1}$, i.e., $(0, \infty)$.
+
+Rudin - <em>Real and Complex Analysis (3rd Ed.)</em> pg 291
+For $0<r<R$, let $A(r, R) = \{z ∈ ℂ: r<|z|<R\}$, the annulus centered at the origin with inner radius $r$ and outer radius $R$.
+<strong>14.22 Theorem.</strong> $A(r_1, R_1)$ is conformally equivalent to $A(r_2, R_2)$ if and only if $R_1/r_1 = R_2/r_2$.
+<em>Proof:</em> Suppose $R_1/r_1 = R_2/r_2$. Then there exists $k > 0$ such that $R_2 = k R_1$ and $r_2 = k r_1$. The map $f(z) = kz$ gives a conformal equivalence from $A(r_1, R_1)$ onto $A(r_2, R_2)$.
+Conversely, let $f$ be a biholomorphic map from $A(r_1, R_1)$ onto $A(r_2, R_2)$. By scaling if necessary,  we may assume $r_1 = r_2 = 1$. Let $A_1 = A(1, R_1)$ and $A_2 = A(1, R_2)$. Fix some $1<r<R_2$, for example $r=\sqrt{R_2}$. Let $C$ be the circle with center at 0 and radius $r$. Since $f^{-1}$ is continuous, $f^{-1}(C)$ is compact, so we can find some $δ > 0$ such that $A(1, 1 + δ) ∩ f^{-1}(C) = ∅$. Let $V = f(A(1, 1 + δ))$. Since $f$ is continuous, $V$ is connected, so either $V ⊆ A(1, r)$ or $V ⊆ A(r, R_2)$. By replacing $f$ with $R_2/f$, we may assume the first case holds.
+<strong>Claim:</strong> $|f(z_n)| → 1$ whenever $|z_n| → 1$.
+<em>Proof of claim: </em>Let $\{z_n\} ⊆ A(1, 1 + δ)$. Note that $\{f(z_n)\}$ does not have a limit point in $A_2$ since otherwise $\{z_n\}$ would have a limit point in $A_1$ by continuity of $f^{-1}$, contradicting $|z_n| → 1$. Hence $|f(z_n)| → 1$ or $|f(z_n)| → R_2$ (it must converge by continuity). The latter case is ruled out as $f(z_n) ∈ V ⊆ A(1, r)$.
+Similarly, we also have:
+<strong>Claim: </strong> $|f(z_n)| → R_2$ whenever $|z_n| →  R_1$.
+Now set $α = \log R_2/ \log R_1$. Define $g: A_1 → ℝ$ by \[ g(z)  = \log |f(z)|^2 - α \log |z|^2 = 2(\log |f(z)| - α \log |z|). \] We know that $\log |h|$ is harmonic whenever $h$ is holomorphic and nonzero, so $g$ is a harmonic function. By the two claims, $g$ extends to a continuous function on $\overline{A_1}$ vanishing on $∂ A_1$. This forces $g$ to vanish identically on $A_1$. In particular, \[ 0 = \frac{∂ g}{∂ z} = \frac{f'(z)}{f(z)} - \frac{α}{z}. \] Take some $1<c<R_1$ and let $γ(t) = ce^{it}, t ∈ [0, 2π]$. We have \[ α = \frac{1}{2 π i}∫_γ \frac{α}{z} dz = \frac{1}{2 π i}∫_γ \frac{f'(z)}{f(z)} dz = \mathrm{Ind}_{f ∘ γ}(0), \] so $α > 0$ is an integer. Observe that \[ \frac{d}{dz}(z^{-α}f(z)) = z^{-α - 1}(-α f(z) + zf'(z)) = 0, \] thus $f(z) = Kz^{α}$ for some nonzero constant $K$. Since $f$ is injective, $α = 1$. Therefore $R_2 = R_1$.</div>

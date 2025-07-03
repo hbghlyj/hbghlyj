@@ -1,0 +1,21 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+$\DeclareMathOperator{\Ext}{Ext}\DeclareMathOperator{\Hom}{Hom}
+<div style="white-space:pre-wrap">
+Given $R$-modules $A,B,C$ with projective resolutions $P→A,Q→B,T→C$, we see that
+\[\operatorname{Ext}^i_R(A,B)=H^i\operatorname{Tot}^Π\Hom_R(P,Q)=\text{chain homotopy classes of chain maps }P→Q[i]\]
+also
+\[\operatorname{Ext}^j_R(B,C)=H^j\operatorname{Tot}^Π_R\Hom_R(Q,T)=\text{chain homotopy classes of chain maps }Q→T[j]\]
+<u>Note:</u> shift by \(i\): $\Hom(Q,T[j])\overset\sim\to\Hom(Q[i],T[i+j])$ preserves chain homotopy 
+
+\begin{tikzcd}P \ar[dr]\ar[rr] &   & T[i+j]\\
+&Q[i]\ar[ur]\end{tikzcd}gives a map $\operatorname{Ext}^i_R(A,B)×\operatorname{Ext}^j_R(B,C)→\operatorname{Ext}_R^{i+j}(A,C)$ is associative and biadditive.
+\(D^-(R\text{-mod}) \simeq K^-(\text{Projective }R\text{-mod})\)
+\begin{align*}
+& \Ext_R^•(A, A)=\oplus_i\Ext^i_R(A,A) \text{ is a graded ring. } \\
+&  \Ext^i(A, A) \times  \Ext^j(A, A) \to  \Ext^{i+j}(A, A) \\
+\end{align*}
+For any $B$, $\Ext^•(A, B)=\oplus_i\Ext_R^i(A, B)$ is a graded module over this ring.</div>

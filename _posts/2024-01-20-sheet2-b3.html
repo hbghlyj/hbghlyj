@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) Let $X$ be a real Banach space, $Y$ and $Z$ be real normed vector spaces, and $B: X × Y → Z$ be bilinear (i.e. linear in each variable). Suppose that for each $x ∈ X$ and $y ∈ Y$, the linear maps $B^x: Y → Z$ and $B_y: X → Z$ defined by
+\[
+B^x(y)=B(x, y)=B_y(x)
+\]are continuous. Use the principle of uniform boundedness to prove that there exists a constant $K$ such that $‖B(x, y)‖ ≤ K‖x‖‖y‖$ for all $x ∈ X$ and $y ∈ Y$. Deduce that $B$ is continuous.
+
+<em>Proof:</em> Let $S^Y=\{y∈Y:‖y‖<1\}$. For each $x ∈ X$, $‖B_y(x)‖=‖B^x(y)‖≤‖B^x‖‖y‖$, so
+\[\sup_{y∈S^Y}‖B_y(x)‖≤‖B^x‖<∞\]
+By the principle of uniform boundedness,
+\[K≔\sup_{y∈S^Y}‖B_y‖<∞\]
+So $‖B(x,\frac{y}{‖y‖})‖ ≤ K‖x‖$ for each $x∈X,y∈Y$.
+So $‖B(x,y)‖ ≤ K‖x‖‖y‖$ for each $x∈X,y∈Y$. So $B$ is continuous.
+
+(b) Let $X$ and $Y$ both be the subspace of $L^1(0,1)$ consisting of polynomials, $Z=ℝ$, and
+\[B(f,g)=∫_0^1 f g\]
+Show that the bilinear form $B$ is continuous in each variable but it is not continuous.
+{\color{gray}[To put things in perspective, please note that even on $ℝ^2$, for nonlinear functions, separate continuity does not imply joint continuity. A standard example is the function $f(x, y)=\frac{x y}{x^2+y^2}$ for $(x, y) ≠ 0$ and $f(0,0)=0$.]}
+<em>Proof:</em> By Hölder’s inequality, $|B(f,g)|≤‖f‖_{L^∞}‖g‖_{L^1}$, so $B$ is continuous in $g$, similarly continuous in $f$.
+For $f(x)=\sqrt{n}χ_{[0,1/n]}$, $‖f‖_{L^1}=1/\sqrt{n}→0$, yet $B(f,f)=1$, so does not exist $K$, so $B$ is not continuous.</div>

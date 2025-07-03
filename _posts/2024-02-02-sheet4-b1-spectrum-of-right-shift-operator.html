@@ -1,0 +1,98 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$\DeclareMathOperator{\im}{Im}$%
+Consider the right shift operator on sequences $R(x_1,x_2,…)=(0, x_1, x_2, …)$. Show that
+(a) As an operator on $ℓ^2$, $R$ satisfies $σ_p(R)=∅, σ_r(R)=\{λ:|λ|<1\}$ and $σ_{ap}(R)=σ_c(R)=\{λ:|λ|=1\}$.
+<strong>Solution 1.</strong>
+$x∈σ_p⇔Rx=λx⇔λx_1=0$ and $∀k≥1,λx_{k+1}=x_k$.
+If $λ=0$ then $x=0$, so $0∉σ_p$; if $λ≠0$ then $x_1=0⇒x_2=\frac{x_1}{λ}=0…⇒x=0$, so $λ∉σ_p$.
+So $σ_p(R)=∅$.
+
+Since $σ_p(R)=∅$, $R-λI$ is injective,
+$$λ∈σ_r(R)⇔\overline{\im(R-λI)}≠ℓ^2⇔\ker(R^*-\bar{λ}I)≠0⇔\bar{λ}∈σ_p(L)$$
+in lecture computed $σ_p(L)=\{λ∈ℂ:|λ|<1\}$, so $σ_r(R)=\{λ∈ℂ:|λ|<1\}$.
+So $σ(R)⊇\{λ∈ℂ:|λ|<1\}$, but $σ(R)$ is closed, so $σ(R)⊇\{λ∈ℂ:|λ|≤1\}$.
+By Gelfand's formula $r_σ(R)=\|R\|=1$, so $σ(R)=\{λ∈ℂ:|λ|≤1\}$.
+So $σ_c(R)=σ(R)∖(σ_r(R)∪σ_p(R))=\{λ∈ℂ:|λ|=1\}$.
+
+$σ_{ap}⊇σ_c$
+$∀|λ|<1,\|Rx-λx\|≥\|\|Rx\|-|λ|\|x\|\|=\|\|x\|-|λ|\|x\|\|=(1-|λ|)\|x\|$, so $λ∉σ_{ap}$.
+so $σ_{ap}=\{λ∈ℂ:|λ|=1\}$
+
+<strong>Solution 2.</strong>
+$σ_p(R)=∅$ as in solution 1.
+$\im(R)⊆\{y∈ℓ^2:y_1=0\}=e_1^⟂$ is not dense, so $0∈σ_r$.
+If $|λ|<1$, $(y_1,y_2,…)≔(R-λI)(x_1,x_2,…)=(-λx_1, x_1-λx_2, x_2-λx_3, …)$, and
+\begin{align*}\sum_{i=1}^{n}λ^iy_i&=λ^1(-λx_1)+λ^2(x_1-λx_2)+λ^3(x_2-λx_3)+⋯+λ^n(x_n-λx_{n+1})\\&=-λ^{n+1}x_{n+1}→0\end{align*}
+so $\im(R-λI)⊆(λ,λ^2,…)^⟂$ is not dense, so $λ∈σ_r$.
+So $σ_r(R)⊇\{λ∈ℂ:|λ|<1\}$.
+So $σ(R)⊇\{λ∈ℂ:|λ|<1\}$, but $σ(R)$ is closed, so $σ(R)⊇\{λ∈ℂ:|λ|≤1\}$.
+By Gelfand's formula $r_σ(R)=\|R\|=1$, so $σ(R)=\{λ∈ℂ:|λ|≤1\}$.
+
+If $|λ|=1$, let $a_n=(λ^{-1},…,λ^{-n},0,…)$, then
+\begin{align*}e_1-\tfrac{λ}{n}a_n&=\left(1-\tfrac1n,-\tfrac{λ^{-1}}n,…,-\tfrac{λ^{1-n}}n,0,…\right)
+\\&=(λI-R)\left(λ^{-1}(1-\tfrac1{n}),λ^{-2}(1-\tfrac2n),…,λ^{-n}(1-\tfrac nn),0,…\right)\end{align*}
+so $e_1-\frac{λ}{n}a_n∈\im(λI-R)$. But
+$$‖e_1-(e_1-\tfrac{λ}{n}a_n)‖=\tfrac{‖a_n‖}{n}=\tfrac{1}{\sqrt{n}}→0$$
+so $e_1∈\overline{\im(λI-R)}$.
+Similarly, for all $j≥1$, take $n≥j$,
+\begin{align*}e_j-\tfrac{λ^j}{n}a_n&=\left(-\tfrac{λ^{j-1}}n,-\tfrac{λ^{j-2}}n,…,-\tfrac{λ^1}n,1-\tfrac{λ^0}n,-\tfrac{λ^{-1}}n,…,-\tfrac{λ^{j-n}}{n},0,…\right)
+\\&=(λI-R)\left(-\tfrac{λ^{j-2}}n,-\tfrac{2λ^{j-3}}n,…,-\tfrac{(j-1)λ^0}n,λ^{-1}(1-\tfrac{j}{n}),λ^{-2}(1-\tfrac{2}n),…,λ^{j-n}(1-\tfrac{n}n),0,…\right)\end{align*}
+so $e_j-\frac{λ^j}{n}a_n∈\im(λI-R)$. But
+$$‖e_j-(e_j-\tfrac{λ^n}{n}a_n)‖=\tfrac{‖a_n‖}{n}=\tfrac{1}{\sqrt{n}}→0$$
+so $e_j∈\overline{\im(λI-R)}$, but $\overline{\operatorname{span}}\{e_j\}=ℓ^2$, so $\overline{\im(λI-R)}=ℓ^2$, so $λ∈σ_c$.
+So $σ_c(R)=\{λ∈ℂ:|λ|=1\}$.
+
+[Another way: $λ∈σ_c(R)⇔λ∈σ(R)$ and $\overline{\im(R-λI)}=ℓ^2$
+$⇔|λ|≤1$ and $\ker(R^*-\bar{λ}I)=0$
+$⇔|λ|≤1$ and $\bar{λ}∉σ_p(L)=\{λ∈ℂ:|λ|<1\}$
+so $σ_c(R)=\{λ∈ℂ:|λ|=1\}$.]
+
+(b) As an operator on $ℓ^{∞}$, $R$ satisfies $σ_p(R)=∅, σ_r(R)=\{λ:|λ| ⩽ 1\}$ and $σ_c(R)=∅$.
+<strong>Solution.</strong> By the same argument as (a), $σ_p(R)=∅$.
+Suppose $0<|λ|<1$,
+\[
+(R-λ I) x=(1,0,0, …)
+\]
+for some $x ∈ ℓ^{∞}$, then
+\begin{align*}
+-λ x_1 & =1 \\
+x_1-λ x_2 & =0 \\
+x_2-λ x_3 & =0 \\
+& …
+\end{align*}
+we obtain $x_k=-λ^{-k}$, but $|λ|<1$, so $|x_k|→∞$, contradicting $x∈ℓ^{∞}$, so $λ ∈ σ(R)$.
+Hence, $\{λ ∈ ℂ: 0<|λ|<1\} ⊂ σ(R)$, but $σ(R)$ is closed, so $σ(R)⊇\{λ∈ℂ:|λ|≤1\}$.
+By Gelfand's formula $r_σ(R)=\|R\|=1$, so $σ(R)=\{λ∈ℂ:|λ|≤1\}$.
+
+For $|λ|<1$, define a functional $f:ℓ^∞→ℂ,f(y)=\sum_{k=1}^∞λ^{k}y_k$.
+Can check $f$ is bounded and linear, $\ker(f)⊊ℓ^∞$ since $e_1∉\ker(f)$.
+\begin{align*}\sum_{k=1}^{n}λ^ky_k&=λ^1(-λx_1)+λ^2(x_1-λx_2)+λ^3(x_2-λx_3)+⋯+λ^n(x_n-λx_{n+1})\\&=-λ^{n+1}x_{n+1}→0\end{align*}
+so $\overline{\im(R-λ)}⊆\ker(f)$, so $\im(R-λ)$ not dense, so $λ∈σ_r(R)$.
+
+Let $a=(1,\frac{\bar{λ}}{|λ|},(\frac{\bar{λ}}{|λ|})^2,…)$ for $λ≠0$ and $a=(1,1,…)$ otherwise. We will show $B_{\frac12}(a)⊆ℓ^∞∖\im(R-λI)$.
+For $y∈\im(R-λI)$, $∃x∈ℓ^∞,(R-λI)(x)=y⇔y_1=λx_1,y_n=λx_n-x_{n-1}∀n≥2$
+Summing up $λ^n$ times equation $n$ gives\[\sum_{k=1}^{n}λ^{k-1}y_k=λ^nx_n\tag{⋆}\]
+Assume that $y∈\im(R-λI),y=a+c∈B_{\frac{1}{2}}(a)$ so that $‖c‖<\frac{1}{2}$. $∃0≠x∈ℓ^∞$ s.t. $(R-λI)(x)=y=a+c$.
+(⋆)⇒for all $n∈ℕ$:
+\begin{align*}
+λ^nx_n&=\sum_{k=1}^{n}λ^{k-1}(a_k+c_k)\\
+&=\sum_{k=1}^{n}λ^{k-1}(\tfrac{\bar{λ}}{|λ|})^{k-1}+\sum_{k=1}^{n}λ^{k-1}c_k\\
+&=\sum_{k=1}^{n}|λ|^{k-1}+\sum_{k=1}^{n}λ^{k-1}c_k
+\end{align*}
+by triangle inequality
+\begin{align*}
+|λ^nx_n|&≥\sum_{k=1}^{n}|λ|^{k-1}-\sum_{k=1}^{n}|λ|^{k-1}|c_k|\\
+&≥\frac12\sum_{k=1}^{n}|λ|^{k-1}\xrightarrow{n→∞}\frac12\sum_{k=1}^{∞}|λ|^{k-1}
+\end{align*}
+<strong>Case |λ|<1:</strong>
+RHS: $\frac12\sum_{k=1}^∞|λ|^{k-1}≥\frac12$
+LHS: $|λ^nx_n|≤|λ|^n‖x‖_{\sup}\xrightarrow{n→∞}0$, contradiction!
+<strong>Case |λ|=1:</strong>
+$‖x‖_{\sup}≥|λ^nx_n|≥\frac12\sum_{k=1}^{∞}|λ|^{k-1}=∞$, contradiction!
+so $σ_r(R)=\{λ∈ℂ:|λ|≤1\}$.
+
+The question doesn't ask to compute $σ_{ap}(R)$.</div>

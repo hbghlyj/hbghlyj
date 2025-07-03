@@ -1,0 +1,14 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X$ be a normed space, $Y$ a Banach space and let $(T_k) ⊂ ℬ(X, Y)$ be a sequence of compact operators.
+(a) Let $(x_n)$ be a bounded sequence in $X$. Show that there exists a subsequence $x_{n_j}$ so that $T_k(x_{n_j})$ converges for every $k ∈ ℕ$
+(b) Hence or otherwise show that if $T_k$ converges in $ℬ(X, Y)$ to an operator $T$ then $T$ is also a compact operator.
+<strong>Proof.</strong>
+(a) Let $\{x_n\}$ be a bounded sequence in $X$. By compactness, there exists a subsequence of $\{x_n\}$, which we will label $\{x_{n(1, r)}\}$($=\{x_{n(1, r)}\}_{r=1}^{∞}$), such that the sequence $\{T_1 x_{n(1, r)}\}$ converges. Similarly, there exists a subsequence $\{x_{n(2, r)}\}$ of $\{x_{n(1, r)}\}$ such that $\{T_2 x_{n(2, r)}\}$ converges. Also, $\{T_1 x_{n(2, r)}\}$ converges since it is a subsequence of $\{T_1 x_{n(1, r)}\}$. Repeating this process inductively, we see that for each $j ∈ ℕ$ there is a subsequence $\{x_{n(j, r)}\}$ with the property: for any $k ≤ j$ the sequence $\{T_k x_{n(j, r)}\}$ converges. Taking the diagonal sequence $n(r)=n(r, r)$, for $r ∈ ℕ$, we obtain a single subsequence $\{x_{n(r)}\}$ with the property that, for each fixed $k ∈ ℕ$, the sequence $\{T_k x_{n(r)}\}$ converges as $r → ∞$.
+(b) We will now show that the sequence $\{T x_{n(r)}\}$ converges. We do this by showing that $\{T x_{n(r)}\}$ is a Cauchy sequence, and hence is convergent since $Y$ is a Banach space.
+Let $ϵ>0$ be given. Since the subsequence $\{x_{n(r)}\}$ is bounded there exists $M>0$ such that $\left\|x_{n(r)}\right\| ≤ M$, for all $r ∈ ℕ$. Also, since $\left\|T_k-T\right\| → 0$, as $k → ∞$, there exists an integer $K ≥ 1$ such that $\left\|T_K-T\right\|<ϵ / 3 M$. Next, since $\{T_K x_{n(r)}\}$ converges there exists an integer $R ≥ 1$ such that if $r, s ≥ R$ then $\left\|T_K x_{n(r)}-T_K x_{n(s)}\right\|<ϵ / 3$. But now we have, for $r, s ≥ R$,
+\[\left\|T x_{n(r)}-T x_{n(s)}\right\|<\left\|T x_{n(r)}-T_K x_{n(r)}\right\|+\left\|T_K x_{n(r)}-T_K x_{n(s)}\right\| +\left\|T_K x_{n(s)}-T x_{n(s)}\right\|<ϵ,\]
+which proves that $\{T x_{n(r)}\}$ is a Cauchy sequence.</div>

@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: functional-analysis
+title: sheet2 B2 $l^p$ is dense subset of category 1 in $l^q$
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $1≤p<q<∞$ and consider the Banach space $(l^q(ℝ),‖⋅‖_{l^q})$. 
+(1) Show that $A≔l^p(ℝ)$ is a subset of $l^q(ℝ)$ with Baire category 1.
+<em>Proof.</em> since $|x_k|^q<|x_k|^p$ for $k$ large,
+$\sum_k|x_k|^p<∞\implies\sum_k|x_k|^q<∞$, so $l^p(ℝ)⊆l^q(ℝ)$.
+
+Consider $A_n≔\{x ∈ l^p:‖x‖_p ≤ n\}$. Want to show $A_n$ is nowhere dense in $l^q$. Thus $l^p=\bigcup_{n=1}^∞A_n$ is of first category in $l^q$. Wlog $n=1$.
+
+To prove $A_1$ is closed, if a sequence $x_n∈A_1$ converges to $x∈l^q$, for any $i∈ℕ$, ${|x^{(i)}-x_n^{(i)}|}≤\|x-x_n\|_q → 0$, so $x_n^{(i)} → x^{(i)}$ as $n → ∞$. By Fatou's lemma [Proof: $∀N,n^p≥‖x_n‖_p^p≥\sum_{k≤N}|x_k^{(j)}|^p→\sum_{k≤N}|x_k|^p$.]
+\[\|x\|_p≤\lim_{n→∞}\|x_n\|_p≤1\]So $A_1$ is closed.
+
+To prove $\mathring{A_1}=∅$ in $l^q$, for any $x ∈ A_1$, for any $r$, we show $B_r(x)⊄l^p$:
+Set $y_j=\frac1{j^{1/p}},y∈ l^q ∖ l^p$, $‖y‖_q=1$, then $\frac{r}{2}y+x$ is in $B_r(x)$ but not in $l^p$, since $y∉l^p$.
+As $r>0$ is arbitrary,  $x∉\mathring{A_1}$ and thus $\mathring{A_1}=∅$. In general <a href="https://math.stackexchange.com/questions/148850">every proper subspace has empty interior</a>
+
+(2) $l^p$ is dense in $(l^q(ℝ),‖⋅‖_{l^q})$.
+<em>Proof:</em> The space $c_{00}=\{(x_n):x_n=0 \text{ all but finitely many }n\}$ is dense in $l^q$ $∀1≤q<∞$. Obviously $c_{00}⊂ l^p$ so $l^p$ contains dense subset and is thus dense in $l^q$.
+%https://math.stackexchange.com/questions/2157682/</div>

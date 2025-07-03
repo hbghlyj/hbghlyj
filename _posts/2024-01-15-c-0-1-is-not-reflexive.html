@@ -1,0 +1,9 @@
+---
+mathjax: true
+tag: functional-analysis
+title: C([0,1]) is not reflexive
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">By Hahn-Banach, for each $\varphi\in C([0,1])$ we have $\Phi\in C([0,1])''$ with $\|\Phi\|=1$ and $\Phi(\varphi)=\|\varphi\|$.
+If $C([0,1])$ is reflexive, then $\varphi=\operatorname{Ev}(f)$ for some $f\in C([0,1])$ with $\|f\|=1,\varphi(f) = \|\varphi\|$.
+Now look at $\displaystyle\varphi(f) := \int_0^{\frac 12} f(x)dx-\int_{\frac 12}^1f(x)dx$. We must have $f=\chi_{[0,\frac12]}-\chi_{[\frac12,1]}$ but $f\notin C([0,1])$.</div>

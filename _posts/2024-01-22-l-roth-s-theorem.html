@@ -1,0 +1,29 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><strong>\href{https://ajwilson.co.uk/files/maths/luroth-problem.pdf</strong>{Theorem 1.}} (Lüroth) Suppose we have an inclusion of fields $k \subset L \subseteq k(t)$, where $k \neq L$ and $k(t)$ is the field of rational functions in one variable $t$. Then $L$ is isomorphic to $k(t)$.
+
+<em>We now sketch an elementary algebraic proof of Lüroth's theorem. For details see [Waerden] Section 63.</em>
+
+Considering any element $\lambda \in L \backslash k$, we observe that $t$ is an algebraic element of $k(\lambda)$ and so an algebraic member of $L$. Next, examine the polynomial
+\[
+f(z)=z^n+a_1 z^{n-1}+\cdots+a_n \in L[z]
+\]
+where the $a_i$ are rational functions in $x$. Multiplying through by the lowest common denominator yields polynomials and we may write
+\[
+f(x, z)=b_0(x) z^n+b_1(x) z^{n-1}+\cdots+b_n(x)
+\]
+Let the degree of $f$ with respect to $x$ be $m$.
+Note that not all the coefficients $a_i=\frac{b_i}{b_0}$ in $f(x)$ can be independent of $x$, since that would imply that $x$ is algebraic with respect to $k$. Thus at least one of the terms $a_i=\theta$ must be dependent on $x$.
+
+To complete the proof, one uses elementary field extension properties to show that (i) $m=n$, and (ii) $\theta$, as a function of $x$, is of degree $m$. It follows that
+\[
+[k(x): k(\theta)]=m=[k(x): L]
+\]
+and as $L \supseteq k(\theta)$, we have $[L: k(\theta)]=1$. Therefore
+\[
+L=k(\theta) \cong k(t)
+\]
+by a change of variables.</div>

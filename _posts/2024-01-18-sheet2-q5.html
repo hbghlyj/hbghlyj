@@ -1,0 +1,18 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Prove that $\mathrm{e}^x$ is not in $𝒮'(ℝ)$, but that $\mathrm{e}^{x+\mathrm{i} \mathrm{e}^x}$ is in $𝒮'(ℝ)$ provided we define
+\[
+⟨\mathrm{e}^{x+\mathrm{ie}^x}, ϕ⟩=\lim _{j →+∞} ∫_{-∞}^j \mathrm{e}^{x+\mathrm{ie}^x} ϕ(x) \mathrm{d} x
+\]
+for $ϕ ∈ 𝒮(ℝ)$.
+<strong>Solution.</strong>
+To prove $\mathrm{e}^x$ is not in $𝒮'(ℝ)$, there exists $φ∈𝒮(ℝ)$ such that \[∫_{-∞}^{+∞} φ(x)\mathrm{e}^x\,dx = +∞.\]
+{\color{gray}For example $φ(x) = \exp(-\sqrt{1+x^2})$.}
+Define $χ_j≝ρ*1_{(0,j+1)}$. Then $χ_j∈C^∞$, $1_{(1,j)}≤χ_j≤1_{(-1,j+2)}$ so $χ_j∈𝒟$. Take $ϕ_j=χ_je_{-1}∈𝒟$ and note $ϕ_j→ϕ=χe_{-1}$ in $𝒮$ where $χ=ρ*1_{(0,∞)}$. By $𝒮$-continuity of $E$,
+\[⟨E,ϕ⟩=\lim_{j→∞}⟨E,ϕ_j⟩=\lim_{j→∞}∫e^xχ_je^{-x}dx=∞\text{❌}\]
+Clearly $e^{x+ie^x}∈𝒟'∩C^∞$ and $(e^{ie^x})'=e^{ie^x}ie^x=ie^{x+ie^x}$
+so $(\underbrace{-ie^{ie^x}}_{u(x)})'=e^{}$
+Then $u∈C^∞$ and $|u(x)|=1$ therefore $u'∈𝒮$.</div>

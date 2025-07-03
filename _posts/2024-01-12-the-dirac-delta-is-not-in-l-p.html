@@ -1,0 +1,26 @@
+---
+mathjax: true
+tag: distribution-theory
+title: The Dirac delta is not in L^p
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://www.leetspeak.org/math/notes/dirac_delta_not_in_lp.pdf">3 Theorem.</a> Let $p ∈[1, ∞]$. Then there exists no $h ∈ L^p((0,2))$ such that
+\[
+∫_{(0,2)} h ⋅ φ ⋅ d λ^1=φ(1)   ∀ φ ∈ C_c^{∞}((0,2))
+\]
+
+Proof. Assume there is an $h ∈ L^p((0,2))$ with the property above.
+Let $q$ be the conjugate of $p$. Further, let $φ_ϵ$ as in the lemma. Then we have
+\[
+\begin{aligned}
+1 & =\left|φ_ϵ(1)\right| \\
+& =\left|∫ h φ_ϵ d λ^1\right| ⩽ ∫|h|\left|φ_ϵ\right| d λ^1=∫\left|h 1_{B_ϵ(1)}\right|\left|φ_ϵ\right| d λ^1 \\
+& ⩽\| h 1_{B_ϵ(1)}\|_p ⋅\| φ_ϵ\|_q ⩽\| h 1_{B_ϵ(1)} \|_p \\
+& =\left(∫\left|h 1_{B_ϵ(1)}\right|^p d λ^1\right)^{\frac{1}{p}} \xrightarrow{ϵ → 0+} 0
+\end{aligned}
+\]
+(note the use of Hölder's inequality; the limit follows from the dominated convergence theorem which is applicable as
+\[
+0 \stackrel{\text { a.e. }}{⟵}\left|h 1_{B_ϵ(1)}\right|^p ⩽|h|^p
+\]
+and $|h|^p$ is integrable since $h ∈ L^p((0,2))$.) Contradiction!</div>

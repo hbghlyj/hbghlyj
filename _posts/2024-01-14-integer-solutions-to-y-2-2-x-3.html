@@ -1,0 +1,24 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+title: integer solutions to $y^2+2=x^3$
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/1/Algebraic-NT-2024.pdf#theorem.3.5">Theorem 3.5.</a> The only integer solutions to $y^2+2=x^3$ are $x=3, y=±5.$
+Proof. Factor the equation as
+\[\tag{3.2}
+(y+\sqrt{-2})(y-\sqrt{-2})=x^3 .
+\]
+We claim that the two factors on the left are coprime (the only integers in $\mathbf{Z}[\sqrt{-2}]$ dividing both of them are units). Suppose, to the contrary, that some irreducible $\alpha$ divides both factors. Then $\alpha$ divides $(y+\sqrt{-2})-(y-\sqrt{-2})=2 \sqrt{-2}=-(\sqrt{-2})^3$. Now $\sqrt{-2}$ is irreducible in $\mathbf{Z}[\sqrt{-2}]$, since it has norm 2, so if it factors into two elements of $\mathbf{Z}[\sqrt{-2}]$, one of them must have norm 1 and hence be a unit. Therefore, by unique factorisation into irreducibles, $\alpha$ is an associate of $\sqrt{-2}$. Modifying $\alpha$ by a unit, we can assume that $\alpha=\sqrt{-2}$.
+
+Thus $\sqrt{-2} \mid(y+\sqrt{-2})$, and so $\sqrt{-2} \mid y$. Taking norms, we see that $2 \mid y^2$, and hence $2 \mid y$. But then, returning to the original equation $y^2+2=x^3$, we see that $2 \mid x$, and hence $y^2 \equiv 6\pmod{8}$. This is impossible, and so indeed the two factors on the left in (3.2) are coprime.
+
+Using unique factorisation again, it follows that both $y \pm \sqrt{-2}$ are associates of cubes in $\mathbf{Z}[\sqrt{-2}]$. Since the only units in $\mathbf{Z}[\sqrt{-2}]$ are $\pm 1$, and $-1$ is a cube, both $y \pm \sqrt{-2}$ are cubes. Suppose that
+\[
+y+\sqrt{-2}=(a+b \sqrt{-2})^3,
+\]
+where $a, b \in \mathbf{Z}$. Expanding out and comparing coefficients of $\sqrt{-2}$, we obtain
+\[
+1=b(3 a^2-2 b^2) .
+\]
+This is a very easy equation to solve over the integers. We must have either $b=-1$, in which case $3 a^2-2=-1$, which is impossible, or else $b=1$, in which case $3 a^2-2=1$ and so $a= \pm 1$. This leads to $y+\sqrt{-2}=(\pm 1+\sqrt{-2})^3$ and so $y= \pm 5$.</div>

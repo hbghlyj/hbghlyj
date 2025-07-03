@@ -1,0 +1,22 @@
+---
+mathjax: true
+tag: functional-analysis
+title: sheet1 B1 isometric/unitary operator between Hilbert spaces
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $T\colon X → Y$ be a bounded linear operator between Hilbert spaces. Show the following equivalences:
+(a) $T$ is isometric $⇔⟨Tx,Ty⟩=⟨x,y⟩∀x,y∈X⇔T^* T=I_X$.
+(b) $T$ is unitary $⇔T^* T=I_X$ and $T T^*=I_Y$
+
+(a) $3\!⟹\!1$: Suppose $T^* T=I_X$. Then $∀x∈X$
+\[‖T x‖^2=⟨Tx, Tx⟩=⟨T^*Tx,x⟩=⟨I_Xx,x⟩=‖x‖^2\]
+Hence $T$ is an isometry.
+$1\!⟹\!2$: Suppose $T$ is an isometry. By polarisation $∀x,y∈X$
+\[⟨Tx,Ty⟩=\frac{‖T(x+y)‖^2-‖T(x-y)‖^2}4=\frac{‖x+y‖^2-‖x-y‖^2}4=⟨x,y⟩\]
+[similarly for complex Hilbert space $⟨x,y⟩=\frac 14\left(\|x+y\|^{2}-\|x-y\|^{2}-i\|x+iy\|^{2}+i\|x-iy\|^{2}\right).$]
+$2\!⟹\!3$: Suppose $⟨Tx,Ty⟩=⟨x,y⟩∀x,y∈X$, then $⟨T^*Tx,y⟩=⟨x,y⟩$, then $T^* Tx=x$. Hence $T^* T=I_X$.
+
+(b) $1\!⟹\!2$: Suppose $T^*T=I_X$ and $TT^*=I_Y$. By (a) $T^*T=I_X$ implies that $T$ is isometric. Also $TT^*=I_Y$ implies that $T$ is onto, because $∀y∈Y,y=TT^*y∈T(X)$.
+$2\!⟹\!1$: Suppose $T$ is unitary. By (a) $T$ is isometric implies $T^*T=I_X$. It remains to show $TT^* = I_Y$.
+$∀y∈Y$, by surjectivity $∃x∈X,Tx=y$
+\[TT^*y=TT^*Tx\xlongequal{T^*T=I_X}Tx=y\]Therefore $TT^*=I_Y$.</div>

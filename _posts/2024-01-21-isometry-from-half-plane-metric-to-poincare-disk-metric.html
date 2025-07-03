@@ -1,0 +1,35 @@
+---
+mathjax: true
+tag: geometry-of-surfaces
+title: Isometry from Half-Plane metric to Poincare Disk metric
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://planetmath.org/convertingbetweenthepoincarediscmodelandtheupperhalfplanemodel">converting between the Poincaré disc model and the upper half plane model</a>
+<a href="https://courses.maths.ox.ac.uk/pluginfile.php/26103/mod_resource/content/4/Hitchin-2013-Notes.pdf#page=59">Example</a>: Consider the unit disc $D=\left\{x+i y \in \mathbf{C} \mid x^2+y^2<1\right\}$ with first fundamental form
+\[
+\frac{4\left(d x^2+d y^2\right)}{\left(1-x^2-y^2\right)^2}
+\]
+and the upper half plane $H=\{u+i v \in \mathbf{C} \mid v>0\}$ with the first fundamental form
+\[
+\frac{d u^2+d v^2}{v^2} .
+\]
+The Möbius transformation
+\begin{align*}
+H&\to D\\
+w&\mapsto z=\frac{w-i}{w+i}
+\end{align*}
+is a bijection. We shall show it is an isometry.
+\[
+\frac{d z}{d w}=\frac{1}{w+i}-\frac{(w-i)}{(w+i)^2}=\frac{2 i}{(w+i)^2}
+\]
+so
+\[
+\left|\frac{d z}{d w}\right|^2=\frac{4}{(w+i)^2 \left(w^*-i\right)^2}
+\]
+so
+\[
+|dw|^2=|dz|^2/\left|\frac{d z}{d w}\right|^2=\frac{(w+i)^2 \left(w^*-i\right)^2}4|dz|^2
+\]
+substituting into $v^{-2}|d w|^2$ gives
+\begin{align*}v^{-2}|d w|^2&=\left(\frac{w-w^*}{2 i}\right)^{-2}|d w|^2\\&=\left(\frac{w-w^*}{2 i}\right)^{-2}\frac{(w+i)^2 \left(w^*-i\right)^2}4|dz|^2\\&=-\left(w-w^*\right)^{-2}(w+i)^2 \left(w^*-i\right)^2|dz|^2\\&=4\left(1-\frac{(w-i) \left(w^*+i\right)}{(w+i) \left(w^*-i\right)}\right)^{-2}|dz|^2\\&=4\left(1-|z|^2\right)^{-2}|d z|^2\end{align*}
+so this Möbius transformation gives us an isometry from $H$ to $D$ as required.</div>

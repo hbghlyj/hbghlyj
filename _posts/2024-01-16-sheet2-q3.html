@@ -1,0 +1,56 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$\DeclareMathOperator{\sgn}{sgn}\DeclareMathOperator{\sinc}{sinc}\DeclareMathOperator{\fp}{fp}\DeclareMathOperator{\pv}{pv}$For each of the following functions from $ℝ$ into $ℂ$ calculate the Fourier transform:
+(i) $\cos , \sin , \cos^2, \cos^k$ for $k ∈ ℕ$.
+<strong>Solution.</strong> Use $\hat1=2πδ_0$. By translation rule $\widehat{e_{𝗂h}}=τ_{-h}(2πδ_0)=2πδ_h$
+\[
+\widehat{𝖾^{𝗂x}}=2πδ_1\\
+\widehat{𝖾^{-𝗂x}}=2πδ_{-1}
+\]
+so
+\begin{align*}
+\widehat{\cos}&=πδ_1+πδ_{-1}\\
+\widehat{\sin}&=\fracπ𝗂(δ_1-δ_{-1})=𝗂π(δ_{-1}-δ_1)\\
+\cos^2(x)&=\frac12+\frac14(𝖾^{2𝗂x}+𝖾^{-2𝗂x})\\
+\widehat{\cos^2}&=πδ_0+\fracπ2(δ_2+δ_{-2})\\
+\cos^k(x)&=\frac1{2^k}\sum_{n=0}^{k}\binom{k}{n}𝖾^{𝗂nx}𝖾^{-𝗂(k-n)x}\\
+\widehat{\cos^k}&=\frac{π}{2^{k-1}}\sum_{n=0}^{k}\binom{k}{n}δ_{k-2n}
+\end{align*}
+(ii) $\sinc$
+<strong>Solution.</strong> $\widehat{1_{[-1,1]}}=2\sinc$. By Fourier inversion $\widehat{\sinc}=2π⋅\frac12\widetilde{1_{[-1,1]}}=π1_{[-1,1]}$.
+
+(iii) $H$ by calculating first the Fourier transform of $H^ε(x)=𝖾^{-εx}H(x)$ for $ε>0$ ($H$ is Heaviside's function).
+<strong>Solution.</strong>
+\[\int_ℝH^ε(x)𝖾^{-𝗂xξ}𝖽ξ=\int_{0}^{∞}𝖾^{-(𝗂ξ+ε)x}𝖽ξ=\frac1𝗂\lim_{x→∞}\frac{1-𝖾^{-(𝗂ξ+ε)x}}{ξ-𝗂ε}→-𝗂(ξ-𝗂0)^{-1}\]
+To prove $H^ε→H$ as $ε→0$ in $𝒮'(ℝ)$,
+\[|T_{H^ε}(ϕ)-T_H(ϕ)|=\left|\int_{-∞}^{∞}(H^ε(x)-H(x))ϕ(x)𝖽x\right|≤\int_{0}^{∞}|𝖾^{-εx}-1||ϕ(x)|𝖽x→0\]
+so by $𝒮'$-continuity of $ℱ$, $\hat{H}(ξ)=\lim_{ε→0^+}\widehat{H^ε}(ξ)=-𝗂(ξ-𝗂0)^{-1}$.
+∎
+Deduce that
+\[
+(ξ-𝗂 0)^{-1}=\pv\left(\frac{1}{ξ}\right)+π 𝗂 δ_0,
+\]
+where the distribution on the left-hand side again was defined on B4.3 Problem Sheet 4. In both deductions you should carefully explain why the considered distributions are tempered.
+<strong>Solution.</strong>
+By lecture $\hat{H}(ξ)=-𝗂\pv(\frac1{ξ})+π δ_0(ξ)$, so the identity holds.
+$(ξ-𝗂 0)^{-1}$ is compactly supported, so it is tempered, since $ℰ′(ℝ)⊂𝒮'(ℝ)$.
+∎
+(iv) $x H(x)=x^+,|x|, \sin |x|$.
+<strong>Solution.</strong> By differentiation rule $\widehat{xH}(ξ)=𝗂\hat{H}'(ξ)=-\fp(\frac1{ξ^2})+𝗂π δ'_0(ξ)$
+$|x|=x^++(-x)^+\implies\widehat{|x|}(ξ)=-2\fp(\frac1{ξ^2})$
+Using $\sin|x|=\sgn(x)\sin(x)$, by translation rule
+$\widehat{\sin|x|}=\frac{1}{2𝗂}(τ_{-1}\widehat{\sgn}-τ_1\widehat{\sgn})$
+Here $\widehat{\sgn}=\hat H-\hat{\tilde{H}}=\hat H-\tilde{\hat{H}}=-2𝗂\pv(\frac1ξ)$
+$\implies\widehat{\sin|x|}=-τ_{-1}\pv(\frac1ξ)+τ_1\pv(\frac1ξ)=\pv(\frac1{ξ+1})-\pv(\frac1{ξ-1})$
+∎
+Deduce that
+\[
+ℱ_{x → ξ}\left(\fp\left(\frac{1}{x^2}\right)\right)=-π|ξ|,
+\]
+where the finite part distribution was defined on B4.3 Sheet 4. 
+<strong>Solution.</strong> By Fourier inversion, $\widehat{|x|}(ξ)=-2\fp(\frac1{ξ^2})\impliesℱ_{x → ξ}\left(\fp\left(\frac{1}{x^2}\right)\right)=2π\frac1{-2}|-ξ|=-π|ξ|$
+$\fp\left(\frac{1}{x^2}\right)$ is compactly supported, so it is tempered, since $ℰ′(ℝ)⊂𝒮'(ℝ)$.
+</div>

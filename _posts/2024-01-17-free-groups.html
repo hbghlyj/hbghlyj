@@ -1,0 +1,16 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><strong>Theorem 13.21.</strong> Let $G$ be a free group on a set $X$. Then $J$ is a free $ℤ G$-module with basis $\{x-1: x ∈ X\}$.
+<em>Proof.</em> Induct on the length of word. See <a href="https://math.mit.edu/~hrm/palestine/weibel/06-group_homology_and_cohomology.pdf">Weibel</a> Page 169, Proposition 6.2.6.
+<strong>Corollary 13.22.</strong> If $G$ is a free group on $X$, then $ℤ$ has free resolution
+\[
+0 → J → ℤ G → ℤ → 0
+\]
+Therefore, $H_n(G, A)=H^n(G, A)=0$ for $n ≠ 0,1$, and $H_0(G, ℤ) ≅ H^0(G, ℤ) ≅ ℤ$, while
+\[
+H_1(G, ℤ) ≅ \bigoplus_{x ∈ X} ℤ,   H^1(G, ℤ) ≅ \prod_{x ∈ X} ℤ
+\]
+<em>Proof.</em> $H_*(G ; A)$ is the homology of $0 →J ⊗_{ℤ G} A → A → 0$, and $H^*(G ; A)$ is the cohomology of $0 → A → \operatorname{Hom}_G(J, A) → 0$. For $A=ℤ$, the differentials are zero.</div>

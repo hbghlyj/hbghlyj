@@ -1,0 +1,10 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $C$ be the curve in $ℂ^2$ with equation $y^2=x^6-1$. Show how to extend this to a curve $C$ of degree 6 in $ℂℙ^2$. How many points lie on the line $z=0$? Is the curve nonsingular?
+<strong>Solution.</strong>
+$p(x,y)≔y^2-x^6+1=0$ extends to the curve $P(x,y,z)≔z^6 p\left(\frac{x}{z}, \frac{y}{z}\right)=y^2z^4-x^6+z^6=0$ in $ℂℙ^2$.
+Plugging in $z=0$ we get $x^6=0$, so $C$ intersects the line $z=0$ at a point $[0,1,0]$ of multiplicity 6.
+$\frac{∂P}{∂x}=-6x^5,\frac{∂P}{∂y}=2yz^4,\frac{∂P}{∂z}=4y^2z^3+6z^5$ all vanish at $[0,1,0]$, so the curve is singular.</div>
