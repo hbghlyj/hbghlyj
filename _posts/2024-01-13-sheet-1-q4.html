@@ -1,0 +1,19 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $t>0$ and put $G_t(x)=𝖾^{-t|x|^2}, x ∈ ℝ^n$, where $|x|=\sqrt{x_1^2+⋯+x_n^2}$ is the usual norm of $x$. Use the Fourier transform to find a formula for $G_s * G_t$ for all $s, t>0$.
+
+By Q2, for $x,ξ∈ ℝ$,
+\[\int_ℝ𝖾^{-tx^2}𝖾^{-𝗂ξx}𝖽x=\sqrt{π\over t}𝖾^{-{ξ^2\over4t}}\]
+By Fubini, for $x,ξ∈ ℝ^n$,
+\[\widehat{G_t}(ξ)=\prod_{i=1}^n\int_ℝ𝖾^{-tx_i^2}𝖾^{-𝗂ξ_ix_i}𝖽x_i=\left(π\over t\right)^{\frac n2}𝖾^{-{|ξ|^2\over4t}}\]
+so
+\[\widehat{G_s}(ξ)⋅\widehat{G_t}(ξ)=\left(π\over s\right)^{n\over2}𝖾^{-{|ξ|^2\over4s}}\left(π\over t\right)^{n\over2}𝖾^{-{|ξ|^2\over4t}}\]
+comparing with
+\[\widehat{G_{st\over s+t}}(ξ)=\left(π\over{st\over s+t}\right)^{\frac n2}𝖾^{-{|ξ|^2\over4s}}𝖾^{-{|ξ|^2\over4t}}\]
+we get
+\[\widehat{G_s}(ξ)⋅\widehat{G_t}(ξ)=\left(π\over s+t\right)^{n\over2}\widehat{G_{st\over s+t}}(ξ)\]
+by Convolution Rule
+\[G_s*G_t=\left(π\over s+t\right)^{n\over2}G_{st\over s+t}\]</div>

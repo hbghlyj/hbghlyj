@@ -1,0 +1,24 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $f\colon ℝ → ℂ$ be a measurable function satisfying $|f(x)|≤𝖾^{-|x|}$ for almost all $x ∈ ℝ$. Prove that the Fourier transform $\hat{f}$ cannot have compact support unless $f(x)=0$ for almost all $x ∈ ℝ$.
+
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94615/mod_resource/content/1/flect2.pdf#page=9">Differentiation Rule</a>
+\[\hat{f}'(ξ)=\int_ℝ-𝗂xf(x)𝖾^{-𝗂xξ}𝖽x\]
+so $\hat{f}$ is in $𝖢^∞(ℝ)$. Estimate using $|f(x)|≤𝖾^{-|x|}$
+\begin{align*}
+\left|\hat f^{(n)}(ξ)\right|&=\left|\int_ℝ(-𝗂x)^nf(x)𝖾^{-𝗂xξ}𝖽x\right|\\
+&≤\int_ℝ|x|^n𝖾^{-|x|}𝖽x\\
+&=2\int_0^∞x^n𝖾^{-x}𝖽x\\
+&=2n!\\
+⇒&\frac{1}{\limsup_{n→∞}|\frac{\hat f^{(n)}(ξ)}{n!}|^{\frac{1}{n}}}≥\frac12
+\end{align*}
+so the Taylor series for $\hat f$ has a radius of convergence of at least $\frac12$ everywhere. Thus, it is real analytic over all $ℝ$, by identity theorem cannot have compact support unless it is identically $0$.
+Alternate proof:
+By contradiction $∅⊊\operatorname{supp}\hat{f}⊊ℝ$ so the boundary $∂(\operatorname{supp}\hat{f})≠∅$. Select $ξ_0∈∂(\operatorname{supp}\hat{f})$. Then $\hat{f}^{(k)}(ξ_0)=0∀k$, so by Taylor expansion with Lagrange remainder
+\[\hat{f}(ξ)=\sum_{k=0}^{n}\frac{\cancelto0{\hat{f}^{(k)}(ξ_0)}}{k!}(ξ-ξ_0)^k+\frac{\hat{f}^{(n+1)}(θ)}{(n+1)!}(ξ-ξ_0)^{(n+1)}\]
+where $θ=θ_{n,ξ}$ lies between $ξ$ and $ξ_0$,
+\[|\hat{f}(ξ)|=\frac{|\hat{f}^{(n+1)}(θ)|}{(n+1)!}|ξ-ξ_0|^{n+1}≤2|ξ-ξ_0|^{n+1}\]
+If $|ξ-ξ_0|<1$ then taking $n→+∞$ yields $\tilde{f}(ξ)=0$. contradicting $ξ_0∈∂(\operatorname{supp}\tilde{f})$.</div>

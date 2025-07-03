@@ -1,0 +1,35 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $℘(z)$ be the Weierstrass ℘-function. Consider the meromorphic function $℘'(z)$ on $X=ℂ/Λ$. By considering $℘'$ as a map to $ℂℙ^1$, determine its degree and the number and indices of its ramification points.
+Is there a meromorphic function $f$ on $X$ such that $f'(z)=℘(z)$?
+<strong>Solution.</strong>  By definition
+\[℘(z) = \frac{1}{z^2} + \sum_{ω∈Λ∖0} \left(\frac{1}{(z-ω)^2}-\frac{1}{ω^2}\right)\]
+Differentiate,
+\[℘'(z)=-2\sum_{ω∈Λ}\frac1{(z-ω)^3}\]
+There is a triple pole at $z=0$, so $0$ is a ramification point of index 3, and this is the only pole in $X$, so $\deg(℘')=3$ by looking at inverse image of $∞$.
+Over $∞$, $℘'(z)=-2z^3+O(1)$, so $∞$ is a ramification point of $℘'$ of index 3.
+Finite ramification points of $℘'$ satisfy $℘'' = 0$.
+$℘$ satisfies the following differential equation:
+$$
+(℘')^2 = 4℘^3 - g_2℘ - g_3
+$$
+Differentiate,
+$$
+2℘'℘'' = 12℘^2℘' - g_2℘'
+$$
+Since the zeros of $\wp' and $\wp'' are disjoint for a non-degenerate torus, we can divide by $\wp' where it is non-zero.
+$$
+2℘'' = 12℘^2 - g_2
+$$
+so $℘''=0⇔℘(z)=±\sqrt{\frac{g_2}{12}}$ has 4 solutions for $z$, since $℘$ has degree 2 and $℘'(z)≠0$.
+By Riemann-Hurwitz,
+\begin{align*}\sum_{\text{ramification point }r}(v_{℘'}(r)-1)&=\deg(℘')χ(ℂℙ^1)-χ(X)\\&=3×2-0=6,\end{align*}
+If $g_2≠0$ we have $\sqrt{\frac{g_2}{12}}≠-\sqrt{\frac{g_2}{12}}$, so $℘'$ have 4 ramification points of index 2.
+Riemann-Hurwitz, $(3-1)+4(2-1)=6$
+If $g_2=0$ there are 2 zeros of $℘$ by Q4, also $℘'''=0$ at those points, so $℘'$ has 2 ramification points of index 3.
+Riemann-Hurwitz, $(3-1)+2(3-1)=6$
+
+Suppose there is a meromorphic function $f$ on $X$ such that $f'(z)=℘(z)=z^{-2}+O(1)$, then $f=-z^{-1}+O(z)$ has a simple pole at 0 and no other poles, hence $\deg f=1$, $f:X→ℂℙ^1$ has degree 1. A degree 1 map is a biholomorphism, contradicts $X$ is not isomorphic to $ℂℙ^1$.</div>

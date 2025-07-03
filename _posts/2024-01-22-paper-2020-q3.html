@@ -1,0 +1,28 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) Let $p:(\tilde{X}, \tilde{b}) \rightarrow(X, b)$ be a based covering map between path-connected spaces. Define the <em>degree</em> of $p$ and show that it is well-defined (that is, independent of the choice of $b$).
+Assume that $X$ is triangulated such that each simplex is contained in an elementary open set of $p$ and that the covering is of finite degree $d$. Derive a formula relating the Euler characteristics of $\tilde{X}$ and $X$.
+Explain clearly the correspondence between covering spaces and subgroups of the fundamental group of $(X, b)$.
+<strong>Answers:</strong>
+[bookwork]
+For each $k$-simplex in $X$ there are exactly $d k$-simplices in $\tilde{X}$. Hence $\chi(\tilde{X})=d \chi(X)$. [bookwork]
+
+(b) Find the fundamental group of the space of orbits of the additive group $\mathbb{Z}$ of integers acting on $\mathbb{R}^{n} \backslash\{0\}$ (for $n>2$) by $m \bullet x=2^{m} x$, for $m \in \mathbb{Z}$, carefully justifying your answer.
+<strong>Answer:</strong>
+Let $X$ be the space of orbits $[x]$ for $x \in \mathbb{R}^{d} \backslash\{0\}:=\tilde{X}$ and $\pi: \tilde{X} \rightarrow X$ be the quotient map.
+Claim: $\pi_{1}(X)=\mathbb{Z}$.
+Proof: for each point $x \in \tilde{X}$ there exists a small (contractible) neighbourhood $U$ such that all the translates $m \bullet U$ for $m \in \mathbb{Z}$ are disjoint. The images under $\pi$ are all the same defining an elementary neighbourhood $\bar{U}$ of $[x]$. Thus $\pi$ is a regular covering map. Note $\tilde{X}$ is homotopy equivalent to the sphere $S^{n-1}$. By the correspondence theorem and as $\pi_{1}\left(S^{n-1}\right)=0$ for $n>2, \pi_{1}(X)=\mathbb{Z}$.
+
+(c) Let $S_{g}$ denote the fundamental groups of an oriented surface of genus $g$.
+(i) Show that $S_{g}$ is isomorphic to a finite index normal subgroup of $S_{2}$ if $g \geqslant 2$.
+(ii) Show that $S_{g}$ is isomorphic to an index $n$ normal subgroup of $S_{h}$ if $g=n h-n+1$.
+(iii) Show that any finite index subgroup of $S_{k}$ is isomorphic to $S_{g}$ for some $g$. Derive a necessary condition on $g$ in terms of $k$ for this to happen, and in particular show that $g \geqslant k$.
+Let $N_{g}$ denote the fundamental group of a non-orientable surface of genus $g$. Is it true that every finite index subgroup of $N_{g}$ is isomorphic to $N_{k}$ for some $k$? Justify your answer.
+<strong>Answers:</strong>
+(i) The oriented surface $F_{g}$ of genus $g$ is a torus with another $g-1$ tori glued onto it (connected sum) which we arrange so that they can be cyclically permuted via a free action of $C_{g-1}$. This defines a regular covering $\pi: F_{g} \rightarrow F_{2}$ of degree $g-1$, and hence $S_{g}$ is a normal subgroup of $S_{2}$ of index $g-1$.
+(ii) If $g=n(h-1)+1$ then we can think of $F_{g}$ as a torus with $n$ surfaces $F_{h-1}$ attached to it which can be freely cyclically permuted by $C_{n}$ defining a normal covering $\pi: F_{g} \rightarrow F_{h}$.
+(iii) A finite index subgroup corresponds to a finite degree covering $\pi: \tilde{X} \rightarrow F_{k}$. But a covering of a compact oriented surface is again a compact oriented surface, say $F_{g}$. Hence the subgroup is $S_{g}$. The Euler characteristic formula tells us that we must have $2 g-2=n(2 k-2)$.
+The covering of a non-orientable surface might be orientable, e.g. $\pi: S^{2} \rightarrow \mathbb{R} P^{2}$. Indeed, the fundamental group of any $N_{g}$ is non-trivial and the subgroup $\{e\}$ is a counter example.</div>

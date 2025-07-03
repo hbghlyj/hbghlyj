@@ -1,0 +1,48 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+title: $x^3+y^3+z^3=0$ has no non-trivial integer solutions.
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://homepages.warwick.ac.uk/staff/S.Siksek/papers/bealconj.pdf">Lemma 1.</a> The equation $x^3+y^3+z^3=0$ has no non-trivial integer solutions.
+<em>Proof.</em> Assume that $(x, y, z)$ is a non-trivial solution in coprime integers. Let
+\[
+\rho=\frac{-1+\sqrt{-3}}{2}
+\]
+be a third root of unity and $\mathscr{E}=\mathbb{Z}[\rho]$ be the ring of Eisenstein integers, which is a Euclidean ring. We assume first that $3 \nmid x y z$, so that both $x+y$, and $x^2-x y+y^2$ are cubes, say $x+y=s^3$, and
+\[
+(x+\rho y)=(a+b \rho)^3
+\]
+is the cube of a principal ideal. Exactly one of $x, y, z$ must be even – we shall thus assume that $y=2 v$ is even. Since the units of $\mathscr{E}$ are the sixth roots of unity, there is some $\delta \in⟨-\rho⟩$ such that
+\[
+\begin{aligned}
+\delta(x+y \rho)=(a+b \rho)^3 & =a^3+b^3+3 a b \rho(a+b \rho) \\
+& =a^3+b^3-3 a b^2+3 a b(a-b) \rho .
+\end{aligned}
+\]
+If $\delta= \pm 1$, then comparing coefficients implies that $y \equiv 0 \bmod 3$, contradicting our assumption. We thus have that
+\[
+x+y \rho= \pm \rho^c(a+b \rho)^3, \text { with } c= \pm 1 .
+\]
+We have chosen $y \equiv 0 \bmod 2$, whereby $x \rho^{-c} \equiv w^3 \bmod 2 \mathscr{E}$ for some $w= \pm(a+$ $b \rho) \in \mathscr{E}$. But $x \equiv x+y=s^3 \bmod 2$, whence we may conclude that
+\[
+\rho^{-c} \equiv(w / s)^3 \bmod 2 .
+\]
+The ideal $\mathfrak{p}:=(2) \subset \mathscr{E}$ is prime; let $\pi: \mathscr{E} \rightarrow \mathbb{F}_{2^2}$ be the natural projection. Since $c \not \equiv 0 \bmod 3$, it follows that $\pi(w / s) \in \mathbb{F}_{2^2}$ is a primitive 9-th root of unity, an impossibility.
+It remains, then, to consider the case where $3 \mid x y z$; we may suppose, without loss of generality, that $3 \mid z$. Appealing to (9), we find that there is a root of unity $\delta$ such that $(\alpha)=\delta\left(\frac{x+y \rho}{1-\rho}\right)=(a+b \rho)^3$ and $x+y=9 s^3$. Since $\frac{1-\rho}{1-\bar{\rho}}=-\rho$, we obtain after dividing the previous identity by its complex conjugate, that there is another root of unity, say $\delta^{\prime}$, such that
+\[\tag{8}
+\frac{x+y \rho}{x+y \bar{\rho}}=\frac{2 x-y+y \sqrt{-3}}{2 x-y-y \sqrt{-3}}=\delta^{\prime} \cdot\left(\frac{a+b \rho}{a+b \bar{\rho}}\right)^3 \equiv \delta^{\prime} \bmod 3 \sqrt{-3} \cdot \mathscr{E} .
+\]
+If $2 x \not \equiv y \bmod 3$, letting $y^{\prime} \equiv y /(2 x-y) \bmod 3$, the last identities imply that
+\[
+\frac{1+y^{\prime} \sqrt{-3}}{1-y^{\prime} \sqrt{-3}} \equiv \delta^{\prime} \bmod 3 \sqrt{-3} \cdot \mathscr{E},
+\]
+whence
+\[
+y^{\prime} \equiv y \equiv 0 \bmod 3,
+\]
+contradicting the assumption that $3 \mid z$ and $\operatorname{gcd}(x, y, z)=1$. Finally, suppose that $2 x-y=-3 d$. Inserting this value into (8) yields
+\[
+\frac{d \sqrt{-3}+y}{d \sqrt{-3}-y} \equiv \delta^{\prime} \bmod 3 \sqrt{-3} \cdot \mathscr{E},
+\]
+whereby $\delta^{\prime}=-1$ and $d \equiv 0 \bmod 3$. Then $2 x-y \equiv x+y \equiv 0 \bmod 9$. Summing these two congruences, we find $3 x \equiv 0 \bmod 9$, and thus $3 \mid x$, a contradiction which completes the proof.</div>

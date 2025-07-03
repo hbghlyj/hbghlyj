@@ -1,0 +1,11 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Two possibilities can occur, i.e either $f$ is bounded or unbounded. If it is bounded then $f$ is continuous and hence $\ker f=f^{-1}(0)$ which is closed.
+
+Suppose $f$ is unbounded. Then there exists a sequence $\{x_n\}$ with $x_n→0$ and $f(x_n)=1$ for all $n$. 
+
+Now choose any $y∈ X$. Then $y-f(y)x_n$ is in $\ker f$, since $f(y-f(y)x_n)=f(y)-f(y)=0.$
+$$\lim_{n→∞}x_n=0\implies y=\lim_{n→∞}(y-f(y)x_n)$$where the elements in the sequence $\{y-f(y)x_n\}$ are in $\ker f$. So $\ker f$ is dense in $X$. </div>

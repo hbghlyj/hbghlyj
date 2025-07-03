@@ -1,0 +1,17 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Show that the curve $y^2 z=x^3+x z^2$ in $ℂℙ^2$ is nonsingular.
+Now consider this curve over the finite field $ℤ_p$, where $p$ is a prime. That is, we consider the curve in $P\left((ℤ_p)^3\right)$ with equation $y^2 z=x^3+x z^2$. For which $p$ is this nonsingular?
+<strong>Solution.</strong>
+$P(x,y,z)=y^2 z-x^3-x z^2,\frac{∂P}{∂x}=-3x^2-z^2,\frac{∂P}{∂y}=2yz,\frac{∂P}{∂z}=y^2-2xz$
+At singular points, $\frac{∂P}{∂y}=0$, so $y=0$ or $z=0$.
+If $y=0$, $\frac{∂P}{∂z}=-2xz$, so $x=0$ or $z=0$, then $\frac{∂P}{∂x}=0$ implies $x=y=z=0$❌
+If $z=0$, $\frac{∂P}{∂x}=-3x^2=0$, $\frac{∂P}{∂z}=y^2=0$, then $x=y=z=0$❌
+So the curve $y^2 z=x^3+x z^2$ in $ℂℙ^2$ is nonsingular.
+For $p>3$ the above shows the curve over $ℤ_p$ is nonsingular.
+For $p=2$, $\frac{∂P}{∂x}=x^2+z^2,\frac{∂P}{∂y}=0,\frac{∂P}{∂z}=y^2$, so $[1:0:1]$ is a singular point.
+For $p=3$, $\frac{∂P}{∂x}=-z^2,\frac{∂P}{∂y}=2yz,\frac{∂P}{∂z}=y^2-2xz\implies$solution is $[1:0:0]$, but it doesn't lie on the curve, so the curve is nonsingular.
+[over a finite field $d=0$, $\frac{∂P}{∂x}=\frac{∂P}{∂y}=\frac{∂P}{∂z}=0$ don't imply $P=0$.]</div>

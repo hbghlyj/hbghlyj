@@ -1,0 +1,27 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">A linear operator $T: ℓ^1 → ℓ^1$ is defined by
+\begin{align*}
+T(x_1, x_2, x_3, …)= & (y_1, y_2, y_3, …), \\
+& \text { where } y_k=\frac{k+1}{k}x_{k+1}   \text { for } k ⩾ 1 .
+\end{align*}
+(a) Show that $T$ is bounded and that $‖T‖=2$. Obtain an explicit formula for $T^2 x$ and, more generally, for $T^n x$ when $n$ is a positive integer and $x=(x_1, x_2, x_3, …)∈ℓ^1$. Calculate $\|T^n\|$.
+<strong>Solution.</strong> ${‖Tx‖}_1=\sum_{k=1}^∞{|y_k|}=\sum_{k=1}^∞\frac{k+1}k{|x_{k+1}|}≤2\sum_{k=1}^∞{|x_{k+1}|}≤2\sum_{k=1}^∞{|x_k|}=2{‖x‖}_1$
+equality holds when ${|x_2|}=1;x_k=0,∀k≠2$. So ${‖T‖}=2$.
+Obtain a formula $(T^nx)_k=\frac{k+n}kx_{k+n}$.
+\begin{align*}‖T^nx‖_1&=\sum_{k=1}^∞\frac{k+n}k|x_{k+n}|\\&≤(n+1)\sum_{k=1}^∞|x_{k+n}|\\&≤(n+1)\sum_{k=1}^∞|x_k|=(n+1)‖x‖_1\end{align*}
+equality holds when $|x_{n+1}|=1;x_k=0,∀k≠n+1$. So ${‖T^n‖}=n+1$.
+
+(b) Which complex numbers $λ$ are eigenvalues of $T$?
+<strong>Solution.</strong>
+$λ∈σ_p⇒∃x∈ℓ^1:x_1=1,Tx=λx⇒λx_k=\frac{k+1}kx_{k+1}⇒x_k=\frac{λ^{k-1}}k⇒‖x‖_1=\sum_{k=1}^∞\frac{|λ|^{k-1}}k⇒|λ|<1$
+For $|λ|<1$, we have $\sum_{k=1}^∞\frac{|λ|^k}k=-\log(1-|λ|)$, so $x∈ℓ^1$, so $λ∈σ_p$.
+
+(c) Prove that the spectrum of $T$ is the disc $\{λ ∈ ℂ∣|λ|⩽1\}$.
+<strong>Solution.</strong> $\lim_{n→∞}\left‖T^n\right‖^{1\over n}=\lim_{n→∞}(n+1)^{1\over n}=1$, by Gelfand's formula $σ(T)⊆\overline{\rm D}(0,1)$.
+$σ(T)⊇{\rm D}(0,1)$ by (b), but $σ(T)$ is closed, so $σ(T)⊇\overline{\rm D}(0,1)$, so $σ(T)=\overline{\rm D}(0,1)$.
+The question doesn't ask us to find $σ_r,σ_c$.
+<a href="https://math.stackexchange.com/questions/4907586">MSE</a></div>

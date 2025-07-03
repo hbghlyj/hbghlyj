@@ -1,0 +1,32 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><strong>Proposition.</strong> Let $l_1,l_2,l_3$ be lines in $P(ℝ^4)$ that do not intersect pairwise. Then there are an infinite number of lines in $l$ in $P(ℝ^4)$ that intersect $l_1,l_2,l_3$.
+Proof. Let $l_j=P(U_j),j=1,2,3$. Then $U_1,U_2,U_3$ are vector subspaces of $ℝ^4$, $\dim U_j=2$.
+Since $l_1\cap l_2=\emptyset$, $U_1\cap U_2=\{0\}$. Hence $ℝ^4=U_1\oplus U_2$, counting dimensions.
+Let $v\in U_3$ be non-zero, then $v=u_1+u_2,u_1\in U_1,u_2\in U_2$.
+If $u_1=0$ then $[v]\in l_2\cap l_3$❌
+If $u_2=0$ then $[v]\in l_1\cap l_3$❌
+Let $U_4=\langle u_1,u_2\rangle\leℝ^4$. Then $\dim U_4=2$. So $l_4=P(U_4)$ is a line in $P(ℝ^4)$.
+Also, $l_4$ contains $[u_1]\in l_1$ and $[u_2]\in l_2$ and $[u_1+u_2]=[v]\in l_3$.
+So $l_4$ intersects $l_1,l_2,l_3$. Unique such line intersecting $l_3$ in the point $[v]$. By construction, there exists such a line through each point $[v]$ in $l_3$, so there are infinitely many such lines $l$. □
+
+Here is a more difficult proof.
+<strong>Desargues’ theorem</strong>
+Let $P,Q_1,Q_2,Q_3,R_1,R_2,R_3$ be distinct points in a projective plane $P(V)$, such that the lines $Q_1R_1,Q_2R_2,Q_3R_3$ are distinct and concurrent at $P$.
+Let $S_1$ be the intersection of $Q_2Q_3,R_2R_3$
+Let $S_2$ be the intersection of $Q_3Q_1,R_3R_1$
+Let $S_3$ be the intersection of $Q_1Q_2,R_1R_2$
+Then $S_1,S_2,S_3$ are collinear.
+<strong>Proof.</strong>
+Choose representatives $p,q_i,r_i$ such that $p=q_i+r_i$.
+As $p=q_2+r_2=q_3+r_3$, put $s_1:=q_2-q_3=r_3-r_2$.
+Since $Q_2,Q_3$ are distinct, $s_1$ is nonzero.
+Hence $s_1$ represents a point on the line $Q_2Q_3$.
+Similarly, $s_1$ represents a point on the line $R_2R_3$.
+Hence $s_1$ represents $S_1$, the intersection of $Q_2Q_3,R_2R_3$.
+Similarly, put $s_2:=q_3-q_1=r_1-r_3,s_3:=q_1-q_2=r_2-r_1$, and then $s_2,s_3$ represent $S_2,S_3$,
+Now, $s_1+s_2+s_3=(q_2-q_3)+(q_3-q_1)+(q_1-q_2)=0$.
+Hence $S_1,S_2,S_3$ are collinear, as $S_1,S_2,S_3$ are linearly dependent. □</div>

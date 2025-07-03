@@ -1,0 +1,38 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">A sequence $(ℓ_n)$ in the dual space $X^*$ of a Banach space $X$ is said to be weak* convergent to $ℓ ∈ X^*$ if
+\[
+ℓ_n(x) → ℓ(x) \text { for all } x ∈ X .
+\]
+(a) Show that weak* convergent sequences are bounded.
+<em>Proof.</em> $ℓ_n(x)$ bounded for all $x ∈ X$. By Uniform Boundedness Principle $(ℓ_n)$ is bounded.
+
+(b) Show that if $X$ is separable, then the closed unit ball of $X^*$ is weak* sequentially compact, i.e. every sequence $(ℓ_n)$ in $X^*$ with $\|ℓ_n\|_* ⩽ 1$ has a weak* convergent subsequence.
+%[Hint: Consider a countable dense subset $S=\{x_n, n ∈ ℕ\}$ and use a diagonal sequence argument to construct a subsequence $(ℓ_{n_k})$ such that $ℓ_{n_k}(x_m)$ is convergent for every $m$.]
+% Alaoglu https://dept.math.lsa.umich.edu/~adellape/PDFS/weakconvergence.pdf
+<em>Proof.</em> Let $\{x_k\}$ be the dense set in the separable space $X$.
+Let $\{ℓ_n\}$ be a sequence in the closed unit ball of $X^*$, so $\|ℓ_n\|_*≤ 1$, we need to find a weak* convergent subsequence.
+The sequence $\{ℓ_n(x_1)\}$ of real numbers is bounded ($∵|ℓ_n(x_1)|≤\|ℓ_n\|_*\|x_1\|≤\|x_1\|$) and thus contains a convergent subsequence which we denote as $\{ℓ_{n 1}(x_1)\}$ (Bolzano-Weierstrass). Similarly, $\{ℓ_{n 1}(x_2)\}$ is also bounded and contains a convergent subsequence $\{ℓ_{n 2}(x_2)\}$. Continuing in this fashion to extract convergent subsequences $\{ℓ_{n k}(x_k)\}$, we then form the diagonal sequence $\{ℓ_{n n}\}$ in $X^*$ which is a subsequence of $\{ℓ_n\}$. Note that as the way we build $\{ℓ_{n n}\}$, we have $\{ℓ_{n n}(x_k)\}$ converges. Thus the sequence $\{ℓ_{n n}\}$ converges on the dense subset $\{x_k\}$ of $X$.
+Next we need to prove that $\{ℓ_{n n}\}$ converges weak* to an element of $X^*$.
+Fix $x ∈ X$ and $ϵ>0$. Then for any $n, m, k$, we have
+\[
+|ℓ_{n n}(x)-ℓ_{m m}(x)| ≤|ℓ_{n n}(x)-ℓ_{n n}(x_k)|+|ℓ_{n n}(x_k)-ℓ_{m m}(x_k)|+|ℓ_{m m}(x_k)-ℓ_{m m}(x)|
+\]
+First $|ℓ_{n n}(x)-ℓ_{n n}(x_k)|=|ℓ_{n n}(x-x_k)|≤\|ℓ_{n n}\|_*\|x-x_k\| ≤\|x-x_k\|$.
+Similarly, $|ℓ_{m m}(x_k)-ℓ_{m m}(x)| ≤\|x-x_k\|$.
+As $\{x_k\}$ is dense in $X$, choose $k$ so that $\|x_k-x\|<\frac{ϵ}{3}$.
+As $\{ℓ_{n n}(x_k)\}$ converges, $\{ℓ_{n n}(x_k)\}$ is Cauchy. Thus there exists $N$ such that for all $n, m>N$, we have $|ℓ_{n n}(x_k)-ℓ_{m m}(x_k)|<\frac{ϵ}{3}$. Thus we have $|ℓ_{n n}(x)-ℓ_{m m}(x)|<ϵ$. Then we know that $\{ℓ_{n n}(x)\}$ is Cauchy and converges.
+Define a functional $f$, $f(x)=\lim_n ℓ_{n n}(x)$. 
+To prove $f∈X^*$ we prove that it is linear and bounded.
+Clearly $f$ is linear.
+To prove that $f$ is bounded, we have
+\begin{align*}
+|f(x)|&=|\lim ℓ_{n n}(x)|\\
+& =\lim|ℓ_{n n}(x)|\\
+& ≤\lim\|ℓ_{n n}\|\|x\|\\
+& ≤ \|x\|
+\end{align*}
+Thus $f$ is linear and bounded. We have $ℓ_{n n}(x)$ converges to $f(x)$ for all $x$. Thus $\{ℓ_{n n}\}$ converges weak* and the closed unit ball in $X^*$ is weak* compact.</div>

@@ -1,0 +1,27 @@
+---
+mathjax: true
+tag: algebraic-curves
+title: §3.5. Proof of Bezout's Theorem, weak form.
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Recall: Theorem 3.1. Let $C,D$ be curves in $ℂ ℙ^2$ of degrees $m,n$, with no common component. Then $C,D$ intersect in at most $mn$ points.
+
+Proof. Let $C, D$ be curves in $ℂ ℙ^2$ of degrees $m, n$, defined by $P(x, y, z), Q(x, y,z)$ of degrees $m, n$. Suppose $p_1, …,p_{m n+1}$ are distinct point in $C,D$. We will show that $P, Q$ have a common factor, so $C, D$ have a common component.
+
+Choose a point $q ∈ ℂ ℙ^2, q ∉ C, q ∉ D$, and $q$ does not lie on any line through two of $p_1, …, p_{mn+1}$. After applying a projective transformation, can assume $q=[1,0,0]$. Let $p_j=[a_j, b_j, c_j]$, $b_j,c_j$ not both zero as $p_j ≠[1,0,0]$. Consider $R(y, z)=R_{P, Q}$
+Now: $x-a_j$ divides $P(x, b_j, c_j)$ and $Q(x, b_j, c_j)$
+as $p_j ∈ C ∩ D$
+$⇒ R(b_j, c_j)=0$ by Cor 3.8.
+$⇒(c_j y-b_j z) ∣ R(y, z)$, as $R$ homogeneous.
+As $[1,0,0]$ does not lie on line through $(a_i, b_i, c_i),(a_j, b_j, c_j)$, $c_i y-b_i z, c_j y-b_j z$ are coprime, not proportional, for $i ≠ j$.
+Hence $(c_1 y-b_1z) ⋯(c_{mn+1} y-b_{mn+1} z) ∣ R(y, z)$.
+But $R$ is homogeneous of degree $mn$, by Lemma 3.10, and L.H.S. has degree $m n+1$, so $R=0$.
+
+Here $P(x, y, z), Q(x, y, z)$ have a common factor by Lemma 3.11, say $P=X ⋅ y, Q=X ⋅ z$. Then any component of the curve $X=0$ is a component of (and $D$, so $C,D$ have a common component.
+Conversely, if $C, D$ have no common component, there are at most $mn$ distinct point in $C∩D$. ∎
+
+Define the <u>intersection multiplicity</u> $I_p(C, D)$ of $C, D$ at $p=[a, b, c]$ to be the largest positive integer $k$ such that $(cy-b z)^k ∣ R(y, z)$.
+If $p ∉ C ∩ D$, define $I_p(C,D)=0$.
+The following two propositions are proved in Kirman, §3.1.
+<strong>Proposition 3.12.</strong> The definition of $I_p(C, D)$ is independent of the choice of $q$ and projective transformation.
+<strong>Proposition 3.13.</strong> Let $p∈C∩D$. Then $I_p(C, D)=1$ if $p$ is a nonsingular point of $C$ and $D$, and the tangent lines to $C$ and $D$ at $P$ are distinct.</div>

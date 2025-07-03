@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $1<p<∞$. Show that a sequence $(x^{(n)}) ⊂ l^p$ converges weakly to $x$ if and only if it is bounded and $x_j^{(n)} → x_j$ for every $j$.
+<em>Proof.</em>
+(⇒) By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/8/2024-02-13.pdf#thm.4.3">Proposition 4.3</a> $(x^{(n)})$ converges weakly implies it is bounded.
+The standard basis vectors $e_k$ belong to every $l^p$, and hence $e_k ∈ l^q=(l^p)^*$ where $q=\frac{p}{p-1}$.
+If $x^{(n)}=(x^{(n)}_k)_{k ∈ ℕ}$ and $x=(x_k)_{k ∈ ℕ}$ and $x^{(n)} ⇀ x$, then for each $j$
+\[
+x^{(n)}_j=⟨x^{(n)},e_j⟩→⟨x,e_j⟩=x_j.
+\]
+(⇐) For all $y∈l^q$ and $ϵ>0$, let $y^{(k)}$ be the sequence $y$ truncated at position $k$.
+Since $y^{(k)}→y$, ∃$k∈ ℕ$ such that $\|y-y^{(k)}\|_q\sup_{n∈ℕ}\|x-x^{(n)}\|_p<\frac{ϵ}{2}.$ 
+By Hölder's inequality
+$$
+|⟨y-y^{(k)},x-x^{(n)}⟩|≤ \|y-y^{(k)}\|_q⋅\|x-x^{(n)}\|_p<\frac{ϵ}2.$$
+Since $y^{(k)}_j=0$ for $j>k$ and $x^{(n)}_j→x_j\ ∀j≤k$, there is $N∈ ℕ$ such that $|⟨y^{(k)},x-x^{(n)}⟩|<\frac{ϵ}{2}$ for $n≥N$.
+\[
+|⟨y,x-x^{(n)}⟩|≤|⟨y-y^{(k)},x-x^{(n)}⟩|+|⟨y^{(k)},x-x^{(n)}⟩|<ϵ
+\]
+Since ϵ is arbitrary, $⟨y,x-x^{(n)}⟩→0$. Since $y$ is arbitrary, $x^{(n)}⇀x$.</div>

@@ -1,0 +1,62 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="www.jchl.co.uk/maths/Topology.pdf">Part II Lecture Notes: Algebraic Topology</a>, James Lingard
+
+<strong>Simplices and simplicial complexes</strong>
+
+We say that $n+1$ points in $\mathbb{R}^{N}$ are in general position if the smallest affine-linear subspace containing them has dimension $n$. An $n$-simplex $\Delta$ in $\mathbb{R}^{N}$ is the convex hull of any $n+1$ points $x_{0}, \ldots, x_{n} \in \mathbb{R}^{N}$ in general position, that is
+
+$$
+\Delta=\left\{a_{0} x_{0}+\cdots+a_{n} x_{n} \mid a_{i} \in \mathbb{R}, a_{i} \geq 0, \sum a_{i}=1\right\}
+$$
+
+We call $x_{0}, \ldots, x_{n}$ the vertices of the simplex. A face of the simplex is the convex hull of a non-empty subset of the vertices.
+
+A simplicial complex in $\mathbb{R}^{N}$ is a finite collection of simplices in $\mathbb{R}^{N}$, such that whenever a simplex belongs to the collection then so do all of its faces, and whenever any two simplices in the collection have a non-empty intersection, their intersection is a face of both simplices.
+
+If $X$ is a simplicial complex we write $|X|$ to mean the geometric realisation of $X$, that is the topological space which is the union of all the simplices in $X .|X|$ is always a compact, metrizable space.
+
+<strong>Triangulations</strong>
+
+For a topological space $A$, a triangulation of $A$ is a simplicial complex $X$ together with a homeomorphism from $A$ to $|X|$. We say that $A$ is triangulable if it has some triangulation.
+
+<strong>Barycentric subdivision</strong>
+
+We define the barycentre of the simplex $\left[x_{0}, \ldots, x_{n}\right]$ to be
+
+$$
+\frac{1}{n+1}\left(x_{0}+\cdots+x_{n}\right)
+$$
+
+Starting with a simplex $\Delta$ in $\mathbb{R}^{N}$ we obtain a simplicial complex $\Delta^{1}$ by the following process, called barycentric subdivision. First we add a vertex $\hat{A}$ at the barycentre of each face $A$ of $\Delta$. Then we have a simplex through each set of vertices $\hat{A}_{0}, \ldots, \hat{A}_{k}$ if and only if after some reordering of these vertices we have
+
+$$
+A_{0} \subset A_{1} \subset \cdots \subset A_{k}
+$$
+
+The barycentric subdivision of a simplicial complex $X$ is defined to be the complex obtained by the barycentric subdivision of all the simplices in $X$. Clearly the geometric realisation of the barycentric subdivision of $X$ is the same as that of $X$.
+
+The mesh of a simplicial complex in $\mathbb{R}^{N}$ is the maximum of the diameters of its simplices. For any simplicial complex $X$, the mesh of the barycentric subdivision $X^{1}$ is at most $n /(n+1)$ times the mesh of $X$. Thus by repeatedly subdividing any simplicial complex we may make its mesh arbitrarily small.
+
+<strong>Simplicial maps and simplicial approximations</strong>
+
+For simplicial complexes $X$ and $Y$, A simplicial map $s: X \rightarrow Y$ is a function from $|X|$ to $|Y|$ which takes simplices of $X$ linearly onto simplices of $Y$. Any simplicial map is continuous (by the gluing lemma) and is completely determined by the images of the vertices in $X$, which are vertices in $Y$.
+
+Each point $x \in|X|$ lies in the interior of a unique simplex in $X$, called the carrier of $x$. A simplicial map $s: X \rightarrow Y$ is a simplicial approximation of a continuous map $f:|X| \rightarrow|Y|$ if $s(x)$ lies in the carrier of $f(x)$ for each point $x \in|X|$. Note that if $s$ is a simplicial approximation for $f$ then $s$ and $f$ are homotopic, by a straight line homotopy.
+
+<strong>The simplicial approximation theorem</strong>
+
+For any continuous map $f:|X| \rightarrow|Y|$ there is an $m \geq 0$ such that there exists a simplicial approximation $s: X^{m} \rightarrow Y$ of $f$.
+
+<strong>Proof</strong>
+
+Let $x$ be a vertex in $X$. Define the open star of $x$ to be the union of the interiors of all the simplices in $X$ which contain $x$. It is easy to prove that vertices $x_{0}, \ldots, x_{k}$ of $X$ span a simplex if and only if the intersection of their open stars is non-empty.
+
+First we prove the theorem in a special case. Suppose that for every vertex $x$ in $X$ there exists a vertex $y$ in $Y$ such that the open star of $x$ is mapped by $f$ into the open star of $y$. Then for every vertex $x$ in $X$, choose such a $y$ and define $s(x)=y$. By the above observation it follows that for any simplex $\left[x_{0}, \ldots, x_{k}\right]$ in $X$, the images $s\left(x_{0}\right), \ldots, s\left(x_{k}\right)$ span a simplex in $Y$, and hence we can extend our definition of $s$ linearly over $X$ to get a simplicial map $X \rightarrow Y$.
+
+Now suppose that $x \in|X|$. We need to show that $s(x)$ lies in the carrier of $f(x)$. Let $\left[x_{0}, \ldots, x_{k}\right]$ be the carrier of $x$. Then $x$ is in the intersection of the open stars of the $x_{i}$ and so, by our assumption, $f(x)$ is in the intersection of the open stars of the $s\left(x_{i}\right)$. Therefore $s\left(x_{0}\right), \ldots, s\left(x_{k}\right)$ span a face of the carrier of $f(x)$, so the carrier of $f(x)$ contains each of the $s\left(x_{i}\right)$, and so it contains $s(x)$. Thus $s$ is a simplicial approximation to $f$.
+
+Now let $f$ be an arbitrary map from $X$ to $Y$. We shall show that for some $m \geq 0, X^{m}$ satisfies the above condition. Now $|Y|$ is the union of the open stars $U_{y}$ of its vertices, so the sets $f^{-1}\left(U_{y}\right)$ form an open cover of $|X|$. Since $X$ is a compact metric space, by Lebesgue's lemma there exists $\epsilon>0$ such that any open subset of $|X|$ of diameter less than $\epsilon$ is contained in one of the sets $f^{-1}\left(U_{y}\right)$. But for $m$ sufficiently large, $X^{m}$ has mesh less that $\epsilon-$ and so $X^{m}$ satisfies the required condition.</div>

@@ -1,0 +1,27 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+$\DeclareMathOperator{\Tor}{Tor}
+<div style="white-space:pre-wrap">
+<strong>Definition 6.25.</strong> A module $F$ is <strong>flat</strong> if $-⊗_R F$ is an exact functor.
+<strong>Lemma 6.26.</strong> Let $B$ be a left $R$-module. The following are equivalent:
+<ol>
+<li>$B$ is flat.
+<li>$\Tor_n^R(A, B)=0$ for all $n \geq 1$ and all left $R$-modules $A$.
+<li>$\Tor_1^R(A, B)=0$ for all left $R$-modules $A$.
+</ol>
+<em>Proof.</em> Suppose that $B$ is flat. Let $F_• → A$ be a free resolution of $A$. Since $-⊗_R B$ is exact, the sequence 
+\[ … → F_2 ⊗_R B → F_1 ⊗_R B → F_0 ⊗_R B → A ⊗_R B → 0 \]
+is exact, so the homology of
+\[
+… → F_2 ⊗_R B → F_1 ⊗_R B → F_0 ⊗_R B → 0
+\]
+vanishes in positive degree. Therefore, we have (1)⟹(2).
+The implication (2)⟹(3) is trivial.
+Finally, (3)⟹(1) follows from the long exact sequence of Tor, since for any short exact sequence $0 → X → Y → Z → 0$, we have that
+\[
+0=\operatorname{Tor}_1^R(Z, B) → X ⊗ B → Y ⊗ B → Z ⊗ B → 0
+\]
+is exact.</div>

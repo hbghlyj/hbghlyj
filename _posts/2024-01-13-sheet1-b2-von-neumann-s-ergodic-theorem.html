@@ -1,0 +1,37 @@
+---
+mathjax: true
+tag: functional-analysis
+title: sheet1 B2 von Neumann’s Ergodic Theorem
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://www.uwo.ca/math/faculty/khalkhali/files/Ergodic_Theory.pdf">Proof of von Neumann’s Ergodic Theorem.</a>
+$\def\ker{\operatorname{Ker}}\DeclareMathOperator{\im}{Im}$Let $X$ be a Hilbert space and let $U\colon X → X$ be a unitary operator.
+(a) Show that $\ker(I-U)=\ker(I-U^*)$;
+(b) Show that $X=\overline{\im(I-U)} ⊕ \ker(I-U)$;
+(c) Show that $\lim_{N → ∞} \frac{1}{N} \sum_{n=1}^{N-1} U^n x=x$ if $x ∈ \ker(I-U)$ and $\lim_{N → ∞} \frac{1}{N} \sum_{n=1}^{N-1} U^n x=0$ if $x ∈ \overline{\im(I-U)}$;
+(d) Deduce that, for each $x ∈ X$,
+\[\lim_{N → ∞} \frac{1}{N} \sum_{n=1}^{N-1} U^n x=P x,\]
+where $P$ is the orthogonal projection onto $\ker(I-U)$.
+
+(a)
+$\ker(I-U)=\ker(UU^*-U)=\ker(U(U^*-I))⊃\ker(I-U^*)$.
+$\ker(I-U^*)=\ker(U^*U-U^*)=\ker(U^*(U-I))⊃\ker(I-U)$.
+
+(b)
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#equation.1.5">1.5</a> for any $T∈B(X)$, $\overline{\im T}=(\ker T^*)^⟂$.
+Applying $X=\overline{\im T}⊕\ker T^*$ to $T=I-U$
+\[X=\overline{\im(I-U)} ⊕ \ker(I-U^*)\overset{\text{(a)}}=\overline{\im(I-U)} ⊕ \ker(I-U)\]
+
+(c)
+If $x ∈ \ker(I-U)$, $x=U^nx$, so $\frac{1}{N} \sum_{n=1}^{N-1} U^n x=\frac{N-1}Nx→x$.
+If $x ∈ \im(I-U)$, let $x=y-Uy$. Since $U$ is isometric, $‖y‖=‖Uy‖=‖U^{n+1}y‖$,
+\[\frac{1}{N} \sum_{n=1}^{N-1} U^n x=\frac{1}{N} \sum_{n=1}^{N-1}U^ny-U^{n+1}y=\frac{Uy-U^{n+1}y}N→0\]
+Additionally we show this holds for $\overline{\im(I-U)}$, consider $x∈\overline{\im(I-U)}$ there exist $\tilde{x} ∈\im(I-U)$ s.t. $\|x-\tilde{x}\|<\frac{ϵ}{2}$ and large $N$ s.t. $\left\|\frac{1}{N} \sum_{n=1}^{N-1} U^n \tilde{x}\right\|<\frac{ϵ}{2}$
+\begin{align*}\left\|\frac{1}{N} \sum_{n=1}^{N-1} U^n x\right\|&=\left\|\frac{1}{N} \sum_{n=1}^{N-1} U^n((x-\tilde{x})+\tilde{x})\right\|\\&≤\left\|\frac{1}{N} \sum_{n=1}^{N-1} U^n(x-\tilde{x})\right\|+\left\|\frac{1}{N} \sum_{n=1}^{N-1} U^n \tilde{x}\right\| \\&<\left(\frac{1}{N} \sum_{n=1}^{N-1}\left\|U^n\right\|\right)\frac{ϵ}{2}+\frac{ϵ}{2}\\&=\frac{N-1}N\frac{ϵ}{2}+\frac{ϵ}{2}<ϵ . \text { Using }\|U^n\|=1\end{align*}
+so $\lim_{N → ∞} \frac{1}{N} \sum_{n=1}^{N-1} U^n x=0$ for all $x ∈ \overline{\im(I-U)}$.
+<strong>Remark.</strong>(<a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#thm.3.5">theorem 3.5</a>) If $‖T_n‖≤M$ for all $n$, and $T_n→0$ for all $x$ in a dense set $D⊆X$, then $T_n→0$ for all $x$ in $X$.
+Not true if dropping the condition $‖T_n‖≤M$ for all $n$, example: $X=l^2,T_n((x_k))=nx_n,D=c_{00},T_n|_{c_{00}}→0$ but $T_n((\frac1k))=1$
+(d)
+Using (b) and $Px∈ \ker(I-U),x-Px∈\ker(I-U)^⟂=\overline{\im(I-U)}$.
+Using (c)
+\begin{align*}\lim_{N → ∞} \frac{1}{N} \sum_{n=1}^{N-1} U^n x&=\lim_{N → ∞} \frac{1}{N} \sum_{n=1}^{N-1} U^n(Px+(x-Px))\\&=P x+0=Px.\end{align*}</div>

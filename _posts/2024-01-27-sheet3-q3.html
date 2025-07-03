@@ -1,0 +1,59 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $P(x, y, z)$ be a homogeneous polynomial of degree $d$ defining a nonsingular curve $C$ in $ℂℙ^2$.
+(i) Write down Euler's relation for $P, P_x, P_y, P_z$. Deduce that the Hessian determinant satisfies:
+\[
+z ℋ_P(x, y, z)=(d-1) \det\begin{pmatrix}
+P_{xx} & P_{xy} & P_{xz} \\
+P_{yx} & P_{yy} & P_{yz} \\
+P_x& P_y & P_z
+\end{pmatrix}
+\]
+<strong>Solution.</strong> Euler's relation $dP=xP_x+yP_y+zP_z$.
+Both sides $∂_x$ we get $dP_x=P_x+xP_{xx}+yP_{yx}+zP_{zx}$, so
+\[(d-1)P_x=xP_{xx}+yP_{yx}+zP_{zx}\]
+Both sides $∂_y$ we get $dP_y=P_y+xP_{xy}+yP_{yy}+zP_{zy}$, so
+\[(d-1)P_y=xP_{xy}+yP_{yy}+zP_{zy}\]
+Both sides $∂_z$ we get $dP_z=P_z+xP_{xz}+yP_{yz}+zP_{zz}$, so
+\[(d-1)P_z=xP_{xz}+yP_{yz}+zP_{zz}\]
+By definition of Hessian and linearity of det,
+\[
+z ℋ_P(x, y, z)=\det\begin{pmatrix}
+P_{xx} & P_{xy} & P_{xz} \\
+P_{yx} & P_{yy} & P_{yz} \\
+zP_{zx} &zP_{zy}&zP_{zz}
+\end{pmatrix}\]
+Adding $x$ times first row, $y$ times second row to third row
+\[=(d-1) \det\begin{pmatrix}
+P_{xx} & P_{xy} & P_{xz} \\
+P_{yx} & P_{yy} & P_{yz} \\
+P_x& P_y & P_z
+\end{pmatrix}. ∎
+\]
+
+(ii) Deduce further that:
+\[
+z^2 ℋ_P(x, y, z)=(d-1)^2 \det\begin{pmatrix}
+P_{xx} & P_{xy} & P_x\\
+P_{yx} & P_{yy} & P_y \\
+P_x& P_y & d P /(d-1)
+\end{pmatrix}
+\]
+<strong>Solution.</strong>
+Adding $x$ times first column, $y$ times second column to third column, we get the determinant. ∎
+
+(iii) Deduce that if $P(x, y, 1)=y-g(x)$ then $[a, b, 1]$ is a point of inflection of $C$ if and only if $b=g(a)$ and $g''(a)=0$.
+This shows the lectures definition of points of inflection corresponds to the usual notion of a point of inflection of the graph of a function $g(x)$ on $ℝ$ or $ℂ$.
+<strong>Solution.</strong> point$∈C⇔P(a,b,1)=0⇔b=g(a)$.
+By (ii),
+\[
+z^2 ℋ_P(x, y, z)=(d-1)^2 \det\begin{pmatrix}
+-g''(x)&0&-g'(x)\\
+0&0&1\\
+-g'(x)&1&0
+\end{pmatrix}=(d-1)^2g''(x)
+\]
+so $ℋ_P(a,b,1)=0⇔g''(a)=0$ (if $d=1$, $g''=0$).</div>

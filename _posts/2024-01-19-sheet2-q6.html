@@ -1,0 +1,40 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">The Wiener algebra $ℱ(\mathrm{L}^1)$ is strictly smaller than $\mathrm{C}_0$.
+(a) Prove that for $0<s<t$ we have
+\[
+\left|∫_s^t \frac{\sin ξ}{ξ} \mathrm{d} ξ\right| ≤ 4 .
+\]
+<strong>Proof.</strong> $\frac{\sin ξ}{ξ}>0$ on $[2Nπ,(2N+1)π]$, wlog $s=2nπ,t=(2N+1)π\ (n,N∈ℕ_0)$
+\[∫_s^t \frac{\sin ξ}{ξ} \mathrm{d} ξ
+\\<\sum_{k=n}^N\frac1{π(2k-1)}\int_{(2k-1)π}^{2kπ}\sinξ\ \mathrm{d}ξ+\frac1{π (2k+1)}\int_{2kπ}^{(2k+1)π}\sinξ\ \mathrm{d}ξ
+\\=\frac2π\sum_{k=n}^N\frac1{2k-1}-\frac1{2k+1}
+\\<\frac2π\sum_{k=1}^∞\frac1{2k-1}-\frac1{2k+1}
+\\=\frac2π
+\]
+(b) Assume that $f ∈ \mathrm{L}^1(ℝ)$ is odd as a distribution (meaning that $\tilde{f}=-f$ holds). Prove that
+\[
+\left|∫_s^t \frac{\widehat{f}(ξ)}{ξ} \mathrm{d} ξ\right| ≤ 4\|f\|_1
+\]
+holds for all $0<s<t$.
+<em>Proof.</em>
+\[
+\widehat{f}(ξ)=∫_{-∞}^∞f(x)(e^{-ixξ}-e^{ixξ})\mathrm{d}x\\=∫_0^∞f(x)(e^{-ixξ}-e^{ixξ})\mathrm{d}x\\=-2i\int_{0}^{∞}f(x)\sin(ξx)\mathrm{d}x
+\]
+then
+\[
+\left|∫_s^t \frac{\widehat{f}(ξ)}{ξ} \mathrm{d} ξ\right|=\left|∫_s^t\frac{2i}{ξ}\int_0^{∞}f(x)\sin(ξx)\mathrm{d}x\mathrm{d}ξ\right|\\
+=2\left|\int_0^{∞}f(x)∫_s^t\frac1{ξ}\sin(ξx)\mathrm{d}ξ\mathrm{d}x\right|\\
+≤2\left|\int_0^{∞}f(x)\mathrm{d}x\right|\left|∫_s^t\frac1{ξ}\sin(ξx)\mathrm{d}ξ\right|\\
+\overset{\text{(1)}}≤8\int_{0}^{∞}|f(x)|dx\\
+=4\int_{-∞}^{∞}|f(x)|dx\\
+=4‖f‖_{L^1}
+\]
+(c) Let $g ∈ \mathrm{C}_0(ℝ)$ be an odd function satisfying $g(ξ)=1 / \log (ξ)$ for $ξ ≥ 2$. Prove that there does not exist an integrable function whose Fourier transform is $g$.
+<strong>Proof.</strong> Supose $∃f∈L^1$ such that $\hat{f}=g$.
+$f=ℱ^{-1}g=\frac1{2π}\tilde{ℱ}g$
+By (b) $\left|∫_s^t \frac{\widehat{f}(ξ)}{ξ} \mathrm{d} ξ\right| ≤4\|f\|_{L^1}<∞$ for all $0<s<t$.
+But $\left|∫_𝖾^t \frac{g(ξ)}{ξ} \mathrm{d} ξ\right| =\int_𝖾^t\frac{1}{ξ\log(ξ)}𝖽ξ=\log(\log(t))→∞$ as $t→∞$, contradiction.</div>
