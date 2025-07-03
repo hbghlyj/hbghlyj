@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$L_n(A⊗_R-)(B)≃L_n(-⊗_RB)(A)=\operatorname{Tor}^R_n(A,B)$ for all $n$.
+<em>Proof:</em> Choose a projective resolution $P_•\xrightarrow{ε}A$ and a projective resolution $Q_•\xrightarrow{η}B$. We can view $A,B$ as complexes concentrated in degree 0. Look at the double complexes $P⊗_RQ,A⊗_RQ,P⊗_RB$ we get morphisms of bicomplexes
+\begin{tikzcd}
+& P\otimes_R Q \arrow[dl,swap,"\varepsilon\otimes\mathrm{id}"] \arrow[dr,"\mathrm{id}\otimes\eta"] & \\
+A\otimes_R Q & & P\otimes_R B
+\end{tikzcd}
+Since $\operatorname{Tot}$ is functorial, these maps in turn induce chain maps
+$$
+f: \operatorname{Tot}\left(P_{\bullet} \otimes Q_{\bullet}\right) \rightarrow \operatorname{Tot}\left(M \otimes Q_{\bullet}\right) \cong M \otimes Q_{\bullet},
+$$
+and
+$$
+g: \operatorname{Tot}\left(P_{\bullet} \otimes Q_{\bullet}\right) \rightarrow \operatorname{Tot}\left(P_{\bullet} \otimes N\right) \cong P_{\bullet} \otimes N .
+$$
+We claim that $f$ and $g$ are quasi-isomorphisms, which would give the isomorphism on homology $L_n(A⊗_R-)(B)≃L_n(-⊗_RB)(A)=\operatorname{Tor}^R_n(A,B)$.
+
+<em>Proof.</em> To show that $\varepsilon\otimes\mathrm{id}$ is quasi-isomorphism, we need to show that $\operatorname{cone}(ε⊗Q)=\operatorname{Tot}C$ is acyclic. Since each $− ⊗ Q_q$ is an exact functor (because the $Q_q$ are projective, hence flat), the rows of $C$ are exact.
+Since $C$ is an upper half plane complex, the chain complex $\operatorname{Tot}(C_{••})$ is acyclic by the Acyclic Assembly Lemma. Thus, $\operatorname{cone}(f)$ is an acyclic chain complex, so by Corollary 8.4, we have that $f$ is a quasi-isomorphism.</div>

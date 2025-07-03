@@ -1,0 +1,76 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="www.jchl.co.uk/maths/Topology.pdf">Part II Lecture Notes: Algebraic Topology</a>, James Lingard
+
+<strong>Fundamental group of the circle</strong>
+
+To determine the fundamental group of the circle we first define the map $\pi: \mathbb{R} \rightarrow S^{1}$ by $\pi(x)=e^{2 \pi i x}$. $\pi$ is a covering map as defined below. We then apply the path-lifting and homotopy-lifting lemmas related to this covering map.
+
+We define a homomorphism $\sigma: \pi_{1}\left(S^{1}, 1\right) \rightarrow \mathbb{Z}$ as follows. Let $\alpha$ be a loop in $S^{1}$ based at 1 . This lifts uniquely to a path in $\mathbb{R}$ starting at 0 , whose endpoint must be an integer, and we define $\sigma(\alpha)$ to be this value.
+
+To show that $\sigma$ gives a well-defined map on $\pi_{1}\left(S^{1}, 1\right)$ we use the homotopy-lifting property. For if $\beta \sim \alpha$ is another loop in $S^{1}$ based at 1 then the homotopy from $\alpha$ to $\beta$ gives us a homotopy from the lift of $\alpha$ to the lift of $\beta$, and we then see that $\sigma(\alpha)=\sigma(\beta)$.
+
+It is easy to see that $\sigma$ is a homomorphism. Furthermore, $\sigma$ is injective, for if $\sigma(\alpha)=0$ then there is a straight line homotopy, relative to $\{0,1\}$, from the lift of $\alpha$ to the constant loop at 0 in $\mathbb{R}$, and this projects to show that $\alpha$ is homotopic to the constant loop in $\pi_{1}\left(S^{1}, 1\right)$. Finally, $\sigma$ is surjective, for the loop $s \mapsto e^{2 \pi i n s}$ in $S^{1}$ lifts to a path in $\mathbb{R}$ from 0 to $n$.
+
+Therefore we have shown that the fundamental group of the circle is isomorphic to $\mathbb{Z}$.
+
+<strong>The fundamental theorem of algebra</strong>
+
+Let $f$ be a polynomial of degree $n \geq 1$, and suppose that $f$ has no roots in $\mathbb{C}$. Then $f$ is a continuous map $\mathbb{C} \rightarrow \mathbb{C} \backslash\{0\}$. Since $\mathbb{C} \backslash\{0\}$ and $S^{1}$ are homotopy equivalent, they have isomorphic fundamental groups. In particular, loops in $\mathbb{C} \backslash\{0\}$ have a well-defined winding number, which is invariant under homotopy of loops (even if you change the base point).
+
+Now let $C_{r}$ be the circle of radius $r$ around 0 in $\mathbb{C}$, and consider the image of $C_{r}$ under $f$ as $r$ varies. These circles are obviously all homotopic, and a homotopy from $C_{r_{1}}$ to $C_{r_{2}}$ gives a homotopy from $f \circ C_{r_{1}}$ to $f \circ C_{r_{2}}$. Now the circle $C_{0}$ clearly projects to a single point, with winding number 0 , but for sufficiently large $R$ the image $f \circ C_{R}$ is homotopic to $\left(a_{n} x^{n}\right) \circ C_{R}$, which has winding number $n$. This contradicts the homotopy invariance of the winding number.
+
+<strong>Covering maps and covering spaces</strong>
+
+A covering map $\pi: X \rightarrow Y$ is a continuous map such that every $y \in Y$ has an open neighbourhood $U$ such that $\pi^{-1}(U)$ is a disjoint union of open subsets $U_{\alpha}$ such that the restriction of $\pi$ to each set $U_{\alpha}$ is a homeomorphism from $U_{\alpha}$ to $U$. We then say that $X$ is a covering space of $Y$.
+
+<strong>The path-lifting property</strong>
+
+For any covering space $X \rightarrow Y$ and any point $x \in X$, any path in $Y$ starting at $\pi(x)$ lifts to a unique path in $X$ starting at $x$.
+
+The path-lifting property is a special case of the homotopy-lifting property below, where the space $A$ is a point.
+
+<strong>The homotopy-lifting property</strong>
+
+For any covering space $X \rightarrow Y$, any other space $A$ and any continuous map $f^{\prime}: A \rightarrow X$, any homotopy from $f=\pi f^{\prime}: A \rightarrow Y$ to some other map $g: A \rightarrow Y$ lifts uniquely to a homotopy from $f^{\prime}$ to some other map $g^{\prime}: A \rightarrow X$.
+
+<strong>Computing fundamental groups using covering spaces</strong>
+
+For any covering space $\pi: X \rightarrow Y$ and any point $x \in X$, the induced group homomorphism $\pi_{*}: \pi_{1}(X, x) \rightarrow \pi_{1}(Y, \pi(x))$ is injective. This is proved using the homotopy-lifting property.
+
+If we have a covering space $\pi: X \rightarrow Y$, then $\pi_{1}(Y, y)$ acts naturally on the fibre $\pi^{-1}(y)$. Furthermore, if $X$ is path-connected then this action is transitive. In this case, the stabilizer of a point $x \in \pi^{-1}(y)$ is precisely the fundamental group $\pi_{1}(X, x)$ of $X$, and we have a bijection from the set of cosets of $\pi_{1}(X, x)$ in $\pi_{1}(Y, y)$ to the fibre $\pi^{-1}(y)$ given by
+
+$$
+\pi_{1}(X, x) \sigma \longmapsto x \sigma
+$$
+
+Therefore we can compute the order of the fundamental group of $Y$ if we know the order of the fundamental group of $X$. To determine the structure we need the following theorem:
+
+Let $X$ be a simply connected space. Let $G$ be a group of homeomorphisms which acts freely on $X$ in the sense that every point $x \in X$ has an open neighbourhood $U$ such that $U \cap g(U)=\emptyset$ for all $g \neq 1 \in G$. Let $Y=X / G$ be the space of orbits. Then the map $X \rightarrow Y$ is a covering map and the fundamental group of $Y$ at any base point is isomorphic to $G$.
+
+<strong>Fundamental group of the torus</strong>
+
+The $n$-torus $\left(S^{1}\right)^{n}$ has fundamental group $\mathbb{Z}^{n}$. We can prove this in two ways. Firstly, we can use the fact that
+
+$$
+\pi_{1}(X \times Y,(x, y)) \cong \pi_{1}(X, x) \times \pi_{1}(Y, y)
+$$
+
+Alternatively, we observe that $\left(S^{1}\right)^{n}$ is the quotient of $\mathbb{R}^{n}$ by the free action of $\mathbb{Z}^{n}$ acting by translation, and that $\mathbb{R}^{n}$ is simply connected, so the result follows by the theorem above.
+
+<strong>Fundamental group of real projective space</strong>
+
+The real projective space $\mathbb{R} \mathbb{P}^{n}$ can be thought of as the quotient of $S^{n}$ by the free action of the group $\mathbb{Z} / 2$, mapping each point in $S^{n}$ to its antipode. Therefore, if $n=0$ then $\mathbb{R}^{0}$ consists of just one point, and hence is simply connected. If $n=1$ then $\mathbb{R} \mathbb{P}^{1}$ is isomorphic to $S^{1}$ and so has fundamental group $\mathbb{Z}$. If $n \geq 2$ then $S^{n}$ is simply connected, and so the fundamental group of $\mathbb{R} \mathbb{P}^{n}$ is $\mathbb{Z} / 2$.
+
+<strong>The universal covering</strong>
+
+A space is locally contractible if every point has an open neighbourhood which is contractible. Also, we say that two covering spaces $X_{1}$ and $X_{2}$ of the same space $Y$ are isomorphic if there is a homeomorphism from $X_{1}$ to $X_{2}$ such that the composition $X_{1} \rightarrow X_{2} \rightarrow Y$ is the map $X_{1} \rightarrow Y$. Then we have the following theorem:
+
+Every connected, locally contractible space $Y$ has a unique simply connected covering space $X$, called the universal covering of $Y$. Moreover, the fundamental group of $Y$ acts freely on $X$, with $Y=X / \pi_{1}(Y, y)$.
+
+Therefore, the fundamental group of any reasonable space $Y$ may be computed by finding a simply connected covering space of $Y$ and applying this theorem. Finally, the following theorem classifies the connected covering spaces of a space $Y$.
+
+Let $Y$ be a connected, locally contractible space. Then there is a bijection between isomorphism classes of connected covering spaces of $Y$ and conjugacy classes of subgroups $H$ of the group $G=\pi_{1}(Y, y)$. The correspondence is defined by viewing $Y$ as $X / G$, where $X$ is the universal cover of $Y$, and, for each subgroup $H$ of $G$, forming the new covering space $X / H$ of $Y$.</div>

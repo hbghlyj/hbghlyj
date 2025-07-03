@@ -2,3 +2,5 @@
 urlslug.py
 __pycache__
 Gemfile.lock
+_site/
+.jekyll-metadata

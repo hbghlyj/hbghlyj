@@ -1,0 +1,9 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://math.stackexchange.com/questions/273491/">MSE</a>
+If $X$ is a compact Riemann surface, and $f:X\to \mathbb C\cup \{\infty\}$ is a meromorphic function, then indeed $f$ has the same number of zeros and poles, with multiplicity counted. In the more general case, let $X, Y$ be Riemann surfaces, $X$ compact and $f:X\to Y$ be a non-constant holomorphic map and  $f(x)=y$. Then in properly chosen local coordinates around $x$ and $y$, we can write $f(z)=z^k$. Then we define the ramification index at the point $x$ to be $v_x=k$. It's easy to see that $f^{-1}(y)$ is a finite set for all $y\in Y$. The function $d(y)=\sum\limits_{f(x)=y}v_x$ is defined. Now I will show that $d$ is a locally constant function on $Y$ and hence it's a constant. Then your question will be answered.
+
+For any $y\in Y$, let $f^{-1}(y)=\{x_1,\dots,x_m\}$. Choose a coordinate chart $U$ around $x$ and coordinate charts $V_i$ around $x_i$ such that $f(V_i)\subset U$. Via replacing $U$ by $\cap f(V_i)$ and replacing $V_i$ by $V_i\cap f^{-1}\left(\cap f(V_i)\right)$, we may assume that $f(V_i)=U$ for each $i$. Note that here I used the fact the holomorphic maps are open. By replacing $U$ by $U-f(X-\cup V_i)$, and intersecting $V_i$ with the preimage of the new $U$, we may assume that $f^{-1}(U)=\cup V_i$. (Here I used the fact that $f$ is a closed map.) Since locally a holomorphic map is $z\mapsto z^k$, by shrinking $U$ and intersecting $V_i$ and the preimage of the new $U$, finally we may assume that for each $y\neq y'\in U$, $y'$ has exactly $v_{x_j}$ preimages in $V_j$. Now clearly $d$ is constant in $U$.</div>

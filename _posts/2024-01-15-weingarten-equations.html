@@ -1,0 +1,20 @@
+---
+mathjax: true
+tag: geometry-of-surfaces
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">The Weingarten equations express the derivatives of the Normal using derivatives of the position vector. Let ${\bf x}:U\to\Bbb{R}^3$ be a Regular Patch, then the Shape Operator $S$ of $x$ is given in terms of the basis $\{{\bf x}_u, {\bf x}_v\}$ by
+\begin{align*}
+-S({\bf x}_u) &= {\bf N}_u = \frac{{fF-eG}}{{EG-F^2}}{\bf x}_u + \frac{{eF-fE}}{{EG-F^2}}{\bf x}_v\\
+-S({\bf x}_v) &= {\bf N}_v = \frac{{gF-fG}}{{EG-F^2}}{\bf x}_u + \frac{{fF-gE}}{{EG-F^2}}{\bf x}_v
+\end{align*}
+where ${\bf N}$ is the Normal Vector, $E$, $F$, and $G$ the coefficients of the first Fundamental Form
+\[
+ds^2 = E\,du^2 + 2F\,du\,dv + G\,dv^2
+\]
+and $e$, $f$, and $g$ the coefficients of the second Fundamental Form given by
+\begin{align*}
+e &= -{\bf N}_u\cdot{\bf x}_u = {\bf N}\cdot{\bf x}_{uu}\\
+f &= -{\bf N}_v\cdot{\bf x}_u = {\bf N}\cdot{\bf x}_{uv} = {\bf N}\cdot{\bf x}_{vu} = -{\bf N}_u\cdot{\bf x}_v\\
+g &= -{\bf N}_v\cdot{\bf x}_v = {\bf N}\cdot{\bf x}_{vv}
+\end{align*}</div>

@@ -1,0 +1,22 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Students in abstract algebra and number theory are usually interested to see that the arithmetic functions $\phi(n)$, Euler's function, and $d(n)$, the number of positive divisors of $n$, occur quite naturally in the solution of some group theory problems. It appears that the function $\sigma(n)$, the sum of the positive divisors of $n$, does also, in counting the number of subgroups of the dihedral group $D_n$. A formula is developed here for that number.
+
+<strong>Theorem.</strong> The number of subgroups of the dihedral group $D_n(n \geqq 3)$ is $d(n)+\sigma(n)$.
+
+<em>Proof.</em> When considered geometrically, $D_n$ consists of $n$ rotations and $n$ reflections of the regular $n$-gon. The subgroups of $D_n$ are of two types: (1) Those containing rotations only, and (2) those containing rotations and reflections.
+
+The subgroups of type 1 are simply the subgroups of $Z_n$, the cyclic group of order $n$, and the number of them is $d(n)$.
+
+The subgroups of type 2 contain an equal number of rotations and reflections, say $t$, of each. Now the $t$ rotations must comprise the unique subgroup of $Z_n$ of order $t$, whence $t \mid n$, but the $t$ reflections can be chosen in several ways. In fact, the axes of reflection form a star-shaped figure with equal central angles which can be positioned in the $n$-gon in $n / t$ ways. Thus for each divisor $t$ of $n$, there are $n / t$ subgroups of type 2 , and the total number of subgroups of type 2 must be
+$$
+\sum_{t \mid n} n / t=\sum_{t \mid n} t=\sigma(n) .
+$$
+
+This completes the proof of the theorem.
+It is of interest to note that when $p$ is a prime greater than 2, the number of subgroups of $D_p$ is simply $p+3$.
+
+<a href="https://ysharifi.wordpress.com/2011/02/17/subgroups-of-dihedral-groups-1/">Subgroups of dihedral groups (1)</a></div>

@@ -1,0 +1,27 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Find explicitly the projective transformation of $ℂℙ^2$ that takes the points $[1,0,0],[1,1,0],[0,0,1]$ and $[0,1,1]$ to $[1,2,3],[1,0,1],[0,1,0]$ and $[1,0,-1]$ respectively.
+<strong>Solution.</strong>
+First we scale the points to satisfy linear relations
+\begin{gather*}[1,0,0]-[1,1,0]-[0,0,1]+[0,1,1]=0\cr[1,2,3]-2[1,0,1]-2[0,1,0]+[1,0,-1]=0\end{gather*}
+To find a linear map $T\colonℂ^2→ℂ^2$
+\begin{align*}
+T(1,0,0)&=(1,2,3)\\
+T(-1,-1,0)&=(-2,0,-2)\\
+T(0,0,-1)&=(0,-2,0)
+\end{align*}
+by row reduction
+\begin{align*}
+T(1,0,0)&=(1,2,3)\\
+T(0,1,0)&=(1,-2,-1)\\
+T(0,0,1)&=(0,2,0)
+\end{align*}
+so the projective transformation $\tilde{T}$ induced by the linear map
+\[T(x,y,z)=(x+y,2x-2y+2z,3x-y)\]
+satisfies required conditions.
+
+<u>Remark.</u> For $T:V_1→V_2$,
+dual map $T^*:V_2^*→V_1^*$</div>

@@ -1,0 +1,37 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X$ be a complex Hilbert space and $T ∈ ℬ(X)$ be normal (i.e. $T^* T=T T^*$).
+(a) Show that
+\[
+r_σ(T)=‖T‖
+\]
+Deduce that if $P$ is a polynomial, then
+\[
+‖P(T)‖=\sup_{λ ∈ σ(T)}|P(λ)|
+\]
+<strong>Solution.</strong> (<a href="https://people.math.ethz.ch/~struwe/Skripten/FA-I-II-11-9-2014.pdf#Satz_.6.7.1">6.7.1</a>)Since $T$ is normal, $‖Tx‖=‖T^*x‖∀x∈X$
+Apply this to $Tx$: $‖T^2x‖=‖T^*Tx‖$.
+By induction, $‖T^{2n}x‖=‖(T^*T)^nx‖∀x∈X∀n∈ℕ$, so $‖T^{2n}‖=‖(T^*T)^n‖∀n∈ℕ$.
+Since $T^*T$ is self-adjoint, $‖(T^*T)^n‖=‖T^*T‖^n$.
+By Gelfand's formula,$$r_σ(T)=\lim_{n→∞}‖T^{2n}‖^{\frac1{2n}}=\lim_{n→∞}‖T^*T‖^{\frac12}=‖T^*T‖^{\frac12}=‖T‖$$
+For the second part: By the Spectral Mapping theorem, $σ(P(T))=P(σ(T))$.
+Since $P(T)$ is normal, $‖P(T)‖=\sup_{λ∈σ(P(T))}|λ|=\sup_{λ∈P(σ(T))}|λ|=\sup_{μ∈σ(T)}|P(μ)|$.
+
+(b) Let $P$ be a Laurent polynomial, i.e. $P(z)=\sum_k a_k z^k$ where the summation range is finite but may contains positive as well as negative powers. Show that if $T$ is unitary, then
+\[
+‖P(T)‖=\sup_{λ ∈ σ(T)}|P(λ)| .
+\]
+<strong>Solution.</strong> Let $P=\sum_{k=-n}^{n}a_kz^k,Q=\sum_{k=0}^{2n}a_{k-n}z^k$ so that $Q$ is polynomial and $P(z)=z^{-n}Q(z)$
+Since $T$ is unitary, $σ(T)⊆\{λ∈ℂ∣|λ|=1\}$.
+By (a), we get
+\begin{align*}
+‖P(T)‖&=‖T^{-n}Q(T)‖\\
+&=\sup_{x∈X:‖x‖=1}‖T^{-n}(Q(T)(x))‖\\
+&\overset{\text{isometry}}=\sup_{x∈X:‖x‖=1}‖Q(T)(x)‖\\
+&=‖Q(T)‖\\
+&\overset{\text{(a)}}=\sup_{λ∈σ(T)}|Q(λ)|\\
+&\overset{|λ|=1}=\sup_{λ∈σ(T)}|P(λ)|
+\end{align*}</div>

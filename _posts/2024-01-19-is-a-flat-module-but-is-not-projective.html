@@ -1,0 +1,13 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="http://www2.math.uni-wuppertal.de/~ruelling/AlgII-Exc/Solution-CA11.pdf">Exercise 11.2</a>: Show that $ℚ$ is a flat $ℤ$-module but is not projective.
+Solution: $ℚ=S^{-1} ℤ$ with $S=ℤ∖\{0\}$. Hence $ℚ$ is flat over $ℤ$. <a href="https://math.stackexchange.com/questions/3221592">Localization is exact</a>
+Next we prove that it is not projective. Consider the $ℤ$-module $ℚ / ℤ$, which by definition is the cokernel of the inclusion $ℤ  ↪ ℚ$. For $n ∈ ℕ_{≥ 1}$ denote by $α_n: ℤ → ℚ / ℤ$ the unique $ℤ$-module homomorphism with $α_n(1) ≡ \frac{1}{n} \bmod ℤ$. Clearly, $\ker(α_n)=n ℤ$; hence $α_n$ factors via $\bar{α}_n$ : $ℤ / n ℤ → ℚ / ℤ$. By the UMP of the direct sum we get a $ℤ$-linear map $α:=⊕_n α_n: \bigoplus_{n ≥ 1} ℤ / n ℤ → ℚ / ℤ$. Clearly $α$ is surjective. Denote by $π: ℚ → ℚ / ℤ$ the quotient map.
+\begin{tikzcd}&\mathbb{Q} \arrow[d, "\pi"] \\
+\oplus_{n \geq 1} \mathbb{Z}/n\mathbb{Z} \arrow[r, "\alpha"] & 
+\mathbb{Q}/\mathbb{Z} \arrow[r] & 0\end{tikzcd}
+If $ℚ$ was a projective $ℤ$-module, then there would exist a map $π_1: ℚ →\bigoplus_{n ≥ 1} ℤ / n ℤ$, such that $α ∘ π_1=π$. But any $ℤ$-linear homomorphism $β: ℚ → ℤ / n ℤ$ is the zero map. (Since $β\left(\frac{a}{b}\right)=β\left(\frac{n a}{n b}\right)=n β\left(\frac{a}{n b}\right)=0$.) It follows that if $π_1: ℚ → \bigoplus_{n ≥ 1} ℤ / n ℤ$ is a $ℤ$-linear map, then its composition with any projection map $\bigoplus_{n ≥ 1} ℤ / n ℤ → ℤ / m ℤ$ is zero; hence $π_1$ is zero. Thus $α ∘ π_1=π$ would imply $π=0$, i.e. $ℚ / ℤ=0$, i.e. the inclusion $ℤ  ↪ ℚ$ is surjective, which is absurd. Hence $ℚ$ is not projective as an $ℤ$-module.
+<a href="https://math.stackexchange.com/questions/769677/">MSE</a>		</div>

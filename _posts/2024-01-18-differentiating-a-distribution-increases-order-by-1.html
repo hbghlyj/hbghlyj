@@ -1,0 +1,20 @@
+---
+mathjax: true
+tag: distribution-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Lemma: If $u \in \mathscr{D}^{\prime}(\mathbb{R})$ has order $k \in \mathbb{N}$, then $u^{\prime}$ has order $k+1$. (Note this is false if $k=0$.)
+
+Proof. It is easy to see that $u^{\prime}$ has order at most $k+1$. To see that the order is $k+1$ assume for a contradiction that the order is at most $k$. Then for any $R>0$ we find a constant $c=c_R \geq 0$ such that
+\[\tag4
+\left|\left\langle u^{\prime}, \phi\right\rangle\right| \leq c \sum_{j=0}^k \max \left|\phi^{(j)}\right|
+\]
+holds for all $\phi \in \mathscr{D}(\mathbb{R})$ with support in $(-R, R)$. Take $\chi \in \mathscr{D}(-R, R)$ with $\int_{\mathbb{R}} \chi \mathrm{d} x=1$. For $\phi \in \mathscr{D}(-R, R)$ put $\varphi=\phi-c \chi$ with $c=\int_{\mathbb{R}} \phi \mathrm{d} x$. Then $\varphi \in \mathscr{D}(-R, R)$ and $\int_{\mathbb{R}} \varphi \mathrm{d} x=0$ and so $\psi(x)=\int_{-R}^x \varphi(t) \mathrm{d} t, x \in \mathbb{R}$, belongs to $\mathscr{D}(-R, R)$.
+
+Plugging it into (4) yields, after rearranging terms, the bound
+\[
+|\langle u, \phi\rangle|=|\langle u', \psi\rangle|\leq c\sum_{j=0}^k \max \left|\psi^{(j)}\right|=c\max|\psi|+c\sum_{j=0}^{k-1} \max \left|\phi^{(j)}\right|\leq C \sum_{j=0}^{k-1} \max \left|\phi^{(j)}\right|
+\]
+for some constant $C=C_R$. The last $\le$ is because $\max|ψ|≤2R(\max|ϕ|+|c|\max|\chi|)≤2R(\max|ϕ|+2R|\phi|\max|\chi|)$
+
+But this is contradicting the assumption that $u$ has order $k$.</div>

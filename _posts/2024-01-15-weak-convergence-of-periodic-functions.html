@@ -1,0 +1,32 @@
+---
+mathjax: true
+tag: distribution-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $g_j(x)=g(j x), x ∈(0,1)$, where $g$ is $T$-periodic and on $(0, T]$ is given by
+\[
+g=-117\mathit1_{\left(0, \frac{T}{2}\right]}+117\mathit1_{\left(\frac{T}{2}, T\right]}= \begin{cases}-117 & \text { on }\left(0, \frac{T}{2}\right] \\ +117 & \text { on }\left(\frac{T}{2}, T\right]\end{cases}
+\]
+Clearly $\left\|g_j\right\|_1=117 \not → 0$. On Problem Sheet 3 you will be asked to prove that $g_j → 0$ in $𝒟'(0,1)$.
+
+<a href="https://courses.maths.ox.ac.uk/pluginfile.php/31375/mod_resource/content/1/sheet3.pdf">Problem 3.</a> Let $g ∈ \mathrm{L}_{\text{loc}}^1(ℝ)$ and assume that $g$ is $T$ periodic for some $T>0: g(x+T)=g(x)$ holds for almost all $x ∈ ℝ$. Define for each $j ∈ ℕ$ the function
+\[
+g_j(x)=g(j x),   x ∈(0,1) .
+\]
+Prove that
+\[
+g_j → \frac{1}{T} ∫_0^T g \mathrm{~d} x   \text { in }   𝒟'(0,1)   \text { as }   j → ∞ .
+\]
+<strong>Proof.</strong> (<a href="https://courses.maths.ox.ac.uk/pluginfile.php/94322/mod_resource/content/2/sl5.pdf">page 11</a>)
+By density assume $g$ is piecewise continuous.
+If $\phi \in 𝒟(0,1)$, define
+\[
+G(x)=\int_0^x g(t) d t,  x \in(0, T],
+\]
+Replacing $g$ with $g-\frac1T∫_0^T g \mathrm{~d} x$, we can assume that $G(T)=0$, so the $T$-periodic extension of $G$ is piecewise $C^1$ and $G'(x)=g(x)$ a.e.
+Integrate by parts, using $\phi(0)=\phi(1)=0$,
+\begin{aligned}
+\left\langle g_j, \phi\right\rangle&=\int_0^1 g(j x) \phi(x) d x\\
+&={\left[\frac{G(j x)}{j} \phi(x)\right]_0^1-\frac1j\int_0^1 G(j x)\phi'(x) d x} \\
+& \rightarrow 0 .
+\end{aligned}</div>

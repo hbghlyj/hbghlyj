@@ -1,0 +1,28 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Define for $ϕ ∈ 𝒮(ℝ)$ the function
+\[
+Φ(z)≝\frac{1}{π \mathrm{i}} ∫_{ℝ} \frac{ϕ(t)}{t-z} \mathrm{d} t,   z ∈ ℍ,
+\]
+where $ℍ=\{z ∈ ℂ: \operatorname{Im}(z)>0\}$.
+Prove that $Φ$ is holomorphic. Next, using for instance the formula
+\[
+Φ(x+\mathrm{i} y)=\frac{1}{π \mathrm{i}}⟨(t-\mathrm{i} y)^{-1}, τ_x ϕ⟩
+\]
+and an identity from question 3 on Problem Sheet 2, show that $Φ$ extends by continuity to the closed upper half plane $\overline{ℍ}$ and that
+\[
+Φ(x+\mathrm{i} 0)≝\lim_{y↘0} Φ(x+\mathrm{i} y)=ϕ(x)+\mathrm{i} ℋ(ϕ)(x),
+\]
+where $ℋ(ϕ)$ is the Hilbert transform of $ϕ$.
+<strong>Solution.</strong>
+To show $Φ$ is holomorphic, we just need to show it is complex differentiable. Fix $z∈ℍ$, $\frac{Φ(z+h)-Φ(z)}{h}=\frac1{πi}\int_{-∞}^{∞}\frac{Φ(t)}{h}(\frac1{t-(z+h)}-\frac1{t-z})dt=\frac1{πi}\int_{-∞}^{∞}\frac{Φ(t)}{(t-(z+h))(t-z)}\xrightarrow{\text{DCT}}\frac{1}{πi}\int_{-∞}^{∞}\frac{ϕ(t)}{(t-z)^2}dt,\text{ as }|h|→0$.
+\[
+\lim_{y↘0}Φ(x+\mathrm{i} y)=\lim_{y↘0}\frac{1}{π \mathrm{i}}⟨(t-\mathrm{i} y)^{-1}, τ_x ϕ⟩\\
+=\frac{1}{π\mathrm{i}}⟨(t-\mathrm{i}0)^{-1},τ_xϕ⟩\\
+=\frac{1}{π\mathrm{i}}⟨\operatorname{pv}(\frac{1}{t})+π\mathrm{i}δ_0,τ_xϕ⟩\\
+=\mathrm{i}⟨\operatorname{pv}(\frac{1}{πt}),τ_xϕ⟩+ϕ(x)\\
+=\mathrm{i}ℋ(ϕ)(x)+ϕ(x)
+\]</div>

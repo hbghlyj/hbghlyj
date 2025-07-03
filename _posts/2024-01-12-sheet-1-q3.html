@@ -1,0 +1,36 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Consider the following four functions on $ℝ$:
+\[f_1(x)=𝖾^{-x^2+2 x},   f_2(x)=𝖾^{-x} H(x),   f_3(x)=𝖾^{-|x|},   f_4(x)=\frac{1}{x^2+1},\]
+where $H$ is Heaviside’s function.
+(a) Verify that these functions all belong to $𝖫^1(ℝ)$. Which of them belong to $𝖫^2(ℝ)$ and which to $𝒮(ℝ)$?
+\[\begin{array}{ll}\int_ℝ{|f_1|}=\int_ℝ𝖾^{-(x-1)^2+1}𝖽x=𝖾\sqrtπ,&f_1∈𝖫^1(ℝ)\\\int_ℝ{|f_1|}^2=\int_ℝ𝖾^{-(\sqrt2x-\sqrt2)^2+2}𝖽x=𝖾^2\sqrt{π/2},&f_1∈𝖫^2(ℝ)\\\int_ℝ{|f_2|}=\int_0^∞𝖾^{-x}𝖽x=1,&f_2∈𝖫^1(ℝ)\\\int_ℝ{|f_2|}^2=\int_0^∞𝖾^{-2x}𝖽x=1/2,&f_2∈𝖫^2(ℝ)\\\int_ℝ{|f_3|}=2\int_0^∞𝖾^{-x}𝖽x=2,&f_3∈𝖫^1(ℝ)\\\int_ℝ{|f_3|}^2=2\int_0^∞𝖾^{-2x}𝖽x=1,&f_3∈𝖫^2(ℝ)\\\int_ℝ{|f_4|}=\int_ℝ\frac1{x^2+1}𝖽x=\left[\tan^{-1}x\right]_{-∞}^∞=π,&f_4∈𝖫^1(ℝ)\\\int_ℝ{|f_4|}^2=\int_ℝ\frac1{(x^2+1)^2}𝖽x=\frac12\left[\frac{x}{1+x^2} +\tan^{-1}x\right]_{-∞}^∞=\frac{π}2,&f_4∈𝖫^2(ℝ)\end{array}\]
+$f_1∈𝖢^∞$ and $(𝖾^{-x^2})^{(n)}=p_n(x)𝖾^{-x^2}$ for some polynomial $p_n(x)$.
+Since $𝖾^{x^2}=\sum_{n=0}^{∞}\frac{x^{2n}}{n!}$, for $n≥0$, for $x∈ℝ$, $|x^n𝖾^{-x^2}|≤\left|\frac{x^n}{1+\frac{x^{2n}}{n!}}\right|$, so $x^n𝖾^{-x^2}$ is bounded, thus $𝖾^{-x^2}$ and all of its derivatives are rapidly decreasing, so $f_1∈𝒮(ℝ)$.
+$\lim_{x→0+}f_2(x)=1,\lim_{x→0-}f_2(x)=0$, so $f_2∉𝖢^0$, so $f_2∉𝒮(ℝ)$.
+$\lim_{x→0+}f_3'(x)=-𝖾,\lim_{x→0-}f_3'(x)=𝖾$, so $f_3∉𝖢^1$, so $f_3∉𝒮(ℝ)$.
+$f_4∈𝖢^∞$ but $\lim_{x→+∞}x^3f_4(x)=+∞$, so $f_4∉𝒮(ℝ)$.
+
+(b) Calculate the Fourier transforms of these functions. Deduce <em>Laplace’s integral identity</em>
+\[∫_0^∞ \frac{\cos (x ξ)}{x^2+1}𝖽x=\frac{π}{2}𝖾^{-|ξ|}\]
+valid for all $ξ ∈ ℝ$.
+\begin{align*}\widehat{f_1}(ξ)&=∫_{-∞}^{∞}𝖾^{-x^2+2x}𝖾^{-𝗂ξx}𝖽x\\&=∫_{-∞}^{∞}𝖾^{(1-\frac{𝗂ξ}2)^2-(x-1+\frac{𝗂ξ}2)^2}𝖽x\\&=\sqrtπ𝖾^{(1-\frac{𝗂ξ}2)^2}\\&=\sqrtπ𝖾^{-\frac14(ξ+2𝗂)^2}\end{align*}
+\begin{align*}\widehat{f_2}(ξ)&=∫_{0}^{∞}𝖾^{-x}𝖾^{-𝗂ξx}𝖽x\\&=-\left[\frac{𝖾^{-(1+𝗂ξ)x}}{1+𝗂ξ} \right]_{0}^{∞}\\&=\frac{1}{1+𝗂ξ}\end{align*}
+\begin{align*}\widehat{f_3}(ξ)&=∫_{-∞}^{∞}𝖾^{-|x|}𝖾^{-𝗂ξx}𝖽x\\&=∫_{-∞}^{0}𝖾^x𝖾^{-𝗂ξx}𝖽x+∫_{0}^{∞}𝖾^{-x}𝖾^{-𝗂ξx}𝖽x\\&= \left[ \frac{𝖾^{(1-𝗂ξ)x}}{1-𝗂ξ} \right]_{-∞}^0-\left[\frac{𝖾^{-(1+𝗂ξ)x}}{1+𝗂ξ} \right]_{0}^{∞}\\&=\frac{1}{1-𝗂ξ}+\frac{1}{1+𝗂ξ}=\frac2{1+ξ^2}\end{align*}
+By Fourier inversion formula,
+\[𝖾^{-|ξ|}=\frac1{2π}\int_{-∞}^{∞}\frac{2}{1+x^2}𝖾^{𝗂ξx}𝖽x\]
+changing $ξ$ to $-ξ$ we get
+\[π𝖾^{-|ξ|}=\int_{-∞}^{∞}\frac1{1+x^2}𝖾^{-𝗂ξx}𝖽x\]
+so $\widehat{f_4}(ξ)=π𝖾^{-|ξ|}$, we deduce
+\begin{align*}\int^\infty_0 f_4(x)\cosξx\,𝖽x&=\frac{1}{2}\int^\infty_{-\infty} f_4(x)\cosξx\,𝖽x\\
+&=\frac{1}{2}\int^\infty_{-\infty} f_4(x)\frac{𝖾^{𝗂ξx}+𝖾^{-𝗂ξx}}{2}\,𝖽x\\
+&=\frac{1}{4}(\widehat{f_4}(-ξ)+\widehat{f_4}(ξ))=\frac12\widehat{f_4}(ξ)=\frac{π}2𝖾^{-|ξ|}.\end{align*}
+(c) For each of the Fourier transforms $\widehat{f_j}$, determine whether it is a function in $𝒮(ℝ)$, in $𝖫^1(ℝ)$, or in $𝖫^2(ℝ)$.
+
+$|\widehat{f_1}(ξ)|=\sqrtπ𝖾^{1-\frac14ξ^2}$, so $\widehat{f_1}∈𝒮(ℝ)$ by (a).
+$|\widehat{f_2}(ξ)|=\frac{1}{\sqrt{1+ξ^2}}$, $\int_{0}^{t}|\widehat{f_2}(ξ)|=\sinh^{-1}t→∞$ as $t→∞$, so $\widehat{f_2}(ξ)∉𝖫^1,\widehat{f_2}(ξ)∈𝖫^2,\widehat{f_2}(ξ)∉𝒮(ℝ)$.
+$|\widehat{f_3}(ξ)|=2f_4(ξ)$, so $\widehat{f_3}(ξ)∈𝖫^1,\widehat{f_3}(ξ)∈𝖫^2,\widehat{f_3}(ξ)∉𝒮(ℝ)$.
+$|\widehat{f_4}(ξ)|=πf_3(ξ)$, so $\widehat{f_4}(ξ)∈𝖫^1,\widehat{f_4}(ξ)∈𝖫^2,\widehat{f_4}(ξ)∉𝒮(ℝ)$.</div>

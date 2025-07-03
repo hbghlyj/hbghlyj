@@ -1,0 +1,30 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) Let $f ∈ \mathrm{L}^2(ℝ)$ and assume that $f(x)=0$ for a.e. $x>0$. Prove that the function
+\[
+F(ζ) ≝ ∫_{-∞}^0 f(x) \mathrm{e}^{-\mathrm{i} ζ x} \mathrm{d} x
+\]
+is well-defined and holomorphic in the upper half-plane $ℍ=\{ζ ∈ ℂ: \operatorname{Im}(ζ)>0\}$. Show that $F$ satisfies
+\[
+\frac{1}{2 π} ∫_{ℝ}|F(ξ+\mathrm{i} η)|^2 \mathrm{d} ξ=∫_{-∞}^0|f(x)|^2 \mathrm{e}^{2 η x} \mathrm{d} x ≤\|f\|_2^2
+\]
+for all $η>0$. Next, show that
+\[
+F(⋅+\mathrm{i} η) → \widehat{f} \text { in } \mathrm{L}^2(ℝ) \text { as } η \searrow 0
+\]
+<strong>Solution.</strong>
+$\frac{f(ξ+z)-f(z)}{z}=\int_{-∞}^0f(x)\mathrm{e}^{-\mathrm{i} ξ x}\frac{\mathrm{e}^{-\mathrm{i} ξ z}-1}{z}\mathrm{d}x$
+Let $z=α+\mathrm{i}β$,
+\[|f(x)e^{-\mathrm{i}ξx}\frac{e^{-izx}-1}{z}|≤\frac12|f(x)|^2+⋯\\
+≤\frac12|f(x)|^2+\frac12|x|^2e^{(2η-2β)x}\]
+for $|β|<η$
+so $F$ is holomorphic.
+
+(b) Optional. Assume $F: ℍ → ℂ$ is a holomorphic function satisfying the bound
+\[
+\sup_{η>0} ∫_{ℝ}|F(ξ+\mathrm{i} η)|^2 \mathrm{d} ξ<+∞ .
+\]
+Prove that $F(⋅+\mathrm{i} η)$ converges in $\mathrm{L}^2(ℝ)$ as $η ↘ 0$ to the Fourier transform $\widehat{f}$ of a function $f ∈ \mathrm{L}^2(ℝ)$ vanishing a.e. on $(0, ∞)$.</div>

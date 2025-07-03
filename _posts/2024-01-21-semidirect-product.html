@@ -1,0 +1,37 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://plbailey79.github.io/portal/harc/z19/Cat/TCatx09s_Semidirect.pdf">category theory semidirect product</a>
+<strong>Definition 1.</strong> Let $G$ be a group, $X ⊂ G$, and $g ∈ G$. Set
+\[gXg^{-1} =\{y ∈ G\mid y = gxg^{-1}\text{ for some }x ∈ X\}.\]
+We say that $g$ <em>normalizes</em> $X$ if $gXg^{-1} = X$.
+Let $A \subset G$. We say that $A$ normalizes $X$ if $a$ normalizes $X$ for every $a \in A$.
+Let $H \leq G$. The normalizer of $X$ in $H$ is
+\[
+N_H(X)=\left\{h \in H \mid h X h^{-1}=X\right\} .
+\]
+<strong>Proposition 1.</strong> Let $G$ be a group, $H \leq G$, and $X \subset G$. Then $N_H(X) \leq H$.
+Proof. Since $1 \in H$, and $1 x 1^{-1}=x$ for all $x \in X$, we know $1 \in N_H(X)$.
+Let $h_1, h_2 \in N_H(X)$. Then
+\[
+h_1 h_2 X\left(h_1 h_2\right)^{-1}=h_1\left(h_2 X h_2^{-1}\right) h_1^{-1}=h_1 X h_1^{-1}=X,
+\]
+so $h_1 h_2 \in N_H(X)$.
+Let $h \in H$, so that $X=h X h^{-1}$. Multiply both sides by $h^{-1}$ on the left and by $h$ on the right to get
+\[
+h^{-1} X h=h^{-1} h X h^{-1} h=X
+\]
+thus $h^{-1} \in N_H(X)$. □
+
+<strong>Definition 2.</strong> Let $G$ be a group and let $X, Y \subset G$. Set
+\[
+X Y=\{x y \in G \mid x \in X \text { and } y \in Y\}\\\quad X^{-1}=\left\{x^{-1} \in G \mid x \in X\right\} .
+\]
+<strong>Proposition 2.</strong> Let $G$ be a group and let $H, K \leq G$. Then $H K \leq G$ if and only if $H K=K H$.
+Proof. If $M \leq G$, then $M^{-1}=M$. Thus if $H K \leq G$, then $H K=(H K)^{-1}=$ $K^{-1} H^{-1}=K H$.
+Suppose $H K=K H$. Let $h_1, h_2 \in H$ and $k_1, k_2 \in K$ so that $h_1 k_1$ and $h_2 k_2$ are arbitrary members of $H K$. Since $H K=K H$, there exists $k_3 \in K$ such that $k_1 h_2=h_2 k_3$. Then $h_1 k_1 h_2 k_2=h_1 h_2 k_3 k_2 \in H K$.
+Let $h \in H$ and $k \in K$ so that $h k$ is an arbitrary member of $H K$. Then $(h k)^{-1}=k^{-1} h^{-1} \in K H=H K$. Thus $H K \leq G$. □
+
+[...]</div>

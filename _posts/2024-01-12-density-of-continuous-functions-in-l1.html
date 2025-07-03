@@ -1,0 +1,24 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://mathproblems123.files.wordpress.com/2011/02/density-1.pdf">Theorem 1.2.</a> For any $f ∈ L^1$ and any $ε>0$ there is a $g$ in $C_c(ℝ^n)$ such that $∫|f-g|dm<ε$.
+Since $L^1$ functions can be approximated in $L^1$ by integrable simple functions, it suffices to prove the theorem when $f$ is a simple function.
+Next, since an integrable simple function is a linear combination of functions of the form $χ_E$, where $E$ is a measurable set of finite measure, it suffices to prove the theorem when $f=χ_E$. Therefore, Theorem 1.2 will be proved by establishing
+<strong>Proposition 1.4.</strong> Let $E$ be a measurable subset of $ℝ^n$ with finite measure. Then for any $ε>0$ there is a $g ∈ C_c(ℝ^n)$ with $∫|χ_E-g| d m<ε$.
+<em>Proof.</em> By <a href="http://mathonline.wikidot.com/the-regularity-properties-of-the-lebesgue-measure">regularity properties of Lebesgue measure</a> there is a compact set $K$ and an open set $U$ such that $K ⊂ E ⊂ U$ and $m(U∖K)<ε$. By Lemma 1.3, there is a $g ∈ C_c(ℝ^n)$ such that $0 ≤ g ≤ 1$ everywhere, $g=1$ on $K$, and $g$ vanishes outside of $U$. It follows that $|g-χ_E|$ vanishes outside of $U∖K$, and that $|g-χ_E| ≤ 1$ on $U∖K$. Therefore $∫|g-χ_E| d m=∫_{U∖K}|g-χ_E| d m ≤ m(U∖K)<ε$. ∎
+
+In this section, we'll prove the version of Urysohn's Lemma that we used in the proof of Theorem 1.2. We'll work in a locally compact metric space $(X, d)$. We'll use the notation $B_r(x)$ for the open ball in $X$ with center $x$ and radius $r$.
+
+<strong>Lemma 2.1.</strong> Let $x_0 ∈ X$ and $r>0$. There is $a χ ∈ C_c(X)$ with
+1. $0 ≤ χ(x) ≤ 1$ for every $x ∈ X$;
+2. $χ(x)=1$ for every $x ∈ B_r(x_0)$;
+3. The support of $χ$ is a subset of $B_{2 r}(x_0)$.
+<em>Proof.</em> Let $φ$ be the continuous function on $ℝ$ defined by $φ(t)=1$ for $0 ≤ t ≤ r$, $φ(t)=1-\frac{2}{r}(t-r)$ for $r<t ≤ \frac{3 r}{2}$, and $φ(t)=0$ for $t>\frac{3 r}{2}$. Let $χ(x)=φ(d(x, x_0))$.
+
+<em>Proof of Lemma 1.3.</em> Cover $K$ by finitely many balls $B_j=B_{r_j}(x_j)$ such that $\overline{B_{2 r_j}(x_j)}$ is a compact subset of $U$. Let $χ_j$ be the function obtained from Lemma 2.1 with $x_0=x_j$ and $r=r_j$. Let $φ=\sum χ_j$. Then
+1. $φ$ is continuous on $X$;
+2. The support of $φ$ is a compact subset of $U$;
+3. $φ ≥ 0$ everywhere, and $φ ≥ 1$ on $K$.
+Let $χ=\max \{φ, 1\}$. Then $χ$ has all the required properties. ∎</div>

@@ -1,0 +1,35 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) State the Seifert-van Kampen Theorem.
+Hence give and prove a formula for the fundamental group of $X \vee Y$ in terms of the fundamental groups of two path-connected cell complexes $X$ and $Y$.
+(i) Let $X$ be a path-connected cell complex and $a, b$ be two points in $X$. Let $Y$ be the quotient space of $X$ where $a$ is identified with $b$. Compute the fundamental group of $Y$. Justify your answer using a sketch.
+(ii) Let $X$ be a path-connected cell complex and $D_{a}, D_{b}$ be two disjoint disks embedded in $X$. Let $Z$ be the space obtained by attaching a cylinder $S^{1} \times[0,1]$ to $X$ such that $S^{1} \times\{0\}$ and $S^{1} \times\{1\}$ are identified with the boundaries of $D_{a}$ and $D_{b}$ respectively. Compute the fundamental group of $Z$. Justify your answer using a sketch.
+<strong>Answers:</strong>
+[bookwork]
+Formula: $\pi_{1}(X \vee Y, a)=\pi_{1}(X, a) * \pi_{1}(Y, a)$ with $a$ the common base point of $X$ and $Y$.
+Proof: As $X$ and $Y$ are cell complexes $a$ has a contractible neighbourhoods $U_{X}$ in $X$ and $U_{Y}$ in $Y$. Apply Seifert-van Kampen to the cover $\left\{\left\{X \vee U_{Y}\right\},\left\{U_{X} \vee Y\right\}\right\}$.
+(i) $Y$ is homotopy equivalent to $Y_{1}$ which is $X$ with an interval attached to $a, b$ via its endpoints. Moving $a$ to $b$ via a chosen path in $X$ between the two points, $Y_{1}$ is seen to be homotopy equivalent to $X \vee S^{1}$. Hence
+$$
+\pi_{1}(Y)=\pi_{1}(X) * \mathbb{Z}
+$$
+(ii) $Z$ is homotopy equivalent to the space $Z_{1}$ where the two discs are contracted to points in $X$. So $Z_{1}$ is $X$ with a sphere $S^{2}$ attached at two points, say $a$ and $b$. Pick a (direct) path in $S^{2}$ between those two and collapse it to get $Z_{2}$. The result is homotopy equivalent to $Y \vee S^{2}$ where $Y$ is as in part (i). Hence
+$$
+\pi_{1}(Z)=\pi_{1}(Y) * \pi_{1}\left(S^{2}\right)=\pi_{1}(Y)=\pi_{1}(X) * \mathbb{Z}
+$$
+(b) Let $\langle S \mid R\rangle$ be a finite presentation of a group $G$. Describe how to construct a path-connected, compact space $X$ with fundamental group $G$.
+(i) Let $K$ be the fundamental group of the Klein bottle. Give a finite presentation of $K$. Briefly justify your answer.
+(ii) Show that there is an injective homomorphism $\rho: \mathbb{Z} \rightarrow K$ and there are surjective homomorphisms $\gamma_{1}: K \rightarrow \mathbb{Z} / 2 \mathbb{Z}$ and $\gamma_{2}: K \rightarrow \mathbb{Z}$. Describe maps of spaces that induce $\rho, \gamma_{1}$ and $\gamma_{2}$ as maps on fundamental groups. Briefly justify your answer.
+<strong>Answers:</strong>
+[bookwork]
+(i) The Klein bottle is a square with sides $a, b, a, b^{-1}$. We can construct is as a wedge of two $S^{1}-a$ and $b$ - with a 2 -cell attached with boundary attaching map $a b a b^{-1}$. Hence
+$$
+\pi_{1}(K)=<a, b \mid a b a b^{-1}>
+$$
+(ii) Define $\gamma_{1}: \pi_{1}(K) \rightarrow \mathbb{Z} / 2 \mathbb{Z}$ by sending $a \mapsto 1$ and $b \mapsto 0$; define $\gamma_{2}: \pi_{1}(K) \rightarrow \mathbb{Z}$ by sending $a \mapsto 0$ and $b \mapsto 1$. These define a homomorphisms as $a b a b^{-1} \mapsto 0$.
+Define $\rho: \mathbb{Z} \rightarrow \pi_{1}(K)$ via $1 \mapsto b$; this is injective as composition with $\gamma_{2}$ is the identity.
+Contracting the sides in the square labelled $b$ to a point gives a representation of the projective plane and hence a map $K \rightarrow \mathbb{R} P^{2}$ inducing $\gamma_{1}$ on fundamental groups.
+Projection of the square onto the $b$ coordinate defines a map $K \rightarrow S^{1}$ which induces $\gamma_{2}$.
+The inclusion of $S^{1}$ as the edge defined by $b$ induces $\rho$.</div>

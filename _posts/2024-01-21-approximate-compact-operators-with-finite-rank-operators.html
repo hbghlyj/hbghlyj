@@ -1,0 +1,20 @@
+---
+mathjax: true
+tag: functional-analysis
+title: approximate compact operators with finite-rank operators
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://math.mit.edu/~rbm/18-102-S14/Chapter3.pdf">Proposition 27.</a> A set $K \subset \mathcal{H}$ in a separable Hilbert space is compact if and only if it is bounded, closed and has equi-small tails with respect to any (one) complete orthonormal basis.
+
+Proof. We already know that a compact set in a metric space is closed and bounded. Suppose the equi-smallness of tails condition fails with respect to some orthonormal basis $e_k$. This means that for some $\epsilon>0$ and all $p$ there is an element $u_p \in K$, such that
+\[
+\sum_{k>p}\left|\left(u_p, e_k\right)\right|^2 \geq \epsilon^2
+\]
+Consider the subsequence $\left\{u_p\right\}$ generated this way. No subsequence of it can have equi-small tails (recalling that the tail decreases with $p$ ). Thus, by Lemma 25, it cannot have a convergent subsequence, so $K$ cannot be compact if the equismallness condition fails.
+
+Thus we have proved the equi-smallness of tails condition to be necessary for the compactness of a closed, bounded set. It remains to show that it is sufficient.
+
+So, suppose $K$ is closed, bounded and satisfies the equi-small tails condition with respect to an orthonormal basis $e_k$ and $\left\{u_n\right\}$ is a sequence in $K$. We only need show that $\left\{u_n\right\}$ has a Cauchy subsequence, since this will converge $(\mathcal{H}$ being complete) and the limit will be in $K$ (since it is closed). Consider each of the sequences of coefficients $\left(u_n, e_k\right)$ in $\mathbb{C}$. Here $k$ is fixed. This sequence is bounded:
+\[
+\left|\left(u_n, e_k\right)\right| \leq\left\|u_n\right\| \leq C
+\]</div>

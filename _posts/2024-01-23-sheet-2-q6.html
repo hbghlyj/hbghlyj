@@ -1,0 +1,32 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">This question deals with how to define tangent lines at singular points. For simplicity we work in $ℂ^2$ rather than $ℂℙ^2$.
+Let $C$ be a curve in $ℂ^2$ defined by $Q(x, y)=0$ for $Q(x, y)$ a complex polynomial without repeated factors. Define the multiplicity $m$ of $C$ at a point $(a, b) ∈ C$ to be the smallest positive integer $m$ such that some $m^{\text{th}}$ partial derivative of $Q$ at $(a, b)$ is nonzero (so $(a, b)$ is a singularity of $C$ if and only if $m>1$). Consider the polynomial
+\[
+\sum_{i+j=m} \frac{∂^m Q}{∂ x^i ∂ y^j}(a, b) \frac{(x-a)^i(y-b)^j}{i ! j !} .
+\]
+(i) Show this factorizes as a product of $m$ linear polynomials of the form\[α(x-a)+β(y-b).\]The lines defined by the vanishing of these linear polynomials are called the $m$ tangent lines to $C$ at $(a, b)$.
+(ii) Show that if $m=1$ this definition agrees with the definition given in lectures for the tangent line at a nonsingular point.
+(iii) For the nodal cubic $y^2=x^3+x^2$ and the cuspidal cubic $y^2=x^3$, find all the singular points in $ℂ^2$, and for each singular point, find the multiplicities and tangent lines.
+<strong>Solution.</strong>
+(i) This is a homogeneous polynomial in two variables $x-a,y-b$ of degree $m$.
+By Q1 it factorizes as a product of linear polynomials over $ℂ$.
+(ii) If $m=1$, at a nonsingular point, the polynomial
+\[
+\frac{∂Q}{∂x}(a,b)(x-a)+\frac{∂Q}{∂y}(a,b)(y-b)
+\]
+agrees with the definition in <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94670/mod_resource/content/6/Hitchin.pdf#page=18">page 18</a>.
+(iii) For $Q=y^2-x^3-x^2,\frac{∂Q}{∂y}=2y=0⇒y=0$
+$\frac{∂Q}{∂x}=-3x^2-2x=0⇒x=0$ or $x=-\frac23$
+$Q(0,0)=0,Q(-\frac23,0)≠0$.
+so the curve has 1 singular point $(0,0)$.
+$\frac{∂^2Q}{∂y^2}(0,0)=2≠0$
+so multiplicity $m=2$, the polynomial is\[\sum_{i+j=2} \frac{∂^2 Q}{∂ x^i ∂ y^j}(a, b) \frac{x^iy^j}{i ! j !}=y^2-x^2=(y-x)(y+x)\]so 2 tangent lines $y±x=0$ at $(0,0)$.
+
+For $Q=y^2-x^3,\frac{∂Q}{∂y}=2y=0⇒y=0$
+$\frac{∂Q}{∂x}=-3x^2=0⇒x=0$
+$\frac{∂^2Q}{∂y^2}(0,0)=2≠0$
+$Q(0,0)=0$ so the curve has 1 singular point $(0,0)$ with multiplicity $m=2$, the polynomial is $y^2$, so 2 tangent lines $y=0$ at $(0,0)$.</div>
