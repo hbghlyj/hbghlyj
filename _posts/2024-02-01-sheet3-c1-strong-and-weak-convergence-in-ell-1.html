@@ -1,0 +1,37 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Show that a sequence in $\ell^1$ is weakly convergent if and only if it is strongly convergent.
+[Hint: For given $\varepsilon>0$, construct inductively increasing sequences $n_k$ and $m_k$ such that $\sum_{j \leqslant m_{k-1}}|x_j^{(n_k)}|<\varepsilon / 8$ and $\sum_{j>m_k}|x_j^{(n_k)}|<\varepsilon / 8$. Then test the weak convergence against $b \in \ell^{\infty}$ given by $b_j=\operatorname{sign}(x_j^{(n_k)})$ for $m_{k-1}<j \leqslant m_k$.]
+<a href="https://math.stackexchange.com/q/42609">Strong and weak convergence in $\ell^1$</a>
+The 'if' part is clear. Assume that $(x^{(n)}) \subset \ell^1$ converges weakly to some $x$. We need to show that $x^{(n)}$ converges strongly to $x$ and replacing $x^{(n)}$ by $x^{(n)}-x$ we may assume without loss of generality that $x=0$.
+
+Arguing by contradiction, suppose that $x^{(n)}\nrightarrow 0$. Upon extracting a subsequence, we may assume without loss of generality that $\|x^{(n)}\|>\varepsilon>0$ for some $\varepsilon$.
+The weak convergence of $x^{(n)}$ implies that $x_j^{(n)} \rightarrow 0$ for each fixed $j$.
+Select the smallest $n_1$ such that $|x_1^{(n_1)}|<\varepsilon / 8$. Then select the smallest $m_1$ such that $\sum_{j>m_1}|x_j^{(n_1)}|<\varepsilon / 8$.
+
+Next, select the smallest $n_2>n_1$ such that $\sum_{j \leqslant m_1}|x_j^{(n_2)}|<\varepsilon / 8$, and then select the smallest $m_2 \geqslant m_1$ such that $\sum_{j>m_2}|x_j^{(n_2)}|<\varepsilon / 8$.
+
+Proceeding in this way, we obtain increasing sequence $(n_k)$ and $(m_k)$ such that $\sum_{j \leqslant m_{k-1}}|x_j^{(n_k)}|<\varepsilon / 8$ and $\sum_{j \geqslant m_k}|x_j^{(n_k)}|<\varepsilon / 8$.
+Now, define an element $b$ of $\ell^{\infty}=(\ell^1)^*$ by $b_j=1$ for $j \leqslant m_1$ and
+\[
+b_j=\operatorname{sign}(x_j^{(n_k)}) \text { if } m_{k-1}<j \leqslant m_k .
+\]
+(Here $\operatorname{sign}(t)=1$ if $t \geqslant 0$ and $\operatorname{sign}(t)=-1$ if $t<0$.)
+We note that, for $k \geqslant 2$,
+\begin{align*}
+b(x^{(n_k)}) & =\sum_j b_j x_j^{(n_k)} \\
+& =\sum_{j \leqslant m_{k-1}} b_j x_j^{(n_k)}+\sum_{m_{k-1}<j \leqslant m_k}|x_j^{(n_k)}|+\sum_{j>m_k} b_j x_j^{(n_k)},
+\end{align*}
+and so
+\[
+\sum_{m_{k-1}<j \leqslant m_k}|x_j^{(n_k)}| \leqslant b(x^{(n_k)})+\varepsilon / 4 .
+\]
+But then this implies
+\begin{align*}
+\varepsilon<\|x^{(n_k)}\|_{\ell^1} & =\sum_{j \leqslant m_{k-1}}|x_j^{(n_k)}|+\sum_{m_{k-1}<j \leqslant m_k}|x_j^{(n_k)}|+\sum_{j>m_k}|x_j^{(n_k)}| \\
+& \leqslant \varepsilon / 8+b(x^{(n_k)})+\varepsilon / 4+\varepsilon / 8=b(x^{(n_k)})+\varepsilon / 2 .
+\end{align*}
+As $\varepsilon>0$, it follows that $b(x^{(n_k)}) \not \rightarrow 0$, contradicting the assumption that $x^{(n)} \rightharpoonup 0$.</div>

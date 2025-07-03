@@ -1,0 +1,67 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="www.jchl.co.uk/maths/Topology.pdf">Part II Lecture Notes: Algebraic Topology</a>, James Lingard
+
+<strong>Homotopy</strong>
+
+Given two maps $f_{1}, f_{2}: X \rightarrow Y$, a homotopy from $f_{1}$ to $f_{2}$ is a map $F:[0,1] \times X \rightarrow Y$ such that $F(0, x)=f_{1}(x)$ and $F(1, x)=f_{2}(x)$. If there is a homotopy from $f_{1}$ to $f_{2}$ then we say that $f_{1}$ and $f_{2}$ are homotopic and we write $f_{1} \sim f_{2}$. Homotopy is an equivalence relation, although to prove transitivity we need the following lemma:
+
+<strong>The 'Gluing Lemma'</strong>
+
+If a space $X$ is a union of two closed subsets $A$ and $B$ then for any two continuous maps $f: A \rightarrow Y$ and $g: B \rightarrow Y$ which agree on the intersection $A \cap B$ we get a continuous map $f \cup g: X \rightarrow Y$.
+
+This is easy to prove. The set of homotopy classes of maps $X \rightarrow Y$ is written $[X, Y]$.
+
+<strong>Relative homotopy</strong>
+
+Given two maps $f_{1}, f_{2}: X \rightarrow Y$ which agree on a subset $A \subset X$, we say that they are homotopic relative to $A$ if there is a map $F:[0,1] \times X \rightarrow Y$ such that $F(0, x)=f_{1}(x), F(1, x)=f_{2}(x)$ and $F(x, t)=f_{0}(x)$ for all $x \in A$.
+
+<strong>The fundamental group</strong>
+
+The fundamental group of $X$ based at $x$, written $\pi_{1}(X, x)$, is the group of homotopy classes relative to $\{0,1\}$ of loops in $X$ based at $x$, with the natural multiplication given by composition of loops. It is easy to show that the multiplication is well-defined and satisfies the group axioms.
+
+Note that for loops $p, q$, we write $p q$ to mean the loop which goes round $p$ first and then $q$.
+
+<strong>Induced homomorphisms of fundamental groups</strong>
+
+If we have a map $f: X \rightarrow Y$ then we get an induced homomorphism $f_{*}: \pi_{1}(X, x) \rightarrow \pi_{1}(Y, f(x))$ between the fundamental groups of $X$ and $Y$, by mapping a loop $p$ in $X$ to the loop $f p$ in $Y$. It is easy to check that this is a group homomorphism.
+
+Also, if we have the identity map $1_{X}: X \rightarrow X$ then $\left(1_{X}\right)_{*}$ is the identity homomorphism, and for any two maps $f: X \rightarrow Y$ and $g: Y \rightarrow Z$ then we have $(g \circ f)_{*}=g_{*} \circ f_{*}$. Thus if $f$ is a homeomorphism $X \rightarrow Y$ then the induced homomorphism $f_{*}$ is an isomorphism, and hence the fundamental group is a topological invariant.
+
+If two maps $f, g: X \rightarrow Y$ are homotopic relative to $\{x\}$ then the induced homomorphisms $f_{*}$ and $g_{*}$ are the same, since the homotopy $F$ from $f$ to $g$ determines a homotopy $F(\alpha(s), t)$ from $f(\alpha)$ to $g(\alpha)$ for any loop $\alpha$ in $X$ based at $x$. This is a special case of a result below.
+
+<strong>Change of base point</strong>
+
+If $x, y \in X$, then $\pi_{1}(X, x)$ and $\pi_{1}(X, y)$ are unrelated if $x$ and $y$ are in different path-components, but isomorphic if they are in the same path component. For any path $\alpha$ from $x$ to $y$ we get a
+group isomorphism $\alpha_{*}: \pi_{1}(X, x) \rightarrow \pi_{1}(X, y)$. Note that in general different paths $\alpha$ may lead to different isomorphisms.
+
+<strong>Contractible spaces</strong>
+
+A non-empty space $X$ is said to be simply connected if it is path-connected and has trivial fundamental group. $X$ is said to be contractible if the identity map $X \rightarrow X$ is homotopic to a constant map. For example, any convex subset of $\mathbb{R}^{n}$ is contractible.
+
+A contractible space is simply connected. Note that the converse is not true $-S^{2}$ is simply connected but not contractible.
+
+To prove this, we need to show that any loop in $X$ is homotopic, relative to $\{0,1\}$, to the constant loop. Observe that the homotopy $F$ from the identity on $X$ to the constant map at $x \in X$ gives us a homotopy $G(s, t)=F(\alpha(s), t)$ from any loop $\alpha$ based at $x$ to the constant loop at $x$ - but this homotopy is not necessarily relative to $\{0,1\}$.
+
+To get around this difficulty we use the fact that the square $[0,1] \times[0,1]$ is convex, so there is a straight line homotopy $H$ between any two paths from $a$ to $b$ in $[0,1] \times[0,1]$, and so any two such paths are homotopic relative to $\{0,1\}$. Using this, we see that the path along the left edge of the square is homotopic, relative to $\{0,1\}$, to the path along the bottom edge, up the right edge and back along the top edge of the square. Composing the homotopies $H$ and $G$ gives us the result.
+
+<strong>Homotopy equivalence</strong>
+
+Two spaces $X$ and $Y$ are homotopy equivalent if there is a map $f: X \rightarrow Y$ and a map $g: Y \rightarrow X$ such that $f \circ g \sim 1_{Y}$ and $g \circ f \sim 1_{X}$. Such an $f$ is called a homotopy equivalence. We also say that $X$ and $Y$ have the same homotopy type, and we write $X \simeq Y$. The relation $X \simeq Y$ is an equivalence relation.
+
+Any homeomorphism is clearly a homotopy equivalence. It is also very easy to prove that a space is contractible if and only if it is homotopy equivalent to a point.
+
+Two homotopy equivalent spaces have the same number of path-components. Furthermore, two homotopy equivalent spaces have isomorphic fundamental groups.
+
+To prove this, we first show that if $f$ and $g$ are homotopic maps from $X$ to $Y$ and $x \in X$, then $g_{*}=\alpha_{*} \circ f_{*}$ as maps from $\pi_{1}(X, x)$ to $\pi_{1}(Y, g(x))$, where $\alpha$ is the path in $Y$ from $f(x)$ to $g(x)$ given by the homotopy $F$ between $f$ and $g$. This follows by using the homotopy $F$ to show that for any loop $\alpha$ in $X$ based at $x$, the loops $g_{*}(\alpha)$ and $\left(\alpha_{*} \circ f_{*}\right)(\alpha)$ in $Y$ are homotopic.
+
+It then follows that the map $f_{*}$ is an isomorphism of fundamental groups if and only if $g_{*}$ is. Therefore, if $f$ is a homotopy equivalence with homotopy inverse $h$, then $f \circ h \simeq 1_{X}$ and so $(f \circ h)_{*}=f_{*} \circ h_{*}$ is an isomorphism. Thus $f_{*}$ is injective. Working the other way we see that $f_{*}$ is surjective. Hence $f_{*}$ gives an isomorphism between the fundamental groups of $X$ and $Y$.
+
+<strong>The fundamental group of the</strong> $n$<strong>-sphere</strong>
+
+If $X$ is a space which can be written as the union of two simply connected open subsets $A$ and $B$ in such a way that $A \cap B$ is path-connected, then $X$ is simply connected. To prove this we show that every loop in $X$ starting at a point $p$ in $A \cap B$ is homotopic to a (finite) product of loops, each of which is either in $A$ or in $B$.
+
+Using this result, we see that the fundamental group of $S^{n}$ is trivial for $n \geq 2$.</div>

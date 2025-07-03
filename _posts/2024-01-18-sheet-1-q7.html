@@ -1,0 +1,43 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) Define $Φ\colon ℂℙ^1 × ℂℙ^1 → ℂℙ^3$ by
+\[Φ([x_0, x_1],[y_0, y_1])=[x_0 y_0, x_0 y_1, x_1 y_0, x_1 y_1] .\]
+Show that $Φ$ is well-defined and injective, and the image of $Φ$ is of the form $\{[z_0, z_1, z_2, z_3] ∈ ℂℙ^3: Q(z_0, …, z_3)=0\}$ for a homogeneous quadratic polynomial $Q$.
+<strong>Solution.</strong>
+Independent of choice of representative: $∀λ∈ℂ∖\{0\}$,
+\begin{gather*}Φ([λx_0,λx_1],[y_0, y_1])=[λx_0 y_0,λx_0 y_1,λx_1 y_0,λx_1 y_1] =Φ([x_0, x_1],[y_0, y_1])\\Φ([x_0,x_1],[λy_0,λy_1])=[λx_0 y_0,λx_0 y_1,λx_1 y_0,λx_1 y_1] =Φ([x_0, x_1],[y_0, y_1])\end{gather*}
+Ensure that image cannot be all zero. Two cases:
+i) $x_0≠0$
+\[[\underbrace{y_0,y_1}_{\text{not both 0}},\frac{y_0x_1}{x_0},\frac{y_1x_1}{x_0}]\]
+ii) $x_0=0⇒x_1≠0$
+\[[\frac{x_0y_0}{x_1},\frac{x_0y_1}{x_1},\underbrace{y_0,y_1}_{\text{not both 0}}]\]
+So $Φ$ is well-defined.
+If $[z_0,z_1,z_2,z_3]$ is in the image of $Φ$, two cases:
+i) $z_0,z_1$ not both zero
+\begin{gather*}[x_0, x_1]=[z_0, z_2]\cr[y_0, y_1]=[z_0,z_1]\end{gather*}
+ii) $z_0=z_1=0$ then $z_2,z_3$ not both zero, do similarly.
+So $[x_0, x_1],[y_0, y_1]$ are uniquely determined, so $Φ$ is injective.
+Let $Q(z_0, …, z_3)=z_0z_3-z_1z_2$. If $[z_0, z_1, z_2, z_3]$ is in image of $\Phi$, then $Q(z_0, …, z_3)=x_0y_0x_1y_1-x_0y_1x_1y_0=0$.
+Conversely if $[z_0, z_1, z_2, z_3] ∈ ℂℙ^3$ satisfy $Q(z_0, …, z_3)=0$, wlog $z_0≠0$. Since ${\color{red}z_2z_1}=z_0z_3$
+\begin{align*}Φ([z_0, z_2], [z_0,z_1])&=[z_0z_0,z_0z_1,z_2z_0,{\color{red}z_2z_1}]\\&=[z_0z_0,z_0z_1,z_2z_0,z_0z_3]\\&=[z_0,z_1,z_2,z_3]\end{align*}
+so $[z_0, z_1, z_2, z_3]$ is in the image of $Φ$.
+
+(b) Write down a similar map $Ψ\colon ℂℙ^1 × ℂℙ^1 → ℂℙ^3$ with image
+\[\label1\tag1\{[z_0, z_1, z_2, z_3] ∈ ℂℙ^3: z_0^2+⋯+z_3^2=0\} .\]
+<strong>Solution.</strong>
+Rearrange to
+\[(z_0+iz_3)(z_0-iz_3)-(z_1+iz_2)(-z_1+iz_2)=0\]
+Define a map $f\colon ℂℙ^3 → ℂℙ^3$
+\[f([z_0,z_1,z_2,z_3])=[z_0+iz_3,z_1+iz_2,-z_1+iz_2,z_0-iz_3]\]
+then
+\[f^{-1}([z_0,z_1,z_2,z_3])=[z_0+z_3,z_1-z_2,-iz_1-iz_2,-iz_0+iz_3]\]
+Note that $z_0^2+⋯+z_3^2=Q(f(z_0,z_1,z_2,z_3))$, also
+\[Q∘f∘(f^{-1}∘Φ)=Q∘Φ=0\]
+so $Ψ$ can be defined $Ψ=f^{-1}∘Φ$.
+
+(c) What are lines contained in \eqref{1}?
+$Φ([x_0,x_1],ℂℙ^1)$ for fixed point $[x_0,x_1]$
+$Φ(ℂℙ^1,[y_0,y_1])$ for fixed point $[y_0,y_1]$</div>

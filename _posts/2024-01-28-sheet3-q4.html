@@ -1,0 +1,18 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">By a projective transformation, show how to take the cubic $x^3+y^3+z^3=0$ into the form $y^2 z=x(x-z)(x-λz)$, for $λ$ which you should determine.
+<strong>Solution.</strong>$$H=\det\begin{pmatrix}
+6x&0&0\\0&6y&0\\0&0&6z
+\end{pmatrix}=6^3xyz$$
+so $[0,-1,1]$ is an inflection point.
+with tangent line $3⋅0^2x+3(-1)^2y+3⋅1^2z=0⇔y+z=0$.
+The projective transformation $[x,y,z]↦[x,y,y+z]$ maps $[0,-1,1]$ to $[0,1,0]$ and maps the tangent line $y+z=0$ to $z=0$ and maps the curve to $x^3+y^3+(z-y)^3=0⇔3yz(y-z)+x^3+z^3=0$.
+Quadratic in $y$, complete the square: the projective transformation $[x, y, z] ↦\left[x, y-\frac{z}2, z\right]$ maps the curve to $3(y^2-(\frac{z}{2})^2)z+x^3+z^3=0⇔y^2z+\frac{x^3}3+\frac{z^3}{12}=0$.
+Rescaling $[x,y,z]↦[\root3\of{-4}x,\sqrt{12}y,z]$ the curve to $y^2z=x^3-z^3⇔y^2z=(x-z)(x-ωz)(x-ω^2z)$ where $ω=e^{i\frac{2π}3}$.
+so
+\[ 
+λ=\frac{ω^2-1}{ω-1}=ω+1.
+\]</div>

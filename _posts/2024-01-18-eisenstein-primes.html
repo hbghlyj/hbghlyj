@@ -1,0 +1,12 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://guests.mpim-bonn.mpg.de/spc/teaching/algebra2_1516/tutorial2_eisenstein_discriminant.pdf">Proposition.</a> If Eisenstein works for the polynomial $f(x)=a_n x^n+\cdots+a_1 x+a_0 \in$ $\mathbb{Z}[x]$, with the prime $p$, then $p \mid \Delta(f)$.
+
+Proof. Since Eisenstein works, we have that $p \mid a_i$, for $0 \leq i \leq n-1$, and $p \nmid a_n$. Reducing modulo $p$ gives that
+$$
+\bar{f}(x)=\overline{a_n} x^n \quad \text { in } \mathbb{Z} / p[x] .
+$$
+Therefore $\bar{f}$ has a repeated root $x=\overline{0}$, modulo $p$. So we find, $\overline{\Delta(f)}=\Delta(\bar{f})=0$, in $\mathbb{Z} / p$. This means $\Delta(f)$ is divisible by $p$, as claimed.</div>

@@ -1,0 +1,58 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://courses.maths.ox.ac.uk/pluginfile.php/94670/mod_resource/content/6/Hitchin.pdf#page=33">Proposition 16</a> A nonsingular point $p \in C$ is an inflection point if and only if $\det P_{i j}=0$.
+
+Proof: To find the multiplicity of $p$ with respect to a line we have to take the resultant of $P(x, y, z)$ and $a x+b y+c z$. But this is just substituting $x=-(b y+c z) / a$ into $P$. It is more convenient to retain the symmetry and consider the line as the set of points
+\[
+\left[a_0+t \alpha_0, a_1+t \alpha_1, a_2+t \alpha_2\right]
+\]
+as $t$ varies. Then $I_p(C, L) \geq 3$ if and only if $t^3$ divides
+\[
+P\left(a_0+t \alpha_0, a_1+t \alpha_1, a_2+t \alpha_2\right) .
+\]
+Expanding this, we have
+\[\tag7
+P(a+t \alpha)=P(a)+t \sum_i P_i(a) \alpha_i+\frac{t^2}{2} \sum_{i, j} P_{i j}(a) \alpha_i \alpha_j+t^3 R
+\]
+and $t^3$ divides this if and only if
+\[
+\sum_i P_i(a) \alpha_i=0=\sum_{i, j} P_{i j}(a) \alpha_i \alpha_j
+\]
+The first equation says that the line is a tangent.
+We now use homogeneity - the $P_i$ are homogeneous of degree $n-1$ - so Euler's relation gives
+\[
+(n-1) P_i(a)=\sum_j P_{i j}(a) a_j
+\]
+This always gives
+\[\tag8
+\sum_{i, j} P_{i j}(a) a_i a_j=(n-1) \sum_i P_i(a) a_i=n(n-1) P(a)=0
+\]
+and in our case also
+\[
+\sum_{i, j} P_{i j}(a) a_i \alpha_j=(n-1) \sum_i P_i(a) \alpha_i=0
+\]
+from the first equation. Together with the second equation we see that the quadratic form on the vector space spanned by $a$ and $\alpha$ (the subspace of $\mathbf{C}^3$ defining the line $L$) vanishes completely. This means that the matrix of the quadratic form with respect to a basis $a, \alpha, \beta$ is of the form
+\[
+\left(\begin{array}{lll}
+0 & 0 & * \\
+0 & 0 & * \\
+* & * & *
+\end{array}\right)
+\]
+and so $\det P_{i j}(a)=0$. [A small lemma: a bilinear form vanish on a line then it vanish.]
+
+Conversely take a basis of $a, \alpha, \beta$ where $a$ and $\alpha$ define the tangent at $p$. From (8) the matrix is of the form
+\[
+\left(\begin{array}{lll}
+0 & 0 & * \\
+0 & * & * \\
+* & * & *
+\end{array}\right)
+\]
+If $\sum_{i j} P_{i j} a_i \beta_j=0$ then $\sum_i P_i \beta_i=0$ by homogeneity, but then $\left[\beta_0, \beta_1, \beta_2\right]$ lies on the tangent so $a, \alpha, \beta$ do not form a basis. Hence the determinant $\det P_{i j}$ vanishes if and only if the central term
+\[
+\sum_{i, j} P_{i j}(a) \alpha_i \alpha_j=0
+\]</div>

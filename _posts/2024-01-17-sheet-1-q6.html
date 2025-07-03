@@ -1,0 +1,37 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $ℙ(V)$ be a projective space of dimension 3, and let $L_1, L_2, L_3$ be non-intersecting projective lines in $ℙ(V)$.
+(a) Show that there are unique isomorphisms $α\colon L_1 → L_2, β\colon L_1 → L_3$ such that $x, α(x), β(x)$ are collinear for each $x ∈ L_1$.
+<strong>Solution.</strong>
+Let $L_j=P(U_j),j=1,2,3$. Then $U_1,U_2,U_3$ are vector subspaces of $ℝ^4$, $\dim U_j=2$.
+Since $L_2∩L_3=∅$, $U_2∩U_3=\{0\}$. Hence $ℝ^4=U_2⊕U_3$, counting dimensions.
+Let $v∈U_1∖\{0\}$ projects to $u_2∈U_2,u_3∈U_3$, $v=u_2+u_3$.
+If $u_2=0$ then $[v]∈ L_1∩ L_3$❌
+If $u_3=0$ then $[v]∈ L_1∩ L_2$❌
+The linear transformations $\tilde{α}(v)=u_2,\tilde{β}(v)=u_3$ induce projective transformations $α([v])=[u_2],β([v])=[u_3]$, then all of $v,u_2,u_3$ lie in $⟨u_2,u_3⟩$, so all of $[v],[u_2],[u_3]$ lie in the projective line $ℙ(⟨u_2,u_3⟩)$.
+For uniqueness, suppose $x, α'(x), β'(x)$ are collinear, choose representatives $v,u_2',u_3'$ of $x,α'(x),β'(x)$ then $v=C_1u_2'+C_2u_3'$, then $C_1u_2'+C_2u_3'=u_2+u_3$, then $C_1u_2'-u_2=u_3-C_2u_3'∈U_2∩U_3=\{0\}$, so $α'=α,β'=β$.
+
+(b) Suppose $ϕ\colon L_1 → L_1$ is a projective transformation of $L_1$. Show that there exists a unique projective transformation $Φ\colon ℙ(V) → ℙ(V)$ such that $Φ(L_j)=L_j$ and $Φ|_{L_1}=ϕ$.
+<strong>Solution.</strong>
+For $v∈V∖\{0\}$, write $v=u_2+u_3,u_2∈U_2,u_3∈U_3$.
+Since $\tilde{α}\colon U_1→U_2,\tilde{β}\colon U_1→U_3$ are isomorphisms, we define $Φ([v])≔[\tilde{α}ϕ\tilde{α}^{-1}u_2+\tilde{β}ϕ\tilde{β}^{-1}u_3]$.
+If $v∈U_1$ then $\tilde{α}^{-1}u_2=\tilde{β}^{-1}u_3=v$, so $Φ([v])=ϕ([v])$.
+If $v∈U_2$ then $u_2=v,u_3=0$, so $Φ([v])=[\tilde{α}ϕ\tilde{α}^{-1}v]∈L_2$.
+If $v∈U_3$ then $u_2=0,u_3=v$, so $Φ([v])=[\tilde{β}ϕ\tilde{β}^{-1}v]∈L_3$.
+Uniqueness:
+Take a basis $u,v$ for $U_2$
+$e_1=\tilde{α}(u)$
+$e_2=\tilde{α}(v)$
+$e_3=\tilde{β}(u)$
+$e_4=\tilde{β}(v)$
+$\begin{bmatrix}a&b\\c&d\end{bmatrix}$matrix of transformation $ϕ$ on $u,v$
+$\begin{bmatrix}a&b&0&0\\c&d&0&0\\0&0&a&b\\0&0&c&d\end{bmatrix}$matrix of transformation $Φ$ on $e_1,e_2,e_3,e_4$
+$Φ(e_1+e_3)=a(e_1+e_3)+c(e_2+e_4)∈⟨e_1+e_3,e_2+e_4⟩$
+$Φ(e_2+e_4)=b(e_1+e_3)+d(e_2+e_4)∈⟨e_1+e_3,e_2+e_4⟩$
+But $u=e_1+e_3,v=e_2+e_4$, so $Φ$ fixes $⟨u,v⟩=U_1$ and $Φ|_{U_1}=ϕ$.
+$Φ(e_1)=ae_1+ce_2∈⟨e_1,e_2⟩$
+$Φ(e_2)=be_1+de_2∈⟨e_1,e_2⟩$
+so $Φ$ fixes $⟨e_1,e_2⟩=U_2$, similarly it fixes $⟨e_3,e_4⟩=U_3$.</div>

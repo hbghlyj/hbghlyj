@@ -1,0 +1,16 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X$ be a Hilbert space and $T ∈ ℬ(X)$. Show that the graph $Γ(T)$ of $T$ is a closed subspace of $X × X$ and that
+\[
+Γ(T)^⟂=\{(-T^* x, x): x ∈ X\} .
+\]
+By considering the orthogonal decomposition of $(x, 0)$, prove that $I+T^* T: X → X$ is surjective.
+[Recall: if $X$ is Hilbert space, $X × X$ with $⟨(x_1, x_2),(y_1, y_2)⟩_{X × X}=⟨x_1, y_1⟩_X+⟨x_2, y_2⟩_X$ is Hilbert space.]
+<em>Proof.</em> $Γ(T)$ is closed by Closed Graph Theorem.
+$$(a,b)∈Γ(T)^⟂⇔∀x,⟨(a,b),(x,T(x))⟩=⟨a,x⟩+⟨b,T(x)⟩=0\\⇔∀x,⟨a+T^*(b),x⟩=0\\⇔a=-T^*(b).$$
+so $Γ(T)^⟂=\{(-T^* x, x): x ∈ X\}.$
+Let the orthogonal decomposition of $(x, 0)$ be $(x, 0)=(y,Ty)+(x-y,-Ty)$.
+$(x-y,-Ty)∈Γ(T)^⟂$, so $x-y=T^*Ty$, so $x∈\operatorname{Im}(I+T^* T)$, so $I+T^* T$ is surjective.</div>

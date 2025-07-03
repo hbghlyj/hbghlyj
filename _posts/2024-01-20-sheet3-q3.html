@@ -1,0 +1,35 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Convolution and the Wiener algebra revisited
+(a) Let $f, g ∈ \mathrm{L}^2(ℝ)$. Show that
+\[
+(f * g)(x) ≝ ∫_{ℝ} f(x-y) g(y) \mathrm{d} y
+\]
+is well-defined for all $x ∈ ℝ$ and that the definition is independent of the chosen representatives for $f$ and $g$ used to compute the integral. Using that $\mathscr{D}(ℝ)$ is dense in $\mathrm{L}^2(ℝ)$ show that $f * g ∈ \mathrm{C}_0(ℝ)^1$. Next, show that the above formula for $f * g$ is consistent with the one obtained from the extended convolution rule: $f * g=ℱ^{-1}(\widehat{f} \widehat{g})$. Deduce that $f * g ∈ ℱ\left(\mathrm{L}^1(ℝ)\right)$.
+<strong>Solution.</strong> Take $f_n,g_n∈𝒟(ℝ)$ such that $f_n→f,g_n→g$ in $\mathrm{L}^2(ℝ)$.
+Want to show $f_n*g_n→f*g$.
+we have $f_n*g_n∈C^∞(ℝ)$ and $\operatorname{supp}(f_n*g_n)⊆\operatorname{supp}(f_n)+\operatorname{supp}(g_n)$, so $f_n*g_n∈𝒟(ℝ)$.
+\[|f_n*g_n(x)-f*g(x)|=\left|\int_{ℝ}f_n(x-y)g_n(y)-f(x-y)g(y)dy\right|\\
+=\left|\int_{ℝ}f_n(x-y)[g_n(y)-g(y)]dy\right|+\left|\int_ℝ[f_n(x-y)-f(x-y)]g(y)dy\right|\\
+≤‖f_n‖_{L^2}‖g_n-g‖_{L^2}+‖f_n-f‖_{L^2}‖g‖_{L^2}\\
+≤C(‖g_n-g‖_{L^2}+‖f_n-f‖_{L^2})
+→0\text{ as }n→∞\]
+so $f*g∈C_0(ℝ)$, using $C_0(ℝ)=\overline{𝒟(R)}^{‖⋅‖_\sup}$.
+
+$f*g=ℱ^{-1}(\hat{f}\hat{g})$
+$f_n*g_n→f*g$ uniformly, $f_n*g_n→f*g$ in $𝒮'(ℝ)$.
+$ℱ(f_n*g_n)→ℱ(f*g)$ in $𝒮'(ℝ)$
+By Plancherel $‖\hat{f_n}-\hat{f}‖_{L^2}=\sqrt{2π}‖f_n-f‖_{L^2}$ we have $\hat{f_n}→\hat{f},\hat{g_n}→\hat{g}$ in $L^2$.
+\[‖\hat{f}\hat{g}-\hat{f_n}\hat{g_n}‖_{L^1}=‖\hat{f}(\hat{g}-\hat{g_n})+(\hat{f}-\hat{f_n})\hat{g_n}‖_{L^1}\\≤‖\hat{f}(\hat{g}-\hat{g_n})‖_{L^1}+‖(\hat{f}-\hat{f_n})\hat{g_n}‖_{L^1}→0\]
+so $f*g=ℱ^{-1}(\hat{f}\hat{g})$
+(b) Show that $2 π ℱ(h k)=\widehat{h} * \widehat{k}$ holds for $h, k ∈ \mathrm{L}^2(ℝ)$, for instance, by use of the convolution rule from (a) together with the Fourier inversion formula in $\mathscr{S}'$.
+Prove that $ℱ(\mathrm{L}^1(ℝ))=\{h * k: h, k ∈ \mathrm{L}^2(ℝ)\}$.
+<strong>Solution.</strong>
+$\hat{h}*\hat{k}=ℱ^{-1}(\hat{\hat{h}}\hat{\hat{k}})=ℱ^{-1}((2π)^2hk)=2πℱ(hk)$.
+$f∈L^1(ℝ),h=\operatorname{sgn}(f)|f|^{1/2},k=|f|^{1/2}$
+$h,k∈L^2$
+$f=\frac1{2π}h*k$
+so $ℱ(\mathrm{L}^1(ℝ))=\{h * k: h, k ∈ \mathrm{L}^2(ℝ)\}$.</div>

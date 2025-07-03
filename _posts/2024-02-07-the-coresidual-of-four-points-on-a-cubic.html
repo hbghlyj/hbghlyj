@@ -1,0 +1,18 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Consider a cubic curve in the projective plane, and fix four points \(D\), \(E\), \(F\) and \(G\) on the curve. These four points define a pencil of conics, and Bezout's theorem tells us that each conic intersects the cubic in six points (counting multiplicity). Given a conic in this pencil, let \(X\) and \(Y\) denote the remaining two points of intersection. A special case of Sylvester's <em>theory of coresiduation</em> says that there is a unique point \(K\) on the cubic (determined by \(D,E,F,G\)) such that \(X\), \(Y\) and \(K\) are all collinear. The point \(K\) is called the <em>coresidual</em> of the four points \(D,E,F,G\) with respect to the cubic curve.
+
+<a href="https://graemewilkin.github.io/Geometry/Constructing_Cubics/Coresidual_Conic.html">This is illustrated in the diagram below.</a> The curve is a cubic through the nine points \(A,B,C,D,E,F,G,H,I\) and the orange curve is a conic through \(D,E,F,G\) as well as a fifth point \(X\). You can see that the line \(KX\) intersects the cubic at the remaining intersection point of the conic and the cubic.
+
+You can click and drag the point \(X\) to move it along the cubic, thus changing the choice of conic in the pencil through \(D,E,F,G\). Note that the point \(K\) does not move, since it uniquely depends on the points \(D, E, F, G\). You can also move the points \(A,B,C,D,E,F,G,H,I\) to change the cubic curve (there may be some lag while the applet recalculates the cubic curve through these nine points). The applet will automatically recalculate the position of the coresidual \(K\).
+
+The original proof of the existence of the coresidual was done in terms of the equations defining the cubic and conic. There are a number of ways to prove this using modern methods, one of which is given below. For convenience we will abuse the notation slightly; \(H\) is used to denote a hyperplane divisor, rather than points on the cubic as in the diagram above.
+
+Let \(\Sigma\) denote the cubic curve. A conic through the points \(D,E,F,G\) defines a meromorphic function on \(\Sigma\), denoted \(f_X \in \mathcal{M}(\Sigma)\), which has zeros at the points of intersection of the two curves \(D,E,F,G,X,Y\) and a total of six poles (counting multiplicity) at the points at infinity. Given a different conic in the pencil which intersects \(\Sigma\) at \(D,E,F,G,X',Y'\), we have a different meromorphic function \(f_{X'}\), for which the order of the poles at the points at infinity is the same as that for \(f_X\). Therefore the function \(g_{X,X'} = \frac{f_X}{f_{X'}}\) is a globally defined meromorphic function on \(\Sigma\) with zeros at \(X,Y\) and poles at \(X',Y'\). Another way to say this is that the effective divisors \(X+Y\) and \(X'+Y'\) are linearly equivalent, or that every conic in the pencil defines a divisor \(X'+Y'\) in the degree two linear system |X+Y|.
+
+We now claim that the pencil of conics defines a <em>complete</em> linear system. The pencil is parametrised by \(\mathbb{P}^1\), and a calculation using Riemann-Roch shows that \(h^0(\mathcal{O}_\Sigma[X+Y]) = 2\). Therefore \(|X+Y| \cong \mathbb{P}^1\) and so the linear system in \(|X+Y|\) defined by the pencil of conics is in fact all of \(|X+Y|\). 
+
+Let \(H\) denote a hyperplane divisor for the embedding \(\Sigma \subset \mathbb{P}^2\). Since a cubic curve is isomorphic to its Jacobian, then there exists a unique point \(K \in \Sigma\) such that \(\mathcal{O}_\Sigma[X+Y+K] \cong \mathcal{O}_\Sigma[H]\). Therefore, for any \(X'+Y' \in |X+Y|\), the divisor \(X'+Y'+K\) is a hyperplane divisor. Equivalently, the points \(X',Y',K\) are collinear, which is exactly what we wanted to show.</div>

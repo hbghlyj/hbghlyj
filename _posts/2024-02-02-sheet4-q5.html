@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $C$ be a nonsingular quartic curve in $ℂℙ^2$.
+(a) Let $H$ be a hyperplane divisor on $C$. Show that $ℓ(H)≥3$.
+<strong>Solution.</strong> By definition $H=\sum_{p∈C∩L}I_p(C,L)p$ for some line $L:a_0x+b_0y+c_0z=0$. For any $a,b,c∈ℂ$, $\frac{ax+by+cz}{a_0x+b_0y+c_0z}∈\mathcal{L}(H)$ and these functions are distinct, so $ℓ(H)≥3$.
+
+(b) Let $D$ be a divisor on $C$ with $\deg D=4$. Prove using the Riemann-Roch Theorem that $ℓ(D)=3$ if $D$ is a canonical divisor, and $ℓ(D)=2$ otherwise.
+<strong>Solution.</strong> $\deg(κ)=2g-2=4,\deg(κ-D)=4-4=0$.
+If $\mathcal{L}(κ-D)≠∅$, there is a meromorphic function $f∈\mathcal{L}(κ-D)$, so $(f)+κ-D$ is effective and degree 0, so $(f)+κ-D=0$, so $D$ is a canonical divisor. By Riemann-Roch, $ℓ(D)=g=3$.
+If $\mathcal{L}(κ-D)=∅$, then $ℓ(κ-D)=0$. By Riemann-Roch, $ℓ(D)=\deg D+1-g=2$, so $D$ is not canonical.
+<strong>Remark.</strong> If $D$ is a divisor such that $\deg D=0$, $ℓ(D)=0$ or $1$:
+• $ℓ(D)=1$ if $D$ is equivalent to $0$
+• $ℓ(D)$ if $0$ is not equivalent to $0$.
+Proof:
+$D$ is equivalent to $0$, then ∃ meromorphic $f$ such that $(f^{-1})=D$
+$g∈ℒ(D)$, then $(g)=-D=(f)⇒(\frac{g}{f})=0⇒g=λf$ for $λ∈ℂ^*$.
+
+(c) Deduce that every hyperplane divisor on $C$ is a canonical divisor.
+<strong>Solution.</strong> By Bézout's theorem $4=\sum_{p∈C∩L}I_p(C,L)$, so $\deg H=4$.
+By (a) $ℓ(H)≥3$, then by (b) $ℓ(H)=3$ and $H$ is a canonical divisor.</div>

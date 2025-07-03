@@ -1,0 +1,69 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://link.springer.com/chapter/10.1007/978-3-319-65262-7_6">Fourier Series, Fourier Transform and Their Applications to Mathematical Physics pp 33–35</a>
+Theorem 6.1 <strong>(Riemann–Lebesgue lemma).</strong> If <em>f</em> is periodic with period $2π$ and belongs to $L^1(-π ,π )$, then
+\begin{align*}\tag{6.1}\lim _{n→ ∞ }∫_{-π }^π f(x+z)\mathrm{e}^{-\mathrm{i}nz}\mathrm{d}z=0\label{Equ1}\end{align*}
+uniformly in $x∈ ℝ$. In particular, $c_n(f)→ 0$ as $n→ ∞$.
+
+Proof.
+Since <em>f</em> is periodic with period $2π$, it follows that
+\begin{align*}\tag{6.2}\label{Equ2}∫_{-π }^π f(x+z)\mathrm{e}^{-\mathrm{i}nz}\mathrm{d}z=∫_{-π +x}^{π +x} f(y)\mathrm{e}^{-\mathrm{i}n(y-x)}\mathrm{d}y=\mathrm{e}^{\mathrm{i}nx}∫_{-π }^{π } f(y)\mathrm{e}^{-\mathrm{i}ny}\mathrm{d}y \end{align*}
+by Lemma 1.3.
+Formula ($\ref{Equ2}$) shows that to prove ($\ref{Equ1}$) it is enough to show that the Fourier coefficients $c_n(f)$ tend to zero as $n→ ∞$. Indeed,
+\[2π c_n(f)=∫_{-π }^π f(y)\mathrm{e}^{-\mathrm{i}ny}\mathrm{d}y=∫_{-π +π /n}^{π +π /n} f(y)\mathrm{e}^{-\mathrm{i}ny}\mathrm{d}y=∫_{-π }^π f(t+π /n)\mathrm{e}^{-\mathrm{i}nt}\mathrm{e}^{\mathrm{i}π }\mathrm{d}t\]
+by Lemma 1.3. Hence
+\begin{align*}\label{Equ3}\tag{6.3} -4π c_n(f)=∫_{-π }^π \left( f(t+π /n)-f(t)\right) \mathrm{e}^{-\mathrm{i}nt}\mathrm{d}t. \end{align*}
+If <em>f</em> is continuous on the interval $[-π ,π ]$, then
+\[\sup _{t∈ [-π ,π ]}\left| f(t+π /n)-f(t)\right| → 0,  n→ ∞ .\]
+Hence $c_n(f)→ 0$ as $n→ ∞$. If <em>f</em> is an arbitrary $L^1$ function, we let $ε >0$. Then we can define a continuous function <em>g</em> (see Corollary 5.3) such that
+\[∫_{-π }^π \left| f(x)-g(x)\right| \mathrm{d}x<ε .\]
+Write
+\[c_n(f)=c_n(g)+c_n(f-g).\]
+The first term tends to zero as $n→ ∞$, since <em>g</em> is continuous, whereas the second term is less than $ε /(2π )$. This implies that
+\[\lim _{n→ ∞ }|c_n(f)|=0.\]
+This fact together with ($\ref{Equ2}$) gives ($\ref{Equ1}$). The theorem is thus proved. $□$
+
+Corollary 6.2.
+Let <em>f</em> be as in Theorem $\ref{Equ1}$. If a periodic function <em>g</em> is continuous on $[-π ,π ]$, then
+\[\lim _{n→ ∞ }∫_{-π }^π f(x+z)g(z)\mathrm{e}^{-\mathrm{i}nz}\mathrm{d}z=0\]
+and
+\begin{align*} \lim _{n→ ∞ }∫_{-π }^π f(x+z)g(z)\sin (nz)\mathrm{d}z=\lim _{n→ ∞ }∫_{-π }^π f(x+z)g(z)\cos (nz)\mathrm{d}z=0 \end{align*}
+uniformly in $x∈ [-π ,π ]$.
+
+Exercise 6.1.
+Prove this corollary.
+
+Exercise 6.2.
+Show that if <em>f</em> satisfies the Hölder condition with exponent $α ∈ (0,1]$, then $c_n(f)=O(|n|^{-α })$ as $n→ ∞$.
+
+Exercise 6.3.
+Suppose that <em>f</em> satisfies the Hölder condition with exponent $α >1$. Prove that $f≡ \text {constant}$.
+
+Exercise 6.4.
+Let $f(x)=|x|^α$, where $-π ≤ x≤ π$ and $0<α <1$. Prove that $c_n(f)≍ |n|^{-1-α }$ as $n→ ∞$.
+
+Remark 6.3.
+The notation $a≍ b$ means that there exist $0<c_1<c_2$ such that
+\[c_1|a|<|b|<c_2|a|.\]
+Let us introduce for all $1≤ p<∞$ and periodic functions $f∈ L^p(-π ,π )$ the $L^{p}$-<em>modulus of continuity</em> of <em>f</em> by
+\begin{align*} ω _{p,δ }(f):=\sup _{|h|≤ δ } \left( ∫_{-π }^π \left| f(x+h)-f(x)\right| ^p\mathrm{d}x\right) ^{1/p}. \end{align*}
+
+The equality ($\ref{Equ3}$) leads to
+\begin{align*} |c_n(f)|&≤ \frac{1}{4π }∫_{-π }^π \left| f(x+π /n)-f(x)\right| \mathrm{d}x\\&≤ \frac{(2π )^{1-1/p}}{4π }\left( ∫_{-π }^π \left| f(x+π /n)-f(x)\right| ^p\mathrm{d}x\right) ^{1/p}≤ \frac{1}{2}(2π )^{-1/p}ω _{p,π /n}(f), \end{align*}
+where we have used Hölder’s inequality in the penultimate step.
+
+Exercise 6.5.
+Suppose that $ω _{p,δ }(f)≤ Cδ ^α$ for some $C>0$ and $α >1$. Prove that <em>f</em> is constant almost everywhere.
+
+<em>Hint.</em> First show that $ω _{p, 2δ }(f)≤ 2ω _{p,δ }(f)$; then iterate this to obtain a contradiction.
+
+Suppose that $f∈ L^1(-π ,π )$ but <em>f</em> is not necessarily periodic. We can consider the Fourier series corresponding to <em>f</em>, i.e.,
+\[f(x)∼ \sum _{n=-∞ }^∞ c_n \mathrm{e}^{\mathrm{i}nx},\]where the $c_n$ are the Fourier coefficients $c_n(f)$. The series on the right-hand side is considered formally in the sense that we know nothing about its convergence. However, the limit
+\begin{align*}\label{Equ4}\tag{6.4}\lim _{N→ ∞ }∫_{-π }^π \sum _{|n|≤ N} c_n(f) \mathrm{e}^{\mathrm{i}nx}\mathrm{d}x=∫_{-π }^π f(x)\mathrm{d}x \end{align*}
+exists. Indeed,
+\begin{align*} ∫_{-π }^π \sum _{|n|≤ N} c_n(f) \mathrm{e}^{\mathrm{i}nx}\mathrm{d}x&=c_0(f)∫_{-π }^π \mathrm{d}x +\sum _{0<|n|≤ N}c_n(f)∫_{-π }^π \mathrm{e}^{\mathrm{i}nx}\mathrm{d}x=2π c_0(f)\\&=∫_{-π }^π f(x)\mathrm{d}x. \end{align*}
+Remark 6.4
+<em>(Important properties of the Fourier series).</em> The existence of the limit ($\ref{Equ4}$) shows us that we can always integrate the Fourier series of an $L^1$ function term by term.</div>

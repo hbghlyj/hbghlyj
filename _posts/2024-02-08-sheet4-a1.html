@@ -1,0 +1,52 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X=C([0,2], ℂ)$ with the sup norm, and let
+\[
+g(t)= \begin{cases}t & \text { if } 0 ⩽ t ⩽ 1 \\ 1 & \text { if } 1<t ⩽ 2 .\end{cases}
+\]
+Define $T ∈ L(X)$ by
+\[
+(T f)(t)=g(t) f(t),   f ∈ C[0,2],   t ∈[0,2] .
+\]
+Determine $‖T‖, σ_p(T), σ_c(T), σ_r(T)$ and $σ(T)$.
+<strong>Solution.</strong> $‖Tf‖=\sup|g||f|≤\sup|g|\sup|f|=\sup|f|=‖f‖⇒‖T‖≤1$.
+$‖T1‖=1=‖1‖⇒‖T‖=1$.
+[$⇒r_σ(T)≤‖T‖=1.$]
+Now $σ_p(T)=?$
+$Tf=λf$ i.e. $(g-λ)f=0$
+i.e. $(g(t)-λ)⋅f(t)=0∀t$
+If there is no $t$ such that $g(t)=λ$, then $f≡0$ and $λ$ isn't an eigenvalue.
+If $∃t_0$ such that $g(t_0)=λ⇒λ∈[0,1]$
+<strong>Case 1.</strong> $λ<1$, $t_0$ is unique
+$⇒f(t)=0∀t≠t_0$
+$f$ is continuous$⇒f≡0$
+$λ∉σ_p(T)$.
+<strong>Case 2.</strong> $λ=1$, $g(t)=1$ if  $t≥1$; $g(t)≠1$ if $t<1$.
+$⇒Tf=λf$ iff $f=0$ in $[0,1]$
+e.g. $f(x)=(x-1)χ_[1,2]$.
+∴$σ_p(T)=\{1\}$.
+Now $σ_{ap}(T)=?$
+$λ∈σ_{ap}(T)$ if $∃‖f_n‖=1,(λI-T)f_n→0$
+i.e. $\sup|f_n|=1,\sup|λ-g||f_n|→0$
+If $λ∉$Range of $g=[0,1]$.
+$\min|λ-g|>a>0$
+$a\sup|f_n|≤\sup|λ-g||f_n|→0$, contradicting $‖f_n‖=1$.
+$⇒λ∉σ_{ap}(T)$.
+If $0≤λ<1$
+Pick an interval $J_n$ of size $\frac1n$ close to $t_0$
+$‖f_n‖≤1$ in $t_0$
+$f_n=0$ outside $J_n$, $f_n(t_0)=1$
+$⇒λ∈σ_{ap}(T)$
+$σ_{ap}(T)=[0,1]$
+$σ(T)⊆\overline{D(0,1)}$
+$σ(T)$ closed
+$σ(T)⊇σ_{ap}(T)=[0,1]$
+<u>Claim.</u> if $λ∉[0,1]$, then $λ∈ρ(T)$.
+$(λI-T)f=h$
+$(λ-g)f=h$
+$f=\frac{h}{λ-g}$ continuous as $λ-g$ is continuous and nowhere 0
+$⇒σ(T)=[0,1]$.
+$σ_r(T)=[0,1),σ_c(T)=∅$.</div>

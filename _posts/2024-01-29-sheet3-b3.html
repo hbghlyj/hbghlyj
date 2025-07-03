@@ -1,0 +1,54 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">%https://math.stackexchange.com/questions/844053/in-a-uniformly-convex-banach-space-x-n-stackrelw-to-x-and-x-n-to-x
+Let $X$ be a Banach space.
+(a) Suppose that $x_n ⇀ x$ in $X$ and $ℓ_n → ℓ$ in $X^*$. Show that $ℓ_n(x_n) → ℓ(x)$.
+(b) Suppose in addition that $X$ is a Hilbert space. Show that if $x_n ⇀ x$ in $X$ and if $\|x_n\| →\|x\|$, then $x_n → x$.
+(c) Prove (b) when the assumption that $X$ is a Hilbert space is replaced by the assumption that $X$ is uniformly convex: for every $ε>0$, there exists $δ=δ(ε)>0$ such that if $\|x\|=\|y\|=1$ and if $\|x-y\| ⩾ ε$, then $\left\|\frac{1}{2}(x+y)\right\| ⩽(1-δ)$.
+<em>Proof.</em>
+(a) By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/8/2024-02-13.pdf#thm.4.3">Proposition 4.3</a> $x_n ⇀ x$ implies $(x_n)$ is bounded.
+By triangle inequality
+\begin{align*}
+|ℓ_n(x_n)-ℓ(x)|&≤ |ℓ_n(x_n)-ℓ(x_n)|+|ℓ(x_n)-ℓ(x)|\\
+&≤ \|x_n\|⋅\|ℓ_n-ℓ\|+|ℓ(x_n)-ℓ(x)|\\
+\end{align*}
+both terms$→0$, so $ℓ_n(x_n) → ℓ(x)$.
+(b) Since $⟨x_n,⋅⟩∈X^*$, $x_n ⇀ x$ implies $⟨x_n,x⟩→‖x‖^2$,
+\begin{align*}‖x_n-x‖^2&=‖x_n‖^2+‖x‖^2-2\operatorname{Re}⟨x_n,x⟩\\&→‖x‖^2+‖x‖^2-2‖x‖^2=0\end{align*}
+(c) The case $x = 0$ is immediate, since $‖x_n‖→ 0$ is just the norm convergence of $(x_n)$ to $0$.
+Suppose $x≠ 0$, wlog $‖x‖ = 1$. By the Hahn-Banach theorem, there is $λ∈X^*$ with $‖λ‖ = 1$ and $λ(x) = 1$.
+Since $x_n ⇀ x$, we have $λ(x_n) → λ(x) = 1$, and therefore
+$$\lim_{n→∞} λ\left(\frac{1}{2}(x_n+x)\right) = 1,$$
+but $‖λ‖ = 1$, so
+$$\liminf_{n→∞} \left‖\frac{1}{2}(x_n+x)\right‖ ⩾ 1.$$
+On the other hand, since $\left‖\frac{1}{2}(x_n+x)\right‖ ⩽ \frac{1}{2}(‖x_n‖ + ‖x‖)$, we have 
+$$\limsup_{n→∞} \left‖\frac{1}{2}(x_n+x)\right‖ ⩽ 1,$$
+so
+$$\lim_{n→∞} \left‖\frac{1}{2}(x_n+x)\right‖ = 1.$$
+By the lemma, $x_n→x$.
+
+<strong>Lemma.</strong> In a uniformly convex space, for all sequences $(a_n)$ and $(b_n)$ with $\lim\limits_{n→∞} ‖a_n‖ = 1 = \lim\limits_{n→∞} ‖b_n‖$ and $\lim\limits_{n→∞} \left‖\frac{1}{2}(a_n+b_n)\right‖ = 1$ it follows that $\lim\limits_{n→∞} ‖a_n - b_n‖ = 0$.
+<em>Proof.</em> Suppose $‖a_n - b_n‖ \not→ 0$. Then there is an $ε > 0$ such that $‖a_{n_k} - b_{n_k}‖ > 2ε$ for subsequences $(a_{n_k})$ and $(b_{n_k})$. We may assume that this holds for the full sequences. For that $ε$, by uniform convexity, there is a $δ > 0$ such that
+$$\left‖\frac{1}{2}(u+v)\right‖ ⩽ 1 - δ\tag{1}\label{1}$$
+for all $u,v$ with $‖u‖ = 1 = ‖v‖$ and $‖u-v‖ ⩾ ε$.
+
+Then, setting $α_n = \frac{1}{‖a_n‖}a_n$ and $β_n = \frac{1}{‖b_n‖}b_n$ ($a_n = 0$ or $b_n = 0$ can happen only finitely often, we drop these terms), we have
+\begin{align*}
+\left‖α_n-β_n\right‖ &⩾ ‖a_n-b_n‖ - ‖a_n-α_n‖ - ‖b_n-β_n‖\\
+&= ‖a_n-b_n‖ - |1 - ‖a_n‖| - |1-‖b_n‖|\\
+&> 2ε - |1 - ‖a_n‖| - |1-‖b_n‖|\\
+&> ε
+\end{align*}
+for $n$ so large that $|1-‖a_n‖| < ε/2$ and $|1-‖b_n‖| < ε/2$. 
+Then by (1),
+\begin{align*}
+\left‖\frac{1}{2}(a_n+b_n)\right‖
+&⩽ \left‖\frac{1}{2}(α_n+β_n)\right‖ + 
+\frac{1}{2}(‖α_n - a_n‖ + ‖β_n-b_n‖)\\
+&⩽ 1-δ + \frac{1}{2}(‖α_n - a_n‖ + ‖β_n-b_n‖)\\
+&⩽ 1 - \frac{δ}{2}
+\end{align*}
+for $n$ so large that $|1-‖a_n‖| < δ/2$ and $|1-‖b_n‖| < δ/2$, contradicting the assumption $\left‖\frac{1}{2}(a_n+b_n)\right‖ → 1$.</div>

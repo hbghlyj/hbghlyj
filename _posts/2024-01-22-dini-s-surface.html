@@ -1,0 +1,23 @@
+---
+mathjax: true
+tag: geometry-of-surfaces
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">\begin{align*}
+r&=(a\cos u\sin v,a\sin u\sin v,a\left(\cos v+\ln \tan \frac {v}{2}\right)+bu)\\
+r_u&=(-a\sin u\sin v,a\cos u\sin v,b)\\
+r_v&=(a\cos u\cos v,a\sin u\cos v,a\cos v\cot v)\\
+E=r_u⋅r_u&=a^2\sin^2 v+b^2\\
+F=r_u⋅r_v&=ab\cos v\cot v\\
+G=r_v⋅r_v&=a^2\cot^2 v\\
+r_u×r_v&=(a\cos v(a\cos u\cos v - b\sin u), a\cos v(a\sin u\cos v + b\cos u), -a^2\sin v\cos v)\\
+|r_u×r_v|&=a\cos v\sqrt{a^2 + b^2}\\
+n=\frac{r_u×r_v}{|r_u×r_v|}&=\frac{(a\cos u\cos v - b\sin u,a\sin u\cos v + b\cos u, -a\sin v)}{\sqrt{a^2 + b^2}}\\
+r_{uu}&=(-a\cos u\sin v,-a\sin u\sin v,0)\\
+r_{uv}&=(-a\sin u\cos v,a\cos u\cos v,0)\\
+r_{vv}&=(-a\cos u\sin v,-a\sin u\sin v,-a\cos v(1+\csc^2 v))\\
+e=r_{uu}⋅n&=-\frac{a^2 \cos v \sin v}{\sqrt{a^2 + b^2}}\\
+f=r_{uv}⋅n&=\frac{ab \cos v}{\sqrt{a^2 + b^2}}\\
+g=r_{vv}⋅n&=\frac{a^2 \cot v}{\sqrt{a^2 + b^2}}\\
+K=\frac{eg-f^2}{EG-F^2}&=-\frac1{a^2+b^2}
+\end{align*}</div>

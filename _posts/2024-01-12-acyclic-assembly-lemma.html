@@ -1,0 +1,15 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">The Acyclic Assembly Lemma gives conditions for the total complex of a double complex of modules over a ring to be acyclic.
+A full statement and proof can be found in An Introduction to Homological Algebra by Chuck Weibel on pages 59 and 60 (Lemma 2.7.3).
+
+$C$ is an upper half-plane double acyclic with exact columns. Thus $\operatorname{Tot}^Π(C)$ is exact.
+<em>Proof:</em> Enough to check that $H_0(\operatorname{Tot}^Π(C))=0$.
+$\operatorname{Tot}^Π(C)_0=Π_{p∈ℤ}C_{-p,p}∋c=(…,c_{-2,2},c_{-1,1},c_{0,0},0,…)$ be a 0-cycle, we will construct by induction elements $b_{-p,p+1}$ s.t. $d^v(b_{-p,p+1})+d^h(b_{-p+1,p})=c_{-p,p}$, this will give an element of $b∈Π_{p∈ℤ}C_{-p,p+1}$ s.t. $d(b)=c$ showing that $H_0(\operatorname{Tot}^Π(C))=0$
+Let $b_{10}=0$ for $n=1$. $c_{01}=0$, so $d^v(c_{00})=0$ since the 0th column is exact, there is a $b_{01}∈C_{01}$ s.t. $d^v(b_{01})=c_{00}$.
+By induction $d^v(c_{-p,p}-d^h(b_{-p+1,p}))=d^v(c_{-p,p})+d^hd^v(b_{-p+1,p})=d^v(c_{-p,p})+d^h(c_{-p+1,p-1})-d^hd^h(b_{-p+2,p-1})=0$
+since the $-p$th column is exact there is a $b_{-p,p+1}$ s.t. $d^v(b_{-p,p+1})=c_{-p,p}-d^h(b_{-p+1,p})$.
+<strong>Remark:</strong> spectral sequences gives you a way to calculate the homology of total complex</div>

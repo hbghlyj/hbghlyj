@@ -1,0 +1,10 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/10/2024-04-17.pdf#thm.1.17">thm 1.17</a>
+<a href="https://math.stackexchange.com/questions/4347173">Prove codim(Im(I+K))<∞ for a compact operator</a>
+By compactness of $K$, the closed unit ball in $\ker(I+K)$ is compact, so $\ker(I+K)$ has finite dimension. <a href="https://math.stackexchange.com/questions/3224626">Therefore</a> $X = \ker(I+K) \oplus S$ for some closed subspace $S$ of $X$. The operator $I + K$ restricted to $S$ has an inverse $T : \operatorname{Im}(I+K) \to S$. You can show (by way of contradiction, using compactness of $K$) that $T$ is continuous at $0$ (and hence continuous). Then $\operatorname{Im}(I + K)$ is closed. 
+
+To demonstrate that $\operatorname{Im}(I + K)$ has finite codimension, suppose to the contrary that the codimension of $\operatorname{Im}(I + K)$ is infinite. There is a sequence $\operatorname{Im}(I + K) = S_0 \subsetneq S_1 \subsetneq S_2 \subsetneq \cdots$ of closed subspaces of $X$ with $\dim(S_{n+1}/S_n) = 1$ for every $n$. Riesz's lemma gives normalized vectors $x_n\in S_n$ such that $\operatorname{dist}(x_n,S_{n-1}) \ge 0.5$. If $n > m$, then $(I + K)x_n, (I + K)x_m$, and $x_m$ belong to $S_{n-1}$, forcing $$\|Kx_n - Kx_m\| = \|(I + K)x_n - (I + K)x_m + x_m - x_n\| \ge \operatorname{dist}(x_n,S_{n-1}) \ge 0.5$$ Consequently, $(Kx_n)$ has no convergent subsequence, contradicting compactness of $K$.</div>

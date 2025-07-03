@@ -1,0 +1,70 @@
+---
+mathjax: true
+tag: geometry-of-surfaces
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://www.math.uchicago.edu/~may/VIGRE/VIGRE2010/REUPapers/Rotskoff.pdf">VIGRE2010 REU Paper</a> by Grant Rotskoff
+<strong>Definition 3.2.</strong> A <strong>simple</strong> region $R$ of a surface $S$ is a region such that $R$ is homeomorphic to the disk.
+<strong>Definition 3.3.</strong> Given a parametrization of a surface, $\mathbf{x}: U \rightarrow S$, we have the following quantities
+$$
+E=\left\langle x_u, x_u\right\rangle, F=\left\langle x_u, x_v\right\rangle, G=\left\langle x_v, x_v\right\rangle .
+$$
+These are the coefficients of the first fundamental form of a surface.
+<strong>Definition 3.4.</strong> Given a parametrization of a surface,
+$$
+\mathrm{x}: U \to S
+$$
+we call that parametrization <strong>orthogonal</strong> if
+$$
+F=0 .
+$$
+<strong>Definition 3.5.</strong> The <strong>geodesic curvature</strong> $k_g$ of a curve is a measure of the amount of deviance of the curve from the shortest are between two points on a surface.
+<strong>Definition 3.6.</strong> The <strong>Gaussian curvature</strong> $\kappa$ of a surface is an intrinsic measure of the curvature of a surface at a point. It is calculated by considering the maximal and minimal curvatures on the surface at a point. Formally, these values are multiplied to give $\kappa$.
+<strong>Theorem 3.7</strong> (Gauss-Bonnet, Local). Let $R \subset \mathrm{x}(U)$ be a simple region of $S$ with orthogonal parametrization, and choose $\alpha: I \rightarrow S$ such that $\alpha(I)=\partial R$. Assume that $\alpha$ is positively oriented and parametrized piecewise by arc-length $s_i$. Let $\{\theta_i\}_{i=0}^k$ be the external angles of $\alpha$ at the vertices $\{\alpha(s_i)\}_{i=0}^k$, then
+$$
+\sum_{i=0}^k \int_{s_i}^{s_{i+1}} k_{g(s)} d s+\iint_R \kappa d \sigma+\sum_{i=0}^k \theta_i=2 \pi .
+$$
+<em>Proof.</em> We first let $u=u(s)$ and $v=v(s)$ be the expression of $\alpha$ in the parametrization $\mathrm{x}$. We recall that
+$$
+k_{g(s)}=\frac{1}{2 \sqrt{E G}}\left(G_u \frac{d v}{d s}-E_v \frac{d u}{d s}\right)+\frac{d \varphi}{d s}
+$$
+where we denote the differentiable function that measures the positive angle from $x$ to $\alpha^{\prime}(s)$ in $\left[s_i, s_{i+1}\right]$ as $\varphi\left(s_i\right)$. We now integrate the above expression, adding up the values for each $\left[s_i, s_{i+1}\right]$ :
+$$
+\sum_{i=0}^k \int_{s_i}^{s_{i+1}} k_{g(s)}=\sum_{i=0}^k \int_{s_i}^{s_{i+1}} \frac{1}{2 \sqrt{E G}}\left(G_u \frac{d v}{d s}-E_v \frac{d u}{d s}\right) d s+\sum_{i=0}^k \int_{s_i}^{s_{i+1}} \frac{d \varphi_i}{d s} d s,
+$$
+now, using the Gauss-Green theorem in the $u v$-plane on the right hand side of the above equation, we obtain the expression:
+$$
+\iint_{\mathbf{x}^{-1}(R)} \frac{E_v}{2 \sqrt{E G}_v}+\frac{G_u}{2 \sqrt{E G}_u} d u d v+\sum_{i=0}^k \int_{s_i}^{s_{i+1}} \frac{d \varphi_i}{d s} d s
+$$
+We note that by the Gauss Formula,
+$$
+-\iint_{\mathbf{x}^{-1}(R)} \kappa \sqrt{E G} d u d v=-\iint_R \kappa d \sigma
+$$
+also, recalling the Theorem of Turning Tangents, we know that,
+$$
+\sum_{i=0}^k \int_{s_i}^{s_{i+1}} \frac{d \varphi_i}{d s} d s=\sum_{i=0}^k \varphi_i(s_i+1)-\varphi_i(s_i)= \pm 2 \pi-\sum_{i=0}^k \theta_i,
+$$
+which we get because the theorem does not account for the discontinuities along the curve at the theta values. As we have assumed a positive orientation, we have,
+$$
+\sum_{i=0}^k \int_{s_i}^{s_{i+1}} k_{g(s)} d s+\iint_R \kappa d \sigma+\sum_{i=0}^k \theta_i=2 \pi,
+$$
+we note that we can obtain the opposite sign by assuming the opposite orientation, and we thus we have proven the local case of the Gauss-Bonnet Theorem.
+
+[…Global…]
+
+<strong>Definition 5.7.</strong> The <strong>index</strong> $I$ of $v$ at the singular point $p$ is defined as follows. Let $\mathbf{x}$ be an orthogonal parametrization such that $\mathbf{x}(0,0)=p$ and the orientation is compatible with that of the surface $S$. Let $\alpha:[0, l]\to S$ be a closed simple regular parametrized curve such that it is the boundary of a simple region $R \subset S$, where the only singular point in $R$ is $p$. Now, we have a function $\varphi(t)$ with $t \in[0, l]$, such that it measures the angle from $\mathbf{x}_{\mathbf{u}}$ to the restriction of $v$ to $\alpha$, then,
+$$
+2 \pi I=\varphi(l)-\varphi(0)=\int_0^l \frac{d \varphi}{d t} d t .
+$$
+<strong>Proposition 5.8.</strong> The index is independent of the choice of parametrization $\mathbf{x}$.
+<strong>Proposition 5.9.</strong> The index is independent of the choice of $\alpha$.
+<strong>Theorem 5.10</strong> (Poincare-Hopf Index Theorem). The sum of the indices of a differentiable vector field $v$ with isolated singular points on a compact surface $S$ is equal to the Euler Characteristic of $S$.
+<em>Proof.</em> Let $S \subset \mathbb{R}^3$ be a compact surface and $v$ a differentiable vector field with exclusively isolated singular points. We notice that, due to compactness, these singular points must be finite in number otherwise there would exist a non-isolated singular point as a limit point for the others. We let $\{\mathbf x_a\}$ be a family of parametrizations such that each is compatible with the orientation of $S$. Now, we let $J$ be a triangulation of $S$ with the conditions that each $T$ in $J$ is contained in a coordinate neighborhood of $\{\mathbf{x_a}\}$, each triangle $T$ contains at most one singular point, and each triangle is positively oriented with no singular points on its boundary. Now, we apply the local Gauss-Bonnet theorem to each triangle and sum up the result. However, we recall that each triangle appears twice in this formulation, in opposite orientation, therefore, we have
+$$
+\iint_S \kappa d \sigma-2 \pi \sum_{i=1}^k I_i=0,
+$$
+to which we apply the most general form of Gauss-Bonnet to obtain,
+$$
+\sum_{i=1}^k I_i=\frac{1}{2 \pi} \iint_S \kappa d \sigma=\chi(S) .
+$$
+<em>Remark 5.11.</em> This result guarantees that a vector field on any surface homeomorphic to a sphere must have at least two isolated singular points, because the Euler characteristic of the 2-sphere is two. The solution is particularly remarkable because it shows that the sum of the indices of a vector field does not depend on $v$, but rather the topology of $S$, which is a non-intuitive idea. More tangibly, the Poincare-Hopf Index Theorem implies the previous theorem.</div>

@@ -1,0 +1,17 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Derive the open mapping theorem from the inverse mapping theorem in the case $X$ is a Hilbert space.
+<em>Proof.</em>
+$X$ is a Hilbert space, $Y$ is a Banach space, $T\colon X→Y$ is a surjective linear map.
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#thm.3.11">Theorem 3.11</a>, $TX$ closed implies $T^*Y$ closed.
+Let $Q\colon X→T^*Y$ be the orthogonal projection.
+$Q$ is open: $B^{T^*Y}=Q(B^{T^*Y})⊆Q(B^X)$.
+Let $S≔T|_{T^*Y}$.
+$S\colon T^*Y→Y$ is injective: if $x∈\ker(S)$ then $x∈\ker(T)∩T^*Y=\{0\}$.
+By the inverse mapping theorem $S$ has a continuous inverse, so $S$ is open.
+Since $\ker(T)^⟂=T^*Y$, for all $x∈X,T(x-Qx)=0⇒Tx=TQx$, so $T=S∘Q$ is open.
+% https://math.stackexchange.com/questions/4330870/inverse-mapping-theorem-implies-open-mapping-theorem
+[In general: Quotient map is surjective so open. Projection map is surjective so open.]</div>

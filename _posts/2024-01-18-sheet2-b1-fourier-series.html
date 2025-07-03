@@ -1,0 +1,13 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) Prove the localisation property of Fourier series: if two continuous $2 π$-periodic functions $f$ and $g$ are equal in an open interval containing $x_0$, their Fourier series either both converge at $x_0$ or both diverge at $x_0$.
+<strong>Solution.</strong>
+The function $f-g$ is 0 in $I$, so it is $1-$Hölder continuous, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/7/2024-01-16.pdf#thm.2.7">theorem 2.7</a> $S_N(f)(x_0)-S_N(g)(x_0) → 0$ pointwise as $N→∞$, so $S_N(f)$ and $S_N(g)$ either both converge at $x_0$ or both diverge at $x_0$.
+
+(b) In the lecture, we will prove that there is a continuous function $f_0$ whose Fourier series diverges at 0. Use (a) to construct a continuous function $f_S$ whose Fourier series diverges at every point of a given finite subset $S=\{s_1<s_2<⋯<s_n\} ⊂(-π, π]$.
+<strong>Solution.</strong>
+Let $f_S$ be a 2π-periodic continuous function s.t. $f_S(x)=f_0(x-s_i)$ for all $x$ in a neighborhood $U_i$ of $s_i$ such that $U_i$ are disjoint.
+Since $f_0(x-s_i)$ diverge at $x=s_i$, by (a) $f_S$ diverge at $x=s_i$ for each $1≤i≤n$.</div>

@@ -1,0 +1,27 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X=C([a, b])$, let $k:[a, b]×[a, b]→ℝ$ be continuous. Show that $T ∈ ℬ(X)$ defined by $T f(x)=∫_a^b k(x, t) f(t) d t$ is a compact operator.
+
+<strong>Method 1.</strong>
+Since $[a, b]×[a, b]$ is compact, $k$ is uniformly continuous, $∀ε>0∃δ>0∀x_1,x_2∈[a,b],|x_1-x_2|<δ$ then $|k(x_1,t)-k(x_2,t)|<ε$.
+$T(\bar B^X)$ is equicontinuous: for all $f∈\bar B^X$,
+\begin{align*}\left|Tf(x_1)-Tf(x_2)\right| & =\left|∫_a^b\left(k(x_1, t) f(t)-k(x_2, t) f(t)\right) d t\right| \\& ≤ ∫_a^b \overbrace{\left|k(x_1, t)-k(x_2, t)\right|}^{<ε} ⋅ \overbrace{|f(t)|}^{≤1} d t<(b-a)ε\end{align*}
+$T(\bar B^X)$ is uniformly bounded:
+\begin{align*}\sup_{‖f‖_∞≤1}‖T f‖_∞&=\sup_{‖f‖_∞≤1}\sup_{x∈[a,b]}\left|∫_a^b k(x, t) f(t) d t\right|\\& ≤ \sup_{‖f‖_∞≤1}\sup_{x∈[a,b]} ∫_a^b|k(x, t)|\underbrace{|f(t)|}_{≤‖f‖_∞}d t\\& ≤ \sup_{x∈[a,b]} ∫_a^b|k(x, t)| d t\\&≤(b-a)‖k‖_∞\end{align*}
+$⇒$ By Arzelà-Ascoli: $\overline{T(\bar B^X)}$ is compact $⇒ T$ is compact operator.
+
+<strong>Method 2.</strong>
+$X$ has an orthonormal basis $\{e_n\}$ by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#thm.1.13">1.13</a>. For each $s ∈[a, b]$ and $n ∈ ℕ$, let $k_s∈X,k_s(t)≔k(s, t)$
+\[T e_n(s)=∫_a^b k(s, t) e_n(t) d t=⟨k_s, e_n⟩,\]
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#thm.1.11">1.11</a> and continuity of $k_s$
+\begin{align*}\sum_{n=1}^{\infty}‖T e_n‖_X^2 & =\sum_{n=1}^{\infty} \int_a^b\left|⟨k_s, e_n⟩\right|^2 d s\\&=\int_a^b \sum_{n=1}^{\infty}\left|⟨k_s, e_n⟩\right|^2 d s \\& =\int_a^b‖k_s‖_X^2 d s<\infty\end{align*}
+Since $\left\{e_n\right\}$ is an orthonormal basis, any $x∈X$ can be written as $x=\sum_{n=1}^{∞}⟨x, e_n⟩e_n$. For each $k ∈ ℕ$ define an operator $T_k ∈ B(X)$ by
+\[T_k x=T\left(\sum_{n=1}^k⟨x, e_n⟩e_n\right)=\sum_{n=1}^k⟨x, e_n⟩T e_n\]
+Clearly, $\dim\operatorname{im}(T_k)≤k$. Also, for any $x∈X$, using Cauchy-Schwarz inequality for $ℓ^2$ and <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#thm.1.11">1.11</a>
+\begin{align*}‖(T_k-T) x‖ & =\left‖\sum_{n=1}^k⟨x, e_n⟩T e_n-\sum_{n=1}^{∞}⟨x, e_n⟩T e_n\right‖ \\& ≤ \sum_{n=k+1}^{∞}\left|⟨x, e_n⟩\right|‖T e_n‖ \\& ≤\left(\sum_{n=k+1}^{∞}\left|⟨x, e_n⟩\right|^2\right)^{1 / 2}\left(\sum_{n=k+1}^{∞}‖T e_n‖^2\right)^{1 / 2} \\& ≤‖x‖\left(\sum_{n=k+1}^{∞}\left‖T e_n\right‖^2\right)^{1 / 2}\end{align*}
+Hence
+\[‖T_k-T‖ ≤\left(\sum_{n=k+1}^{∞}\left‖T e_n\right‖^2\right)^{1 / 2}→0\]
+we have $T_k→T$, <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/6/2024-01-16.pdf#thm.1.15">1.15</a> shows that $T$ is compact.</div>

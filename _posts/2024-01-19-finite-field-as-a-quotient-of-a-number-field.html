@@ -1,0 +1,18 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://math.stackexchange.com/questions/124695">MSE</a>
+We can view $F_7$ as the quotient ring $𝐙[ω]/(3+ω)𝐙[ω]$.
+$(3+ω)$ is a maximal ideal of $𝐙[ω]$, so $𝐙[ω]/(3+ω)𝐙[ω]$ is a field.
+$N(3+ω)=7$, so $𝐙[ω]/(3+ω)𝐙[ω]$ has order 7.
+When we do that the non-zero elements of $F_7$ are represented by the cosets of the sixth roots of unity, i.e. the cosets $(-\omega)^j+(3+\omega)\mathbf{Z}[\omega]$. This is similar in spirit to the discussion in the linked question.
+
+Things become more uniform, when instead of using the complex numbers we use the $p$-adic integers $\mathbf{Z}_p$ (not to be confused with the residue class ring $\mathbf{Z}/p\mathbf{Z}$. If $q=p^n$, and $\zeta$ is a root of unity of order $q-1$, then we have an isomorphism
+$$
+F_q=\mathbf{Z}_p[\zeta]/p\mathbf{Z}_p[\zeta]
+$$
+between the finite field $F_q$ and the quotient ring of an extension ring of the $p$-adic integers. That's a rather different animal, and this last paragraph may be meaningless to you unless you have the right background. The $p$-adic integeres themselves cannot be readily visualized geometrically, because the metric there is very weird.
+
+<a href="https://math.stackexchange.com/questions/110018/">Every finite field is a residue field of a number field</a></div>

@@ -1,0 +1,69 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $A$ and $B$ be two symmetric $3 × 3$ complex matrices and suppose the equation $\det(x A-B)=0$ has three distinct solutions $λ, μ, ν$.
+(i) Show that there is an invertible matrix $P$ such that $P^T A P=I$ and $P^T B P=\operatorname{diag}(λ, μ, ν)$.
+(ii) Deduce that, after a projective transformation, the equations of the conics defined by $A$ and $B$ can be put in the form
+\[
+x^2+y^2+z^2=0,   λ x^2+μ y^2+ν z^2=0 .
+\]
+(iii) Show that these two conics intersect in four distinct points.
+<em>Proof.</em>
+(i) Since $\det(x A-B)=(\det A)x^3+⋯$ has three roots, $\det A≠0$. By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94670/mod_resource/content/6/Hitchin.pdf#page=19">theorem 6</a> exist an invertible matrix $Q$ such that $Q^TAQ=I$. Write $B'=Q^TBQ$, so that $B'$ is also symmetric. Then
+\[
+\det Q^T \det(λ A-B) \det Q=\det(Q^T(λA-B) Q)=\det(λ I-B')
+\]
+and so the roots of $\det(λ A-B)=0$ are the eigenvalues of $B'$. By assumption these are distinct, so we have a basis of eigenvectors $v_1,v_2,v_3$ with eigenvalues $λ_1,λ_2,λ_3$.
+Let $v_l,v_k$ be eigenvectors with eigenvalues $λ_l≠λ_k$. Since $B'$ is symmetric,
+\[
+λ_lv_l^Tv_k=(B'v_l)^Tv_k=v_l^T(B'v_k)=λ_kv_l^Tv_k
+\]
+and since $λ_l≠λ_k$, we have
+\[
+v_l^Tv_k=0
+\]
+Thus $v_1,v_2,v_3$ is an orthogonal basis.
+Replace $v_i$ by $v_i\over v_i^Tv_i$ [no conjugate, not normalize] and obtain an orthogonal basis such that $v_i^Tv_i=1$.
+If $v_i^Tv_i=0$ then $v_i^Tv_{1,2,3}=0$, then $v_i^Tw=0∀w∈ℂ^3$ contradicting $v_i^T\bar{v_i}≠0$.
+If $R$ is the change of basis matrix, $R^TB'R=\operatorname{diag}(λ_1,λ_2,λ_3)$ and $R^TR = I$. Putting $P=QR$ we get the result.
+
+(ii) Since
+\[v^T Av=(P^{-1}v)^T(P^TAP)(P^{-1}v)=(P^{-1}v)^TI(P^{-1}v)\]
+after the projective transformation $[v]↦[P^{-1}v]$, the equation is $x^2+y^2+z^2=0$.
+Since
+\[v^T Bv=(P^{-1}v)^T(P^TBP)(P^{-1}v)=(P^{-1}v)^T\operatorname{diag}(λ_1,λ_2,λ_3)(P^{-1}v)\]
+after the projective transformation $[v]↦[P^{-1}v]$, the equation is $λ x^2+μ y^2+ν z^2=0$.
+
+(iii) the equations are projective lines in $x^2,y^2,z^2$, so they intersect in a unique point
+\[[x^2,y^2,z^2]=[μ-ν,ν-λ,λ-μ]\]
+so the conics intersect in four distinct points $[x,y,z]=[\sqrt{μ-ν}, ± \sqrt{ν-λ}, ± \sqrt{λ-μ}]$.
+
+Classify conics $C⊆CP^2$ up to projective transformations
+nonsingular$⇒x^2+y^2+z^2=0$
+Classify pairs of conics $C,D$ up to projective transformations?
+<u>Question suggests</u> ∃projective transformation such that $C:x^2+y^2+z^2=0,D:λx^2+μy^2+νz^2=0$. If $λ,μ,ν$ are distinct, $C,D$ intersect at 4 distinct points.
+What if $λ,μ,ν$ are not distinct?
+Say $μ=ν≠λ$.
+$C,D$ tangent at two points $[0,1,±1]$.
+Two ways to conjugate matrices $A↦P^TAP,A↦P^{-1}AP$.
+Changing $C,D$ by projective transformation corresponds to $(A,B)↦(P^TAP,P^TBP)$. $P$ invertible.
+Then $A^{-1}↦P^{-1}A(P^T)^{-1}$.
+So $\underbrace{A^{-1}B}_{\text{no longer symmetric}}↦P^{-1}A^{-1}(P^T)^{-1}P^TBP=P^{-1}(A^{-1}B)P$
+
+Fact: matrices up to conjugation are classified by Jordan canonical form.
+\begin{pmatrix}
+λ\\&μ\\&&ν
+\end{pmatrix}
+\begin{pmatrix}
+λ\\&μ\\&&μ
+\end{pmatrix}
+\begin{pmatrix}
+λ\\&μ&1\\&&μ
+\end{pmatrix}
+\begin{pmatrix}
+λ\\&λ\\&&λ
+\end{pmatrix}
+Case: three intersection(1 tangent) correspond to $A^{-1}B$ conjugate to $\begin{pmatrix}λ\\&μ&1\\&&μ\end{pmatrix}$
+$A,B$ can't be mapped to diagonal matrices</div>

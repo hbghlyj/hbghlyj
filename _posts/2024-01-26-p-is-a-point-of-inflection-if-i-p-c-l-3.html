@@ -1,0 +1,24 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Proposition 3.15. A nonsingular points $p$ in a curve $C$ in $ℂ ℙ^2$ is a point of inflection if $I_p(C, L) ⩾ 3$, where $L$ is the tangent line to $C$ at $p$.
+
+Proof. After a projective transformation can take $P=[0,0,1]$ and $L=\{x=0\}$. Then
+\[
+P(0,0,1)=P_y(0,0,1)=P_z(0,0,1)=0 \text {, and } P_x(0,0,1) ≠ 0
+\]
+as $P$ is nonsingular. So by Lemma 3.14
+\[
+H_p(0,0,1)=(d-1)^2 \det\left(\begin{array}{ccc}
+P_{x x}(0,0,1) & P_{x y}(0,0,1) & P_x(0,0,1) \\
+P_{y x}(0,0,1) & P_{y y}(0,0,1) & 0 \\
+P_x(0,0,1) & 0 & 0
+\end{array}\right)
+=-(d-1)^2P_x(0,0,1)^2 P_{y y}(0,0,1) .
+\]
+Thus $p$ is a point of inflection if $P_{y y}(0,0,1)=0$.
+But $I_P(C, L)$ is the largest power of $(y-0 z)$ dividing $R_{P(x, y, z), x}=P(0, y, z)$
+As $P(0,0,1)=P_y(0,0,1)=0$, $y^2$ divide $P(0, y, z)$, and $y^3$ divides $P(0, y, z)$ if $P_{yy}(0,0,1)=0$.
+Here $I_p(C, L) ⩾ 2$, and $I_p(C, L) ⩾ 3$ if $p$ is a point of inflection. ∎</div>

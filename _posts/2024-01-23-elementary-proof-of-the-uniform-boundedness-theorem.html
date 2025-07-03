@@ -1,0 +1,47 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://arxiv.org/pdf/1005.1585.pdf">Arxiv: Alan D. Sokal</a>
+<strong>Uniform boundedness theorem.</strong>
+$X$ a Banach space
+$Y$ a normed linear space
+$ℱ$ a family of bounded linear operators from $X$ to $Y$.
+If $ℱ$ is pointwise bounded (i.e., $\sup_{T ∈ ℱ} \|Tx\| < ∞$ for all $x ∈ X$),
+then $ℱ$ is norm-bounded (i.e., $\sup_{T ∈ ℱ} \|T\| < ∞$).
+
+<strong>Lemma.</strong>   Let $T$ be a bounded linear operator from a normed linear space $X$ to a normed linear space $Y$.
+Then for any $x ∈ X$ and $r > 0$, we have
+\[
+   \sup\limits_{x' ∈ B(x,r)} \| Tx' \| ≥ \|T\| r  ,
+\]
+where $B(x,r) = \{x' ∈ X \colon\: \|x'-x\| < r \}$.
+<em>Proof.</em> For $ξ ∈ X$ we have
+\[
+   \max\{ \| T(x+ξ) \| , \| T(x-ξ) \| \}
+   ≥
+   \frac12 [ \| T(x+ξ) \| + \| T(x-ξ) \| ]
+   ≥
+   \| T ξ \|  ,
+\]
+where the second $≥$ uses the triangle inequality in the form $\| α-β \| ≤ \|α\| + \|β\|$.
+Now take the supremum over $ξ ∈ B(0,r)$.
+∎
+
+<strong>Proof of the uniform boundedness theorem.</strong>
+Suppose $ℱ$ is not norm-bounded, i.e. $\sup_{T ∈ ℱ} \|T\| = ∞$,
+and choose $(T_n)_{n=1}^∞$ in $ℱ$ such that $\|T_n\| ≥ 4^n$.
+Then set $x_0 = 0$, and for $n ≥ 1$ use the lemma to
+choose inductively $x_n ∈ X$
+such that $\| x_n - x_{n-1} \| ≤ 3^{-n}$
+and $\| T_n x_n \| ≥ \frac{2}{3} 3^{-n} \| T_n \|$.
+The sequence $(x_n)$ is Cauchy, hence convergent to some $x ∈ X$;
+and it is easy to see that
+$\| x-x_n \| ≤\sum_{i=n+1}^{∞} 3^{-i}=\frac{1}{2} 3^{-n}$ and hence $\|T_nx-T_nx_n\|≤\frac{1}{2} 3^{-n}$.
+By triangle inequality
+\[\| T_n x \| ≥\|T_nx_n\|-\|T_nx-T_nx_n\|≥\frac{1}{6} 3^{-n} \| T_n \| ≥ \frac{1}{6} (4/3)^n
+ → ∞
+\]
+so ℱ is not pointwise bounded.
+∎</div>

@@ -1,0 +1,21 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$σ_{ap}(T) ⊇ ∂σ(T)$, where $∂σ(T)$ is the boundary of $σ(T)$ in the topology of ℂ.
+<a href="https://dec41.user.srcf.net/notes/II_M/linear_analysis.pdf#page=67">part II linear analysis, page 67</a>
+<a href="https://www2.math.upenn.edu/~qze/notes/hilbert.pdf#page=3">theorem 2.2</a>
+Proof. Let $λ ∈ ∂ σ(T)$. Then there is a sequence $λ_n ∉ σ(T)$ converging to $λ$. It follows from Corollary 5.2(iii) of the course that
+\[
+\left\|\left(λ_n I-T\right)^{-1}\right\| → ∞   \text { as }   n → ∞ .
+\]
+Thus, there is a sequence $\left(x_n\right)$ of unit vectors such that
+\[
+\left\|\left(λ_n I-T\right)^{-1} x_n\right\| → ∞   \text { as }   n → ∞ .
+\]
+Set
+\[
+y_n=\frac{\left(λ_n I-T\right)^{-1} x_n}{\left\|\left(λ_n I-T\right)^{-1} x_n\right\|} .
+\]
+It is easy to check that $\left(y_n\right)$ is an approximate eigenvector for $λ$.</div>

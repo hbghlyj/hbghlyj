@@ -1,0 +1,43 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">(a) Let $X$ be a topological space with base-point $x_{0}$.
+Define the elements of its fundamental group $\pi_{1}\left(X, x_{0}\right)$. How does $\pi_{1}\left(X, x_{0}\right)$ depend on the choice of base-point?
+What is the fundamental group of the circle $S^{1}$? For each element give an explicit representative $\alpha:[0,1] \rightarrow S^{1}$.
+Given a continuous map of spaces $f: X \rightarrow Y$ define the induced map on fundamental groups.
+Explain what it means to say that the fundamental group is a homotopy invariant.
+<strong>Answers:</strong>
+Elements are based homotopy classes of paths $\alpha: I \rightarrow X$ that start and end at $x_{0}$. If $x_{0}^{\prime}$ is another base point then the two fundamental groups are isomorphic if $x_{0}$ and $x_{0}^{\prime}$ are in the same path component; otherwise they are unrelated.
+$\pi_{1}(S^{1})=\mathbb{Z}$; $n$ is a represented by $\alpha(t)=e^{2 n \pi i t}$.
+$f_{*}([\alpha]):=[f \circ \alpha]$. This assumes that if $x_{0}$ is the basepoint for $X$ then $f(x_{0})$ is the basepoint for $Y$.
+If $X$ and $Y$ are homotopy equivalent spaces then their fundamental groups are isomorphic.
+
+(b) State and prove the Brouwer Fixed Point Theorem for continuous maps
+$$
+h: D^{2} \rightarrow D^{2}
+$$
+<strong>Answers:</strong>
+[bookwork]
+
+(c) Let $p(z)=z^{n}+a_{1} z^{n-1}+\cdots+a_{n}$ be a non-constant polynomial with coefficients in $\mathbb{C}$ and assume (to get a contradiction) that $p(z)$ has no roots in $\mathbb{C}$.
+(i) For $r \geqslant 0$ let
+$$
+f_{r}(s)=\frac{p(r \exp 2 \pi i s) / p(r)}{|p(r \exp 2 \pi i s) / p(r)|}
+$$
+Explain carefully how each $f_{r}$ defines a based map $S^{1} \rightarrow S^{1}$ which is homotopic to the constant map.
+(ii) Show that for $r$ large enough,
+$$
+p_{t}(z)=z^{n}+t(a_{1} z^{n-1}+\cdots+a_{n})
+$$
+has no roots on the circle $|z|=r$ for $0 \leqslant t \leqslant 1$, and hence $p$ may be replaced by $p_{t}$ in the formula for $f_{r}$.
+Deduce the Fundamental Theorem of Algebra.
+<strong>Answers:</strong>
+(i) $f_{r}$ is well-defined as $p$ has no roots. $f_{r}(1)=1$ and hence it is a based map. $f_{r}(s)$ is continuous both in $r$ and in $s$. Hence all the $f_{r}$ are homotopic to each other. $f_{0}$ is independent of $s$ and hence a constant map.
+(ii) For $r=|z|$ large enough and $t$ bounded
+$$
+\left|p_{t}(z)\right|=\left|z^{n}+t\left(a_{1} z^{n-1}+\cdots+a_{n}\right)\right| \geqslant\left|z^{n}\right|-\left|t\left(a_{1} z^{n-1}+\cdots+a_{n}\right)\right|>0
+$$
+and hence has no roots. Replacing $p_{t}$ for $p$, we see that each $p_{t}$ is homotopic to a constant map. But varying $t$ from 0 to 1 we also see that $p_{t}$ is homotopic to $z^{n}$.
+The Fundamental Theorem of Algebra now follows as $p=p_{1}$ is homotopic to $z^{n}$ and to a constant map. But $z^{n}$ represents $n$ in $\pi_{1}\left(S^{1}\right)$ while the constant map represents 0. Since $p$ is non-constant, $n \neq 0$ and this leads to a contradiction. Hence, our assumption was wrong and $p$ has a root.</div>

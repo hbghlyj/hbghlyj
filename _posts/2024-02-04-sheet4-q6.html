@@ -1,0 +1,19 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $C$ be a nonsingular quartic curve in $ℂℙ^2$.
+(i) Let $HD(C)$ be the vector space of <a href="https://math.stackexchange.com/questions/820927">holomorphic differentials</a> on $C$. Show using question 5 that there is an isomorphism $HD(C) ≅ ℂ^3=⟨x, y, z⟩$, such that if $0 ≠ ω$ is a holomorphic differential corresponding to $a x+b y+c z$ then the canonical divisor $(ω)$ is the hyperplane divisor corresponding to the line $a x+b y+c z=0$.
+<strong>Solution.</strong> By Riemann-Roch $\dim HD(C)=ℓ(κ)=g=3$.
+From the second example of <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94670/mod_resource/content/6/Hitchin.pdf#page=63">theorem 30</a> $κ ∼ H$ and so we can obtain a holomorphic differential by writing
+\[\frac{Q(x, y, 1) d x}{\partial P / \partial y(x, y, 1)}\]
+for a homogeneous polynomial $Q(x, y, z)$ of degree 1 (hyperplane).
+The dimension of the space of homogeneous polynomials $Q(x,y,z)$ of degree 1 is 3, which equals $\dim HD(C)$, therefore every holomorphic differential is obtained from a polynomial this way.
+
+(ii) Let $p,q∈C$ be distinct points. Show that the vector subspace of $ω∈HD(C)$ vanishing at $p,q$ has dimension 1. Deduce that $ℓ(κ-p-q)=1$ for a canonical divisor $κ$.
+<strong>Solution.</strong> The vector subspace of $HD(C)$ vanishing at $p,q$ correspond to the line through $p,q$, so it has dimension 1.
+$f∈\mathcal{L}(κ-p-q)$ if any only if $(fω)=(f)+κ$ vanishes at $p,q$, if any only if $fω$ is in the vector subspace of $HD(C)$ vanishing at $p,q$, so $ℓ(κ-p-q)=1$.
+
+(iii) Show that $ℓ(p+q)=1$ for all distinct $p, q ∈ C$.
+<strong>Solution.</strong> By Riemann-Roch, $ℓ(p+q)-ℓ(κ-p-q)=\deg(p+q)+1-g$, by (ii) and $\deg(p+q)=2,g=3$, we get $ℓ(p+q)=1$.</div>

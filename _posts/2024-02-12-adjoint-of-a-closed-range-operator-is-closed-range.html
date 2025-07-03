@@ -1,0 +1,30 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Theorem <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/10/2024-04-17.pdf#thm.3.11">3.11</a>.
+<a href="https://math.stackexchange.com/a/692796">MSE</a>
+we prove that if $W := T^*Y$ is closed in $X$ then also $TX$ is closed in $Y$, i.e. $T X = \overline{T X}$.
+For this we set $Z = T X$ and need to show that $Z ⊂ T X$ as the reverse inclusion is trivially satisfied. We will prove this by showing that the identity map $I_Z$ can be obtained as a composition of the map $T$ with a suitable map from $Z$ to $W ⊂ X$ which we construct as follows:
+As $T$ maps $X$ into $Z$ we can view it instead as a map into the Banach space $Z$ and we call the resulting map $S$, i.e. $S ∈ B(X, Z)$ is simply given by $Sx=Tx$ for all $x ∈ X$.
+The adjoint $S^*$ of $S$ is an operator from $Z$ to $X$.
+$Z = \overline{\operatorname{Im}S} = (\operatorname{Ker}S^*)^⊥$, so
+$\operatorname{Ker}S^*=\{0\}$, i.e. $S^*$ is injective.
+$$X\overset{S}\twoheadrightarrow Z \hookrightarrow Y\\
+Y\xrightarrow{T^*}W\hookrightarrow X\\Y\overset{P}\twoheadrightarrow Z\overset{V}\simeq W\hookrightarrow X$$
+We claim that $\operatorname{Im}S^* = W$. To this end we let $P$ be the orthogonal projection from $Y$ onto $Z$ and compute, for $x ∈ X$ and $y ∈ Y$,
+$\langle T x, y\rangle_Y=\langle S x, P y\rangle_Y=\left\langle x, S^* P y\right\rangle_X$.
+This shows that $T^*=S^* \circ P$, and so $\operatorname{Im} S^*=W$, as claimed.
+So, $S^*$ can be regarded as a bounded bijective linear operator between $Z$ and $W$. To make the notation clearer, we rename it as $V \in \mathscr{B}(Z, W), V z=S^* z$ for all $z \in Z$. As both $Z$ and $W$ are Banach we can apply the inverse mapping theorem to deduce that $V$ is invertible, which in turn implies that also $V^*$ is invertible.
+
+We finally claim that
+\[
+I_Z=T \circ\left(V^*\right)^{-1},
+\]
+which then immediately implies that $Z \subset T X$ and hence that indeed $T X=Z=\overline{T X}$.
+To show this, i.e. that $z=T\left(\left(V^*\right)^{-1} z\right)$ for any given $z \in Z$, we write for short $w=\left(V^*\right)^{-1} z$, note that both $z$ and $T w$ are elements of $Z$ and that for any $y \in Z$ :
+\[
+\langle T w, y\rangle_Y=\langle S w, y\rangle_Y=\left\langle w, S^* y\right\rangle_X=\langle w, V y\rangle_X=\left\langle V^* w, y\right\rangle_Y=\langle z, y\rangle_Y .
+\]
+Since this holds for all $y \in Z$, so in particular for $y=T w-z$, we deduce that $T w=z$ and so $T \circ\left(V^*\right)^{-1}=I_Z$ as desired.</div>

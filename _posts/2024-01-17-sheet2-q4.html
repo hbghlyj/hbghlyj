@@ -1,0 +1,28 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $f$ be a tempered $\mathrm{L}^p$ function on $ℝ^n$ for some $p ∈[1, ∞]$. Define for each $j ∈ ℕ$,
+\[
+f_j(ξ)=∫_{B_j(0)} f(x) \mathrm{e}^{-\mathrm{i} ξ ⋅ x} \mathrm{~d} x
+\]
+where $B_j(0)$ is the open ball in $ℝ^n$ with centre 0 and radius $j$. Explain why $f_j ∈ \mathrm{C}_0(ℝ^n)$ and so that it in particular can be considered as a tempered distribution on $ℝ^n$. Prove that $f_j → \hat{f}$ in $\mathscr{S}'(ℝ^n)$ as $j →+∞$.
+Hence find the limit of
+\[
+∫_{-j}^j x^k \mathrm{e}^{-\mathrm{i} ξ x} \mathrm{~d} x
+\]
+as $j →+∞$ for each $k ∈ ℕ_0$.
+<strong>Solution.</strong> Since a tempered $L^p$ function is in particular in $L^p_\text{loc}$ (since $L^p_\text{loc}⊆L^1_\text{loc}$) so in $L^1_\text{loc}$.
+By Riemann-Lebesgue lemma $f_j=\widehat{f1_{B_j(0)}} ∈ C_0⊆𝒮'$
+Next, claim: $f1_{B_j(0)}→f$ in $𝒮'$ as $j→∞$.
+<em>Proof.</em> Note that for $ϕ∈𝒮$: $f1_{B_j(0)}ϕ-fϕ=f1_{ℝ^n∖B_j(0)}$
+By result from lectures $∀k∈ℕ_0,∀q∈[1,∞],∃c=c(k,q,n)$ such that $‖(1+|⋅|^2)^{k/2}ψ‖_q≤c\bar{S}_{k+n+1,0}(ψ),∀ψ∈𝒮$.
+We use this bound with $k=m+1$ and $q=\frac{p}{p-1}$.
+\[\int_{ℝ^n}|f1_{ℝ^n∖B_j(0)}ϕ|dx=\int_{ℝ^n}\frac{|f|}{(1+|⋅|^2)^{m/2}}\frac{1_{ℝ^n∖B_j(0)}}{(1+|⋅|^2)^{1/2}}(1+|⋅|^2)^{(m+1)/2}|ϕ|dx\\
+≤⋯→0∎\]
+By $𝒮'$ continuity of $ℱ$, $f_j → \hat{f}$ in $\mathscr{S}'(ℝ^n)$ as $j →+∞$.
+Hence
+\[
+\lim_{j→∞}∫_{-j}^j x^k \mathrm{e}^{-\mathrm{i} ξ x} \mathrm{~d} x=\widehat{x^k}=2π\mathrm{i}^kδ^{(k)}(ξ)
+\]</div>

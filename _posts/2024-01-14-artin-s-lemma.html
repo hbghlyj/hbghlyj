@@ -1,0 +1,21 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://people.math.harvard.edu/~elkies/M250.04/artinlemma.html">Jacobson</a>
+Let $G$ be a finite group of automorphisms of a field $E$, and $F=E^{G}$. Then $[E:F]$ is finite and no larger than $|G|$.
+
+<em>Proof:</em> Let $n = |G|$, and let $m$ be any integer greater than $n$. We shall show that any $m$ elements $x_{1}, x_{2}, \dots, x_{m}$ of $E$ are linearly dependent over $F$. This will prove that $[E:F]$ cannot exceed $n$.
+
+Let $V$ be the $E$-vector space of solutions $(a_{1}, a_{2}, \dots, a_{m})$ of the $n$ simultaneous linear equations
+\[e(x_{1})a_{1} + e(x_{2})a_{2} + \dots + e(x_{m})a_{m} = 0\]
+for each element $e$ of $G$. Since $m > n$, this space $V$ has positive dimension. We shall show that it contains a nonzero vector all of whose coordinates are in $F$. The $e=1$ equation will then yield the $F$-linear dependence $a_{1}x_{1} + a_{2}x_{2} + \dots + a_{m}x_{m} = 0$ on the $x_{j}$.
+
+In fact, we shall show that a minimal-weight nonzero vector in $V$ is necessarily proportional to one with all coordinates in $F$. Here the <u>weight</u> of a vector $(a_{1}, a_{2}, \dots, a_{m})$ is its number of nonzero coordinates, $\#\{j: a_j\ne0\}$. To do this, we shall use the fact that if $(a_{1}, a_{2}, \dots, a_{m})$ is in $V$, then so is $(e(a_{1}), e(a_{2}), \dots, e(a_{m}))$ for each $e$ in $G$. In fact, we show that in every nonzero $E$-vector subspace of $E^{m}$ that is invariant under $G$, a minimal-weight vector is proportional to one in $F^{m}$.
+
+Suppose $b = (b_{1}, b_{2}, \dots, b_{m})$ is a nonzero vector of minimal weight. Then some $b_{j}$ is nonzero. Without loss of generality, we may assume that $b_{j} = 1$ (replace $b$ by $b/b_{j}$). For each $e$ in $G$, the vector $b' = b - e(b)$ then has weight strictly less than the weight of $b$, because $b'$ has zero coordinates wherever $b$ does, and its $j$-th coordinate vanishes where that of $b$ does not. Hence $b'$ must be the zero vector. Thus $b_{k} = e(b_{k})$ for each $k$ in $[1, m]$ and each $e$ in $G$. Therefore, each $b_{k}$ is in $E^{G} = F$, and we are done.
+<strong>QED</strong>
+
+Once we find that in fact $[E:F] = |G|$, we also obtain “independence of characters”: the elements of $G$ are $E$-linearly independent as functions from $E$ to $E$. To see this, suppose on the contrary that we had elements $c_{e}$ of $E$, not all zero, such that the sum of $c_{e}e$ over $e$ in $G$ was the zero function on $E$. Again let $F = E^{G}$, and set $n = [E:F] = |G|$. Let $(x_{1}, x_{2}, \dots, x_{m})$ be a basis for $E$ over $F$. Consider the square matrix $M$ over $E$ with $n$ rows $[e(x_{1}), e(x_{2}), \dots, e(x_{n})]$ (one row for each element $e$ of $G$). Then $cM = 0$ where $c$ is the row vector $(c_{e})$. Hence $M$ is degenerate, and thus has a nontrivial column kernel. But then Artin gives us a nonzero element $(a_{1}, \dots, a_{n})$ of the column kernel all of whose entries are in $F$. Taking $e=1$, we again obtain an $F$-linear dependence on our basis vectors $x_{i}$, reaching the desired contradiction.
+<strong>QED</strong></div>

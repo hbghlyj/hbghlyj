@@ -1,0 +1,20 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $V$ be a vector space of dim $n+1$.
+Let $p_0,\dots,p_{n+1}$ be $n+2$ points in $P(V)$, and let $v_0,v_1,\dots,v_{n+1}$ be the representative vectors in $V$ for $p_0,\dots,p_{n+1}$ respectively.
+<u>Proposition.</u> We say that $p_0,\dots,p_{n+1}$ are in general position if
+(i) no $n+1$ of $v_0,v_1,\dots,v_{n+1}$ are linearly dependent. [There are $n+2$ algebraic conditions.]
+or equivalently,
+(ii) no $n+1$ of $p_0,p_1,\dots,p_{n+1}$ lie in a hyperplane. [A hyperplane is a projective linear subspace $P(U)\subset P(V)$ with $\dim P(U)=\dim P(V)-1$.]
+<u>Examples.</u> $n=1$, $P(V)$ projective line.
+3 points in $P(V)$ are in general position iff they are <u>distinct</u>.
+$n=2$, $P(V)$ projective plane.
+4 points in $P(V)$ are in general position iff no three of them are <u>collinear</u>.
+<strong>Theorem 1.1.</strong> Let $V,W$ be vector spaces of dimension $n+1$, and let $p_0,p_1,\dots,p_{n+1},q_0,q_1,\dots,q_{n+1}$ be sets of points in general position in $P(V)$ and $P(W)$ respectively. Then there is a unique projective transformation $\tau:P(V)\to P(W)$ with $\tau(p_i)=q_i,i=0,1,\dots,n+1$.
+<em>Remark</em>. Points in general position are like a basis of a vector space.
+If $V,W$ are vector spaces of dim $n$, and $v_1,\dots,v_n,w_1,\dots,w_n$ are bases, there is a unique linear isomorphism $T:V\to W$ with $T(u_i)=w_i,i=1,\dots,n$.
+<u>Dimension count:</u> sets of points $(p_0,\dots,p_{n+1})\subset P(V)^{n+2}$ in general position has dimension $\dim V\cdot(n+2)=n(n+2)$.
+Group of projective linear transformations of $ℂP^n$ is $PGL(n,ℂ)=GL(n+1,ℂ)/ℂ^*$, so $\dim PGL(n+1,ℂ)=\dim GL(n+1,ℂ)-1=(n+1)^2-1=n(n+2)$.</div>

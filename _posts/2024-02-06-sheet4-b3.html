@@ -1,0 +1,42 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">% https://courses.maths.ox.ac.uk/pluginfile.php/79672/mod_resource/content/0/Sheet4SolGuide.pdf Q6
+Let $X$ be a complex Hilbert space and $S$ and $T$ be two self-adjoint bounded linear operators on $X$.
+(a) Let $λ ∉ σ(T)$. Use the fact that $σ\left((T-λ I)^{-1}\right)=(σ(T)-λ)^{-1}$ (a form of spectral mapping theorem) and Gelfand's formula to show that
+\[
+\left\|(T-λ I)^{-1}\right\|=\frac{1}{\operatorname{dist}(λ, σ(T))} .
+\]
+Deduce that $I+(T-λ I)^{-1}(S-T)$ is invertible if
+\[
+\|S-T\|<\operatorname{dist}(λ, σ(T))
+\]
+Hence, show under this latter assumption that $λ ∉ σ(S)$.
+<strong>Solution.</strong>
+Since $(T-λI)^{-1}$ is normal, we have that
+\begin{align*}
+\left\|(T-λ I)^{-1}\right\| & =r_σ\left((T-λ I)^{-1}\right)&\text{by Q2}\\&=\sup_{ζ ∈ σ\left((T-λ I)^{-1}\right)}|ζ| \\
+& =\sup_{ζ ∈(σ(T)-λ)^{-1}}|ζ|&\text{spectral mapping theorem}\\&=\left(\inf _{ζ ∈ σ(T)-λ}|ζ|\right)^{-1} \\
+& =\frac{1}{\operatorname{dist}(λ, σ(T))} .
+\end{align*}
+Hence, if $\|S-T\|<\operatorname{dist}(λ, σ(T))$, then $K:=(T-λ I)^{-1}(S-T)$ satisfies $\|K\|<1$ and so $I+K$ is invertible. This implies that $(T-λ I)(I+K)=S-λ I$ is invertible and so $λ ∉ σ(S)$.
+
+(b) Use (a) to show that
+\[
+\|S-T\| ⩾ \operatorname{dist}_H(σ(S), σ(T))
+\]
+where the Hausdorff distance $\operatorname{dist}_H(A, B)$ between two closed subsets $A$ and $B$ of $ℂ$ is defined by
+\[
+\operatorname{dist}_H(A, B)=\max \left(\sup_{a ∈ A} \min_{b ∈ B}|a-b|, \sup_{b ∈ B} \min_{a ∈ A}|a-b|\right)
+\]
+<strong>Solution.</strong> Suppose by contradiction that the conclusion fails. We assume without loss of generality that
+\[
+\|S-T\|<\sup_{a ∈ σ(S)} \min_{b ∈ σ(T)}|a-b|=\sup_{a ∈ σ(S)} \operatorname{dist}(a, σ(T)) .
+\]
+Then, there exists $λ ∈ σ(S)$ such that
+\[
+\|S-T\|<\operatorname{dist}(λ, σ(T)) .
+\]
+This implies that $\operatorname{dist}(λ, σ(T))>0$ and so $λ ∉ σ(T)$. By (a), this implies that $λ ∉ σ(S)$, contradiction.</div>

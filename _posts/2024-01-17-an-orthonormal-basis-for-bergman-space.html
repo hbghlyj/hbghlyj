@@ -1,0 +1,15 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">an orthonormal basis for Bergman space
+$f_n(z) = \sqrt{\frac{n+1}{\pi}} z^n$
+To prove $f_n$ is an orthonormal sequence:
+$dxdy=rdrdθ$
+$\int_{|z|≤1}|f_n|^2dxdy=\int_0^{2\pi}\int_0^1\frac{n+1}{\pi} r^{2n}rdrdθ=1$
+
+For $n≠m$,
+$\int_{|z|≤1}f_n\overline{f_m}dxdy=\sqrt{\frac{n+1}{\pi}\frac{m+1}{\pi}}\int_0^{2\pi}\int_0^1(re^{iθ})^n(re^{-iθ})^mrdrdθ\\=\sqrt{\frac{n+1}{\pi}\frac{m+1}{\pi}}(\int_0^{2\pi}e^{(n-m)iθ}dθ)(\int_0^1r^{n+m+1}dr)=0$
+
+Proof it is spanning: ??</div>

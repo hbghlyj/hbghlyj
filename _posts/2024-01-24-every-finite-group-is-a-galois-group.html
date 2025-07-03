@@ -1,0 +1,29 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://alexjbest.github.io/blog/maths/2017/05/02/every-group-is-a-galois-group.html">Every finite group is a Galois group</a> is pretty well known (and in fact this post is basically just a transcription of the one in Lang’s Algebra)
+
+The starting point here is the following theorem of Artin, telling us that we can carve out Galois extensions with any group of field automorphisms we like.
+
+<strong>Theorem</strong> (Artin)
+Let \(K\) be a field and \(G\) a finite group of field automorphisms of \(K\), then  \(K\) is a Galois extension of the fixed field \(K^G\)  with Galois group \(G\), moreover \([K:K^G] = \#G\).
+<strong>Proof</strong>
+Pick any \(\alpha \in K\) and consider a maximal subset \(\{\sigma_1, \ldots, \sigma_n\}\subseteq G\) for which all \(\sigma_i \alpha\) are distinct. Now any \(\tau \in G\) must permute the \(\sigma_i \alpha\) as it is an automorphism and if some \(\tau\sigma_i \alpha \ne \sigma_j\alpha\) for all \(j\) then we could extend our set of \(\sigma\)s by adding this \(\tau\sigma_i\).
+So \(\alpha\) is a root of
+\begin{equation*}
+f_\alpha(X) = \prod_{i=1}^n (X- \sigma_i\alpha)\text{,}
+\end{equation*}
+note that \(f_\alpha\) is fixed by \(\tau\) by the above. So all the coefficients of \(f_\alpha\) are in \(K^G\). By construction \(f_\alpha\) is a separable polynomial as the \(\sigma_i\alpha\) were chosen distinct, note that \(f_\alpha\) also splits into linear factors in \(K\).
+The above was for arbitrary \(\alpha \in K\) so we have just shown directly that \(K\) is a separable and normal extension of \(K^G\), which is the definition of Galois extension. As every element of \(K\) is a root of a polynomial on \(K^G\) of degree \(n\), the extension degree \([K:K^G] ≤ n\). But we also have a group of \(n\) automorphisms of \(K\) that fix \(K^G\) so \([K : K^G] \ge n\) and hence \([K : K^G] = n\).
+
+So now with this in hand we just have to realise our group as a group of field automorphisms of some field.
+
+<strong>Corollary</strong>
+Every finite group is a Galois group.
+<strong>Proof</strong>
+Let \(k\) be an arbitrary field, \(G\) any finite group. Now take \(K = k(\overline g:g\in G)\) (i.e. adjoin all elements of \(G\) to \(k\) as indeterminates, denoted by \(\overline g\)). Now we have a natural action of \(G\) on \(K\) defined via \(h\cdot \overline g= \overline {hg}\) and extending \(k\)-linearly. Now \(K\) and \(G\) satisfy the statement of Artin's theorem and hence \(K/K^G\) is a Galois extension with Galois group \(G\).
+
+It is interesting to note that we could have started with any field we liked and built a Galois extension with both fields extensions of the base we picked.
+They won’t necessarily share a huge amount with it, however it is interesting to note that the characteristic will have to be the same and so we can do this for whatever our favourite characteristic is.</div>

@@ -1,0 +1,42 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://courses.maths.ox.ac.uk/pluginfile.php/103742/mod_resource/content/1/Algebraic-NT-2024.pdf#theorem.12.1">Proposition 12.1.</a> There are no integer solutions to $y^2+37=x^3$
+Proof. Let $K=\mathbf{Q}(\sqrt{-37})$. It turns out that $h_K=2$; this is a question on Sheet 4. In particular, $\mathcal{O}_K$ does not have unique factorisation.
+
+The argument closely parallels the proof of Theorem 3.5, but we <em>cannot</em> use <u>unique factorsation</u>.
+
+The equation factors in $\mathcal{O}_K$ as $(y+\sqrt{-37})(y-\sqrt{-37})=x^3$. We do not have unique factorisation into elements of $\mathcal{O}_K$, only into ideals, so we think of this as an equation
+\[\tag{12.1}
+(y+\sqrt{-37})(y-\sqrt{-37})=(x)^3
+\]
+of ideals.
+We are going to prove that the two ideals on the left are coprime. Suppose some prime ideal $\mathfrak{p}$ divides both terms on the LHS. Then $y+\sqrt{-37}, y-\sqrt{-37} \in \mathfrak{p}$, and so, taking the difference, $2 \sqrt{-37} \in \mathfrak{p}$. Therefore $\mathfrak{p} \mid(2 \sqrt{-37})$. (Here, of course, we are using the fact that containment and division of ideals are the same thing, Theorem 5.2.)
+Taking norms, we have
+\[\tag{12.2}
+N(\mathfrak{p}) \mid N(2 \sqrt{-37})=2^2 \cdot 37 .
+\]
+Also, since $\mathfrak{p} \mid(y+\sqrt{-37})$, we have $\mathfrak{p} \mid(x)^3$ and so
+\[\tag{12.3}
+N(\mathfrak{p}) \mid N\left((x)^3\right)=x^6 .
+\]
+We claim that neither 2 nor 37 divides $x$.
+If $2 \mid x$ then $8 \mid x^3$, so $y^2=x^3-37 \equiv 3\pmod 4$, a contradiction.
+If $37 \mid x$ then $37 \mid y$, and so $37^2 \mid y^2-x^3=37$. This is also a contradiction.
+From these facts and $(12.2),(12.3)$ we have $N(\mathfrak{p})=1$, which is impossible; therefore we are forced to conclude that $\mathfrak{p}$ does not exist, so the ideals $(y+\sqrt{-37}),(y-\sqrt{-37})$ are indeed coprime.
+
+Now we return to (12.1). By unique factorisation of ideals, both $(y+\sqrt{-37})$ and $(y-\sqrt{-37})$ are cubes of ideals. Suppose that $(y+\sqrt{-37})=\mathfrak{a}^3$. In particular, $[\mathfrak{a}]^3$ is trivial in the class group. However, we know that $h_K=2$, that is to say the class group has order 2. Therefore $[\mathfrak{a}]$ must itself be trivial, or in other words $\mathfrak{a}$ is a principal ideal. Thus we have an equation
+\[
+(y+\sqrt{-37})=(a+b \sqrt{-37})^3
+\]
+for some $a, b \in \mathbf{Z}$. This means that
+\[
+y+\sqrt{-37}=u(a+b \sqrt{-37})^3
+\]
+in $\mathcal{O}_K$, where $u$ is a unit. The only units are $\pm 1$; by replacing $a, b$ with $-a,-b$ if necessary, we may in fact assume that $u=1$. Expanding out and comparing coefficients of $\sqrt{-37}$ (which, of course, is irrational) we obtain
+\[
+y=a\left(a^2-111 b^2\right), \quad b\left(3 a^2-37 b^2\right)=1 .
+\]
+The second of these implies that $b= \pm 1$ and hence that $3 a^2-37= \pm 1$, which is obviously impossible. This concludes the proof.</div>

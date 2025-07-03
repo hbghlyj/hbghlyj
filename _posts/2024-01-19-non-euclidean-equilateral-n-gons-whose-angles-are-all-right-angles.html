@@ -1,0 +1,9 @@
+---
+mathjax: true
+tag: geometry-of-surfaces
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://math.stackexchange.com/questions/4732157/">Do there exist (non-Euclidean) equilateral n-gons whose angles are all right angles, for n≥6?</a>
+For any $n>4$ we can get polygons with all right angles with $n$ sides in the hyperbolic plane: take a very small regular $n$-gon and gradually expand it until the <strong>angle defect</strong> gets bad/good enough.
+
+More precisely, for $r>0$ let $C_r$ be a circle in the hyperbolic plane with radius $r$ and let $P_r$ be an equally-spaced set of $n$ points on $C_r$. Let $\alpha_r$ be the interior angle at any vertex in (the polygon formed by) $P_r$. By the angle defect formula for the hyperbolic plane, we have $\lim_{r\rightarrow\infty}\alpha_r=0$ and $\lim_{r\rightarrow 0^+}\alpha_r={(n-2)\pi\over n}$, and moreover $\alpha_r$ is continuous as a function of $r$. By the intermediate value theorem, some $r_0$ has $\alpha_{r_0}={\pi\over 2}$ (note that we need ${(n-2)\pi\over n}>{\pi\over 2}$ here, which is where the assumption $n>4$ comes in).</div>

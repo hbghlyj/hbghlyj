@@ -1,0 +1,17 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://math.stackexchange.com/q/450020">Integral extensions of rings, when one of the rings is a field</a>
+<a href="https://people.brandeis.edu/~igusa/Math205bS10/Math205b_S10_52.pdf">5.2. going up</a>
+<strong>Proposition</strong>. Suppose that $A, B$ are integral domains and $B$ is an <a href="https://encyclopediaofmath.org/wiki/Integral_extension_of_a_ring">integral extension</a> of $A$. Then $B$ is a field iff $A$ is a field.
+<strong>Proof</strong>. Suppose $B$ is a field and $a \neq 0 \in A$. Then $B$ contains the inverse $a^{-1}$ of $a$, and since $B$ is an integral extension, $a^{-1}$ is a root of monic polynomial $f(x) \in A[x]$:
+\[a^{-n}+a_1 a^{1-n}+a_2 a^{2-n}+\cdots+a_n=0\]
+Multiplying by $a^{n−1}$, we get:
+\[a^{-1} + a_1 + a_2a+ \cdots+ a_na^{n−1} = 0.\]
+Solving for $a^{-1}$, we see that $a^{-1} \in A$. So, $A$ is a field.
+
+Conversely suppose that $A$ is field. Let $b \neq 0 \in B$. Then $b \in A[b]$ which is a finitely generated module. In other words, $A[b] \cong A^n$ is finite dimensional vector space over field. Multiplication by $b$ gives linear mapping:
+\[\mu_b :A[b] \cong A^n \to A^n\cong A[b].\]
+Since $B$ is an integral domain, the kernel of $\mu_b$ is $0$. This means that $\mu_b$ has rank $n$, and therefore an isomorphism of vector spaces. So, it is onto. So there is some $c \in B$ so that $\mu_b(c)=bc= 1$. So, $c=b^{-1} \in A[b] \subseteq B$ showing that $B$ is field.</div>

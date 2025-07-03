@@ -1,0 +1,24 @@
+---
+mathjax: true
+tag: topology-and-groups
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="http://web.archive.org/web/20050211023440/www.jchl.co.uk/maths/Topology.pdf">Part II Lecture Notes: Algebraic Topology</a>, James Lingard
+
+Let $X$ be a simplicial complex which is the union $A \cup B$ of two subcomplexes. Then
+$$
+\cdots \longrightarrow H_{i}(A \cap B) \longrightarrow H_{i}(A) \oplus H_{i}(B) \longrightarrow H_{i}(X) \longrightarrow H_{i-1}(A \cap B) \longrightarrow \cdots
+$$
+is a long exact sequence. What are the three homomorphisms?
+
+• The homomorphism $H_{i}(A \cap B) \rightarrow H_{i}(A) \oplus H_{i}(B)$ is the obvious pair of inclusions.
+
+• The homomorphism $H_{i}(A) \oplus H_{i}(B) \rightarrow H_{i}(X)$ is given by $(x, y) \mapsto x-y$.
+
+• The homomorphism $H_{i}(X) \rightarrow H_{i-1}(A \cap B)$ is the "boundary map" constructed as follows.
+\[\begin{CD}
+0@>>>C_i(A\cap B)@>>>C_i(A)\oplus C_i(B)@>>>C_i(X)@>>>0\\
+&@VV\partial V@VV\partial V@VV\partial V\\
+0@>>>C_{i-1}(A\cap B)@>>>C_{i-1}(A)\oplus C_i(B)@>>>C_{i-1}(X)@>>>0\\
+\end{CD}\]
+For any element of $H_{i}(X)$, take a representative cycle $z \in Z_{i}(X)$ and choose an element $d \in C_{i}(A) \oplus C_{i}(B)$ which maps to $z$. Then the equivalence class of $z$ maps to the equivalence class of the (unique) inverse image $c \in Z_{i-1}(A \cap B)$ for $\partial(d)$.</div>

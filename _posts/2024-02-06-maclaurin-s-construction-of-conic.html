@@ -1,0 +1,11 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="http://users.math.uoc.gr/~pamfilos/eGallery/problems/Maclaurin.html">Maclaurin's conic generation method</a>
+Consider all triangles $ABC$ whose sides $\{AB, BC, CA\}$ pass correspondingly through three fixed points $\{C^*, A^*, B^*\}$ and two of its vertices $\{B, C\}$ lie correspondingly on two fixed lines $A_1X, A_1Y$. Then its vertex $A$ describes a conic passing through points $A_1, B^*, C^*$. The conic also passes through the intersection points $B_1, C_1$ of line-pairs $(A_1X, A^*B^*)$ and $(A_1Y, A^*C^*)$.
+
+The proof is modeled as an exercise in projective coordinates with respect to the fixed points $\{A^*, B^*, C^*\}$ and with coordinator the fixed point $A_1$. In this system $A_1=A^*+B^*+C^*$. Line $BC$ passing through $A^*$ has the form: $y-kz=0$ (with variable $k$), and lines $A_1X, A_1Y$ correspondingly $x-ay-bz=0$, $x-a'y-b'z=0$ with fixed $(a, b)$, $(a', b')$ satisfying$$1=a+b=a'+b'\tag{*}$$
+since $A_1$ is on these lines. The coordinates of $\{B, C\}$ are correspondingly: $(ka+b, k, 1)$ and $(ka'+b', k, 1)$. Then lines $\{BC^*, CB^*\}$ obtain the form: $-kx+(ka+b)y=0$ and $-x+(ka'+b')z=0$. Eliminating $k$ from them leads to equation:$$ba'yz = (b'z-x)(ay-x)\tag{**}$$
+representing a conic passing through $B^*(0,1,0)$, $C^*(0,0,1)$, and $A_1(1,1,1)$ (use (*)) as stated. The two additional points are the intersection points of line-pairs $(x-ay-bz=0, z=0)$ and $(x-a'y-b'z=0, y=0)$ which are easily calculated to be $(a,1,0)$ and $(b',0,1)$ and satisfy equation (**).</div>

@@ -1,0 +1,18 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$\DeclareMathOperator{\tr}{tr}\DeclareMathOperator{\disc}{disc}$Suppose that $β$ is a root of $X^3+p X+q=0$, where $X^3+p X+q$ is an irreducible polynomial in $𝐙[X]$, and let $K=𝐐(β)$. Compute $\tr_{K/𝐐}(β^i)$ for $i=0,1, …, 4$. Deduce that $\disc_{K/𝐐}(1, β, β^2)=-4 p^3-27 q^2$. Hence, give an example of a cubic number field $K$ such that $𝒪_K$ has a power integral basis.
+
+$\{1,β,β^2\}$ is a 𝐐-basis of $K$
+$β^3=-q-pβ$
+$\tr_{K/𝐐}(1)=\tr\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}=3$
+$\tr_{K/𝐐}(β)=\tr\begin{pmatrix}0&1&0\\0&0&1\\-q&-p&0\end{pmatrix}=0$
+$\tr_{K/𝐐}(β^2)=\tr\begin{pmatrix}0&0&1\\-q&-p&0\\0&-q&-p\end{pmatrix}=-2p$
+$\tr_{K/𝐐}(β^3)=\tr\begin{pmatrix}-q&-p&0\\0&-q&-p\\pq&p^2&-q\end{pmatrix}=-3q$
+$\tr_{K/𝐐}(β^4)=\tr\begin{pmatrix}0&-q&-p\\pq&p^2&-q\\q^2&2pq&p^2\end{pmatrix}=2p^2$
+\begin{align*}\disc_{K/𝐐}(1, β, β^2)&=\begin{vmatrix}\tr_{K/𝐐}(1)&\tr_{K/𝐐}(β)&\tr_{K/𝐐}(β^2)\\\tr_{K/𝐐}(β)&\tr_{K/𝐐}(β^2)&\tr_{K/𝐐}(β^3)\\\tr_{K/𝐐}(β^2)&\tr_{K/𝐐}(β^3)&\tr_{K/𝐐}(β^4)\\\end{vmatrix}\\&=\begin{vmatrix}3&0&-2p\\
+0&-2p&-3q\\-2p&-3q&2p^2\end{vmatrix}
+\\&=-4 p^3 - 27 q^2\end{align*}
+When $p=q=1$, $\disc_{K/𝐐}(1, β, β^2)=-31$ is squarefree, by <a href="https://courses.maths.ox.ac.uk/pluginfile.php/103225/mod_resource/content/1/Algebraic-NT-2024.pdf#theorem.2.18">2.18</a> $K=𝐐(β)$ is a cubic number field such that $𝒪_K$ has a power integral basis $\{1, β, β^2\}$.</div>

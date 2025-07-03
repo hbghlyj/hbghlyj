@@ -1,0 +1,126 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://www.jstor.org/stable/2325119">Galois Theory for Beginners</a>
+The aim of this paper is to prove the unsolvability by radicals of the quintic (in fact of the general $n$th degree equation for $n\ge5$) using just the fundamentals of groups, rings and fields from a standard first course in algebra. The main fact it will be necessary to know is that if $\phi$ is a homomorphism of group $G$ onto group $G'$ then $G'\cong G/\ker\phi$, and conversely, if $G/H\cong G'$ then $H$ is the kernel of a homomorphism of $G$ onto $G'$. The concept of Galois group, which guides the whole proof, will be defined when it comes up. With this background, a proof of unsolvability by radicals can be constructed from just three basic ideas, which will be explained more fully below:
+
+1. Fields containing $n$ indeterminates can be “symmetrized”.
+2. The Galois group of a radical extension is solvable.
+3. The symmetric group $S_n$ is not solvable
+
+The general equation of degree $n$
+$$\tag{*}
+x^n+a_{n-1} x^{n-1}+\cdots+a_1 x+a_0=1
+$$
+The set of elements obtainable from $a_0, \ldots, a_{n-1}$ by $+,-,\times,\div$ is the field $\mathbb{Q}(a_0, \ldots, a_{n-1})$. If we denote the roots of (*) by $x_1, \ldots, x_n$, so that
+$$
+(x-x_1) \cdots(x-x_n)=x^n+a_{n-1} x^{n-1}+\cdots+a_1 x+a_0
+$$
+then $a_0, \ldots, a_{n-1}$ are polynomial functions of $x_1, \ldots, x_n$ called the <em>elementary symmetric functions</em>:
+$$
+a_0=(-1)^n x_1 x_2 \cdots x_n, \ldots, a_{n-1}=-(x_1+x_2+\cdots+x_n) .
+$$
+The goal of solution by radicals is then to <em>extend</em> $\mathbb{Q}(a_0, \ldots, a_{n-1})$ <em>by adjoining radicals</em> until a field containing the roots $x_1, \ldots, x_n$ is obtained. For example, the roots $x_1, x_2$ of the quadratic equation lie in the extension of $\mathbb{Q}\left(a_0, a_1\right)=\mathbb{Q}\left(x_1 x_2, x_1+x_2\right)$ by the radical
+$$
+\sqrt{a_1^2-4 a_0}=\sqrt{(x_1+x_2)^2-4 x_1 x_2}=\sqrt{(x_1-x_2)^2}= \pm(x_1-x_2)
+$$
+In this case we get $\mathbb{Q}\left(x_1, x_2\right)$ itself as the radical extension $\mathbb{Q}(a_0, a_1, \sqrt{a_1^2-4 a_0})$, though in other cases a radical extension of $\mathbb{Q}(a_0, \ldots, a_{n-1})$ containing $x_1, \ldots, x_n$ is larger than $\mathbb{Q}(x_1, \ldots, x_n)$. In particular, the solution of the cubic equation gives a radical extension of $\mathbb{Q}(a_0, a_1, a_2)$ which includes imaginary cube roots of unity as well as $x_1, x_2, x_3$.
+
+In general, adjoining an element $\alpha$ to a field $F$ means forming the closure of $F \cup\{\alpha\}$ under $+,-,\times,\div$ (by a non-zero element), i.e., taking the intersection of all fields containing $F \cup\{\alpha\}$. The adjunction is called <em>radical</em> if some positive integer power $\alpha^m$ of $\alpha$ equals an element $f \in F$, in which case $\alpha$ may be represented by the radical expression $\sqrt[m]{f}$. The result $F(\alpha_1)(\alpha_2) \ldots(\alpha_k)$ of successive adjunctions is denoted by $F(\alpha_1, \ldots, \alpha_k)$ and if each adjunction is radical we say $F(\alpha_1, \ldots, \alpha_k)$ is a <em>radical extension</em> of $F$.
+
+It is clear from these definitions that a radical extension $E$ of $\mathbb{Q}(a_0,\dots,a_{n-1})$ containing $x_1,\dots,x_n$ is also a radical extension of $\mathbb{Q}(x_1,\dots,x_n)$, since $a_0,\dots,a_{n-1}\in\mathbb{Q}(x_1,\dots,x_n)$. Thus we also have to study radical extensions of $\mathbb{Q}(x_1,\dots,x_n)$. The most important property of $\mathbb{Q}(x_1,\dots,x_n)$ is that it is <em>symmetric</em> with respect to $x_1,\dots,x_n$, in the sense that any permutation $\sigma$ of $x_1,\dots,x_n$ extends to a bijection $\sigma$ of $\mathbb{Q}(x_1,\dots,x_n)$ defined by$$\sigma f(x_1,\dots,x_n)=f(\sigma x_1,\dots,\sigma x_n)$$for each rational function $f$ of $x_1,\dots,x_n$. Moreover, this bijection $\sigma$ obviously satisfies
+\begin{align}
+\sigma(f+g)&=\sigma f+\sigma g \\
+\sigma(f g)&=\sigma f \cdot \sigma g
+\end{align}and hence is an <em>automorphism</em> of $\mathbb{Q}(x_1, \ldots, x_n)$.
+
+A radical extension $E$ of $\mathbb{Q}(x_1, \ldots, x_n)$ is not necessarily symmetric in this sense. For example, $\mathbb{Q}\left(x_1, \ldots, x_n, \sqrt{x_1}\right)$ contains a square root of $x_1$, but not of $x_2$, hence there is no automorphism exchanging $x_1$ and $x_2$. However, we can restore symmetry by adjoining $\sqrt{x_2}, \ldots, \sqrt{x_n}$ as well. The obvious generalization of this idea gives a way to “symmetrize” any radical extension $E$ of $\mathbb{Q}(x_1, \ldots, x_n)$:
+
+<strong>Theorem 1.</strong> For each radical extension $E$ of $\mathbb{Q}(x_1, \ldots, x_n)$ there is a radical extension $\bar{E} \supseteq E$ with automorphisms $\sigma$ extending all permutations of $x_1, \ldots, x_n$.
+
+<em>Proof:</em> For each adjoined element, represented by radical expression $e(x_1, \ldots, x_n)$, and each permutation $\sigma$ of $x_1, \ldots, x_n$, adjoin the element $e(\sigma x_1, \ldots, \sigma x_n)$. Since there are only finitely many permutations $\sigma$, the resulting field $\bar{E} \supseteq E$ is also a radical extension of $\mathbb{Q}(x_1, \ldots, x_n)$.
+
+This gives a bijection (also called $\sigma$) of $\bar{E}$ sending each $f\left(x_1, \ldots, x_n\right) \in \bar{E}$ (a rational function of $x_1, \ldots, x_n$ and the adjoined radicals) to $f\left(\sigma x_1, \ldots, \sigma x_n\right)$, and this bijection is obviously an automorphism of $\bar{E}$, extending the permutation $\sigma$.$\quad\blacksquare$
+
+The reason for wanting an automorphism $\sigma$ extending each permutation of $x_1,\dots,x_n$ is that $a_0,\dots,a_{n-1}$ are fixed by such permutations, and hence so is every element of the field $\mathbb Q(a_0,\dots,a_{n-1})$. If $E\supseteq F$ are any fields, the automorphisms $\sigma$ of $E$ fixing all elements of $F$ form what is called the <em>Galois group of</em> $E$ <em>over</em> $F$, $\operatorname{Gal}(E/F)$. This concept alerts us to the following corollary of Theorem 1:
+
+<strong>Corollary.</strong> If $E$ is a radical extension of $\mathbb{Q}(a_0, \ldots, a_{n-1})$ containing $x_1, \ldots, x_n$ then there is a further radical extension $\bar{E} \supseteq E$ such that $\operatorname{Gal}\left(\bar{E} / \mathbb{Q}(a_0, \ldots, a_{n-1})\right)$ includes automorphisms $\sigma$ extending all permutations of $x_1, \ldots, x_n$.
+
+<em>Proof:</em> This is immediate from Theorem 1 and the fact that a radical extension of $\mathbb{Q}(a_0, \ldots, a_{n-1})$ containing $x_1, \ldots, x_n$ is also a radical extension of $\mathbb{Q}(x_1, \ldots, x_n)$.$\quad\blacksquare$
+
+<strong>THE STRUCTURE OF RADICAL EXTENSIONS.</strong> So far we know that a solution by radicals of the general $n$th degree equation (*) entails a radical extension of $\mathbb{Q}\left(a_0, \ldots, a_{n-1}\right)$ containing $x_1, \ldots, x_n$, and hence a radical extension $\bar{E}$ with the symmetry described in the corollary above. This opens a route to prove <em>nonexistence</em> of such a solution by learning enough about $\operatorname{Gal}\left(\bar{E} / \mathbb{Q}(a_0, \ldots, a_{n-1})\right)$ to show that such symmetry is lacking, at least for $n \geq 5$. In the present section we shall show that the Galois group $\operatorname{Gal}\left(F(\alpha_1, \ldots, \alpha_k\right) / F)$ of any radical extension has a special structure, called <em>solvability</em>, inherited from the structure of $F(\alpha_1, \ldots, \alpha_k)$. Then in the next section we shall show that this structure is indeed incompatible with the symmetry described in the corollary. To simplify the derivation of this structure, we shall show that certain assumptions about the adjunction of radicals $\alpha_i$ can be made without loss of generality.
+
+First, we can assume that each radical $\alpha_i$ adjoined is a $p$th root for some <em>prime</em> $p$. E.g., instead of adjoining $\sqrt[6]{\alpha}$ we can adjoin first $\sqrt{\alpha}=\beta$, then $\sqrt[3]{\beta}$. Second, if $\alpha_i$ is a $p$th root we can assume that $F(\alpha_1, \ldots, \alpha_i)$ contains no $p$th roots of unity not in $F(\alpha_1, \ldots, \alpha_{i-1})$ unless $\alpha_i$ itself is a $p$th root of unity. If this is not the case initially we simply adjoin a $p$th root of unity $\zeta \neq 1$ to $F(\alpha_1, \ldots, \alpha_{i-1})$ before adjoining $\alpha_i$ (in which case $F(\alpha_1, \ldots, \alpha_{i-1}, \zeta)$ contains all the $p$th roots of unity: $1, \zeta, \zeta^2, \ldots, \zeta^{p-1}$). With both these modifications the final field $F(\alpha_1, \ldots, \alpha_k)$ is the same, and it remains the same if the newly adjoined roots $\zeta$ are included in the list $\alpha_1, \ldots, \alpha_k$. Hence we have:
+
+Any radical extension $F(\alpha_1, \ldots, \alpha_k)$ is the union of an ascending tower of fields
+$$
+F=F_0 \subseteq F_1 \subseteq \cdots \subseteq F_k=F(\alpha_1, \ldots, \alpha_k)
+$$
+where each $F_i=F_{i-1}(\alpha_i), \alpha_i$ is the $p_i$th root of an element in $F_{i-1}$, $p_i$ is prime, and $F_i$ contains no $p_i$th roots of unity not in $F_{i-1}$ unless $\alpha_i$ is itself a $p_i$th root of unity.
+
+Corresponding to this tower of fields we have a descending tower of groups
+$$
+\operatorname{Gal}(F_k / F_0)=G_0 \supseteq G_1 \supseteq \cdots \supseteq G_k=\operatorname{Gal}(F_k / F_k)=\{\mathbf{1}\}
+$$
+where $G_i=\operatorname{Gal}(F_k / F_i)=\operatorname{Gal}(F_k / F_{i-1}(\alpha_i))$ and $\bf1$ denotes the identity automorphism. The containments are immediate from the definition of $\operatorname{Gal}(E / B)$, for any fields $E \supseteq B$, as the group of automorphisms of $E$ fixing each element of $B$. As $B$ increases to $E$, $\operatorname{Gal}(E / B)$ must decrease to $\{\mathbf{1}\}$. The important point is that the step from $G_{i-1}$ to its subgroup $G_i$, reflecting the adjunction of the $p_i$th root $\alpha_{j i}$ to $F$, is “small” enough to be describable in group-theoretic terms: $G_i$ <em>is a normal subgroup of</em> $G_{i-1}$, and $G_{i-1} / G_i$ <em>is abelian</em>, as we shall now show.
+To simplify notation further we set
+$$
+E=F_k, B=F_{i-1}, \alpha=\alpha_i, p=p_i,
+$$
+so the theorem we want is:
+
+<strong>Theorem 2.</strong> If $E \supseteq B(\alpha) \supseteq B$ are fields with $\alpha^p \in B$ for some prime $p$, and if $B(\alpha)$ contains no $p$th roots of unity not in $B$ unless $\alpha$ itself is a $p$th root of unity, then $\mathrm{Gal}(E / B(\alpha))$ is a normal subgroup of $\mathrm{Gal}(E / B)$ and $\mathrm{Gal}(E / B) / \mathrm{Gal}(E / B(\alpha))$ is abelian.
+
+<em>Proof:</em> By the homomorphism theorem for groups, it suffices to find a homomorphism of $\operatorname{Gal}(E / B)$, with kernel $\operatorname{Gal}(E / B(\alpha))$, into an abelian group (i.e., onto a subgroup of an abelian group, which of course is also abelian). The obvious map with kernel $\operatorname{Gal}(E / B(\alpha))$ is <em>restriction</em> to $B(\alpha)$, $|_{B(\alpha)}$, since by definition
+$$\sigma \in \operatorname{Gal}(E / B(\alpha)) \Leftrightarrow \sigma|_{B(\alpha)} \text { is the identity map.}
+$$
+The homomorphism property,
+$$
+\sigma^{\prime} \sigma|_{B(\alpha)}=\sigma^{\prime}|_{B(\alpha)} \sigma|_{B(\alpha)} \text { for all } \sigma^{\prime}, \sigma \in \operatorname{Gal}(E / B)
+$$
+is automatic provided $\left.\sigma\right|_{B(\alpha)}(b) \in B(\alpha)$ for each $b \in B(\alpha)$, i.e. provided $B(\alpha)$ is closed under each $\sigma \in \operatorname{Gal}(E / B)$.
+
+Since $\sigma$ fixes $B$, $\sigma|_{B(\alpha)}$ is completely determined by the value $\sigma(\alpha)$. If $\alpha$ is a $p$th root of unity $\zeta$ then
+$$
+(\sigma(\alpha))^p=\sigma\left(\alpha^p\right)=\sigma\left(\zeta^p\right)=\sigma(1)=1,
+$$
+hence $\sigma(\alpha)=\zeta^i=\alpha^i \in B(\alpha)$, since each $p$th root of unity is some $\zeta^i$. If $\alpha$ is not a root of unity then
+$$
+(\sigma(\alpha))^p=\sigma\left(\alpha^p\right)=\alpha^p \quad \text { since } \quad \alpha^p \in B,
+$$
+hence $\sigma(\alpha)=\zeta^j \alpha$ for some $p$th root of unity $\zeta$, and $\zeta \in B$ by hypothesis, so again $\sigma(\alpha) \in B(\alpha)$. Thus $B(\alpha)$ is closed as required.
+
+This also implies that $\left.\right|_{B(\alpha)}$ maps $\operatorname{Gal}(E / B)$ into $\operatorname{Gal}(B(\alpha) / B)$, so it now remains to check that $\operatorname{Gal}(B(\alpha) / B)$ is abelian. If $\alpha$ is a root of unity then, as we have just seen, each $\left.\sigma\right|_{B(\alpha)} \in \operatorname{Gal}(B(\alpha) / B)$ is of the form $\sigma_i$, where $\sigma_i(\alpha)=\alpha^i$, hence
+$$
+\sigma_i \sigma_j(\alpha)=\sigma_i\left(\alpha^j\right)=\alpha^{i j}=\sigma_j \sigma_i(\alpha) .
+$$
+
+Likewise, if $\alpha$ is not a root of unity then each $\left.\sigma\right|_{B(\alpha)} \in \operatorname{Gal}(B(\alpha) / B)$ is of the form $\sigma_i$ where $\sigma_i(\alpha)=\zeta^i \alpha$, hence
+$$
+\sigma_i \sigma_j(\alpha)=\sigma_i\left(\zeta^j \alpha\right)=\zeta^{i+j} \alpha=\sigma_j \sigma_i(\alpha)
+$$
+since $\zeta \in B$ and therefore $\zeta$ is fixed. Hence in either case $\operatorname{Gal}(B(\alpha) / B)$ is abelian.$\quad\blacksquare$
+
+The property of $\operatorname{Gal}\left(F\left(\alpha_1, \ldots, \alpha_k\right) / F\right)$ implied by this theorem, that it has subgroups $\operatorname{Gal}\left(F\left(\alpha_1, \ldots, \alpha_k\right) / F\right)=G_0 \supseteq G_1 \supseteq \cdots \supseteq G_k=\{1\}$ with each $G_i$ normal in $G_{i-1}$ and $G_{i-1} / G_i$ abelian, is called <em>solvability</em> of $\operatorname{Gal}\left(F(\alpha_1, \ldots, \alpha_k) / F\right)$.
+
+<strong>NON-EXISTENCE OF SOLUTIONS BY RADICALS WHEN</strong> $\boldsymbol{n} \geq \mathbf{5}$. As we have said, this amounts to proving that a radical extension of $\mathbb{Q}(a_0, \ldots, a_{n-1})$ does not contain $x_1, \ldots, x_n$ or, equivalently, $\mathbb{Q}(x_1, \ldots, x_n)$. We have now reduced this problem to proving that the symmetry of the hypothetical extension $\bar{E}$ containing $x_1, \ldots, x_n$, given by the corollary to Theorem 1, is incompatible with the solvability of $\operatorname{Gal}\left(\bar{E} / \mathbb{Q}(a_0, \ldots, a_{n-1})\right)$, given by Theorem 2. Our proof looks only at the effect of the hypothetical automorphisms of $\bar{E}$ on $x_1, \ldots, x_n$, and hence it is really about the symmetric group $S_n$ of all permutations of $x_1, \ldots, x_n$. In fact, we are adapting a standard proof that $S_n$ is not a solvable group, given by Milgram in his appendix to Artin [1].
+
+<strong>Theorem 3.</strong> A radical extension of $\mathbb{Q}(a_0, \ldots, a_{n-1})$ does not contain $\mathbb{Q}(x_1, \ldots, x_n)$ when $n \geqslant 5$.
+<em>Proof:</em> Suppose on the contrary that $E$ is a radical extension of $\mathbb{Q}\left(a_0, \ldots, a_{n-1}\right)$ which contains $\mathbb{Q}(x_1, \ldots, x_n)$. Then $E$ is also a radical extension of $\mathbb{Q}(x_1, \ldots, x_n)$ and by the corollary to Theorem 1 there is a radical extension $\bar{E} \supseteq E$ such that $G_0=\operatorname{Gal}\left(\bar{E} / \mathbb{Q}(a_0, \ldots, a_{n-1})\right)$ includes automorphisms $\sigma$ extending all permutations of $x_1, \ldots, x_n$.
+By Theorem 2, $G_0$ has a decomposition
+$$
+G_0 \supseteq G_1 \supseteq \cdots \supseteq G_k=\{\mathbf{1}\}
+$$
+where each $G_{i+1}$ is a normal subgroup of $G_i$ and $G_{i-1} / G_i$ is abelian. We now show that this is contrary to the existence of the automorphisms $\sigma$.
+
+Since $G_{i-1} / G_i$ is abelian, $G_i$ is the kernel of a homomorphism of $G_{i-1}$ onto an abelian group, and therefore
+$$
+\sigma, \tau \in G_{i-1} \Rightarrow \sigma^{-1} \tau^{-1} \sigma \tau \in G_i
+$$
+We use this fact to prove by induction on $i$ that, if $n \geq 5$, each $G_i$ contains automorphisms $\sigma$ extending all 3-cycles $(x_a, x_b, x_c)$. This is true for $G_0$ by hypothesis, and when $n \geq 5$ the property persists from $G_{i-1}$ to $G_i$ because
+$$
+(x_a, x_b, x_c)=(x_d, x_a, x_c)^{-1}(x_c, x_e, x_b)^{-1}(x_d, x_a, x_c)(x_c, x_e, x_b)
+$$
+where $a, b, c, d, e$ are distinct. Thus if there are at least five indeterminates $x_j$, there are $\sigma$ in each $G_i$ which extend arbitrary 3-cycles $(x_a, x_b, x_c)$, and this means in particular that $G_k \neq\{\mathbf1\}$. This contradiction shows that $\mathbb{Q}(x_1, \ldots, x_n)$ is not contained in any radical extension of $\mathbb{Q}(a_0, \ldots, a_{n-1})$ when $n \geq 5$.$\quad\blacksquare$</div>

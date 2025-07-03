@@ -1,0 +1,25 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$f_n\overset{w*}⇀f$ if $f_n(x)→f(x)∀x∈X$
+i.e. if $ι_x(f_n)→ι_x(f)$
+i.e. $T(f_n)→T(f)∀T∈ι(X)⊆X^{**}$
+$f_n\overset{w}⇀f$ if $T(f_n)→T(f)∀T∈X^{**}$
+
+<u>Example that weak convergence-∗ doesn't imply weak convergence</u>
+Try to find a sequence $l_n∈X^*,l_n\overset{w*}⇀l,l_n\overset{w}↛l$.
+as $∃T∈X^{**}:T(l_n)↛T(l)$ while $∀T∈ι(X),T(l_n)→T(l)$.
+Try $X=L^1([0,1]),X^*=L^∞([0,1])$ so want sequence $f_n⊆L^∞$ s.t.
+$∫gf_n→∫gf ∀g∈L^1$ but $T∈(L^∞)^*,Tf_n↛0$ since $Tf_n=1∀n$.
+
+Take $f_n=1_{A_n}$ e.g. $A_n=[0,\frac{1}{n}]$ or anything $f(A_n)→0$ and $A_n⊇A_{n+1}…$
+Then $|∫f_ng|≤∫|g|1_{A_n}→0$ since $1_{A_n}→0$ a.e.
+Try to find $T:Tf_n=1$.
+would like something like $f↦f(0)$ only ok on $C^0([0,1])$
+$Y=C^0([0,1])⊆X$
+$T_0:Y→ℝ$
+$T_0(f)=f(0)$
+Since $C^0⊆L^∞$ can extend $T_0$ by Hahn-Banach gives $T∈(L^∞)^*$.
+so $T(f)=\lim_{n→0}n\int_0^{\frac1n}f$</div>

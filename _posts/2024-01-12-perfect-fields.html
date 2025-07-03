@@ -1,0 +1,56 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://kconrad.math.uconn.edu/blurbs/galoistheory/perfect.pdf">KEITH CONRAD</a>
+Characteristic 0 fields have a very handy feature: every irreducible polynomial in characteristic 0 is separable. Fields in characteristic $p$ may or may not have this feature.
+
+<strong>Definition 1.</strong> A field $K$ is called perfect if every irreducible polynomial in $K[T]$ is separable.
+
+Every field of characteristic 0 is perfect. We will see that finite fields are perfect too. The simplest example of a nonperfect field is the rational function field $\mathbf{F}_{p}(u)$, since $T^{p}-u$ is irreducible in $\mathbf{F}_{p}(u)[T]$ but not separable.
+
+Recall that an irreducible polynomial $\pi(T)$ is inseparable if and only if $\pi^{\prime}(T)=0$.
+
+Here is the standard way to check a field is perfect.
+
+<strong>Theorem 2.</strong> A field $K$ is perfect if and only if it has characteristic 0 , or it has characteristic $p$ and $K^{p}=K$.
+
+<em>Proof.</em> When $K$ has characteristic 0 , each irreducible $\pi(T)$ in $K[T]$ is separable since $\pi^{\prime}(T) \neq$ 0 (after all, $\operatorname{deg} \pi^{\prime}=\operatorname{deg} \pi-1$ ). It remains to show when $K$ has characteristic $p$ that every irreducible in $K[T]$ is separable if and only if $K^{p}=K$. To do this we will show the negations are equivalent: an inseparable irreducible exists in $K[T]$ if and only if $K^{p} \neq K$.
+
+If $K^{p} \neq K$, pick $a \in K-K^{p}$. Then $T^{p}-a$ has only one root in a splitting field: if $\alpha^{p}=a$ then $T^{p}-a=T^{p}-\alpha^{p}=(T-\alpha)^{p}$ since we are working in characteristic $p$. The polynomial $T^{p}-a$ is irreducible in $K[T]$ too: each nontrivial proper monic factor of $T^{p}-a$ is $(T-\alpha)^{m}$ where $1 \leq m \leq p-1$. The coefficient of $T^{m-1}$ in $(T-\alpha)^{m}$ is $-m \alpha$, so if $T^{p}-a$ has a nontrivial proper factor in $K[T]$ then $-m \alpha \in K$ for some $m$ from 1 to $p-1$. Then $m \in \mathbf{F}_{p}^{\times} \subset K^{\times}$, so $\alpha \in K$, which means $a=\alpha^{p} \in K^{p}$, a contradiction. Thus $T^{p}-a$ is irreducible and inseparable in $K[T]$.
+
+Now suppose there is an inseparable irreducible $\pi(T) \in K[T]$. Then $\pi^{\prime}(T)=0$, so $\pi(T)$ is a polynomial in $T^{p}$, say
+$$
+\pi(T)=a_{m} T^{p m}+a_{m-1} T^{p(m-1)}+\cdots+a_{1} T^{p}+a_{0} \in K\left[T^{p}\right]
+$$
+If $K^{p}=K$ then we can write $a_{i}=b_{i}^{p}$ for some $b_{i} \in K$, so
+$$
+\pi(T)=\left(b_{m} T^{m}+b_{m-1} T^{m-1}+\cdots+b_{1} T+b_{0}\right)^{p}
+$$
+(It was crucial for this conclusion that the coefficients of $\pi(T)$ are $p$ th powers and not only that $\pi(T)$ is a polynomial in $T^{p}$.) Since $\pi(T)$ is irreducible we have a contradiction, which shows $K^{p} \neq K$.
+
+<strong>Corollary 3.</strong> Fields of characteristic 0 and finite fields are perfect.
+
+<em>Proof.</em> By Theorem 2, fields of characteristic 0 are perfect. It remains to show a finite field $K$ of characteristic $p$ satisfies $K^{p}=K$. The $p$ th power map $K \rightarrow K$ is injective and therefore surjective because $K$ is finite, so we are done.
+
+The two types of fields listed in Corollary 3 are the most basic examples of perfect fields. Other perfect fields can show up, especially in the middle of technical proofs about fields.
+
+Corollary 3 says irreducibles in $\mathbf{F}_{p}[T]$ have no repeated roots, but the proof was rather indirect. We now give a more elementary proof that each irreducible $\pi(T)$ in $\mathbf{F}_{p}[T]$ is separable. The idea is to show $\pi(T)$ is a factor of a polynomial which we can directly check has no repeated roots. We may assume $\pi(T) \neq T$, so $T \bmod \pi$ is a unit in $\mathbf{F}_{p}[T] /(\pi)$. Since $\pi(T)$ is irreducible, $\mathbf{F}_{p}[T] /(\pi)$ is a field with size $p^{d}$, where $d=\operatorname{deg} \pi$. The nonzero elements of $\mathbf{F}_{p}[T] /(\pi)$ are a group of size $p^{d}-1$, so $T^{p^{d}-1} \equiv 1 \bmod \pi$. Multiplying through by $T$, we get $T^{p^{d}} \equiv T \bmod \pi$, so $\pi(T) \mid\left(T^{p^{d}}-T\right)$ in $\mathbf{F}_{p}[T]$. The polynomial $T^{p^{d}}-T$ has no repeated roots (in a splitting field): if $\alpha^{p^{d}}-\alpha=0$ then
+$$
+\begin{aligned}
+T^{p^{d}}-T & =T^{p^{d}}-T-\left(\alpha^{p^{d}}-\alpha\right) \\
+& =\left(T^{p^{d}}-\alpha^{p^{d}}\right)-(T-\alpha) \\
+& =(T-\alpha)^{p^{d}}-(T-\alpha) \\
+& =(T-\alpha)\left((T-\alpha)^{p^{d}-1}-1\right)
+\end{aligned}
+$$
+The second factor $(T-\alpha)^{p^{d}-1}-1$ has value -1 at $T=\alpha$, so $\alpha$ is a root with multiplicity 1. Since $\alpha$ was taken to be an arbitrary root of $T^{p^{d}}-T$, we see that $T^{p^{d}}-T$ is separable. Therefore its factor $\pi(T)$ is also separable.
+
+<strong>Theorem 4.</strong> A field $K$ is perfect if and only if every finite extension of $K$ is a separable extension.
+
+<em>Proof.</em> Suppose $K$ is perfect: every irreducible in $K[T]$ is separable. If $L / K$ is a finite extension then the minimal polyomial in $K[T]$ of every element of $L$ is irreducible and therefore separable, so $L / K$ is a separable extension.
+
+Now suppose every finite extension of $K$ is a separable extension. To show $K$ is perfect, let $\pi(T) \in K[T]$ be irreducible. Consider the field $L=K(\alpha)$, where $\pi(\alpha)=0$. This field is a finite extension of $K$, so a separable extension by hypothesis, so $\alpha$ is separable over $K$. Since $\pi(T)$ is the minimal polynomial of $\alpha$ in $K[T]$, it is a separable polynomial.
+
+A lot of results about field theory that are valid in characteristic 0 carry over to perfect fields in characteristic $p$ (but not everything), and the reader should be attentive to this point when reading texts which try to make life easy by always assuming fields have characteristic 0 . You should always check if the theorems (and even proofs) go through to general perfect fields.</div>

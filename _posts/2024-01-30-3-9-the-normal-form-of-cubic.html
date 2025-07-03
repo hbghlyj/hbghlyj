@@ -1,0 +1,53 @@
+---
+mathjax: true
+tag: algebraic-curves
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Theorem 3.17. Let $C$ be a nonsigular cubic curve in $ℂ ℙ^2$. Then $C$ is equivalent under a projective transformation to the curve $y^2 z=x(x-z)(x-λ z)$ for some $λ ∈ ℂ \backslash\{0,1\}$.
+<em>Proof.</em> By Prop 3.16(c), $C$ has at least one point of inflection. Apply a projective transformation to make $(0,1,0)$ a point of inflection, with tangent line $z=0$. Let $C$ be defined by $P(x, y)$. Then\[P(0,1,0)=P_x(0,1,0)=0,   P_z(0,1,0) ≠ 0,   H_P(0,1,0)=0\]
+From Lemma 3.14 with $y,z$ reversed, get
+\[
+y^2 H_P(x, y, z)=4\left|\begin{array}{lll}
+P_{x x} & P_x & P_{x z} \\
+P_x & \frac{3}{2} P & P_z \\
+P_{z x} & P_z & P_{z z}
+\end{array}\right|
+\]
+
+So $0=H_p(0,1,0)=4\left|\begin{array}{ccc}P_{x x}(0,1,0) & 0 & P_{x z}(0,1,0) \\ 0 & 0 & P_z(0,1,0) \\ P_{z x}(0,1,0) & P_z(0,1,0) & P_{z z}(0,1,0)\end{array}\right|$
+$=-4 P_z(0,1,0)^2 P_{x x}(0,1,0)$, so $P_{x x}(0,1,0)=0 \text { as } P_z(0,1,0) ≠ 0$.
+
+Hence $P$ has no $y^3$ or $x y^2$ or $x^2 y$ term as
+\[
+P(0,1,0)=P_x(0,1,0)=P_{x x}(0,1,0)=0\text {. }
+\]
+
+Thus $P(x,y, z)=yz(α x+β y+γ z)+Q(x, z)$,
+\[
+β=P_z(0,1,0) ≠ 0 \text {. }
+\]
+
+Apply projective transformation $[x, y, z] ↦\left[x, y+\frac{α x+γ z}{2 β}, z\right]$.
+Takes $P$ to $β y^2z+\tilde{Q}(x, z)=: \tilde{P}(x, y, z)$
+$C$ irreducible, so $z ∤ \tilde{P}$, so coefficient of $x^3$ in $\tilde{Q}$ is nonzero.
+Can rescale $x,y$ to get
+\[
+\tilde{\tilde{P}}=y^2 z-(x-a z)(x-b z)(x-c z) \text {. }
+\]
+
+If $a=b$, say, the $[a,0,1]$ is a singular point❌
+So $a, b, c$ are distinct.
+Finally apply projective transformation
+\[
+[x, y, z] ⟼\left[\frac{x-a z}{b-a},(b-a)^{-3 / 2} y, z\right]
+\]
+to get $\tilde{\tilde{P}}(x, y, z)=y^2 z-x(x-z)(x-λ z)$,
+\[
+λ=\frac{c-a}{b-a}   λ ≠ 0,1,   λ ∈ ℂ .
+\]
+
+The equation $y^2 z=x(x-z)(x-λ z)$ is called a normal form, ie. a standard way to write the cubic.
+∎
+Parameter count: cubics in $x,y,z=ℂ^{10}$
+acted on by $GL(3, ℂ)$, dim 9.
+$⇒$ Expected dimension of cubic / projective tranformation, is $10-9=1$, parametrized by $λ ∈ \underbrace{ℂ∖\{0,1\}}_{\dim1}$</div>

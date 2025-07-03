@@ -1,0 +1,47 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$\DeclareMathOperator{\pv}{pv}\DeclareMathOperator{\sgn}{sgn}$The Hilbert transform of $ϕ ∈ 𝒮(ℝ)$ is defined as
+\[
+ℋ(ϕ)≝\pv\left(\frac{1}{π x}\right) * ϕ .
+\]
+In lectures we have seen that $ℋ(ϕ)$ is a moderate $\mathrm{C}^{∞}$ function and so in particular a tempered distribution and that hereby $ℋ: 𝒮(ℝ) → 𝒮'(ℝ)$ is a linear operator.
+(a) Show that $\|ℋ(ϕ)\|_2=\|ϕ\|_2$ for all $ϕ ∈ 𝒮(ℝ)$. Next, show that $ℋ$ admits a unique extension to a continuous linear operator $ℋ_0:𝖫^2(ℝ)→𝖫^2(ℝ)$. Finally, show that $ℋ_0$ is an isometric isomorphism and that $ℋ_0^2=-\mathrm{Id}_{𝖫^2}$.
+<strong>Solution.</strong>
+By Example 1.60, $\widehat{\pv(\frac1x)}(ξ)=−𝗂π\sgn(ξ)$, so $\widehat{\pv(\frac1{πx})}(ξ)=−𝗂\sgn(ξ)$.
+By convolution rule, $\widehat{ℋ(ϕ)}=-𝗂\sgn(ξ)\hat{ϕ}$, so $\|\widehat{ℋ(ϕ)}\|_2=\|\hat{ϕ}\|_2$.
+By Plancherel’s Theorem $\|ℋ(ϕ)\|_2=\frac1{\sqrt{2π}}\|\widehat{ℋ(ϕ)}\|_2,\|ϕ\|_2=\frac1{\sqrt{2π}}\|\hat{ϕ}\|_2$.
+So $\|ℋ(ϕ)\|_2=\|ϕ\|_2$.
+Since $𝒮(ℝ)$ is dense in $𝖫^2(ℝ)$, $ℋ$ has a unique extension  to $𝖫^2(ℝ)$, it's continuous since $\|ℋ(ϕ)\|_2=\|ϕ\|_2$.
+\begin{align*}
+\widehat{ℋ_0^2(ϕ)}(ξ) & =-𝗂\sgn(ξ)\widehat{ℋ_0(ϕ)}(ξ) \\
+&=(-𝗂\sgn(ξ))^2 \hat{ϕ}(ξ) \\
+&=-\hat{ϕ}(ξ)
+\end{align*}
+Taking the inverse Fourier transform $ℋ_0^2=-I$.
+So $ℋ_0^{-1}=-ℋ_0$. So $ℋ_0$ is an isometric isomorphism.
+
+(b) Using that $𝖫^2(ℝ)$ is a Hilbert space show that also the $𝖫^2$ based Sobolev space of order $s ∈ ℝ$, $𝖧^s(ℝ)$, is a Hilbert space. Show also that $𝒮(ℝ)$ is dense in $𝖧^s(ℝ)$.
+<strong>Solution.</strong>
+To show $𝖧^s(ℝ)$ is complete, we want to show that if $\{u_i\}$ is a Cauchy sequence in $𝖧^s$ then it converges to some $u∈𝖧^s$
+\[
+\|u_i-u_j\|_{𝖧^s}=\|(1+|x|^2)^{s/2}(\widehat{u_i}-\widehat{u_j})\|_2
+\]
+so $(1+|x|^2)^{s/2}\widehat{u_i}$ is a Cauchy sequence in $𝖫^2$, by $𝖫^2$ completeness, $(1+|x|^2)^{s/2}\widehat{u_i}$ converges.
+
+To show $𝒮(ℝ)$ is dense in $𝖧^s(ℝ)$, for $ϕ∈𝖧^s(ℝ)$, $(1+|x|^2)^{s/2}\hat{ϕ}∈𝖫^2(ℝ)$.
+Since $𝒮(ℝ)$ is <a href="https://math.stackexchange.com/q/1588917">dense</a> in $𝖫^2(ℝ)$, $∃f∈𝒮(ℝ),‖f-(1+|x|^2)^{s/2}\hat{ϕ}‖_2<ε$.
+Since $f∈𝒮(ℝ),(1+|x|^2)^{-s/2}f∈𝒮(ℝ).$
+Let $ψ∈𝒮,\hat{ψ}=(1+|x|^2)^{-s/2}f$.
+$‖ψ-ϕ‖_{𝖧^s}=‖(\hat{ψ}-\hat{ϕ})(1+|x|^2)^{s/2}‖_2<ε$.
+
+(c) Show that $\|ℋ(ϕ)\|_{𝖧^s}=\|ϕ\|_{𝖧^s}$ for all $ϕ ∈ 𝒮(ℝ)$ and all $s ∈ ℝ$.
+Prove that $ℋ$, for each $s ∈ ℝ$, admits a unique extension to a continuous linear operator $ℋ_s: 𝖧^s(ℝ) → 𝖧^s(ℝ)$. Show that $ℋ_s$ is an isometric isomorphism and that $ℋ_s^2=-\mathrm{Id}_{𝖧^s}$. Finally, show that for $s<t$ we have the consistency relation $ℋ_s|_{𝖧^t(ℝ)}=ℋ_t$.
+<strong>Solution.</strong>
+First part basically the same as (a).
+To show for $s<t$, $ℋ_s|_{𝖧^s}=ℋ_t$
+$f∈𝖧^t(ℝ),f_n∈𝒮(ℝ)$ such that $f_n→f$ in $ℋ^t$
+$‖f_n-f‖_{𝖧^s}<‖f_n-f‖_{𝖧^t}→0$, so $f_n→f$ in $𝖧^s$.
+$ℋ_s(f)=\limℋ_s(f_n)=ℋ_t(f)$.</div>

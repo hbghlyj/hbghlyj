@@ -1,0 +1,40 @@
+---
+mathjax: true
+tag: algebraic-number-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Find all integer solutions to the equation $y^2+74=x^3$. (You may assume that $h_{𝐐(\sqrt{-74})}=10$.)
+Solution: Let $K=𝐐(\sqrt{-74})$. It turns out that $h_K=10$. In particular, $\mathcal{O}_K$ does not have unique factorisation.
+
+The equation factors in $\mathcal{O}_K$ as $(y+\sqrt{-74})(y-\sqrt{-74})=x^3$. We do not have unique factorisation into elements of $\mathcal{O}_K$, only into ideals, so we think of this as an equation
+\[\tag{1}
+(y+\sqrt{-74})(y-\sqrt{-74})=(x)^3
+\]
+of ideals.
+We are going to prove that the two ideals on the left are coprime. Suppose some prime ideal $\mathfrak{p}$ divides both terms on the LHS. Then $y+\sqrt{-74}, y-\sqrt{-74} \in \mathfrak{p}$, and so, taking the difference, $2 \sqrt{-74} \in \mathfrak{p}$. Therefore $\mathfrak{p} \mid(2 \sqrt{-74})$. (Here, of course, we are using the fact that containment and division of ideals are the same thing, Theorem 5.2.)
+Taking norms, we have
+\[\tag{12.2}
+N(\mathfrak{p}) \mid N(2 \sqrt{-74})=2^3 \cdot 37 .
+\]
+Also, since $\mathfrak{p} \mid(y+\sqrt{-74})$, we have $\mathfrak{p} \mid(x)^3$ and so
+\[\tag{12.3}
+N(\mathfrak{p}) \mid N\left((x)^3\right)=x^6 .
+\]
+We claim that neither 2 nor 37 divides $x$.
+If $2 \mid x$ then $8 \mid x^3$, so $y^2=x^3-74 \equiv 2\pmod 4$, a contradiction.
+If $37 \mid x$ then $37 \mid y$, and so $37^2 \mid y^2-x^3=74$. This is also a contradiction.
+From these facts and $(12.2),(12.3)$ we have $N(\mathfrak{p})=1$, which is impossible; therefore we are forced to conclude that $\mathfrak{p}$ does not exist, so the ideals $(y+\sqrt{-74}),(y-\sqrt{-74})$ are indeed coprime.
+
+Now we return to (12.1). By unique factorisation of ideals, both $(y+\sqrt{-74})$ and $(y-\sqrt{-74})$ are cubes of ideals. Suppose that $(y+\sqrt{-74})=\mathfrak{a}^3$. In particular, $[\mathfrak{a}]^3$ is trivial in the class group. However, we know that $h_K=10$, that is to say the class group has order 10. Therefore $[\mathfrak{a}]=[\mathfrak{a}]^{10}$ is trivial, or in other words $\mathfrak{a}$ is a principal ideal. Thus we have an equation
+\[
+(y+\sqrt{-74})=(a+b \sqrt{-74})^3
+\]
+for some $a, b \in \mathbf{Z}$. This means that
+\[
+y+\sqrt{-74}=u(a+b \sqrt{-74})^3
+\]
+in $\mathcal{O}_K$, where $u$ is a unit. The only units are $\pm 1$; by replacing $a, b$ with $-a,-b$ if necessary, we may in fact assume that $u=1$. Expanding out and comparing coefficients of $\sqrt{-74}$ (which, of course, is irrational) we obtain
+\[
+y=a\left(a^2-3×74b^2\right), \quad b\left(3 a^2-74b^2\right)=1 .
+\]
+The second of these implies that $b= \pm 1$ and hence that $3 a^2-74= \pm 1$, so $a=±5,y=±197×5=±985,x=99$.</div>

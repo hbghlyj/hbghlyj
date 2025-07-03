@@ -1,0 +1,16 @@
+---
+mathjax: true
+tag: galois-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://kconrad.math.uconn.edu/blurbs/galoistheory/galoiscorrthms.pdf">Theorem 2.6.</a>
+Let $L/K$ be a finite Galois extension and $F/K$ be an arbitrary field extension.
+The extension $LF/F$ is finite Galois and $\DeclareMathOperator{\Gal}{Gal}\Gal(LF/F)≅\Gal(L/L∩F)$ by restriction.
+In particular, $[LF:F]=[L:L∩F]$
+
+<em>Proof.</em>
+Since $L/K$ is finite Galois, $L$ is a splitting field over $K$ of a separable polynomial $f(X) ∈ K[X]$. Then $LF$ is a splitting field over $F$ of $f(X)$, which is separable over $L$, so $LF/F$ is Galois. To show $\Gal(LF/F)≅\Gal(L/L∩F)$ by restricting the domain from $LF$ to $L$, we essentially repeat the proof of Theorem 2.1a. Consider the restriction homomorphism
+$$\tag{2.3}\Gal(LF/F) → \Gal(L/K)\text{, where }σ↦σ|L.$$
+This has a trivial kernel: an automorphism in $\Gal(LF/F)$ that is trivial on $L$ is trivial on $LF$ since it is automatically trivial on $F$. Therefore (2.3) is injective. The image of (2.3) is a subgroup of $\Gal(L/K)$, so the image has the form $\Gal(L/E)$ for some field $E$ between $K$ and $L$. By Galois theory $E$ is the fixed field of the image of (2.3), so
+$$E =\{x ∈ L : σ(x) = x\text{ for all }σ ∈\Gal(LF/F)\}.$$
+An element of $LF$ is fixed by $\Gal(LF/F)$ precisely when it belongs to $F$, so E = $L∩F$. Therefore the image of (2.3) is $\Gal(L/L∩F)$.</div>

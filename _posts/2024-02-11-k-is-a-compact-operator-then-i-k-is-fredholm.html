@@ -1,0 +1,13 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/8a7e4dd837d1bdd6988e0330babb8c5e_lecture16_17.pdf">Lemma 16.25.</a> Let $K : X → X$ be a compact operator. Then $I + K$ is Fredholm.
+
+<em>Proof:</em> First we consider the kernel of $I+K$.
+For all $x\in\ker(I+K)$, $Kx=-x$.
+So $B=K(B)$ where $B$ is the closed unit ball in $\ker(I+K)$.
+So $B$ is image of a bounded set under a compact operator, hence is precompact. But $B$ is closed so $B$ is compact. By Riesz's lemma $\ker(I+K)$ is finite dimensional.
+
+Next we show that $\operatorname{Ran}(I+K)$ is closed. By lemma 16.17 it suffices to show that if $x_i$ is a bounded sequence so that $x_i+K_i x_i$ converges to $y \in Y$ then there is $x \in X$ so that $x+K x=y$. Since $\{x_i\}$ is bounded there is a subsequence $x_{i_j}$ so that $\{K x_{i_j}\}$ converges. But then $\{x_{i_j}\}$ converges. Thus the operator $I+K$ is a semi-Fredholm. Applying the same arguement to the adjoint $I+K^*$ completes the proof.</div>

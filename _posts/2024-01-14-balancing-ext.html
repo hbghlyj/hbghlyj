@@ -1,0 +1,13 @@
+---
+mathjax: true
+tag: homological-algebra
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">$\DeclareMathOperator{\Hom}{Hom}\DeclareMathOperator{Tot}{Tot}$%
+need to show
+\[\Hom(A,I)→\Tot^Π \Hom(P,I)←\Hom(P,B)\]
+these maps are quasi-isomorphism.
+$\Leftrightarrow$ cones are acylic.
+Observation: $\operatorname{Cone}\left(\Hom(A,I)→\Tot^Π\Hom(P,I)\right)$ is the total complex of the double complex
+$\Hom(P,I)$ with $\Hom(A,I)[-1]$ for this augmented double complex we see that $\Tot^Π$ is exact using the acyclic assembly lemma: $\Hom(P_p,-)$ is exact since $P_p$ is projective, $\Hom(-,I^q)$ is exact since $I^q$ is injective.
+\[R^*\Hom(A,-)(B)=H^*\Hom(A,I)≅H^*\Tot^Π(\Hom(P,I))≅H^*\Hom(P,B)=R^*\Hom(-,B)(A)\]</div>

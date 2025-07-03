@@ -1,0 +1,20 @@
+---
+mathjax: true
+tag: distribution-theory
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap"><a href="https://en.wikipedia.org/wiki/Dirac_delta_function#Composition_with_a_function">Composition with a function</a>
+More generally, the delta distribution may be composed with a smooth function $g(x)$ in such a way that the familiar change of variables formula holds, that
+$ {\displaystyle \int _{\mathbb {R} }\delta {\bigl (}g(x){\bigr )}f{\bigl (}g(x){\bigr )}\left|g'(x)\right|dx=\int _{g(\mathbb {R} )}\delta (u)\,f(u)\,du} $
+provided that g is a continuously differentiable function with g′ nowhere zero.[40] That is, there is a unique way to assign meaning to the distribution $ \delta \circ g $ so that this identity holds for all compactly supported test functions f. Therefore, the domain must be broken up to exclude the g′ = 0 point. This distribution satisfies δ(g(x)) = 0 if g is nowhere zero, and otherwise if g has a real root at x0, then
+$ {\displaystyle \delta (g(x))={\frac {\delta (x-x_{0})}{|g'(x_{0})|}}.} $ 
+<strong>Example 1:</strong>
+$2x-x^2$ maps $(0,1)$ to $(0,1)$
+$(2x-x^2)'=2(1-x)>0∀x∈(0,1)$
+$δ_n∈𝒟'(0,1)$ is a delta sequence, then $2(1-x)δ_n(2x-x^2)$ is a delta sequence.
+Note that $\int_a^1 n(1-x)^{n-1} d x=(1-a)^n→\begin{cases}0&0<a<1\\1&a=0\end{cases}$, then $δ_n(x)=n(1-x)^{n-1}∈𝒟'(0,1)$ is a delta sequence, we can verify $2(1-x)δ_n(2x-x^2)=δ_{2n}$.
+<strong>Example 2:</strong>
+$x^2$ maps $(0,1)$ to $(0,1)$
+$(x^2)'=2x>0∀x∈(0,1)$
+$δ_n∈𝒟'(0,1)$ is a delta sequence, then $2xδ_n(x^2)$ is a delta sequence.
+Note that $\int_a^1 \frac{x^{\frac1n-1}}{n} d x=1-\sqrt[n]{a}→\begin{cases}0&0<a<1\\1&a=0\end{cases}$, then $δ_n(x)=\frac{x^{\frac1n-1}}{n}∈𝒟'(0,1)$ is a delta sequence, we can verify $2xδ_{2n}(x^2)=δ_n$.</div>

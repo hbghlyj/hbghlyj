@@ -1,0 +1,27 @@
+---
+mathjax: true
+tag: functional-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $X$ and $Y$ be real Hilbert spaces and let $T ∈ ℬ(X, Y)$ be surjective. Show that there exists a unique bounded linear operator $R ∈ ℬ(Y, X)$ such that
+\[
+T R=I_Y \text{ and }\|R T x\|≤\|x\| \text{ for all } x ∈ X .
+\]
+%[Hint: Follow the proof <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94650/mod_resource/content/8/2024-02-13.pdf#thm.3.11">3.11</a> that for operators between Hilbert spaces $S X$ is closed iff $S^* Y$ is closed]
+<em>Proof.</em> Define $Z=\ker(T)^⟂⊆X,A=T|_Z∈ℬ(Z,Y)$.
+$A$ is injective since $Z∩\ker(T)=\{0\}$.
+$A$ is surjective since $Tx=T(P^Zx)=A(P^Zx)∀x∈X$ where $P^Z$ is orthogonal projection onto $Z$.
+$A$ is bijective, hence $∃A^{-1}∈ℬ(Y,Z)$ by Inverse Mapping Theorem.
+Define $R∈ℬ(Y,X),Ry=A^{-1}y∀y∈Y$, then $TR=AA^{-1}=I_Y$.
+$RT(x)=RA(P^Zx)=P^Zx$, so $‖RT(x)‖≤‖x‖∀x∈X$.
+
+Uniqueness:
+Say $\tilde{R}$ is another possible candidate.
+For all $y∈Y$,
+\begin{align*}‖P^Z\tilde{R}y‖&≥‖\tilde{R}TP^Z\tilde{R}y‖
+&\text{since }&\|x\|≥\|\tilde{R}T x\|\text{ for all } x ∈ X
+\\&=‖\tilde{R}T\tilde{R}y‖&\text{since }&TP^Z=T
+\\&=‖\tilde{R}y‖&\text{since }&T\tilde{R}=I_Y&\end{align*}
+but $‖\tilde{R}y‖≥‖P^Z\tilde{R}y‖$ by Pythagoras, so $\tilde{R}y∈Z$, so
+$$ARy=y=T\tilde{R}y=A\tilde{R}y$$
+but $A$ is bijective, so $Ry=\tilde{R}y$.</div>

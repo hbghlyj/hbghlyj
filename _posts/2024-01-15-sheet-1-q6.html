@@ -1,0 +1,36 @@
+---
+mathjax: true
+tag: fourier-analysis
+render_with_liquid: false
+---
+<div style="white-space:pre-wrap">Let $f(x)=𝖾^{-|x|}, x ∈ ℝ^n$, where $|x|=\sqrt{x_1^2+⋯+x_n^2}$ is the usual norm of $x$.
+(a) Compute the Fourier transform of $f$ when the dimension $n=1$. Deduce for $λ ≥ 0$ the identity
+\[𝖾^{-λ}=\frac{1}{π} ∫_{-∞}^{∞} \frac{1}{1+ξ^2} 𝖾^{𝗂 λ ξ} 𝖽 ξ\]
+(b) Using $\frac{1}{ξ^2+1}=∫_0^{∞} 𝖾^{-(1+ξ^2) t} 𝖽 t$ and (a) show that
+\[𝖾^{-λ}=∫_0^{∞} \frac{1}{\sqrt{π t}} 𝖾^{-t-\frac{λ^2}{4 t}} 𝖽 t\]
+holds for all $λ ≥ 0$.
+(c) <a href="https://math.stackexchange.com/questions/4055621">Calculate</a> the Fourier transform $\hat{f}$ in the general $n$-dimension, using the identity from (b) with $λ=|x|$.
+<strong>Solution.</strong>
+(a) When the dimension $n=1$,
+\[
+\hat{f}(ξ)=∫_{-∞}^{∞}𝖾^{-|x|}𝖾^{-𝗂xξ}𝖽x
+=∫_0^{∞}𝖾^{-(1+𝗂ξ)x}𝖽x+∫_{-∞}^0𝖾^{-(-1+𝗂ξ)x}𝖽x
+=\frac1{1+𝗂ξ}+\frac1{-(-1+𝗂ξ)}
+=\frac2{1+ξ^2}
+\]
+By Fourier inversion formula
+\[𝖾^{-|x|}=\frac{1}{2π} ∫_{-∞}^{∞} \frac{2}{1+ξ^2} 𝖾^{𝗂xξ} 𝖽 ξ\]
+Take $x=λ ≥ 0$
+\[𝖾^{-λ}=\frac{1}{π} ∫_{-∞}^{∞} \frac{1}{1+ξ^2} 𝖾^{𝗂 λ ξ} 𝖽 ξ\]
+(b) By Fubini and the Fourier transform of a Gaussian
+\begin{align*}𝖾^{-λ}&=\frac{1}{π} ∫_{-∞}^{∞} \frac{1}{1+ξ^2} 𝖾^{𝗂 λ ξ} \,𝖽ξ\\
+&=\frac{1}{π} ∫_{-∞}^{∞} ∫_0^{∞} 𝖾^{-(1+ξ^2) t}𝖾^{𝗂 λ ξ} \,𝖽t𝖽ξ\\
+&=\frac{1}{π}∫_0^{∞} 𝖾^{-t}∫_{-∞}^{∞}𝖾^{-tξ^2+𝗂 λ ξ}𝖽ξ𝖽t\\
+&=\frac{1}{π}∫_0^{∞}𝖾^{-t}\sqrt{π\over t}𝖾^{-\frac{λ^2}{4t}}𝖽 t
+\\&=∫_0^{∞} \frac{1}{\sqrt{π t}} 𝖾^{-t-\frac{λ^2}{4 t}} 𝖽 t\end{align*}
+(c) Substitute (b) in $\hat{f}(ξ)$, by Fubini
+\begin{align*}\hat{f}(ξ)=\int_{x∈ℝ^n}𝖾^{-|x|}𝖾^{-𝗂ξ⋅x}𝖽x&=\int_{x∈ℝ^n}∫_0^{∞} \frac{1}{\sqrt{π t}} 𝖾^{-t-\frac{|x|^2}{4 t}}𝖾^{-𝗂ξ⋅x}𝖽t𝖽x\\
+&=∫_0^{∞}\frac{1}{\sqrt{π t}} 𝖾^{-t}\int_{x∈ℝ^n}𝖾^{-\frac{|x|^2}{4 t}}𝖾^{-𝗂ξ⋅x}𝖽x𝖽t\end{align*}
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94613/mod_resource/content/1/fourier.pdf">1.38</a> the Fourier transform of $𝖾^{-\frac{|x|^2}{2}}$ is $(2π)^{\frac{n}{2}}𝖾^{-\frac{|ξ|^2}{2}}$.
+By <a href="https://courses.maths.ox.ac.uk/pluginfile.php/94613/mod_resource/content/1/fourier.pdf">1.12 [Dilation Rule]</a> the Fourier transform of $𝖾^{-\frac{|x|^2}{4t}}$ is $(4πt)^{\frac{n}{2}}𝖾^{-t|ξ|^2}$, substitute in $\hat{f}(ξ)$:
+\[\hat{f}(ξ)=∫_0^{∞}\frac{(4πt)^{\frac{n}{2}}}{\sqrt{πt}}𝖾^{-t(1+|ξ|^2)}𝖽t=2^n π^{n-1\over2}(1 + |ξ|^2)^{-{n+1\over2}} Γ\left(\frac{n+1}2\right)\]</div>
